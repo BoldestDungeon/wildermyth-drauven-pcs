@@ -1,63 +1,10 @@
 [
 {
-	"id": "500",
+	"id": "default",
 	"weight": 0.95,
 	"category": "bornDrauven",
-	"forbiddenAspects": [ "female", "attractedToMen" ],
-	"impliedAspects": [ "male", "drauvenMale", "maleBody", "heterosexual", "attractedToWomen" ],
 	"humanName": "drauvenName",
 	"showInSummary": false
-},
-{
-	"id": "501",
-	"weight": 0.03,
-	"category": "bornDrauven",
-	"forbiddenAspects": [ "female", "attractedToWomen" ],
-	"impliedAspects": [ "male", "drauvenMale", "maleBody", "gay", "attractedToMen" ],
-	"humanName": "drauvenName",
-	"showInSummary": false
-},
-{
-	"id": "502",
-	"weight": 0.95,
-	"category": "bornDrauven",
-	"forbiddenAspects": [ "male", "attractedToWomen" ],
-	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "heterosexual", "attractedToMen" ],
-	"humanName": "drauvenName",
-	"showInSummary": false
-},
-{
-	"id": "503",
-	"weight": 0.03,
-	"category": "bornDrauven",
-	"forbiddenAspects": [ "male", "attractedToMen" ],
-	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "gay", "attractedToWomen" ],
-	"humanName": "drauvenName",
-	"showInSummary": false
-},
-{
-	"id": "504",
-	"weight": 0.04,
-	"category": "bornDrauven",
-	"forbiddenAspects": [ "female" ],
-	"impliedAspects": [ "male", "drauvenMale", "maleBody", "attractedToMen", "attractedToWomen" ],
-	"humanName": "drauvenName",
-	"showInSummary": false
-},
-{
-	"id": "505",
-	"weight": 0.04,
-	"category": "bornDrauven",
-	"forbiddenAspects": [ "male" ],
-	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "attractedToMen", "attractedToWomen" ],
-	"humanName": "drauvenName",
-	"showInSummary": false
-},
-{
-	"id": "709",
-	"category": "dieOfOldAge",
-	"impliedAspects": [ "dead" ],
-	"removeAspects": [ "alive", "activeDefender" ]
 },
 {
 	"id": "701",
