@@ -4,4 +4,4 @@ This mod attempts to add the ability to recruit Drauven characters to join your 
 
 ## GETTING STARTED
 
-TODO
+* Clone the repo into a new folder in your Wildermyth user mods. Example: `[Wildermyth Directory]/mods/user/drauven_pcs`
