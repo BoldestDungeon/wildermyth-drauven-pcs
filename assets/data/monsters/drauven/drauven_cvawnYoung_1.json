@@ -1,0 +1,59 @@
+{
+"id": "drauven_cvawnYoung",
+"modId": "drauv_pcs",
+"aspects": [
+	"drauven_dravonne",
+	"Cvawn_gets_personality",
+	"human",
+	"canWallWithAllies",
+	"hook_Brash",
+	"hook_Proud",
+	"hook_Destiny",
+	"activeDefender",
+	"alive",
+	"elementalGuardian",
+	"cvawnFireWall|2+1d3",
+	"cvawnDragontail|1d4",
+	"thrixl_crush",
+	"wingSound",
+	"drauven_wingbeat",
+	"mythicConstitution",
+	"figure_largeImage",
+	"drauven_flight",
+	"thrixl_dragon"
+],
+"stats": {
+	"POTENCY": "0",
+	"SPEED": "5",
+	"MELEE_ACCURACY": "43",
+	"RANGE_ACCURACY": "43",
+	"PERCEPTION": "10",
+	"ARMOR": "5",
+	"DODGE": "15",
+	"PHYSICAL_DAMAGE_BONUS": "0",
+	"MONSTER_THREAT": "40",
+	"HEALTH": "30",
+	"BLOCK": "15",
+	"WARDING": "4"
+},
+"scale": [ "3.5", "3.5" ],
+"combatDifficulty_1": {
+	"newAspects": [ "cvawnFireWall|1+1d3", "cvawnDragontail|1d3" ],
+	"stats": { "ARMOR": "3" }
+},
+"combatDifficulty_10": {
+	"newAspects": [ "cvawnFireWall|2+1d2" ],
+	"stats": { "ARMOR": "3" }
+},
+"combatDifficulty_30": {
+	"stats": { "SPEED": "5", "HEALTH": "35" }
+},
+"baseColor": [ "1", "1", "1" ],
+"skin": [
+	{
+		"image": [ "drauven2/cvawnYA_combat" ]
+	}
+],
+"footprint": 6,
+"healthBarHeight": 0.5
+}

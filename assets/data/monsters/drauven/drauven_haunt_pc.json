@@ -1,0 +1,119 @@
+{
+	"id": "drauven_haunt_pc",
+	"notes": "Needs weapon definition for attacks ; needs stealthy aspect?",
+	"aspects": [
+		"Haunt_gets_personality",
+		"drauven_haunt",
+		"drauven_pc",
+		"overrideFacePosition|360|300"
+	],
+	"stats": {
+		"DODGE": "10",
+		"PERCEPTION": "2"
+	},
+	"scale": [
+		"[0.85,1.15]",
+		"[0.85,1.15]"
+	],
+	"baseColor": [
+		"[0.8,1.08]",
+		"[0.8,1.08]",
+		"[0.8,1.08]"
+	],
+	"skin": [
+		{
+			"image": [
+				"drauven2/drauvenHaunt_body"
+			]
+		},
+		{
+			"image": [
+				"drauven2/drauvenHaunt_outfitVariation1",
+				"drauven2/drauvenHaunt_outfitVariation2"
+			],
+			"colorVariation": [
+				"[-0.1,0.1]",
+				"[-0.1,0.1]",
+				"[-0.1,0.1]"
+			]
+		},
+		{
+			"image": [
+				"drauven2/drauvenHaunt_outfit"
+			],
+			"colorVariation": [
+				"[-0.1,0.1]",
+				"[-0.1,0.1]",
+				"[-0.1,0.1]"
+			]
+		},
+		{
+			"image": [
+				"drauven2/drauvenHaunt_handDagger",
+				"drauven2/drauvenHaunt_handSword"
+			],
+			"colorVariation": [
+				"[-0.1,0.1]",
+				"[-0.1,0.1]",
+				"[-0.1,0.1]"
+			]
+		},
+		{
+			"image": [
+				"drauven2/drauvenHaunt_head"
+			]
+		},
+		{
+			"image": [
+				"drauven2/drauvenHaunt_headFeathers",
+				null
+			],
+			"colorVariation": [
+				"[-0.1,0.1]",
+				"[-0.1,0.1]",
+				"[-0.1,0.1]"
+			]
+		},
+		{
+			"image": [
+				"drauven2/drauvenHaunt_headHorns",
+				null
+			],
+			"colorVariation": [
+				"[-0.1,0.1]",
+				"[-0.1,0.1]",
+				"[-0.1,0.1]"
+			]
+		},
+		{
+			"image": [
+				"drauven2/drauvenHaunt_headWhiskers",
+				null
+			],
+			"colorVariation": [
+				"[-0.1,0.1]",
+				"[-0.1,0.1]",
+				"[-0.1,0.1]"
+			]
+		},
+		{
+			"image": [
+				"drauven2/drauvenHaunt_headMask",
+				null
+			],
+			"colorVariation": [
+				"[-0.1,0.1]",
+				"[-0.1,0.1]",
+				"[-0.1,0.1]"
+			]
+		}
+	],
+	"fancyLayers": [
+		{
+			"name": "images/drauven2/drauvenStormthroat_bird",
+			"depth": 4000,
+			"rigUsage": "simple",
+			"ifOwnerAspect": "drauven_canUseHarass"
+		}
+	]
+}

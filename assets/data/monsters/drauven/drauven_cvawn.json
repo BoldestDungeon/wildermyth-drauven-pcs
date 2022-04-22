@@ -1,0 +1,57 @@
+{
+"id": "drauven_cvawn",
+"modId": "drauv_pcs",
+"aspects": [
+	"drauven_cvawn",
+	"monstrous",
+	"mobileMonster",
+	"monsterCanSearch",
+	"activeDefender",
+	"alive",
+	"elementalGuardian",
+	"cvawnFireWall|3+1d3",
+	"cvawnDragontail|1d4",
+	"thrixl_crush",
+	"wingSound",
+	"drauven_wingbeat",
+	"immuneToCompulsion",
+	"immuneToStatusEffects",
+	"mythicConstitution",
+	"figure_hugeImage",
+	"thrixl_dragon"
+],
+"stats": {
+	"POTENCY": "0",
+	"SPEED": "5",
+	"MELEE_ACCURACY": "130",
+	"RANGE_ACCURACY": "130",
+	"PERCEPTION": "10",
+	"ARMOR": "4",
+	"DODGE": "60",
+	"PHYSICAL_DAMAGE_BONUS": "0",
+	"MONSTER_THREAT": "40",
+	"HEALTH": "60",
+	"BLOCK": "60",
+	"WARDING": "4"
+},
+"scale": [ "4.5", "4.5" ],
+"combatDifficulty_1": {
+	"newAspects": [ "cvawnFireWall|2+1d3", "cvawnDragontail|1d3" ],
+	"stats": { "ARMOR": "3", "WARDING": "3" }
+},
+"combatDifficulty_10": {
+	"newAspects": [ "cvawnFireWall|3+1d2" ],
+	"stats": { "ARMOR": "3" }
+},
+"combatDifficulty_30": {
+	"stats": { "HEALTH": "70" }
+},
+"baseColor": [ "1", "1", "1" ],
+"skin": [
+	{
+		"image": [ "drauven2/cvawnAdult_combat" ]
+	}
+],
+"footprint": 8,
+"healthBarHeight": 0.5
+}

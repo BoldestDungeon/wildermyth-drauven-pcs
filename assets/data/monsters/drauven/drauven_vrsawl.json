@@ -1,0 +1,51 @@
+{
+"id": "drauven_vrsawl",
+"modId": "drauv_pcs",
+"aspects": [
+	"drauven_skysinger",
+	"monstrous",
+	"mobileMonster",
+	"monsterCanSearch",
+	"canOpenDoors",
+	"activeDefender",
+	"alive",
+	"drauven",
+	"monsterMelee|clawSwipe|balanced|1.1|1d2",
+	"drauvenBlood",
+	"drauven_sneer",
+	"drauven_cower",
+	"monsterRemoveStasis",
+	"overrideFacePosition|350|360",
+	"attackRange|0|1.1|melee"
+],
+"stats": {
+	"HEALTH": "8",
+	"MONSTER_THREAT": "20",
+	"PERCEPTION": "10",
+	"DODGE": "100",
+	"RANGE_ACCURACY": "100",
+	"SPEED": "6",
+	"POTENCY": "3",
+	"MELEE_ACCURACY": "115",
+	"WARDING": "4",
+	"BLOCK": "15",
+	"ARMOR": "1",
+	"PHYSICAL_DAMAGE_BONUS": "0"
+},
+"scale": [ "1", "1" ],
+"combatDifficulty_1": {
+	"stats": {}
+},
+"combatDifficulty_10": {
+	"stats": {}
+},
+"combatDifficulty_30": {
+	"stats": { "HEALTH": "18" }
+},
+"baseColor": [ "1", "1", "1" ],
+"skin": [
+	{
+		"image": [ "drauven2/drauvenVrsawlMid_interested" ]
+	}
+]
+}

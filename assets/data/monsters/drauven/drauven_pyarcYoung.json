@@ -1,0 +1,57 @@
+{
+"id": "drauven_pyarcYoung",
+"modId": "drauv_pcs",
+"aspects": [
+	"drauven_pilotNobylle",
+	"monstrous",
+	"mobileMonster",
+	"monsterCanSearch",
+	"canOpenDoors",
+	"activeDefender",
+	"alive",
+	"drauven",
+	"monsterMelee|weapon|balanced|2.1|6+1d3",
+	"drauven_flight",
+	"wingSound",
+	"drauvenBlood",
+	"drauven_wingbeat",
+	"monsterGuard",
+	"immuneToCompulsion",
+	"monsterRemoveStasis",
+	"attackRange|0|2.1|melee",
+	"overrideFacePosition|290|360"
+],
+"stats": {
+	"DODGE": "45",
+	"HEALTH": "17",
+	"MELEE_ACCURACY": "115",
+	"WARDING": "2",
+	"SPEED": "7",
+	"PHYSICAL_DAMAGE_BONUS": "0",
+	"MONSTER_THREAT": "30",
+	"POTENCY": "0",
+	"ARMOR": "3",
+	"RANGE_ACCURACY": "100",
+	"PERCEPTION": "10",
+	"BLOCK": "65"
+},
+"scale": [ "1", "1" ],
+"combatDifficulty_1": {
+	"newAspects": [ "monsterMelee|weapon|balanced|2.1|4+1d3" ],
+	"stats": { "ARMOR": "3" }
+},
+"combatDifficulty_10": {
+	"newAspects": [ "monsterMelee|weapon|balanced|2.1|5+1d3" ],
+	"stats": { "ARMOR": "3" }
+},
+"combatDifficulty_30": {
+	"stats": { "HEALTH": "20" }
+},
+"baseColor": [ "1", "1", "1" ],
+"skin": [
+	{
+		"image": [ "drauven2/drauvenPyarcYoung_combat" ]
+	}
+],
+"footprint": 2
+}

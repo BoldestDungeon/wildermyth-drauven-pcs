@@ -1,0 +1,85 @@
+{
+"id": "drauven_boneguard",
+"modId": "drauv_pcs",
+"notes": "Needs weapon definition for attacks ; needs stealthy aspect?",
+"aspects": [
+	"drauven_stump",
+	"monstrous",
+	"mobileMonster",
+	"monsterCanSearch",
+	"canOpenDoors",
+	"activeDefender",
+	"alive",
+	"drauven",
+	"monsterSweepingSwings|2.1|3+1d3",
+	"drauvenBlood",
+	"overrideFacePosition|250|340",
+	"attackRange|0|2.1|melee"
+],
+"stats": {
+	"MONSTER_THREAT": "8",
+	"HEALTH": "7+1d2",
+	"PERCEPTION": "10",
+	"DODGE": "40",
+	"RANGE_ACCURACY": "100",
+	"SPEED": "5",
+	"POTENCY": "0",
+	"MELEE_ACCURACY": "110",
+	"WARDING": "2",
+	"BLOCK": "45",
+	"ARMOR": "3",
+	"PHYSICAL_DAMAGE_BONUS": "0"
+},
+"scale": [ "[1,1.1]", "[1,1.1]" ],
+"combatDifficulty_1": {
+	"newAspects": [ "monsterSweepingSwings|2.1|2+1d3" ],
+	"stats": {}
+},
+"combatDifficulty_10": {
+	"newAspects": [ "monsterSweepingSwings|2.1|3+1d2" ],
+	"stats": {}
+},
+"combatDifficulty_30": {
+	"stats": { "HEALTH": "9+1d2" }
+},
+"baseColor": [ "[0.8,1.08]", "[0.8,1.08]", "[0.8,1.08]" ],
+"skin": [
+	{
+		"image": [ "drauven2/drauvenBoneguard_body" ]
+	},
+	{
+		"image": [ "drauven2/drauvenBoneguard_outfit" ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [
+			"drauven2/drauvenBoneguard_outfitVariation1",
+			"drauven2/drauvenBoneguard_outfitVariation2"
+		],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenBoneguard_handAxe" ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenBoneguard_head" ]
+	},
+	{
+		"image": [ "drauven2/drauvenBoneguard_headFeathers", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenBoneguard_headHorns", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenBoneguard_headWhiskers", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenBoneguard_headMask", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	}
+]
+}

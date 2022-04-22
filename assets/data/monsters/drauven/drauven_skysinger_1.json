@@ -1,0 +1,95 @@
+{
+"id": "drauven_skysinger",
+"notes": "Needs weapon definition for attacks ; need stealthy aspect?",
+"aspects": [
+	"Skysinger_gets_personality",
+	"human",
+	"canWallWithAllies",
+	"hook_Clown",
+	"hook_Creative",
+	"hook_Dreamer",
+	"drauven_skysinger",
+	"activeDefender",
+	"alive",
+	"drauven",
+	"monsterRangedMagic|projectileTrailFireball|balanced|0.9|5.6|3+1d3",
+	"AI_behavior_ranged",
+	"drauvenBlood",
+	"drauven_sneer"
+],
+"stats": {
+	"MELEE_ACCURACY": "10",
+	"POTENCY": "2",
+	"SPEED": "4",
+	"RANGE_ACCURACY": "23",
+	"PERCEPTION": "10",
+	"ARMOR": "2",
+	"DODGE": "40",
+	"PHYSICAL_DAMAGE_BONUS": "0",
+	"HEALTH": "8+1d4",
+	"MONSTER_THREAT": "20",
+	"BLOCK": "25",
+	"WARDING": "2"
+},
+"scale": [ "1.1", "1.1" ],
+"combatDifficulty_1": {
+	"newAspects": [ "monsterRangedMagic|projectileTrailFireball|balanced|0.9|5.6|2+1d3" ],
+	"removeAspects": [ "AI_behavior_ranged" ],
+	"stats": {}
+},
+"combatDifficulty_10": {
+	"newAspects": [ "monsterRangedMagic|projectileTrailFireball|balanced|0.9|5.6|3+1d2" ],
+	"stats": {}
+},
+"combatDifficulty_30": {
+	"stats": { "HEALTH": "10+1d3" }
+},
+"baseColor": [ "[0.9,1.04]", "[0.9,1.04]", "[0.9,1.04]" ],
+"skin": [
+	{
+		"image": [ "drauven2/drauvenSkysinger_outfitBack" ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenSkysinger_body" ]
+	},
+	{
+		"image": [ "drauven2/drauvenSkysinger_outfit" ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [
+			"drauven2/drauvenSkysinger_outfitVariation1",
+			"drauven2/drauvenSkysinger_outfitVariation2"
+		],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [
+			"drauven2/drauvenSkysinger_handMagic1",
+			"drauven2/drauvenSkysinger_handSpear",
+			"drauven2/drauvenSkysinger_handStaff"
+		],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenSkysinger_head" ]
+	},
+	{
+		"image": [ "drauven2/drauvenSkysinger_headFeathers", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenSkysinger_headHorns", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenSkysinger_headWhiskers", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenSkysinger_headMask", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	}
+]
+}
