@@ -1,0 +1,90 @@
+{
+    "id": "skysingerBlastingshard_pc",
+    "info": {
+        "dataVersion": 1,
+        "sourceFile": "drauven/drauven_pc_blastingshard",
+        "author": "timcrosby",
+        "aiPriority": "(2000*COUNT.foes)-(1500*COUNT.friend)",
+        "tags": [ "sneaky", "okToMarkDone" ]
+    },
+    "type": "ABILITY",
+    "verb": "MANEUVER",
+    "ability": {
+        "icon": "utility",
+        "category": "attackAbility",
+        "priority": "3",
+        "showDescriptionInTooltip": true,
+        "cooldown": "oncePerTurn"
+    },
+    "targets": [
+        {
+            "template": "SELF",
+            "cost": { "class": "ActionPoints" },
+            "missionFeedback": { "orientTo": "target" },
+            "aspects": [ "alive", "interfused", "SELF" ]
+        },
+        {
+            "template": "ANY",
+            "showAnyway": true,
+            "missionFeedback": {
+                "suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+                "hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+            },
+            "relationship": "interfusedWithEntity"
+        },
+        { "template": "TILE", "relativeTo": "target", "range": "6" },
+        {
+            "role": "target2",
+            "template": "UNIT_AT_TILE",
+            "choose": "ALL",
+            "relativeTo": "focus",
+            "range": "1.9"
+        },
+        {
+            "role": "foes",
+            "template": "ADJACENT_ENEMY",
+            "choose": "ANY",
+            "missionFeedback": null,
+            "fromRoles": [ "target2" ],
+            "aspects": [ "HOSTILE_TARGET", "alive" ],
+            "range": null
+        },
+        {
+            "role": "friend",
+            "template": "ADJACENT_ALLY",
+            "choose": "ANY",
+            "missionFeedback": null,
+            "fromRoles": [ "target2" ],
+            "range": null
+        }
+    ],
+    "outcomes": [
+        {
+            "class": "Aspects",
+            "consumeAspects": [
+                { "id": "interfusedWithEntity", "value": "1", "inRelationTo": "target" }
+            ]
+        },
+        {
+            "class": "Aspects",
+            "target": "target",
+            "consumeAspects": [
+                { "id": "interfusedWithMystic", "value": "1", "inRelationTo": "self" }
+            ]
+        },
+        {
+            "class": "AttackRoll",
+            "defender": "target2",
+            "intermediateRole": "target",
+            "attackAnimationType": "magic",
+            "showAbilityName": "ifEnemy",
+            "particles": [
+                { "script": "StunningBarrage", "setPosition": "target", "setPosition2": "focus" },
+                { "script": "smokeBlast", "setPosition": "target" }
+            ],
+            "audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_Barrage" },
+            "attackStrength": "100",
+            "onHit": { "class": "Damage", "amount": "1d3-1+(self.SPELL_DAMAGE)", "shred": "self.POTENCY" }
+        }
+    ]
+    }

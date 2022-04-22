@@ -1,0 +1,78 @@
+{
+    "id": "drauven_pc_interfuse",
+    "info": {
+        "dataVersion": 1,
+        "sourceFile": "drauven/drauven_pc_interfuse",
+        "author": "timcrosby",
+        "aiPriority": "800"
+    },
+    "type": "ABILITY",
+    "verb": "MANEUVER",
+    "ability": {
+        "icon": "utility",
+        "category": "neutralAbility",
+        "priority": "4",
+        "overrideOverlayType": "interfuse",
+        "strictlyBetterThan": ["mysticinterfuse1"]
+    },
+    "targets": [
+        {
+            "template": "SELF",
+            "cost": { "class": "ActionPoints", "actionPoints": "free" },
+            "missionFeedback": { "orientTo": "scenery" },
+            "aspectValues": [
+                { "id": "interfused", "maxValue": "(((mystic*2)+numExtraInterfusions)+(mysticDeck_openmind*(1+floor((POTENCY/3)))))-1" }
+            ]
+        },
+        {
+            "role": "scenery",
+            "template": "ADJACENT_SCENERY",
+            "alwaysSelect": true,
+            "missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION" },
+            "aiHints": { "scoreNearbyFoe": "600", "foeRange": "1.9+self.BONUS_RANGE" },
+            "aspectValues": [
+                { "id": "interfusedScenery", "forbidden": true }
+            ],
+            "range": "8.6+self.BONUS_RANGE",
+            "lineOfSight": "TERRAIN_ONLY"
+        }
+    ],
+    "outcomes": [
+        {
+            "class": "AttackRoll",
+            "defender": null,
+            "intermediateRole": "scenery",
+            "attackAnimationType": "magic",
+            "showAbilityName": "ifEnemy",
+            "always": {
+                "class": "DoAll",
+                "outcomes": [
+                    {
+                        "class": "Aspects",
+                        "target": "scenery",
+                        "addAspects": [
+                            {
+                                "id": "interfusedWithMystic",
+                                "value": "1",
+                                "merge": "max",
+                                "inRelationTo": "self"
+                            },
+                            { "id": "interfusedWithMonster", "value": "1", "merge": "max" }
+                        ]
+                    },
+                    {
+                        "class": "Aspects",
+                        "addAspects": [
+                            {
+                                "id": "drauvenInterfusedWithEntity",
+                                "value": "1",
+                                "merge": "max",
+                                "inRelationTo": "scenery"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+    }
