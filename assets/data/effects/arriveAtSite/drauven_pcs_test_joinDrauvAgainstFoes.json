@@ -1,0 +1,186 @@
+{
+"id": "drauven_pcs_test_joinDrauvAgainstFoes",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/drauven_pcs_test_joinDrauvAgainstFoes",
+	"modId": "drauven_pcs_test",
+	"author": "Ironskink"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Tragic-Sympathetic NPC"
+},
+"targets": [
+	{
+		"template": "HERO_BY_SCORE",
+		"slots": {
+			"requiredRoles": [ "hero" ]
+		},
+		"scoreFunction": "max(theme_drauven,drauven,drauven_pc)",
+		"scoreThreshold": "1",
+		"aspects": [ "alive", "theme_drauven" ],
+		"notAlreadyMatchedAs": []
+	},
+	{ "template": "EVENT", "threatFlavorExists": "cultist" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_PARTY", "injectedRole": null },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{
+		"template": "INJECTED_THREAT",
+		"allowDuplicates": true,
+		"aspectValues": [
+			{ "id": "cultist", "forbidden": true },
+			{ "id": "thrixl", "forbidden": true },
+			{ "id": "gorgon", "forbidden": true },
+			{ "id": "morthagi", "forbidden": true }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"equipment": {},
+							"anchor": { "x": 0.171, "y": 0.544 },
+							"size": 0.6234
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.741, "y": 0.497 },
+							"size": 0.5385
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "drauven_pcs_test_joinDrauvAgainstFoes",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "drauven_pcs_test_joinDrauvAgainstFoes",
+							"textKey": "~01~~panel_001~2_npc",
+							"pointerOwner": "npc",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "Mission",
+		"goal": "liberate",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{
+				"role": "foes",
+				"side": "player",
+				"customThreat": { "threatStrength": "2", "useExtraChapterCards": false },
+				"customIndividuals": [],
+				"customIndividualsByExpression": []
+			},
+			{
+				"role": "monster",
+				"side": "enemy",
+				"customThreat": { "threatFlavor": "cultist", "threatStrength": "6" }
+			},
+			{
+				"roles": [ "npc", "npc2", "npc3" ],
+				"side": "player"
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "drauvDefender_1",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "nonFarmer" },
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "AddHistory",
+							"addHistory": [
+								[ "drauvenBase", "bornDrauven", "drauvenCustomizationHead", "drauvenCustomizationBody", "drauvenCustomizationOther" ]
+							]
+						},
+						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
+					]
+				}
+			}
+		},
+		{
+			"role": "npc2",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "nonFarmer" },
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "AddHistory",
+							"addHistory": [
+								[ "drauvenBase" ],
+								[ "bornDrauven" ],
+								[ "drauvenCustomizationHead" ],
+								[ "drauvenCustomizationBody" ],
+								[ "drauvenCustomizationOther" ]
+							]
+						},
+						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
+					]
+				}
+			}
+		},
+		{
+			"role": "npc3",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "nonFarmer" },
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "AddHistory",
+							"addHistory": [
+								[ "drauvenBase" ],
+								[ "bornDrauven" ],
+								[ "drauvenCustomizationHead" ],
+								[ "drauvenCustomizationBody" ],
+								[ "drauvenCustomizationOther" ]
+							]
+						},
+						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
+					]
+				}
+			}
+		},
+		{
+			"role": "monster",
+			"createEntity": {
+				"query": { "type": "THREAT", "baseTag": "cultist_prophet_genericMiniboss" },
+				"monsterByChapterAndGroup": [],
+				"control": "enemy"
+			}
+		}
+	]
+}
+}

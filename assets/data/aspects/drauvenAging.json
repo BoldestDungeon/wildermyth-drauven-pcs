@@ -1,0 +1,91 @@
+[
+    { "id": "ageless", "lifespan": "all" },
+    { "id": "cannotAge", "lifespan": "all" },
+    { "id": "drauven_immuneToAgePenalties", "importance": -1, "lifespan": "all" },
+    {
+        "id": "drauven_young",
+        "stats": { 
+            "SPEED": 1.4, 
+            "DODGE": 10 
+        },
+        "lifespan": "all"
+    },
+    {
+        "id": "drauven_earlyMiddleAge",
+        "stats": {
+            "CHARISMA": 10,
+            "TENACITY": 5,
+            "HEALTH": -0.2,
+            "RECOVERY_RATE": 2,
+            "DODGE": -2,
+            "SPEED": 0.8
+        },
+        "lifespan": "all"
+    },
+    {
+        "id": "drauven_middleAge",
+        "stats": {
+            "CHARISMA": 5,
+            "TENACITY": 10,
+            "HEALTH": 0.4,
+            "RECOVERY_RATE": 4,
+            "DODGE": -4,
+            "SPEED": 0.2
+        },
+        "lifespan": "all"
+    },
+    {
+        "id": "drauven_lateMiddleAge",
+        "stats": {
+            "CHARISMA": 0,
+            "TENACITY": 15,
+            "HEALTH": 1.2,
+            "RECOVERY_RATE": 10,
+            "DODGE": -6,
+            "SPEED": -0.4
+        },
+        "lifespan": "all"
+    },
+    {
+        "id": "drauven_oldAge",
+        "effects": [],
+        "stats": {
+            "CHARISMA": -5,
+            "TENACITY": 20,
+            "HEALTH": 1.6,
+            "PERCEPTION": -1,
+            "RECOVERY_RATE": 15,
+            "DODGE": -9,
+            "SPEED": -0.8
+        },
+        "lifespan": "all"
+    },
+    {
+        "id": "drauven_veryOldAge",
+        "effects": [],
+        "stats": {
+            "CHARISMA": -10,
+            "TENACITY": 25,
+            "HEALTH": 2.2,
+            "PERCEPTION": -2,
+            "RECOVERY_RATE": 20,
+            "DODGE": -13,
+            "SPEED": -1.2
+        },
+        "lifespan": "all"
+    },
+    {
+        "id": "drauven_extremeOldAge",
+        "effects": [],
+        "stats": {
+            "CHARISMA": -15,
+            "TENACITY": 20,
+            "HEALTH": 2.3,
+            "PERCEPTION": -5,
+            "RECOVERY_RATE": 15,
+            "DODGE": -20,
+            "SPEED": -1.9
+        },
+        "lifespan": "all"
+    }
+    ]

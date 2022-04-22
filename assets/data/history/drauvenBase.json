@@ -1,0 +1,431 @@
+[
+{
+	"id": "500",
+	"weight": 0.95,
+	"category": "bornDrauven",
+	"forbiddenAspects": [ "female", "attractedToMen" ],
+	"impliedAspects": [ "male", "drauvenMale", "maleBody", "heterosexual", "attractedToWomen" ],
+	"humanName": "drauvenName",
+	"showInSummary": false
+},
+{
+	"id": "501",
+	"weight": 0.03,
+	"category": "bornDrauven",
+	"forbiddenAspects": [ "female", "attractedToWomen" ],
+	"impliedAspects": [ "male", "drauvenMale", "maleBody", "gay", "attractedToMen" ],
+	"humanName": "drauvenName",
+	"showInSummary": false
+},
+{
+	"id": "502",
+	"weight": 0.95,
+	"category": "bornDrauven",
+	"forbiddenAspects": [ "male", "attractedToWomen" ],
+	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "heterosexual", "attractedToMen" ],
+	"humanName": "drauvenName",
+	"showInSummary": false
+},
+{
+	"id": "503",
+	"weight": 0.03,
+	"category": "bornDrauven",
+	"forbiddenAspects": [ "male", "attractedToMen" ],
+	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "gay", "attractedToWomen" ],
+	"humanName": "drauvenName",
+	"showInSummary": false
+},
+{
+	"id": "504",
+	"weight": 0.04,
+	"category": "bornDrauven",
+	"forbiddenAspects": [ "female" ],
+	"impliedAspects": [ "male", "drauvenMale", "maleBody", "attractedToMen", "attractedToWomen" ],
+	"humanName": "drauvenName",
+	"showInSummary": false
+},
+{
+	"id": "505",
+	"weight": 0.04,
+	"category": "bornDrauven",
+	"forbiddenAspects": [ "male" ],
+	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "attractedToMen", "attractedToWomen" ],
+	"humanName": "drauvenName",
+	"showInSummary": false
+},
+{
+	"id": "709",
+	"category": "dieOfOldAge",
+	"impliedAspects": [ "dead" ],
+	"removeAspects": [ "alive", "activeDefender" ]
+},
+{
+	"id": "701",
+	"category": "drauven_earlyMiddleAge",
+	"impliedAspects": [ "drauven_earlyMiddleAge" ],
+	"removeAspects": [
+		"drauven_young",
+		"drauven_middleAge",
+		"drauven_lateMiddleAge",
+		"drauven_oldAge",
+		"drauven_veryOldAge",
+		"drauven_extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.1___",
+	"weight": 0.2,
+	"impliedAspects": ["drauvenHeadCustomization1"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head._2__",
+	"weight": 0.2,
+	"impliedAspects": ["drauvenHeadCustomization2"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.__3_",
+	"weight": 0.2,
+	"impliedAspects": ["drauvenHeadCustomization3"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.___4",
+	"weight": 0.2,
+	"impliedAspects": ["drauvenHeadCustomization4"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.12__",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenHeadCustomization1", "drauvenHeadCustomization2"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.1_3_",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenHeadCustomization1", "drauvenHeadCustomization3"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.1__4",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenHeadCustomization1", "drauvenHeadCustomization4"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head._23_",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenHeadCustomization2", "drauvenHeadCustomization3"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head._2_4",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenHeadCustomization2", "drauvenHeadCustomization4"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.__34",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenHeadCustomization3", "drauvenHeadCustomization4"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.123_",
+	"weight": 0.2,
+	"impliedAspects": ["drauvenHeadCustomization1", "drauvenHeadCustomization2", "drauvenHeadCustomization3"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.12_4",
+	"weight": 0.2,
+	"impliedAspects": ["drauvenHeadCustomization1", "drauvenHeadCustomization2", "drauvenHeadCustomization4"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.1_34",
+	"weight": 0.2,
+	"impliedAspects": ["drauvenHeadCustomization1", "drauvenHeadCustomization3", "drauvenHeadCustomization4"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head._234",
+	"weight": 0.2,
+	"impliedAspects": ["drauvenHeadCustomization2", "drauvenHeadCustomization3", "drauvenHeadCustomization4"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.1234",
+	"weight": 0.1,
+	"impliedAspects": ["drauvenHeadCustomization1", "drauvenHeadCustomization2", "drauvenHeadCustomization3", "drauvenHeadCustomization4"]
+},
+{
+	"category": "drauvenCustomizationHead",
+	"id": "drauvenCustom.Head.____",
+	"weight": 0.1,
+	"impliedAspects": []
+},
+
+{
+	"category": "drauvenCustomizationBody",
+	"id": "drauvenCustom.Body.1__",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenBodyCustomization1"]
+},
+{
+	"category": "drauvenCustomizationBody",
+	"id": "drauvenCustom.Body._2_",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenBodyCustomization2"]
+},
+{
+	"category": "drauvenCustomizationBody",
+	"id": "drauvenCustom.Body.__3",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenBodyCustomization3"]
+},
+{
+	"category": "drauvenCustomizationBody",
+	"id": "drauvenCustom.Body.12_",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenBodyCustomization1", "drauvenBodyCustomization2"]
+},
+{
+	"category": "drauvenCustomizationBody",
+	"id": "drauvenCustom.Body._23",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenBodyCustomization2", "drauvenBodyCustomization3"]
+},
+{
+	"category": "drauvenCustomizationBody",
+	"id": "drauvenCustom.Body.1_3",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenBodyCustomization1", "drauvenBodyCustomization3"]
+},
+{
+	"category": "drauvenCustomizationBody",
+	"id": "drauvenCustom.Body.123",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenBodyCustomization1", "drauvenBodyCustomization2", "drauvenBodyCustomization3"]
+},
+{
+	"category": "drauvenCustomizationBody",
+	"id": "drauvenCustom.Body.___",
+	"weight": 0.35,
+	"impliedAspects": []
+},
+
+
+{
+	"category": "drauvenCustomizationOther",
+	"id": "drauvenCustom.Other.1__",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenOtherCustomization1"]
+},
+{
+	"category": "drauvenCustomizationOther",
+	"id": "drauvenCustom.Other._2_",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenOtherCustomization2"]
+},
+{
+	"category": "drauvenCustomizationOther",
+	"id": "drauvenCustom.Other.__3",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenOtherCustomization3"]
+},
+{
+	"category": "drauvenCustomizationOther",
+	"id": "drauvenCustom.Other.12_",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenOtherCustomization1", "drauvenOtherCustomization2"]
+},
+{
+	"category": "drauvenCustomizationOther",
+	"id": "drauvenCustom.Other._23",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenOtherCustomization2", "drauvenOtherCustomization3"]
+},
+{
+	"category": "drauvenCustomizationOther",
+	"id": "drauvenCustom.Other.1_3",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenOtherCustomization1", "drauvenOtherCustomization3"]
+},
+{
+	"category": "drauvenCustomizationOther",
+	"id": "drauvenCustom.Other.123",
+	"weight": 0.35,
+	"impliedAspects": ["drauvenOtherCustomization1", "drauvenOtherCustomization2", "drauvenOtherCustomization3"]
+},
+{
+	"category": "drauvenCustomizationOther",
+	"id": "drauvenCustom.Other.___",
+	"weight": 0.35,
+	"impliedAspects": []
+},
+
+{
+	"id": "706",
+	"category": "drauven_extremeOldAge",
+	"impliedAspects": [ "drauven_extremeOldAge" ],
+	"removeAspects": [
+		"drauven_young",
+		"drauven_earlyMiddleAge",
+		"drauven_middleAge",
+		"drauven_lateMiddleAge",
+		"drauven_oldAge",
+		"drauven_veryOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "drauvenBase.001",
+	"category": "drauvenBase",
+	"impliedAspects": [
+		"human",
+		"nonhuman",
+		"drauven",
+		"drauven_pc",
+		"drauvenBlood",
+		"activeDefender",
+		"alive",
+		"mobileMonster",
+		"eligibleForDeathChoice",
+		"canWallWithAllies",
+		"simplePresence",
+		"humanRig",
+		"ATTACHMENTS_workingRightArm",
+		"ATTACHMENTS_workingLeftArm",
+		"drauvenSkin_naturalLeftArm",
+		"drauvenSkin_naturalLeftHand",
+		"drauvenSkin_naturalRightArm",
+		"drauvenSkin_naturalRightHand",
+		"drauvenSkin_naturalLeftLeg",
+		"drauvenSkin_naturalRightLeg",
+		"drauvenSkin_naturalHead"
+	],
+	"removeAspects":[
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "drauvenSkin_aging.001",
+	"category": "drauvenSkin_aging",
+	"impliedAspects": [],
+	"showInSummary": false
+},
+{
+	"id": "drauvenSkin_colors.001",
+	"category": "drauvenSkin_colors",
+	"impliedAspects": [],
+	"showInSummary": false
+},
+{
+	"id": "drauvenSkin_head.001",
+	"category": "drauvenSkin_head",
+	"impliedAspects": [],
+	"showInSummary": false
+},
+{
+	"id": "707",
+	"category": "immortal",
+	"impliedAspects": [],
+	"removeAspects": [
+		"drauven_young",
+		"drauven_earlyMiddleAge",
+		"drauven_middleAge",
+		"drauven_lateMiddleAge",
+		"drauven_oldAge",
+		"drauven_veryOldAge",
+		"drauven_extremeOldAge"
+	]
+},
+{
+	"id": "703",
+	"category": "drauven_lateMiddleAge",
+	"impliedAspects": [ "drauven_lateMiddleAge" ],
+	"removeAspects": [
+		"drauven_young",
+		"drauven_earlyMiddleAge",
+		"drauven_middleAge",
+		"drauven_oldAge",
+		"drauven_veryOldAge",
+		"drauven_extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "702",
+	"category": "drauven_middleAge",
+	"impliedAspects": [ "drauven_middleAge" ],
+	"removeAspects": [
+		"drauven_young",
+		"drauven_earlyMiddleAge",
+		"drauven_lateMiddleAge",
+		"drauven_oldAge",
+		"drauven_veryOldAge",
+		"drauven_extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "708",
+	"category": "mortal",
+	"impliedAspects": [ "mortal" ],
+	"showInSummary": false
+},
+{
+	"id": "704",
+	"category": "drauven_oldAge",
+	"impliedAspects": [ "drauven_oldAge" ],
+	"removeAspects": [
+		"drauven_young",
+		"drauven_earlyMiddleAge",
+		"drauven_middleAge",
+		"drauven_lateMiddleAge",
+		"drauven_veryOldAge",
+		"drauven_extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "705",
+	"category": "drauven_veryOldAge",
+	"impliedAspects": [ "drauven_veryOldAge" ],
+	"removeAspects": [
+		"drauven_young",
+		"drauven_earlyMiddleAge",
+		"drauven_middleAge",
+		"drauven_lateMiddleAge",
+		"drauven_oldAge",
+		"drauven_extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "700",
+	"category": "drauven_young",
+	"impliedAspects": [ "drauven_young" ],
+	"removeAspects": [
+		"drauven_earlyMiddleAge",
+		"drauven_middleAge",
+		"drauven_lateMiddleAge",
+		"drauven_oldAge",
+		"drauven_veryOldAge",
+		"drauven_extremeOldAge"
+	],
+	"showInSummary": false
+}
+]

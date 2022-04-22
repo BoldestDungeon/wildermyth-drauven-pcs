@@ -1,0 +1,1538 @@
+{
+"id": "encounter_heroesArriveAtSite_drauvRecruit",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/drauvRecruit",
+	"modId": "drauven_pcs_test",
+	"author": "Shae Rossi",
+	"STUB": "just a story about meeting a potential new recruit. Option to make the npc a badguy if they player doesn't choose them?"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterWeight": "1+RECRUIT_ENCOUNTER_SCORE_OFFSET",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{
+		"template": "COMPANY",
+		"aspectValues": [
+			{ "id": "forbidNonLegacyRecruitmentEvents", "forbidden": true }
+		],
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "RESOURCE.legacyPoints",
+		"b": "2+RECRUIT_COST_ADJUSTMENT"
+	},
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "loner",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LONER",
+		"scoreThreshold": "60"
+	},
+	{
+		"role": "bookish",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "BOOKISH",
+		"notAlreadyMatchedAs": [ "loner" ]
+	},
+	{
+		"role": "goofball",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "GOOFBALL",
+		"notAlreadyMatchedAs": [ "bookish", "loner" ]
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEADER",
+		"notAlreadyMatchedAs": [ "loner", "bookish", "goofball" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_ruinsFoggy.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"anchor": { "x": 0.899, "y": 0.556 },
+							"drawDepth": -2,
+							"head": { "rotate": -31.701, "scaleY": -1 }
+						},
+						{
+							"role": "leader",
+							"focus": "foot",
+							"anchor": { "x": 0.116, "y": -0.134 },
+							"size": 0.383,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "goofball",
+							"form": "frame-joke",
+							"focus": "foot",
+							"anchor": { "x": 0.391, "y": -0.456 },
+							"size": 0.563,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"head": { "rotate": -2.253 }
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.211, "y": 0.396 },
+							"size": 0.252,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_001~1_bookish",
+							"pointerOwner": "bookish",
+							"location": "topRight",
+							"padXFraction": 0.001,
+							"padYFraction": 0.008,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 20, "dY": -1.999939 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_001~2_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.438,
+							"padYFraction": 0.197,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "loner",
+							"anchor": { "x": 0.274, "y": 0.532 },
+							"size": 0.471
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_002~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.751, "y": 0.512 },
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.374, "y": 0.327 },
+							"size": 0.233,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_003~1_loner",
+							"style": "thought",
+							"pointerOwner": "loner",
+							"padXFraction": 0.224,
+							"padYFraction": 0.717,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -95.52754, "dX": -23, "dY": 62, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_003~2_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_ruinsFoggy.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"anchor": { "x": 1.167, "y": 0.744 },
+							"size": 0.814,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"head": { "rotate": 13.49, "scaleY": 1 }
+						},
+						{
+							"role": "leader",
+							"focus": "foot",
+							"anchor": { "x": 0.707, "y": -0.146 },
+							"size": 0.383,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 4.477, "scaleY": 1 }
+						},
+						{
+							"role": "goofball",
+							"anchor": { "x": 0.865, "y": 0.636 },
+							"size": 0.563,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"head": { "rotate": 7.299, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.211, "y": 0.396 },
+							"size": 0.252,
+							"nameTag": "none"
+						},
+						{
+							"role": "loner",
+							"form": "frame-grim",
+							"anchor": { "x": 0.028, "y": 0.532 },
+							"size": 0.452,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"head": { "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_004~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-angry",
+							"anchor": { "x": 0.171, "y": 0.384 },
+							"size": 0.345,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.314, "y": 0.376 },
+							"size": 0.368,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_005~1_loner",
+							"style": "thought",
+							"pointerOwner": "loner",
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_005~2_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-surprised",
+							"focus": "middle",
+							"anchor": { "x": 0.168, "y": 0.13 },
+							"size": 0.345
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.314, "y": 0.376 },
+							"size": 0.368,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.88, "y": -0.078 },
+							"size": 0.324,
+							"nameTag": "none",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_006~1_loner",
+							"style": "thought",
+							"pointerOwner": "loner",
+							"padXFraction": 0.205,
+							"padYFraction": 0.275,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_006~2_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"focus": "foot",
+							"anchor": { "x": 0.381, "y": -0.102 },
+							"size": 0.334,
+							"drawDepth": -2
+						},
+						{
+							"role": "loner",
+							"form": "frame-grim",
+							"anchor": { "x": 0.047, "y": 0.295 },
+							"size": 0.334,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.245, "y": 0.404 },
+							"size": 0.279,
+							"drawDepth": -1,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_007~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-scared",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.459, "y": -0.086 },
+							"size": 0.334,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": 18.208 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-rage",
+							"focus": "foot",
+							"anchor": { "x": 0.21, "y": -0.074 },
+							"size": 0.334,
+							"drawDepth": -2
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.245, "y": 0.404 },
+							"size": 0.279,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:actionLines_arcShort.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.07, "y": 0.36 },
+							"size": 0.447,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 13.946 }
+						},
+						{
+							"assetSpec": "comic:actionLines_dash.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.405, "y": 0.267 },
+							"size": 0.18,
+							"drawDepth": -1,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_008~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.582,
+							"padYFraction": 0.291,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 22, "dY": -11, "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_008~2_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.24,
+							"padYFraction": 0.188,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 34, "dY": -1 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.75, "y": 0.564 },
+							"head": { "rotate": -13.241, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_009~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-angry",
+							"anchor": { "x": 0.193, "y": 0.536 },
+							"size": 0.665
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"facing": "left",
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"size": 0.643,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_010~1_loner",
+							"pointerOwner": "loner"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.459, "y": -0.086 },
+							"size": 0.334,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": 7.618 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-rage",
+							"focus": "foot",
+							"anchor": { "x": 0.291, "y": -0.03 },
+							"size": 0.334,
+							"drawDepth": -2
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.245, "y": 0.404 },
+							"size": 0.279,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.819, "y": -0.05 },
+							"size": 0.334,
+							"nameTag": "none"
+						},
+						{
+							"role": "goofball",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.968, "y": -0.046 },
+							"size": 0.334,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_011~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.463,
+							"padYFraction": 0.234,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 22, "dY": -11, "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_011~2_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.333,
+							"padYFraction": 0.151,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{ "role": "npc", "form": "frame-joy", "facing": "left" }
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_012~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-joy",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.462, "y": -0.062 },
+							"size": 0.334,
+							"drawDepth": -2,
+							"head": { "scaleY": -1 },
+							"foot": { "rotate": 7.618 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-surprised",
+							"focus": "foot",
+							"anchor": { "x": 0.288, "y": -0.058 },
+							"size": 0.334,
+							"drawDepth": -2,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.245, "y": 0.404 },
+							"size": 0.279,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-happy",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.818, "y": -0.062 },
+							"size": 0.334,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "goofball",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.968, "y": -0.054 },
+							"size": 0.334,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_013~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.247,
+							"padYFraction": 0.127,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 5, "dY": -7, "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_013~2_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.649,
+							"padYFraction": 0.255,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -19, "dY": -7 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-joy",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.409, "y": 0.425 },
+							"drawDepth": 1
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_014~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{ "role": "loner", "form": "frame-dubious" }
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_015~1_loner",
+							"pointerOwner": "loner"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"anchor": { "x": 0.455, "y": 0.415 },
+							"drawDepth": 1,
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_016~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-joy",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.459, "y": -0.086 },
+							"size": 0.334,
+							"drawDepth": -2,
+							"head": { "scaleY": -1 },
+							"foot": { "rotate": 7.618 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-surprised",
+							"focus": "foot",
+							"anchor": { "x": 0.292, "y": -0.054 },
+							"size": 0.334,
+							"drawDepth": -2,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.245, "y": 0.404 },
+							"size": 0.279,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.718, "y": -0.058 },
+							"size": 0.334,
+							"nameTag": "none"
+						},
+						{
+							"role": "goofball",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.818, "y": -0.054 },
+							"size": 0.334,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"role": "bookish",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.955, "y": -0.082 },
+							"size": 0.334,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_017~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.463,
+							"padYFraction": 0.234,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 22, "dY": -11, "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_017~2_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.229,
+							"padYFraction": 0.172,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.48, "y": 0.42 },
+							"drawDepth": 1,
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_018~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_interior_redWindows.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.229, "y": 0.388 },
+							"size": 0.612,
+							"nameTag": "none",
+							"head": { "rotate": 20.462 }
+						},
+						{
+							"assetSpec": "comic:musicNoteDouble1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.811, "y": 0.665 },
+							"size": 0.312,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:musicNoteSingle1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.613, "y": 0.669 },
+							"size": 0.272,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_019~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_stoneWallVillage.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-rage",
+							"anchor": { "x": 0.218, "y": 0.528 },
+							"size": 0.465,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:drauven/drauven_haunt.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.795, "y": 1.01 },
+							"size": 0.514,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_020~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_hillsGreen2.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.822, "y": -0.062 },
+							"size": 0.333,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wallForest1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.418, "y": 0.155 },
+							"size": 0.485,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_021~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_ruinsFoggy.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauvRecruit",
+							"textKey": "~01~prompt~panel_022~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "loner",
+									"form": "frame-skeptical",
+									"anchor": { "x": 0.554, "y": 0.342 },
+									"size": 0.69
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/drauvRecruit",
+									"textKey": "~02~choice_one~panel_001~1_loner",
+									"pointerOwner": "loner"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "leader",
+									"form": "frame-happy",
+									"facing": "left",
+									"anchor": { "x": 0.583, "y": 0.359 },
+									"size": 0.651
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/drauvRecruit",
+									"textKey": "~03~choice_two~panel_001~1_leader",
+									"pointerOwner": "leader"
+								},
+								{
+									"textSourceFile": "arriveAtSite/drauvRecruit",
+									"textKey": "~03~choice_two~panel_001~2_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "loner",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "loner", "form": "frame-skeptical" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~04~player_chose_one~panel_001~1_loner",
+										"pointerOwner": "loner"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-sad",
+										"facing": "left",
+										"equipment": {},
+										"size": 0.471,
+										"nameTag": "none",
+										"head": { "rotate": -43.091 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~04~player_chose_one~panel_002~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-angry",
+										"facing": "left",
+										"head": { "rotate": -43.091, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~04~player_chose_one~panel_003~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-sad",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.136, "y": -0.082 },
+										"size": 0.334,
+										"drawDepth": -2,
+										"head": { "rotate": -37.999, "scaleY": 1 },
+										"foot": { "rotate": 7.618 }
+									},
+									{
+										"role": "loner",
+										"form": "frame-grim",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.424, "y": -0.022 },
+										"size": 0.334,
+										"drawDepth": -2,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.245, "y": 0.404 },
+										"size": 0.279,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-sad",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.713, "y": -0.018 },
+										"size": 0.334,
+										"nameTag": "none"
+									},
+									{
+										"role": "goofball",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.818, "y": -0.054 },
+										"size": 0.334,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"role": "bookish",
+										"form": "frame-sad",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.955, "y": -0.082 },
+										"size": 0.334,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~04~player_chose_one~panel_004~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.123,
+										"padYFraction": 0.168,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 22, "dY": -11, "pointerOrientH": "onRight" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~04~player_chose_one~panel_004~2_loner",
+										"pointerOwner": "loner",
+										"padXFraction": 0.229,
+										"padYFraction": 0.172,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "loner",
+										"form": "frame-grim",
+										"focus": "foot",
+										"anchor": { "x": 0.424, "y": -0.022 },
+										"size": 0.334,
+										"drawDepth": -2,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.245, "y": 0.404 },
+										"size": 0.279,
+										"drawDepth": -1,
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"focus": "foot",
+										"anchor": { "x": 0.682, "y": -0.026 },
+										"size": 0.334,
+										"nameTag": "none",
+										"head": { "rotate": -16.681, "scaleY": -1 }
+									},
+									{
+										"role": "goofball",
+										"form": "frame-sad",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.818, "y": -0.054 },
+										"size": 0.334,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"role": "bookish",
+										"form": "frame-sad",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.955, "y": -0.082 },
+										"size": 0.334,
+										"nameTag": "none",
+										"head": { "rotate": 17.042 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~04~player_chose_one~panel_005~1_loner",
+										"pointerOwner": "loner",
+										"padXFraction": 0.305,
+										"padYFraction": 0.053,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "leader",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "leader", "form": "frame-happy", "facing": "left" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~05~player_chose_two~panel_001~1_leader",
+										"pointerOwner": "leader"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~05~player_chose_two~panel_002~1_npc",
+										"pointerOwner": "npc",
+										"padYFraction": 0.029,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-joy",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.467, "y": -0.04 },
+										"size": 0.334,
+										"drawDepth": -2,
+										"head": { "rotate": -17.931, "scaleY": -1 },
+										"foot": { "rotate": 2.834 }
+									},
+									{
+										"role": "loner",
+										"form": "frame-skeptical",
+										"focus": "foot",
+										"anchor": { "x": 0.291, "y": -0.03 },
+										"size": 0.334,
+										"drawDepth": -2,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.245, "y": 0.404 },
+										"size": 0.279,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-interested",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.7, "y": -0.026 },
+										"size": 0.334,
+										"nameTag": "none"
+									},
+									{
+										"role": "goofball",
+										"form": "frame-happy",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.818, "y": -0.054 },
+										"size": 0.334,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"role": "bookish",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.955, "y": -0.082 },
+										"size": 0.334,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~05~player_chose_two~panel_003~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.34,
+										"padYFraction": 0.102,
+										"widthFraction": 0.52124643,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0, "dY": -2, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "loner", "form": "frame-grim" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~05~player_chose_two~panel_004~1_loner",
+										"pointerOwner": "loner"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-joy",
+										"focus": "foot",
+										"anchor": { "x": 0.53, "y": -0.051 },
+										"size": 0.334,
+										"drawDepth": -2,
+										"head": { "rotate": -17.931, "scaleY": -1 },
+										"foot": { "rotate": 2.712 }
+									},
+									{
+										"role": "loner",
+										"form": "frame-grim",
+										"focus": "foot",
+										"anchor": { "x": 0.188, "y": -0.046 },
+										"size": 0.334,
+										"drawDepth": -2,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:ui/comics/comicForeground_rubblePile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.014, "y": 0.427 },
+										"size": 0.279,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"focus": "foot",
+										"anchor": { "x": 0.819, "y": -0.03 },
+										"size": 0.334,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "goofball",
+										"form": "frame-happy",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.006, "y": -0.016 },
+										"size": 0.334,
+										"drawDepth": -1,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauvRecruit",
+										"textKey": "~05~player_chose_two~panel_005~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.283,
+										"padYFraction": 0.125,
+										"widthFraction": 0.6516129,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0, "dY": -2, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "AddResources",
+					"target": "company",
+					"amount": "0-(2+RECRUIT_COST_ADJUSTMENT)"
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc",
+					"becomeAllyOf": "party",
+					"makeHero": true
+				},
+				{
+					"class": "AddHistory",
+					"target": "npc",
+					"inlineHistory": { "id": "encounter_heroesArriveAtSite_drauvRecruit.outcome" }
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{
+							"roles": [ "party", "npc" ],
+							"side": "player"
+						},
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "hunter",
+					"setAge": "young",
+					"setEquipment": "tierTwo",
+					"customHistory": []
+				},
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "AddHistory",
+							"target": "npc",
+							"addHistory": [
+								[ "drauvenBase" ],
+								[ "bornDrauven" ],
+								[ "drauvenCustomizationHead" ],
+								[ "drauvenCustomizationBody" ],
+								[ "drauvenCustomizationOther" ]
+							]
+						},
+						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" }
+					]
+				}
+			}
+		},
+		{
+			"role": "npc2",
+			"createEntity": {
+				"query": { "baseTag": "human" }
+			}
+		},
+		{
+			"role": "npc3",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		}
+	]
+}
+}
