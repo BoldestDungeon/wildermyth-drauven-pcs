@@ -1,0 +1,27 @@
+{
+"id": "progressLateMiddleAge",
+"info": { "dataVersion": 1, "sourceFile": "aging/progressLateMiddleAge" },
+"type": "MONTHLY",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "cannotAge", "forbidden": true },
+			{ "id": "nonhuman", "forbidden": true },
+			{ "id": "hookIntegrity_eternalUnrest", "forbidden": true }
+		],
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "AGE_IN_YEARS",
+		"b": "50"
+	},
+	{ "template": "SELF", "test": "GREATER_THAN", "a": "0.05", "b": "[0,1]" }
+],
+"outcomes": [
+	{
+		"class": "AddHistory",
+		"addHistory": [
+			[ "lateMiddleAge" ]
+		]
+	}
+]
+}

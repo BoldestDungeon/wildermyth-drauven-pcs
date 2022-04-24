@@ -1,5 +1,5 @@
 {
-"id": "progressToEarlyMiddleAge",
+"id": "drauven_progressToEarlyMiddleAge",
 "info": { "dataVersion": 1, "sourceFile": "aging/drauven_progressToEarlyMiddleAge" },
 "type": "MONTHLY",
 "targets": [
@@ -7,16 +7,24 @@
 		"template": "SELF",
 		"aspectValues": [
 			{ "id": "drauven_pc" },
+			{ "id": "drauven_young" },
+			{ "id": "nonhuman" },
 			{ "id": "cannotAge", "forbidden": true },
 			{ "id": "hookIntegrity_eternalUnrest", "forbidden": true }
 		],
 		"test": "GREATER_THAN_OR_EQUAL_TO",
 		"a": "AGE_IN_YEARS",
-		"b": "30"
+		"b": "29"
 	},
 	{ "template": "SELF", "test": "GREATER_THAN", "a": "0.05", "b": "[0,1]" }
 ],
 "outcomes": [
+	{
+		"class": "RemoveHistory",
+		"addHistory": [
+			[ "drauven_young" ]
+		]
+	}
 	{
 		"class": "AddHistory",
 		"addHistory": [

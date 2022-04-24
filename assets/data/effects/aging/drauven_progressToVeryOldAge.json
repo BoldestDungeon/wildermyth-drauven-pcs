@@ -1,5 +1,5 @@
 {
-"id": "progressToVeryOldAge",
+"id": "drauven_progressToVeryOldAge",
 "info": { "dataVersion": 1, "sourceFile": "aging/drauven_progressToVeryOldAge" },
 "type": "MONTHLY",
 "targets": [
@@ -7,6 +7,7 @@
 		"template": "SELF",
 		"aspectValues": [
 			{ "id": "drauven_pc" },
+			{ "id": "nonhuman" },
 			{ "id": "cannotAge", "forbidden": true },
 			{ "id": "hookIntegrity_eternalUnrest", "forbidden": true }
 		],
