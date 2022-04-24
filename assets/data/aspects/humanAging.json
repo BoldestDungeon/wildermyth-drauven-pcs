@@ -1,13 +1,14 @@
 [
 { "id": "ageless", "lifespan": "all" },
-{ "id": "nonhuman", "lifespan": "all" },
+{ "id": "nonhuman", "lifespan": "all", "forbidden": true },
 { "id": "cannotAge", "lifespan": "all" },
+{ "id": "drauven_pc", "lifespan": "all", "forbidden": true },
 {
 	"id": "earlyMiddleAge",
 	"stats": {
 		"CHARISMA": 10,
 		"DODGE": -2,
-		"HEALTH": 20,
+		"HEALTH": -0.2,
 		"RECOVERY_RATE": -8,
 		"SPEED": -0.2,
 		"TENACITY": 5

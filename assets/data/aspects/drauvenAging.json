@@ -1,7 +1,7 @@
 [
     { "id": "ageless", "lifespan": "all" },
     { "id": "cannotAge", "lifespan": "all" },
-    { "id": "drauven_immuneToAgePenalties", "importance": -1, "lifespan": "all" },
+    { "id": "drauven_pc", "importance": 10, "lifespan": "all" },
     {
         "id": "drauven_young",
         "stats": { 
