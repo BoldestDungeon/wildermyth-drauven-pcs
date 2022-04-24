@@ -1,7 +1,6 @@
 [
-    { "id": "ageless", "lifespan": "all" },
-    { "id": "cannotAge", "lifespan": "all" },
-    { "id": "drauven_pc", "importance": 10, "lifespan": "all" },
+    { "id": "drauven_ageless", "lifespan": "all" },
+    { "id": "drauven_cannotAge", "lifespan": "all" },
     {
         "id": "drauven_young",
         "stats": { 

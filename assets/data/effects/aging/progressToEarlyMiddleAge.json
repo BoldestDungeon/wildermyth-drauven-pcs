@@ -7,8 +7,7 @@
 		"template": "SELF",
 		"aspectValues": [
 			{ "id": "cannotAge", "forbidden": true },
-			{ "id": "drauven_pc", "lifespan": "all", "forbidden": true },
-			{ "id": "nonhuman", "lifespan": "all", "forbidden": true },
+			{ "id": "nonhuman",  "forbidden": true },
 			{ "id": "hookIntegrity_eternalUnrest", "forbidden": true }
 		],
 		"test": "GREATER_THAN_OR_EQUAL_TO",
@@ -22,7 +21,6 @@
 		"class": "AddHistory",
 		"addHistory": [
 			[ "earlyMiddleAge" ]
-			[ "drauven_earlyMiddleAge" ]
 		]
 	}
 ]
