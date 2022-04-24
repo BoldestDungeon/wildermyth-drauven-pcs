@@ -1,8 +1,7 @@
 [
 { "id": "ageless", "lifespan": "all" },
-{ "id": "nonhuman", "lifespan": "all", "forbidden": true },
+{ "id": "nonhuman", "lifespan": "all" },
 { "id": "cannotAge", "lifespan": "all" },
-{ "id": "drauven_pc", "lifespan": "all", "forbidden": true },
 {
 	"id": "earlyMiddleAge",
 	"stats": {
