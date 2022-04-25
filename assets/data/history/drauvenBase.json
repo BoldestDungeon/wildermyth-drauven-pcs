@@ -12,11 +12,13 @@
 	"impliedAspects": [ "drauven_earlyMiddleAge" ],
 	"removeAspects": [
 		"drauven_young",
-		"drauven_middleAge",
-		"drauven_lateMiddleAge",
-		"drauven_oldAge",
-		"drauven_veryOldAge",
-		"drauven_extremeOldAge"
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
 	],
 	"showInSummary": false
 },
@@ -226,7 +228,14 @@
 		"drauven_middleAge",
 		"drauven_lateMiddleAge",
 		"drauven_oldAge",
-		"drauven_veryOldAge"
+		"drauven_veryOldAge",
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
 	],
 	"showInSummary": false
 },
@@ -307,9 +316,13 @@
 		"drauven_young",
 		"drauven_earlyMiddleAge",
 		"drauven_middleAge",
-		"drauven_oldAge",
-		"drauven_veryOldAge",
-		"drauven_extremeOldAge"
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
 	],
 	"showInSummary": false
 },
@@ -320,10 +333,13 @@
 	"removeAspects": [
 		"drauven_young",
 		"drauven_earlyMiddleAge",
-		"drauven_lateMiddleAge",
-		"drauven_oldAge",
-		"drauven_veryOldAge",
-		"drauven_extremeOldAge"
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
 	],
 	"showInSummary": false
 },
@@ -342,8 +358,13 @@
 		"drauven_earlyMiddleAge",
 		"drauven_middleAge",
 		"drauven_lateMiddleAge",
-		"drauven_veryOldAge",
-		"drauven_extremeOldAge"
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
 	],
 	"showInSummary": false
 },
@@ -357,7 +378,13 @@
 		"drauven_middleAge",
 		"drauven_lateMiddleAge",
 		"drauven_oldAge",
-		"drauven_extremeOldAge"
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
 	],
 	"showInSummary": false
 },
@@ -366,12 +393,13 @@
 	"category": "drauven_young",
 	"impliedAspects": [ "drauven_young" ],
 	"removeAspects": [
-		"drauven_earlyMiddleAge",
-		"drauven_middleAge",
-		"drauven_lateMiddleAge",
-		"drauven_oldAge",
-		"drauven_veryOldAge",
-		"drauven_extremeOldAge"
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
 	],
 	"showInSummary": false
 }

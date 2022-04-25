@@ -7,7 +7,6 @@
 		"template": "SELF",
 		"aspectValues": [
 			{ "id": "drauven_pc" },
-			{ "id": "nonhuman" },
 			{ "id": "cannotAge", "forbidden": true },
 			{ "id": "hookIntegrity_eternalUnrest", "forbidden": true }
 		],
@@ -15,7 +14,7 @@
 		"a": "AGE_IN_YEARS",
 		"b": "40"
 	},
-	{ "template": "SELF", "test": "GREATER_THAN", "a": "0.05", "b": "[0,1]" }
+	{ "template": "SELF", "test": "GREATER_THAN", "a": "5", "b": "[0,1]" }
 ],
 "outcomes": [
 	{
