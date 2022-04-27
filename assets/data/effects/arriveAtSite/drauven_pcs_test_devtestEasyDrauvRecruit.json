@@ -1,0 +1,454 @@
+{
+"id": "drauven_pcs_test_devtestEasyDrauvRecruit",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+	"modId": "drauven_pcs_test",
+	"author": "Ironskink"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerTurn",
+	"encounterEnabled": true },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"equipment": {},
+							"anchor": { "x": 0.185, "y": 0.566 }
+						},
+						{
+							"role": "npc2",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.773, "y": 0.462 }
+						},
+						{
+							"role": "npc3",
+							"equipment": {},
+							"anchor": { "x": 0.536, "y": 0.525 },
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+							"textKey": "~01~prompt~panel_001~2_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.085,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+							"textKey": "~01~prompt~panel_001~3_npc3",
+							"pointerOwner": "npc3",
+							"padXFraction": 0.43600002,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "npc",
+									"equipment": {},
+									"size": 1.05569
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+									"textKey": "~02~choice_one~panel_001~1_narration",
+									"style": "narration"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "npc2",
+									"equipment": {},
+									"size": 1.05569
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+									"textKey": "~03~choice_two~panel_001~1_narration",
+									"style": "narration"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "npc3",
+									"equipment": {},
+									"size": 1.05569
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+									"textKey": "~04~choice_three~panel_001~1_narration",
+									"style": "narration"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "four",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "npc",
+									"equipment": {},
+									"anchor": { "x": 0.477, "y": 0.381 },
+									"size": 0.7741,
+									"nameTag": null
+								},
+								{
+									"role": "npc2",
+									"equipment": {},
+									"anchor": { "x": 0.78, "y": 0.575 },
+									"size": 0.4739,
+									"nameTag": null
+								},
+								{
+									"role": "npc3",
+									"equipment": {},
+									"anchor": { "x": 0.188, "y": 0.575 },
+									"size": 0.4552,
+									"nameTag": null
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+									"textKey": "~05~choice_four~panel_001~1_narration",
+									"style": "narration"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"equipment": {}
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textKey": "~06~player_chose_one~panel_001~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc",
+					"becomeAllyOf": "party",
+					"makeHero": true
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc2",
+										"equipment": {}
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textKey": "~07~player_chose_two~panel_001~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc2",
+					"becomeAllyOf": "party",
+					"makeHero": true
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc3",
+										"equipment": {}
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textKey": "~08~player_chose_three~panel_001~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc3",
+					"becomeAllyOf": "party",
+					"makeHero": true
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "four",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"equipment": {},
+										"anchor": { "x": 0.888, "y": 0.466 }
+									},
+									{
+										"role": "npc2",
+										"equipment": {},
+										"anchor": { "x": 0.54, "y": 0.346 },
+										"drawDepth": 2
+									},
+									{
+										"role": "npc3",
+										"equipment": {},
+										"anchor": { "x": 0.133, "y": 0.632 },
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textKey": "~09~player_chose_four~panel_001~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textKey": "~09~player_chose_four~panel_001~2_npc3",
+										"pointerOwner": "npc3",
+										"shrinkToFitText": true,
+										"pointerStyle": null
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc",
+					"becomeAllyOf": "party",
+					"makeHero": true
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc2",
+					"becomeAllyOf": "party",
+					"makeHero": true
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc3",
+					"becomeAllyOf": "party",
+					"makeHero": true
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "warrior" },
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "AddHistory",
+							"addHistory": [
+								[ "drauvenBase" ],
+								[ "bornDrauven" ],
+								[ "drauvenCustomizationHead" ],
+								[ "drauvenCustomizationBody" ],
+								[ "drauvenCustomizationOther" ]
+							]
+						},
+						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
+					]
+				}
+			}
+		},
+		{
+			"role": "npc2",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "hunter" },
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "AddHistory",
+							"addHistory": [
+								[ "drauvenBase" ],
+								[ "bornDrauven" ],
+								[ "drauvenCustomizationHead" ],
+								[ "drauvenCustomizationBody" ],
+								[ "drauvenCustomizationOther" ]
+							]
+						},
+						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
+					]
+				}
+			}
+		},
+		{
+			"role": "npc3",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "mystic" },
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "AddHistory",
+							"addHistory": [
+								[ "drauvenBase" ],
+								[ "bornDrauven" ],
+								[ "drauvenCustomizationHead" ],
+								[ "drauvenCustomizationBody" ],
+								[ "drauvenCustomizationOther" ]
+							]
+						},
+						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
+					]
+				}
+			}
+		}
+	]
+}
+}
