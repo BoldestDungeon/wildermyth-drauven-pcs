@@ -14,7 +14,7 @@
 	"legacyAbilityChoice": true,
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "silkstepCloak" }
-    }
+    },
 	{
 	"id": "drauvenDeck_cower",
 	"effects": ["drauven_pc_cower"],
@@ -22,7 +22,7 @@
 	"legacyAbilityChoice": true,
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ignite" }
-    }
+    },
 	{
 	"id": "drauvenDeck_preparedShot",
 	"effects": ["drauven_pc_preparedShot" ],
@@ -30,5 +30,29 @@
 	"legacyAbilityChoice": true,
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ambush" }
-    }
+    },
+	{
+	"id": "drauvenDeck_bloodedFerocity",
+	"effects": ["drauven_pc_bloodedFerocity" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "ignite" }
+    },
+	{
+	"id": "drauvenDeck_upgraded_bloodedFerocity",
+	"effects": ["drauven_pc_upgraded_bloodedFerocity" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "ignite", "upgradeForAbility": "drauvenDeck_bloodedFerocity", }
+    },
+	{
+	"id": "drauvenDeck_concussed",
+	"effects": ["drauven_pc_concuss" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "bloodrage" }
+    },
 ]
