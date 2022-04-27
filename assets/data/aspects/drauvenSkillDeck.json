@@ -1,19 +1,27 @@
 [
   {
-	"id": "drauvenDeck_quickblade",
-	"effects": [ "drauven_quickblade|1.6|3+1d2+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)"],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
+		"id": "drauvenDeck_quickblade",
+		"effects": [ "drauven_quickblade|1.6|3+1d2+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)"],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+		"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
   },
   {
-	"id": "drauvenDeck_specterstep",
-	"effects": ["drauven_pc_specterstep"],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "silkstepCloak" }
+		"id": "drauvenDeck_specterstep",
+		"effects": ["drauven_pc_specterstep"],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+		"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "silkstepCloak" }
+  },
+	{
+		"id": "drauvenDeck_cower",
+		"effects": ["drauven_pc_cower"],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+		"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ignite" }
   },
 
 	{
