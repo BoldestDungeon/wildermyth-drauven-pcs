@@ -23,4 +23,12 @@
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ignite" }
     }
+	{
+	"id": "drauvenDeck_preparedShot",
+	"effects": ["drauven_pc_preparedShot", "rangedAttackIsFreeAction" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ambush" }
+    }
 ]
