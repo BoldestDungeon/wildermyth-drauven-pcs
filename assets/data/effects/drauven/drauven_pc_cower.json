@@ -1,0 +1,33 @@
+{
+    "id": "drauven_pc_cower",
+    "info": {
+        "dataVersion": 1,
+        "sourceFile": "drauven/drauven_pc_cower",
+        "author": "Ironskink",
+        "tags": [ "sneaky" ]
+    },
+    "type": "ABILITY",
+    "verb": "MANEUVER",
+    "ability": {
+        "icon": "ignite",
+        "priority": "1",
+        "cooldown": "everyOtherTurn"
+    },
+    "targets": [
+        {
+            "template": "SELF",
+            "aspectValues": [
+                { "id": "drauven_pc_cower", "forbidden": true },
+            ]
+        }
+    ],
+    "outcomes": [
+        {
+            "class": "Aspects",
+            "addAspects": [
+                { "id": "drauven_cowering", "value": "1" }
+            ]
+        },
+        { "class": "Animate", "target": "self", "script": "figures.enterGrayplane" }
+    ]
+}

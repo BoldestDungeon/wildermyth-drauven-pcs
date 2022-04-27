@@ -15,4 +15,12 @@
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "silkstepCloak" }
     }
+	{
+	"id": "drauvenDeck_cower",
+	"effects": ["drauven_pc_cower"],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ignite" }
+    }
 ]
