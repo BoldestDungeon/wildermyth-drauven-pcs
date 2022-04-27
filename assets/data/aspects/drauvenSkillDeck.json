@@ -25,7 +25,7 @@
     }
 	{
 	"id": "drauvenDeck_preparedShot",
-	"effects": ["drauven_pc_preparedShot", "rangedAttackIsFreeAction" ],
+	"effects": ["drauven_pc_preparedShot" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
