@@ -1,0 +1,27 @@
+{
+"id": "drauven_pc_concuss",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_concuss",
+	"author": "timcrosby"
+},
+"type": "DAMAGE_ROLL",
+"verb": "ATTACK",
+"targets": [
+	{ "template": "SELF" },
+	{
+		"role": "target",
+		"template": "DEFENDER",
+		"notAlreadyMatchedAs": [ "self" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "target",
+		"addAspects": [
+			{ "id": "concussed", "value": "1" }
+		]
+	}
+]
+}
