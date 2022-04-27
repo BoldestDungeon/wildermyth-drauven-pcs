@@ -1,11 +1,12 @@
 [
-    { "id": "ageless", "lifespan": "all" },
-    { "id": "cannotAge", "lifespan": "all" },
-    { "id": "drauven_immuneToAgePenalties", "importance": -1, "lifespan": "all" },
+    { "id": "drauven_ageless", "lifespan": "all" },
+    { "id": "drauven_cannotAge", "lifespan": "all" },
     {
         "id": "drauven_young",
         "stats": { 
-            "SPEED": 1.4, 
+            "SPEED": 1.4,
+			"ARMOR": 1,
+			"WARDING": 0.5,
             "DODGE": 10 
         },
         "lifespan": "all"
@@ -13,36 +14,45 @@
     {
         "id": "drauven_earlyMiddleAge",
         "stats": {
-            "CHARISMA": 10,
-            "TENACITY": 5,
-            "HEALTH": -0.2,
-            "RECOVERY_RATE": 2,
-            "DODGE": -2,
-            "SPEED": 0.8
+            "CHARISMA": -10,
+            "TENACITY": 6,
+            "HEALTH": 2,
+            "RECOVERY_RATE": 0.5,
+            "DODGE": -4,
+            "SPEED": -0.8,
+			"ARMOR": 2,
+			"WARDING": 1,
+			"BLOCK": 5
         },
         "lifespan": "all"
     },
     {
         "id": "drauven_middleAge",
         "stats": {
-            "CHARISMA": 5,
-            "TENACITY": 10,
-            "HEALTH": 0.4,
-            "RECOVERY_RATE": 4,
-            "DODGE": -4,
-            "SPEED": 0.2
+            "CHARISMA": -12,
+            "TENACITY": 8,
+            "HEALTH": 3,
+            "RECOVERY_RATE": 1,
+            "DODGE": -6,
+            "SPEED": -1,
+			"ARMOR": 3,
+			"WARDING": 2,
+			"BLOCK": 10
         },
         "lifespan": "all"
     },
     {
         "id": "drauven_lateMiddleAge",
         "stats": {
-            "CHARISMA": 0,
-            "TENACITY": 15,
-            "HEALTH": 1.2,
-            "RECOVERY_RATE": 10,
+            "CHARISMA": -14,
+            "TENACITY": 10,
+            "HEALTH": 4,
+            "RECOVERY_RATE": 1.5,
             "DODGE": -6,
-            "SPEED": -0.4
+            "SPEED": -1.2,
+			"ARMOR": 4,
+			"WARDING": 3,
+			"BLOCK": 12
         },
         "lifespan": "all"
     },
@@ -50,13 +60,16 @@
         "id": "drauven_oldAge",
         "effects": [],
         "stats": {
-            "CHARISMA": -5,
-            "TENACITY": 20,
-            "HEALTH": 1.6,
-            "PERCEPTION": -1,
-            "RECOVERY_RATE": 15,
+            "CHARISMA": -16,
+            "TENACITY": 15,
+            "HEALTH": 5,
+            "PERCEPTION": 1,
+            "RECOVERY_RATE": 2,
             "DODGE": -9,
-            "SPEED": -0.8
+            "SPEED": -1.4,
+			"ARMOR": 5,
+			"WARDING": 4,
+			"BLOCK": 14
         },
         "lifespan": "all"
     },
@@ -64,13 +77,16 @@
         "id": "drauven_veryOldAge",
         "effects": [],
         "stats": {
-            "CHARISMA": -10,
-            "TENACITY": 25,
-            "HEALTH": 2.2,
-            "PERCEPTION": -2,
-            "RECOVERY_RATE": 20,
+            "CHARISMA": -18,
+            "TENACITY": 20,
+            "HEALTH": 6,
+            "PERCEPTION": 2,
+            "RECOVERY_RATE": 2.5,
             "DODGE": -13,
-            "SPEED": -1.2
+            "SPEED": -1.6,
+			"ARMOR": 6,
+			"WARDING": 5,
+			"BLOCK": 16
         },
         "lifespan": "all"
     },
@@ -78,13 +94,16 @@
         "id": "drauven_extremeOldAge",
         "effects": [],
         "stats": {
-            "CHARISMA": -15,
-            "TENACITY": 20,
-            "HEALTH": 2.3,
-            "PERCEPTION": -5,
-            "RECOVERY_RATE": 15,
-            "DODGE": -20,
-            "SPEED": -1.9
+            "CHARISMA": -20,
+            "TENACITY": 30,
+            "HEALTH": 7,
+            "PERCEPTION": 5,
+            "RECOVERY_RATE": 3,
+            "DODGE": -15,
+            "SPEED": -1.8,
+			"ARMOR": 7,
+			"WARDING": 6,
+			"BLOCK": 20
         },
         "lifespan": "all"
     }

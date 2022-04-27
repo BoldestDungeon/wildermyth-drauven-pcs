@@ -1,0 +1,89 @@
+[
+{ "id": "ageless", "lifespan": "all" },
+{ "id": "nonhuman", "lifespan": "all" },
+{ "id": "cannotAge", "lifespan": "all" },
+{
+	"id": "earlyMiddleAge",
+	"stats": {
+		"CHARISMA": 10,
+		"DODGE": -2,
+		"HEALTH": -0.2,
+		"RECOVERY_RATE": -8,
+		"SPEED": -0.2,
+		"TENACITY": 5
+	},
+	"lifespan": "all"
+},
+{
+	"id": "extremeOldAge",
+	"effects": [],
+	"stats": {
+		"CHARISMA": -15,
+		"DODGE": -20,
+		"HEALTH": -2.3,
+		"PERCEPTION": -5,
+		"RECOVERY_RATE": -50,
+		"SPEED": -1.9,
+		"TENACITY": 20
+	},
+	"lifespan": "all"
+},
+{ "id": "human_immuneToAgePenalties", "importance": -1, "lifespan": "all" },
+{
+	"id": "lateMiddleAge",
+	"stats": {
+		"CHARISMA": 0,
+		"DODGE": -6,
+		"HEALTH": -0.7,
+		"RECOVERY_RATE": -20,
+		"SPEED": -0.4,
+		"TENACITY": 15
+	},
+	"lifespan": "all"
+},
+{
+	"id": "middleAge",
+	"stats": {
+		"CHARISMA": 5,
+		"DODGE": -4,
+		"HEALTH": -0.4,
+		"RECOVERY_RATE": -15,
+		"SPEED": -0.3,
+		"TENACITY": 10
+	},
+	"lifespan": "all"
+},
+{
+	"id": "oldAge",
+	"effects": [],
+	"stats": {
+		"CHARISMA": -5,
+		"DODGE": -9,
+		"HEALTH": -1,
+		"PERCEPTION": -1,
+		"RECOVERY_RATE": -28,
+		"SPEED": -0.8,
+		"TENACITY": 20
+	},
+	"lifespan": "all"
+},
+{
+	"id": "veryOldAge",
+	"effects": [],
+	"stats": {
+		"CHARISMA": -10,
+		"DODGE": -13,
+		"HEALTH": -1.5,
+		"PERCEPTION": -2,
+		"RECOVERY_RATE": -38,
+		"SPEED": -1.2,
+		"TENACITY": 25
+	},
+	"lifespan": "all"
+},
+{
+	"id": "young",
+	"stats": { "CHARISMA": 15 },
+	"lifespan": "all"
+}
+]

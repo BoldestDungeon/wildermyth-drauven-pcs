@@ -1,5 +1,5 @@
 {
-"id": "progressToEarlyMiddleAge",
+"id": "drauven_progressToEarlyMiddleAge",
 "info": { "dataVersion": 1, "sourceFile": "aging/drauven_progressToEarlyMiddleAge" },
 "type": "MONTHLY",
 "targets": [
@@ -12,9 +12,9 @@
 		],
 		"test": "GREATER_THAN_OR_EQUAL_TO",
 		"a": "AGE_IN_YEARS",
-		"b": "30"
+		"b": "22"
 	},
-	{ "template": "SELF", "test": "GREATER_THAN", "a": "0.05", "b": "[0,1]" }
+	{ "template": "SELF", "test": "GREATER_THAN", "a": "5", "b": "[0,1]" }
 ],
 "outcomes": [
 	{

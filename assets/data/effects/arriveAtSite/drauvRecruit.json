@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "arriveAtSite/drauvRecruit",
-	"modId": "drauven_pcs_test",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Shae Rossi",
 	"STUB": "just a story about meeting a potential new recruit. Option to make the npc a badguy if they player doesn't choose them?"
 },
@@ -1497,8 +1497,10 @@
 				"query": {
 					"baseTag": "human",
 					"setClass": "hunter",
-					"setAge": "young",
+					"setAge": "ageless",
+					"exactAge": 21,
 					"setEquipment": "tierTwo",
+					"nameAlgorithm": "",
 					"customHistory": []
 				},
 				"additionalOutcome": {
@@ -1512,7 +1514,10 @@
 								[ "bornDrauven" ],
 								[ "drauvenCustomizationHead" ],
 								[ "drauvenCustomizationBody" ],
-								[ "drauvenCustomizationOther" ]
+								[ "drauvenCustomizationOther" ],
+								[ "origin" ],
+								[ "origin" ],
+								[ "origin" ]
 							]
 						},
 						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" }

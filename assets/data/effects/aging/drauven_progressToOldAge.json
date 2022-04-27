@@ -1,5 +1,5 @@
 {
-"id": "progressToOldAge",
+"id": "drauven_progressToOldAge",
 "info": { "dataVersion": 1, "sourceFile": "aging/drauven_progressToOldAge" },
 "type": "MONTHLY",
 "targets": [
@@ -14,7 +14,7 @@
 		"a": "AGE_IN_YEARS",
 		"b": "66"
 	},
-	{ "template": "SELF", "test": "GREATER_THAN", "a": "0.05", "b": "[0,1]" }
+	{ "template": "SELF", "test": "GREATER_THAN", "a": "5", "b": "[0,1]" }
 ],
 "outcomes": [
 	{
