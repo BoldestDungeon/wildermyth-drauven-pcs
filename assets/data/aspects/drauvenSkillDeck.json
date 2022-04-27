@@ -75,4 +75,12 @@
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "bloodrage" }
     },
+	{
+	"id": "drauvenDeck_battleyell",
+	"effects": ["drauven_pc_battleyell" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "bloodrage" }
+    },
 ]
