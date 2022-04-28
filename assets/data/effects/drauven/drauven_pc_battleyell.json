@@ -54,9 +54,9 @@
 			"suggestionFeedback": "ATTACK_SUGGESTION",
 			"hoverFeedback": "ATTACK_HOVER"
 		},
-		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"aspects": [ "HOSTILE_TARGET" ],
 		"relativeTo": "source",
-		"range": "weapon.weaponMaxRange+self.BONUS_RANGE",
+		"range": "(source.MAX_MELEE_ATTACK_RANGE+source.BONUS_RANGE)+(source.MAX_RANGED_ATTACK_RANGE+source.BONUS_RANGE)",
 		"lineOfSight": "LIVE_ENEMIES"
 	}
 ],
@@ -82,22 +82,22 @@
 		"markForFlanking": "never",
 		"flankingBoostsAttackRoll": false,
 		"always": {
-			"class": "Test",
-			"value": "source.range",
-			"threshold": "1",
-			"onFail": {
-				"class": "BranchAbility",
-				"target": "source",
-				"branchType": "standardMelee",
-				"targetRole": "target"
-			},
-			"onPass": {
-				"class": "BranchAbility",
-				"target": "source",
-				"branchType": "standardRanged",
-				"targetRole": "target"
-			}
-		}
+				"class": "Test",
+            "value": "source.RANGE_EQUIPPED",
+            "threshold": "1",
+            "onFail": {
+                "class": "BranchAbility",
+                "target": "source",
+                "branchType": "standardMelee",
+                "targetRole": "target"
+            },
+            "onPass": {
+                "class": "BranchAbility",
+                "target": "source",
+                "branchType": "standardRanged",
+                "targetRole": "target"
+            }
+        }
 	}
 ]
 }
