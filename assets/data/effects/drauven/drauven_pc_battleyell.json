@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_battleyell",
-	"author": "Patrick Belanger",
+	"author": "Bipen",
 	"STUB": "Priority: if we can't get further than 3.6 tiles away from all heroes, we'd prefer to use our melee attack",
 	"aiPriority": "2100-(min(1,COUNT.volunteer)*100)"
 },
@@ -56,7 +56,7 @@
 		},
 		"aspects": [ "HOSTILE_TARGET" ],
 		"relativeTo": "source",
-		"range": "(source.MAX_MELEE_ATTACK_RANGE+source.BONUS_RANGE)+(source.MAX_RANGED_ATTACK_RANGE+source.BONUS_RANGE)",
+		"range": "(source.MAX_ATTACK_RANGE+source.BONUS_RANGE)",
 		"lineOfSight": "LIVE_ENEMIES"
 	}
 ],

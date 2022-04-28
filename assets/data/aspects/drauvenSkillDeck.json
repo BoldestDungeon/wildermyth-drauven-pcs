@@ -42,7 +42,6 @@
 	{
 	"id": "drauvenDeck_upgraded_bloodedFerocity",
 	"effects": ["drauven_pc_upgraded_bloodedFerocity" ],
-	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "ignite", "upgradeForAbility": "drauvenDeck_bloodedFerocity", }
