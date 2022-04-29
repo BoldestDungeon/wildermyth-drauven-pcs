@@ -1,18 +1,37 @@
 [
-   {
+  {
 	"id": "drauvenDeck_quickblade",
 	"effects": [ "drauven_quickblade|1.6|3+1d2+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)"],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
-   },
-    {
+  },
+  {
 	"id": "drauvenDeck_specterstep",
 	"effects": ["drauven_pc_specterstep"],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "silkstepCloak" }
-    }
+  },
+
+	{
+		"id": "drauvenDeck_blastingshard",
+		"effects": ["drauven_pc_blastingshard"],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
+		"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "shardnado" }
+	},
+	{
+		"id": "drauvenDeck_blastingshard_upgrade",
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"info": {
+			"abilityDeckUsage": "upgrade",
+			"upgradeForAbility": "drauvenDeck_blastingshard",
+			"abilityDeckIcon": "shardnado"
+		}
+	}
 ]
