@@ -1,10 +1,10 @@
 {
-"id": "drauven_flamewings_pc|DAMAGE_EXPRESSION",
+"id": "drauven_pc_flamewings",
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_flamewings",
-	"author": "Patrick Belanger",
-	"aiPriority": "((2050+COUNT.target)-(COUNT.target2*2))*min(1,max(0,(COUNT.target-(COUNT.target2*2))))"
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Hero Of Wind"
 },
 "type": "ABILITY",
 "verb": "ATTACK",
@@ -25,7 +25,7 @@
 		"role": "source",
 		"template": "ANY",
 		"choose": "BY_SCORE",
-		"scoreFunction": "(uncontainedFire+lampIsFireSource)+lampCanFlare",
+		"scoreFunction": "lampIsFireSource+lampCanFlare",
 		"scoreThreshold": "1",
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
@@ -44,7 +44,6 @@
 			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
 			"hoverFeedback": "ATTACK_HOVER"
 		},
-		"aiHints": { "fullInferLookAhead": true },
 		"relativeTo": "source",
 		"minRange": "0.9",
 		"range": "3.1+self.BONUS_RANGE",
@@ -89,30 +88,6 @@
 		"range": null,
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
-	},
-	{
-		"role": "target2",
-		"template": "UNIT_AT_TILE",
-		"STUB": "How many allies are we hitting?",
-		"choose": "ANY",
-		"missionFeedback": {
-			"hoverScript": "figures.attackHovered",
-			"rangeFeedback": "ATTACK_SUGGESTION",
-			"suggestionFeedback": "ATTACK_SUGGESTION",
-			"hoverFeedback": "ATTACK_HOVER"
-		},
-		"manifold": {
-			"from": "source",
-			"to": "focus",
-			"thickness": [ "1", "5" ],
-			"excludeSource": true,
-			"distanceInDirection": "3.1+self.BONUS_RANGE"
-		},
-		"aspects": [ "alive", "ALLY" ],
-		"relativeTo": "source",
-		"range": null,
-		"lineOfSight": "TERRAIN_ONLY",
-		"tileFilter": "floor"
 	}
 ],
 "outcomes": [
@@ -120,7 +95,6 @@
 		"class": "AttackRoll",
 		"intermediateRole": "source",
 		"attackAnimationType": "magic",
-		"showAbilityName": "ifEnemy",
 		"particles": [
 			{ "script": "flamewings", "setPosition": "source", "setPosition2": "targetTile" }
 		],
@@ -136,9 +110,27 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "DAMAGE_EXPRESSION+self.PHYSICAL_DAMAGE_BONUS",
+					"amount": "((2*source.lampIsFireSource)+1d2)+((self.SPELL_DAMAGE+self.POTENCY)*0.5)",
 					"type": "MAGIC"
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "blinded", "value": "source.lampCanFlare" }
+					]
 				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.mysticDeck_elementalist",
+		"threshold": "1",
+		"onFail": {
+			"class": "DoAll",
+			"outcomes": [
+				null,
+				{ "class": "Damage", "target": "source", "amount": "1" }
 			]
 		}
 	}
