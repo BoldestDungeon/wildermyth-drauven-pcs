@@ -16,7 +16,7 @@
 	"info": {
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_battleyell",
-		"abilityDeckIcon": "ignite"
+		"abilityDeckIcon": "bloodrage"
 	}
 },
 {
@@ -50,6 +50,18 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_bloodedFerocity_upgrade",
+	"effects": [ "drauvenDeck_bloodedFerocity_upgrade" ],
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_bloodedFerocity",
+		"abilityDeckIcon": "ignite"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_concussed",
 	"effects": [ "drauven_pc_concussed" ],
 	"boostType": "ABILITY_CLASS",
@@ -67,26 +79,6 @@
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_concussed",
 		"abilityDeckIcon": "bloodrage"
-	}
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_cower",
-	"effects": [ "drauven_pc_cower" ],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ignite" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_cower_upgrade",
-	"legacyAbilityChoice": true,
-	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": {
-		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_cower",
-		"abilityDeckIcon": "ignite"
 	}
 },
 {
@@ -131,6 +123,26 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_cower",
+	"effects": [ "drauven_pc_cower" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "silkstepCloak" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_cower_upgrade",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_cower",
+		"abilityDeckIcon": "silkstepCloak"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_specterstep",
 	"effects": [ "drauven_pc_specterstep" ],
 	"boostType": "ABILITY_CLASS",
@@ -147,18 +159,6 @@
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_specterstep",
 		"abilityDeckIcon": "silkstepCloak"
-	}
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_upgraded_bloodedFerocity",
-	"effects": [ "drauven_pc_upgraded_bloodedFerocity" ],
-	"legacyAbilityChoice": true,
-	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": {
-		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_bloodedFerocity",
-		"abilityDeckIcon": "ignite"
 	}
 }
 ]
