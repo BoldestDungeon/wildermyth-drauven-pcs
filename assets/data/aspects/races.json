@@ -89,9 +89,12 @@
 	"effects": [
 		"skysingerBlastingshard_pc",
 		"drauven_pc_cordAndVines",
+		"drauven_pc_cordAndVines_oneAction",
 		"drauven_fissureBell_pc|4.6|2+1d2|2",
 		"drauven_flamewings_pc|2+1d2"
-	]
+	],
+	"importance": -1,
+	"listImportance": 1
 },
 {
 	"modId": "wildermyth-drauven-pcs",
