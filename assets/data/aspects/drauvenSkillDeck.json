@@ -1,7 +1,7 @@
 [
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_battleyell",
+	"id": "drauvenDeck_common_battleyell",
 	"effects": [ "drauven_pc_battleyell" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
@@ -10,7 +10,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_battleyell_upgrade",
+	"id": "drauvenDeck_common_battleyell_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
@@ -21,7 +21,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_blastingshard",
+	"id": "drauvenDeck_mystic_blastingshard",
 	"effects": [ "drauven_pc_blastingshard" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
@@ -30,7 +30,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_blastingshard_upgrade",
+	"id": "drauvenDeck_mystic_blastingshard_upgrade",
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"info": {
@@ -41,7 +41,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_bloodedFerocity",
+	"id": "drauvenDeck_warrior_bloodedFerocity",
 	"effects": [ "drauven_pc_bloodedFerocity" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
@@ -50,7 +50,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_bloodedFerocity_upgrade",
+	"id": "drauvenDeck_warrior_bloodedFerocity_upgrade",
 	"effects": [ "drauvenDeck_bloodedFerocity_upgrade" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
@@ -62,7 +62,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_concussed",
+	"id": "drauvenDeck_warrior_concussed",
 	"effects": [ "drauven_pc_concussed" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
@@ -71,7 +71,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_concussed_upgrade",
+	"id": "drauvenDeck_warrior_concussed_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"showInTooltip": true,
@@ -83,7 +83,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_preparedShot",
+	"id": "drauvenDeck_hunter_preparedShot",
 	"effects": [ "drauven_pc_preparedShot" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
@@ -92,7 +92,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_preparedShot_upgrade",
+	"id": "drauvenDeck_hunter_preparedShot_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
@@ -103,7 +103,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_quickblade",
+	"id": "drauvenDeck_hunter_quickblade",
 	"effects": [ "drauven_pc_quickblade" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
@@ -112,7 +112,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_quickblade_upgrade",
+	"id": "drauvenDeck_hunter_quickblade_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
@@ -123,7 +123,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_cower",
+	"id": "drauvenDeck_hunter_cower",
 	"effects": [ "drauven_pc_cower" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
@@ -132,7 +132,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_cower_upgrade",
+	"id": "drauvenDeck_hunter_cower_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
@@ -143,7 +143,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_specterstep",
+	"id": "drauvenDeck_hunter_specterstep",
 	"effects": [ "drauven_pc_specterstep" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
@@ -152,7 +152,7 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_specterstep_upgrade",
+	"id": "drauvenDeck_hunter_specterstep_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
