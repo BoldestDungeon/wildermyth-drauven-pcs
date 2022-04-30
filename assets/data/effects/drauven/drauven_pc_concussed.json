@@ -19,7 +19,7 @@
 {
 		"class": "Test",
 		"STUB": "If upgraded, Hobble Enemies",
-		"value": "self.drauvenDeck_concussed_upgrade",
+		"value": "self.drauvenDeck_warrior_concussed_upgrade",
 		"threshold": "1",
 		"onPass": { "class": "Aspects", "target": "target", "addAspects": [ { "id": "hobbled", "value": "2" } ] }
 	},
