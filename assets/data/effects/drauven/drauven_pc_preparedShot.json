@@ -39,7 +39,7 @@
 		"template": "TILE",
 		"choose": "ALL",
 		"relativeTo": "focus",
-		"range": "1.3+(self.drauvenDeck_preparedShot_upgrade)*0.5",
+		"range": "1.3+(self.drauvenDeck_hunter_preparedShot_upgrade)*0.5",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	},

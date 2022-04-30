@@ -40,7 +40,7 @@
 		"aspectValues": [
 			{ "id": "forbidReactions|*", "forbidden": true }
 		],
-		"range": "5+(self.drauvenDeck_battleyell_upgrade*3)",
+		"range": "5+(self.drauvenDeck_common_battleyell_upgrade*3)",
 		"lineOfSight": "TERRAIN_ONLY",
 	},
 	{

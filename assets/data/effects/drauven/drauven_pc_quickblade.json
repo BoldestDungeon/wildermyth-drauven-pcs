@@ -36,7 +36,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(4+1d2)+(((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)+(self.drauvenDeck_quickblade_upgrade*3))",
+					"amount": "(4+1d2)+(((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)+(self.drauvenDeck_hunter_quickblade_upgrade*3))",
 					"shred": "1",
 					"pierce": "1"
 				}
