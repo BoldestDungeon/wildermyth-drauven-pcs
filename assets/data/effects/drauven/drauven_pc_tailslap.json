@@ -1,0 +1,118 @@
+{
+"id": "drauven_pc_tailslap",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_tailslap",
+	"aiPriority": "-1",
+	"tags": [ "okToMarkDone" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": { "icon": "crush", "priority": "1", "cooldown": "everyOtherTurn" },
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "free" },
+		"missionFeedback": { "orientTo": "target" }
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"aspectValues": [
+			{ "id": "immuneToKnockback", "forbidden": true }
+		],
+		"range": "1.6+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_FIGURES"
+	},
+	{
+		"template": "TILE",
+		"matchSpecial": "footprintOrigin",
+		"relativeTo": "target",
+		"range": null
+	},
+	{
+		"role": "foes",
+		"template": "ADJACENT_UNIT",
+		"STUB": "Get all movable foes, for use in volunteer2",
+		"choose": "ANY",
+		"missionFeedback": null,
+		"aspects": [ "alive", "ENEMY" ],
+		"aspectValues": [
+			{ "id": "immuneToKnockback", "forbidden": true }
+		],
+		"range": "40"
+	},
+	{
+		"role": "volunteer",
+		"template": "TILE",
+		"choose": "ANY",
+		"relativeTo": "target",
+		"notAlreadyMatchedAs": [ "focus" ],
+		"range": "(2.6+(self.POTENCY/2))*(1-self.drauvenDeck_tailslap_upgrade)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "validMoveEnd",
+		"roleMustFit": "target",
+		"footprintWithinRange": "target",
+		"footprintWithinRangeCompletely": true,
+		"spawnEntityIgnore": [ "target" ]
+	},
+	{
+		"role": "volunteer2",
+		"template": "TILE",
+		"choose": "ANY",
+		"relativeTo": "target",
+		"notAlreadyMatchedAs": [ "focus" ],
+		"range": "(2.6+(self.POTENCY))*(self.drauvenDeck_tailslap_upgrade*1.5)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "validMoveEnd",
+		"roleMustFit": "target",
+		"footprintWithinRange": "target",
+		"footprintWithinRangeCompletely": true,
+		"spawnEntityIgnore": [ "target", "foes" ]
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"hoverScript": "figures.directionalTileHoverHelpful",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION_SHINE",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+			"applyRoleFootprint": "target",
+			"feedbackSource": "target",
+			"showMovementFeedback": true,
+			"movementFeedbackRoleOverride": "target"
+		},
+		"fromRoles": [ "volunteer", "volunteer2" ],
+		"range": null
+	},
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"stopBlockingTime": "afterHitAnimation",
+		"defenseRollTags": [ "melee" ],
+		"attackStrength": "self.MELEE_ACCURACY",
+		"wield": "ultraHeavy",
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "(self.ARMOR+self.TEMP_ARMOR)*0.75-self.SHRED+(self.drauvenDeck_tailslap_upgrade*2)",
+					"weapon": null
+				},
+				{
+					"class": "MoveEntity",
+					"directlyToTile": "targetTile",
+					"recordMoveDistanceAs": "knockbackDistance",
+					"ignoreEntitiesOnTile": true
+				},
+			]
+		},
+		"onMiss": { "class": "DoAll" }
+	}
+]
+}

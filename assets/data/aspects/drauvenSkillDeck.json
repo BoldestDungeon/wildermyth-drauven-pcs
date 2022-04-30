@@ -10,6 +10,16 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_flybyattack",
+	"effects": [ "drauven_pc_flybyattack" ],
+	"boostType": "ABILITY_MISC",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf":[ "drauven_pc" ]
+	"abilityRequiresOneAspectOf": [ "themePiece_drauvenWings_wings", "themePiece_hawk_wings" ],
+	"info": { "abilityDeckUsage": "common", "abilityDeckIcon": "fly" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_battleyell_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
@@ -59,6 +69,22 @@
 		"upgradeForAbility": "drauvenDeck_bloodedFerocity",
 		"abilityDeckIcon": "ignite"
 	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_tailslap",
+	"effects": [ "drauven_pc_tailslap" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "crush" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_tailslap_upgrade",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "crush", "upgradeForAbility": "drauvenDeck_tailslap", }
 },
 {
 	"modId": "wildermyth-drauven-pcs",
