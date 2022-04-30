@@ -82,7 +82,6 @@
 		"class": "AttackRoll",
 		"intermediateRole": "source",
 		"attackAnimationType": "magic",
-		"showAbilityName": "always",
 		"particles": [
 			{ "script": "cordAndVines", "setPosition": "source", "setPosition2": "target" }
 		],
