@@ -1,8 +1,8 @@
 {
-"id": "drauven_pc_cordAndVines",
+"id": "drauven_pc_cordAndVines_oneAction",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_cordAndVines",
+	"sourceFile": "drauven/drauven_pc_cordAndVines_oneAction",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "HeroOfWind",
 	"aiPriority": "2050"
@@ -16,7 +16,8 @@
 		"mysticRecipeWildGrasp",
 		"mysticRecipeEngulf",
 		"advancedRecipe_vinewrench",
-		"humanistRecipe_sturdyEngulf"
+		"humanistRecipe_sturdyEngulf",
+		"drauven_pc_cordAndVines"
 	],
 	"priority": "1",
 	"onlyShowIfPossibleInCharacterSheet": true,
@@ -25,8 +26,9 @@
 "targets": [
 	{
 		"template": "SELF",
-		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
-		"missionFeedback": { "orientTo": "target" }
+		"cost": { "class": "ActionPoints" },
+		"missionFeedback": { "orientTo": "target" },
+		"aspects": [ "alive", "mysticDeck_mythweaver", "SELF" ]
 	},
 	{
 		"role": "source",
