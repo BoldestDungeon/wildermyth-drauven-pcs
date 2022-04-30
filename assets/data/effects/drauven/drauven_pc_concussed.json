@@ -1,0 +1,34 @@
+{
+"id": "drauven_pc_concussed",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_concussed",
+	"author": "Bipen"
+},
+"type": "DAMAGE_ROLL",
+"verb": "ATTACK",
+"targets": [
+	{ "template": "SELF" },
+	{
+		"role": "target",
+		"template": "DEFENDER",
+		"notAlreadyMatchedAs": [ "self" ]
+	}
+],
+"outcomes": [
+{
+		"class": "Test",
+		"STUB": "If upgraded, Hobble Enemies",
+		"value": "self.drauvenDeck_concussed_upgrade",
+		"threshold": "1",
+		"onPass": { "class": "Aspects", "target": "target", "addAspects": [ { "id": "hobbled", "value": "2" } ] }
+	},
+	{
+		"class": "Aspects",
+		"target": "target",
+		"addAspects": [
+			{ "id": "concussed", "value": "1" }
+		]
+	}
+	]
+}

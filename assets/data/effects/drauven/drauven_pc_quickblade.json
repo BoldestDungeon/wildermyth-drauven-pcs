@@ -1,0 +1,52 @@
+{
+"id": "drauven_pc_quickblade",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_quickblade",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "BoldestDungeon",
+	"tags": [ "melee" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": { "icon": "thornfang", "priority": "20", "cooldown": "oncePerTurn" },
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "free" },
+		"missionFeedback": { "orientTo": "target" }
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"range": "1.6+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defenseRollTags": [ "melee" ],
+		"attackStrength": "self.MELEE_ACCURACY",
+		"applyCover": true,
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "(4+1d2)+(((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)+(self.drauvenDeck_quickblade_upgrade*3))",
+					"shred": "1",
+					"pierce": "1"
+				}
+			]
+		},
+		"onHitCover": {
+			"class": "Damage",
+			"amount": "max(1,((attacker.PHYSICAL_DAMAGE_BONUS+DAMAGE_EXPRESSION)-2))",
+			"shred": "1"
+		}
+	}
+]
+}

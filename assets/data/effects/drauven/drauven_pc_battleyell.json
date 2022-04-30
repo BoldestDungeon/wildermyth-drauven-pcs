@@ -1,0 +1,103 @@
+{
+"id": "drauven_pc_battleyell",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_battleyell",
+	"author": "Bipen",
+	"STUB": "Priority: if we can't get further than 3.6 tiles away from all heroes, we'd prefer to use our melee attack",
+	"aiPriority": "2100-(min(1,COUNT.volunteer)*100)"
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": { "icon": "bloodrage", "priority": "1", "showDescriptionInTooltip": true, },
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"missionFeedback": { "orientTo": "source" }
+	},
+	{
+		"role": "volunteer",
+		"template": "ADJACENT_ENEMY",
+		"STUB": "If there are nearby enemies, we'd prefer to use our melee attack",
+		"choose": "ANY",
+		"missionFeedback": null,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"range": "3.6"
+	},
+	{
+		"role": "source",
+		"template": "ADJACENT_ALLY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"hoverScript": "figures.directionalHelpfulHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"aspectValues": [
+			{ "id": "forbidReactions|*", "forbidden": true }
+		],
+		"range": "5+(self.drauvenDeck_battleyell_upgrade*3)",
+		"lineOfSight": "TERRAIN_ONLY",
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"aspects": [ "HOSTILE_TARGET" ],
+		"relativeTo": "source",
+		"range": "(source.MAX_ATTACK_RANGE+source.BONUS_RANGE)",
+		"lineOfSight": "LIVE_ENEMIES"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": "source",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"stopBlockingTime": "onHit",
+		"timingOverride": { "attackTime": "500" },
+		"particles": [
+			{
+				"script": "battleyell",
+				"setPosition": "self",
+				"setPosition2": "source",
+				"delay": -0.2
+			},
+			{ "script": "surprised", "setPosition": "source", "delay": 0.2 }
+		],
+		"audioOverride": { "attackStartCue": "Characters/Drauven/stormThroat" },
+		"defenderAnimationOverride": "figures.swapWeapon",
+		"markForFlanking": "never",
+		"flankingBoostsAttackRoll": false,
+		"always": {
+			"class": "Test",
+            "value": "source.RANGE_EQUIPPED",
+            "threshold": "1",
+            "onFail": {
+                "class": "BranchAbility",
+                "target": "source",
+                "branchType": "standardMelee",
+                "targetRole": "target"
+            },
+            "onPass": {
+                "class": "BranchAbility",
+                "target": "source",
+                "branchType": "standardRanged",
+                "targetRole": "target"
+            }
+        }
+	}
+]
+}
