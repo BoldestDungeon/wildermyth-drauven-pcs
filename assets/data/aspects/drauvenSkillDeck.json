@@ -53,7 +53,7 @@
 		"id": "drauvenDeck_preparedShot_upgrade",
 		"legacyAbilityChoice": true,
 		"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-		"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ambush", "upgradeForAbility": "drauvenDeck_preparedShot" }
+		"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "ambush", "upgradeForAbility": "drauvenDeck_preparedShot" }
 	},
 	{
 		"id": "drauvenDeck_blastingshard",
