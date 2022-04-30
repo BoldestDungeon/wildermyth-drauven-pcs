@@ -10,10 +10,8 @@
 "verb": "ATTACK",
 "ability": {
 	"icon": "ambush",
-	"strictlyBetterThan": [ "waitEndTurn" ],
 	"priority": "1",
 	"showDescriptionInTooltip": true,
-	"overrideOverlayType": "endTurn"
 },
 "targets": [
 	{
@@ -41,7 +39,7 @@
 		"template": "TILE",
 		"choose": "ALL",
 		"relativeTo": "focus",
-		"range": "1.3",
+		"range": "1.3+(self.drauvenDeck_preparedShot_upgrade)*0.5",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	},

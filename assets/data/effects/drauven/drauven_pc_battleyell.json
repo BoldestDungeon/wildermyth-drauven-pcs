@@ -9,7 +9,7 @@
 },
 "type": "ABILITY",
 "verb": "ATTACK",
-"ability": { "icon": "bloodrage", "priority": "1", "showDescriptionInTooltip": true },
+"ability": { "icon": "bloodrage", "priority": "1", "showDescriptionInTooltip": true, },
 "targets": [
 	{
 		"template": "SELF",
@@ -40,7 +40,7 @@
 		"aspectValues": [
 			{ "id": "forbidReactions|*", "forbidden": true }
 		],
-		"range": "5",
+		"range": "5+(self.drauvenDeck_battleyell_upgrade*3)",
 		"lineOfSight": "TERRAIN_ONLY",
 	},
 	{
@@ -82,7 +82,7 @@
 		"markForFlanking": "never",
 		"flankingBoostsAttackRoll": false,
 		"always": {
-				"class": "Test",
+			"class": "Test",
             "value": "source.RANGE_EQUIPPED",
             "threshold": "1",
             "onFail": {

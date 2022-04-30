@@ -1,5 +1,5 @@
 {
-"id": "drauven_pc_concuss",
+"id": "drauven_pc_concussed",
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_concuss",
@@ -16,6 +16,13 @@
 	}
 ],
 "outcomes": [
+{
+		"class": "Test",
+		"STUB": "If upgraded, Hobble Enemies",
+		"value": "self.drauvenDeck_concussed_upgrade",
+		"threshold": "1",
+		"onPass": { "class": "Aspects", "target": "target", "addAspects": [ { "id": "hobbled", "value": "2" } ] }
+	},
 	{
 		"class": "Aspects",
 		"target": "target",
@@ -23,5 +30,5 @@
 			{ "id": "concussed", "value": "1" }
 		]
 	}
-]
+	]
 }

@@ -11,7 +11,8 @@
     "ability": {
         "icon": "silkstepCloak",
         "priority": "1",
-        "cooldown": "everyOtherTurn"
+		"showInCharacterSheet": false,
+        "extraUI": { "overrideCooldownShown": "2-drauvenDeck_specterstep_upgrade" }
     },
     "targets": [
         {

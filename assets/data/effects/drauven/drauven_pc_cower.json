@@ -11,7 +11,7 @@
     "ability": {
         "icon": "ignite",
         "priority": "1",
-        "cooldown": "everyOtherTurn"
+        "numUses": "2+(self.drauvenDeck_cower_upgrade*2)"
     },
     "targets": [
         {
