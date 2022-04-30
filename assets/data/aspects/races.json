@@ -85,19 +85,6 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenInterfuse",
-	"effects": [
-		"skysingerBlastingshard_pc",
-		"drauven_pc_cordAndVines",
-		"drauven_pc_cordAndVines_oneAction",
-		"drauven_pc_flamewings",
-		"drauven_pc_fissureBell"
-	],
-	"importance": -1,
-	"listImportance": 1
-},
-{
-	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenSkin_naturalHead",
 	"importance": -1,
 	"invalidatesSkin": true
@@ -171,7 +158,11 @@
 		"drauven_progressToOldAge",
 		"drauven_progressToVeryOldAge",
 		"drauven_progressToExtremeOldAge",
-		"alsoAddIfOther|drauvenInterfuse|mystic"
+        
+		"drauven_pc_cordAndVines",
+		"drauven_pc_cordAndVines_oneAction",
+		"drauven_pc_flamewings",
+		"drauven_pc_fissureBell"
 	],
 	"stats": {
 		"ARMOR": 0,
