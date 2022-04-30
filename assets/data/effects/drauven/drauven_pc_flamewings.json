@@ -111,7 +111,9 @@
 				{
 					"class": "Damage",
 					"amount": "((2*source.lampIsFireSource)+1d2)+((self.SPELL_DAMAGE+self.POTENCY)*0.5)",
-					"type": "MAGIC"
+					"type": "MAGIC",
+					"useEquippedWeaponForStunt": true,
+					"numDefenders": "COUNT.target"
 				},
 				{
 					"class": "Aspects",
