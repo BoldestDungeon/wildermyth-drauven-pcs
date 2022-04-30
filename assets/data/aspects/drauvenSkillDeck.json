@@ -1,36 +1,56 @@
 [
-   {
-	"id": "drauvenDeck_quickblade",
-	"effects": [ "drauven_quickblade|1.6|3+1d2+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)"],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
-   },
-    {
-	"id": "drauvenDeck_specterstep",
-	"effects": ["drauven_pc_specterstep"],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "silkstepCloak" }
-    },
+  {
+		"id": "drauvenDeck_quickblade",
+		"effects": [ "drauven_quickblade|1.6|3+1d2+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)"],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+		"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
+  },
+  {
+		"id": "drauvenDeck_specterstep",
+		"effects": ["drauven_pc_specterstep"],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+		"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "silkstepCloak" }
+  },
 	{
-	"id": "drauvenDeck_cower",
-	"effects": ["drauven_pc_cower"],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-    "abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ignite" }
-    },
+		"id": "drauvenDeck_cower",
+		"effects": ["drauven_pc_cower"],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+		"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ignite" }
+  },
 	{
-	"id": "drauvenDeck_preparedShot",
-	"effects": ["drauven_pc_preparedShot" ],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
+		"id": "drauvenDeck_preparedShot",
+		"effects": ["drauven_pc_preparedShot" ],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+		"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ambush" }
+	},
+
+	{
+		"id": "drauvenDeck_blastingshard",
+		"effects": ["drauven_pc_blastingshard"],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ambush" }
-    },
+		"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "shardnado" }
+	},
+	{
+		"id": "drauvenDeck_blastingshard_upgrade",
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"info": {
+			"abilityDeckUsage": "upgrade",
+			"upgradeForAbility": "drauvenDeck_blastingshard",
+			"abilityDeckIcon": "shardnado"
+		}
+	},
+
 	{
 	"id": "drauvenDeck_bloodedFerocity",
 	"effects": ["drauven_pc_bloodedFerocity" ],
@@ -42,6 +62,7 @@
 	{
 	"id": "drauvenDeck_upgraded_bloodedFerocity",
 	"effects": ["drauven_pc_upgraded_bloodedFerocity" ],
+	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
     "abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "ignite", "upgradeForAbility": "drauvenDeck_bloodedFerocity", }
