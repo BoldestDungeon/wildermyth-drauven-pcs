@@ -1,9 +1,10 @@
 {
-"id": "drauven_cordAndVines_pc|RANGE_EXPRESSION|DAMAGE_EXPRESSION",
+"id": "drauven_pc_cordAndVines",
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_cordAndVines",
-	"author": "Patrick Belanger",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "HeroOfWind",
 	"aiPriority": "2050"
 },
 "type": "ABILITY",
@@ -11,10 +12,15 @@
 "ability": {
 	"icon": "thornlash",
 	"category": "attackAbility",
+	"strictlyBetterThan": [
+		"mysticRecipeWildGrasp",
+		"mysticRecipeEngulf",
+		"advancedRecipe_vinewrench",
+		"humanistRecipe_sturdyEngulf"
+	],
 	"priority": "1",
 	"onlyShowIfPossibleInCharacterSheet": true,
-	"showDescriptionInTooltip": true,
-	"cooldown": "oncePerTurn"
+	"showDescriptionInTooltip": true
 },
 "targets": [
 	{
@@ -27,7 +33,7 @@
 		"template": "ANY",
 		"type": "SCENERY",
 		"choose": "BY_SCORE",
-		"scoreFunction": "((((plant+tree)+textile)+tools)+book)+wood",
+		"scoreFunction": "plant+textile",
 		"scoreThreshold": "1",
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
@@ -43,15 +49,9 @@
 		"template": "ADJACENT_ENEMY",
 		"showAnyway": true,
 		"alwaysSelect": true,
-		"aiHints": {
-			"scoreNearbyFriend": "-10*isMatch(ACTIONS,2)",
-			"friendRange": "1",
-			"friendMaxRange": "4",
-			"baseScore": "10000"
-		},
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
-		"range": "RANGE_EXPRESSION+self.BONUS_RANGE",
+		"range": "4.6+self.BONUS_RANGE",
 		"lineOfSight": "LIVE_FIGURES"
 	},
 	{
@@ -65,11 +65,6 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
 			"applyRoleFootprint": "target",
 			"showMovementFeedback": true
-		},
-		"aiHints": {
-			"scoreNearbyFriend": "((((drauven_stump+(2*drauven_haunt))+(3*drauven_terrorbird))+(3*drauven_gorelord))+(3*drauven_pilotNobylle))*isMatch(ACTIONS,2)",
-			"friendRange": "1",
-			"friendMaxRange": "6"
 		},
 		"relativeTo": "target",
 		"range": "3.1+self.BONUS_RANGE",
@@ -85,7 +80,7 @@
 		"class": "AttackRoll",
 		"intermediateRole": "source",
 		"attackAnimationType": "magic",
-		"showAbilityName": "ifEnemy",
+		"showAbilityName": "always",
 		"particles": [
 			{ "script": "cordAndVines", "setPosition": "source", "setPosition2": "target" }
 		],
@@ -105,11 +100,15 @@
 					"threshold": "1",
 					"onFail": { "class": "MoveEntity", "directlyToTile": "targetTile" }
 				},
-				{ "class": "Damage", "amount": "DAMAGE_EXPRESSION+self.PHYSICAL_DAMAGE_BONUS" },
+				{
+					"class": "Damage",
+					"amount": "(1d3+self.POTENCY)+self.SPELL_DAMAGE",
+					"useEquippedWeaponForStunt": true
+				},
 				{
 					"class": "Aspects",
 					"addAspects": [
-						{ "id": "hobbled", "value": "1" }
+						{ "id": "hobbled", "value": "2" }
 					]
 				}
 			]

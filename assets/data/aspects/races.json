@@ -1,201 +1,216 @@
 [
-    {
-        "id": "nonhuman",
-        "stats": {
-            "PHYSICAL_DAMAGE_BONUS": -0,
-            "ARMOR": -0,
-            "RECOVERY_RATE": -25,
-            "HEALTH": -5,
-            "RANGE_ACCURACY": -100,
-            "POTENCY": -0,
-            "BLOCK": -45,
-            "MELEE_ACCURACY": -100,
-            "TENACITY": -15,
-            "CHARISMA": -15,
-            "SPEED": -1,
-            "RETIREMENT_AGE": -45,
-            "STUNT_CHANCE": -15,
-            "PERCEPTION": -10,
-            "WARDING": -0,
-            "DODGE": -45
-        },
-        "importance": -1
-    },
-    {
-        "id": "drauven_pc",
-        "effects": [
-            "run",
-            "openDoor",
-            "extinguishFire",
-            "waitEndTurn",
-            "injuryDistracts",
-            "clearBrush",
-            "destroyFurniture",
-            "attackFurniture",
-            "lightBeacon",
-            "lightLamp",
-            "extinguishLamp",
-            "equipInactiveWeapon",
-            "overlandMove",
-            "overlandMoveAllOnTile",
-            "basicBranchableMelee",
-            "removeStasis",
-            "removeDominated",
-            "removeDrauvenBird",
-            "friend_teamwork_meleeBlock",
-            "defaultMoveFeedback",
-            "turnEndAchievementChecks",
-
-            "drauven_progressToEarlyMiddleAge",
-            "drauven_progressToMiddleAge",
-			"drauven_progressToLateMiddleAge",
-            "drauven_progressToOldAge",
-            "drauven_progressToVeryOldAge",
-            "drauven_progressToExtremeOldAge",
-            
-            "alsoAddIfOther|drauvenInterfuse|mystic"
-
-        ],
-        "stats": {
-            "PHYSICAL_DAMAGE_BONUS": 0,
-            "ARMOR": 0,
-            "RECOVERY_RATE": 40,
-            "HEALTH": 3,
-            "RANGE_ACCURACY": 100,
-            "POTENCY": 0,
-            "BLOCK": 55,
-            "MELEE_ACCURACY": 100,
-            "TENACITY": 20,
-            "CHARISMA": 10,
-            "SPEED": 1,
-            "RETIREMENT_AGE": 65,
-            "STUNT_CHANCE": 15,
-            "PERCEPTION": 12,
-            "WARDING": 0,
-            "DODGE": 35
-        },
-        "voice": "defaultDrauven"
-    },
-    {
-        "id": "drauvenSkin_naturalHead",
-        "importance": -1,
-        "invalidatesSkin": true
-    },
-    {
-        "id": "drauvenSkin_naturalLeftArm",
-        "importance": -1,
-        "invalidatesSkin": true
-    },
-    {
-        "id": "drauvenSkin_naturalLeftHand",
-        "importance": -1,
-        "invalidatesSkin": true
-    },
-    {
-        "id": "drauvenSkin_naturalLeftLeg",
-        "stats": {
-            "SPEED": 1.7
-        },
-        "importance": -1,
-        "invalidatesSkin": true
-    },
-    {
-        "id": "drauvenSkin_naturalRightArm",
-        "importance": -1,
-        "invalidatesSkin": true
-    },
-    {
-        "id": "drauvenSkin_naturalRightHand",
-        "importance": -1,
-        "invalidatesSkin": true
-    },
-    {
-        "id": "drauvenSkin_naturalRightLeg",
-        "stats": {
-            "SPEED": 1.7
-        },
-        "importance": -1,
-        "invalidatesSkin": true
-    },
-    {
-        "id": "drauvenInterfuse",
-        "effects": [
-            "skysingerBlastingshard_pc",
-            "drauven_cordAndVines_pc|4.6|1+1d3",
-            "drauven_fissureBell_pc|4.6|2+1d2|2",
-            "drauven_flamewings_pc|2+1d2"
-        ]
-    },
-    {
-        "id": "drauvenHeadCustom_warrior1",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_warrior2",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_warrior3",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_warrior4",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_mystic1",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_mystic2",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_mystic3",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_mystic4",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_hunter1",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_hunter2",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_hunter3",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    },
-    {
-        "id": "drauvenHeadCustom_hunter4",
-        "importance": -1,
-        "invalidatesSkin": true,
-        "lifespan": "all"
-    }
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_hunter1",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_hunter2",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_hunter3",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_hunter4",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_mystic1",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_mystic2",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_mystic3",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_mystic4",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_warrior1",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_warrior2",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_warrior3",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHeadCustom_warrior4",
+	"importance": -1,
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenInterfuse",
+	"effects": [
+		"skysingerBlastingshard_pc",
+		"drauven_pc_cordAndVines",
+		"drauven_fissureBell_pc|4.6|2+1d2|2",
+		"drauven_flamewings_pc|2+1d2"
+	]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSkin_naturalHead",
+	"importance": -1,
+	"invalidatesSkin": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSkin_naturalLeftArm",
+	"importance": -1,
+	"invalidatesSkin": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSkin_naturalLeftHand",
+	"importance": -1,
+	"invalidatesSkin": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSkin_naturalLeftLeg",
+	"stats": { "SPEED": 1.7 },
+	"importance": -1,
+	"invalidatesSkin": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSkin_naturalRightArm",
+	"importance": -1,
+	"invalidatesSkin": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSkin_naturalRightHand",
+	"importance": -1,
+	"invalidatesSkin": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSkin_naturalRightLeg",
+	"stats": { "SPEED": 1.7 },
+	"importance": -1,
+	"invalidatesSkin": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc",
+	"effects": [
+		"run",
+		"openDoor",
+		"extinguishFire",
+		"waitEndTurn",
+		"injuryDistracts",
+		"clearBrush",
+		"destroyFurniture",
+		"attackFurniture",
+		"lightBeacon",
+		"lightLamp",
+		"extinguishLamp",
+		"equipInactiveWeapon",
+		"overlandMove",
+		"overlandMoveAllOnTile",
+		"basicBranchableMelee",
+		"removeStasis",
+		"removeDominated",
+		"removeDrauvenBird",
+		"friend_teamwork_meleeBlock",
+		"defaultMoveFeedback",
+		"turnEndAchievementChecks",
+		"drauven_progressToEarlyMiddleAge",
+		"drauven_progressToMiddleAge",
+		"drauven_progressToLateMiddleAge",
+		"drauven_progressToOldAge",
+		"drauven_progressToVeryOldAge",
+		"drauven_progressToExtremeOldAge",
+		"alsoAddIfOther|drauvenInterfuse|mystic"
+	],
+	"stats": {
+		"ARMOR": 0,
+		"BLOCK": 55,
+		"CHARISMA": 10,
+		"DODGE": 35,
+		"HEALTH": 3,
+		"MELEE_ACCURACY": 100,
+		"PERCEPTION": 12,
+		"PHYSICAL_DAMAGE_BONUS": 0,
+		"POTENCY": 0,
+		"RANGE_ACCURACY": 100,
+		"RECOVERY_RATE": 40,
+		"RETIREMENT_AGE": 65,
+		"SPEED": 1,
+		"STUNT_CHANCE": 15,
+		"TENACITY": 20,
+		"WARDING": 0
+	},
+	"voice": "defaultDrauven"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "nonhuman",
+	"stats": {
+		"ARMOR": 0,
+		"BLOCK": -45,
+		"CHARISMA": -15,
+		"DODGE": -45,
+		"HEALTH": -5,
+		"MELEE_ACCURACY": -100,
+		"PERCEPTION": -10,
+		"PHYSICAL_DAMAGE_BONUS": 0,
+		"POTENCY": 0,
+		"RANGE_ACCURACY": -100,
+		"RECOVERY_RATE": -25,
+		"RETIREMENT_AGE": -45,
+		"SPEED": -1,
+		"STUNT_CHANCE": -15,
+		"TENACITY": -15,
+		"WARDING": 0
+	},
+	"importance": -1
+}
 ]
