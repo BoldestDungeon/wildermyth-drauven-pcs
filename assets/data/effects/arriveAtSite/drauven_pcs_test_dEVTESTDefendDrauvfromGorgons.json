@@ -57,7 +57,7 @@
 							"size": 0.523
 						},
 						{
-							"role": "npc3",
+							"role": "npc2",
 							"facing": "left",
 							"equipment": {},
 							"focus": "foot",
@@ -84,7 +84,7 @@
 		"combatants": [
 			{ "role": "party", "side": "player" },
 			{
-				"roles": [ "npc", "npc2", "npc3" ],
+				"roles": [ "npc", "npc2" ],
 				"side": "player"
 			},
 			{
@@ -107,7 +107,7 @@
 		{
 			"npcId": "drauvDefender1",
 			"createEntity": {
-				"query": { "baseTag": "human", "setClass": "mystic" },
+				"query": { "baseTag": "human", "setClass": "nonFarmer" },
 				"control": "none",
 				"additionalOutcome": {
 					"class": "DoAll",
@@ -132,7 +132,7 @@
 			"role": "npc2",
 			"npcId": "drauvDefender2",
 			"createEntity": {
-				"query": { "baseTag": "human", "setClass": "mystic" },
+				"query": { "baseTag": "human", "setClass": "nonFarmer" },
 				"control": "none",
 				"additionalOutcome": {
 					"class": "DoAll",
@@ -151,13 +151,6 @@
 						{ "class": "ApplyTheme", "target": "npc2", "theme": "drauven", "piece": "torso" }
 					]
 				}
-			}
-		},
-		{
-			"role": "npc3",
-			"createEntity": {
-				"query": { "baseTag": "drauven_skysinger" },
-				"control": "none"
 			}
 		}
 	]

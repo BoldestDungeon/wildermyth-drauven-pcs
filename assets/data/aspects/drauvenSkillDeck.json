@@ -40,6 +40,29 @@
 	}
 },
 {
+	"id": "drauvenDeck_mystic_fireshot",
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"effects": ["drauven_pc_fireshot"],
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "mystic",
+		"abilityDeckIcon": "fireleash"
+	}
+},
+{
+	"id": "drauvenDeck_mystic_fireshot_upgrade",
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"effects": ["drauven_pc_channelFireball"],
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_fireshot",
+		"abilityDeckIcon": "fireleash"
+	}
+},
+{
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_warrior_bloodedFerocity",
 	"effects": [ "drauven_pc_bloodedFerocity" ],
