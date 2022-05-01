@@ -1,0 +1,33 @@
+{
+"id": "drauven_pc_BirdDebuffRemoved|_ENTITY_",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_BirdDebuffRemoved",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "HeroOfWind"
+},
+"type": "ASPECT_REMOVED",
+"targets": [
+	{ "template": "ANY_SELF" },
+	{ "template": "ANY", "matchSpecial": "parameter1" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "target",
+		"addAspects": [],
+		"consumeAspects": [
+			{ "id": "drauven_pc_BirdHarassing", "value": "1", "inRelationTo": "self" }
+		]
+	},
+	{
+		"class": "Animate",
+		"target": "target",
+		"particles": {
+			"script": "projectileTrailDrauvenBird",
+			"setPosition": "self",
+			"setPosition2": "target"
+		}
+	}
+]
+}

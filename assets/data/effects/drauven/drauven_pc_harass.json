@@ -3,17 +3,13 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_harass",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Bipen",
 	"tags": [ "okToMarkDone" ]
 },
 "type": "ABILITY",
 "verb": "ATTACK",
-"ability": {
-	"icon": "peck",
-	"priority": "1",
-	"showDescriptionInTooltip": true,
-	"cooldown": "everyOtherTurn"
-},
+"ability": { "icon": "peck", "priority": "1", "showDescriptionInTooltip": true },
 "targets": [
 	{
 		"template": "SELF",
@@ -23,7 +19,6 @@
 			{ "id": "themePiece_petBirdDrauven_birdDrauven" },
 			{ "id": "drauven_pc" }
 		]
-
 	},
 	{
 		"template": "ADJACENT_ENEMY",
@@ -36,7 +31,7 @@
 			"suggestionFeedback": "ATTACK_SUGGESTION",
 			"hoverFeedback": "ATTACK_HOVER"
 		},
-		"aspects": [ "alive", "HOSTILE_TARGET" ],
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"aspectValues": [
 			{ "id": "drauvenBirdDebuff*", "forbidden": true }
 		],
@@ -63,11 +58,14 @@
 				{
 					"class": "Aspects",
 					"addAspects": [
-						{
-							"id": "drauvenBirdDebuff",
-							"value": "1",
-							"inRelationTo": "self"
-						}
+						{ "id": "drauven_pc_BirdDebuff", "value": "1", "inRelationTo": "self" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "self",
+					"addAspects": [
+						{ "id": "drauven_pc_BirdHarassing", "value": "1", "inRelationTo": "target" }
 					]
 				}
 			]

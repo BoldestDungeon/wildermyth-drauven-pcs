@@ -1,0 +1,28 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_BirdDebuff|_ENTITY_",
+	"parameters": [
+		{ "replace": "_ENTITY_", "isEntity": true }
+	],
+	"effects": [
+		"drauven_pc_BirdDebuff|_ENTITY_",
+		"otherAspectPreventsThisAspectShowText|immuneToStatusEffects",
+		"removeOnDeath",
+		"alsoAddRemoveAspectAfterTurnStartsParameter|drauven_pc_BirdDebuff|_ENTITY_|3",
+		"drauven_pc_BirdDebuffRemoved|_ENTITY_"
+	],
+	"stats": { "SPEED": -1 },
+	"boostType": "DISADVANTAGE",
+	"script": "figures.drauvenBird"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_BirdHarassing|_ENTITY_",
+	"parameters": [
+		{ "replace": "_ENTITY_", "isEntity": true }
+	],
+	"effects": [ "removeOnDeath", "drauven_pc_birdRecall|_ENTITY_" ],
+	"boostType": "ADVANTAGE"
+}
+]
