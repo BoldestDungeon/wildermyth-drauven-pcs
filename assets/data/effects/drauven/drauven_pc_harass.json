@@ -26,15 +26,17 @@
 
 	},
 	{
-		"template": "ADJACENT_FRIENDLY",
+		"template": "ADJACENT_ENEMY",
 		"showAnyway": true,
 		"alwaysSelect": true,
 		"missionFeedback": {
-			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
-			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
-			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
 		},
-		"aspects": [ "alive", "ALLY" ],
+		"aspects": [ "alive", "HOSTILE_TARGET" ],
 		"aspectValues": [
 			{ "id": "drauvenBirdDebuff*", "forbidden": true }
 		],
