@@ -1,0 +1,25 @@
+{
+"id": "drauven_pc_fireballPreparedRegion|COORDS",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_fireballPreparedRegion",
+	"author": "Ironskink"
+},
+"type": "REGION",
+"targets": [],
+"outcomes": [
+	{
+		"class": "MapRegion",
+		"target": "self",
+		"region": {
+			"id": "drauven_pc_fireballPreparedRegion",
+			"physicallyPresent": true,
+			"destinationCostDangerous": 1,
+			"feedbackType": "DRAUVEN_FIREBALL_PREPARED",
+			"tileFilter": "floorOrScenery",
+			"spatialRelationship": { "otherAspect": "nextTurnWarning|drauvenDeck_mystic_fireshot_upgrade" }
+		},
+		"elementsString": "COORDS"
+	}
+]
+}
