@@ -1,0 +1,24 @@
+[
+
+  {
+    "id": "drauven_pc_fireballPreparedRegion|COORDS",
+    "parameters": [
+      { "replace": "COORDS" }
+    ],
+    "effects": [ "drauven_pc_fireballPreparedRegion|COORDS" ],
+    "boostType": "ABILITY_MISC",
+    "importance": -1,
+    "showInTooltip": true
+  },
+  {
+    "id": "drauven_pc_fireballPrepared|COORDS|FEEDBACK_ENTITY",
+    "parameters": [
+      { "replace": "COORDS" },
+      { "replace": "FEEDBACK_ENTITY" }
+    ],
+    "effects": [ "drauven_pc_throwFireball|COORDS|FEEDBACK_ENTITY", "onDeathDeleteOther|ENTITY" ],
+    "boostType": "NEUTRAL",
+    "removedImportance": -1,
+    "showInTooltip": true
+  }
+]

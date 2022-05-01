@@ -1,0 +1,143 @@
+{
+"id": "drauven_pc_throwFireball|COORDS|FEEDBACK_ENTITY",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_throwFireball",
+	"author": "Ironskink",
+	"aiPriority": "4000",
+	"tags": [ "ranged", "aiCanUseBeforeMove" ]
+},
+"type": "TURN_START_2",
+"verb": "ATTACK",
+"ability": {
+	"icon": "ignite",
+	"priority": "1",
+	"category": "attack",
+	"showInCharacterSheet": false,
+	"cooldown": "oncePerTurn"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"showAnyway": true,
+		"missionFeedback": { "orientTo": "focus" },
+		"aspectValues": [
+			{ "id": "forbidReactions|*", "forbidden": true }
+		]
+	},
+	{
+		"template": "TILE",
+		"showAnyway": true,
+		"missionFeedback": {
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"matchSpecial": "parameter1",
+		"range": null
+	},
+	{
+		"role": "hook",
+		"template": "TILE",
+		"STUB": "Line of SIght test; if nothing is matched, the prepared fireball will just be removed",
+		"choose": "ANY",
+		"showAnyway": true,
+		"fromRoles": [ "focus" ],
+		"range": null,
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "ANY",
+		"missionFeedback": { "hoverFeedback": "FRIENDLY_EFFECT_HOVER" },
+		"relativeTo": "focus",
+		"range": "2.6",
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"template": "ADJACENT_UNIT",
+		"choose": "ANY",
+		"missionFeedback": {
+			"orientTo": "self",
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"aspects": [ "alive", "ENEMY" ],
+		"range": "2.6+(self.POTENCY/3)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"relativeToLocation": "focus",
+		"rangeIgnoreFootprint": true
+	},
+	{
+		"role": "volunteer",
+		"template": "ANY",
+		"STUB": "Tile feedback, to be removed",
+		"matchSpecial": "parameter2"
+	}
+],
+"outcomes": [
+	{
+		"class": "IfRolesArePresent",
+		"STUB": "If we have line of sight, attack. Otherwise, remove the prepared fireball.",
+		"rolesArePresent": [ "hook" ],
+		"then": {
+			"class": "AttackRoll",
+			"intermediateRole": "targetTile",
+			"attackAnimationType": "ranged",
+			"showAbilityName": "ifEnemy",
+			"timingOverride": {},
+			"particles": [
+				{
+					"script": "FireballThrow",
+					"setPosition": "self",
+					"setPosition2": "focus",
+					"delay": -0.7
+				},
+				{ "script": "Fireball", "setPosition": "focus" }
+			],
+			"audioOverride": {
+				"attackStartCue": "Characters/DefaultHuman/Magic_FireMiss",
+				"attackHitCue": "Characters/DefaultHuman/Magic_FireHit"
+			},
+			"defenseRollTags": [ "range" ],
+			"attackStrength": "self.RANGE_ACCURACY+20",
+			"always": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Aspects",
+						"removeAspects": [ "drauven_fireballPrepared|*", "drauven_fireballPreparedRegion|*" ]
+					},
+					{ "class": "Delete", "STUB": "Delete tile feedback", "target": "volunteer" },
+					{
+						"class": "Spawn",
+						"STUB": "Chance to spawn fires",
+						"target": "targetTile",
+						"addRole": "fire",
+						"addFire": "max(0,((1d7-6)*2))"
+					}
+				]
+			},
+			"onHit": {
+				"class": "Damage",
+				"amount": "((4+1d4)+self.SPELL_DAMAGE)+self.POTENCY",
+				"type": "MAGIC"
+			}
+		},
+		"otherwise": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"removeAspects": [ "drauven_fireballPrepared|*", "drauven_fireballPreparedRegion|*" ]
+				},
+				{ "class": "Delete", "STUB": "Delete tile feedback", "target": "volunteer" }
+			]
+		}
+	}
+]
+}
