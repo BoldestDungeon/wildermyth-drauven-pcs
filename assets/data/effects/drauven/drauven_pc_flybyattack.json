@@ -22,7 +22,10 @@
 		"scoreFunction": "(1-min(1,pinned))+warriorDeck_zealousLeap_upgrade",
 		"scoreThreshold": "1",
 		"cost": { "class": "ActionPoints", "actionPoints": "free" },
-		"missionFeedback": { "orientTo": "targetTile" }
+		"missionFeedback": { "orientTo": "targetTile" },
+		"aspectValues": [
+			{ "id": "drauven_pc" }
+		]
 	},
 	{
 		"role": "targetTile",

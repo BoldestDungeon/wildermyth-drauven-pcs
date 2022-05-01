@@ -21,16 +21,6 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_common_flybyattack",
-	"effects": [ "drauven_pc_flybyattack" ],
-	"boostType": "ABILITY_MISC",
-	"legacyAbilityChoice": true,
-	"abilityRequiresOneAspectOf":[ "drauven_pc" ]
-	"abilityRequiresOneAspectOf": [ "themePiece_drauvenWings_wings", "themePiece_hawk_wings" ],
-	"info": { "abilityDeckUsage": "common", "abilityDeckIcon": "fly" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_blastingshard",
 	"effects": [ "drauven_pc_blastingshard" ],
 	"boostType": "ABILITY_CLASS",

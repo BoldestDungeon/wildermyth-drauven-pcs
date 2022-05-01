@@ -1,0 +1,22 @@
+{
+	"id": "petBirdDrauven",
+	"name": "Pet Drauven-Bird",
+	"blurb": "<self> healed the bird's injury and apparently earned some loyalty.",
+
+
+	"pieces": [
+		{
+			"id": "birdDrauven",
+			"name": "Drauven Bird",
+			"blurb": "It's a little mean-looking, but it seems to like you.",
+			"slots": ["shoulderPet"],
+			"stats": {"MELEE_ACCURACY": 5, "RANGE_ACCURACY": 5,},
+			"layers": [
+				{"name": "pet_birdDrauven", "depth": 70}
+			]
+			"effects": [
+				"drauven_pc_harass"
+			]
+		}
+	]
+}

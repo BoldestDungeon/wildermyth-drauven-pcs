@@ -1,0 +1,29 @@
+{
+	"id": "drauvenWings",
+	"name": "Drauven Wings",
+	"blurb": "Looted off a dead Drauven and repurposed.",
+	
+	"forbidCombineWith": ["crow", "hawk", "mothWings"],
+
+	"pieces": [
+
+		{
+			"id": "wings",
+			"name": "Drauven Wings",
+			"blurb": "Fashioned from hide and light wood, with a healthy infusion of magic.",
+			"slots": ["wings"],
+			"stats": {"SPEED": 1.4},
+			"extraAspects": ["wingSound"],
+			"layers": [
+				{
+					"name": "wingsDrauven",
+					"depth": 1
+				}
+			],
+			"effects": [
+			"drauven_pc_flybyattack"
+			]
+		}
+
+	]
+}
