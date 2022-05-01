@@ -1,0 +1,40 @@
+{
+"id": "drauven_pc_birdRecall|_ENTITY_",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_birdRecall",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "HeroOfWind",
+	"tags": [ "okToMarkDone" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "peck",
+	"strictlyBetterThan": [ "drauven_pc_harass" ],
+	"priority": "1",
+	"showDescriptionInTooltip": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "free" }
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"missionFeedback": null,
+		"matchSpecial": "parameter1",
+		"aspects": null,
+		"range": null
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "target",
+		"consumeAspects": [
+			{ "id": "drauven_pc_BirdDebuff", "value": "1", "inRelationTo": "self" }
+		]
+	}
+]
+}

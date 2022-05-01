@@ -1,0 +1,75 @@
+{
+"id": "drauven_pc_harass",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_harass",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Bipen",
+	"tags": [ "okToMarkDone" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": { "icon": "peck", "priority": "1", "showDescriptionInTooltip": true },
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "free" },
+		"missionFeedback": { "orientTo": "target" },
+		"aspectValues": [
+			{ "id": "themePiece_petBirdDrauven_birdDrauven" },
+			{ "id": "drauven_pc" }
+		]
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"aspectValues": [
+			{ "id": "drauvenBirdDebuff*", "forbidden": true }
+		],
+		"range": "5",
+		"lineOfSight": "TERRAIN_ONLY"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"particles": [
+			{
+				"script": "projectileTrailDrauvenBird",
+				"setPosition": "self",
+				"setPosition2": "target"
+			}
+		],
+		"flankingBoostsAttackRoll": false,
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "drauven_pc_BirdDebuff", "value": "1", "inRelationTo": "self" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "self",
+					"addAspects": [
+						{ "id": "drauven_pc_BirdHarassing", "value": "1", "inRelationTo": "target" }
+					]
+				}
+			]
+		}
+	}
+]
+}

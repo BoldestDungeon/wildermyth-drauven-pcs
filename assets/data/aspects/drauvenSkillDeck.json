@@ -85,6 +85,22 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_warrior_tailslap",
+	"effects": [ "drauven_pc_tailslap" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "crush" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_warrior_tailslap_upgrade",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "crush", "upgradeForAbility": "drauvenDeck_tailslap", }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_warrior_concussed",
 	"effects": [ "drauven_pc_concussed" ],
 	"boostType": "ABILITY_CLASS",

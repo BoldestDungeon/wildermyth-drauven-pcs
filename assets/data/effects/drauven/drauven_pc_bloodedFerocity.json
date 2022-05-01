@@ -12,7 +12,7 @@
 	"icon": "ignite",
 	"priority": "1",
 	"showDescriptionInTooltip": true,
-	"cooldown": "oncePerMission"
+	"numUses": "1+(self.drauvenDeck_warrior_bloodedFerocity_upgrade*2)"
 },
 "targets": [
 	{
