@@ -1,16 +1,17 @@
 {
-"id": "drauven_fissureBell_pc|RANGE_EXPRESSION|DAMAGE_EXPRESSION|SHRED_EXPRESSION",
+"id": "drauven_pc_fissureBell",
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_fissureBell",
-	"author": "Patrick Belanger",
-	"aiPriority": "2050+COUNT.target"
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Hero Of Wind"
 },
 "type": "ABILITY",
 "verb": "ATTACK",
 "ability": {
 	"icon": "lightning",
 	"category": "attackAbility",
+	"strictlyBetterThan": [ "mysticRecipeDiscus", "mysticRecipeBoneSpear" ],
 	"priority": "1",
 	"onlyShowIfPossibleInCharacterSheet": true
 },
@@ -25,7 +26,7 @@
 		"template": "ANY",
 		"type": "SCENERY",
 		"choose": "BY_SCORE",
-		"scoreFunction": "((metal+rock)+furniture)+statue",
+		"scoreFunction": "(bone+rock)+statue",
 		"scoreThreshold": "1",
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
@@ -48,7 +49,6 @@
 			"hoverFeedback": "ATTACK_HOVER",
 			"feedbackSource": "source"
 		},
-		"aiHints": { "fullInferLookAhead": true },
 		"relativeTo": "source",
 		"minRange": "0.9",
 		"range": "4.6+self.BONUS_RANGE",
@@ -57,7 +57,7 @@
 	},
 	{
 		"template": "ADJACENT_UNIT",
-		"choose": "ALL",
+		"choose": "ANY",
 		"showAnyway": true,
 		"missionFeedback": {
 			"hoverScript": "figures.attackHovered",
@@ -70,11 +70,10 @@
 			"to": "focus",
 			"thickness": [ "1", "1" ],
 			"excludeSource": true,
-			"distanceInDirection": "RANGE_EXPRESSION+self.BONUS_RANGE"
+			"distanceInDirection": "4.6+self.BONUS_RANGE"
 		},
-		"aspects": [ "alive", "ENEMY" ],
 		"relativeTo": "source",
-		"range": null,
+		"range": "4.6+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
 	{
@@ -87,11 +86,11 @@
 			"to": "focus",
 			"thickness": [ "1", "1" ],
 			"excludeSource": true,
-			"distanceInDirection": "RANGE_EXPRESSION+self.BONUS_RANGE"
+			"distanceInDirection": "4.6+self.BONUS_RANGE"
 		},
 		"relativeTo": "source",
 		"notAlreadyMatchedAs": [ "source" ],
-		"range": null,
+		"range": "4.6+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
 	{
@@ -106,10 +105,10 @@
 			"to": "focus",
 			"thickness": [ "1", "1" ],
 			"excludeSource": true,
-			"distanceInDirection": "RANGE_EXPRESSION+self.BONUS_RANGE"
+			"distanceInDirection": "4.6+self.BONUS_RANGE"
 		},
 		"relativeTo": "source",
-		"range": null,
+		"range": "4.6+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],
@@ -134,15 +133,15 @@
 				{
 					"class": "Damage",
 					"target": "source",
-					"amount": "DAMAGE_EXPRESSION",
+					"amount": "2",
 					"type": "TRUE",
 					"showInTooltip": false
 				},
 				{
 					"class": "Damage",
 					"target": "scenery",
-					"amount": "DAMAGE_EXPRESSION",
-					"shred": "SHRED_EXPRESSION",
+					"amount": "(1d2+self.SPELL_DAMAGE)+self.POTENCY",
+					"shred": "2",
 					"pierce": "0",
 					"showInTooltip": false
 				}
@@ -153,8 +152,8 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "DAMAGE_EXPRESSION+self.PHYSICAL_DAMAGE_BONUS",
-					"shred": "SHRED_EXPRESSION",
+					"amount": "(1d2+self.SPELL_DAMAGE)+self.POTENCY",
+					"shred": "2",
 					"type": "MAGIC"
 				}
 			]
