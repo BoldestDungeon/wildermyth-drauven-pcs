@@ -1,0 +1,3571 @@
+{
+"id": "wildermyth-drauven-pcs_theAbandonded",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "wildermyth-drauven-pcs_theAbandonded",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Bipen"
+},
+"type": "ENCOUNTER_WILDERNESS_SCOUTING",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "threatFlavorExists": "drauven" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "IMMEDIATE_ENEMY" },
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "HEALER",
+		"scoreThreshold": "60"
+	},
+	{
+		"role": "hothead",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "HOTHEAD+COWARD",
+		"scoreThreshold": "60",
+		"aspectValues": [
+			{ "id": "drauven_pc", "forbidden": true }
+		],
+		"notAlreadyMatchedAs": [ "healer" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "healer", "hothead" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.52, "y": 0.404 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.88, "y": 0.5 },
+							"size": 0.546,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "volunteer",
+							"anchor": { "x": 0.182, "y": 0.56 },
+							"size": 0.541,
+							"nameTag": "none",
+							"head": { "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_001~2_healer",
+							"style": "none",
+							"pointerOwner": "healer",
+							"padXFraction": 0.632,
+							"padYFraction": 0.193
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.399, "y": 0.404 },
+							"head": { "scaleY": -1 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.88, "y": 0.5 },
+							"size": 0.546,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_002~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.009,
+							"padYFraction": 0.02,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_002~2_hothead",
+							"pointerOwner": "hothead",
+							"location": "topRight",
+							"padXFraction": 0.009,
+							"padYFraction": 0.16,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 24, "dY": 2 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.399, "y": 0.404 },
+							"head": { "scaleY": 1 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.756, "y": 0.504 },
+							"size": 0.546,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_003~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.009,
+							"padYFraction": 0.02,
+							"widthFraction": 0.6263049,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_003~2_healer",
+							"style": "none",
+							"pointerOwner": "healer",
+							"padXFraction": 0.564,
+							"padYFraction": 0.743,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.245, "y": 0.404 },
+							"head": { "rotate": 26.1, "scaleY": 1 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.759, "y": 0.504 },
+							"size": 0.546,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -8.184, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_004~1_healer",
+							"pointerOwner": "healer",
+							"location": "bottomLeft",
+							"padXFraction": 0.111,
+							"padYFraction": 0.042,
+							"widthFraction": 0.50566965,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -12.000008, "dY": 7.0000153, "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_004~2_hothead",
+							"pointerOwner": "hothead",
+							"location": "topRight",
+							"padXFraction": 0.138,
+							"padYFraction": 0.045,
+							"widthFraction": 0.31259578,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 16, "dY": -1 }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_004~3_none",
+							"style": "none",
+							"padXFraction": 0.056,
+							"padYFraction": 0.104,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "hothead",
+							"form": "frame-dubious",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.841, "y": 0.524 },
+							"size": 0.653,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -3.326, "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.123, "y": 0.404 },
+							"size": 0.352,
+							"head": { "rotate": -37.658, "scaleY": 1 }
+						},
+						{
+							"role": "volunteer",
+							"anchor": { "x": 0.625, "y": 0.424 },
+							"size": 0.323,
+							"nameTag": "none",
+							"head": { "rotate": 15.606, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_005~1_hothead",
+							"pointerOwner": "hothead",
+							"location": "topRight",
+							"widthFraction": 0.9938707,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_005~2_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.211,
+							"padYFraction": 0.246,
+							"widthFraction": 0.38614774,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 14, "dY": -6.000057 }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_005~3_healer",
+							"style": "none",
+							"pointerOwner": "healer",
+							"location": "bottomRight",
+							"padXFraction": 0.552,
+							"padYFraction": 0.135,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "hothead",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.572, "y": 0.52 },
+							"size": 0.645,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -29.5, "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.2, "y": 0.48 },
+							"size": 0.586,
+							"head": { "rotate": -43.383, "scaleY": 1 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.921, "y": 0.593 },
+							"size": 0.558,
+							"nameTag": "none",
+							"head": { "rotate": -17.064 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_006~1_hothead",
+							"pointerOwner": "hothead",
+							"widthFraction": 0.9938707,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_swampTreesRed.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:treeHollow.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.643, "y": 0.496 },
+							"size": 0.385,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "scenery:deadTreeSwamp1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.096, "y": 0.359 },
+							"size": 0.301,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/drauvenJuvenile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.337, "y": 0.504 },
+							"size": 0.246
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_007~1_none",
+							"style": "none",
+							"padXFraction": 0.151,
+							"padYFraction": 0.454,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_007~2_healer",
+							"pointerOwner": "healer",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -195, "dY": -2 }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_007~3_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": 195.00002,
+								"dY": 0,
+								"pointerOrientH": "onLeft",
+								"forcePointerImage": "speechShort"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "hothead",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.572, "y": 0.52 },
+							"size": 0.645,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -19.943, "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.2, "y": 0.48 },
+							"size": 0.586,
+							"head": { "rotate": -31.860775, "scaleY": 1 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.921, "y": 0.593 },
+							"size": 0.558,
+							"nameTag": "none",
+							"head": { "rotate": -17.064 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_008~1_hothead",
+							"style": "none",
+							"pointerOwner": "hothead",
+							"padXFraction": 0.038,
+							"padYFraction": 0.775,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_008~2_healer",
+							"pointerOwner": "healer"
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_008~3_speech"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "hothead",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.572, "y": 0.52 },
+							"size": 0.636,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.014, "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.2, "y": 0.48 },
+							"size": 0.586,
+							"head": { "rotate": -11.143, "scaleY": -1 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.921, "y": 0.593 },
+							"size": 0.558,
+							"nameTag": "none",
+							"head": { "rotate": -0.927 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_009~1_hothead",
+							"pointerOwner": "hothead",
+							"location": "topRight",
+							"padXFraction": 0.376,
+							"padYFraction": 0.135,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 25.000008, "dY": 3, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_009~2_healer",
+							"pointerOwner": "healer",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -30, "dY": 5.0000153 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_swampTreesRed.jpg",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.11, "y": 0.58 },
+							"size": 0.612
+						},
+						{
+							"role": "hothead",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.869, "y": 0.572 },
+							"size": 0.613
+						},
+						{
+							"assetSpec": "scenery:treeHollow.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.7, "y": 0.512 },
+							"size": 0.385,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "scenery:deadTreeSwamp1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.228, "y": 0.367 },
+							"size": 0.301,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/drauvenJuvenile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.462, "y": 0.528 },
+							"size": 0.251
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_010~1_healer",
+							"pointerOwner": "healer",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -25, "dY": 3.9999695 }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_010~2_hothead",
+							"pointerOwner": "hothead",
+							"location": "topRight",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 21, "dY": 5 }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_010~3_none",
+							"style": "none",
+							"fallbackSlotOwner": 3,
+							"location": "bottomLeft",
+							"padXFraction": 0.368,
+							"padYFraction": 0.553,
+							"widthFraction": 0.7953773,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_010~4_speech",
+							"location": "bottomRight",
+							"padXFraction": 0.025,
+							"padYFraction": 0.209,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "scenery:treeHollow.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.472, "y": 0.516 },
+							"size": 0.415,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_011~1_healer",
+							"pointerOwner": "healer",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 72, "dY": 10.999939, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_011~2_hothead",
+							"pointerOwner": "hothead",
+							"location": "topRight",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -59, "dY": 0, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_012~1_healer",
+							"pointerOwner": "healer"
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_012~2_healer",
+							"style": "none",
+							"pointerOwner": "healer",
+							"padXFraction": 0.639,
+							"padYFraction": 0.827,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_013~1_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+							"textKey": "~01~prompt~panel_013~2_healer",
+							"style": "none",
+							"pointerOwner": "healer",
+							"padXFraction": 0.639,
+							"padYFraction": 0.827,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "hothead",
+									"form": "frame-dubious",
+									"facing": "left",
+									"equipment": {}
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+									"textKey": "~02~choice_one~panel_001~1_hothead",
+									"pointerOwner": "hothead"
+								},
+								{
+									"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+									"textKey": "~02~choice_one~panel_001~2_healer",
+									"style": "narration",
+									"pointerOwner": "healer",
+									"location": "bottomRight",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "hothead",
+									"form": "frame-grim",
+									"facing": "left",
+									"equipment": {}
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+									"textKey": "~03~choice_two~panel_001~1_hothead",
+									"pointerOwner": "hothead"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{ "role": "hothead", "form": "frame-angry", "facing": "left" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+									"textKey": "~04~choice_three~panel_001~1_hothead",
+									"pointerOwner": "hothead"
+								},
+								{
+									"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+									"textKey": "~04~choice_three~panel_001~2_healer",
+									"style": "narration",
+									"pointerOwner": "healer",
+									"location": "bottomRight",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "healer",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "Test",
+			"value": "EVENT_ROLL+roll_one",
+			"threshold": "difficulty_one",
+			"onPass": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Description",
+						"script": [
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.17, "y": 0.584 },
+											"size": 0.612,
+											"head": { "rotate": -17.508018 }
+										},
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"equipment": {},
+											"anchor": { "x": 0.904, "y": 0.576 },
+											"size": 0.613,
+											"head": { "rotate": -23.779 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-grim",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.635, "y": 0.597 },
+											"size": 0.6,
+											"head": { "rotate": 6.382 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.446, "y": 0.512 },
+											"size": 0.385,
+											"nameTag": "bottomRight"
+										},
+										{
+											"assetSpec": "scenery:deadTreeSwamp1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.228, "y": 0.367 },
+											"size": 0.301,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.32, "y": 0.48 },
+											"size": 0.32,
+											"drawDepth": 3
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_001~1_healer",
+											"pointerOwner": "healer",
+											"widthFraction": 0.31926006,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -25, "dY": 3.9999695 }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_001~2_hothead",
+											"pointerOwner": "hothead",
+											"location": "bottomRight",
+											"widthFraction": 0.3401462,
+											"shrinkToFitText": true,
+											"pointerAdjust": {
+												"rotate": 167.27562,
+												"dX": 101.00003,
+												"dY": -7.0000305,
+												"pointerOrientH": "onLeft",
+												"pointerOrientV": "up"
+											}
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_001~3_volunteer",
+											"style": "none",
+											"pointerOwner": "volunteer",
+											"location": "topRight",
+											"padXFraction": 0.381,
+											"padYFraction": 0.154,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_001~4_none",
+											"style": "none",
+											"fallbackSlotOwner": 4,
+											"location": "bottomLeft",
+											"padXFraction": 0.303,
+											"padYFraction": 0.486,
+											"widthFraction": 0.7953773,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_001~5_speech",
+											"location": "bottomRight",
+											"padXFraction": 0.025,
+											"padYFraction": 0.209,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-happy",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.275, "y": 0.491 },
+											"size": 0.684,
+											"head": { "rotate": -30.296 }
+										},
+										{
+											"assetSpec": "vfx:fire",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.909, "y": 0.191 },
+											"size": 0.172,
+											"nameTag": "bottomRight"
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.134, "y": 0.094 },
+											"size": 0.32,
+											"drawDepth": 5,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.536, "y": 0.456 },
+											"size": 0.32,
+											"nameTag": "none",
+											"foot": { "rotate": -9.951 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_002~1_healer",
+											"pointerOwner": "healer",
+											"widthFraction": 0.59239966,
+											"pointerAdjust": { "dX": 35, "dY": -6.0000305, "pointerOrientH": "onLeft" }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_002~2_healer",
+											"style": "none",
+											"pointerOwner": "healer",
+											"padXFraction": 0.574,
+											"padYFraction": 0.429,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"bg": "comicBG_hillsPineEvening.jpg",
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_003~1_healer",
+											"style": "narration",
+											"pointerOwner": "healer"
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_003~2_none",
+											"style": "none",
+											"padXFraction": 0.482,
+											"padYFraction": 0.398
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.157, "y": 0.629 },
+											"size": 0.808,
+											"nameTag": "none"
+										},
+										{
+											"role": "healer",
+											"form": "frame-surprised",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.719, "y": 0.339 },
+											"size": 0.684,
+											"head": { "rotate": 14.653, "scaleY": -1 }
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.134, "y": 0.094 },
+											"size": 0.32,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:smokeRising.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.951, "y": 0.167 },
+											"size": 0.183,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_004~1_hothead",
+											"pointerOwner": "hothead",
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_004~2_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"widthFraction": 0.59239966,
+											"pointerAdjust": { "dX": 35, "dY": -6.0000305, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-grim",
+											"facing": "left",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.234, "y": 0.621 },
+											"size": 0.808,
+											"nameTag": "none",
+											"head": { "scaleY": 1 }
+										},
+										{
+											"role": "healer",
+											"form": "frame-skeptical",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.796, "y": 0.62 },
+											"size": 0.684,
+											"head": { "rotate": 6.733, "scaleY": 1 }
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.134, "y": 0.094 },
+											"size": 0.32,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:smokeRising.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.951, "y": 0.167 },
+											"size": 0.183,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_005~1_hothead",
+											"pointerOwner": "hothead",
+											"location": "bottomLeft",
+											"padYFraction": 0.16,
+											"widthFraction": 0.4719584,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": 55, "dY": -7.9999695, "pointerOrientH": "onLeft" }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_005~2_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"widthFraction": 0.59239966,
+											"pointerAdjust": { "dX": 35, "dY": -6.0000305, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "twoThirds",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-skeptical",
+											"facing": "left",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.159, "y": 0.617 },
+											"size": 0.808,
+											"nameTag": "none",
+											"head": { "scaleY": -1 }
+										},
+										{
+											"role": "healer",
+											"form": "frame-happy",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.796, "y": 0.62 },
+											"size": 0.684,
+											"head": { "rotate": -0.908, "scaleY": -1 }
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.134, "y": 0.094 },
+											"size": 0.32,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:smokeRising.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.951, "y": 0.167 },
+											"size": 0.183,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_006~1_hothead",
+											"pointerOwner": "hothead",
+											"location": "bottomLeft",
+											"padXFraction": 0.269,
+											"padYFraction": 0.102,
+											"widthFraction": 0.4719584,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -14, "dY": -1.9999695 }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_006~2_healer",
+											"pointerOwner": "healer",
+											"widthFraction": 0.99348736,
+											"pointerAdjust": { "dX": -6, "dY": -5.0000305, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-grim",
+											"facing": "left",
+											"anchor": { "x": 0.478, "y": 0.661 }
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": -0.301, "y": 0.078 },
+											"size": 0.43,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_007~1_hothead",
+											"pointerOwner": "hothead"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"equipment": {},
+											"anchor": { "x": 1.034, "y": 0.548 },
+											"size": 0.598
+										},
+										{
+											"role": "volunteer",
+											"equipment": {},
+											"anchor": { "x": 0.811, "y": 0.713 },
+											"size": 0.558,
+											"nameTag": "bottomRight"
+										},
+										{
+											"role": "healer",
+											"form": "frame-happy",
+											"equipment": {},
+											"anchor": { "x": 0.361, "y": 0.516 },
+											"size": 0.815,
+											"nameTag": "none",
+											"head": { "scaleY": -1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_008~1_hothead",
+											"pointerOwner": "hothead",
+											"location": "topRight",
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_008~2_healer",
+											"pointerOwner": "healer",
+											"location": "bottomRight",
+											"padXFraction": 0.351,
+											"padYFraction": 0.053,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "forcePointerImage": "speechShort" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"animation": { "overridePanelOrder": 2 },
+									"actorSlots": [
+										{
+											"assetSpec": "comic:action_pointerSquiggly2.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.193, "y": 0.259 },
+											"size": 0.306,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_009~1_none",
+											"style": "none",
+											"padXFraction": 0.15,
+											"padYFraction": 0.642,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"animation": { "overridePanelOrder": 1 },
+									"actorSlots": [
+										{
+											"role": "healer",
+											"equipment": {},
+											"anchor": { "x": 0.774, "y": 0.584 },
+											"size": 0.815
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~05~player_chose_one.test_pass~panel_010~1_healer",
+											"pointerOwner": "healer"
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"class": "AddCalamities",
+						"calamitiesToAdd": [
+							{ "quantity": "-1", "flavor": "drauven" }
+						]
+					},
+					{
+						"class": "AddHistory",
+						"choose": "first",
+						"inlineHistory": {
+							"id": "wildermyth-drauven-pcs_theAbandonded.outcome",
+							"associatedAspectsThisCampaign": [ "drauven_pc_helped_drauv" ],
+							"persistOverLegacy": "never"
+						}
+					}
+				]
+			},
+			"onFail": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Description",
+						"script": [
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.17, "y": 0.584 },
+											"size": 0.612,
+											"head": { "rotate": -17.508018 }
+										},
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"equipment": {},
+											"anchor": { "x": 0.904, "y": 0.576 },
+											"size": 0.613,
+											"head": { "rotate": -18.795 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-grim",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.635, "y": 0.597 },
+											"size": 0.6,
+											"head": { "rotate": 6.382 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.446, "y": 0.512 },
+											"size": 0.385,
+											"nameTag": "bottomRight"
+										},
+										{
+											"assetSpec": "scenery:deadTreeSwamp1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.228, "y": 0.367 },
+											"size": 0.301,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.32, "y": 0.48 },
+											"size": 0.32,
+											"drawDepth": 3
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_001~1_healer",
+											"pointerOwner": "healer",
+											"widthFraction": 0.31926006,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -25, "dY": 3.9999695 }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_001~2_hothead",
+											"pointerOwner": "hothead",
+											"location": "bottomRight",
+											"widthFraction": 0.3401462,
+											"shrinkToFitText": true,
+											"pointerAdjust": {
+												"rotate": 167.27562,
+												"dX": 101.00003,
+												"dY": -7.0000305,
+												"pointerOrientH": "onLeft",
+												"pointerOrientV": "up"
+											}
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_001~3_volunteer",
+											"style": "none",
+											"pointerOwner": "volunteer",
+											"location": "topRight",
+											"padXFraction": 0.381,
+											"padYFraction": 0.154,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_001~4_none",
+											"style": "none",
+											"fallbackSlotOwner": 4,
+											"location": "bottomLeft",
+											"padXFraction": 0.352,
+											"padYFraction": 0.433,
+											"widthFraction": 0.7953773,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_001~5_speech",
+											"location": "bottomRight",
+											"padXFraction": 0.025,
+											"padYFraction": 0.209,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-happy",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.275, "y": 0.491 },
+											"size": 0.684,
+											"head": { "rotate": -30.296 }
+										},
+										{
+											"assetSpec": "vfx:fire",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.909, "y": 0.191 },
+											"size": 0.172,
+											"nameTag": "bottomRight"
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.134, "y": 0.094 },
+											"size": 0.32,
+											"drawDepth": 5,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.536, "y": 0.456 },
+											"size": 0.32,
+											"nameTag": "none",
+											"foot": { "rotate": -7.496 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_002~1_healer",
+											"pointerOwner": "healer",
+											"widthFraction": 0.59239966,
+											"pointerAdjust": { "dX": 35, "dY": -6.0000305, "pointerOrientH": "onLeft" }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_002~2_healer",
+											"style": "none",
+											"pointerOwner": "healer",
+											"padXFraction": 0.5,
+											"padYFraction": 0.586,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"bg": "comicBG_hillsPineEvening.jpg",
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_003~1_healer",
+											"style": "narration",
+											"pointerOwner": "healer"
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_003~2_none",
+											"style": "none",
+											"padXFraction": 0.482,
+											"padYFraction": 0.398
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.157, "y": 0.629 },
+											"size": 0.808,
+											"nameTag": "none"
+										},
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.719, "y": 0.339 },
+											"size": 0.684,
+											"head": { "rotate": -30.315, "scaleY": 1 }
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.134, "y": 0.094 },
+											"size": 0.32,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:smokeRising.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.951, "y": 0.167 },
+											"size": 0.183,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_004~1_hothead",
+											"pointerOwner": "hothead",
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_004~2_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"widthFraction": 0.59239966,
+											"pointerAdjust": { "dX": 35, "dY": -6.0000305, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-sad",
+											"equipment": {},
+											"anchor": { "x": 0.157, "y": 0.629 },
+											"size": 0.808,
+											"nameTag": "none",
+											"head": { "rotate": -13.811, "scaleY": 1 }
+										},
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.719, "y": 0.339 },
+											"size": 0.684,
+											"head": { "rotate": -30.315, "scaleY": 1 }
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.134, "y": 0.094 },
+											"size": 0.32,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:smokeRising.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.951, "y": 0.167 },
+											"size": 0.183,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_005~1_hothead",
+											"pointerOwner": "hothead",
+											"padXFraction": 0.352,
+											"padYFraction": 0.025,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_005~2_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"widthFraction": 0.59239966,
+											"pointerAdjust": { "dX": 35, "dY": -6.0000305, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.157, "y": 0.629 },
+											"size": 0.808,
+											"nameTag": "none",
+											"head": { "rotate": -13.811, "scaleY": 1 }
+										},
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.719, "y": 0.339 },
+											"size": 0.684,
+											"head": { "rotate": -30.315, "scaleY": 1 }
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.134, "y": 0.094 },
+											"size": 0.32,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:smokeRising.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.951, "y": 0.167 },
+											"size": 0.183,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_006~1_hothead",
+											"pointerOwner": "hothead",
+											"padXFraction": 0.352,
+											"padYFraction": 0.025,
+											"widthFraction": 0.648
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_006~2_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"widthFraction": 0.59239966,
+											"pointerAdjust": { "dX": 35, "dY": -6.0000305, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.157, "y": 0.629 },
+											"size": 0.808,
+											"nameTag": "none",
+											"head": { "rotate": 1.251, "scaleY": 1 }
+										},
+										{
+											"role": "healer",
+											"form": "frame-grim",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.728, "y": 0.568 },
+											"size": 0.684,
+											"head": { "rotate": 0.279, "scaleY": -1 }
+										},
+										{
+											"assetSpec": "comic:tent.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.134, "y": 0.094 },
+											"size": 0.32,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:smokeRising.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.951, "y": 0.167 },
+											"size": 0.183,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_007~1_healer",
+											"pointerOwner": "healer"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "twoThirds",
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"equipment": {},
+											"anchor": { "x": 1.001, "y": 0.588 },
+											"size": 0.598
+										},
+										{
+											"role": "volunteer",
+											"equipment": {},
+											"anchor": { "x": 0.811, "y": 0.713 },
+											"size": 0.558,
+											"nameTag": "bottomRight"
+										},
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"equipment": {},
+											"anchor": { "x": 0.361, "y": 0.516 },
+											"size": 0.815,
+											"nameTag": "none",
+											"head": { "scaleY": -1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_008~1_hothead",
+											"pointerOwner": "hothead",
+											"location": "topRight",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"head": { "scaleY": -1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~06~player_chose_one.test_fail~panel_009~1_healer",
+											"pointerOwner": "healer",
+											"location": "bottomLeft",
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": 21, "dY": -7.9999695, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"class": "AddHistory",
+						"inlineHistory": {
+							"id": "wildermyth-drauven-pcs_theAbandonded.0.playerChose_one.onFail.1",
+							"associatedAspectsThisCampaign": [ "drauven_pc_helped_drauv" ],
+							"persistOverLegacy": "never"
+						}
+					}
+				]
+			}
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "hothead",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_swampTreesRed.jpg",
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": 0.17, "y": 0.584 },
+										"size": 0.612
+									},
+									{
+										"role": "hothead",
+										"form": "frame-angry",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.869, "y": 0.572 },
+										"size": 0.613
+									},
+									{
+										"assetSpec": "scenery:treeHollow.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.579, "y": 0.512 },
+										"size": 0.385,
+										"nameTag": "bottomRight"
+									},
+									{
+										"assetSpec": "scenery:deadTreeSwamp1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.228, "y": 0.367 },
+										"size": 0.301,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/drauvenJuvenile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.485, "y": 0.48 },
+										"size": 0.32,
+										"drawDepth": 3,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_001~1_healer",
+										"pointerOwner": "healer",
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 9, "dY": -8.000061, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_001~2_hothead",
+										"pointerOwner": "hothead",
+										"location": "topRight",
+										"widthFraction": 0.8799003,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -16, "dY": 1.0000305 }
+									},
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_001~3_none",
+										"style": "none",
+										"fallbackSlotOwner": 3,
+										"location": "bottomLeft",
+										"padXFraction": 0.397,
+										"padYFraction": 0.437,
+										"widthFraction": 0.7953773,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.124, "y": 0.5 },
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "healer",
+										"form": "frame-sad",
+										"equipment": {},
+										"anchor": { "x": 0.685, "y": 0.548 },
+										"head": {}
+									},
+									{
+										"assetSpec": "scenery:treeHollow.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.949, "y": 0.476 },
+										"size": 0.473,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_002~1_volunteer",
+										"pointerOwner": "volunteer"
+									},
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_002~2_none",
+										"style": "none",
+										"padXFraction": 0.214,
+										"padYFraction": 0.871,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hothead",
+										"equipment": {},
+										"anchor": { "x": 1.034, "y": 0.548 },
+										"size": 0.598
+									},
+									{
+										"role": "volunteer",
+										"equipment": {},
+										"anchor": { "x": 0.811, "y": 0.713 },
+										"size": 0.558,
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "healer",
+										"form": "frame-sad",
+										"equipment": {},
+										"anchor": { "x": 0.443, "y": 0.576 },
+										"size": 0.815,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "scenery:treeHollow.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.076, "y": 0.468 },
+										"size": 0.354,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/drauvenJuvenile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.22, "y": 0.36 },
+										"size": 0.281,
+										"foot": { "rotate": 2.824 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_003~1_hothead",
+										"pointerOwner": "hothead",
+										"location": "topRight",
+										"widthFraction": 0.3505893,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_003~2_healer",
+										"pointerOwner": "healer",
+										"location": "bottomRight",
+										"padXFraction": 0.351,
+										"padYFraction": 0.053,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "forcePointerImage": "speechShort" }
+									},
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_003~3_none",
+										"style": "none",
+										"location": "bottomLeft",
+										"padXFraction": 0.021,
+										"padYFraction": 0.072,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "healer",
+										"equipment": {},
+										"anchor": { "x": 1.109, "y": 0.496 },
+										"size": 0.815
+									},
+									{
+										"assetSpec": "scenery:treeHollow.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.145, "y": 0.524 },
+										"size": 0.353,
+										"nameTag": "bottomRight"
+									},
+									{
+										"assetSpec": "figure:misc/drauvenJuvenile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.365, "y": 0.38 },
+										"size": 0.246,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_004~1_healer",
+										"pointerOwner": "healer"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:treeHollow.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.145, "y": 0.524 },
+										"size": 0.353,
+										"nameTag": "bottomRight"
+									},
+									{
+										"assetSpec": "comic:action_pointerSquiggly1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.435, "y": 0.312 },
+										"size": 0.315,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+										"textKey": "~07~player_chose_two~panel_005~1_none",
+										"style": "none",
+										"padXFraction": 0.242,
+										"padYFraction": 0.526,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "healer",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "Test",
+			"value": "EVENT_ROLL+roll_three",
+			"threshold": "difficulty_three",
+			"onPass": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Description",
+						"script": [
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-surprised",
+											"equipment": {},
+											"anchor": { "x": 0.523, "y": 0.572 },
+											"size": 0.612
+										},
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"facing": "left",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.869, "y": 0.572 },
+											"size": 0.613
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.287, "y": 0.484 },
+											"size": 0.385,
+											"nameTag": "bottomRight"
+										},
+										{
+											"assetSpec": "scenery:deadTreeSwamp1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.07, "y": 0.375 },
+											"size": 0.301,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.208, "y": 0.444 },
+											"size": 0.32,
+											"drawDepth": 3
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_001~1_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"padXFraction": 0.191,
+											"padYFraction": 0.012,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -25, "dY": 3.9999695 }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_001~2_hothead",
+											"pointerOwner": "hothead",
+											"location": "bottomRight",
+											"widthFraction": 0.9841378,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -16, "dY": 1.0000305 }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_001~3_none",
+											"style": "none",
+											"fallbackSlotOwner": 3,
+											"location": "bottomLeft",
+											"padXFraction": 0.167,
+											"padYFraction": 0.392,
+											"widthFraction": 0.7953773,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_001~4_none",
+											"style": "none"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-surprised",
+											"equipment": {},
+											"anchor": { "x": 0.351, "y": 0.564 },
+											"size": 0.612
+										},
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"facing": "left",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.869, "y": 0.572 },
+											"size": 0.613
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-sad",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.69, "y": 0.54 },
+											"size": 0.612,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_002~1_healer",
+											"pointerOwner": "healer",
+											"pointerAdjust": { "dX": 111.00006, "dY": 1, "pointerOrientH": "onLeft" }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_002~2_volunteer",
+											"pointerOwner": "volunteer"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.798, "y": 0.572 },
+											"size": 0.815,
+											"nameTag": "none",
+											"head": { "rotate": 12.499, "scaleY": -1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.076, "y": 0.468 },
+											"size": 0.354,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.147, "y": 0.363 },
+											"size": 0.32,
+											"drawDepth": 2,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_003~1_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.05,
+											"padYFraction": 0.361,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"equipment": {},
+											"anchor": { "x": 0.732, "y": 0.528 },
+											"head": { "rotate": 10.171, "scaleY": -1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.153, "y": 0.46 },
+											"size": 0.399,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_004~1_healer",
+											"pointerOwner": "healer"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "twoThirds",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"equipment": {},
+											"anchor": { "x": 0.351, "y": 0.564 },
+											"size": 0.612,
+											"head": { "rotate": -30.564 }
+										},
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"facing": "left",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.869, "y": 0.572 },
+											"size": 0.613,
+											"nameTag": "bottomRight"
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-grim",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.69, "y": 0.54 },
+											"size": 0.612,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_005~1_healer",
+											"pointerOwner": "healer"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"equipment": {},
+											"anchor": { "x": 0.831, "y": 0.568 },
+											"size": 0.612,
+											"head": { "rotate": -30.564 }
+										},
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"facing": "left",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.476, "y": 0.54 },
+											"size": 0.613,
+											"nameTag": "bottomRight",
+											"head": { "scaleY": -1 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-grim",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.28, "y": 0.56 },
+											"size": 0.612,
+											"nameTag": "none",
+											"head": { "scaleY": -1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_006~1_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.036,
+											"padYFraction": 0.108,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"equipment": {},
+											"anchor": { "x": 0.831, "y": 0.568 },
+											"size": 0.612,
+											"head": { "rotate": -30.564 }
+										},
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"facing": "left",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": -0.038, "y": 0.54 },
+											"size": 0.613,
+											"nameTag": "bottomRight",
+											"head": { "scaleY": -1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_007~1_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.036,
+											"padYFraction": 0.108,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-hit",
+											"equipment": {},
+											"anchor": { "x": 0.831, "y": 0.568 },
+											"size": 0.612,
+											"head": { "rotate": -17.014 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_008~1_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.045,
+											"padYFraction": 0.594,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_008~2_actionLarge",
+											"style": "actionLarge",
+											"padXFraction": 0.211,
+											"padYFraction": 0.29,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-angry",
+											"equipment": {},
+											"anchor": { "x": 0.831, "y": 0.568 },
+											"size": 0.612,
+											"head": { "rotate": -46.56 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_009~1_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": 50, "dY": -2, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.831, "y": 0.568 },
+											"size": 0.612,
+											"head": { "rotate": -4.056 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.172, "y": 0.596 },
+											"size": 0.613,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_010~1_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": 50, "dY": -2, "pointerOrientH": "onLeft" }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_010~2_volunteer",
+											"pointerOwner": "volunteer",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.816, "y": 0.584 },
+											"size": 0.612,
+											"head": { "rotate": 4.233873, "scaleY": -1 }
+										},
+										{
+											"role": "volunteer",
+											"equipment": {},
+											"anchor": { "x": 1.225, "y": 0.632 },
+											"size": 0.612,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~08~player_chose_three.test_pass~panel_011~1_healer",
+											"pointerOwner": "healer"
+										}
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"onFail": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Description",
+						"script": [
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-surprised",
+											"equipment": {},
+											"anchor": { "x": 0.523, "y": 0.572 },
+											"size": 0.612
+										},
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"facing": "left",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.869, "y": 0.572 },
+											"size": 0.613
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.287, "y": 0.484 },
+											"size": 0.385,
+											"nameTag": "bottomRight"
+										},
+										{
+											"assetSpec": "scenery:deadTreeSwamp1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.07, "y": 0.375 },
+											"size": 0.301,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.217, "y": 0.44 },
+											"size": 0.32,
+											"drawDepth": 3
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_001~1_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"padXFraction": 0.191,
+											"padYFraction": 0.012,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -25, "dY": 3.9999695 }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_001~2_hothead",
+											"pointerOwner": "hothead",
+											"location": "bottomRight",
+											"widthFraction": 0.9841378,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -16, "dY": 1.0000305 }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_001~3_none",
+											"style": "none",
+											"fallbackSlotOwner": 3,
+											"location": "bottomLeft",
+											"padXFraction": 0.167,
+											"padYFraction": 0.392,
+											"widthFraction": 0.7953773,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_001~4_none",
+											"style": "none"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-surprised",
+											"equipment": {},
+											"anchor": { "x": 0.351, "y": 0.564 },
+											"size": 0.612
+										},
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"facing": "left",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.869, "y": 0.572 },
+											"size": 0.613
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-grim",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.69, "y": 0.54 },
+											"size": 0.612,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_002~1_healer",
+											"pointerOwner": "healer",
+											"pointerAdjust": { "dX": 111.00006, "dY": 1, "pointerOrientH": "onLeft" }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_002~2_volunteer",
+											"pointerOwner": "volunteer"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-grim",
+											"equipment": {},
+											"anchor": { "x": 0.798, "y": 0.572 },
+											"size": 0.815,
+											"nameTag": "none",
+											"head": { "rotate": 12.499, "scaleY": -1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.076, "y": 0.468 },
+											"size": 0.354,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:action_pointerSquiggly1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.101, "y": 0.215 },
+											"size": 0.286,
+											"drawDepth": -7,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_003~1_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.041,
+											"padYFraction": 0.273,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-angry",
+											"equipment": {},
+											"anchor": { "x": 0.732, "y": 0.528 },
+											"head": { "rotate": -0.2372411, "scaleY": -1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.153, "y": 0.46 },
+											"size": 0.399,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_004~1_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"padXFraction": 0.645,
+											"padYFraction": 0.02,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "twoThirds",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-angry",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.254, "y": 0.572 },
+											"size": 0.612,
+											"head": { "rotate": -6.362 }
+										},
+										{
+											"role": "hothead",
+											"form": "frame-surprised",
+											"facing": "left",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.869, "y": 0.572 },
+											"size": 0.613,
+											"nameTag": "bottomRight"
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-surprised",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.69, "y": 0.54 },
+											"size": 0.612,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_005~1_healer",
+											"pointerOwner": "healer"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"facing": "left",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.869, "y": 0.572 },
+											"size": 0.613,
+											"nameTag": "bottomRight"
+										},
+										{
+											"role": "healer",
+											"form": "frame-angry",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.136, "y": 0.564 },
+											"size": 0.612,
+											"head": { "rotate": -6.362 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-surprised",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.581, "y": 0.54 },
+											"size": 0.612,
+											"nameTag": "none",
+											"head": { "scaleY": -1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_006~1_hothead",
+											"pointerOwner": "hothead",
+											"location": "topRight",
+											"padXFraction": 0.196,
+											"padYFraction": 0.004,
+											"widthFraction": 0.58933496
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_006~2_healer",
+											"pointerOwner": "healer",
+											"padXFraction": 0.175,
+											"padYFraction": 0.18,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_006~3_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.16,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "fourth",
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-angry",
+											"anchor": { "x": 0.18, "y": 0.5 },
+											"size": 1.5
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.096, "y": 0.456 },
+											"size": 0.567,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_007~1_healer",
+											"pointerOwner": "healer"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "fourth",
+									"showNameTags": false,
+									"actorSlots": [
+										{ "role": "hothead", "form": "frame-angry", "facing": "left", "size": 1.5 }
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_008~1_hothead",
+											"pointerOwner": "hothead"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.869, "y": 0.572 },
+											"size": 0.613,
+											"nameTag": "bottomRight"
+										},
+										{
+											"role": "healer",
+											"form": "frame-angry",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.136, "y": 0.564 },
+											"size": 0.612,
+											"head": { "rotate": -6.362 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-surprised",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.581, "y": 0.54 },
+											"size": 0.612,
+											"nameTag": "none",
+											"head": { "scaleY": -1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_009~1_hothead",
+											"pointerOwner": "hothead",
+											"location": "topRight",
+											"widthFraction": 0.58933496
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "hothead",
+											"form": "frame-angry",
+											"equipment": {},
+											"anchor": { "x": 1.023, "y": 0.536 },
+											"size": 0.613,
+											"nameTag": "bottomRight"
+										},
+										{
+											"role": "healer",
+											"form": "frame-angry",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.136, "y": 0.564 },
+											"size": 0.612,
+											"head": { "rotate": -6.362 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-surprised",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.581, "y": 0.54 },
+											"size": 0.612,
+											"nameTag": "none",
+											"head": { "scaleY": -1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_010~1_hothead",
+											"pointerOwner": "hothead"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-angry",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.136, "y": 0.564 },
+											"size": 0.612,
+											"head": { "rotate": -6.362 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-surprised",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.706, "y": 0.556 },
+											"size": 0.612,
+											"nameTag": "none",
+											"head": { "rotate": 0, "scaleY": -1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:pointerSpeechMedium.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.572, "y": 0.817 },
+											"size": 0.192,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_011~1_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"padXFraction": 0.25,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -15, "dY": -18.000015 }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_011~2_volunteer",
+											"pointerOwner": "volunteer",
+											"padXFraction": 0.146,
+											"padYFraction": 0.111,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -4, "dY": -12, "pointerOrientH": "onRight" }
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_011~3_speech",
+											"location": "topRight",
+											"padXFraction": 0.066,
+											"padYFraction": 0.148,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_011~4_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.067,
+											"padYFraction": 0.08,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-angry",
+											"equipment": { "mode": null },
+											"anchor": { "x": 0.136, "y": 0.564 },
+											"size": 0.612,
+											"head": { "rotate": -6.362 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-surprised",
+											"equipment": {},
+											"anchor": { "x": 1.291, "y": 0.604 },
+											"size": 0.612,
+											"nameTag": "none",
+											"head": { "rotate": 0, "scaleY": 1 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_012~1_healer",
+											"pointerOwner": "healer"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"anchor": { "x": 0.475, "y": 0.616 },
+											"size": 0.612,
+											"head": { "rotate": -30.163 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.021, "y": 0.488 },
+											"size": 0.385,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_013~1_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_013~2_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.067,
+											"padYFraction": 0.08,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.821, "y": 0.64 },
+											"size": 0.612,
+											"head": { "rotate": -30.163 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.183, "y": 0.508 },
+											"size": 0.385,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.234, "y": 0.432 },
+											"size": 0.32,
+											"drawDepth": 2,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_014~1_healer",
+											"pointerOwner": "healer",
+											"location": "topRight",
+											"padXFraction": 0.31,
+											"padYFraction": 0.025,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_014~2_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.247,
+											"padYFraction": 0.333,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"role": "healer",
+											"form": "frame-sad",
+											"equipment": {},
+											"anchor": { "x": 0.998, "y": 0.644 },
+											"size": 0.612,
+											"head": { "rotate": -30.163 }
+										},
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.183, "y": 0.508 },
+											"size": 0.385,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.497, "y": 0.416 },
+											"size": 0.32,
+											"drawDepth": 3,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:actionLines_shake2.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.59, "y": 0.275 },
+											"size": 0.145,
+											"nameTag": "none",
+											"foot": { "rotate": -129.155 },
+											"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_015~1_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.368,
+											"padYFraction": 0.445,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"showNameTags": false,
+									"bg": "comicBG_swampTreesRed.jpg",
+									"actorSlots": [
+										{
+											"assetSpec": "scenery:treeHollow.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.183, "y": 0.508 },
+											"size": 0.385,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:misc/drauvenJuvenile.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.29, "y": 0.348 },
+											"size": 0.255,
+											"drawDepth": 3,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "wildermyth-drauven-pcs_theAbandonded",
+											"textKey": "~09~player_chose_three.test_fail~panel_016~1_none",
+											"style": "none",
+											"location": "bottomLeft",
+											"padXFraction": 0.247,
+											"padYFraction": 0.333,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"class": "RelationshipPoints",
+						"amount": null,
+						"who": [ "healer", "hothead" ],
+						"forceChangeRelationshipTo": "rival"
+					}
+				]
+			}
+		}
+	}
+],
+"expressions": {
+	"difficulty_one": "70",
+	"difficulty_three": "70",
+	"roll_one": "TENACITY",
+	"roll_three": "CHARISMA"
+}
+}

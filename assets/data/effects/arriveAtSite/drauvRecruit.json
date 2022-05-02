@@ -29,18 +29,21 @@
 	},
 	{ "template": "INJECTED_TILE" },
 	{ "template": "INJECTED_SITE" },
-	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
 	{ "template": "INJECTED_THREAT" },
 	{
 		"role": "loner",
 		"template": "PICK_BY_SCORE",
 		"scoreFunction": "LONER",
-		"scoreThreshold": "60"
+		"scoreThreshold": "30"
 	},
 	{
 		"role": "bookish",
 		"template": "PICK_BY_SCORE",
-		"scoreFunction": "BOOKISH",
+		"scoreFunction": "HEALER",
+		"aspectValues": [
+			{ "id": "drauven_pc_helped_drauv" }
+		],
 		"notAlreadyMatchedAs": [ "loner" ]
 	},
 	{
@@ -1496,7 +1499,7 @@
 			"createEntity": {
 				"query": {
 					"baseTag": "human",
-					"setClass": "hunter",
+					"setClass": "nonFarmer",
 					"setAge": "ageless",
 					"exactAge": 21,
 					"setEquipment": "tierTwo",
