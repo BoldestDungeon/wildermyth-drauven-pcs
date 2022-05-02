@@ -25,4 +25,11 @@
 	"effects": [ "removeOnDeath", "drauven_pc_birdRecall|_ENTITY_" ],
 	"boostType": "ADVANTAGE"
 }
+{
+    "modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_helped_drauv",
+    "stats": {
+        "CHARISMA": +10,
+    }
+},
 ]
