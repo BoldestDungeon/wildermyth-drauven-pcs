@@ -689,7 +689,7 @@
 				"class": "comicNode_Panel",
 				"panel": {
 					"actorSlots": [
-						{ "role": "loner", "form": "frame-dubious" }
+						{ "role": "loner", "form": "frame-happy" }
 					],
 					"textSlots": [
 						{
@@ -882,11 +882,11 @@
 							"nameTag": "none"
 						},
 						{
-							"assetSpec": "figure:drauven/drauven_haunt.png",
+							"assetSpec": "figure:thrixl/thrixl_mantis.png",
 							"role": null,
 							"facing": "left",
-							"focus": "middle",
-							"anchor": { "x": 0.795, "y": 1.01 },
+							"focus": "foot",
+							"anchor": { "x": 0.789, "y": 0.33 },
 							"size": 0.514,
 							"nameTag": "none"
 						}
@@ -1382,7 +1382,7 @@
 							"class": "comicNode_Panel",
 							"panel": {
 								"actorSlots": [
-									{ "role": "loner", "form": "frame-grim" }
+									{ "role": "loner", "form": "frame-happy" }
 								],
 								"textSlots": [
 									{
@@ -1410,7 +1410,7 @@
 									},
 									{
 										"role": "loner",
-										"form": "frame-grim",
+										"form": "frame-interested",
 										"focus": "foot",
 										"anchor": { "x": 0.188, "y": -0.046 },
 										"size": 0.334,
