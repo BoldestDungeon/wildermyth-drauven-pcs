@@ -1,0 +1,41 @@
+[
+{
+	"id": "abandonedDrauven.default",
+	"category": "abandonedDrauven",
+	"relationships": [
+		{ "role": "hothead", "fromRole": "hothead" },
+		{ "role": "healer", "fromRole": "healer" }
+	]
+},
+{
+	"id": "drauvenHealer.default",
+	"category": "drauvenHealer",
+	"relationships": [
+		{ "role": "hothead", "fromRole": "hothead" },
+		{ "role": "npc", "fromRole": "npc" }
+	],
+	"impliedAspects": [ "drauvenHealer" ]
+},
+{
+	"id": "drauvenSkeptic.default",
+	"category": "drauvenSkeptic",
+	"relationships": [
+		{ "role": "healer", "fromRole": "healer" },
+		{ "role": "npc", "fromRole": "npc" }
+	],
+	"persistOverLegacy": "never",
+	"showInSummary": false,
+	"impliedAspects": [ "drauvenSkeptic" ]
+},
+{
+	"id": "killedAbandonedDrauven.default",
+	"category": "killedAbandonedDrauven",
+	"relationships": [
+		{ "role": "healer", "fromRole": "healer" },
+		{ "role": "npc", "fromRole": "npc" }
+	],
+	"persistOverLegacy": "never",
+	"showInSummary": false,
+	"impliedAspects": [ "killedAbandonedDrauven" ]
+}
+]

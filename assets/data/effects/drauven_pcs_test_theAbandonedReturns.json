@@ -1,0 +1,101 @@
+{
+"id": "drauven_pcs_test_theAbandonedReturns",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven_pcs_test_theAbandonedReturns",
+	"modId": "drauven_pcs_test",
+	"author": "Ironskink"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "drauvenHealer",
+		"scoreThreshold": "1",
+		"notAlreadyMatchedAs": []
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.677, "y": 0.535 },
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "hero",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.245, "y": 0.507 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "drauven_pcs_test_theAbandonedReturns",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "drauven_pcs_test_theAbandonedReturns",
+							"textKey": "~01~~panel_001~2_npc",
+							"pointerOwner": "npc",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "ChangeControl",
+		"target": "npc",
+		"becomeAllyOf": "party",
+		"makeHero": true,
+		"checkPromotionsNow": true
+	},
+	{
+		"class": "Mission",
+		"goal": "liberate",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{ "role": "foes", "side": "enemy" }
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "wounded_drauven",
+			"createEntity": {
+				"query": { "baseTag": "human", "findExisting": true },
+				"control": "none"
+			}
+		}
+	]
+}
+}
