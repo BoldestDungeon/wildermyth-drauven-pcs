@@ -1,0 +1,1707 @@
+{
+"id": "hook_Gritty_inSofterLight_arrive",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+	"author": "Douglas Austin"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"encounterScore": 100000,
+	"suppressNotification": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_THREAT" },
+	{ "template": "INJECTED_PARTY" },
+	{ "role": "hook", "template": "INJECTED_HERO", "injectedRole": "hook" },
+	{ "role": "hook2", "template": "INJECTED_HERO", "injectedRole": "hook2" },
+	{
+		"role": "volunteer",
+		"template": "INJECTED_HERO",
+		"choose": "ANY",
+		"injectedRole": "volunteer"
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_hillsGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.36, "y": -0.1 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": 17.736 },
+							"color": { "r": "0.93292224", "g": "0.95518565", "b": "0.83094156", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.64, "y": -0.05 },
+							"size": 0.1538,
+							"nameTag": "none",
+							"head": { "rotate": 18.598 },
+							"color": { "r": "0.93292224", "g": "0.95518565", "b": "0.83094156", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.06, "y": 0.896 },
+							"size": 1.398,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "scaleX": 3 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.13583815" }
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.391, "y": -0.133 },
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": -93.652 },
+							"color": { "r": "0.93292224", "g": "0.95518559", "b": "0.83094162", "a": "0.78901732" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_001~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.556,
+							"padYFraction": 0.362,
+							"widthFraction": 0.563081,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_001~2_narration",
+							"style": "narration",
+							"padXFraction": 0.172,
+							"padYFraction": 0.061,
+							"widthFraction": 0.6325036,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_hillsGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.64, "y": 0.387 },
+							"size": 0.6667,
+							"head": { "rotate": 10.12 },
+							"color": { "r": "0.93292224", "g": "0.95518565", "b": "0.83094156", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.06, "y": 0.896 },
+							"size": 1.398,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "scaleX": 3 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.13583815" }
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.391, "y": -0.133 },
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": -93.652 },
+							"color": { "r": "0.93292224", "g": "0.95518559", "b": "0.83094162", "a": "0.78901732" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_hillsGreen.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.662, "y": 0.339 },
+							"size": 0.368,
+							"drawDepth": 50,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_002~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.234,
+							"padYFraction": 0.051,
+							"widthFraction": 0.761399,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.655, "y": 0.369 },
+							"size": 0.431,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -27.122, "scaleY": -1 },
+							"color": { "r": "0.93292224", "g": "0.95518565", "b": "0.83094156", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.471, "y": 0.292 },
+							"size": 1.398,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "scaleX": 3 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.13583815" }
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.878, "y": 0.248 },
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": -93.652 },
+							"color": { "r": "0.93292224", "g": "0.95518559", "b": "0.83094162", "a": "0.78901732" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_hillsGreen.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.639, "y": 0.498 },
+							"size": 0.58,
+							"drawDepth": 50,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_003~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.135,
+							"padYFraction": 0.239,
+							"widthFraction": 0.79560035,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.36, "y": 0.5 },
+							"drawDepth": 1,
+							"color": { "r": "0.93292224", "g": "0.95518565", "b": "0.83094156", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"equipment": {},
+							"anchor": { "x": 0.778, "y": 0.418 },
+							"size": 0.4444,
+							"nameTag": "none",
+							"head": { "rotate": -2.139 },
+							"color": { "r": "0.93292224", "g": "0.95518565", "b": "0.83094156", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.351, "y": 1.191 },
+							"size": 1.398,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "scaleX": 3 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.13583815" }
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.154, "y": 0.398 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": -93.652 },
+							"color": { "r": "0.93292224", "g": "0.95518559", "b": "0.83094162", "a": "0.78901732" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_004~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.116,
+							"padYFraction": 0.055,
+							"widthFraction": 0.84816295,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"equipment": {},
+							"anchor": { "x": 0.36, "y": 0.5 },
+							"size": 0.436,
+							"drawDepth": 1,
+							"head": { "rotate": -40.777, "scaleY": -1 },
+							"color": { "r": "0.93292224", "g": "0.95518565", "b": "0.83094156", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.859, "y": 0.33 },
+							"size": 0.638,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"head": { "rotate": -2.139 },
+							"color": { "r": "0.73738587", "g": "0.7618196", "b": "0.6254636", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.351, "y": 1.191 },
+							"size": 1.398,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "scaleX": 3 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.13583815" }
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.154, "y": 0.398 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": -93.652 },
+							"color": { "r": "0.93292224", "g": "0.95518559", "b": "0.83094162", "a": "0.78901732" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_hillPath.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.123, "y": 0.497 },
+							"size": 0.274,
+							"nameTag": "none",
+							"color": { "r": "0.93292224", "g": "0.95518565", "b": "0.83094156", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:treeSaplingRocks.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.329, "y": 0.085 },
+							"size": 0.668,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.68481064", "g": "0.74650013", "b": "0.62922239", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:treeSmallForest4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.067, "y": 0.598 },
+							"size": 0.4,
+							"drawDepth": 3,
+							"nameTag": "none",
+							"foot": { "rotate": 1.975 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_005~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.116,
+							"padYFraction": 0.055,
+							"widthFraction": 0.84816295,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_005~2_narration",
+							"style": "narration",
+							"padXFraction": 0.222,
+							"padYFraction": 0.051,
+							"widthFraction": 0.6593147,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_forestGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.1, "y": 0.5 },
+							"size": 0.6667,
+							"head": { "rotate": -25.823 },
+							"color": { "r": "0.60778683", "g": "0.71853387", "b": "0.6051656", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.852, "y": 0.5 },
+							"size": 0.8333,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:trunk4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.596, "y": -0.248 },
+							"size": 0.693,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 2.35 },
+							"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_006~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.446,
+							"padYFraction": 0.055,
+							"widthFraction": 0.49756536,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_006~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.246,
+							"padYFraction": 0.333,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 23.563213, "dY": -10.367817 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.36, "y": 0.5 },
+							"head": { "rotate": 3.366 },
+							"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.78, "y": 0.5 },
+							"size": 0.5882,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 345, "scaleY": -1 },
+							"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rocksMossBig1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.917, "y": 0.277 },
+							"size": 0.499,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:trunk4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.088, "y": 0.145 },
+							"size": 0.394,
+							"nameTag": "none",
+							"foot": { "rotate": 2.35 },
+							"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:trunk2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.632, "y": -0.613 },
+							"size": 0.372,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"foot": { "rotate": -3.706 },
+							"color": { "r": "0.85699743", "g": "0.88498616", "b": "0.83177686", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_007~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_007~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.135,
+							"padYFraction": 0.035,
+							"widthFraction": 0.67464256,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_007~3_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.087,
+							"padYFraction": 0.205,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.605, "y": 0.475 },
+							"size": 0.916,
+							"head": { "rotate": -14.133 },
+							"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 1.544, "y": 0.44 },
+							"size": 0.5882,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 345, "scaleY": -1 },
+							"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rocksMossBig1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.871, "y": 0.277 },
+							"size": 0.499,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:trunk2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.28, "y": -0.594 },
+							"size": 0.372,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"foot": { "rotate": -3.706 },
+							"color": { "r": "0.85699743", "g": "0.88498616", "b": "0.83177686", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_008~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.039,
+							"padYFraction": 0.045,
+							"widthFraction": 0.91940296,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-angry",
+							"equipment": {},
+							"anchor": { "x": 0.554, "y": 0.371 },
+							"size": 0.424,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -20.827, "scaleY": 1 },
+							"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rocksMossBig1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.136, "y": 0.274 },
+							"size": 0.499,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_spearSkull.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.224, "y": 0.412 },
+							"size": 0.367,
+							"nameTag": "none",
+							"color": { "r": "0.73738587", "g": "0.7618196", "b": "0.6254636", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_skullString.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.882, "y": 0.078 },
+							"size": 0.407,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_009~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.105,
+							"padYFraction": 0.227,
+							"widthFraction": 0.8358209,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": -13.195403, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"mustEndRow": true,
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.499, "y": 0.377 },
+							"size": 0.424,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -20.827, "scaleY": -1 },
+							"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rocksMossBig1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.136, "y": 0.274 },
+							"size": 0.499,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_spearSkull.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.224, "y": 0.412 },
+							"size": 0.367,
+							"nameTag": "none",
+							"color": { "r": "0.73738587", "g": "0.7618196", "b": "0.6254636", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_skullString.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.697, "y": 0.065 },
+							"size": 0.407,
+							"nameTag": "none",
+							"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-dubious",
+							"equipment": {},
+							"anchor": { "x": 0.072, "y": 0.494 },
+							"drawDepth": 0,
+							"head": { "rotate": -0.352 },
+							"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_010~1_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.417,
+							"padYFraction": 0.227,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": -13.195403, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_010~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.198,
+							"padYFraction": 0.058,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"mustEndRow": true,
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.432, "y": 0.396 },
+							"size": 0.424,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 2.855, "scaleY": 1 },
+							"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rocksMossBig1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.011, "y": 0.265 },
+							"size": 0.499,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_spearSkull.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.224, "y": 0.412 },
+							"size": 0.367,
+							"nameTag": "none",
+							"color": { "r": "0.73738587", "g": "0.7618196", "b": "0.6254636", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_skullString.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.526, "y": 0.071 },
+							"size": 0.407,
+							"nameTag": "none",
+							"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.838, "y": 0.397 },
+							"drawDepth": 0,
+							"head": { "rotate": -22.678, "scaleY": -1 },
+							"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.229, "y": 0.104 },
+							"size": 0.195,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.56936419" }
+						},
+						{
+							"assetSpec": "comic:trunkForegroundRooty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.964, "y": -0.509 },
+							"size": 0.478,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_011~1_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.417,
+							"padYFraction": 0.227,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": -13.195403, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+							"textKey": "~01~prompt~panel_011~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.496,
+							"padYFraction": 0.064,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "yes",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"actorSlots": [
+								{
+									"role": "hook2",
+									"form": "frame-angry",
+									"anchor": { "x": 0.498, "y": 0.442 },
+									"size": 0.703,
+									"head": { "rotate": -23.963, "scaleY": -1 },
+									"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:drauven_skullString.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.755, "y": 0.062 },
+									"size": 0.407,
+									"nameTag": "none",
+									"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:drauven_spearSkull.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.224, "y": 0.412 },
+									"size": 0.367,
+									"drawDepth": 5,
+									"nameTag": "none",
+									"color": { "r": "0.73738587", "g": "0.7618196", "b": "0.6254636", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:rocksMossBig1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.011, "y": 0.265 },
+									"size": 0.499,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+									"textKey": "~02~choice_yes~panel_001~1_hook2",
+									"pointerOwner": "hook2",
+									"padXFraction": 0.045,
+									"widthFraction": 0.9074627,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+									"textKey": "~02~choice_yes~panel_001~2_narration",
+									"style": "narration",
+									"padXFraction": 0.652,
+									"padYFraction": 0.8,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "no",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"bg": "comicBG_forestGreen.jpg",
+							"actorSlots": [
+								{
+									"role": "hook",
+									"form": "frame-talk",
+									"equipment": {},
+									"anchor": { "x": 0.609, "y": 0.478 },
+									"drawDepth": -1,
+									"color": { "r": "0.80154747", "g": "0.84038901", "b": "0.76654744", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:trunkForegroundRooty.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.241, "y": -0.54 },
+									"size": 0.478,
+									"drawDepth": 0,
+									"nameTag": "none",
+									"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+									"textKey": "~03~choice_no~panel_001~1_hook",
+									"pointerOwner": "hook",
+									"location": "topRight",
+									"padXFraction": 0.047,
+									"padYFraction": 0.05,
+									"widthFraction": 0.9122388,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+									"textKey": "~03~choice_no~panel_001~2_narration",
+									"style": "narration",
+									"padXFraction": 0.56,
+									"padYFraction": 0.809,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_forestGreen.jpg",
+								"animation": { "overridePanelOrder": 2 },
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-angry",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 1.12, "y": 0.531 },
+										"size": 0.852,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -18.335, "scaleY": -1 },
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-grim",
+										"facing": "left",
+										"anchor": { "x": 0.45, "y": 0.5 },
+										"size": 0.5,
+										"nameTag": "none",
+										"head": { "rotate": 350, "scaleY": -1 },
+										"color": { "r": "0.80154747", "g": "0.84038901", "b": "0.76654744", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rocksMossBig1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.011, "y": 0.265 },
+										"size": 0.499,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:drauven_spearSkull.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.224, "y": 0.412 },
+										"size": 0.367,
+										"nameTag": "none",
+										"color": { "r": "0.73738587", "g": "0.7618196", "b": "0.6254636", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_skullString.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.677, "y": 0.04 },
+										"size": 0.407,
+										"nameTag": "none",
+										"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:trunkForegroundRooty.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.964, "y": -0.509 },
+										"size": 0.478,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~04~player_chose_yes~panel_001~1_hook",
+										"pointerOwner": "hook"
+									},
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~04~player_chose_yes~panel_001~2_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.509,
+										"padYFraction": 0.186,
+										"widthFraction": 0.4621514,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onRight" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"bg": "comicBG_forestGreen.jpg",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-angry",
+										"anchor": { "x": 0.234, "y": 0.512 },
+										"size": 0.917,
+										"head": { "rotate": -24.493, "scaleY": -1 },
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:trunkForegroundRooty.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.12, "y": -0.443 },
+										"size": 0.478,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~04~player_chose_yes~panel_002~1_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.147,
+										"padYFraction": 0.051,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "story",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{
+							"role": "foes",
+							"side": "enemy",
+							"customThreat": {
+								"threatFlavor": "drauven",
+								"threatStrength": "0",
+								"useExtraChapterCards": false
+							}
+						}
+					],
+					"missionPlanOverride": "genericHook_monsterScenery2"
+				},
+				{
+					"class": "AssignToPlot",
+					"strings": { "resolveEventId": "hook_Gritty_inSofterLight_resolve_A" }
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"STUB": "Skip battle and Make Job: bury <legend>; On job completion, hook resolve ",
+		"ifPlayerChose": "no",
+		"then": {
+			"class": "DoAll",
+			"target": "hook",
+			"outcomes": [
+				{
+					"class": "Description",
+					"blockOtherChanges": true,
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_forestGreen.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-talk",
+										"equipment": {},
+										"anchor": { "x": 0.838, "y": 0.397 },
+										"drawDepth": 0,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 27.861, "scaleY": 1 },
+										"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.269, "y": 0.399 },
+										"size": 0.424,
+										"head": { "rotate": 10.616, "scaleY": 1 },
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_skullString.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.002, "y": 0.068 },
+										"size": 0.407,
+										"nameTag": "none",
+										"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:trunkForegroundRooty.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.349, "y": -0.528 },
+										"size": 0.478,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:treeHollow.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.905, "y": 0.613 },
+										"size": 0.512,
+										"nameTag": "none",
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_001~1_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.681,
+										"padYFraction": 0.105,
+										"widthFraction": 0.93858844,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": 13.622036, "dX": -42.4138, "dY": 9.536743E-7 }
+									},
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_001~2_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.304,
+										"padYFraction": 0.281,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"animation": { "overridePanelOrder": 2 },
+								"actorSlots": [
+									{
+										"role": "hook2",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.918, "y": 0.481 },
+										"size": 0.53,
+										"drawDepth": -1,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -5.492, "scaleY": -1 },
+										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stump2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.06, "y": 0.113 },
+										"size": 0.247,
+										"nameTag": "none",
+										"color": { "r": "0.71676302", "g": "0.71676302", "b": "0.71676302", "a": "0.47109827" },
+										"colorFilter": { "filterName": "stealthy", "strength": 0 }
+									},
+									{
+										"assetSpec": "comic:trunkForegroundRooty.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.109, "y": -0.447 },
+										"size": 0.478,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_002~1_hook2",
+										"pointerOwner": "hook2"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"assetSpec": "figure:drauven/drauven_haunt.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.85, "y": 0.394 },
+										"size": 0.204,
+										"drawDepth": 4,
+										"nameTag": "none",
+										"foot": { "rotate": -0.258 },
+										"colorFilter": { "filterName": "stealthy" }
+									},
+									{
+										"role": "hook",
+										"equipment": {},
+										"anchor": { "x": 0.389, "y": 0.503 },
+										"drawDepth": -2,
+										"nameTag": "none",
+										"head": { "rotate": 330, "scaleY": -1 },
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:treeHollow.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.261, "y": 0.651 },
+										"size": 0.512,
+										"nameTag": "none",
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rocksWaterfallSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.123, "y": 0.072 },
+										"size": 0.295,
+										"nameTag": "none",
+										"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.59, "y": 0.189 },
+										"size": 0.278,
+										"nameTag": "none",
+										"color": { "r": "0.57651412", "g": "0.66570884", "b": "0.4961409", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_basketSpears.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.968, "y": 0.292 },
+										"size": 0.229,
+										"nameTag": "none",
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-surprised",
+										"anchor": { "x": -0.047, "y": 0.481 },
+										"size": 0.472,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -5.492, "scaleY": -1 },
+										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_003~1_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.066,
+										"padYFraction": 0.051,
+										"widthFraction": 0.8428508,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -14.381394,
+											"dX": 12.252874,
+											"dY": -9.425288,
+											"pointerOrientH": "onLeft"
+										}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:drauven/drauven_haunt.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.45, "y": 0.53 },
+										"size": 0.204,
+										"drawDepth": 4,
+										"nameTag": "none",
+										"foot": { "rotate": -0.258 },
+										"colorFilter": { "filterName": "stealthy" }
+									},
+									{
+										"role": "hook",
+										"equipment": {},
+										"anchor": { "x": 0.894, "y": 0.459 },
+										"drawDepth": -2,
+										"nameTag": "none",
+										"head": { "rotate": 14.986, "scaleY": 1 },
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:treeHollow.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.038, "y": 0.619 },
+										"size": 0.402,
+										"nameTag": "none",
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rocksWaterfallSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.508, "y": 0.126 },
+										"size": 0.295,
+										"nameTag": "none",
+										"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.153, "y": 0.192 },
+										"size": 0.278,
+										"nameTag": "none",
+										"color": { "r": "0.57651412", "g": "0.66570884", "b": "0.4961409", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_basketSpears.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.366, "y": 0.292 },
+										"size": 0.229,
+										"nameTag": "none",
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-grim",
+										"anchor": { "x": 0.308, "y": 0.337 },
+										"size": 0.472,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -5.492, "scaleY": 1 },
+										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_004~1_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.297,
+										"padYFraction": 0.061,
+										"widthFraction": 0.68748176,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -14.381394,
+											"dX": 12.252874,
+											"dY": -9.425288,
+											"pointerOrientH": "onLeft"
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_004~2_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.37,
+										"padYFraction": 0.217,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:drauven/drauven_haunt.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.372, "y": 0.533 },
+										"size": 0.204,
+										"drawDepth": 4,
+										"nameTag": "none",
+										"foot": { "rotate": -0.258 },
+										"colorFilter": { "filterName": "stealthy" }
+									},
+									{
+										"role": "hook",
+										"anchor": { "x": 1.519, "y": 0.487 },
+										"drawDepth": -2,
+										"nameTag": "none",
+										"head": { "rotate": 14.986, "scaleY": 1 },
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rocksWaterfallSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.23, "y": 0.117 },
+										"size": 0.295,
+										"nameTag": "none",
+										"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-interested",
+										"anchor": { "x": 0.822, "y": 0.34 },
+										"size": 0.472,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": 2.161, "scaleY": 1 },
+										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_005~1_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.297,
+										"padYFraction": 0.061,
+										"widthFraction": 0.68748176,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -14.381394,
+											"dX": 12.252874,
+											"dY": -9.425288,
+											"pointerOrientH": "onLeft"
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_005~2_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.372,
+										"padYFraction": 0.07,
+										"widthFraction": 0.56358206,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.737, "y": 0.371 },
+										"drawDepth": -2,
+										"nameTag": "none",
+										"head": { "rotate": -14.439, "scaleY": -1 },
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-interested",
+										"anchor": { "x": -0.19, "y": 0.336 },
+										"size": 0.472,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": 2.161, "scaleY": 1 },
+										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_006~1_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.297,
+										"padYFraction": 0.061,
+										"widthFraction": 0.68748176,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -14.381394,
+											"dX": 12.252874,
+											"dY": -9.425288,
+											"pointerOrientH": "onLeft"
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_006~2_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.14,
+										"padYFraction": 0.159,
+										"widthFraction": 0.8238806,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -5.856013, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:drauven/drauven_haunt.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": -0.176, "y": 0.943 },
+										"size": 0.6667,
+										"nameTag": "none",
+										"color": { "r": "0.71676302", "g": "0.71676302", "b": "0.71676302", "a": "0.67341042" },
+										"colorFilter": { "filterName": "stealthy", "strength": 0 }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stump2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.469, "y": 0.113 },
+										"size": 0.2,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "stealthy", "strength": 0.7 }
+									},
+									{
+										"assetSpec": "comic:trunkForegroundThick.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.972, "y": 0.45 },
+										"drawDepth": -4,
+										"nameTag": "none",
+										"foot": { "rotate": -6.882 },
+										"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_007~1_hook",
+										"style": "narration",
+										"pointerOwner": "hook",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.811, "y": 0.412 },
+										"size": 0.481,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"head": { "rotate": 18.143, "scaleY": 1 },
+										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.539, "y": 0.335 },
+										"size": 0.734,
+										"drawDepth": -3,
+										"nameTag": "none",
+										"head": { "rotate": -10.306, "scaleY": -1 },
+										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.202, "y": 0.406 },
+										"size": 0.51,
+										"nameTag": "none",
+										"foot": { "rotate": -4.877 }
+									},
+									{
+										"assetSpec": "comic:trunkForegroundThick.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.053, "y": 0.497 },
+										"drawDepth": -4,
+										"nameTag": "none",
+										"foot": { "rotate": -6.882 },
+										"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_008~1_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.297,
+										"padYFraction": 0.061,
+										"widthFraction": 0.68748176,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -14.381394,
+											"dX": 12.252874,
+											"dY": -9.425288,
+											"pointerOrientH": "onLeft"
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+										"textKey": "~05~player_chose_no~panel_008~2_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.14,
+										"padYFraction": 0.159,
+										"widthFraction": 0.8238806,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -5.856013, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "NewJob",
+					"effectId": "job_hook_Gritty_inSofterLight_burylegend",
+					"post": "site",
+					"injectedRoles": [ "hook", "hook2" ],
+					"promptSlotsImmediately": true
+				},
+				{
+					"class": "AssignToPlot",
+					"integers": { "jobInsteadOfFight": "1" }
+				},
+				{
+					"class": "AssignToPlot",
+					"strings": { "resolveEventId": "hook_Gritty_inSofterLight_resolve_B" }
+				},
+				{
+					"class": "AddCalamities",
+					"calamitiesToAdd": [
+						{ "quantity": "-1", "flavor": "drauven" }
+					]
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"role": "legend",
+			"npcId": "hookGritty_inSofterLight",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		}
+	]
+}
+}

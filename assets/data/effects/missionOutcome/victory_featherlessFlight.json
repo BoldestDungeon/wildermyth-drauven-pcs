@@ -1,0 +1,861 @@
+{
+"id": "missionVictory_featherlessFlight",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/victory_featherlessFlight",
+	"author": "Shae Rossi",
+	"STUB": "Choice 1 - characters walk away.\n\nChoice 2 - PASS: Character gets wings augmentation\nFAIL: Characters gets the wings, but they break so they don't keep them after this comic. \n\nNeed to add the wings to the panels once they're drawn up. \n\nComic should fire after first battle with Drauven Pilots. Characters should not already have wing augmentations. "
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"aspects": [ "drauven" ]
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{ "template": "LIVING_FOES" },
+	{
+		"template": "DEAD_FOES",
+		"choose": "ALL",
+		"aspects": [ "drauven_pilotNobylle" ]
+	},
+	{
+		"role": "bookish",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "BOOKISH",
+		"themes": { "eligibleForTheme": "drauvenWings", "eligibleForPiece": "wings" }
+	},
+	{
+		"role": "poet",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "(200*mystic)+POET",
+		"notAlreadyMatchedAs": [ "bookish" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_swampFallenTrees.jpg",
+					"actorSlots": [
+						{ "role": "bookish", "form": "frame-surprised" }
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_featherlessFlight",
+							"textKey": "~01~prompt~panel_001~1_bookish",
+							"pointerOwner": "bookish",
+							"location": "topRight",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "poet",
+							"form": "frame-grim",
+							"facing": "left",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_featherlessFlight",
+							"textKey": "~01~prompt~panel_002~1_poet",
+							"pointerOwner": "poet"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "asset:figures/images/drauven2/drauvenPilot_outfitBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.893, "y": -0.343 },
+							"size": 0.892,
+							"foot": { "rotate": -61.39 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-interested",
+							"anchor": { "x": 0.662, "y": 0.717 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": -38.368 }
+						},
+						{
+							"role": "poet",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.188, "y": 0.732 },
+							"size": 0.721
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_featherlessFlight",
+							"textKey": "~01~prompt~panel_003~1_bookish",
+							"pointerOwner": "bookish",
+							"location": "topRight",
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_featherlessFlight",
+							"textKey": "~01~prompt~panel_003~2_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.254,
+							"padYFraction": 0.078,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-happy",
+							"head": { "rotate": -40.101 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_featherlessFlight",
+							"textKey": "~01~prompt~panel_004~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.287,
+							"padYFraction": 0.012,
+							"widthFraction": 0.72677386,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "poet",
+							"form": "frame-hit",
+							"head": { "rotate": -34.114, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_featherlessFlight",
+							"textKey": "~01~prompt~panel_005~1_poet",
+							"pointerOwner": "poet"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.723, "y": 0.163 },
+							"head": { "rotate": -34.756 }
+						},
+						{
+							"role": "poet",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.173, "y": 0.809 },
+							"nameTag": "none",
+							"head": { "rotate": -18.726 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_featherlessFlight",
+							"textKey": "~01~prompt~panel_006~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.439,
+							"padYFraction": 0.32,
+							"pointerAdjust": { "dX": 67.99999, "dY": -12, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-joy",
+							"equipment": {},
+							"anchor": { "x": 0.843, "y": 0.317 },
+							"head": { "rotate": -42.251, "scaleY": -1 }
+						},
+						{
+							"role": "poet",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.159, "y": 0.693 },
+							"nameTag": "none",
+							"head": { "rotate": -22.394 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_featherlessFlight",
+							"textKey": "~01~prompt~panel_007~1_bookish",
+							"pointerOwner": "bookish",
+							"padYFraction": 0.013,
+							"pointerAdjust": { "dX": 41.999992, "dY": -0.99998474, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"actorSlots": [
+								{
+									"role": "poet",
+									"form": "frame-grim",
+									"head": { "rotate": 19.44 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_featherlessFlight",
+									"textKey": "~02~choice_one~panel_001~1_poet",
+									"pointerOwner": "poet"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "bookish",
+									"form": "frame-happy",
+									"facing": "left",
+									"equipment": {},
+									"anchor": { "x": 0.554, "y": 0.415 },
+									"size": 0.756
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_featherlessFlight",
+									"textKey": "~03~choice_two~panel_001~1_bookish",
+									"pointerOwner": "bookish"
+								},
+								{
+									"textSourceFile": "missionOutcome/victory_featherlessFlight",
+									"textKey": "~03~choice_two~panel_001~2_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "poet",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.053, "y": 0.612 },
+										"size": 0.7,
+										"nameTag": "none"
+									},
+									{
+										"role": "bookish",
+										"form": "frame-sad",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.829, "y": 0.629 },
+										"size": 0.7,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -44.187 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_featherlessFlight",
+										"textKey": "~04~player_chose_one~panel_001~1_bookish",
+										"pointerOwner": "bookish",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "poet",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": -0.116, "y": 0.692 },
+										"size": 0.7
+									},
+									{
+										"role": "bookish",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.565, "y": 0.701 },
+										"size": 0.7,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -43.13, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_featherlessFlight",
+										"textKey": "~04~player_chose_one~panel_002~1_bookish",
+										"pointerOwner": "bookish"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "bookish",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "Test",
+			"value": "EVENT_ROLL+roll_two",
+			"threshold": "difficulty_two",
+			"onPass": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Description",
+						"script": [
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"bg": "comicBG_swampFallenTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-dubious",
+											"equipment": {},
+											"anchor": { "x": 0.146, "y": 0.532 }
+										},
+										{
+											"role": "bookish",
+											"form": "frame-joy",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.839, "y": 0.516 },
+											"nameTag": "bottomRight",
+											"head": { "rotate": 2.49, "scaleY": 1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~05~player_chose_two.test_pass~panel_001~1_poet",
+											"pointerOwner": "poet",
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~05~player_chose_two.test_pass~panel_001~2_bookish",
+											"pointerOwner": "bookish",
+											"padXFraction": 0.351,
+											"padYFraction": 0.713,
+											"widthFraction": 0.6243696,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "rotate": -163.92966, "dX": -150, "dY": 85, "pointerOrientH": "onRight" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"bg": "comicBG_swampFallenTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-skeptical",
+											"equipment": {},
+											"anchor": { "x": 0.146, "y": 0.532 }
+										},
+										{
+											"role": "bookish",
+											"form": "frame-happy",
+											"equipment": {},
+											"anchor": { "x": 0.839, "y": 0.516 },
+											"nameTag": "bottomRight",
+											"head": { "rotate": 2.49, "scaleY": -1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~05~player_chose_two.test_pass~panel_002~1_poet",
+											"pointerOwner": "poet",
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~05~player_chose_two.test_pass~panel_002~2_bookish",
+											"pointerOwner": "bookish",
+											"padXFraction": 0.351,
+											"padYFraction": 0.713,
+											"widthFraction": 0.6243696,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "rotate": -163.92966, "dX": -150, "dY": 85, "pointerOrientH": "onRight" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"bg": "comicBG_mountains_blueCliffs.jpg",
+									"actorSlots": [
+										{
+											"role": "bookish",
+											"form": "frame-happy",
+											"equipment": {},
+											"anchor": { "x": 0.622, "y": 0.573 },
+											"nameTag": "bottomRight",
+											"head": { "rotate": 30.579, "scaleY": 1 }
+										},
+										{
+											"role": "poet",
+											"form": "frame-skeptical",
+											"equipment": {},
+											"anchor": { "x": 0.138, "y": 0.641 },
+											"head": { "rotate": -52.206, "scaleY": -1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~05~player_chose_two.test_pass~panel_003~1_bookish",
+											"pointerOwner": "bookish",
+											"location": "topRight",
+											"padXFraction": 0.005,
+											"padYFraction": 0.028,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~05~player_chose_two.test_pass~panel_003~2_poet",
+											"pointerOwner": "poet",
+											"padXFraction": 0.181,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~05~player_chose_two.test_pass~panel_003~3_narration",
+											"style": "narration",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-surprised",
+											"equipment": {},
+											"anchor": { "x": 0.321, "y": 0.653 },
+											"size": 0.641,
+											"nameTag": "none"
+										},
+										{
+											"role": "bookish",
+											"facing": "left",
+											"anchor": { "x": 2.619, "y": 0.568 },
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~05~player_chose_two.test_pass~panel_004~1_bookish",
+											"pointerOwner": "bookish",
+											"pointerAdjust": { "dX": -314, "dY": -11, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-happy",
+											"equipment": {},
+											"anchor": { "x": 0.276, "y": 0.444 },
+											"size": 0.641,
+											"nameTag": "none",
+											"head": { "rotate": 40.476 }
+										},
+										{
+											"role": "bookish",
+											"facing": "left",
+											"anchor": { "x": 2.619, "y": 0.568 },
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~05~player_chose_two.test_pass~panel_005~1_bookish",
+											"pointerOwner": "bookish",
+											"padXFraction": 0.58,
+											"padYFraction": 0.226,
+											"pointerAdjust": { "rotate": -173.43909, "dX": -474, "dY": 88.00002 }
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"class": "ApplyTheme",
+						"target": "bookish",
+						"theme": "drauvenWings",
+						"piece": "wings",
+						"historyTextKey": "missionVictory_featherlessFlight.1.playerChose_two.onPass.1addTheme.drauvenWings.wings"
+					},
+					{
+						"class": "AllowFollowup",
+						"id": "missionVictory_featherlessFlight.1.playerChose_two.onPass"
+					}
+				]
+			},
+			"onFail": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Description",
+						"script": [
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"bg": "comicBG_swampFallenTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-dubious",
+											"equipment": {},
+											"anchor": { "x": 0.146, "y": 0.532 }
+										},
+										{
+											"role": "bookish",
+											"form": "frame-joy",
+											"facing": "left",
+											"equipment": {},
+											"anchor": { "x": 0.839, "y": 0.516 },
+											"nameTag": "bottomRight",
+											"head": { "rotate": 2.49, "scaleY": 1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_001~1_poet",
+											"pointerOwner": "poet",
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_001~2_bookish",
+											"pointerOwner": "bookish",
+											"padXFraction": 0.351,
+											"padYFraction": 0.713,
+											"widthFraction": 0.6243696,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "rotate": -163.92966, "dX": -150, "dY": 85, "pointerOrientH": "onRight" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"bg": "comicBG_swampFallenTrees.jpg",
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-skeptical",
+											"equipment": {},
+											"anchor": { "x": 0.146, "y": 0.532 }
+										},
+										{
+											"role": "bookish",
+											"form": "frame-happy",
+											"equipment": {},
+											"anchor": { "x": 0.839, "y": 0.516 },
+											"nameTag": "bottomRight",
+											"head": { "rotate": 2.49, "scaleY": -1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_002~1_poet",
+											"pointerOwner": "poet",
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_002~2_bookish",
+											"pointerOwner": "bookish",
+											"padXFraction": 0.351,
+											"padYFraction": 0.713,
+											"widthFraction": 0.6243696,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "rotate": -163.92966, "dX": -150, "dY": 85, "pointerOrientH": "onRight" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"bg": "comicBG_mountains_blueCliffs.jpg",
+									"actorSlots": [
+										{
+											"role": "bookish",
+											"form": "frame-happy",
+											"equipment": {},
+											"anchor": { "x": 0.622, "y": 0.573 },
+											"nameTag": "bottomRight",
+											"head": { "rotate": 37.504, "scaleY": 1 }
+										},
+										{
+											"role": "poet",
+											"form": "frame-skeptical",
+											"equipment": {},
+											"anchor": { "x": 0.138, "y": 0.641 },
+											"head": { "rotate": -48.366, "scaleY": -1 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_003~1_bookish",
+											"pointerOwner": "bookish",
+											"location": "topRight",
+											"padXFraction": 0.005,
+											"padYFraction": 0.028,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_003~2_poet",
+											"pointerOwner": "poet",
+											"padXFraction": 0.181,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_003~3_narration",
+											"style": "narration",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-surprised",
+											"equipment": {},
+											"anchor": { "x": 0.321, "y": 0.653 },
+											"size": 0.641,
+											"nameTag": "none"
+										},
+										{
+											"role": "bookish",
+											"facing": "left",
+											"anchor": { "x": 2.619, "y": 0.568 },
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_004~1_bookish",
+											"pointerOwner": "bookish",
+											"pointerAdjust": { "dX": -314, "dY": -11, "pointerOrientH": "onLeft" }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-hit",
+											"equipment": {},
+											"anchor": { "x": 0.348, "y": 0.665 },
+											"size": 0.98,
+											"nameTag": "none",
+											"head": { "scaleY": -1 }
+										},
+										{
+											"role": "bookish",
+											"facing": "left",
+											"anchor": { "x": 2.619, "y": 0.568 },
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_005~1_darken",
+											"style": "darken",
+											"padXFraction": 0.642,
+											"padYFraction": 0.5,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"bg": "comicBG_forestLightBlueOrange.jpg",
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-joke",
+											"equipment": {},
+											"anchor": { "x": 0.18, "y": 0.5 },
+											"head": { "rotate": 31.477 }
+										},
+										{
+											"role": "bookish",
+											"form": "frame-grim",
+											"facing": "left",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.724, "y": 4.38 },
+											"nameTag": "bottomRight",
+											"head": { "rotate": -25.677, "scaleY": -1 },
+											"foot": { "rotate": 174.138 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_006~1_poet",
+											"pointerOwner": "poet",
+											"widthFraction": 0.5390124,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "missionOutcome/victory_featherlessFlight",
+											"textKey": "~06~player_chose_two.test_fail~panel_006~2_bookish",
+											"pointerOwner": "bookish",
+											"location": "topRight",
+											"padXFraction": 0.161,
+											"padYFraction": 0.615,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "rotate": 177.7974, "dX": -157, "dY": 86, "pointerOrientH": "onRight" }
+										}
+									]
+								}
+							}
+						]
+					}
+				]
+			}
+		}
+	}
+],
+"expressions": { "difficulty_two": "50", "roll_two": "TENACITY" }
+}
