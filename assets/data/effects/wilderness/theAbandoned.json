@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "wilderness/theAbandoned",
+	"modId": "drauven_pcs_test",
 	"author": "Jeremy Bernstein"
 },
 "type": "ENCOUNTER_WILDERNESS_SCOUTING",
@@ -30,6 +31,10 @@
 		"template": "PICK_BY_SCORE",
 		"scoreFunction": "HOTHEAD+COWARD",
 		"scoreThreshold": "60",
+		"aspectValues": [
+			{ "id": "drauven", "forbidden": true },
+			{ "id": "drauven_pc", "forbidden": true }
+		],
 		"notAlreadyMatchedAs": [ "healer" ]
 	},
 	{
@@ -1357,6 +1362,13 @@
 						"class": "AddCalamities",
 						"calamitiesToAdd": [
 							{ "quantity": "-1", "flavor": "drauven" }
+						]
+					},
+					{
+						"class": "AddHistory",
+						"target": "healer",
+						"addHistory": [
+							[ "drauvenHealer" ]
 						]
 					}
 				]
@@ -2690,6 +2702,13 @@
 								}
 							}
 						]
+					},
+					{
+						"class": "AddHistory",
+						"target": "hothead",
+						"addHistory": [
+							[ "killedAbandonedDrauven" ]
+						]
 					}
 				]
 			},
@@ -3539,12 +3558,67 @@
 				]
 			}
 		}
+	},
+	{
+		"class": "AddHistory",
+		"target": "hothead",
+		"addHistory": [
+			[ "drauvenSkeptic" ]
+		]
 	}
 ],
 "expressions": {
 	"difficulty_one": "70",
+	"difficulty_three": "70",
 	"roll_one": "TENACITY",
-	"roll_three": "CHARISMA",
-	"difficulty_three": "70"
+	"roll_three": "CHARISMA"
+},
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "wounded_drauven",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"localizableName": "",
+					"setClass": "nonFarmer",
+					"exactAge": 8
+				},
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" },
+						{
+							"class": "AddHistory",
+							"target": "npc",
+							"addHistory": [
+								[ "drauvenBase" ],
+								[ "bornDrauven" ],
+								[ "drauvenCustomizationHead" ],
+								[ "drauvenCustomizationBody" ],
+								[ "drauvenCustomizationOther" ],
+								[ "abandonedDrauven" ]
+							]
+						},
+						{
+							"class": "RelationshipPoints",
+							"target": "npc",
+							"amount": "6",
+							"who": [ "hothead" ],
+							"forceChangeRelationshipTo": "rival"
+						},
+						{
+							"class": "RelationshipPoints",
+							"target": "npc",
+							"amount": "4",
+							"who": [ "healer" ]
+						}
+					]
+				},
+				"placeOnMap": false
+			}
+		}
+	]
 }
 }
