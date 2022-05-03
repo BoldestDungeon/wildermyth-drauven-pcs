@@ -3,7 +3,7 @@
     "info": {
         "dataVersion": 1,
         "sourceFile": "drauven/drauven_pc_specterstep",
-        "author": "Ironskink",
+        "author": "Bipen",
         "tags": [ "sneaky" ]
     },
     "type": "ABILITY",
@@ -15,19 +15,24 @@
         "extraUI": { "overrideCooldownShown": "2-drauvenDeck_hunter_specterstep_upgrade" }
     },
     "targets": [
-        {
+		{
             "template": "SELF",
             "aspectValues": [
                 { "id": "drauven_specterstepActive", "forbidden": true },
                 { "id": "wasRevealedThisTurn", "forbidden": true }
-            ]
+            ],
+			"cost": { "class": "ActionPoints", "actionPoints": "free" },
         }
     ],
     "outcomes": [
         {
             "class": "Aspects",
             "addAspects": [
-                { "id": "drauven_specterstepActive", "value": "1" }
+                { "id": "drauven_specterstepActive", "value": "1" },
+				{
+                "id": "cooldown|drauven_pc_specterstep",
+                "value": "2-self.drauvenDeck_hunter_specterstep_upgrade"
+            }
             ]
         },
         { "class": "Animate", "target": "self", "script": "figures.enterGrayplane" }
