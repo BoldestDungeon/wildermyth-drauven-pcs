@@ -1,0 +1,1180 @@
+{
+"id": "hook_Gritty_inSofterLight_resolve_B",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+	"author": "Douglas Austin"
+},
+"type": "OTHER",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "encounterScore": 100000 },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{ "role": "hook", "template": "INJECTED_HERO", "injectedRole": "hook" },
+	{ "role": "hook2", "template": "INJECTED_HERO", "injectedRole": "hook2" }
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.098, "y": 0.553 },
+							"size": 0.5714,
+							"head": { "rotate": -11.486 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.956, "y": 0.547 },
+							"size": 0.5714,
+							"drawDepth": 1.0625,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -11.682 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStoneMossy3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.255 },
+							"size": 0.319,
+							"nameTag": "none",
+							"foot": { "rotate": -2.223 },
+							"color": { "r": "0.72129691", "g": "0.81563026", "b": "0.66991884", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:acornPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.499, "y": 0.016 },
+							"size": 0.129,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.52692205", "g": "0.4152745", "b": "0.41527453", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.753, "y": 0.486 },
+							"size": 0.566,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -20.762, "scaleX": 0.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.991, "y": 0.54 },
+							"size": 0.893,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -15.89, "scaleX": 1 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.539, "y": 0.254 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.912, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.525, "y": 0.251 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.279, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_001~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"padXFraction": 0.182,
+							"padYFraction": 0.013,
+							"widthFraction": 0.7594349,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.098, "y": 0.553 },
+							"size": 0.5714,
+							"head": { "rotate": 9.848 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.956, "y": 0.547 },
+							"size": 0.5714,
+							"drawDepth": 1.0625,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 0.55 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStoneMossy3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.255 },
+							"size": 0.319,
+							"nameTag": "none",
+							"foot": { "rotate": -2.223 },
+							"color": { "r": "0.72129691", "g": "0.81563026", "b": "0.66991884", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:acornPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.499, "y": 0.016 },
+							"size": 0.129,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.52692205", "g": "0.4152745", "b": "0.41527453", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.753, "y": 0.486 },
+							"size": 0.566,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -20.762, "scaleX": 0.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.991, "y": 0.54 },
+							"size": 0.893,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -15.89, "scaleX": 1 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.539, "y": 0.254 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.912, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.525, "y": 0.251 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.279, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_002~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"padXFraction": 0.182,
+							"padYFraction": 0.013,
+							"widthFraction": 0.7594349,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_002~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.172,
+							"padYFraction": 0.118,
+							"widthFraction": 0.33965576,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_002~3_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.14400005,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_riverbank.jpg",
+					"mustEndRow": true,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.063, "y": 0.559 },
+							"size": 0.5714,
+							"head": { "rotate": -10.549 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.956, "y": 0.547 },
+							"size": 0.5714,
+							"drawDepth": 1.0625,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -23.786 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStoneMossy3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.255 },
+							"size": 0.319,
+							"nameTag": "none",
+							"foot": { "rotate": -2.223 },
+							"color": { "r": "0.72129691", "g": "0.81563026", "b": "0.66991884", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:acornPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.499, "y": 0.016 },
+							"size": 0.129,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.52692205", "g": "0.4152745", "b": "0.41527453", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.753, "y": 0.486 },
+							"size": 0.524,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -20.762, "scaleX": 0.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.991, "y": 0.54 },
+							"size": 0.841,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -15.89, "scaleX": 1 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.567, "y": 0.254 },
+							"size": 1.162,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.912, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.546, "y": 0.251 },
+							"size": 1.179,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.279, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_003~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"padXFraction": 0.182,
+							"padYFraction": 0.013,
+							"widthFraction": 0.7594349,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_003~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.172,
+							"padYFraction": 0.118,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_003~3_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.14400005,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_riverbank.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 1.921, "y": 0.516 },
+							"size": 0.71825737,
+							"drawDepth": 1.0625,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -3.301 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStoneMossy3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.219, "y": 0.111 },
+							"size": 0.434,
+							"nameTag": "none",
+							"foot": { "rotate": -2.223 },
+							"color": { "r": "0.72129691", "g": "0.81563026", "b": "0.66991884", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:acornPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.201, "y": -0.075 },
+							"size": 0.129,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.52692205", "g": "0.4152745", "b": "0.41527453", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.614, "y": 0.565 },
+							"size": 0.566,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -20.762, "scaleX": 0.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.929, "y": 0.679 },
+							"size": 0.893,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -15.89, "scaleX": 1 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.122, "y": 0.342 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.912, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.143, "y": 0.465 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.279, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.163, "y": 0.537 },
+							"size": 0.907,
+							"head": { "rotate": 13.582 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_004~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.359,
+							"padYFraction": 0.182,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_riverbank.jpg",
+					"mustEndRow": true,
+					"animation": { "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.956, "y": 0.547 },
+							"size": 0.71825737,
+							"drawDepth": 1.0625,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -3.301 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStoneMossy3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.205, "y": 0.098 },
+							"size": 0.434,
+							"nameTag": "none",
+							"foot": { "rotate": -2.223 },
+							"color": { "r": "0.72129691", "g": "0.81563026", "b": "0.66991884", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:acornPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.203, "y": -0.081 },
+							"size": 0.129,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.52692205", "g": "0.4152745", "b": "0.41527453", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.665, "y": 0.436 },
+							"size": 0.566,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -20.762, "scaleX": 0.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.003, "y": 0.597 },
+							"size": 0.893,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -15.89, "scaleX": 1 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.342, "y": 0.238 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.912, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.319, "y": 0.242 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.279, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_005~1_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.14400005,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.098, "y": 0.553 },
+							"size": 0.5714,
+							"head": { "rotate": 4.797 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.945, "y": 0.547 },
+							"size": 0.5714,
+							"drawDepth": 1.0625,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 5.287 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStoneMossy3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.255 },
+							"size": 0.319,
+							"nameTag": "none",
+							"foot": { "rotate": -2.223 },
+							"color": { "r": "0.72129691", "g": "0.81563026", "b": "0.66991884", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:acornPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.499, "y": 0.016 },
+							"size": 0.129,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.52692205", "g": "0.4152745", "b": "0.41527453", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.753, "y": 0.486 },
+							"size": 0.566,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -20.762, "scaleX": 0.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.991, "y": 0.54 },
+							"size": 0.893,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -15.89, "scaleX": 1 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.539, "y": 0.254 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.912, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.525, "y": 0.251 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.279, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_006~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"padXFraction": 0.182,
+							"padYFraction": 0.013,
+							"widthFraction": 0.7594349,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_006~2_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.15500003,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.098, "y": 0.553 },
+							"size": 0.5714,
+							"head": { "rotate": -14.796, "scaleY": -1 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.411, "y": 0.547 },
+							"size": 0.616,
+							"drawDepth": 0.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -14.627 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStoneMossy3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.255 },
+							"size": 0.319,
+							"nameTag": "none",
+							"foot": { "rotate": -2.223 },
+							"color": { "r": "0.72129691", "g": "0.81563026", "b": "0.66991884", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:acornPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.499, "y": 0.016 },
+							"size": 0.129,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.52692205", "g": "0.4152745", "b": "0.41527453", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.753, "y": 0.486 },
+							"size": 0.566,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -20.762, "scaleX": 0.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.991, "y": 0.54 },
+							"size": 0.893,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -15.89, "scaleX": 1 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.539, "y": 0.254 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.912, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.525, "y": 0.251 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.279, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_007~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"padXFraction": 0.182,
+							"padYFraction": 0.013,
+							"widthFraction": 0.7594349,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_007~2_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.15500003,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_007~3_hook",
+							"pointerOwner": "hook",
+							"widthFraction": 0.7831923,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_hillsYellow.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.15, "y": 0.5 },
+							"head": { "rotate": 47.911, "scaleY": 1 },
+							"color": { "r": "0.87527978", "g": "0.80034614", "b": "0.76055837", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.8, "y": 0.5 },
+							"size": 0.9524,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -16.149, "scaleY": -1 },
+							"color": { "r": "0.87527978", "g": "0.80034614", "b": "0.76055837", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_008~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_008~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.050000004,
+							"widthFraction": 0.82287717,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_008~3_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.304,
+							"padYFraction": 0.319,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -33.931038, "dY": 0 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_hillsYellow.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.15, "y": 0.5 },
+							"head": { "rotate": -17.852, "scaleY": -1 },
+							"color": { "r": "0.87527978", "g": "0.80034614", "b": "0.76055837", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.8, "y": 0.5 },
+							"size": 0.9524,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -0.385, "scaleY": 1 },
+							"color": { "r": "0.87527978", "g": "0.80034614", "b": "0.76055837", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_009~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_009~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.050000004,
+							"widthFraction": 0.77735627,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_009~3_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.304,
+							"padYFraction": 0.319,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -33.931038, "dY": 0 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_villageMorning.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.19, "y": 0.318 },
+							"size": 0.273,
+							"head": { "rotate": 10.992, "scaleY": 1 },
+							"color": { "r": "0.90656221", "g": "0.67371875", "b": "0.55008519", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.442, "y": 0.418 },
+							"size": 0.381,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -34.701, "scaleY": -1 },
+							"color": { "r": "0.9373768", "g": "0.78132212", "b": "0.69846135", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_villageMorning.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.209, "y": 0.538 },
+							"size": 0.29,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:cartEmpty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.938, "y": 0.073 },
+							"size": 0.22,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "0.9373768", "g": "0.78132212", "b": "0.69846135", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_010~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_010~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.050000004,
+							"widthFraction": 0.77735627,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_010~3_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.304,
+							"padYFraction": 0.319,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -33.931038, "dY": 0 }
+						},
+						{
+							"textSourceFile": "hook/hook_Gritty_inSofterLight_resolve_B",
+							"textKey": "~01~~panel_010~4_action",
+							"style": "action",
+							"padXFraction": 0.469,
+							"padYFraction": 0.019
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "AddHistory",
+		"target": "hook",
+		"inlineHistory": { "id": "hook_Gritty_inSofterLight_resolve_B.outcome" }
+	},
+	{
+		"class": "SnapshotFollowup",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.098, "y": 0.553 },
+							"size": 0.5714,
+							"head": { "rotate": -11.486 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.956, "y": 0.547 },
+							"size": 0.5714,
+							"drawDepth": 1.0625,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -11.682 },
+							"color": { "r": "0.73916841", "g": "0.90430689", "b": "0.72575092", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "scenery:standingStoneMossy3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.255 },
+							"size": 0.319,
+							"nameTag": "none",
+							"foot": { "rotate": -2.223 },
+							"color": { "r": "0.72129691", "g": "0.81563026", "b": "0.66991884", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.67 }
+						},
+						{
+							"assetSpec": "comic:acornPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.499, "y": 0.016 },
+							"size": 0.129,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.34004286", "g": "0.30469504", "b": "0.30469504", "a": "1" },
+							"colorFilter": { "filterName": "unknownTerrain", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.753, "y": 0.486 },
+							"size": 0.566,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -20.762, "scaleX": 0.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.991, "y": 0.54 },
+							"size": 0.893,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -15.89, "scaleX": 1 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.539, "y": 0.254 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.912, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.525, "y": 0.251 },
+							"size": 1.214,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"foot": { "rotate": 13.279, "scaleX": 1.5 },
+							"color": { "r": "0.99661702", "g": "0.98490143", "b": "0.74326736", "a": "0.24277456" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.2891,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.85 }
+						}
+					]
+				}
+			}
+		],
+		"score": "10"
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"role": "legend",
+			"npcId": "hookGritty_inSofterLight",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		}
+	]
+}
+}

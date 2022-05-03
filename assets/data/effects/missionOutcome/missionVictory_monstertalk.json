@@ -1,0 +1,1276 @@
+{
+"id": "missionVictory_monstertalk",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/missionVictory_monstertalk",
+	"author": "Douglas Austin",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Everyday Moments"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES", "choose": "FORBID" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{
+		"role": "goofball",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(GOOFBALL,ROMANTIC)",
+		"scoreThreshold": "60"
+	},
+	{
+		"role": "loner",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "30-SHIP_WITH.goofball",
+		"aspectValues": [
+			{ "id": "RIVAL_WITH", "forbidden": true, "relativeTo": "goofball" }
+		],
+		"notAlreadyMatchedAs": [ "goofball" ]
+	},
+	{
+		"role": "romantic",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "ROMANTIC",
+		"aspectValues": [
+			{ "id": "theme_skeleton", "forbidden": true }
+		],
+		"notAlreadyMatchedAs": [ "goofball", "loner" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"fromRoles": [ "party", "maimedHero", "escapedHero" ],
+		"notAlreadyMatchedAs": [ "goofball", "loner", "romantic" ]
+	},
+	{
+		"role": "volunteer2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"fromRoles": [ "party", "maimedHero", "escapedHero" ],
+		"notAlreadyMatchedAs": [ "goofball", "loner", "romantic", "volunteer" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_hillsPineDay.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.211, "y": 0.318 },
+							"size": 0.204,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.819, "y": 0.484 },
+							"size": 0.373,
+							"drawDepth": 65,
+							"nameTag": "none"
+						},
+						{
+							"role": "goofball",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.546, "y": 0.318 },
+							"size": 0.324,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -16.615 },
+							"colorFilter": { "filterName": "hover", "strength": 0.4 }
+						},
+						{
+							"assetSpec": "scenery:boulderField2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.209, "y": 0.189 },
+							"size": 0.331,
+							"drawDepth": 1.984375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 1.3 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 1.184, "y": 0.34 },
+							"size": 0.345,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"head": { "rotate": -15.14 },
+							"foot": { "rotate": -29.414 },
+							"colorFilter": { "filterName": "hover" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"padXFraction": 0.402,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_001~2_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.174,
+							"padYFraction": 0.246,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -9.952687,
+								"dX": -12.252874,
+								"dY": -1.8850573,
+								"scaleX": 0.80358136,
+								"scaleY": 0.80358136
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_hillsPineDay.jpg",
+					"animation": { "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.979, "y": 0.428 },
+							"size": 0.334,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.232, "y": 0.49 },
+							"size": 0.373,
+							"drawDepth": 65,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:axeStump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.845, "y": 0.113 },
+							"size": 0.266,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"role": "loner",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.207, "y": 0.201 },
+							"size": 0.224,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"head": { "rotate": -15.14 },
+							"foot": { "rotate": -17.922 },
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.752, "y": 0.258 },
+							"size": 0.251,
+							"drawDepth": 1.875,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 19.899 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.604, "y": -0.019 },
+							"size": 0.13,
+							"drawDepth": 33.25,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 15.733 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						},
+						{
+							"role": "volunteer2",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.196, "y": 0.208 },
+							"size": 0.156,
+							"drawDepth": 3,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -43.08, "scaleY": -1 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						},
+						{
+							"assetSpec": "comic:action_popL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.676, "y": 0.277 },
+							"size": 0.232,
+							"drawDepth": 1.9375,
+							"nameTag": "none",
+							"foot": { "rotate": -40.41 }
+						},
+						{
+							"assetSpec": "comic:treePine3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1, "y": 0.217 },
+							"size": 0.334,
+							"drawDepth": 1.96875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "scenery:boulderField2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.204, "y": 0.192 },
+							"size": 0.331,
+							"drawDepth": 1.984375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 1.3 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration",
+							"padXFraction": 0.109,
+							"padYFraction": 0.048,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_hillsPineDay.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.007, "y": 0.425 },
+							"size": 0.334,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": 0.453 },
+							"size": 0.373,
+							"drawDepth": 65,
+							"nameTag": "none"
+						},
+						{
+							"role": "goofball",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.32, "y": 0.584 },
+							"size": 0.824,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -13.331, "scaleY": -1 },
+							"color": { "r": "0.86705202", "g": "0.86705202", "b": "0.86705202", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.682, "y": 0.226 },
+							"size": 0.405,
+							"drawDepth": 1.984375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 1.3 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.683, "y": 0.312 },
+							"size": 0.345,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"head": { "rotate": -28.001, "scaleY": -1 },
+							"foot": { "rotate": -13.882 },
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "scenery:axeStump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.986, "y": 0.163 },
+							"size": 0.395,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comic:treePine3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.072, "y": 0.425 },
+							"size": 0.474,
+							"drawDepth": 1.96875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.964, "y": -0.028 },
+							"size": 0.13,
+							"drawDepth": 33.25,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -41.602, "scaleY": -1 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.911, "y": -0.044 },
+							"size": 0.135,
+							"drawDepth": 33.25,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.886, "scaleY": 1 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						},
+						{
+							"role": "romantic",
+							"equipment": {},
+							"anchor": { "x": 0.883, "y": 0.17 },
+							"size": 0.189,
+							"drawDepth": 1.875,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -23.827 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_003~1_narration",
+							"style": "narration",
+							"padXFraction": 0.402,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_003~2_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.397,
+							"padYFraction": 0.054,
+							"widthFraction": 0.54274875,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 7.940348,
+								"dX": 25.448278,
+								"dY": -11.3103485,
+								"scaleX": 0.80358136,
+								"scaleY": 0.80358136,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_003~3_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.668,
+							"padYFraction": 0.368,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -14.0362425,
+								"dX": 25.448277,
+								"dY": -2.827587,
+								"scaleX": 0.7271869,
+								"scaleY": 0.7271869,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_hillsPineDay.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.007, "y": 0.425 },
+							"size": 0.334,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": 0.453 },
+							"size": 0.373,
+							"drawDepth": 65,
+							"nameTag": "none"
+						},
+						{
+							"role": "goofball",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.312, "y": 0.581 },
+							"size": 0.824,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 0.906, "scaleY": 1 },
+							"color": { "r": "0.86705202", "g": "0.86705202", "b": "0.86705202", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.682, "y": 0.226 },
+							"size": 0.405,
+							"drawDepth": 1.984375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 1.3 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.574, "y": 0.457 },
+							"size": 0.55,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"head": { "rotate": 20.181, "scaleY": 1 },
+							"foot": { "rotate": -0.848 },
+							"colorFilter": { "filterName": "hover", "strength": 0.6 }
+						},
+						{
+							"assetSpec": "scenery:axeStump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.986, "y": 0.163 },
+							"size": 0.395,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comic:treePine3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.072, "y": 0.425 },
+							"size": 0.474,
+							"drawDepth": 1.96875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 1.05, "y": -0.041 },
+							"size": 0.13,
+							"drawDepth": 33.25,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -41.602, "scaleY": -1 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.977, "y": -0.05 },
+							"size": 0.135,
+							"drawDepth": 33.25,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.886, "scaleY": 1 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						},
+						{
+							"role": "romantic",
+							"equipment": {},
+							"anchor": { "x": 0.862, "y": 0.173 },
+							"size": 0.189,
+							"drawDepth": 1.875,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -32.144, "scaleY": -1 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_004~1_narration",
+							"style": "narration",
+							"padXFraction": 0.402,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_004~2_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.336,
+							"widthFraction": 0.47271666,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 7.940348,
+								"dX": -4.7126427,
+								"dY": -2.827589,
+								"scaleX": 0.80358136,
+								"scaleY": 0.80358136,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_004~3_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.482,
+							"padYFraction": 0.157,
+							"widthFraction": 0.48672304,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -14.0362425,
+								"dX": 8.482817,
+								"dY": -1.8850582,
+								"scaleX": 0.7271869,
+								"scaleY": 0.7271869,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_hillsPineDay.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.007, "y": 0.425 },
+							"size": 0.334,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": 0.453 },
+							"size": 0.373,
+							"drawDepth": 65,
+							"nameTag": "none"
+						},
+						{
+							"role": "goofball",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.312, "y": 0.581 },
+							"size": 0.824,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 0.906, "scaleY": 1 },
+							"color": { "r": "0.86705202", "g": "0.86705202", "b": "0.86705202", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.682, "y": 0.226 },
+							"size": 0.405,
+							"drawDepth": 1.984375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 1.3 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.574, "y": 0.457 },
+							"size": 0.55,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"head": { "rotate": -15.332, "scaleY": -1 },
+							"foot": { "rotate": -0.848 },
+							"colorFilter": { "filterName": "hover", "strength": 0.6 }
+						},
+						{
+							"assetSpec": "scenery:axeStump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.986, "y": 0.163 },
+							"size": 0.395,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comic:treePine3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.072, "y": 0.425 },
+							"size": 0.474,
+							"drawDepth": 1.96875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.836, "y": 0.381 },
+							"size": 0.366,
+							"drawDepth": 1.875,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 5.922, "scaleY": 1 },
+							"colorFilter": { "filterName": "hover" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_005~1_narration",
+							"style": "narration",
+							"padXFraction": 0.402,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_005~2_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.336,
+							"widthFraction": 0.47271666,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 7.940348,
+								"dX": -4.7126427,
+								"dY": -2.827589,
+								"scaleX": 0.80358136,
+								"scaleY": 0.80358136,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_005~3_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.514,
+							"padYFraction": 0.208,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -14.0362425,
+								"dX": 25.448277,
+								"dY": -2.827587,
+								"scaleX": 0.7271869,
+								"scaleY": 0.7271869,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_005~4_romantic",
+							"pointerOwner": "romantic",
+							"location": "topRight",
+							"padXFraction": 0.019,
+							"widthFraction": 0.60811204,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "scaleX": 0.8074137, "scaleY": 0.8074137 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_hillsPineDay.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.007, "y": 0.425 },
+							"size": 0.334,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": 0.453 },
+							"size": 0.373,
+							"drawDepth": 65,
+							"nameTag": "none"
+						},
+						{
+							"role": "goofball",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.312, "y": 0.581 },
+							"size": 0.824,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -21.413, "scaleY": 1 },
+							"color": { "r": "0.86705202", "g": "0.86705202", "b": "0.86705202", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.682, "y": 0.226 },
+							"size": 0.405,
+							"drawDepth": 1.984375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 1.3 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.664, "y": 0.445 },
+							"size": 0.55,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"head": { "rotate": -15.332, "scaleY": -1 },
+							"foot": { "rotate": -0.848 },
+							"colorFilter": { "filterName": "hover", "strength": 0.6 }
+						},
+						{
+							"assetSpec": "scenery:axeStump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.986, "y": 0.163 },
+							"size": 0.395,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comic:treePine3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.072, "y": 0.425 },
+							"size": 0.474,
+							"drawDepth": 1.96875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-dubious",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.846, "y": 0.393 },
+							"size": 0.472,
+							"drawDepth": 1.25,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 5.922, "scaleY": 1 },
+							"colorFilter": { "filterName": "hover", "strength": 0.6 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_006~1_narration",
+							"style": "narration",
+							"padXFraction": 0.402,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_006~2_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.336,
+							"widthFraction": 0.47271666,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 7.940348,
+								"dX": -4.7126427,
+								"dY": -2.827589,
+								"scaleX": 0.80358136,
+								"scaleY": 0.80358136,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_006~3_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.514,
+							"padYFraction": 0.208,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -14.0362425,
+								"dX": 25.448277,
+								"dY": -2.827587,
+								"scaleX": 0.7271869,
+								"scaleY": 0.7271869,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_006~4_romantic",
+							"pointerOwner": "romantic",
+							"location": "topRight",
+							"padXFraction": 0.196,
+							"padYFraction": 0.074,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "scaleX": 0.8074137, "scaleY": 0.8074137 }
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_006~5_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.023,
+							"widthFraction": 0.4190254,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -39.58621, "dY": -12.252874 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_hillsPineDay.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.007, "y": 0.425 },
+							"size": 0.334,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": 0.453 },
+							"size": 0.373,
+							"drawDepth": 65,
+							"nameTag": "none"
+						},
+						{
+							"role": "goofball",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.537, "y": 0.506 },
+							"size": 0.71,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 18.923, "scaleY": 1 },
+							"colorFilter": { "filterName": "hover", "strength": 0.4 }
+						},
+						{
+							"assetSpec": "scenery:boulderField2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.682, "y": 0.226 },
+							"size": 0.405,
+							"drawDepth": 1.984375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 1.3 }
+						},
+						{
+							"role": "loner",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.76, "y": 0.423 },
+							"size": 0.424,
+							"drawDepth": 1.125,
+							"nameTag": "none",
+							"head": { "rotate": 33.892, "scaleY": 1 },
+							"foot": { "rotate": -0.848 },
+							"colorFilter": { "filterName": "hover", "strength": 0.6 }
+						},
+						{
+							"assetSpec": "scenery:axeStump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.986, "y": 0.163 },
+							"size": 0.395,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comic:treePine3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.072, "y": 0.425 },
+							"size": 0.474,
+							"drawDepth": 1.96875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.893, "y": 0.352 },
+							"size": 0.352,
+							"drawDepth": 1.9765625,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -11.086, "scaleY": 1 },
+							"colorFilter": { "filterName": "hover", "strength": 0.6 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_007~1_narration",
+							"style": "narration",
+							"padXFraction": 0.402,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_007~2_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.336,
+							"widthFraction": 0.47271666,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 7.940348,
+								"dX": -4.7126427,
+								"dY": -2.827589,
+								"scaleX": 0.80358136,
+								"scaleY": 0.80358136,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_007~3_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.514,
+							"padYFraction": 0.208,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -14.0362425,
+								"dX": 25.448277,
+								"dY": -2.827587,
+								"scaleX": 0.7271869,
+								"scaleY": 0.7271869,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_007~4_romantic",
+							"pointerOwner": "romantic",
+							"location": "topRight",
+							"padXFraction": 0.196,
+							"padYFraction": 0.074,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "scaleX": 0.8074137, "scaleY": 0.8074137 }
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_007~5_goofball",
+							"pointerOwner": "goofball",
+							"location": "topRight",
+							"padXFraction": 0.056,
+							"padYFraction": 0.003,
+							"widthFraction": 0.7901955,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_hillsPineDay.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.007, "y": 0.425 },
+							"size": 0.334,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": 0.453 },
+							"size": 0.373,
+							"drawDepth": 65,
+							"nameTag": "none"
+						},
+						{
+							"role": "goofball",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.847, "y": 0.289 },
+							"size": 0.291,
+							"drawDepth": 1.9726562,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -4.127, "scaleY": 1 },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "scenery:boulderField2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.682, "y": 0.226 },
+							"size": 0.405,
+							"drawDepth": 1.984375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 1.3 }
+						},
+						{
+							"role": "loner",
+							"equipment": {},
+							"anchor": { "x": 0.946, "y": 0.251 },
+							"size": 0.169,
+							"drawDepth": 1.9765625,
+							"nameTag": "none",
+							"head": { "rotate": 3.424, "scaleY": 1 },
+							"foot": { "rotate": -0.848 },
+							"colorFilter": { "filterName": "hover", "strength": 1.5 }
+						},
+						{
+							"assetSpec": "scenery:axeStump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.986, "y": 0.163 },
+							"size": 0.395,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comic:treePine3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.072, "y": 0.425 },
+							"size": 0.474,
+							"drawDepth": 1.96875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_008~1_narration",
+							"style": "narration",
+							"padXFraction": 0.402,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_008~2_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.336,
+							"widthFraction": 0.47271666,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 7.940348,
+								"dX": -4.7126427,
+								"dY": -2.827589,
+								"scaleX": 0.80358136,
+								"scaleY": 0.80358136,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_008~3_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.514,
+							"padYFraction": 0.208,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -14.0362425,
+								"dX": 25.448277,
+								"dY": -2.827587,
+								"scaleX": 0.7271869,
+								"scaleY": 0.7271869,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_008~4_romantic",
+							"pointerOwner": "romantic",
+							"location": "topRight",
+							"padXFraction": 0.196,
+							"padYFraction": 0.074,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "scaleX": 0.8074137, "scaleY": 0.8074137 }
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_008~5_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.479,
+							"padYFraction": 0.006,
+							"widthFraction": 0.4190254,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_008~6_loner",
+							"pointerOwner": "loner",
+							"location": "topRight",
+							"padXFraction": 0.021,
+							"padYFraction": 0.106,
+							"widthFraction": 0.23810913,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -9.477176,
+								"dX": 19.793104,
+								"dY": 0,
+								"scaleX": 0.69021696,
+								"scaleY": 0.69021696
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/missionVictory_monstertalk",
+							"textKey": "~01~~panel_008~7_goofball",
+							"pointerOwner": "goofball",
+							"location": "topRight",
+							"padXFraction": 0.168,
+							"padYFraction": 0.374,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -3.2677174,
+								"dX": 2.8275862,
+								"dY": 10.3678465,
+								"scaleX": 0.5732888,
+								"scaleY": 0.5732888,
+								"pointerOrientH": "onLeft",
+								"forcePointerImage": "speechMedium"
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "RelationshipPoints",
+		"amount": "16",
+		"who": [ "goofball", "loner" ]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "tragicDoctor_generic",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "mystic",
+					"setAge": "lateMiddleAge",
+					"setEquipment": "clothes"
+				},
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{ "class": "AddGear", "target": "npc", "itemById": "mysticDrab1" },
+						{ "class": "AddGear", "target": "npc", "itemById": "bookPlainRed" }
+					]
+				}
+			}
+		}
+	]
+}
+}

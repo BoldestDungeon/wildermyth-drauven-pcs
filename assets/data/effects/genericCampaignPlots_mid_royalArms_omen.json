@@ -1,0 +1,2605 @@
+{
+"id": "genericCampaignPlots_mid_royalArms_omen",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "genericCampaignPlots_mid_royalArms_omen",
+	"author": "Douglas Austin",
+	"genericCampaignInfo": {
+		"chapter": "mid",
+		"threatFlavor": "drauven",
+		"plotId": "C_generic_keystone",
+		"capstoneEventId": "genericCampaignPlots_mid_royalArms_capstone",
+		"keystoneEventId": "genericCampaignPlots_mid_royalArms_keystone"
+	}
+},
+"type": "PLOT_OMEN",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "role": "town", "template": "INJECTED_SITE", "injectedRole": "town" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "(BOOKISH+(mystic*10))+LEVEL",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hero2",
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "(warrior*10)+SHIP_WITH.hero",
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"role": "hero4",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "hero5",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "hero4" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceArchWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.377, "y": 0.443 },
+							"size": 0.3813,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.256, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.623, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.623, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.257, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.817, "y": 0.069 },
+							"size": 0.1903,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.864, "y": 0.2 },
+							"size": 0.0991,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.86, "y": 0.286 },
+							"size": 1.4849,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.87056029", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.861, "y": 0.28 },
+							"size": 0.8044,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.51211202", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:mapHanging.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.833, "y": 0.374 },
+							"size": 0.116,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.295, "y": 0.604 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.296, "y": 0.475 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.41618428" }
+						},
+						{
+							"assetSpec": "comic:columnWoodWide.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.441, "y": 0.485 },
+							"size": 0.349,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallHanging1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.932, "y": 0.478 },
+							"size": 0.1253,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.751, "y": 0.187 },
+							"size": 0.0959,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookStandBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.089, "y": -0.093 },
+							"size": 0.5597,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.21, "y": 0.56 },
+							"size": 0.8602,
+							"drawDepth": 0.25,
+							"head": { "rotate": -17.557, "scaleY": -1 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.714, "y": 0.284 },
+							"size": 0.2673,
+							"drawDepth": -0.75,
+							"head": { "rotate": -21.495, "scaleY": -1 },
+							"color": { "r": "0.6455608", "g": "0.56831127", "b": "0.56831127", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.102, "y": 0.453 },
+							"size": 1.9353,
+							"drawDepth": 0.125,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25722507" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": 0.072 },
+							"size": 1.0567,
+							"drawDepth": 0.1875,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.90781504", "g": "0.46774393", "b": "0.37542123", "a": "0.76589596" },
+							"location": "bottomLeft",
+							"padXFraction": 0.041,
+							"padYFraction": 0.047,
+							"widthFraction": 0.5538996,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_001~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.029,
+							"widthFraction": 0.7983659,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -12.292679,
+								"dX": -5.6552315,
+								"dY": 2.3841858E-7,
+								"scaleX": 0.7469836,
+								"scaleY": 0.7469836,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_001~3_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.525,
+							"padYFraction": 0.377,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -15.524111, "scaleX": 0.82341856, "scaleY": 0.82341856 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_001~4_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.335,
+							"padYFraction": 0.208,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -13.172553,
+								"dX": 27.333393,
+								"dY": -4.7126465,
+								"scaleX": 0.8419905,
+								"scaleY": 0.8419905,
+								"pointerOrientH": "onRight"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceArchWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.377, "y": 0.443 },
+							"size": 0.3813,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.256, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.623, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.623, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.257, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.817, "y": 0.069 },
+							"size": 0.1903,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.864, "y": 0.2 },
+							"size": 0.0991,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.86, "y": 0.286 },
+							"size": 1.4849,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.87056029", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.861, "y": 0.28 },
+							"size": 0.8044,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.51211202", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:mapHanging.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.833, "y": 0.374 },
+							"size": 0.116,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.295, "y": 0.604 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.296, "y": 0.475 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.41618428" }
+						},
+						{
+							"assetSpec": "comic:columnWoodWide.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.441, "y": 0.485 },
+							"size": 0.349,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallHanging1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.932, "y": 0.478 },
+							"size": 0.1253,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.751, "y": 0.187 },
+							"size": 0.0959,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookStandBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.089, "y": -0.093 },
+							"size": 0.5597,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.21, "y": 0.56 },
+							"size": 0.8602,
+							"drawDepth": 0.25,
+							"head": { "rotate": -17.557 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-dubious",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.619, "y": 0.384 },
+							"size": 0.4285,
+							"drawDepth": -0.75,
+							"head": { "rotate": 3.554 },
+							"color": { "r": "0.6455608", "g": "0.56831127", "b": "0.56831127", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.102, "y": 0.453 },
+							"size": 1.9353,
+							"drawDepth": 0.125,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25722507" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": 0.072 },
+							"size": 1.0567,
+							"drawDepth": 0.1875,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration",
+							"padXFraction": 0.462,
+							"padYFraction": 0.134,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_002~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.029,
+							"widthFraction": 0.7983659,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -12.292679,
+								"dX": -5.6552315,
+								"dY": 2.3841858E-7,
+								"scaleX": 0.7469836,
+								"scaleY": 0.7469836,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_002~3_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.525,
+							"padYFraction": 0.377,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -15.524111, "scaleX": 0.82341856, "scaleY": 0.82341856 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_002~4_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceArchWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.3137676, "y": 0.443 },
+							"size": 0.3813,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.13056341, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.68623245, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.68623245, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.13207749, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.97996473, "y": 0.069 },
+							"size": 0.1903,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0511267, "y": 0.2 },
+							"size": 0.0991,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0450704, "y": 0.286 },
+							"size": 1.4849,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.87056029", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0465845, "y": 0.28 },
+							"size": 0.8044,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.51211202", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:mapHanging.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0041902, "y": 0.374 },
+							"size": 0.116,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.18961266, "y": 0.604 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.19112676, "y": 0.475 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.41618428" }
+						},
+						{
+							"assetSpec": "comic:columnWoodWide.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.41066903, "y": 0.485 },
+							"size": 0.349,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallHanging1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.1540844, "y": 0.478 },
+							"size": 0.1253,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.88003516, "y": 0.187 },
+							"size": 0.0959,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookStandBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.122288704, "y": -0.093 },
+							"size": 0.5597,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.06091547, "y": 0.56 },
+							"size": 0.8602,
+							"drawDepth": 0.25,
+							"head": { "rotate": -17.557, "scaleY": -1 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.6801761, "y": 0.384 },
+							"size": 0.4285,
+							"drawDepth": -0.75,
+							"head": { "rotate": 3.554 },
+							"color": { "r": "0.6455608", "g": "0.56831127", "b": "0.56831127", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.10260564, "y": 0.453 },
+							"size": 1.9353,
+							"drawDepth": 0.125,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25722507" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.10714787, "y": 0.072 },
+							"size": 1.0567,
+							"drawDepth": 0.1875,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_003~1_narration",
+							"style": "narration",
+							"padXFraction": 0.462,
+							"padYFraction": 0.134,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_003~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.197,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 5.164901,
+								"dX": 9.42528,
+								"dY": -2.8275862,
+								"scaleX": 0.7469836,
+								"scaleY": 0.7469836,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_003~3_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.525,
+							"padYFraction": 0.291,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -15.524111, "scaleX": 0.82341856, "scaleY": 0.82341856 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceArchWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.377, "y": 0.443 },
+							"size": 0.3813,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.256, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.623, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.623, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.257, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.817, "y": 0.069 },
+							"size": 0.1903,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.864, "y": 0.2 },
+							"size": 0.0991,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.86, "y": 0.286 },
+							"size": 1.4849,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.87056029", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.861, "y": 0.28 },
+							"size": 0.8044,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.51211202", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:mapHanging.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.833, "y": 0.374 },
+							"size": 0.116,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.295, "y": 0.604 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.296, "y": 0.475 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.41618428" }
+						},
+						{
+							"assetSpec": "comic:columnWoodWide.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.441, "y": 0.485 },
+							"size": 0.349,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallHanging1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.932, "y": 0.478 },
+							"size": 0.1253,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.751, "y": 0.187 },
+							"size": 0.0959,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookStandBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.089, "y": -0.093 },
+							"size": 0.5597,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.21, "y": 0.56 },
+							"size": 0.8602,
+							"drawDepth": -0.375,
+							"head": { "rotate": -17.557 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.619, "y": 0.384 },
+							"size": 0.4285,
+							"drawDepth": -0.75,
+							"head": { "rotate": 3.554 },
+							"color": { "r": "0.6455608", "g": "0.56831127", "b": "0.56831127", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.102, "y": 0.453 },
+							"size": 1.9353,
+							"drawDepth": -0.4375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25722507" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": 0.072 },
+							"size": 1.0567,
+							"drawDepth": 0.1875,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_004~1_narration",
+							"style": "narration",
+							"padXFraction": 0.462,
+							"padYFraction": 0.134,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_004~2_hero",
+							"pointerOwner": "hero",
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -3.7946057,
+								"dX": -16.965519,
+								"dY": -3.770115,
+								"scaleX": 0.7469836,
+								"scaleY": 0.7469836,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_004~3_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.525,
+							"padYFraction": 0.291,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -15.524111, "scaleX": 0.82341856, "scaleY": 0.82341856 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_004~4_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.484,
+							"padYFraction": 0.348,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 2.115883,
+								"dX": -14.138046,
+								"dY": 7.1525574E-7,
+								"scaleX": 0.74491477,
+								"scaleY": 0.74491477
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceArchWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.3137676, "y": 0.443 },
+							"size": 0.3813,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.13056341, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.68623245, "y": 0.55 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.68623245, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.13207749, "y": 0.188 },
+							"size": 0.1022,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.97996473, "y": 0.069 },
+							"size": 0.1903,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0511267, "y": 0.2 },
+							"size": 0.0991,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0450704, "y": 0.286 },
+							"size": 1.4849,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.87056029", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0465845, "y": 0.28 },
+							"size": 0.8044,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.51211202", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:mapHanging.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0041902, "y": 0.374 },
+							"size": 0.116,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.18961266, "y": 0.604 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.19112676, "y": 0.475 },
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.41618428" }
+						},
+						{
+							"assetSpec": "comic:columnWoodWide.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.41066903, "y": 0.485 },
+							"size": 0.349,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallHanging1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.1540844, "y": 0.478 },
+							"size": 0.1253,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.88003516, "y": 0.187 },
+							"size": 0.0959,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookStandBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.122288704, "y": -0.093 },
+							"size": 0.5597,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.06091547, "y": 0.56 },
+							"size": 0.8602,
+							"drawDepth": -0.375,
+							"head": { "rotate": -17.557, "scaleY": -1 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.6801761, "y": 0.384 },
+							"size": 0.4285,
+							"drawDepth": -0.75,
+							"head": { "rotate": -17.07 },
+							"color": { "r": "0.6455608", "g": "0.56831127", "b": "0.56831127", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.10260564, "y": 0.453 },
+							"size": 1.9353,
+							"drawDepth": -0.4375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25722507" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.10714787, "y": 0.072 },
+							"size": 1.0567,
+							"drawDepth": 0.1875,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_005~1_narration",
+							"style": "narration",
+							"padXFraction": 0.462,
+							"padYFraction": 0.134,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_005~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.197,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 5.164901,
+								"dX": 9.42528,
+								"dY": -2.8275862,
+								"scaleX": 0.7469836,
+								"scaleY": 0.7469836,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_005~3_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomLeft",
+							"padXFraction": 0.54,
+							"widthFraction": 0.6710936,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 28.779749,
+								"dX": 30.160978,
+								"dY": -3.7701151,
+								"scaleX": 0.7489855,
+								"scaleY": 0.7489855
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceArchWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.141, "y": 0.536 },
+							"size": 0.5705,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.04, "y": 0.696 },
+							"size": 0.1529,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.509, "y": 0.696 },
+							"size": 0.1529,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.509, "y": 0.154 },
+							"size": 0.1529,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.039, "y": 0.154 },
+							"size": 0.1529,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.799, "y": -0.024 },
+							"size": 0.2847,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.87, "y": 0.172 },
+							"size": 0.1483,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.864, "y": 0.301 },
+							"size": 2.2218,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.87056029", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.865, "y": 0.292 },
+							"size": 1.2036,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.51211202", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:mapHanging.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.823, "y": 0.432 },
+							"size": 0.1736,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.018, "y": 0.776 },
+							"size": 1.4963,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.02, "y": 0.583 },
+							"size": 1.4963,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.41618428" }
+						},
+						{
+							"assetSpec": "comic:columnWoodWide.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.237, "y": 0.598 },
+							"size": 0.5222,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallHanging1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.971, "y": 0.588 },
+							"size": 0.1875,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.701, "y": 0.153 },
+							"size": 0.1435,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookStandBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.29, "y": -0.266 },
+							"size": 0.8375,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.348, "y": 0.545 },
+							"size": 0.8321,
+							"drawDepth": -0.375,
+							"head": { "rotate": 2.854 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.61, "y": 0.378 },
+							"size": 0.4294,
+							"drawDepth": -0.75,
+							"head": { "rotate": 12.122 },
+							"color": { "r": "0.6455608", "g": "0.56831127", "b": "0.56831127", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.271, "y": 0.551 },
+							"size": 2.8958,
+							"drawDepth": -0.4375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25722507" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.275, "y": -0.02 },
+							"size": 1.5811,
+							"drawDepth": 0.1875,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_006~1_narration",
+							"style": "narration",
+							"padXFraction": 0.462,
+							"padYFraction": 0.134,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_006~2_hero",
+							"pointerOwner": "hero",
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -3.7946057,
+								"dX": -16.965519,
+								"dY": -3.770115,
+								"scaleX": 0.7469836,
+								"scaleY": 0.7469836,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_006~3_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.525,
+							"padYFraction": 0.291,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -15.524111, "scaleX": 0.82341856, "scaleY": 0.82341856 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_006~4_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.505,
+							"padYFraction": 0.3,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -22.619864, "scaleX": 0.74491477, "scaleY": 0.74491477 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_006~5_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.245,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_006~6_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"widthFraction": 0.8053691,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 30.47493, "scaleX": 0.8074136, "scaleY": 0.8074136 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_006~7_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.454,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 2, "overridePanelDrawDepth": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceArchWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.089, "y": 0.8 },
+							"size": 0.8015,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.608, "y": 1.024 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.964, "y": 1.024 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.964, "y": 0.262 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.604, "y": 0.262 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.795, "y": 0.012 },
+							"size": 0.3999,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.999, "y": 0.288 },
+							"size": 0.2084,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.982, "y": 0.469 },
+							"size": 3.1211,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.87056029", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.985, "y": 0.456 },
+							"size": 1.6908,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.51211202", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:mapHanging.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.864, "y": 0.653 },
+							"size": 0.2439,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.44, "y": 1.136 },
+							"size": 2.1019,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.434, "y": 0.866 },
+							"size": 2.1019,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.41618428" }
+						},
+						{
+							"assetSpec": "comic:columnWoodWide.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.034, "y": 0.883 },
+							"size": 0.7336,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallHanging1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 2.288, "y": 0.872 },
+							"size": 0.2634,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.515, "y": 0.261 },
+							"size": 0.2016,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookStandBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.323, "y": -0.327 },
+							"size": 1.1765,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.473, "y": 0.697 },
+							"size": 1.0974,
+							"drawDepth": -0.375,
+							"head": { "rotate": -9.444 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 1.455, "y": 0.566 },
+							"size": 0.6032,
+							"drawDepth": -0.75,
+							"head": { "rotate": -10.376, "scaleY": -1 },
+							"color": { "r": "0.6455608", "g": "0.56831127", "b": "0.56831127", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -1.267, "y": 0.82 },
+							"size": 4.0679,
+							"drawDepth": -0.4375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25722507" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.28, "y": 0.019 },
+							"size": 2.2211,
+							"drawDepth": 0.1875,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_007~1_narration",
+							"style": "narration",
+							"padXFraction": 0.462,
+							"padYFraction": 0.134,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_007~2_hero",
+							"pointerOwner": "hero",
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -3.7946057,
+								"dX": -16.965519,
+								"dY": -3.770115,
+								"scaleX": 0.7469836,
+								"scaleY": 0.7469836,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_007~3_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.525,
+							"padYFraction": 0.291,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -15.524111, "scaleX": 0.82341856, "scaleY": 0.82341856 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_007~4_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.505,
+							"padYFraction": 0.3,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -22.619864, "scaleX": 0.74491477, "scaleY": 0.74491477 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_007~5_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.245,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_007~6_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"widthFraction": 0.573096,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_007~7_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.256,
+							"padYFraction": -0.003,
+							"widthFraction": 1.1820896,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -17.908047, "dY": 0 },
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 1, "overridePanelDrawDepth": -1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceArchWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.11, "y": 0.79 },
+							"size": 0.8015,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.629, "y": 1.014 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.057, "y": 1.014 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.057, "y": 0.252 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -1.625, "y": 0.252 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.774, "y": 0.002 },
+							"size": 0.3999,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.978, "y": 0.278 },
+							"size": 0.2084,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.961, "y": 0.459 },
+							"size": 3.1211,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.87056029", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.964, "y": 0.446 },
+							"size": 1.6908,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.51211202", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:mapHanging.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.843, "y": 0.643 },
+							"size": 0.2439,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.461, "y": 1.126 },
+							"size": 2.1019,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.455, "y": 0.856 },
+							"size": 2.1019,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.41618428" }
+						},
+						{
+							"assetSpec": "comic:columnWoodWide.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.835, "y": 0.876 },
+							"size": 0.7336,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallHanging1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.267, "y": 0.862 },
+							"size": 0.2634,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.494, "y": 0.251 },
+							"size": 0.2016,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookStandBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -2.344, "y": -0.337 },
+							"size": 1.1765,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": -0.525, "y": 0.907 },
+							"size": 1.2791,
+							"drawDepth": -0.375,
+							"head": { "rotate": 7.22 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.434, "y": 0.556 },
+							"size": 0.6032,
+							"drawDepth": -0.75,
+							"head": { "rotate": -10.376, "scaleY": -1 },
+							"color": { "r": "0.6455608", "g": "0.56831127", "b": "0.56831127", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -2.288, "y": 0.81 },
+							"size": 4.0679,
+							"drawDepth": -0.4375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25722507" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -2.301, "y": 0.009 },
+							"size": 2.2211,
+							"drawDepth": 0.1875,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_008~1_narration",
+							"style": "narration",
+							"padXFraction": 0.462,
+							"padYFraction": 0.134,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_008~2_hero",
+							"pointerOwner": "hero",
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -3.7946057,
+								"dX": -16.965519,
+								"dY": -3.770115,
+								"scaleX": 0.7469836,
+								"scaleY": 0.7469836,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_008~3_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.525,
+							"padYFraction": 0.291,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -15.524111, "scaleX": 0.82341856, "scaleY": 0.82341856 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_008~4_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.505,
+							"padYFraction": 0.3,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -22.619864, "scaleX": 0.74491477, "scaleY": 0.74491477 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_008~5_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.245,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_008~6_hero2",
+							"pointerOwner": "hero2",
+							"widthFraction": 0.9241794,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_008~7_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.454,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 1, "overridePanelDrawDepth": -1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceArchWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.29002327, "y": 0.79 },
+							"size": 0.8015,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.5446954, "y": 1.014 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.22668141, "y": 1.014 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"foot": { "rotate": -179.648 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.22668141, "y": 0.252 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_library.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.5427326, "y": 0.252 },
+							"size": 0.2148,
+							"nameTag": "none",
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.63445115, "y": 0.002 },
+							"size": 0.3999,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.73455346, "y": 0.278 },
+							"size": 0.2084,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.72621167, "y": 0.459 },
+							"size": 3.1211,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.87056029", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.7276837, "y": 0.446 },
+							"size": 1.6908,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.51211202", "b": "0.13872838", "a": "0.19364126" }
+						},
+						{
+							"assetSpec": "comic:mapHanging.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.66830933, "y": 0.643 },
+							"size": 0.2439,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.46225816, "y": 1.126 },
+							"size": 2.1019,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.459314, "y": 0.856 },
+							"size": 2.1019,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "scaleX": 6 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.41618428" }
+						},
+						{
+							"assetSpec": "comic:columnWoodWide.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.15508145, "y": 0.876 },
+							"size": 0.7336,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallHanging1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.87636507, "y": 0.862 },
+							"size": 0.2634,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.49132913", "g": "0.49132913", "b": "0.49132913", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.4970558, "y": 0.251 },
+							"size": 0.2016,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookStandBack.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.8955443, "y": -0.337 },
+							"size": 1.1765,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.5986498", "g": "0.51117605", "b": "0.51117611", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.392, "y": 0.592 },
+							"size": 0.6789,
+							"drawDepth": -0.375,
+							"head": { "rotate": 2.132 },
+							"color": { "r": "0.63005745", "g": "0.63005745", "b": "0.63005745", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.92, "y": 0.629 },
+							"size": 0.6032,
+							"drawDepth": -3,
+							"head": { "rotate": 1.073, "scaleY": 1 },
+							"color": { "r": "0.6455608", "g": "0.56831127", "b": "0.56831127", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.86806524, "y": 0.81 },
+							"size": 4.0679,
+							"drawDepth": -0.4375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25722507" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.87444425, "y": 0.009 },
+							"size": 2.2211,
+							"drawDepth": 0.1875,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_009~1_narration",
+							"style": "narration",
+							"padXFraction": 0.462,
+							"padYFraction": 0.134,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_009~2_hero",
+							"pointerOwner": "hero",
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -3.7946057,
+								"dX": -16.965519,
+								"dY": -3.770115,
+								"scaleX": 0.7469836,
+								"scaleY": 0.7469836,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_009~3_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.525,
+							"padYFraction": 0.291,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -15.524111, "scaleX": 0.82341856, "scaleY": 0.82341856 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_009~4_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.505,
+							"padYFraction": 0.3,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -22.619864, "scaleX": 0.74491477, "scaleY": 0.74491477 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_009~5_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.245,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_009~6_hero2",
+							"pointerOwner": "hero2",
+							"widthFraction": 0.9241794,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_009~7_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.454,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_009~8_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.144,
+							"padYFraction": 0.006,
+							"widthFraction": 0.6419609,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_009~9_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.231,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -9.246139,
+								"dX": -36.75868,
+								"dY": -1.8850576,
+								"scaleX": 0.76832527,
+								"scaleY": 0.76832527,
+								"forcePointerImage": "speechMedium"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_mountainsSunset.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.3227,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"anchor": { "x": 0.103, "y": 0.361 },
+							"size": 0.3372,
+							"drawDepth": 0,
+							"head": { "rotate": -50.016, "scaleY": -1 },
+							"color": { "r": "0.83510941", "g": "0.79190075", "b": "0.62153727", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"equipment": {},
+							"anchor": { "x": 0.73, "y": 0.324 },
+							"size": 0.2338,
+							"drawDepth": 0.875,
+							"head": { "rotate": -9.723, "scaleY": -1 },
+							"color": { "r": "0.83510941", "g": "0.79190075", "b": "0.62153727", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.645, "y": 0.358 },
+							"size": 0.3462,
+							"drawDepth": 0.875,
+							"head": { "rotate": 0.681, "scaleY": 1 },
+							"color": { "r": "0.83510941", "g": "0.79190075", "b": "0.62153727", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"anchor": { "x": 0.186, "y": 0.252 },
+							"size": 0.2152,
+							"drawDepth": 0.8125,
+							"head": { "rotate": -11.823, "scaleY": 1 },
+							"color": { "r": "0.83510941", "g": "0.79190075", "b": "0.62153727", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"equipment": {},
+							"anchor": { "x": 0.48, "y": 0.265 },
+							"size": 0.2152,
+							"drawDepth": 0.9375,
+							"head": { "rotate": 3.658, "scaleY": 1 },
+							"color": { "r": "0.83510941", "g": "0.79190075", "b": "0.62153727", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:birdHawkSmall.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.069, "y": 0.909 },
+							"size": 0.0293,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": 23.756 }
+						},
+						{
+							"assetSpec": "comic:treePine1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.967, "y": 0.176 },
+							"size": 0.576,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.83510941", "g": "0.79190075", "b": "0.62153727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.324, "y": 0.069 },
+							"size": 0.5957,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.83510941", "g": "0.79190075", "b": "0.62153727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_010~1_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.41400003,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_010~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.90781504", "g": "0.46774393", "b": "0.37542123", "a": "0.76589596" },
+							"location": "topRight",
+							"padXFraction": 0.17,
+							"padYFraction": 0.067,
+							"widthFraction": 0.72692084,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
+							"textKey": "~01~~panel_010~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.90781498", "g": "0.46774396", "b": "0.37542129", "a": "0.56358343" },
+							"padXFraction": 0.216,
+							"padYFraction": 0.315,
+							"widthFraction": 0.6456359,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"role": "subPlot",
+			"npcId": "genericPlots_royalArmsDrauvgender",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		}
+	]
+}
+}

@@ -1,0 +1,1338 @@
+{
+"id": "missionVictory_drauvenBird",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/victory_drauvenBird",
+	"author": "Anne Austin",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"encounterEnabled": true,
+	"onlyShowForNewSites": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{
+		"template": "INJECTED_SITE",
+		"aspectValues": [
+			{ "id": "virtualSite", "forbidden": true }
+		]
+	},
+	{ "template": "INJECTED_TILE" },
+	{ "role": "threat", "template": "INJECTED_THREAT", "choose": "ANY" },
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{ "template": "LIVING_FOES" },
+	{
+		"template": "DEAD_FOES",
+		"choose": "ALL",
+		"aspects": [ "drauven_stormthroat" ]
+	},
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "HEALER",
+		"scoreThreshold": "60",
+		"themes": { "eligibleForTheme": "petBirdDrauven" }
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(LEADER,HOTHEAD)",
+		"scoreThreshold": "60",
+		"notAlreadyMatchedAs": [ "healer" ]
+	},
+	{
+		"role": "snark",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(SNARK,HOTHEAD)",
+		"notAlreadyMatchedAs": [ "healer", "leader" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.104, "y": 0.527 },
+							"size": 0.795,
+							"head": { "rotate": -4.909, "scaleY": -1 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-joke",
+							"equipment": {},
+							"anchor": { "x": 0.666, "y": 0.531 },
+							"size": 0.505,
+							"head": { "rotate": -13.097 },
+							"foot": { "rotate": -8.073 }
+						},
+						{
+							"role": "leader",
+							"equipment": {},
+							"anchor": { "x": 0.281, "y": 0.569 },
+							"size": 0.535,
+							"head": { "rotate": -13.774 }
+						},
+						{
+							"assetSpec": "scenery:drauven_pots1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.93, "y": 0.122 },
+							"size": 0.438,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.374 },
+							"size": 0.682,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.344, "y": 0.405 },
+							"size": 0.525,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_001~1_snark",
+							"pointerOwner": "snark",
+							"location": "topRight",
+							"padXFraction": 0.079,
+							"padYFraction": 0.058,
+							"widthFraction": 0.43767706,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.374, "y": 0.55 },
+							"size": 0.817,
+							"head": { "rotate": 2.203 },
+							"foot": { "rotate": 5.711 }
+						},
+						{
+							"assetSpec": "comic:birdDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.235, "y": 0.393 },
+							"size": 0.445,
+							"nameTag": "none",
+							"foot": { "rotate": -143.241 }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.745, "y": 0.218 },
+							"size": 0.461,
+							"nameTag": "none",
+							"foot": { "rotate": 34.824 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"assetSpec": "comic:feather2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.924, "y": 0.08 },
+							"size": 0.25,
+							"nameTag": "none",
+							"foot": { "rotate": -160.88 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.82, "y": 0.221 },
+							"size": 0.352,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" }
+						},
+						{
+							"assetSpec": "comic:feather2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.669, "y": 0.339 },
+							"size": 0.253,
+							"nameTag": "none",
+							"foot": { "rotate": 101.423 },
+							"color": { "r": "0.7", "g": "0.6", "b": "0.7", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:feather1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.764, "y": 0.618 },
+							"size": 0.273,
+							"nameTag": "none",
+							"foot": { "rotate": 34.384 },
+							"colorFilter": { "filterName": "selected" }
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.677, "y": 0.084 },
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:feather1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.584, "y": 0.511 },
+							"size": 0.207,
+							"nameTag": "none",
+							"foot": { "rotate": 11.119 }
+						},
+						{
+							"assetSpec": "comic:feather1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.708, "y": 0.702 },
+							"size": 0.158,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "turnedToStone", "strength": 0.4 }
+						},
+						{
+							"assetSpec": "comic:action_zigzagL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.887, "y": 0.774 },
+							"size": 0.518,
+							"nameTag": "none",
+							"foot": { "rotate": -47.121 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_002~1_snark",
+							"pointerOwner": "snark",
+							"padXFraction": 0.453,
+							"padYFraction": 0.051,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.093, "y": 0.492 },
+							"size": 0.523,
+							"head": { "rotate": -15.9 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.343, "y": 0.492 },
+							"size": 0.503,
+							"head": { "rotate": 6.71, "scaleY": -1 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.789, "y": 0.465 },
+							"size": 0.503,
+							"head": { "rotate": -20.677 },
+							"foot": { "rotate": 12.475 }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.548, "y": 0.683 },
+							"size": 0.231,
+							"nameTag": "none",
+							"foot": { "rotate": -50.392 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" }
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.072, "y": -0.046 },
+							"size": 0.315,
+							"head": { "rotate": -3.324 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.184, "y": -0.05 },
+							"size": 0.305,
+							"head": { "rotate": 6.71, "scaleY": -1 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-grim",
+							"focus": "foot",
+							"anchor": { "x": 0.368, "y": -0.039 },
+							"size": 0.3,
+							"head": { "rotate": -20.677 },
+							"foot": { "rotate": 2.006 }
+						},
+						{
+							"assetSpec": "comic:birdDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.886, "y": 0.095 },
+							"size": 0.145,
+							"nameTag": "none",
+							"foot": { "rotate": 6.397 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.821, "y": -0.13 },
+							"size": 0.373,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_pots1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.714, "y": 0.153 },
+							"size": 0.217,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.622, "y": 0.225 },
+							"size": 0.355,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_basketSpears.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.957, "y": 0.309 },
+							"size": 0.263,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.211, "y": 0.252 },
+							"size": 0.338,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:actionLines_shakeWobbly1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.852, "y": 0.24 },
+							"size": 0.233,
+							"nameTag": "none",
+							"foot": { "rotate": -137.085 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_004~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.223,
+							"padYFraction": 0.222,
+							"widthFraction": 0.6860215,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 19, "dY": 0.9999695, "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_004~2_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.092,
+							"padYFraction": 0.097,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 15.17037, "dX": -24, "dY": 4.9999695 }
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:birdDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.729, "y": 0.389 },
+							"size": 0.443,
+							"nameTag": "none",
+							"foot": { "rotate": 7.419 }
+						},
+						{
+							"assetSpec": "scenery:drauven_pots1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.385, "y": 0.428 },
+							"size": 0.541,
+							"nameTag": "none"
+						},
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": -0.246, "y": 0.721 },
+							"size": 0.144
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.373, "y": 0.187 },
+							"size": 0.485,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_basketSpears.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.013, "y": 0.969 },
+							"size": 0.726,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicEmotion_injury.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.53, "y": 0.603 },
+							"size": 0.123,
+							"nameTag": "none",
+							"foot": { "rotate": -108.572 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_005~1_healer",
+							"pointerOwner": "healer",
+							"fallbackSlotOwner": 0,
+							"pointerAdjust": {
+								"rotate": 35.21754,
+								"dX": 53,
+								"dY": 32,
+								"scaleX": 0.8638354,
+								"scaleY": 0.8638354,
+								"pointerOrientH": "onRight",
+								"pointerOrientV": "down"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.239, "y": 0.523 },
+							"size": 0.613,
+							"head": { "rotate": -23.559 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.548, "y": 0.489 },
+							"size": 0.49,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -1.935, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_006~1_healer",
+							"pointerOwner": "healer",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 35, "dY": 3.999939, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_006~2_snark",
+							"pointerOwner": "snark",
+							"padXFraction": 0.358,
+							"padYFraction": 0.121,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"anchor": { "x": 1.005, "y": 0.481 },
+							"size": 0.613,
+							"head": { "rotate": -23.559 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-dubious",
+							"anchor": { "x": 0.447, "y": 0.497 },
+							"size": 0.49,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -1.935, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_007~1_snark",
+							"pointerOwner": "snark",
+							"location": "bottomLeft",
+							"padXFraction": 0.139,
+							"padYFraction": 0.751,
+							"widthFraction": 0.70348835,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -26,
+								"dY": -63.00003,
+								"pointerOrientH": "onLeft",
+								"pointerOrientV": "up"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.137, "y": -0.126 },
+							"size": 0.547,
+							"head": { "rotate": -26.625 },
+							"foot": { "rotate": -11.797 }
+						},
+						{
+							"assetSpec": "comic:birdDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.724, "y": 0.14 },
+							"size": 0.199,
+							"nameTag": "none",
+							"foot": { "rotate": 6.397 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.821, "y": -0.13 },
+							"size": 0.373,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_pots1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.498, "y": 0.157 },
+							"size": 0.293,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.396, "y": 0.382 },
+							"size": 0.626,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_basketSpears.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.871, "y": 0.496 },
+							"size": 0.424,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.099, "y": 0.256 },
+							"size": 0.471,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_008~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.208,
+							"padYFraction": 0.105,
+							"widthFraction": 0.6860215,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 19, "dY": 0.9999695, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"head": { "rotate": -17.021, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_009~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.442,
+							"padYFraction": 0.07,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.819, "y": 0.47 },
+							"size": 0.602,
+							"head": { "scaleY": 1 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.32, "y": 0.493 },
+							"size": 0.578
+						},
+						{
+							"role": "snark",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.116, "y": 0.485 },
+							"size": 0.498
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.796, "y": 0.255 },
+							"size": 0.582,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_010~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.095,
+							"padYFraction": 0.062,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-dubious",
+							"equipment": {},
+							"anchor": { "x": 0.394, "y": 0.511 },
+							"head": { "rotate": -7.97 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_011~1_leader",
+							"pointerOwner": "leader",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.716, "y": 0.5 },
+							"size": 0.77,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 1.362, "scaleY": -1 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-dubious",
+							"equipment": {},
+							"anchor": { "x": 0.166, "y": 0.515 },
+							"size": 0.726
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.082, "y": 0.144 },
+							"size": 0.614,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_012~1_healer",
+							"pointerOwner": "healer"
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.716, "y": 0.5 },
+							"size": 0.77,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 1.362, "scaleY": 1 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.166, "y": 0.515 },
+							"size": 0.726
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.087, "y": 0.137 },
+							"size": 0.69,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_013~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.07,
+							"padYFraction": 0.051,
+							"widthFraction": 0.8343023,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.466, "y": 0.508 },
+							"head": { "rotate": -7.97, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.226, "y": 0.191 },
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_014~1_healer",
+							"pointerOwner": "healer",
+							"pointerAdjust": { "dX": 13, "dY": 5, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.226, "y": 0.496 },
+							"size": 1.115,
+							"head": { "rotate": 8.121, "scaleY": 1 },
+							"foot": { "rotate": -5.711 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_015~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.381,
+							"padYFraction": 0.062,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -23.99988, "dY": 4 }
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.716, "y": 0.5 },
+							"size": 0.77,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -5.643, "scaleY": 1 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.166, "y": 0.515 },
+							"size": 0.726
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.098, "y": 0.202 },
+							"size": 0.691,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_016~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.07,
+							"padYFraction": 0.051,
+							"widthFraction": 0.74709314,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.405, "y": -0.019 },
+							"size": 0.315,
+							"head": { "rotate": -20.221 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.213, "y": -0.031 },
+							"size": 0.305,
+							"head": { "rotate": 6.71, "scaleY": 1 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-grim",
+							"focus": "foot",
+							"anchor": { "x": 0.09, "y": -0.016 },
+							"size": 0.3,
+							"head": { "rotate": -9.473 },
+							"foot": { "rotate": 2.006 }
+						},
+						{
+							"assetSpec": "comic:birdDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.876, "y": 0.095 },
+							"size": 0.127,
+							"nameTag": "none",
+							"foot": { "rotate": 6.397 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.821, "y": -0.13 },
+							"size": 0.373,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_pots1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.714, "y": 0.153 },
+							"size": 0.217,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.622, "y": 0.225 },
+							"size": 0.355,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_basketSpears.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.957, "y": 0.309 },
+							"size": 0.263,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.367, "y": 0.248 },
+							"size": 0.338,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_drauvenBird",
+							"textKey": "~01~prompt~panel_017~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.161,
+							"padYFraction": 0.214,
+							"widthFraction": 0.6860215,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 19, "dY": 0.9999695, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "leader",
+									"form": "frame-grim",
+									"equipment": {},
+									"size": 0.903
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_drauvenBird",
+									"textKey": "~02~choice_one~panel_001~1_leader",
+									"pointerOwner": "leader"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "healer",
+									"form": "frame-grim",
+									"equipment": {},
+									"head": { "rotate": -12.425 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_drauvenBird",
+									"textKey": "~03~choice_two~panel_001~1_healer",
+									"pointerOwner": "healer"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "leader",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "leader",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.728, "y": 0.191 },
+										"size": 0.221,
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "snark",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.921, "y": -0.026 },
+										"size": 0.24,
+										"head": { "rotate": -2.921 },
+										"foot": { "rotate": -2.779 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.765, "y": 0.138 },
+										"size": 0.278,
+										"nameTag": "none",
+										"foot": { "rotate": -5.677 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-sad",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.595, "y": 0.134 },
+										"size": 0.221,
+										"head": { "rotate": -23.981 }
+									},
+									{
+										"assetSpec": "scenery:stumpConiferRock.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.072, "y": 0.171 },
+										"size": 0.268,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:plantSmall1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.364, "y": 0.11 },
+										"size": 0.295,
+										"nameTag": "none",
+										"color": { "r": "0.5", "g": "0.5", "b": "0.6", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_drauvenBird",
+										"textKey": "~04~player_chose_one~panel_001~1_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.357,
+										"padYFraction": 0.082,
+										"widthFraction": 0.62606233,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/victory_drauvenBird",
+										"textKey": "~04~player_chose_one~panel_001~2_narration",
+										"style": "narration",
+										"padXFraction": 0.027,
+										"padYFraction": 0.063,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "healer",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+							"panel": {
+								"size": "half",
+								"animation": { "overridePanelOrder": 2 },
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.653, "y": 0.504 },
+										"size": 0.797,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -21.156 }
+									},
+									{
+										"assetSpec": "scenery:drauven_gearPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.247, "y": 0.214 },
+										"size": 0.651,
+										"nameTag": "none"
+									},
+									{
+										"role": "snark",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.104, "y": 0.516 },
+										"size": 0.733
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_drauvenBird",
+										"textKey": "~05~player_chose_two~panel_001~1_leader",
+										"pointerOwner": "leader",
+										"location": "topRight",
+										"padXFraction": 0.071,
+										"padYFraction": 0.054,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+							"panel": {
+								"size": "half",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.592, "y": 0.523 },
+										"size": 0.753,
+										"head": { "rotate": -13.364, "scaleY": -1 }
+									},
+									{
+										"assetSpec": "scenery:drauven_gearPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.208, "y": 0.221 },
+										"size": 0.644,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_drauvenBird",
+										"textKey": "~05~player_chose_two~panel_002~1_healer",
+										"pointerOwner": "healer"
+									}
+								]
+							}
+						},
+						{
+							"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.252, "y": 0.477 },
+										"size": 0.604,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -0.164 }
+									},
+									{
+										"role": "healer",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.672, "y": 0.484 },
+										"size": 0.61,
+										"nameTag": "bottomRight"
+									},
+									{
+										"assetSpec": "scenery:drauven_gearPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.641, "y": 0.187 },
+										"size": 0.651,
+										"nameTag": "none"
+									},
+									{
+										"role": "snark",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.065, "y": 0.489 },
+										"size": 0.521,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_drauvenBird",
+										"textKey": "~05~player_chose_two~panel_003~1_leader",
+										"pointerOwner": "leader",
+										"location": "topRight",
+										"padXFraction": 0.536,
+										"padYFraction": 0.097,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/victory_drauvenBird",
+										"textKey": "~05~player_chose_two~panel_003~2_healer",
+										"pointerOwner": "healer",
+										"padXFraction": 0.527,
+										"padYFraction": 0.097,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "healer",
+					"addAspects": [
+						{ "id": "drauvenBird_healer", "value": "1" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "site",
+					"addAspects": [
+						{ "id": "drauvenBird_jobhost", "value": "1" }
+					]
+				}
+			]
+		}
+	}
+]
+}

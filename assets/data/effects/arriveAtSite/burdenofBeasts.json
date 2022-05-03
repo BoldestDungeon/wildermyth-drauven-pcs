@@ -1,0 +1,4880 @@
+{
+"id": "encounter_heroesArriveAtSite_burdenofBeasts",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/burdenofBeasts",
+	"author": "Anne Austin"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{
+		"template": "COMPANY",
+		"aspectValues": [
+			{ "id": "chapterNumber", "minValue": "2" }
+		]
+	},
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{
+		"template": "INJECTED_THREAT",
+		"aspects": [ "gorgon" ]
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(LEADER,HOTHEAD,BOOKISH,COWARD)",
+		"scoreThreshold": "80"
+	},
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(HEALER,BOOKISH,ROMANTIC,GREEDY)",
+		"notAlreadyMatchedAs": [ "leader" ]
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "leader", "healer" ]
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "leader", "healer", "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "leader", "healer", "hero" ]
+	},
+	{
+		"role": "monster",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "theme_gorgon+theme_gorgonStone",
+		"scoreThreshold": "1"
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_fieldYellowFlat.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:cabinLog.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.184, "y": 0.332 },
+							"size": 0.197,
+							"nameTag": "none",
+							"color": { "r": "0.79877341", "g": "0.72151434", "b": "0.85743308", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_rubblePile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.444, "y": 0.191 },
+							"size": 0.178,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:rubble2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.05, "y": 0.034 },
+							"size": 0.243,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bucketsRocks.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.174, "y": 0.046 },
+							"size": 0.187,
+							"drawDepth": 0.75,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.892, "y": 0.375 },
+							"size": 0.426,
+							"drawDepth": -1,
+							"head": { "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.757, "y": 0.454 },
+							"size": 0.516,
+							"drawDepth": -2,
+							"head": { "scaleY": -1 }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.475, "y": 0.366 },
+							"size": 0.37,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"head": { "rotate": -23.92, "scaleY": -1 }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.297, "y": 0.359 },
+							"size": 0.345,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": 15.762 }
+						},
+						{
+							"role": "hero3",
+							"equipment": {},
+							"anchor": { "x": 0.574, "y": 0.279 },
+							"size": 0.293,
+							"drawDepth": -0.25,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration",
+							"padXFraction": 0.014,
+							"padYFraction": 0.047,
+							"widthFraction": 0.8352113
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.685, "y": 0.342 },
+							"size": 0.264,
+							"drawDepth": -1,
+							"head": { "rotate": 5.3, "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.575, "y": 0.347 },
+							"size": 0.308,
+							"drawDepth": -2,
+							"head": { "rotate": 7.205, "scaleY": 1 }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"anchor": { "x": 0.329, "y": 0.317 },
+							"size": 0.236,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"head": { "rotate": 3.75, "scaleY": 1 }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.133, "y": 0.297 },
+							"size": 0.24,
+							"drawDepth": -1.75,
+							"nameTag": "none",
+							"head": { "rotate": 15.762 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.236, "y": -0.031 },
+							"size": 0.368,
+							"nameTag": "none",
+							"foot": { "rotate": -9.3 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.92, "y": 0.297 },
+							"size": 0.053,
+							"nameTag": "none",
+							"foot": { "rotate": 20.902 }
+						},
+						{
+							"role": "hero3",
+							"equipment": {},
+							"anchor": { "x": 0.202, "y": 0.256 },
+							"size": 0.196,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_002~1_narration",
+							"style": "narration",
+							"padXFraction": 0.121,
+							"padYFraction": 0.078,
+							"widthFraction": 0.8352113
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.466, "y": 0.05 },
+							"size": 0.391,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStone.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.517, "y": 0.53 },
+							"size": 0.096,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.398, "y": 0.458 },
+							"size": 0.216,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.89296544", "b": "0.51579034", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.409, "y": 0.672 },
+							"size": 0.091,
+							"nameTag": "none",
+							"foot": { "scaleX": 0.6 }
+						},
+						{
+							"assetSpec": "comic:path.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.384, "y": 0.328 },
+							"size": 0.153,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": 3.55 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.918, "y": 0.145 },
+							"size": 0.114,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"foot": { "rotate": 1.301 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.075, "y": 0.385 },
+							"size": 0.053,
+							"nameTag": "none",
+							"foot": { "rotate": 16.481 }
+						},
+						{
+							"assetSpec": "scenery:wheatBundles.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.851, "y": 0.435 },
+							"size": 0.092,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": -11.55 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.697, "y": 0.458 },
+							"size": 0.474,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.951 }
+						},
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.232, "y": 0.485 },
+							"size": 0.753,
+							"drawDepth": 0
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_004~1_leader",
+							"pointerOwner": "leader",
+							"location": "topRight",
+							"padXFraction": 0.048,
+							"padYFraction": 0.062,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 29.693663, "dY": -1.1420962, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.25, "y": 0.458 },
+							"size": 0.474,
+							"nameTag": "none",
+							"head": { "rotate": -1.863 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.608, "y": 0.5 },
+							"size": 0.753,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 7.104 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_005~1_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"padXFraction": 0.082,
+							"padYFraction": 0.078,
+							"widthFraction": 0.7354649,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.528, "y": 0.453 },
+							"size": 0.485,
+							"drawDepth": -1.875,
+							"head": { "rotate": 5.3, "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.883, "y": 0.428 },
+							"size": 0.479,
+							"drawDepth": -2,
+							"head": { "rotate": 16.133, "scaleY": 1 }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"anchor": { "x": 0.684, "y": 0.4 },
+							"size": 0.439,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"head": { "rotate": 3.75, "scaleY": 1 }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.241, "y": 0.362 },
+							"size": 0.33,
+							"drawDepth": -1.75,
+							"nameTag": "none",
+							"head": { "rotate": 15.762 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.335, "y": -0.508 },
+							"size": 0.757,
+							"nameTag": "none",
+							"foot": { "rotate": -17.845 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.884, "y": 0.385 },
+							"size": 0.224,
+							"nameTag": "none",
+							"foot": { "rotate": 11.998 }
+						},
+						{
+							"assetSpec": "scenery:wheatBundles.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.04, "y": 0.057 },
+							"size": 0.515,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero3",
+							"equipment": {},
+							"anchor": { "x": 0.333, "y": 0.309 },
+							"size": 0.256,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_006~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.398,
+							"padYFraction": 0.183,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"role": "leader",
+							"equipment": {},
+							"anchor": { "x": 0.403, "y": 0.535 },
+							"size": 0.529
+						},
+						{
+							"role": "healer",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.672, "y": 0.508 },
+							"size": 0.495
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"anchor": { "x": 0.097, "y": 0.447 },
+							"size": 0.448,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStone.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.07, "y": 1.042 },
+							"size": 0.696,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.584, "y": 0.363 },
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"color": { "r": "0.99999994", "g": "0.8247112", "b": "0.2070176", "a": "0.59298247" }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.225, "y": 0.149 },
+							"size": 0.357,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_007~1_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"padXFraction": 0.049,
+							"padYFraction": 0.066,
+							"widthFraction": 0.80215055,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"animation": { "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:cottageStoneOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.017, "y": 1.137 },
+							"size": 0.886,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.759, "y": 0.447 },
+							"size": 0.502
+						},
+						{
+							"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.576, "y": 0.298 },
+							"size": 0.284,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.186, "y": 0.068 },
+							"size": 2.361,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.89296544", "b": "0.51579034", "a": "0.59298247" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "leader",
+							"equipment": {},
+							"size": 0.806
+						},
+						{
+							"assetSpec": "comic:cottageStone.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 2.541, "y": 1.202 },
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_009~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.043,
+							"padYFraction": 0.07,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 21.699163, "dY": 3.426184, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:cottageStoneOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.369, "y": 1.469 },
+							"size": 1.329,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.691, "y": 0.489 },
+							"size": 0.694
+						},
+						{
+							"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.428, "y": 0.439 },
+							"size": 0.284,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.186, "y": 0.068 },
+							"size": 2.529,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.89296544", "b": "0.51579034", "a": "0.59298247" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:cottageStoneOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.369, "y": 1.469 },
+							"size": 1.329,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.691, "y": 0.489 },
+							"size": 0.712,
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.428, "y": 0.439 },
+							"size": 0.284,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.186, "y": 0.068 },
+							"size": 2.529,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.89296544", "b": "0.51579034", "a": "0.59298247" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_011~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.047,
+							"padYFraction": 0.07,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"equipment": {},
+							"anchor": { "x": 0.396, "y": 0.477 },
+							"size": 0.487,
+							"head": { "rotate": -3.672 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.544, "y": 0.443 },
+							"size": 0.451,
+							"head": { "rotate": 3.599 },
+							"foot": { "rotate": -3.715 }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"anchor": { "x": 0.185, "y": 0.447 },
+							"size": 0.415,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStoneOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.726, "y": 1.015 },
+							"size": 0.696,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.403, "y": 0.374 },
+							"size": 0.983,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"color": { "r": "0.99999994", "g": "0.8247112", "b": "0.2070176", "a": "0.59298247" }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.19, "y": 0.138 },
+							"size": 0.357,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.104, "y": 0.393 },
+							"size": 0.224,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.79, "y": 0.062 },
+							"size": 1.94,
+							"drawDepth": 6.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.89296544", "b": "0.51579034", "a": "0.59298247" }
+						},
+						{
+							"role": "hero2",
+							"equipment": {},
+							"anchor": { "x": 0.058, "y": 0.431 },
+							"size": 0.402,
+							"drawDepth": 5,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"equipment": {},
+							"anchor": { "x": 0.993, "y": 0.408 },
+							"size": 0.483,
+							"drawDepth": 6.25,
+							"nameTag": "none",
+							"head": { "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_012~1_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.092,
+							"padYFraction": 0.226,
+							"widthFraction": 0.80215055,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -25.12535, "dY": 3.4261842 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"equipment": {},
+							"anchor": { "x": 0.109, "y": 0.503 },
+							"size": 0.52,
+							"head": { "rotate": -19.461, "scaleY": -1 }
+						},
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.406, "y": 0.489 },
+							"size": 0.85,
+							"drawDepth": 0,
+							"head": { "rotate": -2.786 }
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.788, "y": 0.523 },
+							"size": 0.625,
+							"nameTag": "none",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"size": 0.537,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wagonWheat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.975, "y": 0.061 },
+							"size": 0.426,
+							"nameTag": "none",
+							"foot": { "rotate": 21.478 }
+						},
+						{
+							"assetSpec": "scenery:leatherRolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.832, "y": 0.114 },
+							"size": 0.338,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bucketMetal.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.514, "y": 0.027 },
+							"size": 0.47,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "item:item_pitchfork.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.281, "y": 0.157 },
+							"size": 0.277,
+							"nameTag": "none",
+							"foot": { "rotate": 24.249 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_013~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.389,
+							"padYFraction": 0.055,
+							"widthFraction": 0.39518404,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -33.119778,
+								"dY": -2.2841575,
+								"scaleX": 0.9412798,
+								"scaleY": 0.9412798,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_013~2_healer",
+							"pointerOwner": "healer",
+							"location": "bottomLeft",
+							"padXFraction": 0.476,
+							"padYFraction": 0.047,
+							"widthFraction": 0.3413598,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.191, "y": 0.465 },
+							"size": 0.52,
+							"head": { "rotate": 1.457, "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.867, "y": 0.45 },
+							"size": 0.736,
+							"drawDepth": 0,
+							"head": { "rotate": -2.663 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.8, "y": 0.485 },
+							"size": 0.537,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bucketMetal.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.89, "y": 0.035 },
+							"size": 0.47,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "item:item_pitchfork.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.281, "y": 0.157 },
+							"size": 0.277,
+							"nameTag": "none",
+							"foot": { "rotate": 24.249 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_014~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.26,
+							"padYFraction": 0.063,
+							"widthFraction": 0.45058158,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 13.704736, "dY": -2.2841575, "scaleX": 0.9412798, "scaleY": 0.9412798 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.662, "y": 0.519 },
+							"size": 0.625,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -14.036, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.256, "y": 0.493 },
+							"size": 0.537,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wagonWheat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.705, "y": 0.053 },
+							"size": 0.426,
+							"nameTag": "none",
+							"foot": { "rotate": 21.478 }
+						},
+						{
+							"assetSpec": "scenery:leatherRolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.436, "y": 0.083 },
+							"size": 0.338,
+							"nameTag": "none"
+						},
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": -0.199, "y": 0.419 },
+							"size": 0.736,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"head": { "rotate": -2.663 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_015~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.204,
+							"padYFraction": 0.058,
+							"widthFraction": 0.39518404,
+							"shrinkToFitText": true,
+							"pointerStyle": "none",
+							"pointerAdjust": {
+								"dX": -33.119778,
+								"dY": -21.6992,
+								"scaleX": 1.0050149,
+								"scaleY": 1.0050149,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_015~2_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.282,
+							"padYFraction": 0.186,
+							"widthFraction": 0.4883721,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -12.562675,
+								"dY": -2.2841573,
+								"scaleX": 1.0050149,
+								"scaleY": 1.0050149,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.16, "y": 0.446 },
+							"size": 0.561,
+							"head": { "rotate": -15.774, "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.919, "y": 0.458 },
+							"size": 0.583,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.731 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.316, "y": 0.47 },
+							"size": 0.631,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bucketMetal.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.379, "y": -0.148 },
+							"size": 0.572,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "item:item_pitchfork.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.281, "y": 0.157 },
+							"size": 0.277,
+							"nameTag": "none",
+							"foot": { "rotate": 24.249 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.397, "y": 0.247 },
+							"size": 0.284,
+							"drawDepth": 21,
+							"nameTag": "none",
+							"foot": { "rotate": -7.995 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.7473684" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_016~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.051,
+							"padYFraction": 0.063,
+							"widthFraction": 0.8662789,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 13.704736, "dY": -2.2841575, "scaleX": 0.9412798, "scaleY": 0.9412798 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.585, "y": 0.481 },
+							"size": 0.617,
+							"drawDepth": -1,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 0.526, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -1.626, "y": 0.382 },
+							"size": 0.811,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wagonWheat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.705, "y": 0.053 },
+							"size": 0.426,
+							"nameTag": "none",
+							"foot": { "rotate": 21.478 }
+						},
+						{
+							"assetSpec": "scenery:leatherRolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.391, "y": 0.091 },
+							"size": 0.338,
+							"nameTag": "none"
+						},
+						{
+							"role": "healer",
+							"form": "frame-dubious",
+							"equipment": {},
+							"anchor": { "x": -0.211, "y": 0.458 },
+							"size": 0.639,
+							"drawDepth": 0,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_017~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.044,
+							"padYFraction": 0.085,
+							"widthFraction": 0.7267441,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -38.830086,
+								"dY": -7.994464,
+								"scaleX": 1.0050149,
+								"scaleY": 1.0050149,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"animation": { "overridePanelOrder": 3, "overridePanelDrawDepth": -3 },
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.38, "y": 0.434 },
+							"size": 0.737,
+							"head": { "rotate": 0.244, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.832, "y": 0.447 },
+							"size": 0.884,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bucketMetal.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.019, "y": -0.148 },
+							"size": 0.51,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.041, "y": 0.462 },
+							"size": 0.344,
+							"drawDepth": 21,
+							"nameTag": "none",
+							"foot": { "rotate": -7.995 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_exclamation.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.296, "y": 0.794 },
+							"size": 0.553,
+							"nameTag": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"animation": { "overridePanelOrder": 2, "overridePanelDrawDepth": -3 },
+					"actorSlots": [
+						{
+							"role": "healer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.76, "y": 0.444 },
+							"size": 0.629,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 0.457, "scaleY": -1 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": -0.332, "y": 0.381 },
+							"size": 0.737,
+							"nameTag": "none",
+							"head": { "rotate": -15.774, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.228, "y": 0.451 },
+							"size": 0.884,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bucketMetal.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.027, "y": -0.148 },
+							"size": 0.51,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.029, "y": 0.443 },
+							"size": 0.344,
+							"drawDepth": 21,
+							"nameTag": "none",
+							"foot": { "rotate": -7.995 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_019~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.265,
+							"padYFraction": 0.219,
+							"widthFraction": 0.8662789,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 13.704736, "dY": -2.2841575, "scaleX": 0.9412798, "scaleY": 0.9412798 },
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"animation": { "overridePanelOrder": 1, "overridePanelDrawDepth": 1 },
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.526, "y": 0.515 },
+							"size": 0.688,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 6.909, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -1.44, "y": 0.47 },
+							"size": 0.811,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wagonWheat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.705, "y": 0.053 },
+							"size": 0.383,
+							"nameTag": "none",
+							"foot": { "rotate": 21.478 }
+						},
+						{
+							"assetSpec": "scenery:leatherRolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.383, "y": 0.049 },
+							"size": 0.338,
+							"nameTag": "none"
+						},
+						{
+							"role": "healer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": -0.278, "y": 0.444 },
+							"size": 0.629,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"head": { "rotate": -15.473, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_020~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": -0.443,
+							"padYFraction": 0.046,
+							"widthFraction": 0.7267441,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -14.846935,
+								"dY": 1.1420267,
+								"scaleX": 1.0050149,
+								"scaleY": 1.0050149,
+								"pointerOrientH": "onLeft"
+							},
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.153, "y": 0.48 },
+							"size": 0.737,
+							"head": { "rotate": 0.244, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.358, "y": 0.455 },
+							"size": 0.884,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bucketMetal.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.44, "y": -0.129 },
+							"size": 0.51,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.041, "y": 0.462 },
+							"size": 0.344,
+							"drawDepth": 21,
+							"nameTag": "none",
+							"foot": { "rotate": -7.995 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.468, "y": 0.477 },
+							"size": 0.435,
+							"drawDepth": 21,
+							"nameTag": "none",
+							"foot": { "rotate": -6.248 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.917, "y": 0.5 },
+							"size": 0.692
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_021~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.098,
+							"padYFraction": 0.128,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_021~2_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.487,
+							"padYFraction": 0.668,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.526, "y": 0.515 },
+							"size": 0.981,
+							"nameTag": "none",
+							"head": { "rotate": -7.068, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -2.283, "y": 0.443 },
+							"size": 1.107,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wagonWheat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.561, "y": -0.176 },
+							"size": 0.562,
+							"nameTag": "none",
+							"foot": { "rotate": 21.478 }
+						},
+						{
+							"assetSpec": "scenery:leatherRolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.141, "y": -0.203 },
+							"size": 0.338,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_022~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.25,
+							"padYFraction": 0.034,
+							"widthFraction": 0.7267441,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -14.846935,
+								"dY": 1.1420267,
+								"scaleX": 1.0050149,
+								"scaleY": 1.0050149,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "monster.exists",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.108, "y": 0.533 },
+										"size": 0.737,
+										"head": { "rotate": -9.136, "scaleY": 1 },
+										"foot": { "rotate": 3.859 }
+									},
+									{
+										"assetSpec": "comic:entranceWindowInterior.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.114, "y": 0.466 },
+										"size": 0.884,
+										"drawDepth": 20,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:bucketMetal.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.44, "y": -0.129 },
+										"size": 0.51,
+										"drawDepth": 13,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.041, "y": 0.462 },
+										"size": 0.344,
+										"drawDepth": 21,
+										"nameTag": "none",
+										"foot": { "rotate": -7.995 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.269, "y": 0.496 },
+										"size": 0.435,
+										"drawDepth": 21,
+										"nameTag": "none",
+										"foot": { "rotate": -6.248 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.732, "y": 0.481 },
+										"size": 0.692,
+										"head": { "rotate": 7.559 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~01~prompt~panel_023.(monster_exists)~1_healer",
+										"pointerOwner": "healer",
+										"location": "topRight",
+										"padXFraction": 0.033,
+										"padYFraction": 0.07,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.15, "y": 0.548 },
+										"size": 0.737,
+										"head": { "rotate": -3.82, "scaleY": 1 },
+										"foot": { "rotate": -0.525 }
+									},
+									{
+										"assetSpec": "comic:entranceWindowInterior.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.409, "y": 0.424 },
+										"size": 0.884,
+										"drawDepth": 20,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:bucketMetal.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.44, "y": -0.129 },
+										"size": 0.51,
+										"drawDepth": 13.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.041, "y": 0.462 },
+										"size": 0.344,
+										"drawDepth": 21,
+										"nameTag": "none",
+										"foot": { "rotate": -7.995 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.513, "y": 0.443 },
+										"size": 0.435,
+										"drawDepth": 21,
+										"nameTag": "none",
+										"foot": { "rotate": -6.248 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.878, "y": 0.5 },
+										"size": 0.692,
+										"head": { "rotate": 7.559 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~01~prompt~panel_024.(monster_exists)~1_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.033,
+										"padYFraction": 0.07,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					],
+					[]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"equipment": {},
+							"anchor": { "x": 0.109, "y": 0.503 },
+							"size": 0.52,
+							"head": { "rotate": 4.885, "scaleY": 1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.552, "y": 0.504 },
+							"size": 0.535,
+							"drawDepth": 0,
+							"head": { "rotate": -2.786, "scaleY": -1 }
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.853, "y": 0.534 },
+							"size": 0.625,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.277, "y": 0.5 },
+							"size": 0.715,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wagonWheat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.975, "y": 0.061 },
+							"size": 0.426,
+							"nameTag": "none",
+							"foot": { "rotate": 21.478 }
+						},
+						{
+							"assetSpec": "scenery:leatherRolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.832, "y": 0.114 },
+							"size": 0.338,
+							"drawDepth": 4,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bucketMetal.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.333, "y": 0.004 },
+							"size": 0.47,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "item:item_pitchfork.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.039, "y": 0.153 },
+							"size": 0.277,
+							"nameTag": "none",
+							"foot": { "rotate": 24.249 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.38, "y": 0.465 },
+							"size": 0.37,
+							"drawDepth": 21,
+							"nameTag": "none",
+							"foot": { "rotate": 7.184 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_025~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.646,
+							"padYFraction": 0.145,
+							"widthFraction": 0.39518404,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -33.119778,
+								"dY": -2.2841575,
+								"scaleX": 0.9412798,
+								"scaleY": 0.9412798,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_025~2_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.077,
+							"padYFraction": 0.086,
+							"widthFraction": 0.3413598,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_025~3_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.352,
+							"padYFraction": 0.584,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.168, "y": 0.385 },
+							"size": 0.43
+						},
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.235, "y": 0.366 },
+							"size": 0.352
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.067, "y": 0.382 },
+							"size": 0.404,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.968, "y": 0.404 },
+							"size": 0.475,
+							"nameTag": "none",
+							"head": { "rotate": 5.194 }
+						},
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.383, "y": 0.366 },
+							"size": 0.449,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"head": { "rotate": -10.139 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": 0.038 },
+							"size": 0.373,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wagonWheat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.084, "y": 0.153 },
+							"size": 0.355,
+							"drawDepth": 5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.755, "y": 0.259 },
+							"size": 0.336,
+							"nameTag": "none",
+							"foot": { "rotate": -2.443 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.469, "y": 0.267 },
+							"size": 0.305,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStoneOpen.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.258, "y": 0.893 },
+							"size": 0.541,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_026~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.246,
+							"padYFraction": 0.141,
+							"widthFraction": 0.71671396,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.254, "y": 0.5 },
+							"size": 0.647
+						},
+						{
+							"assetSpec": "comic:cottageStone.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -1.281, "y": 1.24 },
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.71, "y": 0.481 },
+							"size": 0.602,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_027~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.404,
+							"padYFraction": 0.125,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.174, "y": 0.495 },
+							"size": 0.76,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"head": { "rotate": -10.139, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.334, "y": 0.049 },
+							"size": 0.546,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.843, "y": 0.347 },
+							"size": 0.445,
+							"nameTag": "none",
+							"foot": { "rotate": -2.443 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.298, "y": 0.408 },
+							"size": 0.432,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_028~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.179,
+							"padYFraction": 0.047,
+							"widthFraction": 0.76989263,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 14.846727, "dY": 1.1420264 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.09, "y": 0.492 },
+							"size": 0.647
+						},
+						{
+							"assetSpec": "comic:cottageStone.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -1.281, "y": 1.24 },
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.453, "y": 0.485 },
+							"size": 0.602,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"head": { "rotate": -16.353 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.768, "y": 0.473 },
+							"size": 0.532,
+							"nameTag": "none",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.679, "y": 0.103 },
+							"size": 0.39,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_029~1_leader",
+							"pointerOwner": "leader",
+							"location": "topRight",
+							"padXFraction": 0.035,
+							"padYFraction": 0.113,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.43, "y": 0.392 },
+							"size": 0.383,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"head": { "rotate": -10.139, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.351, "y": 0.114 },
+							"size": 0.246,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.001, "y": 0.282 },
+							"size": 0.285,
+							"nameTag": "none",
+							"foot": { "rotate": -2.443 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.539, "y": 0.297 },
+							"size": 0.27,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.126, "y": 0.385 },
+							"size": 0.402,
+							"drawDepth": -1,
+							"head": { "rotate": 6.322 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_030~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.045,
+							"padYFraction": 0.199,
+							"widthFraction": 0.76989263,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 14.846727, "dY": 1.1420264 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.335, "y": 0.335 },
+							"size": 0.501,
+							"drawDepth": -1
+						},
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.189, "y": 0.362 },
+							"size": 0.352
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.067, "y": 0.382 },
+							"size": 0.404,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.968, "y": 0.404 },
+							"size": 0.475,
+							"nameTag": "none",
+							"head": { "rotate": 5.194 }
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.496, "y": 0.309 },
+							"size": 0.481,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"head": { "rotate": -10.139, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": 0.038 },
+							"size": 0.373,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wagonWheat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.084, "y": 0.153 },
+							"size": 0.355,
+							"drawDepth": 5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.755, "y": 0.259 },
+							"size": 0.336,
+							"nameTag": "none",
+							"foot": { "rotate": -2.443 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.516, "y": 0.267 },
+							"size": 0.305,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStoneOpen.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.258, "y": 0.893 },
+							"size": 0.541,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_031~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.246,
+							"padYFraction": 0.141,
+							"widthFraction": 0.6388102,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.174, "y": 0.495 },
+							"size": 0.76,
+							"drawDepth": 0,
+							"head": { "rotate": -10.139, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.334, "y": -0.004 },
+							"size": 0.546,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.871, "y": 0.347 },
+							"size": 0.445,
+							"nameTag": "none",
+							"foot": { "rotate": -2.443 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.346, "y": 0.389 },
+							"size": 0.432,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_032~1_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.832,
+							"padYFraction": 0.729
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.416, "y": 0.529 },
+							"size": 0.725,
+							"drawDepth": 0,
+							"head": { "rotate": -4.8, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.334, "y": 0.049 },
+							"size": 0.546,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.821, "y": 0.385 },
+							"size": 0.432,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_033~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.2,
+							"padYFraction": 0.078,
+							"widthFraction": 0.8125,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.319, "y": 0.438 },
+							"size": 0.501,
+							"drawDepth": -1
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.176, "y": 0.454 },
+							"size": 0.493,
+							"drawDepth": -2
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.054, "y": 0.428 },
+							"size": 0.404,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.972, "y": 0.461 },
+							"size": 0.475,
+							"nameTag": "none",
+							"head": { "rotate": -8.613 }
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.497, "y": 0.416 },
+							"size": 0.481,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"head": { "rotate": -10.139, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.494, "y": 0.099 },
+							"size": 0.373,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:wagonWheat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.084, "y": 0.153 },
+							"size": 0.355,
+							"drawDepth": 5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.772, "y": 0.32 },
+							"size": 0.336,
+							"nameTag": "none",
+							"foot": { "rotate": -2.443 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.32 },
+							"size": 0.305,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStoneOpen.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.258, "y": 0.893 },
+							"size": 0.541,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_034~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.456,
+							"padYFraction": 0.28,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.753, "y": 0.473 },
+							"size": 0.744,
+							"drawDepth": 3,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.168, "y": 0.527 },
+							"size": 0.756,
+							"head": { "rotate": -2.845 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.292, "y": -0.016 },
+							"size": 0.672,
+							"drawDepth": 4,
+							"nameTag": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.753, "y": 0.473 },
+							"size": 0.753,
+							"drawDepth": 3,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.168, "y": 0.527 },
+							"size": 0.756,
+							"head": { "rotate": -2.845 }
+						},
+						{
+							"assetSpec": "comic:fenceSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.284, "y": 0.023 },
+							"size": 0.613,
+							"drawDepth": 4,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/burdenofBeasts",
+							"textKey": "~01~prompt~panel_036~1_leader",
+							"pointerOwner": "leader",
+							"location": "topRight",
+							"padXFraction": 0.115,
+							"padYFraction": 0.05,
+							"widthFraction": 0.73255813,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "healer",
+									"form": "frame-interested",
+									"equipment": {},
+									"anchor": { "x": 0.39, "y": 0.468 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/burdenofBeasts",
+									"textKey": "~02~choice_one~panel_001~1_healer",
+									"pointerOwner": "healer",
+									"padXFraction": 0.009,
+									"padYFraction": 0.04,
+									"widthFraction": 0.9866667,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "leader",
+									"form": "frame-grim",
+									"equipment": {},
+									"anchor": { "x": 0.512, "y": 0.456 },
+									"head": { "rotate": -9.09 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/burdenofBeasts",
+									"textKey": "~03~choice_two~panel_001~1_leader",
+									"pointerOwner": "leader",
+									"padXFraction": 0.036,
+									"padYFraction": 0.038,
+									"widthFraction": 0.9333336,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": -24.016806, "dY": -2.287343, "pointerOrientH": "onLeft" }
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "AddRememberedPlace",
+		"target": "overlandTile",
+		"icon": "remembered_burdenOfBeasts"
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "healer",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"blockOtherChanges": true,
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.366, "y": 0.434 },
+										"size": 0.501,
+										"drawDepth": -1,
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.208, "y": 0.45 },
+										"size": 0.502,
+										"drawDepth": -2
+									},
+									{
+										"role": "hero",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.054, "y": 0.428 },
+										"size": 0.404,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									},
+									{
+										"role": "hero2",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.972, "y": 0.461 },
+										"size": 0.475,
+										"nameTag": "none",
+										"head": { "rotate": -8.613 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.614, "y": 0.4 },
+										"size": 0.481,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": 5.129, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.494, "y": 0.099 },
+										"size": 0.373,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:wagonWheat.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.084, "y": 0.153 },
+										"size": 0.355,
+										"drawDepth": 5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.772, "y": 0.32 },
+										"size": 0.336,
+										"nameTag": "none",
+										"foot": { "rotate": -2.443 }
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.515, "y": 0.32 },
+										"size": 0.305,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:cottageStoneOpen.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.258, "y": 0.893 },
+										"size": 0.541,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_001~1_healer",
+										"pointerOwner": "healer",
+										"padXFraction": 0.143,
+										"padYFraction": 0.163,
+										"widthFraction": 0.57082164,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 7.994429, "dY": -1.1420612 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.424, "y": 0.508 },
+										"size": 0.76,
+										"head": { "rotate": -6.843 }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.123, "y": 0.053 },
+										"size": 0.578,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.182, "y": 0.256 },
+										"size": 0.578,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_002~1_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.043,
+										"padYFraction": 0.047,
+										"widthFraction": 0.90625,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.031, "y": 0.538 },
+										"size": 0.647,
+										"drawDepth": 1.75
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -1.281, "y": 1.24 },
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.734, "y": 0.478 },
+										"size": 0.602,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"head": { "rotate": -16.353 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-talk",
+										"equipment": {},
+										"anchor": { "x": 0.491, "y": 0.504 },
+										"size": 0.737,
+										"drawDepth": 1.25,
+										"nameTag": "none",
+										"head": { "rotate": 3.24, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.679, "y": 0.103 },
+										"size": 0.39,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.889, "y": 0.278 },
+										"size": 0.54,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_003~1_healer",
+										"pointerOwner": "healer",
+										"padXFraction": 0.064,
+										"padYFraction": 0.059,
+										"widthFraction": 0.76774204,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -9.136491, "dY": -5.7103066, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.366, "y": 0.434 },
+										"size": 0.475,
+										"drawDepth": -1,
+										"head": { "rotate": 5.894, "scaleY": 1 }
+									},
+									{
+										"role": "healer",
+										"equipment": {},
+										"anchor": { "x": 0.208, "y": 0.45 },
+										"size": 0.493,
+										"drawDepth": -2
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.059, "y": 0.432 },
+										"size": 0.404,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									},
+									{
+										"role": "hero2",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.972, "y": 0.461 },
+										"size": 0.475,
+										"nameTag": "none",
+										"head": { "rotate": -8.613 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.614, "y": 0.4 },
+										"size": 0.481,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": 5.129, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.494, "y": 0.099 },
+										"size": 0.373,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:wagonWheat.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.084, "y": 0.153 },
+										"size": 0.355,
+										"drawDepth": 5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.772, "y": 0.32 },
+										"size": 0.336,
+										"nameTag": "none",
+										"foot": { "rotate": -2.443 }
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.515, "y": 0.32 },
+										"size": 0.305,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:cottageStoneOpen.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.258, "y": 0.893 },
+										"size": 0.541,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_004~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.27,
+										"padYFraction": 0.21,
+										"widthFraction": 0.57082164,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 7.994429, "dY": -1.1420612 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.951, "y": 0.515 },
+										"size": 0.231,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landHillGrass.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.689, "y": -0.637 },
+										"size": 0.729,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.69122851", "g": "0.69122851", "b": "0.69122851", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.45, "y": 0.172 },
+										"size": 0.167,
+										"nameTag": "none",
+										"foot": { "rotate": 10.22 }
+									},
+									{
+										"role": "healer",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.689, "y": 0.1 },
+										"size": 0.163,
+										"drawDepth": -1,
+										"head": { "rotate": -9.504 }
+									},
+									{
+										"role": "hero",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.877, "y": 0.103 },
+										"size": 0.163,
+										"drawDepth": -0.5
+									},
+									{
+										"assetSpec": "comic:smokeRising.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.825, "y": 0.76 },
+										"size": 0.112,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.532, "y": 0.29 },
+										"size": 0.131,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.288, "y": 0.061 },
+										"size": 0.145,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_005~1_narration",
+										"style": "narration",
+										"padXFraction": 0.03,
+										"padYFraction": 0.058,
+										"widthFraction": 0.8976547
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.18, "y": 0.5 },
+										"size": 0.52,
+										"head": { "rotate": -12.804 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.748, "y": 0.439 },
+										"size": 0.378,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.411, "y": 0.95 },
+										"size": 0.673,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_006~1_healer",
+										"pointerOwner": "healer",
+										"padXFraction": 0.071,
+										"padYFraction": 0.074,
+										"widthFraction": 0.86160743,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 9.13649, "dY": -3.426184 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourth",
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.343, "y": 0.507 },
+										"size": 1.118,
+										"head": { "rotate": -1.145 }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 2.392, "y": 1.172 },
+										"size": 1.276,
+										"nameTag": "none"
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 1.557, "y": 0.496 },
+										"drawDepth": 1.5,
+										"nameTag": null
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_007~1_healer",
+										"pointerOwner": "healer",
+										"padXFraction": 0.051,
+										"padYFraction": 0.042,
+										"widthFraction": 0.9418606,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -11.420639, "dY": 4.568245 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourth",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.255, "y": 1.164 },
+										"size": 1.276,
+										"nameTag": "none"
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.443, "y": 0.492 },
+										"drawDepth": 0,
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_008~1_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.099,
+										"padYFraction": 0.093,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -12.5626745, "dY": 1.1420612 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.382, "y": 0.473 },
+										"size": 0.499,
+										"head": { "rotate": -12.804 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.79, "y": 0.439 },
+										"size": 0.4653726,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.849, "y": 0.939 },
+										"size": 0.673,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_009~1_healer",
+										"pointerOwner": "healer",
+										"padXFraction": 0.039,
+										"padYFraction": 0.058,
+										"widthFraction": 0.9418606,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 166.74088, "dY": -3.4262192, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.831, "y": 1.172 },
+										"size": 1.276,
+										"nameTag": "none"
+									},
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.587, "y": 0.458 },
+										"drawDepth": 0,
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_010~1_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.099,
+										"padYFraction": 0.093,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -12.5626745, "dY": 1.1420612 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.53, "y": 0.446 },
+										"size": 0.499,
+										"head": { "rotate": -12.804 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.79, "y": 0.439 },
+										"size": 0.4653726,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.675, "y": 0.939 },
+										"size": 0.673,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.202, "y": 0.137 },
+										"size": 0.461,
+										"nameTag": "none",
+										"foot": { "rotate": 4.023 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_011~1_healer",
+										"pointerOwner": "healer",
+										"padXFraction": 0.203,
+										"padYFraction": 0.105,
+										"widthFraction": 0.72043014,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 119.916504, "dY": -4.56828, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.733, "y": 0.103 },
+										"size": 0.444,
+										"nameTag": "none",
+										"foot": { "rotate": 7.892 }
+									},
+									{
+										"assetSpec": "comic:actionLines_shakeWobbly1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.578, "y": 0.683 },
+										"size": 0.316,
+										"nameTag": "none",
+										"foot": { "rotate": -127.369 }
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.534, "y": 0.317 },
+										"size": 0.37,
+										"nameTag": "none",
+										"foot": { "rotate": -5.013 },
+										"color": { "r": "0.90800929", "g": "0.97971082", "b": "0.97593725", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.118, "y": 0.157 },
+										"size": 0.324,
+										"nameTag": "none",
+										"foot": { "rotate": 2.494 },
+										"color": { "r": "0.7700215", "g": "0.94927675", "b": "0.9398427", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_shakeWobbly1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.097, "y": 0.592 },
+										"size": 0.26,
+										"nameTag": "none",
+										"foot": { "rotate": -101.222 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeSharp2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.393, "y": 0.099 },
+										"size": 0.647,
+										"drawDepth": 2.5,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_012~1_narration",
+										"style": "narration",
+										"padXFraction": 0.075,
+										"padYFraction": 0.085,
+										"widthFraction": 0.8976547,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_012~2_darken",
+										"style": "darken",
+										"padXFraction": 0.551,
+										"padYFraction": 0.461,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_012~3_darken",
+										"style": "darken",
+										"padXFraction": 0.01,
+										"padYFraction": 0.413,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": 0.513, "y": 0.576 },
+										"size": 0.739,
+										"head": { "rotate": -1.145, "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.438, "y": 1.356 },
+										"size": 1.003,
+										"nameTag": "none"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": 0.126, "y": 0.454 },
+										"size": 0.499,
+										"head": { "rotate": 4.467 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.269, "y": 0.443 },
+										"size": 0.4653726,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:cottageStoneOpen.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.328, "y": 1 },
+										"size": 0.673,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.258, "y": 0.359 },
+										"size": 0.195,
+										"nameTag": "none"
+									},
+									{
+										"role": "hero2",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.437, "y": 0.423 },
+										"size": 0.407,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": 1.797, "scaleY": -1 },
+										"foot": { "rotate": -10.636 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.837, "y": 0.431 },
+										"size": 0.861,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": 9.47 },
+										"foot": { "rotate": -6.098 }
+									},
+									{
+										"assetSpec": "comic:actionLines_dash.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.012, "y": 0.271 },
+										"size": 0.455,
+										"drawDepth": 2.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:actionLines_shake1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.934, "y": 0.615 },
+										"size": 0.291,
+										"drawDepth": 2.75,
+										"nameTag": "none",
+										"foot": { "rotate": -150.461 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_014~1_leader",
+										"pointerOwner": "leader",
+										"location": "topRight",
+										"padXFraction": 0.221,
+										"padYFraction": 0.128,
+										"widthFraction": 0.5014164,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 7.994293, "dY": -14.846762, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-surprised",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.208, "y": 0.011 },
+										"size": 0.2565144,
+										"head": { "rotate": 4.467 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.317, "y": 0.042 },
+										"size": 0.239228,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:cottageStoneOpen.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.359, "y": 0.718 },
+										"size": 0.39,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.353, "y": 0.244 },
+										"size": 0.146,
+										"drawDepth": 4,
+										"nameTag": "none"
+									},
+									{
+										"role": "hero2",
+										"form": "frame-surprised",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.424, "y": 0.058 },
+										"size": 0.198,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": 10.465, "scaleY": 1 },
+										"foot": { "rotate": -4.037 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.625, "y": -0.076 },
+										"size": 0.292,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": 9.47, "scaleY": -1 },
+										"foot": { "rotate": -2.224 }
+									},
+									{
+										"assetSpec": "comic:actionLines_shake2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.81, "y": 0.207 },
+										"size": 0.291,
+										"drawDepth": 2.75,
+										"nameTag": "none",
+										"foot": { "rotate": -29.744 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.77543902" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landHillGrass.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.3, "y": -0.328 },
+										"size": 0.7,
+										"drawDepth": 2.875,
+										"nameTag": "none",
+										"foot": { "scaleY": 0.6 },
+										"color": { "r": "0.61588228", "g": "0.71043432", "b": "0.7054581", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.954, "y": 0.011 },
+										"size": 0.443,
+										"nameTag": "none",
+										"color": { "r": "0.15948302", "g": "0.55630732", "b": "0.54377699", "a": "0.6666671" }
+									},
+									{
+										"assetSpec": "comic:action_pointerSquiggly2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.922, "y": 0.137 },
+										"size": 0.378,
+										"drawDepth": 7,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.13, "y": 0.16 },
+										"size": 0.226,
+										"nameTag": "none",
+										"color": { "r": "0.84561449", "g": "0.84561449", "b": "0.84561449", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_015~1_leader",
+										"pointerOwner": "leader",
+										"location": "topRight",
+										"padXFraction": 0.242,
+										"padYFraction": 0.237,
+										"widthFraction": 0.5014164,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 7.994293, "dY": -14.846762, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_015~2_action",
+										"style": "action",
+										"location": "topRight",
+										"padXFraction": 0.042,
+										"padYFraction": 0.725,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_015~3_actionSmall",
+										"style": "actionSmall",
+										"location": "topRight",
+										"padXFraction": 0.036,
+										"padYFraction": 0.592,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"assetSpec": "asset:ui/scale/unpacked/particle_shardWoodLarge1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.233, "y": 0.519 },
+										"size": 0.532,
+										"nameTag": "none",
+										"foot": { "rotate": 31.707 }
+									},
+									{
+										"assetSpec": "asset:ui/scale/unpacked/particle_shardWoodLarge2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.801, "y": 0.745 },
+										"size": 0.366,
+										"nameTag": "none",
+										"foot": { "rotate": -22.006 }
+									},
+									{
+										"assetSpec": "asset:ui/scale/unpacked/particle_paper2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.894, "y": 0.554 },
+										"size": 0.373,
+										"nameTag": "none",
+										"foot": { "rotate": -22.006 }
+									},
+									{
+										"assetSpec": "comic:light_spikyStarburst.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.614, "y": 0.416 },
+										"size": 0.503,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:bridgeBrokenL.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.08, "y": 0.065 },
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": 129.489 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.53, "y": 0.359 },
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/cowGorgon2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.368, "y": 0.233 },
+										"size": 0.647,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_016~1_actionLarge",
+										"style": "actionLarge",
+										"location": "bottomRight",
+										"padXFraction": 0.169,
+										"padYFraction": 0.229,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/cowGorgon1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.322, "y": 0.473 },
+										"size": 0.475,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/cowGorgon2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.661, "y": 0.382 },
+										"size": 0.402,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeDirectional.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.525, "y": -0.069 },
+										"size": 0.62,
+										"drawDepth": 0,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.831, "y": 0.195 },
+										"size": 0.532,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -1.045, "y": -0.493 },
+										"size": 0.5,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 17.819 }
+									},
+									{
+										"assetSpec": "asset:ui/scale/unpacked/particle_shardWoodLarge1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.907, "y": 0.396 },
+										"size": 0.226,
+										"nameTag": "none",
+										"foot": { "rotate": -46.426 }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.904, "y": 1.069 },
+										"size": 3.617,
+										"nameTag": "none",
+										"color": { "r": "0.12402597", "g": "0.30300936", "b": "0.36018541", "a": "0.59649163" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_017~1_action",
+										"style": "action",
+										"padXFraction": 0.679,
+										"padYFraction": 0.05,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-grim",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.334, "y": 0.428 },
+										"size": 0.499,
+										"head": { "rotate": -3.142, "scaleY": -1 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-angry",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.523, "y": 0.443 },
+										"size": 0.4653726,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:cottageStoneOpen.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.618, "y": 1 },
+										"size": 0.673,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.796, "y": 0.344 },
+										"size": 0.195,
+										"nameTag": "none"
+									},
+									{
+										"role": "hero2",
+										"form": "frame-interested",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.868, "y": 0.442 },
+										"size": 0.454,
+										"drawDepth": 2.875,
+										"nameTag": "none",
+										"head": { "rotate": -12.889, "scaleY": -1 },
+										"foot": { "rotate": -2.856 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.75, "y": 0.442 },
+										"size": 0.615,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": 8.884 },
+										"foot": { "rotate": -6.098 }
+									},
+									{
+										"assetSpec": "figure:misc/cowGorgon2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.007, "y": 0.287 },
+										"size": 0.349,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.666, "y": 0.133 },
+										"size": 0.388,
+										"drawDepth": 6,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeDirectional.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.916, "y": 0.74 },
+										"size": 0.244,
+										"drawDepth": 2.9375,
+										"nameTag": "none",
+										"color": { "r": "0.42831683", "g": "0.56817526", "b": "0.56081462", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:action_pointerSquiggly1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.982, "y": 0.546 },
+										"size": 0.308,
+										"drawDepth": 2.96875,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_018~1_healer",
+										"pointerOwner": "healer",
+										"padXFraction": 0.087,
+										"padYFraction": 0.179,
+										"widthFraction": 0.3937677,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_018~2_leader",
+										"pointerOwner": "leader",
+										"location": "topRight",
+										"padXFraction": 0.178,
+										"padYFraction": 0.199,
+										"widthFraction": 0.5014164,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -11.420749, "dY": 1.1421309, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~04~player_chose_one~panel_018~3_action",
+										"style": "action",
+										"location": "topRight",
+										"padXFraction": 0.031,
+										"padYFraction": 0.236,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "AddCalamities",
+					"calamitiesToAdd": [
+						{ "quantity": "-1", "flavor": "gorgon" }
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"missionPlanOverride": "specificEncounter_burdenOfBeasts",
+					"victoryEventIds": [ "missionVictory_burdenofBeasts" ]
+				},
+				{
+					"class": "Aspects",
+					"target": "leader",
+					"addAspects": [
+						{ "id": "cattleVictory", "value": "1" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "healer",
+					"addAspects": [
+						{ "id": "cattleVictory", "value": "1" }
+					]
+				},
+				{
+					"class": "SnapshotFollowup",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/cowGorgon1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.218, "y": 0.487 },
+										"size": 0.475,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+									},
+									{
+										"assetSpec": "figure:misc/cowGorgon2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.442, "y": 0.396 },
+										"size": 0.402,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia", "strength": 0.8 }
+									},
+									{
+										"assetSpec": "comic:smokeDirectional.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.352, "y": -0.055 },
+										"size": 0.62,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.214, "y": 0.209 },
+										"size": 0.532,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.684, "y": -0.479 },
+										"size": 0.5,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 17.819 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/scale/unpacked/particle_shardWoodLarge1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.604, "y": 0.41 },
+										"size": 0.226,
+										"nameTag": "none",
+										"foot": { "rotate": -46.426 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.353, "y": 0.434 },
+										"size": 3.617,
+										"nameTag": "none",
+										"color": { "r": "0.12402597", "g": "0.30300936", "b": "0.36018541", "a": "0.59649163" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-scared",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.901, "y": 0.52 },
+										"size": 0.481,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": -6.131, "scaleY": 1 },
+										"foot": { "rotate": 15.15 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.782, "y": 0.479 },
+										"size": 0.481,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"head": { "rotate": -6.131, "scaleY": 1 },
+										"foot": { "rotate": 15.15 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								]
+							}
+						}
+					],
+					"score": "10"
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "leader",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.415, "y": 0.496 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~06~player_chose_two~panel_001~1_leader",
+										"pointerOwner": "leader"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.43, "y": 0.392 },
+										"size": 0.437,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": -10.139, "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.353, "y": 0.072 },
+										"size": 0.339,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.993, "y": 0.251 },
+										"size": 0.322,
+										"nameTag": "none",
+										"foot": { "rotate": -2.443 }
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.539, "y": 0.297 },
+										"size": 0.306,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.126, "y": 0.385 },
+										"size": 0.431,
+										"drawDepth": -1,
+										"head": { "rotate": 6.322 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~06~player_chose_two~panel_002~1_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.041,
+										"padYFraction": 0.117,
+										"widthFraction": 0.7784946,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 14.846727, "dY": 1.1420264 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.323, "y": 0.434 },
+										"size": 0.475,
+										"drawDepth": -1,
+										"head": { "rotate": -9.876, "scaleY": 1 }
+									},
+									{
+										"role": "healer",
+										"equipment": {},
+										"anchor": { "x": 0.145, "y": 0.427 },
+										"size": 0.493,
+										"drawDepth": -2
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.059, "y": 0.432 },
+										"size": 0.404,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									},
+									{
+										"role": "hero2",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.972, "y": 0.461 },
+										"size": 0.475,
+										"nameTag": "none",
+										"head": { "rotate": -8.613 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.518, "y": 0.419 },
+										"size": 0.481,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": -30.837, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.494, "y": 0.099 },
+										"size": 0.373,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:wagonWheat.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.084, "y": 0.153 },
+										"size": 0.355,
+										"drawDepth": 5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.854, "y": 0.289 },
+										"size": 0.336,
+										"nameTag": "none",
+										"foot": { "rotate": -2.443 }
+									},
+									{
+										"assetSpec": "figure:misc/animal_cowInfected2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.607, "y": 0.312 },
+										"size": 0.305,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:cottageStoneOpen.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.258, "y": 0.893 },
+										"size": 0.541,
+										"nameTag": "none"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.595, "y": 0.492 },
+										"size": 0.231,
+										"nameTag": "none",
+										"color": { "r": "0.8743245", "g": "0.89950466", "b": "0.92216676", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landHillGrass.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.393, "y": -0.637 },
+										"size": 0.729,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.63479257", "g": "0.69152403", "b": "0.68853831", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.112, "y": 0.149 },
+										"size": 0.167,
+										"nameTag": "none",
+										"foot": { "rotate": 10.22 },
+										"color": { "r": "0.8743245", "g": "0.89950466", "b": "0.92216676", "a": "1" }
+									},
+									{
+										"role": "healer",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.425, "y": 0.05 },
+										"size": 0.163,
+										"drawDepth": -4,
+										"head": { "rotate": -9.504 },
+										"color": { "r": "0.8743245", "g": "0.89950466", "b": "0.92216676", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.823, "y": 0.077 },
+										"size": 0.145,
+										"drawDepth": -0.5,
+										"foot": { "rotate": -3.621 },
+										"color": { "r": "0.8743245", "g": "0.89950466", "b": "0.92216676", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeRising.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.471, "y": 0.733 },
+										"size": 0.112,
+										"nameTag": "none",
+										"color": { "r": "0.8743245", "g": "0.89950466", "b": "0.92216676", "a": "1" }
+									},
+									{
+										"role": "leader",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.741, "y": 0.057 },
+										"size": 0.16,
+										"drawDepth": -3,
+										"nameTag": "none",
+										"head": { "scaleY": -1 },
+										"color": { "r": "0.8743245", "g": "0.89950466", "b": "0.92216676", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.609, "y": 0.045 },
+										"size": 0.157,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"head": { "scaleY": 1 },
+										"color": { "r": "0.8743245", "g": "0.89950466", "b": "0.92216676", "a": "1" }
+									},
+									{
+										"role": "hero2",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.922, "y": 0.038 },
+										"size": 0.133,
+										"nameTag": "none",
+										"color": { "r": "0.8743245", "g": "0.89950466", "b": "0.92216676", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~06~player_chose_two~panel_004~1_narration",
+										"style": "narration",
+										"padXFraction": 0.03,
+										"padYFraction": 0.058,
+										"widthFraction": 0.8976547
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.834, "y": 0.504 },
+										"size": 0.492,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.229, "y": 0.507 },
+										"size": 0.49,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": -30.498, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.53, "y": 0.916 },
+										"size": 0.683,
+										"nameTag": "none"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourth",
+								"animation": { "overridePanelOrder": 2 },
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-talk",
+										"equipment": {},
+										"anchor": { "x": 1.563, "y": 0.496 },
+										"nameTag": "none",
+										"head": { "scaleY": -1 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.595, "y": 0.962 },
+										"nameTag": "none"
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.409, "y": 0.504 },
+										"drawDepth": 0
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourth",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-talk",
+										"equipment": {},
+										"head": { "scaleY": -1 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -1.646, "y": 0.981 },
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~06~player_chose_two~panel_007~1_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.074,
+										"padYFraction": 0.168,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "leader",
+										"equipment": {},
+										"anchor": { "x": 0.856, "y": 0.535 },
+										"size": 0.492,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "npc",
+										"equipment": {},
+										"anchor": { "x": 0.178, "y": 0.518 },
+										"size": 0.49,
+										"drawDepth": 0,
+										"head": { "rotate": -0.086 }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.258, "y": 0.878 },
+										"size": 0.584,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~06~player_chose_two~panel_008~1_leader",
+										"pointerOwner": "leader",
+										"location": "topRight",
+										"padXFraction": 0.11,
+										"padYFraction": 0.132,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.961, "y": 0.539 },
+										"size": 0.492,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -9.256, "scaleY": 1 }
+									},
+									{
+										"role": "npc",
+										"equipment": {},
+										"anchor": { "x": 0.151, "y": 0.499 },
+										"size": 0.49,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": -0.086 }
+									},
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.258, "y": 0.878 },
+										"size": 0.584,
+										"nameTag": "none"
+									},
+									{
+										"role": "healer",
+										"form": "frame-talk",
+										"equipment": {},
+										"anchor": { "x": 0.649, "y": 0.489 },
+										"size": 0.613,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:actionLines_shake1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.441, "y": 0.503 },
+										"size": 0.25,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -25.56 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.6771934" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~06~player_chose_two~panel_009~1_healer",
+										"pointerOwner": "healer",
+										"location": "topRight",
+										"padXFraction": 0.11,
+										"padYFraction": 0.132,
+										"widthFraction": 0.6817204,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -13.704736, "dY": 0, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"animation": { "overridePanelOrder": 2 },
+								"actorSlots": [
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.595, "y": 0.962 },
+										"size": 0.731,
+										"nameTag": "none"
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.409, "y": 0.504 },
+										"size": 0.719,
+										"drawDepth": 0,
+										"head": { "rotate": -27.512 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:cottageStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.279, "y": 0.458 },
+										"size": 0.258,
+										"nameTag": "none",
+										"color": { "r": "0.98245656", "g": "0.98245656", "b": "0.98245656", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landHillGrass.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.204, "y": -0.698 },
+										"size": 0.729,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.7508772", "g": "0.7508772", "b": "0.7508772", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:fenceSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.144, "y": 0.038 },
+										"size": 0.167,
+										"nameTag": "none",
+										"foot": { "rotate": 10.22 },
+										"color": { "r": "0.98245656", "g": "0.98245656", "b": "0.98245656", "a": "1" }
+									},
+									{
+										"role": "healer",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.555, "y": -0.045 },
+										"size": 0.152,
+										"drawDepth": -4,
+										"head": { "rotate": -9.504 },
+										"color": { "r": "0.98245656", "g": "0.98245656", "b": "0.98245656", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.684, "y": -0.156 },
+										"size": 0.199,
+										"drawDepth": -6,
+										"foot": { "rotate": -3.621 },
+										"color": { "r": "0.98245656", "g": "0.98245656", "b": "0.98245656", "a": "1" }
+									},
+									{
+										"role": "leader",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.65, "y": -0.065 },
+										"size": 0.145,
+										"drawDepth": -3,
+										"nameTag": "none",
+										"head": { "scaleY": -1 },
+										"color": { "r": "0.98245656", "g": "0.98245656", "b": "0.98245656", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.377, "y": 0.063 },
+										"size": 0.131,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"head": { "scaleY": 1 },
+										"color": { "r": "0.98245656", "g": "0.98245656", "b": "0.98245656", "a": "1" }
+									},
+									{
+										"role": "hero2",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.795, "y": -0.191 },
+										"size": 0.238,
+										"drawDepth": -7,
+										"nameTag": "none",
+										"color": { "r": "0.98245656", "g": "0.98245656", "b": "0.98245656", "a": "1" }
+									},
+									{
+										"role": "hero3",
+										"equipment": {},
+										"anchor": { "x": 0.89, "y": 0.145 },
+										"size": 0.211,
+										"nameTag": "none",
+										"color": { "r": "0.98245656", "g": "0.98245656", "b": "0.98245656", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.891, "y": 0.16 },
+										"size": 0.191,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:birds3.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.917, "y": 0.748 },
+										"size": 0.097,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.73333377" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/burdenofBeasts",
+										"textKey": "~06~player_chose_two~panel_011~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.376,
+										"padYFraction": 0.494,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 10.278551, "dY": -2.2841575, "scaleX": 0.8234562, "scaleY": 0.8234562 }
+									}
+								]
+							}
+						}
+					]
+				},
+				{ "class": "AddResources", "resourceType": "hides", "amount": "2" },
+				{
+					"class": "AllowFollowup",
+					"target": "leader",
+					"id": "encounter_heroesArriveAtSite_burdenofBeasts.1.playerChose_two.2"
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "cattleFarmer",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		}
+	]
+}
+}
