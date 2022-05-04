@@ -15,7 +15,7 @@
 				{"name": "pet_birdDrauven", "depth": 70}
 			]
 			"effects": [
-				"drauven_pc_harass"
+			"alsoAddIfOther|drauven_pc_harass|drauven_pc",
 			]
 		}
 	]
