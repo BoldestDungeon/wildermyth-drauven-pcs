@@ -21,8 +21,8 @@
 				}
 			],
 			"effects": [
-			"drauven_wingbeat",
-			"drauven_flight"
+			"alsoAddIfOther|drauven_wingbeat|drauven_pc",
+			"alsoAddIfOther|drauven_flight|drauven_pc"
 			]
 		}
 
