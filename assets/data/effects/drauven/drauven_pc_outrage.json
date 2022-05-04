@@ -1,0 +1,138 @@
+{
+"id": "drauven_pc_outrage",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_outrage",
+	"author": "Bipen",
+	"tags": [ "melee" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "soulHarvest",
+	"priority": "18",
+	"onlyShowIfPossibleInCharacterSheet": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+	},
+	{
+		"role": "volunteer",
+		"template": "ADJACENT_ENEMY",
+		"choose": "ALL",
+		"showAnyway": true,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"range": "1.6+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	}
+],
+"outcomes": [
+	{
+		"class": "MatchTarget",
+		"abilityTarget": {
+			"template": "ADJACENT_ENEMY",
+			"choose": "ONE_RANDOM_TRUE",
+			"showAnyway": true,
+			"alwaysSelect": true,
+			"aspects": [ "HOSTILE_TARGET", "alive" ],
+			"range": "1.6+self.BONUS_RANGE",
+			"lineOfSight": "LIVE_ENEMIES"
+		}
+	},
+	{
+		"class": "AttackRoll",
+		"stopBlockingTime": "afterHitAnimation",
+		"defenseRollTags": [ "melee" ],
+		"attackStrength": "self.MELEE_ACCURACY",
+		"wield": "fromWeapon",
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "(1d3+floor((((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)/2)*(1+self.drauvenDeck_warrior_outrage_upgrade))))",
+					"pierce": "1",
+					"overrideStuntDamage": "4",
+					"numDefenders": "3"
+				}
+			]
+		}
+	},
+	{
+		"class": "MatchTarget",
+		"abilityTarget": {
+			"role": "target2",
+			"template": "ADJACENT_ENEMY",
+			"choose": "ONE_RANDOM_TRUE",
+			"showAnyway": true,
+			"alwaysSelect": true,
+			"aspects": [ "HOSTILE_TARGET", "alive" ],
+			"range": "1.6+self.BONUS_RANGE",
+			"lineOfSight": "LIVE_ENEMIES"
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "target2" ],
+		"then": {
+			"class": "AttackRoll",
+			"defender": "target2",
+			"stopBlockingTime": "afterHitAnimation",
+			"defenseRollTags": [ "melee" ],
+			"attackStrength": "self.MELEE_ACCURACY",
+			"wield": "fromWeapon",
+			"onHit": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Damage",
+						"amount": "(1d3+floor((((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)/2)*(1+self.drauvenDeck_warrior_outrage_upgrade))))",
+						"pierce": "1",
+						"overrideStuntDamage": "4",
+						"numDefenders": "3"
+					}
+				]
+			}
+		}
+	},
+	{
+		"class": "MatchTarget",
+		"abilityTarget": {
+			"role": "target3",
+			"template": "ADJACENT_ENEMY",
+			"choose": "ONE_RANDOM_TRUE",
+			"showAnyway": true,
+			"alwaysSelect": true,
+			"aspects": [ "HOSTILE_TARGET", "alive" ],
+			"range": "1.6+self.BONUS_RANGE",
+			"lineOfSight": "LIVE_ENEMIES"
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "target3" ],
+		"then": {
+			"class": "AttackRoll",
+			"defender": "target3",
+			"stopBlockingTime": "afterHitAnimation",
+			"defenseRollTags": [ "melee" ],
+			"attackStrength": "self.MELEE_ACCURACY",
+			"wield": "fromWeapon",
+			"onHit": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Damage",
+						"amount": "(1d3+floor((((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)/2)*(1+self.drauvenDeck_warrior_outrage_upgrade))))",
+						"pierce": "1",
+						"overrideStuntDamage": "4",
+						"numDefenders": "3"
+					}
+				]
+			}
+		}
+	}
+]
+}

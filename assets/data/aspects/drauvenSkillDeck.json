@@ -114,11 +114,25 @@
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"showInTooltip": true,
-	"info": {
-		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_concussed",
-		"abilityDeckIcon": "bloodrage"
-	}
+	"info": { "abilityDeckUsage": "upgrade", "upgradeForAbility": "drauvenDeck_concussed", "abilityDeckIcon": "bloodrage" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_warrior_outrage",
+	"effects": [ "drauven_pc_outrage" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "soulHarvest" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_warrior_outrage_upgrade",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "upgrade", "upgradeForAbility": "drauvenDeck_warrior_outrage", "abilityDeckIcon": "soulHarvest" }
 },
 {
 	"modId": "wildermyth-drauven-pcs",
