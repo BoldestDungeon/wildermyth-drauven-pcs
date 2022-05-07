@@ -5,10 +5,10 @@
 
 	"forbidCombineWith": ["bear", "skeleton", "wolf", "crow"],
 	"skins": [
-        {
-            "skinId": "themeSkin_drauvstump",
-            "unlockLegacyAspect": "theme_drauven_unlockstump"
-        }
+			{
+				"skinId": "themeSkin_drauven_PLACEHOLDER",
+				"unlockLegacyAspect": "theme_drauven_unlock_PLACEHOLDER"
+			}
     ],
 
 	"pieces": [
@@ -22,46 +22,50 @@
 			"layers": [
 
 
-                {
+				{
 					"name": "replaceHead_drauvstump",
 					"tint": "skin", "tintAmount": 0.4,
 					"depth": 4000,
 					"headOffset": true,
-                    "ifOwnerAspect": "warrior",
+					"ifOwnerAspect": "warrior",
 					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
 				},
-                {
-                    "name": "replaceHead_drauvstump_detail1",
-                    "tint": "hair", "tintAmount": 0.6,
-                    "depth": 4100,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_warrior1",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
-                {
-                    "name": "replaceHead_drauvstump_detail2",
-                    "tint": "hair", "tintAmount": 0.6,
-                    "depth": 4200,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_warrior2",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
-                {
-                    "name": "replaceHead_drauvstump_detail3",
-                    "tint": "hair", "tintAmount": 0.6,
-                    "depth": 4300,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_warrior3",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
-                {
-                    "name": "replaceHead_drauvstump_detail4",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "depth": 4400,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_warrior4",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
+				{
+						"name": "replaceHead_drauvstump_whiskers11",
+						"tint": "hair", "tintAmount": 0.6,
+						"depth": 4100,
+						"headOffset": true,
+						"ifOwnerAspect": "warrior",
+						"ifOwnerHasPart": "beard_beard1",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+						"name": "replaceHead_drauvstump_horns1",
+						"tint": "hair", "tintAmount": 0.6,
+						"depth": 4200,
+						"headOffset": true,
+						"ifOwnerAspect": "warrior",
+						"ifOwnerHasPart": "faceM1",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+						"name": "replaceHead_drauvstump_feathers1",
+						"tint": "hair", "tintAmount": 0.6,
+						"depth": 4300,
+						"headOffset": true,
+						"ifOwnerAspect": "warrior",
+						"ifOwnerHasPart": "hairUB1",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+						"name": "replaceHead_drauvstump_helmet1",
+						"tint": "secondary", "tintAmount": 0.6,
+						"depth": 4400,
+						"headOffset": true,
+						"ifOwnerAspect": "warrior",
+						"ifOwnerHasPart": "headF",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
 
 
 
@@ -71,41 +75,41 @@
 					"tint": "skin", "tintAmount": 0.4,
 					"depth": 4000,
 					"headOffset": true,
-                    "ifOwnerAspect": "mystic",
+					"ifOwnerAspect": "mystic",
 					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
 				},
-                {
-                    "name": "replaceHead_drauvmystic_detail1",
-                    "tint": "hair", "tintAmount": 0.6,
-                    "depth": 4100,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_mystic1",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
-                {
-                    "name": "replaceHead_drauvmystic_detail2",
-                    "tint": "hair", "tintAmount": 0.6,
-                    "depth": 4200,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_mystic2",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
-                {
-                    "name": "replaceHead_drauvmystic_detail3",
-                    "tint": "hair", "tintAmount": 0.6,
-                    "depth": 4300,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_mystic3",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
-                {
-                    "name": "replaceHead_drauvmystic_detail4",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "depth": 4400,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_mystic4",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
+				{
+						"name": "replaceHead_drauvmystic_detail1",
+						"tint": "hair", "tintAmount": 0.6,
+						"depth": 4100,
+						"headOffset": true,
+						"ifOwnerAspect": "drauvenHeadCustom_mystic1",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+						"name": "replaceHead_drauvmystic_detail2",
+						"tint": "hair", "tintAmount": 0.6,
+						"depth": 4200,
+						"headOffset": true,
+						"ifOwnerAspect": "drauvenHeadCustom_mystic2",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+						"name": "replaceHead_drauvmystic_detail3",
+						"tint": "hair", "tintAmount": 0.6,
+						"depth": 4300,
+						"headOffset": true,
+						"ifOwnerAspect": "drauvenHeadCustom_mystic3",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+						"name": "replaceHead_drauvmystic_detail4",
+						"tint": "secondary", "tintAmount": 0.6,
+						"depth": 4400,
+						"headOffset": true,
+						"ifOwnerAspect": "drauvenHeadCustom_mystic4",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
 
 
 
@@ -119,38 +123,38 @@
                     "ifOwnerAspect": "hunter",
 					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
 				},
-                {
-                    "name": "replaceHead_drauvhaunt_detail1",
-                    "tint": "hair", "tintAmount": 0.6,
-                    "depth": 4100,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_hunter1",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
-                {
-                    "name": "replaceHead_drauvhaunt_detail2",
-                    "tint": "hair", "tintAmount": 0.6,
-                    "depth": 4200,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_hunter2",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
-                {
-                    "name": "replaceHead_drauvhaunt_detail3",
-                    "tint": "hair", "tintAmount": 0.6,
-                    "depth": 4300,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_hunter3",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
-                {
-                    "name": "replaceHead_drauvhaunt_detail4",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "depth": 4400,
-                    "headOffset": true,
-                    "ifOwnerAspect": "drauvenHeadCustom_hunter4",
-                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
-                },
+				{
+						"name": "replaceHead_drauvhaunt_detail1",
+						"tint": "hair", "tintAmount": 0.6,
+						"depth": 4100,
+						"headOffset": true,
+						"ifOwnerAspect": "drauvenHeadCustom_hunter1",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+						"name": "replaceHead_drauvhaunt_detail2",
+						"tint": "hair", "tintAmount": 0.6,
+						"depth": 4200,
+						"headOffset": true,
+						"ifOwnerAspect": "drauvenHeadCustom_hunter2",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+						"name": "replaceHead_drauvhaunt_detail3",
+						"tint": "hair", "tintAmount": 0.6,
+						"depth": 4300,
+						"headOffset": true,
+						"ifOwnerAspect": "drauvenHeadCustom_hunter3",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+						"name": "replaceHead_drauvhaunt_detail4",
+						"tint": "secondary", "tintAmount": 0.6,
+						"depth": 4400,
+						"headOffset": true,
+						"ifOwnerAspect": "drauvenHeadCustom_hunter4",
+						"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
 
 
 				{
@@ -170,12 +174,12 @@
 			"replaces": ["torso"],
 			"extraAspects": ["ATTACHMENTS_suppressArmor"],
 			"layers": [
-                {
-                    "name": "Drauv_armor_detail_torso_1_behind",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "ifOwnerAspect": "drauvenBodyCustomization1",
-                    "depth": 1200
-                },
+				{
+						"name": "Drauv_armor_detail_torso_1_behind",
+						"tint": "secondary", "tintAmount": 0.6,
+						"ifOwnerAspect": "drauvenBodyCustomization1",
+						"depth": 1200
+				},
 				{
 					"name": "Drauv_torso",
 					"tint": "skin", "tintAmount": 0.4,
@@ -186,24 +190,24 @@
 					"tint": "primary", "tintAmount": 0.6,
 					"depth": 1350
 				},
-                {
-                    "name": "Drauv_armor_detail_torso_1",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "ifOwnerAspect": "drauvenBodyCustomization1",
-                    "depth": 1351
-                },
-                {
-                    "name": "Drauv_armor_detail_torso_2",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "ifOwnerAspect": "drauvenBodyCustomization2",
-                    "depth": 1352
-                },
-                {
-                    "name": "Drauv_armor_detail_3",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "ifOwnerAspect": "drauvenBodyCustomization3",
-                    "depth": 1353
-                },
+				{
+						"name": "Drauv_armor_detail_torso_1",
+						"tint": "secondary", "tintAmount": 0.6,
+						"ifOwnerAspect": "drauvenBodyCustomization1",
+						"depth": 1351
+				},
+				{
+						"name": "Drauv_armor_detail_torso_2",
+						"tint": "secondary", "tintAmount": 0.6,
+						"ifOwnerAspect": "drauvenBodyCustomization2",
+						"depth": 1352
+				},
+				{
+						"name": "Drauv_armor_detail_3",
+						"tint": "secondary", "tintAmount": 0.6,
+						"ifOwnerAspect": "drauvenBodyCustomization3",
+						"depth": 1353
+				},
 				{
 					"name": "Drauv_armor_base_over",
 					"tint": "primary", "tintAmount": 0.6,
@@ -297,11 +301,11 @@
 					"depth": 8002,
 					"rigMode": "twoHanded"
 				},
-                {
-                    "name": "Drauv_armor_detail_armL_1",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "ifOwnerAspect": "drauvenOtherCustomization1"
-                }
+				{
+						"name": "Drauv_armor_detail_armL_1",
+						"tint": "secondary", "tintAmount": 0.6,
+						"ifOwnerAspect": "drauvenOtherCustomization1"
+				}
 			]
 		},
 		{
@@ -337,24 +341,24 @@
 					"depth": 8001,
 					"rigMode": "twoHanded"
 				},
-                {
-                    "name": "Drauv_armor_detail_armR_1",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "depth": 8501,
-                    "ifOwnerAspect": "drauvenOtherCustomization1"
-                },
-                {
-                    "name": "Drauv_armor_detail_armR_2",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "depth": 8502,
-                    "ifOwnerAspect": "drauvenOtherCustomization2"
-                },
-                {
-                    "name": "Drauv_armor_detail_armR_3",
-                    "tint": "secondary", "tintAmount": 0.6,
-                    "depth": 8503,
-                    "ifOwnerAspect": "drauvenOtherCustomization3"
-                }
+				{
+						"name": "Drauv_armor_detail_armR_1",
+						"tint": "secondary", "tintAmount": 0.6,
+						"depth": 8501,
+						"ifOwnerAspect": "drauvenOtherCustomization1"
+				},
+				{
+						"name": "Drauv_armor_detail_armR_2",
+						"tint": "secondary", "tintAmount": 0.6,
+						"depth": 8502,
+						"ifOwnerAspect": "drauvenOtherCustomization2"
+				},
+				{
+						"name": "Drauv_armor_detail_armR_3",
+						"tint": "secondary", "tintAmount": 0.6,
+						"depth": 8503,
+						"ifOwnerAspect": "drauvenOtherCustomization3"
+				}
 			]
 		}
 
