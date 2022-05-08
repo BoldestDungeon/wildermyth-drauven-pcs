@@ -1,0 +1,195 @@
+{
+"id": "abandonedNoLonger",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "abandonedNoLonger",
+	"modId": "drauven_pcs_test",
+	"author": "Ironskink"
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterScore": 100,
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Tragic-Sympathetic NPC"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "drauvenHealer",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"textSlots": [
+						{
+							"textSourceFile": "abandonedNoLonger",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{ "role": "healer" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "abandonedNoLonger",
+									"textKey": "~02~choice_one~panel_001~1_healer",
+									"pointerOwner": "healer"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{ "role": "npc" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "abandonedNoLonger",
+									"textKey": "~03~choice_two~panel_001~1_npc",
+									"pointerOwner": "npc"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "healer",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "healer" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "abandonedNoLonger",
+										"textKey": "~04~player_chose_one~panel_001~1_healer",
+										"pointerOwner": "healer"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "npc",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "npc" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "abandonedNoLonger",
+										"textKey": "~05~player_chose_two~panel_001~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc",
+					"becomeAllyOf": "party",
+					"makeHero": true,
+					"checkPromotionsNow": true
+				},
+				{
+					"class": "UnlockLegacyAspect",
+					"legacyAspect": "DrauvenAllies_FirstStepsComplete",
+					"value": "1"
+				},
+				{ "class": "AddResources", "amount": "-2" }
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "wounded_drauven",
+			"createEntity": {
+				"query": { "baseTag": "human", "findExisting": true },
+				"control": "none"
+			}
+		}
+	]
+}
+}

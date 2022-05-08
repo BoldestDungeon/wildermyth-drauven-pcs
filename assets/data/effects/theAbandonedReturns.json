@@ -1,0 +1,816 @@
+{
+"id": "drauven_pcs_test_theAbandonedReturns",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "theAbandonedReturns",
+	"modId": "drauven_pcs_test",
+	"author": "Ironskink"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterScore": 20,
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{
+		"template": "INJECTED_THREAT",
+		"aspects": [ "drauven" ]
+	},
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "drauvenHealer_sawTiding",
+		"scoreThreshold": "1",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hothead",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "drauvenSkeptic",
+		"scoreThreshold": "1",
+		"notAlreadyMatchedAs": [ "healer" ]
+	},
+	{
+		"role": "hunter",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "(30*hunter)+LONER",
+		"aspects": null,
+		"notAlreadyMatchedAs": [ "healer", "hothead" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"role": "party",
+							"equipment": {},
+							"anchor": { "x": 0.463, "y": 0.582 },
+							"size": 0.7722,
+							"drawDepth": 4
+						},
+						{
+							"role": "healer",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.178, "y": 0.519 },
+							"size": 0.8957655
+						},
+						{
+							"role": "hothead",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.77, "y": 0.427 },
+							"size": 0.9665,
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_001~2_healer",
+							"pointerOwner": "healer",
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_001~3_hothead",
+							"pointerOwner": "hothead",
+							"padXFraction": 0.194,
+							"padYFraction": 0.794,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 0,
+								"dX": -29.218353,
+								"dY": 77.28737,
+								"pointerOrientH": "onLeft",
+								"pointerOrientV": "down"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"animation": {},
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.784, "y": 0.497 },
+							"nameTag": "bottomRight",
+							"head": { "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_002~1_hothead",
+							"pointerOwner": "hothead",
+							"location": "topRight",
+							"padYFraction": 0.022,
+							"widthFraction": 0.774989,
+							"shrinkToFitText": true,
+							"pointerStyle": "none"
+						},
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_002~2_hothead",
+							"pointerOwner": "hothead",
+							"location": "topRight",
+							"padXFraction": 0.022,
+							"padYFraction": 0.177,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"animation": { "followImmediately": true, "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"role": "hunter",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_003~1_hunter",
+							"pointerOwner": "hunter",
+							"padXFraction": -0.745,
+							"padYFraction": 0.809,
+							"widthFraction": 1.1822302,
+							"pointerAdjust": { "dX": -7.5402303, "dY": 85.77012, "pointerOrientV": "down" },
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"equipment": {},
+							"head": { "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_004~1_healer",
+							"pointerOwner": "healer"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hunter",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_005~1_hunter",
+							"pointerOwner": "hunter"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_006~1_actionHuge",
+							"style": "actionHuge",
+							"padXFraction": 0.402,
+							"padYFraction": 0.387
+						},
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_006~2_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.797,
+							"padYFraction": 0.846
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"nameTag": "none"
+						},
+						{
+							"role": "hothead",
+							"form": "frame-rage",
+							"equipment": { "mode": null },
+							"anchor": { "x": 0.821, "y": 0.503 },
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "hunter",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.487, "y": 0.513 },
+							"nameTag": "none",
+							"head": { "rotate": -2.291, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_007~1_hothead",
+							"pointerOwner": "hothead",
+							"padXFraction": 0.803,
+							"padYFraction": 0.031,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "hothead",
+							"form": "frame-rage",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.874, "y": 0.528 },
+							"nameTag": "none"
+						},
+						{
+							"role": "hunter",
+							"form": "frame-angry",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.147, "y": 0.519 },
+							"size": 0.9524,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_008~1_hothead",
+							"pointerOwner": "hothead",
+							"padXFraction": 0.47,
+							"padYFraction": 0.013,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_008~2_hunter",
+							"pointerOwner": "hunter",
+							"padXFraction": 0.288,
+							"padYFraction": 0.781,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 0, "dX": 22.620691, "dY": 73.51724, "pointerOrientV": "down" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": -0.2, "y": -0.952 },
+							"drawDepth": 1,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 15.53 },
+							"foot": { "rotate": 32.347 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-rage",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": -0.254, "y": 0.504 },
+							"drawDepth": 0
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_009~1_npc",
+							"style": "action",
+							"pointerOwner": "npc",
+							"padXFraction": 0.084,
+							"shrinkToFitText": true,
+							"pointerStyle": "speech"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "sixth",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.486, "y": 0.487 },
+							"size": 2.2511
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_010~1_healer",
+							"pointerOwner": "healer",
+							"pointerAdjust": { "dX": -55.609253, "dY": 1.8850576, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "party",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.171, "y": 0.748 },
+							"size": 0.8057,
+							"drawDepth": 4,
+							"nameTag": "none"
+						},
+						{
+							"role": "hunter",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 1.118, "y": 0.569 },
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-scared",
+							"equipment": {},
+							"anchor": { "x": 0.327, "y": 0.356 },
+							"nameTag": "none",
+							"head": { "rotate": 25.899 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.826, "y": 0.533 },
+							"drawDepth": 0
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_011~1_npc",
+							"style": "action",
+							"pointerOwner": "npc",
+							"location": "bottomRight",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "sixth",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hunter",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.465, "y": 0.566 },
+							"size": 2.3608
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_012~1_hunter",
+							"pointerOwner": "hunter",
+							"padXFraction": -0.54,
+							"padYFraction": 0.056,
+							"widthFraction": 1.3102119,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -60.32184, "dY": -7.54023 },
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fifth",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"equipment": {},
+							"size": 1.7405064
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_013~1_healer",
+							"pointerOwner": "healer"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFifths",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.845, "y": 0.513 },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "figure:misc/drauvenJuvenile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.084, "y": 0.135 },
+							"size": 0.2556,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fifth",
+					"showNameTags": false,
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.405, "y": 0.396 },
+							"size": 1.7405064,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 8.241 }
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "healer",
+									"form": "frame-angry",
+									"anchor": { "x": 0.287, "y": 0.527 }
+								},
+								{
+									"role": "npc",
+									"facing": "left",
+									"equipment": {},
+									"anchor": { "x": 0.963, "y": 0.483 },
+									"nameTag": "none",
+									"head": { "scaleY": -1 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "theAbandonedReturns",
+									"textKey": "~02~choice_one~panel_001~1_healer",
+									"pointerOwner": "healer"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "hothead",
+									"form": "frame-rage",
+									"facing": "left",
+									"equipment": { "mode": null },
+									"anchor": { "x": 0.81, "y": 0.5 },
+									"nameTag": "bottomRight"
+								},
+								{
+									"role": "npc",
+									"facing": "left",
+									"equipment": {},
+									"anchor": { "x": -0.057, "y": 0.483 },
+									"nameTag": "none",
+									"head": { "scaleY": -1 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "theAbandonedReturns",
+									"textKey": "~03~choice_two~panel_001~1_hothead",
+									"pointerOwner": "hothead"
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "hothead"
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "DoOneRandom",
+		"target": "foes",
+		"weightedOutcomes": [
+			{
+				"outcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{ "class": "SetThreatFlavor", "target": "foes", "flavor": "cultist" }
+					]
+				}
+			},
+			{
+				"outcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{ "class": "SetThreatFlavor", "target": "foes", "flavor": "gorgon" }
+					]
+				}
+			},
+			{
+				"outcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{ "class": "SetThreatFlavor", "target": "foes", "flavor": "morthagi" }
+					]
+				}
+			},
+			{
+				"outcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{ "class": "SetThreatFlavor", "target": "foes", "flavor": "thrixl" }
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "healer",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "healer", "form": "frame-grim" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "theAbandonedReturns",
+										"textKey": "~04~player_chose_one~panel_001~1_healer",
+										"pointerOwner": "healer"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.774, "y": 0.465 },
+										"size": 0.9293,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -21.057, "scaleY": -1 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-grim",
+										"equipment": { "mode": null },
+										"anchor": { "x": 0.23, "y": 0.528 },
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "theAbandonedReturns",
+										"textKey": "~04~player_chose_one~panel_002~1_npc",
+										"style": "actionSmall",
+										"pointerOwner": "npc",
+										"padXFraction": 0.535,
+										"padYFraction": 0.233,
+										"widthFraction": 0.15059446,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "theAbandonedReturns",
+										"textKey": "~04~player_chose_one~panel_002~2_hothead",
+										"pointerOwner": "hothead",
+										"location": "bottomLeft",
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 38.643684, "dY": -5.655173, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "theAbandonedReturns",
+										"textKey": "~04~player_chose_one~panel_002~3_hothead",
+										"pointerOwner": "hothead",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "hothead",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "hothead", "form": "frame-rage" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "theAbandonedReturns",
+										"textKey": "~05~player_chose_two~panel_001~1_hothead",
+										"pointerOwner": "hothead"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "Mission",
+		"goal": "defend",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{
+				"role": "foes",
+				"side": "enemy",
+				"customThreat": { "threatStrength": "10" }
+			},
+			{ "role": "npc", "side": "player" },
+			{
+				"side": "player",
+				"customThreat": {
+					"threatFlavor": "drauven",
+					"threatStrength": "4",
+					"useExtraChapterCards": false
+				}
+			}
+		],
+		"combatModifiers": [
+			{
+				"modifier": "INTIMIDATION",
+				"roles": [ "npc2", "npc" ]
+			}
+		],
+		"format": "assault",
+		"mutators": [ "forceMonsterFurniture" ],
+		"victoryEventIds": [ "abandonedNoLonger", "abandonedNoLonger_healerFell" ]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "wounded_drauven",
+			"createEntity": {
+				"query": { "baseTag": "human", "findExisting": true },
+				"control": "none"
+			}
+		},
+		{
+			"role": "npc2",
+			"createEntity": {
+				"query": { "baseTag": "drauven_terrorbird" },
+				"control": "none"
+			}
+		}
+	]
+}
+}

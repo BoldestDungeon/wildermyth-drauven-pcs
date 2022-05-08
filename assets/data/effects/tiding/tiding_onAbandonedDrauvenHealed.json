@@ -143,6 +143,7 @@
 	},
 	{
 		"class": "Aspects",
+		"target": "healer",
 		"addAspects": [
 			{ "id": "drauvenHealer_sawTiding", "value": "1" }
 		]

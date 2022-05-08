@@ -1,0 +1,147 @@
+{
+"id": "abandonedNoLonger_healerFell",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "abandonedNoLonger_healerFell",
+	"modId": "drauven_pcs_test",
+	"author": "Ironskink"
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"textSlots": [
+						{
+							"textSourceFile": "abandonedNoLonger_healerFell",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "no",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"textSlots": [
+								{
+									"textSourceFile": "abandonedNoLonger_healerFell",
+									"textKey": "~02~choice_no~panel_001~1_narration",
+									"style": "narration"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "yes",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"textSlots": [
+								{
+									"textSourceFile": "abandonedNoLonger_healerFell",
+									"textKey": "~03~choice_yes~panel_001~1_narration",
+									"style": "narration"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "no",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"textSlots": [
+									{
+										"textSourceFile": "abandonedNoLonger_healerFell",
+										"textKey": "~04~player_chose_no~panel_001~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"textSlots": [
+									{
+										"textSourceFile": "abandonedNoLonger_healerFell",
+										"textKey": "~05~player_chose_yes~panel_001~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+]
+}
