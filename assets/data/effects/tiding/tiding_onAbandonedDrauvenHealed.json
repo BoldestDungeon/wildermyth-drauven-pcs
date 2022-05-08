@@ -1,0 +1,151 @@
+{
+"id": "tiding_onAbandonedDrauvenHealed",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "tiding/tiding_onAbandonedDrauvenHealed",
+	"modId": "drauven_pcs_test",
+	"author": "Ironskink",
+	"STUB": "",
+	"followupIds": [ "encounter_wilderness_theAbandoned.0.playerChose_one.onPass.3" ]
+},
+"type": "FOLLOWUP_EVENT_OUTCOME",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "heroism",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterScore": 11,
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{
+		"role": "company",
+		"template": "INJECTED_ENTITY",
+		"type": "COMPANY",
+		"choose": "ALL",
+		"injectedRole": "company"
+	},
+	{
+		"role": "overlandTile",
+		"template": "INJECTED_ENTITY",
+		"type": "OVERLAND_TILE",
+		"choose": "ALL",
+		"injectedRole": "overlandTile"
+	},
+	{
+		"role": "party",
+		"template": "INJECTED_ENTITY",
+		"type": "UNIT",
+		"choose": "ALL",
+		"injectedRole": "party"
+	},
+	{
+		"role": "foes",
+		"template": "INJECTED_ENTITY",
+		"type": "LEGEND",
+		"choose": "ALL",
+		"injectedRole": "foes"
+	},
+	{
+		"role": "healer",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ALL",
+		"injectedRole": "healer"
+	},
+	{
+		"role": "hothead",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ALL",
+		"injectedRole": "hothead"
+	},
+	{
+		"role": "volunteer",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ALL",
+		"injectedRole": "volunteer"
+	},
+	{
+		"role": "npc",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ANY",
+		"injectedRole": "npc"
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_interiorNight.jpg",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.215, "y": 0.553 },
+							"head": { "rotate": 14.036 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "tiding/tiding_onAbandonedDrauvenHealed",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "tiding/tiding_onAbandonedDrauvenHealed",
+							"textKey": "~01~~panel_001~2_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "tiding/tiding_onAbandonedDrauvenHealed",
+							"textKey": "~01~~panel_001~3_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bgAuto": "approachingSite",
+					"bgNighttime": true,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight",
+							"overrideNameTag": "~01~~panel_002~nameTag_0",
+							"head": { "rotate": 20.556 },
+							"color": { "r": "0.02901475", "g": "0.01693448", "b": "0.20181552", "a": "1" },
+							"overrideNameTagTextSource": "tiding/tiding_onAbandonedDrauvenHealed"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "tiding/tiding_onAbandonedDrauvenHealed",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauvenHealer_sawTiding", "value": "1" }
+		]
+	}
+]
+}
