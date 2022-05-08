@@ -40,6 +40,25 @@
 	}
 },
 {
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_dragonBreath",
+	"effects": [ "drauven_pc_dragonBreath" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "fireleash" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_dragonBreath_upgrade",
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_dragonBreath",
+		"abilityDeckIcon": "fireleash"
+	}
+},
+{
 	"id": "drauvenDeck_mystic_fireshot",
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
