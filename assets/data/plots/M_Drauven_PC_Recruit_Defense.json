@@ -1,0 +1,46 @@
+{
+"objectives": [
+	{
+		"class": "Objective_KillAllEnemies",
+		"onSuccess": [
+			{ "class": "Step_SetPlotResult", "resultPriority": 10 }
+		],
+		"onFail": [
+			{ "class": "Step_SetPlotResult", "result": "defeat", "resultPriority": 100 }
+		]
+	}
+],
+"steps": [
+	{
+		"class": "StepM_SetupMission",
+		"missionResults": [
+			{
+				"defaultEvent": false,
+				"customResults": [
+					{
+						"class": "StepM_Event",
+						"eventIds": [ "plot_Drauven_PC_Recruit_Defense_victory" ]
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "StepM_SpawnExact",
+		"side": "HERO",
+		"location": { "class": "TileSpec.TilesFromRegions", "role": "attacker", "usage": "spawn" },
+		"useMapSpawnRegions": true,
+		"combatantCards": true
+	},
+	{
+		"class": "StepM_SpawnExact",
+		"location": { "class": "TileSpec.TilesFromRegions", "role": "defender", "usage": "spawn" },
+		"useMapSpawnRegions": true,
+		"combatantCards": true
+	},
+	{
+		"class": "Step_AddObjectives",
+		"objectives": [ "Objective_KillAllEnemies" ]
+	}
+]
+}

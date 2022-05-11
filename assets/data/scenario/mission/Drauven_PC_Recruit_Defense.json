@@ -1,0 +1,27 @@
+{
+"scenarioInfo": {
+	"id": "Drauven_PC_Recruit_Defense",
+	"type": "MISSION",
+	"nameKey": "Drauven_PC_Recruit_Defense.name",
+	"blurbKey": "Drauven_PC_Recruit_Defense.blurb",
+	"rosterSlots": [
+		{ "type": "greenhorn", "archetype": "warrior" },
+		{ "type": "greenhorn", "archetype": "warrior" },
+		{ "type": "greenhorn", "archetype": "hunter" },
+		{ "type": "greenhorn", "archetype": "hunter" },
+		{ "type": "greenhorn", "archetype": "mystic" }
+	]
+},
+"playableFactions": [
+	{ "factionRole": "HERO", "plotRole": "attacker" },
+	{ "factionRole": "VILLAIN", "plotRole": "defender" }
+],
+"site": { "type": "SITE", "siteMissionPlanId": "Drauven_PC_Recruit_Defense" },
+"inhabitants": [
+	{
+		"factionRole": "VILLAIN",
+		"threat": { "flavor": "thrixl", "strength": 6 },
+		"calamities": 6
+	}
+]
+}

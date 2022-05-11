@@ -1,0 +1,62 @@
+{
+"id": "plot_Drauven_PC_Recruit_Defense_arrive",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "plotEvent/Drauven_PC_Recruit_Defense_arrive",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "HeroOfWind",
+	"declaredEncounterResults": [ "victory", "defeat" ]
+},
+"type": "PLOT_ARRIVE",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" }
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "party",
+							"equipment": {},
+							"anchor": { "x": 0.251, "y": 0.557 },
+							"size": 0.5823668
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "plotEvent/Drauven_PC_Recruit_Defense_arrive",
+							"textKey": "~01~~panel_001~1_party",
+							"pointerOwner": "party",
+							"padXFraction": 0.34,
+							"padYFraction": 0.054,
+							"widthFraction": 0.3980158,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "Mission",
+		"goal": "story",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{ "role": "foes", "side": "enemy" }
+		],
+		"missionPlanOverride": "Drauven_PC_Recruit_Defense"
+	}
+]
+}
