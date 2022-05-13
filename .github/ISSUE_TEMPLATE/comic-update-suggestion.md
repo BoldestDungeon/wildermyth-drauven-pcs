@@ -1,6 +1,6 @@
 ---
 name: Comic Update Suggestion
-about: A simple template for requesting updates to existing comics
+about: How can we make existing comics to integrate Drauven heroes into the world?
 title: Update Event "X" with Drauven Dialogue
 labels: Comic
 assignees: ''
