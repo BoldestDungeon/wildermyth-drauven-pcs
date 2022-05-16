@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "theAbandonedReturns",
-	"modId": "drauven_pcs_test",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Ironskink"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -945,12 +945,12 @@
 		"goal": "defend",
 		"combatants": [
 			{ "role": "party", "side": "player" },
+			{ "role": "npc", "side": "player" },
 			{
 				"role": "foes",
 				"side": "enemy",
 				"customThreat": { "threatStrength": "10" }
 			},
-			{ "role": "npc", "side": "player" },
 			{
 				"side": "player",
 				"customThreat": {
@@ -966,6 +966,7 @@
 				"roles": [ "npc2", "npc" ]
 			}
 		],
+		"missionPlanOverride": "Drauven_PC_Recruit_Defense",
 		"format": "assault",
 		"mutators": [ "forceMonsterFurniture" ],
 		"victoryEventIds": [ "abandonedNoLonger", "abandonedNoLonger_healerFell" ]

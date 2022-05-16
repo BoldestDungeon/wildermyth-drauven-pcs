@@ -39,6 +39,29 @@
 		"combatantCards": true
 	},
 	{
+		"class": "StepM_SpawnExact",
+		"side": "HERO",
+		"location": {
+			"class": "TileSpec.ExactTiles",
+			"offsetX": 27,
+			"offsetY": 4,
+			"xs": [ 38, 37, 36, 36, 36, 37, 38, 38, 37, 31, 30, 29, 28, 28, 29, 30, 31, 31, 30, 29, 28, 26, 25, 25, 25, 26, 27, 27, 27, 27, 25, 26, 26, 31, 30, 29, 29, 29, 30, 30, 31, 31 ],
+			"ys": [ 23, 23, 23, 22, 21, 21, 21, 22, 22, 25, 25, 25, 25, 24, 24, 24, 24, 23, 23, 23, 23, 19, 19, 18, 17, 16, 17, 18, 19, 16, 16, 17, 18, 16, 16, 16, 15, 14, 14, 15, 15, 14 ]
+		},
+		"monsterIds": [ "drauven_stump", "drauven_stormthroat", "drauven_archer", "drauven_haunt" ],
+		"randomCards": { "group": "drauven", "numberOfCards": "5" },
+		"combatModifierObjects": [
+			{ "modifier": "DISORDER" }
+		],
+		"applyCombatModifiersFromEvent": false,
+		"combineIndividualsToOneCard": true,
+		"customCard": {
+			"nameKey": "M_Drauven_PC_Recruit_Defense.3.name",
+			"descriptionKey": "M_Drauven_PC_Recruit_Defense.3.description"
+		},
+		"spawnWithAP": true
+	},
+	{
 		"class": "Step_AddObjectives",
 		"objectives": [ "Objective_KillAllEnemies" ]
 	}
