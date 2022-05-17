@@ -42,9 +42,18 @@
 		"role": "healer",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
-		"choose": "BY_SCORE_OPTIONAL",
-		"scoreFunction": "drauvenHealer",
+		"scoreFunction": "drauvenHealer+alive",
+		"scoreThreshold": "2",
 		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hothead",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"aspects": null,
+		"notAlreadyMatchedAs": [ "healer" ]
 	},
 	{
 		"template": "CHOICE",
@@ -52,6 +61,54 @@
 			{
 				"class": "comicNode_Panel",
 				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bgAuto": "atSite",
+					"actorSlots": [
+						{
+							"role": "deadFoe",
+							"form": "frame-dead",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.604, "y": 0.563 },
+							"size": 0.4967,
+							"nameTag": "none"
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.74, "y": 0.509 },
+							"size": 0.8289414,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.213, "y": 0.516 },
+							"size": 0.8957655,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallLight.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.503, "y": 0.277 },
+							"size": 0.3088,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stormthroat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.368, "y": 0.531 },
+							"size": 0.26,
+							"nameTag": "none"
+						}
+					],
 					"textSlots": [
 						{
 							"textSourceFile": "abandonedNoLonger",
@@ -60,29 +117,99 @@
 						}
 					]
 				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.454, "y": 0.497 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallLight.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.503, "y": 0.277 },
+							"size": 0.3088,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stormthroat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.905, "y": 0.509 },
+							"size": 0.26,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "abandonedNoLonger",
+							"textKey": "~01~prompt~panel_002~1_npc",
+							"pointerOwner": "npc",
+							"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+							"format": "white"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallLight.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.056, "y": 0.268 },
+							"size": 0.3088,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stormthroat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.137, "y": 0.509 },
+							"size": 0.26,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:crow.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.829, "y": 0.522 },
+							"size": 0.1521,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "abandonedNoLonger",
+							"textKey": "~01~prompt~panel_003~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.012,
+							"padYFraction": 0.883,
+							"pointerAdjust": { "rotate": 0, "dX": -8.482759, "dY": 78.22989, "pointerOrientV": "down" }
+						}
+					]
+				}
 			}
 		],
 		"options": [
-			{
-				"id": "one",
-				"script": [
-					{
-						"class": "comicNode_Panel",
-						"panel": {
-							"actorSlots": [
-								{ "role": "healer" }
-							],
-							"textSlots": [
-								{
-									"textSourceFile": "abandonedNoLonger",
-									"textKey": "~02~choice_one~panel_001~1_healer",
-									"pointerOwner": "healer"
-								}
-							]
-						}
-					}
-				]
-			},
 			{
 				"id": "two",
 				"script": [
@@ -90,13 +217,50 @@
 						"class": "comicNode_Panel",
 						"panel": {
 							"actorSlots": [
-								{ "role": "npc" }
+								{ "role": "npc", "form": "frame-happy" }
 							],
 							"textSlots": [
 								{
 									"textSourceFile": "abandonedNoLonger",
-									"textKey": "~03~choice_two~panel_001~1_npc",
-									"pointerOwner": "npc"
+									"textKey": "~02~choice_two~panel_001~1_npc",
+									"pointerOwner": "npc",
+									"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+									"format": "white"
+								},
+								{
+									"textSourceFile": "abandonedNoLonger",
+									"textKey": "~02~choice_two~panel_001~2_narration",
+									"style": "narration",
+									"padXFraction": 0.664,
+									"padYFraction": 0.821,
+									"widthFraction": 0.3176681,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "healer",
+									"form": "frame-talk",
+									"facing": "left",
+									"equipment": {},
+									"nameTag": "bottomRight"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "abandonedNoLonger",
+									"textKey": "~03~choice_one~panel_001~1_healer",
+									"pointerOwner": "healer"
 								}
 							]
 						}
@@ -120,8 +284,32 @@
 						{
 							"class": "comicNode_Panel",
 							"panel": {
+								"size": "half",
 								"actorSlots": [
-									{ "role": "healer" }
+									{
+										"role": "healer",
+										"form": "frame-joke",
+										"facing": "left",
+										"equipment": {},
+										"size": 0.8957655,
+										"nameTag": "bottomRight"
+									},
+									{
+										"assetSpec": "comic:comicForeground_stoneWallLight.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.503, "y": 0.277 },
+										"size": 0.3088,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stormthroat.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.887, "y": 0.509 },
+										"size": 0.26,
+										"nameTag": "none"
+									}
 								],
 								"textSlots": [
 									{
@@ -150,14 +338,34 @@
 						{
 							"class": "comicNode_Panel",
 							"panel": {
+								"size": "half",
 								"actorSlots": [
-									{ "role": "npc" }
+									{ "role": "npc", "form": "frame-scheming", "size": 0.8957655 },
+									{
+										"assetSpec": "comic:comicForeground_stoneWallLight.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.503, "y": 0.277 },
+										"size": 0.3088,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stormthroat.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.088, "y": 0.38 },
+										"size": 0.26,
+										"nameTag": "none"
+									}
 								],
 								"textSlots": [
 									{
 										"textSourceFile": "abandonedNoLonger",
 										"textKey": "~05~player_chose_two~panel_001~1_npc",
-										"pointerOwner": "npc"
+										"pointerOwner": "npc",
+										"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+										"format": "white"
 									}
 								]
 							}
@@ -179,6 +387,12 @@
 				{ "class": "AddResources", "amount": "-2" }
 			]
 		}
+	},
+	{
+		"class": "AddRememberedPlace",
+		"target": "site",
+		"icon": "lairDrauven",
+		"grantResources": [ "loreDrauven" ]
 	}
 ],
 "implications": {

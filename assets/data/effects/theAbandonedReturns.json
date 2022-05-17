@@ -47,7 +47,6 @@
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"scoreFunction": "(30*hunter)+LONER",
-		"aspects": null,
 		"notAlreadyMatchedAs": [ "healer", "hothead" ]
 	},
 	{
@@ -241,10 +240,12 @@
 						},
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_006~2_actionSmall",
-							"style": "actionSmall",
-							"padXFraction": 0.797,
-							"padYFraction": 0.846
+							"textKey": "~01~prompt~panel_006~2_speech",
+							"backgroundColor": { "r": "0.09851378", "g": "0.54069078", "b": "0.16006681", "a": "1" },
+							"format": "white",
+							"padXFraction": 0.755,
+							"padYFraction": 0.843,
+							"shrinkToFitText": true
 						}
 					]
 				}
@@ -362,11 +363,13 @@
 						{
 							"textSourceFile": "theAbandonedReturns",
 							"textKey": "~01~prompt~panel_009~1_npc",
-							"style": "action",
 							"pointerOwner": "npc",
+							"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+							"format": "white",
 							"padXFraction": 0.084,
 							"shrinkToFitText": true,
-							"pointerStyle": "speech"
+							"pointerStyle": "speech",
+							"pointerAdjust": { "dX": 8.482756, "dY": 7.5402303 }
 						}
 					]
 				}
@@ -401,14 +404,6 @@
 					"showNameTags": false,
 					"actorSlots": [
 						{
-							"role": "party",
-							"equipment": { "mode": "leaveEquipment" },
-							"anchor": { "x": 0.171, "y": 0.748 },
-							"size": 0.8057,
-							"drawDepth": 4,
-							"nameTag": "none"
-						},
-						{
 							"role": "hunter",
 							"form": "frame-angry",
 							"facing": "left",
@@ -432,14 +427,24 @@
 							"equipment": { "mode": "leaveEquipment" },
 							"anchor": { "x": 0.826, "y": 0.533 },
 							"drawDepth": 0
+						},
+						{
+							"role": "party",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.171, "y": 0.748 },
+							"size": 0.8057,
+							"drawDepth": 4,
+							"nameTag": "none"
 						}
 					],
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
 							"textKey": "~01~prompt~panel_011~1_npc",
-							"style": "action",
 							"pointerOwner": "npc",
+							"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+							"format": "white",
 							"location": "bottomRight",
 							"shrinkToFitText": true
 						}
@@ -482,6 +487,16 @@
 					"size": "fifth",
 					"actorSlots": [
 						{
+							"assetSpec": "comic:pointerThoughtMedium.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.67, "y": 0.251 },
+							"size": 0.4756,
+							"nameTag": "none",
+							"foot": { "rotate": 121.219 }
+						},
+						{
 							"role": "healer",
 							"form": "frame-surprised",
 							"equipment": {},
@@ -518,6 +533,21 @@
 							"size": 0.2556,
 							"nameTag": "none",
 							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_swampTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.2699,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_014~1_narration",
+							"style": "narration"
 						}
 					]
 				}
@@ -530,6 +560,16 @@
 					"bgAuto": "approachingSite",
 					"actorSlots": [
 						{
+							"assetSpec": "comic:pointerThoughtMedium.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.292, "y": 0.679 },
+							"size": 0.4108,
+							"nameTag": "none",
+							"foot": { "rotate": -75.752 }
+						},
+						{
 							"role": "npc",
 							"form": "frame-surprised",
 							"facing": "left",
@@ -538,6 +578,47 @@
 							"size": 1.7405064,
 							"nameTag": "bottomRight",
 							"head": { "rotate": 8.241 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_017~1_npc",
+							"pointerOwner": "npc",
+							"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+							"format": "white",
+							"padXFraction": -0.613,
+							"padYFraction": 0.067,
+							"widthFraction": 1.3481414,
+							"pointerAdjust": { "dX": -36.75862, "dY": 2.8275864 },
+							"allowDrawOverEdges": true
 						}
 					]
 				}
@@ -686,7 +767,7 @@
 								"actorSlots": [
 									{
 										"role": "npc",
-										"form": "frame-grim",
+										"form": "frame-joy",
 										"equipment": {},
 										"anchor": { "x": 0.774, "y": 0.465 },
 										"size": 0.9293,
@@ -705,11 +786,12 @@
 									{
 										"textSourceFile": "theAbandonedReturns",
 										"textKey": "~04~player_chose_one~panel_002~1_npc",
-										"style": "actionSmall",
 										"pointerOwner": "npc",
-										"padXFraction": 0.535,
-										"padYFraction": 0.233,
-										"widthFraction": 0.15059446,
+										"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+										"format": "white",
+										"padXFraction": 0.773,
+										"padYFraction": 0.189,
+										"widthFraction": 0.17701447,
 										"shrinkToFitText": true
 									},
 									{
@@ -747,13 +829,107 @@
 						{
 							"class": "comicNode_Panel",
 							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.18, "y": 0.5 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-angry",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.82, "y": 0.5 },
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "npc",
+										"form": "frame-scared",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.451, "y": 0.415 },
+										"nameTag": "none",
+										"head": { "rotate": 13.539 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-rage",
+										"equipment": {},
+										"anchor": { "x": 0.18, "y": 0.5 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.82, "y": 0.5 },
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "npc",
+										"form": "frame-sad",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.451, "y": 0.415 },
+										"nameTag": "none",
+										"head": { "rotate": -20.303, "scaleY": -1 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-rage",
+										"equipment": {},
+										"anchor": { "x": 0.18, "y": 0.5 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-sad",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.82, "y": 0.5 },
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-happy",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.451, "y": 0.415 },
+										"nameTag": "none",
+										"head": { "rotate": 17.572, "scaleY": 1 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
 								"actorSlots": [
 									{ "role": "hothead", "form": "frame-rage" }
 								],
 								"textSlots": [
 									{
 										"textSourceFile": "theAbandonedReturns",
-										"textKey": "~05~player_chose_two~panel_001~1_hothead",
+										"textKey": "~05~player_chose_two~panel_004~1_hothead",
 										"pointerOwner": "hothead"
 									}
 								]
