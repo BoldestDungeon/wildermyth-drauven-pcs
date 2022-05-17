@@ -3,13 +3,20 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "plotEvent/Drauven_PC_Recruit_Defense_victory",
-	"modId": "wildermyth-drauven-pcs",
-	"author": "HeroOfWind",
-	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+	"modId": "drauven_pcs_test",
+	"author": "Ironskink"
 },
 "type": "PLOT_MISSION_EVENT",
 "verb": "MANEUVER",
-"ability": { "icon": "utility", "category": "attack", "priority": "1" },
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterScore": 100,
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Tragic-Sympathetic NPC"
+},
 "targets": [
 	{ "template": "EVENT" },
 	{ "template": "COMPANY", "choose": "ANY" },
@@ -30,26 +37,374 @@
 		"injectedRole": "escapedHero"
 	},
 	{ "template": "LIVING_FOES" },
-	{ "template": "DEAD_FOES" }
-],
-"outcomes": [
+	{ "template": "DEAD_FOES" },
 	{
-		"class": "Description",
-		"lightweight": false,
-		"script": [
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "drauvenHealer+alive",
+		"scoreThreshold": "2",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hothead",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "healer" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
 			{
 				"class": "comicNode_Panel",
 				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bgAuto": "atSite",
+					"actorSlots": [
+						{
+							"role": "deadFoe",
+							"form": "frame-dead",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.609, "y": 0.701 },
+							"size": 0.3052,
+							"nameTag": "none",
+							"foot": { "rotate": -113.742 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.74, "y": 0.509 },
+							"size": 0.8289414,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.213, "y": 0.516 },
+							"size": 0.8957655,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallLight.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.503, "y": 0.277 },
+							"size": 0.3088,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stormthroat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.368, "y": 0.531 },
+							"size": 0.26,
+							"nameTag": "none"
+						}
+					],
 					"textSlots": [
 						{
 							"textSourceFile": "plotEvent/Drauven_PC_Recruit_Defense_victory",
-							"textKey": "~01~~panel_001~1_narration",
+							"textKey": "~01~prompt~panel_001~1_narration",
 							"style": "narration"
 						}
 					]
 				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.454, "y": 0.497 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallLight.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.503, "y": 0.277 },
+							"size": 0.3088,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stormthroat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.905, "y": 0.509 },
+							"size": 0.26,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "plotEvent/Drauven_PC_Recruit_Defense_victory",
+							"textKey": "~01~prompt~panel_002~1_npc",
+							"pointerOwner": "npc",
+							"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+							"format": "white"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallLight.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.056, "y": 0.268 },
+							"size": 0.3088,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stormthroat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.137, "y": 0.509 },
+							"size": 0.26,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:crow.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.829, "y": 0.522 },
+							"size": 0.1521,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "plotEvent/Drauven_PC_Recruit_Defense_victory",
+							"textKey": "~01~prompt~panel_003~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.012,
+							"padYFraction": 0.883,
+							"pointerAdjust": { "rotate": 0, "dX": -8.482759, "dY": 78.22989, "pointerOrientV": "down" }
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{ "role": "npc", "form": "frame-happy" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "plotEvent/Drauven_PC_Recruit_Defense_victory",
+									"textKey": "~02~choice_two~panel_001~1_npc",
+									"pointerOwner": "npc",
+									"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+									"format": "white"
+								},
+								{
+									"textSourceFile": "plotEvent/Drauven_PC_Recruit_Defense_victory",
+									"textKey": "~02~choice_two~panel_001~2_narration",
+									"style": "narration",
+									"padXFraction": 0.664,
+									"padYFraction": 0.821,
+									"widthFraction": 0.3176681,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "healer",
+									"form": "frame-talk",
+									"facing": "left",
+									"equipment": {},
+									"nameTag": "bottomRight"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "plotEvent/Drauven_PC_Recruit_Defense_victory",
+									"textKey": "~03~choice_one~panel_001~1_healer",
+									"pointerOwner": "healer"
+								}
+							]
+						}
+					}
+				]
 			}
 		]
 	}
-]
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "healer",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-joke",
+										"facing": "left",
+										"equipment": {},
+										"size": 0.8957655,
+										"nameTag": "bottomRight"
+									},
+									{
+										"assetSpec": "comic:comicForeground_stoneWallLight.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.503, "y": 0.277 },
+										"size": 0.3088,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stormthroat.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.887, "y": 0.509 },
+										"size": 0.26,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "plotEvent/Drauven_PC_Recruit_Defense_victory",
+										"textKey": "~04~player_chose_one~panel_001~1_healer",
+										"pointerOwner": "healer"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "npc",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"lightweight": false,
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{ "role": "npc", "form": "frame-scheming", "size": 0.8957655 },
+									{
+										"assetSpec": "comic:comicForeground_stoneWallLight.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.503, "y": 0.277 },
+										"size": 0.3088,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stormthroat.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.088, "y": 0.38 },
+										"size": 0.26,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "plotEvent/Drauven_PC_Recruit_Defense_victory",
+										"textKey": "~05~player_chose_two~panel_001~1_npc",
+										"pointerOwner": "npc",
+										"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
+										"format": "white"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc",
+					"becomeAllyOf": "party",
+					"makeHero": true,
+					"checkPromotionsNow": true
+				},
+				{
+					"class": "UnlockLegacyAspect",
+					"legacyAspect": "DrauvenAllies_FirstStepsComplete",
+					"value": "1"
+				},
+				{ "class": "AddResources", "amount": "-2" }
+			]
+		}
+	},
+	{
+		"class": "AddRememberedPlace",
+		"target": "site",
+		"icon": "lairDrauven",
+		"grantResources": [ "loreDrauven" ]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "wounded_drauven",
+			"createEntity": {
+				"query": { "baseTag": "human", "findExisting": true },
+				"control": "none"
+			}
+		}
+	]
+}
 }

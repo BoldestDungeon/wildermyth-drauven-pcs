@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "theAbandonedReturns",
-	"modId": "wildermyth-drauven-pcs",
+	"modId": "drauven_pcs_test",
 	"author": "Ironskink"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -950,14 +950,6 @@
 				"role": "foes",
 				"side": "enemy",
 				"customThreat": { "threatStrength": "10" }
-			},
-			{
-				"side": "player",
-				"customThreat": {
-					"threatFlavor": "drauven",
-					"threatStrength": "4",
-					"useExtraChapterCards": false
-				}
 			}
 		],
 		"combatModifiers": [
