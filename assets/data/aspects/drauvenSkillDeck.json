@@ -59,6 +59,25 @@
 	}
 },
 {
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_dragonBlood",
+	"effects": [ "drauven_pc_dragonBlood" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_dragonBlood_upgrade",
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_dragonBlood",
+		"abilityDeckIcon": "elementalist"
+	}
+},
+{
 	"id": "drauvenDeck_mystic_fireshot",
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
@@ -116,7 +135,7 @@
 	"id": "drauvenDeck_warrior_tailslap_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "crush", "upgradeForAbility": "drauvenDeck_tailslap", }
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "crush", "upgradeForAbility": "drauvenDeck_tailslap" }
 },
 {
 	"modId": "wildermyth-drauven-pcs",

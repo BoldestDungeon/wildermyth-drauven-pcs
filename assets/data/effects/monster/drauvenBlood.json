@@ -1,0 +1,54 @@
+{
+"id": "drauvenBlood",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "monster/drauvenBlood",
+	"author": "Patrick Belanger",
+	"STUB": "Drauven healing"
+},
+"type": "TURN_END",
+"verb": "MANEUVER",
+"ability": { "priority": "1", "numUses": "3+self.drauvenBloodBonusUses" },
+"targets": [
+	{
+		"template": "ANY_SELF",
+		"aspects": [ "alive", "SELF" ],
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "INJURY",
+		"b": "1"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"attackAnimationType": "none",
+		"showAbilityName": "always",
+		"stopBlockingTime": "noBlocking",
+		"particles": [
+			{ "script": "heal", "setPosition": "self" }
+		],
+		"attackerAnimationOverride": "",
+		"defenderAnimationOverride": "",
+		"cameraSnapToStartPositionOnEnd": false,
+		"markForFlanking": "never",
+		"flankingBoostsAttackRoll": false,
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "ModifyStats",
+					"stat": "INJURY",
+					"value": "0-min(self.INJURY,max(1,floor((self.HEALTH * (0.25 + (self.dragonBloodUpgradeTarget * 0.15))))))"
+				},
+				{
+					"class": "Aspects",
+					"consumeAspects": [
+						{ "id": "drauvenBloodActive", "value": "1" }
+					]
+				}
+			]
+		}
+	}
+]
+}
