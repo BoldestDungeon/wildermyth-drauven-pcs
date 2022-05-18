@@ -1,9 +1,9 @@
 {
-"id": "drauven_pcs_test_joinDrauvAgainstFoes",
+"id": "wildermyth-drauven-pcs_joinDrauvAgainstFoes",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "arriveAtSite/drauven_pcs_test_joinDrauvAgainstFoes",
-	"modId": "drauven_pcs_test",
+	"sourceFile": "arriveAtSite/wildermyth-drauven-pcs_joinDrauvAgainstFoes",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Ironskink"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -67,12 +67,12 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "drauven_pcs_test_joinDrauvAgainstFoes",
+							"textSourceFile": "wildermyth-drauven-pcs_joinDrauvAgainstFoes",
 							"textKey": "~01~~panel_001~1_narration",
 							"style": "narration"
 						},
 						{
-							"textSourceFile": "drauven_pcs_test_joinDrauvAgainstFoes",
+							"textSourceFile": "wildermyth-drauven-pcs_joinDrauvAgainstFoes",
 							"textKey": "~01~~panel_001~2_npc",
 							"pointerOwner": "npc",
 							"shrinkToFitText": true

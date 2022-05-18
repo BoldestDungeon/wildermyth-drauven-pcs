@@ -1,9 +1,9 @@
 {
-"id": "drauven_pcs_test_devtestEasyDrauvRecruit",
+"id": "wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
-	"modId": "drauven_pcs_test",
+	"sourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Ironskink"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -46,19 +46,19 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+							"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 							"textKey": "~01~prompt~panel_001~1_narration",
 							"style": "narration"
 						},
 						{
-							"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+							"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 							"textKey": "~01~prompt~panel_001~2_npc",
 							"pointerOwner": "npc",
 							"padXFraction": 0.085,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+							"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 							"textKey": "~01~prompt~panel_001~3_npc3",
 							"pointerOwner": "npc3",
 							"padXFraction": 0.43600002,
@@ -85,7 +85,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+									"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 									"textKey": "~02~choice_one~panel_001~1_narration",
 									"style": "narration"
 								}
@@ -110,7 +110,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+									"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 									"textKey": "~03~choice_two~panel_001~1_narration",
 									"style": "narration"
 								}
@@ -135,7 +135,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+									"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 									"textKey": "~04~choice_three~panel_001~1_narration",
 									"style": "narration"
 								}
@@ -176,7 +176,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+									"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 									"textKey": "~05~choice_four~panel_001~1_narration",
 									"style": "narration"
 								}
@@ -210,7 +210,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 										"textKey": "~06~player_chose_one~panel_001~1_narration",
 										"style": "narration"
 									}
@@ -249,7 +249,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 										"textKey": "~07~player_chose_two~panel_001~1_narration",
 										"style": "narration"
 									}
@@ -288,7 +288,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 										"textKey": "~08~player_chose_three~panel_001~1_narration",
 										"style": "narration"
 									}
@@ -341,12 +341,12 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 										"textKey": "~09~player_chose_four~panel_001~1_narration",
 										"style": "narration"
 									},
 									{
-										"textSourceFile": "arriveAtSite/drauven_pcs_test_devtestEasyDrauvRecruit",
+										"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
 										"textKey": "~09~player_chose_four~panel_001~2_npc3",
 										"pointerOwner": "npc3",
 										"shrinkToFitText": true,
