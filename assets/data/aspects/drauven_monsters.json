@@ -24,5 +24,10 @@
 	],
 	"effects": [ "removeOnDeath", "drauven_pc_birdRecall|_ENTITY_" ],
 	"boostType": "ADVANTAGE"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "dragonBloodUpgradeTarget",
+	"lifespan": "mission"
 }
 ]
