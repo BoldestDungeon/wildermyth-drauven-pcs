@@ -3,14 +3,16 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "theAbandonedReturns",
-	"modId": "drauven_pcs_test",
-	"author": "Ironskink"
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"declaredEncounterResults": [ "victory", "defeat", "escape" ]
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
 "verb": "MANEUVER",
 "ability": {
 	"icon": "melee",
 	"priority": "1",
+	"useLongNameOnAbilityBar": true,
 	"cooldown": "oncePerGame",
 	"encounterScore": 20,
 	"encounterEnabled": true
@@ -955,7 +957,7 @@
 		"combatModifiers": [
 			{
 				"modifier": "INTIMIDATION",
-				"roles": [ "npc2", "npc" ]
+				"roles": [ "npc" ]
 			}
 		],
 		"missionPlanOverride": "Drauven_PC_Recruit_Defense",

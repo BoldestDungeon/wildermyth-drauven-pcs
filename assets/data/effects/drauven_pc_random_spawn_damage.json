@@ -1,0 +1,22 @@
+{
+"id": "drauven_pc_random_spawn_damage",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven_pc_random_spawn_damage",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "HeroOfWind"
+},
+"type": "ASPECT_ADDED",
+"targets": [
+	{ "template": "ANY_SELF" }
+],
+"outcomes": [
+	{
+		"class": "Damage",
+		"target": "self",
+		"amount": "ceil((self.HEALTH*0.2))+1d2",
+		"type": "TRUE",
+		"minRemainingHealth": "2"
+	}
+]
+}

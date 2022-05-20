@@ -1,110 +1,123 @@
 [
-    { "id": "drauven_ageless", "lifespan": "all" },
-    { "id": "drauven_cannotAge", "lifespan": "all" },
-    {
-        "id": "drauven_young",
-        "stats": { 
-            "SPEED": 1.4,
-			"ARMOR": 1,
-			"WARDING": 0.5,
-            "DODGE": 10 
-        },
-        "lifespan": "all"
-    },
-    {
-        "id": "drauven_earlyMiddleAge",
-        "stats": {
-            "CHARISMA": -10,
-            "TENACITY": 6,
-            "HEALTH": 2,
-            "RECOVERY_RATE": 0.5,
-            "DODGE": -4,
-            "SPEED": -0.8,
-			"ARMOR": 2,
-			"WARDING": 1,
-			"BLOCK": 5
-        },
-        "lifespan": "all"
-    },
-    {
-        "id": "drauven_middleAge",
-        "stats": {
-            "CHARISMA": -12,
-            "TENACITY": 8,
-            "HEALTH": 3,
-            "RECOVERY_RATE": 1,
-            "DODGE": -6,
-            "SPEED": -1,
-			"ARMOR": 3,
-			"WARDING": 2,
-			"BLOCK": 10
-        },
-        "lifespan": "all"
-    },
-    {
-        "id": "drauven_lateMiddleAge",
-        "stats": {
-            "CHARISMA": -14,
-            "TENACITY": 10,
-            "HEALTH": 4,
-            "RECOVERY_RATE": 1.5,
-            "DODGE": -6,
-            "SPEED": -1.2,
-			"ARMOR": 4,
-			"WARDING": 3,
-			"BLOCK": 12
-        },
-        "lifespan": "all"
-    },
-    {
-        "id": "drauven_oldAge",
-        "effects": [],
-        "stats": {
-            "CHARISMA": -16,
-            "TENACITY": 15,
-            "HEALTH": 5,
-            "PERCEPTION": 1,
-            "RECOVERY_RATE": 2,
-            "DODGE": -9,
-            "SPEED": -1.4,
-			"ARMOR": 5,
-			"WARDING": 4,
-			"BLOCK": 14
-        },
-        "lifespan": "all"
-    },
-    {
-        "id": "drauven_veryOldAge",
-        "effects": [],
-        "stats": {
-            "CHARISMA": -18,
-            "TENACITY": 20,
-            "HEALTH": 6,
-            "PERCEPTION": 2,
-            "RECOVERY_RATE": 2.5,
-            "DODGE": -13,
-            "SPEED": -1.6,
-			"ARMOR": 6,
-			"WARDING": 5,
-			"BLOCK": 16
-        },
-        "lifespan": "all"
-    },
-    {
-        "id": "drauven_extremeOldAge",
-        "effects": [],
-        "stats": {
-            "CHARISMA": -20,
-            "TENACITY": 30,
-            "HEALTH": 7,
-            "PERCEPTION": 5,
-            "RECOVERY_RATE": 3,
-            "DODGE": -15,
-            "SPEED": -1.8,
-			"ARMOR": 7,
-			"WARDING": 6,
-			"BLOCK": 20
-        },
-        "lifespan": "all"
-    }
-    ]
+{ "modId": "wildermyth-drauven-pcs", "id": "drauven_ageless", "lifespan": "all" },
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_cannotAge",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_earlyMiddleAge",
+	"stats": {
+		"ARMOR": 2,
+		"BLOCK": 5,
+		"CHARISMA": -10,
+		"DODGE": -4,
+		"HEALTH": 2,
+		"RECOVERY_RATE": 0.5,
+		"SPEED": -0.8,
+		"TENACITY": 6,
+		"WARDING": 1
+	},
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_extremeOldAge",
+	"effects": [],
+	"stats": {
+		"ARMOR": 7,
+		"BLOCK": 20,
+		"CHARISMA": -20,
+		"DODGE": -15,
+		"HEALTH": 7,
+		"PERCEPTION": 5,
+		"RECOVERY_RATE": 3,
+		"SPEED": -1.8,
+		"TENACITY": 30,
+		"WARDING": 6
+	},
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_lateMiddleAge",
+	"stats": {
+		"ARMOR": 4,
+		"BLOCK": 12,
+		"CHARISMA": -14,
+		"DODGE": -6,
+		"HEALTH": 4,
+		"RECOVERY_RATE": 1.5,
+		"SPEED": -1.2,
+		"TENACITY": 10,
+		"WARDING": 3
+	},
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_middleAge",
+	"stats": {
+		"ARMOR": 3,
+		"BLOCK": 10,
+		"CHARISMA": -12,
+		"DODGE": -6,
+		"HEALTH": 3,
+		"RECOVERY_RATE": 1,
+		"SPEED": -1,
+		"TENACITY": 8,
+		"WARDING": 2
+	},
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_oldAge",
+	"effects": [],
+	"stats": {
+		"ARMOR": 5,
+		"BLOCK": 14,
+		"CHARISMA": -16,
+		"DODGE": -9,
+		"HEALTH": 5,
+		"PERCEPTION": 1,
+		"RECOVERY_RATE": 2,
+		"SPEED": -1.4,
+		"TENACITY": 15,
+		"WARDING": 4
+	},
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_veryOldAge",
+	"effects": [],
+	"stats": {
+		"ARMOR": 6,
+		"BLOCK": 16,
+		"CHARISMA": -18,
+		"DODGE": -13,
+		"HEALTH": 6,
+		"PERCEPTION": 2,
+		"RECOVERY_RATE": 2.5,
+		"SPEED": -1.6,
+		"TENACITY": 20,
+		"WARDING": 5
+	},
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_young",
+	"stats": { "ARMOR": 1, "DODGE": 10, "SPEED": 1.4, "WARDING": 0.5 },
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "random_spawn_wound",
+	"STUB": "Used for the Drauven Camp Defense, makes whoever has it spawn into missions take a silent amount of damage at the start of the mission.",
+	"effects": [ "drauven_pc_random_spawn_damage" ],
+	"importance": -1
+}
+]
