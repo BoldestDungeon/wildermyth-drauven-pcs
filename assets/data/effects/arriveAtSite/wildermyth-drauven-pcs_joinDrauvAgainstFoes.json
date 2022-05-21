@@ -12,7 +12,6 @@
 	"icon": "melee",
 	"priority": "1",
 	"cooldown": "oncePerGame",
-	"encounterEnabled": true,
 	"musicOverride": "Music/Comics - Tragic-Sympathetic NPC"
 },
 "targets": [
@@ -67,12 +66,12 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "wildermyth-drauven-pcs_joinDrauvAgainstFoes",
+							"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_joinDrauvAgainstFoes",
 							"textKey": "~01~~panel_001~1_narration",
 							"style": "narration"
 						},
 						{
-							"textSourceFile": "wildermyth-drauven-pcs_joinDrauvAgainstFoes",
+							"textSourceFile": "arriveAtSite/wildermyth-drauven-pcs_joinDrauvAgainstFoes",
 							"textKey": "~01~~panel_001~2_npc",
 							"pointerOwner": "npc",
 							"shrinkToFitText": true
@@ -119,7 +118,13 @@
 						{
 							"class": "AddHistory",
 							"addHistory": [
-								[ "drauvenBase", "bornDrauven", "drauvenCustomizationHead", "drauvenCustomizationBody", "drauvenCustomizationOther" ]
+								[
+									"drauvenBase",
+									"bornDrauven",
+									"drauvenCustomizationHead",
+									"drauvenCustomizationBody",
+									"drauvenCustomizationOther"
+								]
 							]
 						},
 						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }

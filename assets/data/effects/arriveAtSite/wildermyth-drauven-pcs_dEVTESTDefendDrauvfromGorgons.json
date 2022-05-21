@@ -8,12 +8,7 @@
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
 "verb": "MANEUVER",
-"ability": {
-	"icon": "melee",
-	"priority": "1",
-	"cooldown": "oncePerGame",
-	"encounterEnabled": true
-},
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerGame" },
 "targets": [
 	{ "template": "EVENT" },
 	{ "template": "COMPANY" },

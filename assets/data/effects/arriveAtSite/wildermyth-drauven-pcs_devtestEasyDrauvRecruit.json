@@ -8,8 +8,12 @@
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
 "verb": "MANEUVER",
-"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerTurn",
-	"encounterEnabled": true },
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
 "targets": [
 	{ "template": "EVENT" },
 	{ "template": "COMPANY" },
@@ -17,6 +21,15 @@
 	{ "template": "INJECTED_SITE" },
 	{ "template": "INJECTED_PARTY" },
 	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "drauven_pc",
+		"scoreThreshold": "1",
+		"aspects": null,
+		"notAlreadyMatchedAs": []
+	},
 	{
 		"template": "CHOICE",
 		"promptScript": [
@@ -377,6 +390,16 @@
 				}
 			]
 		}
+	},
+	{
+		"class": "Mission",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{ "role": "foes", "side": "enemy" },
+			{
+				"roles": [ "npc", "npc2", "npc3" ]
+			}
+		]
 	}
 ],
 "implications": {
