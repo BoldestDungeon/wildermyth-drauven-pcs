@@ -13,7 +13,8 @@
 	"category": "attack",
 	"priority": "1",
 	"cooldown": "oncePerGame",
-	"encounterScore": 100,
+	"encounterScore": 1,
+	"encounterWeight": "0",
 	"encounterEnabled": true,
 	"musicOverride": "Music/Comics - Tragic-Sympathetic NPC"
 },
@@ -42,7 +43,7 @@
 		"role": "healer",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
-		"scoreFunction": "drauvenHealer+alive",
+		"scoreFunction": "drauvenHealer_sawTiding+alive",
 		"scoreThreshold": "2",
 		"notAlreadyMatchedAs": []
 	},
@@ -52,7 +53,6 @@
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": null,
-		"aspects": null,
 		"notAlreadyMatchedAs": [ "healer" ]
 	},
 	{
