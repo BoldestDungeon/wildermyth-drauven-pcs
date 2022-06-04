@@ -7,22 +7,6 @@
 	"showInSummary": false
 },
 {
-	"id": "701",
-	"category": "drauven_earlyMiddleAge",
-	"impliedAspects": [ "drauven_earlyMiddleAge" ],
-	"removeAspects": [
-		"drauven_young",
-		"young",
-		"earlyMiddleAge",
-		"middleAge",
-		"lateMiddleAge",
-		"oldAge",
-		"veryOldAge",
-		"extremeOldAge"
-	],
-	"showInSummary": false
-},
-{
 	"category": "drauvenCustomizationHead",
 	"id": "drauvenCustom.Head.1___",
 	"weight": 0.2,
@@ -219,27 +203,6 @@
 },
 
 {
-	"id": "706",
-	"category": "drauven_extremeOldAge",
-	"impliedAspects": [ "drauven_extremeOldAge" ],
-	"removeAspects": [
-		"drauven_young",
-		"drauven_earlyMiddleAge",
-		"drauven_middleAge",
-		"drauven_lateMiddleAge",
-		"drauven_oldAge",
-		"drauven_veryOldAge",
-		"young",
-		"earlyMiddleAge",
-		"middleAge",
-		"lateMiddleAge",
-		"oldAge",
-		"veryOldAge",
-		"extremeOldAge"
-	],
-	"showInSummary": false
-},
-{
 	"id": "drauvenBase.001",
 	"category": "drauvenBase",
 	"impliedAspects": [
@@ -250,7 +213,7 @@
 		"drauvenBlood",
 		"activeDefender",
 		"alive",
-		"mobileMonster",
+		"cannotAge",
 		"eligibleForDeathChoice",
 		"canWallWithAllies",
 		"simplePresence",
@@ -263,138 +226,10 @@
 		"drauvenSkin_naturalRightHand",
 		"drauvenSkin_naturalLeftLeg",
 		"drauvenSkin_naturalRightLeg",
-		"drauvenSkin_naturalHead",
-		"drauven_young"
+		"drauvenSkin_naturalHead"
 
 	],
 	"removeAspects":[
-		"young",
-		"earlyMiddleAge",
-		"middleAge",
-		"lateMiddleAge",
-		"oldAge",
-		"veryOldAge",
-		"extremeOldAge"
-	],
-	"showInSummary": false
-},
-{
-	"id": "drauvenSkin_aging.001",
-	"category": "drauvenSkin_aging",
-	"impliedAspects": [],
-	"showInSummary": false
-},
-{
-	"id": "drauvenSkin_colors.001",
-	"category": "drauvenSkin_colors",
-	"impliedAspects": [],
-	"showInSummary": false
-},
-{
-	"id": "drauvenSkin_head.001",
-	"category": "drauvenSkin_head",
-	"impliedAspects": [],
-	"showInSummary": false
-},
-{
-	"id": "707",
-	"category": "immortal",
-	"impliedAspects": [],
-	"removeAspects": [
-		"drauven_young",
-		"drauven_earlyMiddleAge",
-		"drauven_middleAge",
-		"drauven_lateMiddleAge",
-		"drauven_oldAge",
-		"drauven_veryOldAge",
-		"drauven_extremeOldAge"
-	]
-},
-{
-	"id": "703",
-	"category": "drauven_lateMiddleAge",
-	"impliedAspects": [ "drauven_lateMiddleAge" ],
-	"removeAspects": [
-		"drauven_young",
-		"drauven_earlyMiddleAge",
-		"drauven_middleAge",
-		"young",
-		"earlyMiddleAge",
-		"middleAge",
-		"lateMiddleAge",
-		"oldAge",
-		"veryOldAge",
-		"extremeOldAge"
-	],
-	"showInSummary": false
-},
-{
-	"id": "702",
-	"category": "drauven_middleAge",
-	"impliedAspects": [ "drauven_middleAge" ],
-	"removeAspects": [
-		"drauven_young",
-		"drauven_earlyMiddleAge",
-		"young",
-		"earlyMiddleAge",
-		"middleAge",
-		"lateMiddleAge",
-		"oldAge",
-		"veryOldAge",
-		"extremeOldAge"
-	],
-	"showInSummary": false
-},
-{
-	"id": "708",
-	"category": "mortal",
-	"impliedAspects": [ "mortal" ],
-	"showInSummary": false
-},
-{
-	"id": "704",
-	"category": "drauven_oldAge",
-	"impliedAspects": [ "drauven_oldAge" ],
-	"removeAspects": [
-		"drauven_young",
-		"drauven_earlyMiddleAge",
-		"drauven_middleAge",
-		"drauven_lateMiddleAge",
-		"young",
-		"earlyMiddleAge",
-		"middleAge",
-		"lateMiddleAge",
-		"oldAge",
-		"veryOldAge",
-		"extremeOldAge"
-	],
-	"showInSummary": false
-},
-{
-	"id": "705",
-	"category": "drauven_veryOldAge",
-	"impliedAspects": [ "drauven_veryOldAge" ],
-	"removeAspects": [
-		"drauven_young",
-		"drauven_earlyMiddleAge",
-		"drauven_middleAge",
-		"drauven_lateMiddleAge",
-		"drauven_oldAge",
-		"young",
-		"earlyMiddleAge",
-		"middleAge",
-		"lateMiddleAge",
-		"oldAge",
-		"veryOldAge",
-		"extremeOldAge"
-	],
-	"showInSummary": false
-},
-{
-	"id": "700",
-	"category": "drauven_young",
-	"impliedAspects": [ "drauven_young" ],
-	"removeAspects": [
 		"young",
 		"earlyMiddleAge",
 		"middleAge",

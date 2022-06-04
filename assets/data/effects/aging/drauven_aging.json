@@ -1,0 +1,90 @@
+{
+  "id": "drauven_aging",
+  "info": { 
+    "dataVersion": 1, 
+    "sourceFile": "aging/drauven_aging",
+    "author": "Ironskink" 
+  },
+  "type": "ABILITIES_CHANGED",
+  "targets": [
+    {
+      "template": "SELF",
+      "aspectValues": [
+        { "id": "drauven_pc" },
+        { "id": "drauven_cannotAge", "forbidden": true },
+        { "id": "hookIntegrity_eternalUnrest", "forbidden": true }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "Aspects",
+      "addAspects": [
+        {
+          "id": "drauven_aging_armour",
+          "value": "max(self.AGE_IN_YEARS-20,0)/30 + 1.0",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_warding",
+          "value": "max(self.AGE_IN_YEARS-25,0)/30",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_speed",
+          "value": "min(max(30-self.AGE_IN_YEARS, 0), 20)/20*1.4 + min(max(self.AGE_IN_YEARS-40, 0),40)/40 * -1.5 + min(max(self.AGE_IN_YEARS-80,0), 40)/40*-0.7",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_speed_penalty",
+          "value": "-1*(min(max(30-self.AGE_IN_YEARS, 0), 20)/20*1.4 + min(max(self.AGE_IN_YEARS-40, 0),40)/40 * -1.5 + min(max(self.AGE_IN_YEARS-80,0), 40)/40*-0.7)",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_charisma",
+          "value": "min(max(self.AGE_IN_YEARS-20, 0),20)*0.5 - min(max(self.AGE_IN_YEARS-50, 0), 40)*0.5",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_charisma_penalty",
+          "value": "-1*(min(max(self.AGE_IN_YEARS-20, 0),20)*0.5 - min(max(self.AGE_IN_YEARS-50, 0), 40)*0.5)",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_tenacity",
+          "value": "min(max(self.AGE_IN_YEARS-40, 0),40)*0.7",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_dodge_penalty",
+          "value": "-1*(min(max(self.AGE_IN_YEARS-25, 0),55)/55 * -15 + min(max(self.AGE_IN_YEARS-80,0), 40)/40*-8)",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_health",
+          "value": "min(max(self.AGE_IN_YEARS-25, 0), 35)/35 * 5 + max(self.AGE_IN_YEARS-60,0)/60*3",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_perception_penalty",
+          "value": "-1*(min(max(self.AGE_IN_YEARS-60, 0),60)/60*-4)",
+          "merge": "replace"
+        },
+        {
+          "id": "drauven_aging_recovery",
+          "value": "min(self.AGE_IN_YEARS, 50)*0.5 - max(self.AGE_IN_YEARS-80,0)*0.5",
+          "merge": "replace"
+        }
+      ],
+      "removeAspects": [
+        "young",
+        "earlyMiddleAge",
+        "middleAge",
+        "lateMiddleAge",
+        "oldAge",
+        "veryOldAge",
+        "extremeOldAge"
+      ]
+    }
+  ]
+  }
