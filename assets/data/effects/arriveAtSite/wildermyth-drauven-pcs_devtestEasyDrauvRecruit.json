@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
-	"modId": "wildermyth-drauven-pcs",
+	"modId": "wildermyth-drauven-pcs-main",
 	"author": "Ironskink"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -27,7 +27,6 @@
 		"type": "HERO",
 		"scoreFunction": "drauven_pc",
 		"scoreThreshold": "1",
-		"aspects": null,
 		"notAlreadyMatchedAs": []
 	},
 	{
@@ -407,69 +406,30 @@
 		{
 			"createEntity": {
 				"query": { "baseTag": "human", "setClass": "warrior" },
-				"control": "none",
-				"additionalOutcome": {
-					"class": "DoAll",
-					"outcomes": [
-						{
-							"class": "AddHistory",
-							"addHistory": [
-								[ "drauvenBase" ],
-								[ "bornDrauven" ],
-								[ "drauvenCustomizationHead" ],
-								[ "drauvenCustomizationBody" ],
-								[ "drauvenCustomizationOther" ]
-							]
-						},
-						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
-					]
-				}
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" }
+				],
+				"control": "none"
 			}
 		},
 		{
 			"role": "npc2",
 			"createEntity": {
 				"query": { "baseTag": "human", "setClass": "hunter" },
-				"control": "none",
-				"additionalOutcome": {
-					"class": "DoAll",
-					"outcomes": [
-						{
-							"class": "AddHistory",
-							"addHistory": [
-								[ "drauvenBase" ],
-								[ "bornDrauven" ],
-								[ "drauvenCustomizationHead" ],
-								[ "drauvenCustomizationBody" ],
-								[ "drauvenCustomizationOther" ]
-							]
-						},
-						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
-					]
-				}
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" }
+				],
+				"control": "none"
 			}
 		},
 		{
 			"role": "npc3",
 			"createEntity": {
 				"query": { "baseTag": "human", "setClass": "mystic" },
-				"control": "none",
-				"additionalOutcome": {
-					"class": "DoAll",
-					"outcomes": [
-						{
-							"class": "AddHistory",
-							"addHistory": [
-								[ "drauvenBase" ],
-								[ "bornDrauven" ],
-								[ "drauvenCustomizationHead" ],
-								[ "drauvenCustomizationBody" ],
-								[ "drauvenCustomizationOther" ]
-							]
-						},
-						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
-					]
-				}
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" }
+				],
+				"control": "none"
 			}
 		}
 	]
