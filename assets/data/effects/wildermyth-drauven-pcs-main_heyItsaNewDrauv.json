@@ -1,0 +1,79 @@
+{
+"id": "wildermyth-drauven-pcs-main_heyItsaNewDrauv",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "wildermyth-drauven-pcs-main_heyItsaNewDrauv",
+	"modId": "wildermyth-drauven-pcs-main",
+	"author": "justEthaniguess"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterScore": 20,
+	"encounterWeight": "1"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" }
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs-main_heyItsaNewDrauv",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "Mission",
+		"goal": "liberate",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{ "role": "foes", "side": "enemy" }
+		]
+	},
+	{
+		"class": "ChangeControl",
+		"target": "npc",
+		"becomeAllyOf": "party",
+		"makeHero": true
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "nonFarmer" },
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" }
+				],
+				"control": "none"
+			}
+		}
+	]
+}
+}

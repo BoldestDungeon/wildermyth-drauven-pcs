@@ -1,0 +1,67 @@
+{
+"id": "drauven_pc_init",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven_pc_init",
+	"modId": "wildermyth-drauven-pcs-main",
+	"author": "justEthaniguess & Ironskink",
+	"STUB": "Initialize our Drauven characters"
+},
+"type": "ABILITIES_CHANGED",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "AddHistory",
+		"target": "self",
+		"addHistory": [
+			[ "drauvenBase" ],
+			[ "bornDrauven" ],
+			[ "drauvenCustomizationBody" ],
+			[ "drauvenCustomizationOther" ]
+		]
+	},
+	{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
+	{
+		"class": "Test",
+		"value": "self.warrior",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"target": "self",
+			"addHistory": [
+				[ "drauvenCustomizationHead_warrior" ]
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.hunter",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"target": "self",
+			"addHistory": [
+				[ "drauvenCustomizationHead_hunter" ]
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.mystic",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"target": "self",
+			"addHistory": [
+				[ "drauvenCustomizationHead_mystic" ]
+			]
+		}
+	},
+	{
+		"class": "Aspects",
+		"removeAspects": [ "drauven_pc_init" ]
+	}
+]
+}

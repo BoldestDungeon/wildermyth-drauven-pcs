@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "wilderness/theAbandoned",
-	"modId": "wildermyth-drauven-pcs",
+	"modId": "wildermyth-drauven-pcs-main",
 	"author": "Jeremy Bernstein"
 },
 "type": "ENCOUNTER_WILDERNESS_SCOUTING",
@@ -3590,23 +3590,19 @@
 					"setClass": "nonFarmer",
 					"exactAge": 8
 				},
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" }
+				],
 				"control": "none",
 				"additionalOutcome": {
 					"class": "DoAll",
 					"outcomes": [
 						{
 							"class": "AddHistory",
-							"target": "npc",
 							"addHistory": [
-								[ "drauvenCustomizationHead" ],
-								[ "drauvenBase" ],
-								[ "bornDrauven" ],
-								[ "drauvenCustomizationBody" ],
-								[ "drauvenCustomizationOther" ],
-								[ "abandonedDrauven" ]
+								["abandonedDrauven"]
 							]
-						},
-						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" }
+						}
 					]
 				},
 				"placeOnMap": false

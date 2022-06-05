@@ -1,139 +1,126 @@
 [
-{ "modId": "wildermyth-drauven-pcs", "id": "drauven_ageless", "lifespan": "all" },
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_ageless",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_armour",
+	"stats": { "ARMOR": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_block",
+	"stats": { "BLOCK": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_charisma",
+	"stats": { "CHARISMA": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_charisma_penalty",
+	"stats": { "CHARISMA": -1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_dodge",
+	"stats": { "DODGE": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_dodge_penalty",
+	"stats": { "DODGE": -1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_health",
+	"stats": { "HEALTH": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_perception",
+	"stats": { "PERCEPTION": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_perception_penalty",
+	"stats": { "PERCEPTION": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_recovery",
+	"stats": { "RECOVERY_RATE": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_speed",
+	"stats": { "SPEED": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_speed_penalty",
+	"stats": { "SPEED": -1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_tenacity",
+	"stats": { "TENACITY": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_aging_warding",
+	"stats": { "WARDING": 1 },
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
+},
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_cannotAge",
 	"lifespan": "all"
 },
-
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_armour",
-	"lifespan": "all",
-	"stats": {
-		"ARMOR": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_warding",
-	"lifespan": "all",
-	"stats": {
-		"WARDING": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_speed",
-	"lifespan": "all",
-	"stats": {
-		"SPEED": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_speed_penalty",
-	"lifespan": "all",
-	"stats": {
-		"SPEED": -1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_charisma",
-	"lifespan": "all",
-	"stats": {
-		"CHARISMA": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_charisma_penalty",
-	"lifespan": "all",
-	"stats": {
-		"CHARISMA": -1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_tenacity",
-	"lifespan": "all",
-	"stats": {
-		"TENACITY": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_block",
-	"lifespan": "all",
-	"stats": {
-		"BLOCK": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_dodge",
-	"lifespan": "all",
-	"stats": {
-		"DODGE": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_dodge_penalty",
-	"lifespan": "all",
-	"stats": {
-		"DODGE": -1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_health",
-	"lifespan": "all",
-	"stats": {
-		"HEALTH": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_perception",
-	"lifespan": "all",
-	"stats": {
-		"PERCEPTION": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_perception_penalty",
-	"lifespan": "all",
-	"stats": {
-		"PERCEPTION": 1.0
-	},
-	"importance": -1
-},
-{ 
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_aging_recovery",
-	"lifespan": "all",
-	"stats": {
-		"RECOVERY_RATE": 1.0
-	},
-	"importance": -1
-},
-
-
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "random_spawn_wound",
