@@ -32,12 +32,12 @@
         },
         {
           "id": "drauven_aging_speed",
-          "value": "min(max(30-self.AGE_IN_YEARS, 0), 20)/20*1.4 + min(max(self.AGE_IN_YEARS-40, 0),40)/40 * -1.5 + min(max(self.AGE_IN_YEARS-80,0), 40)/40*-0.7",
+          "value": "min(max(30-self.AGE_IN_YEARS, 0), 20)/20*1.4 + min(max(self.AGE_IN_YEARS-35, 0),45)/45 * -1.8 + min(max(self.AGE_IN_YEARS-80,0), 40)/40*-1.2",
           "merge": "replace"
         },
         {
           "id": "drauven_aging_speed_penalty",
-          "value": "-1*(min(max(30-self.AGE_IN_YEARS, 0), 20)/20*1.4 + min(max(self.AGE_IN_YEARS-40, 0),40)/40 * -1.5 + min(max(self.AGE_IN_YEARS-80,0), 40)/40*-0.7)",
+          "value": "-1*(min(max(30-self.AGE_IN_YEARS, 0), 20)/20*1.4 + min(max(self.AGE_IN_YEARS-35, 0),45)/45 * -1.8 + min(max(self.AGE_IN_YEARS-80,0), 40)/40*-1.2)",
           "merge": "replace"
         },
         {
@@ -57,7 +57,7 @@
         },
         {
           "id": "drauven_aging_dodge_penalty",
-          "value": "-1*(min(max(self.AGE_IN_YEARS-25, 0),55)/55 * -15 + min(max(self.AGE_IN_YEARS-80,0), 40)/40*-8)",
+          "value": "-1*(min(max(self.AGE_IN_YEARS-25, 0),55)/55 * -15 + min(max(self.AGE_IN_YEARS-80,0), 40)/40*-20)",
           "merge": "replace"
         },
         {
