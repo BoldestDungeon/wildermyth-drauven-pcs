@@ -70,9 +70,11 @@
 							"form": "frame-dead",
 							"facing": "left",
 							"equipment": { "mode": "leaveEquipment" },
-							"anchor": { "x": 0.604, "y": 0.563 },
-							"size": 0.4967,
-							"nameTag": "none"
+							"anchor": { "x": 0.597, "y": 0.789 },
+							"size": 0.2168,
+							"nameTag": "none",
+							"head": { "rotate": 13.433 },
+							"foot": { "rotate": -173.272 }
 						},
 						{
 							"role": "healer",
