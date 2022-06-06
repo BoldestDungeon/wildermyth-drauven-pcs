@@ -15,6 +15,7 @@
 			"id": "drauven_pc_fireballPreparedRegion",
 			"physicallyPresent": true,
 			"destinationCostDangerous": 1,
+			"destinationCostDangerousOtherFaction": 1,
 			"feedbackType": "DRAUVEN_FIREBALL_PREPARED",
 			"tileFilter": "floorOrScenery",
 			"spatialRelationship": { "otherAspect": "nextTurnWarning|drauvenDeck_mystic_fireshot_upgrade" }

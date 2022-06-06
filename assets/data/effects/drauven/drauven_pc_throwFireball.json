@@ -52,7 +52,7 @@
 		"choose": "ANY",
 		"missionFeedback": { "hoverFeedback": "FRIENDLY_EFFECT_HOVER" },
 		"relativeTo": "focus",
-		"range": "2.6",
+		"range": "1.6+(self.raw.POTENCY/3)",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
 	{
@@ -66,8 +66,7 @@
 			"suggestionFeedback": "ATTACK_SUGGESTION",
 			"hoverFeedback": "ATTACK_HOVER"
 		},
-		"aspects": [ "alive", "ENEMY" ],
-		"range": "2.6+(self.POTENCY/3)",
+		"range": "1.6+(self.raw.POTENCY/3)",
 		"lineOfSight": "TERRAIN_ONLY",
 		"relativeToLocation": "focus",
 		"rangeIgnoreFootprint": true
@@ -86,8 +85,8 @@
 		"rolesArePresent": [ "hook" ],
 		"then": {
 			"class": "AttackRoll",
-			"intermediateRole": "targetTile",
-			"attackAnimationType": "ranged",
+			"intermediateRole": "focus",
+			"attackAnimationType": "magic",
 			"showAbilityName": "ifEnemy",
 			"timingOverride": {},
 			"particles": [
@@ -124,7 +123,7 @@
 			},
 			"onHit": {
 				"class": "Damage",
-				"amount": "((4+1d4)+self.SPELL_DAMAGE)+self.POTENCY",
+				"amount": "((2+1d4)+self.SPELL_DAMAGE)",
 				"type": "MAGIC"
 			}
 		},

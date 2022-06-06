@@ -13,7 +13,7 @@
     "icon": "ignite",
     "priority": "1",
     "extraUI": { 
-      "overrideDamageShown": "((4+1d4)+self.SPELL_DAMAGE)+self.POTENCY", 
+      "overrideDamageShown": "((2+1d4)+self.SPELL_DAMAGE)", 
       "overrideDamageType": "MAGIC" },
     "showDescriptionInTooltip": true
   },
@@ -30,8 +30,8 @@
     {
       "template": "TILE",
       "missionFeedback": { "suggestionFeedback": "ATTACK_RANGE" },
-      "aiHints": { "scoreNearbyFoe": "100", "foeRange": "2.6+(self.POTENCY/3)" },
-      "range": "8+self.BONUS_RANGE",
+      "aiHints": { "scoreNearbyFoe": "100", "foeRange": "1.6+(self.raw.POTENCY/3)" },
+      "range": "4.6+self.BONUS_RANGE+(self.raw.POTENCY/3)",
       "lineOfSight": "TERRAIN_ONLY",
       "tileFilter": "floor"
     },
@@ -41,14 +41,13 @@
       "choose": "ANY",
       "missionFeedback": { "hoverFeedback": "ATTACK_SUGGESTION" },
       "relativeTo": "focus",
-      "range": "2.6+(self.POTENCY/3)",
+      "range": "1.6+(self.raw.POTENCY/3)",
       "lineOfSight": "TERRAIN_ONLY",
       "tileFilter": "floor"
     },
     {
-      "template": "ADJACENT_ENEMY",
-      "STUB": "So AI knows where to aim",
-      "choose": "ALL",
+      "template": "ADJACENT_UNIT",
+      "choose": "ANY",
       "missionFeedback": {
         "orientTo": "self",
         "suggestionScript": "figures.attackSuggestion",
@@ -57,8 +56,7 @@
         "suggestionFeedback": "ATTACK_SUGGESTION",
         "hoverFeedback": "ATTACK_HOVER"
       },
-      "aspects": [ "HOSTILE_TARGET", "alive" ],
-      "range": "2.6+(self.POTENCY/3)",
+      "range": "1.6+(self.raw.POTENCY/3)",
       "lineOfSight": "TERRAIN_ONLY",
       "relativeToLocation": "focus",
       "rangeIgnoreFootprint": true
