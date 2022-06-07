@@ -69,7 +69,7 @@
 			"createEntity": {
 				"query": { "baseTag": "human", "setClass": "nonFarmer" },
 				"addAspects": [
-					{ "id": "drauven_pc_init", "value": "1" }
+					{ "id": "drauven_pc_init_asp", "value": "1" }
 				],
 				"control": "none"
 			}
