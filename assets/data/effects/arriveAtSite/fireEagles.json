@@ -1,0 +1,2243 @@
+{
+"id": "encounter_heroesArriveAtSite_fireEagles",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/fireEagles",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ursula Vernon"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Silly and Cute"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"template": "INJECTED_SITE",
+		"overlandTileBiomes": [ "forestDeciduous", "forestConiferous", "hills", "mountains" ]
+	},
+	{ "template": "INJECTED_PARTY" },
+	{
+		"template": "INJECTED_THREAT",
+		"scoreFunction": "drauven+cultist",
+		"scoreThreshold": "1"
+	},
+	{
+		"role": "snark",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(snark,greedy,goofball)",
+		"scoreThreshold": "60",
+		"themes": { "eligibleForTheme": "petFireChicken", "eligibleForPiece": "fireChicken" }
+	},
+	{
+		"role": "bookish",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "BOOKISH",
+		"notAlreadyMatchedAs": [ "snark" ]
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEADER",
+		"notAlreadyMatchedAs": [ "snark", "bookish" ]
+	},
+	{
+		"role": "romantic",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "ROMANTIC",
+		"notAlreadyMatchedAs": [ "snark", "bookish", "leader" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"anchor": { "x": 1.036, "y": 0.485 },
+							"size": 0.626,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"anchor": { "x": 0.118, "y": 0.552 },
+							"size": 0.469,
+							"head": { "rotate": 3.978 },
+							"foot": { "rotate": -3.978 }
+						},
+						{
+							"role": "leader",
+							"anchor": { "x": 0.36, "y": 0.516 },
+							"size": 0.39,
+							"nameTag": "none",
+							"head": { "rotate": 9.917 },
+							"foot": { "rotate": -6.953 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"anchor": { "x": 0.002, "y": 0.485 },
+							"size": 0.729
+						},
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.552, "y": 0.56 },
+							"size": 0.727,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -4.013, "scaleY": -1 },
+							"foot": { "rotate": -3.978 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_002~1_snark",
+							"pointerOwner": "snark"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"anchor": { "x": 0.174, "y": 0.493 },
+							"size": 0.729,
+							"head": { "rotate": -25.882, "scaleY": -1 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-angry",
+							"anchor": { "x": 0.55, "y": 0.584 },
+							"size": 0.727,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 19.893, "scaleY": 1 },
+							"foot": { "rotate": -3.978 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_003~1_snark",
+							"pointerOwner": "snark"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.468, "y": 0.553 },
+							"size": 0.626,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"anchor": { "x": 0.133, "y": 0.552 },
+							"size": 0.601,
+							"head": { "rotate": 3.978, "scaleY": 1 },
+							"foot": { "rotate": -3.978 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-talk",
+							"anchor": { "x": 0.787, "y": 0.565 },
+							"size": 0.597,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -13.273, "scaleY": -1 },
+							"foot": { "rotate": -6.953 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.617, "y": 0.596 },
+							"size": 0.473,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.899, "y": 0.841 },
+							"size": 0.398,
+							"foot": { "rotate": -138.423 },
+							"colorFilter": { "filterName": "sepia" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_004~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.249,
+							"padYFraction": 0.175,
+							"widthFraction": 0.16455306,
+							"pointerAdjust": { "dX": -27.999939, "dY": 0, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_004~2_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.033,
+							"padYFraction": 0.026,
+							"widthFraction": 0.27793518,
+							"pointerAdjust": {
+								"rotate": -1.1007255,
+								"dX": 32.999786,
+								"dY": 3.9999542,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_004~3_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.845,
+							"padYFraction": 0.647,
+							"widthFraction": 0.1242727,
+							"pointerAdjust": { "rotate": 180, "dX": 101, "dY": 59.99998, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_004~4_action",
+							"style": "action",
+							"padXFraction": 0.613,
+							"padYFraction": 0.026
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.343, "y": 0.493 },
+							"size": 0.325,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.118, "y": 0.592 },
+							"size": 0.269,
+							"nameTag": "none",
+							"head": { "rotate": 3.978, "scaleY": 1 },
+							"foot": { "rotate": -3.978 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.741, "y": 0.53 },
+							"size": 0.444,
+							"nameTag": "none",
+							"head": { "rotate": 1.839, "scaleY": 1 },
+							"foot": { "rotate": -4.225 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-angry",
+							"anchor": { "x": 0.534, "y": 0.571 },
+							"size": 0.288,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.525, "y": 0.146 },
+							"size": 0.457
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.992, "y": 0.302 },
+							"size": 0.597,
+							"color": { "r": "1", "g": "0.8", "b": "0.4", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeSwirls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.705, "y": 0.516 },
+							"size": 0.529,
+							"color": { "r": "1", "g": "0.5", "b": "0.2", "a": "0.6" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_005~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.192,
+							"padYFraction": 0.135,
+							"widthFraction": 0.19397086,
+							"pointerAdjust": { "dX": 10, "dY": 1, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_005~2_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.033,
+							"padYFraction": 0.026,
+							"widthFraction": 0.27793518,
+							"pointerAdjust": {
+								"rotate": -1.1007255,
+								"dX": 32.999786,
+								"dY": 3.9999542,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_005~3_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.845,
+							"padYFraction": 0.647,
+							"widthFraction": 0.1242727,
+							"pointerAdjust": { "rotate": 180, "dX": 101, "dY": 59.99998, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_005~4_action",
+							"style": "action",
+							"padXFraction": 0.6,
+							"padYFraction": 0.07
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.513, "y": 0.469 },
+							"size": 0.803
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_006~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.088,
+							"padYFraction": 0.098,
+							"widthFraction": 0.4671686,
+							"pointerAdjust": { "rotate": -3.5763886, "dX": 10, "dY": 1, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestTrunksSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-scared",
+							"anchor": { "x": 0.171, "y": 0.618 },
+							"size": 0.294
+						},
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.322, "y": 0.613 },
+							"size": 0.278,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.978, "scaleY": 1 },
+							"foot": { "rotate": -3.978 }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.891, "y": 0.416 },
+							"size": 0.395,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.355, "y": 0.183 },
+							"size": 0.413,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.7", "b": "0.5", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.694, "y": 0.271 },
+							"size": 0.361,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.75" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.702, "y": 0.355 },
+							"size": 0.577,
+							"color": { "r": "1", "g": "0.8", "b": "0.5", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeSwirls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.689, "y": 0.48 },
+							"size": 0.612,
+							"color": { "r": "1", "g": "0.65", "b": "0.3", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_007~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.031,
+							"padYFraction": 0.053,
+							"widthFraction": 0.26275846,
+							"pointerAdjust": { "dX": -11.000244, "dY": 2.9999847, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_007~2_snark",
+							"pointerOwner": "snark",
+							"padXFraction": 0.38,
+							"padYFraction": 0.194,
+							"widthFraction": 0.18245569,
+							"pointerAdjust": { "rotate": -1.1007255, "dX": 17.999786, "dY": -3.0000153 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_007~3_speech",
+							"padXFraction": 0.845,
+							"padYFraction": 0.647,
+							"widthFraction": 0.1242727,
+							"pointerAdjust": { "rotate": 180, "dX": 101, "dY": 59.99998, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestTrunksSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-scared",
+							"anchor": { "x": 0.257, "y": 0.503 },
+							"size": 0.348,
+							"nameTag": "none",
+							"head": { "rotate": -14.645 },
+							"foot": { "rotate": -8.603 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.47, "y": 0.541 },
+							"size": 0.332,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"head": { "rotate": -12.234, "scaleY": 1 },
+							"foot": { "rotate": -3.978 },
+							"colorFilter": { "filterName": "selected" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.517, "y": 0.164 },
+							"size": 0.237,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.129, "y": 0.183 },
+							"size": 0.413,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.7", "b": "0.5", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.694, "y": 0.271 },
+							"size": 0.264,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.671, "y": 0.106 },
+							"size": 0.736,
+							"color": { "r": "1", "g": "0.8", "b": "0.5", "a": "0.6" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-rage",
+							"facing": "left",
+							"anchor": { "x": 0.942, "y": 0.557 },
+							"size": 0.576,
+							"drawDepth": -8,
+							"nameTag": "none",
+							"head": { "rotate": 0.373 },
+							"foot": { "rotate": -8.733 },
+							"color": { "r": "0.7", "g": "0.6", "b": "0.5", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.575, "y": 0.468 },
+							"size": 0.215,
+							"drawDepth": 4,
+							"foot": { "rotate": -137.291 }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-scared",
+							"facing": "left",
+							"anchor": { "x": 0.742, "y": 0.572 },
+							"size": 0.306,
+							"nameTag": "none",
+							"head": { "rotate": -12.671 }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.179, "y": 0.536 },
+							"size": 0.263,
+							"foot": { "rotate": -46.591 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_008~1_bookish",
+							"style": "narration",
+							"pointerOwner": "bookish"
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_008~2_speech",
+							"padXFraction": 0.845,
+							"padYFraction": 0.647,
+							"widthFraction": 0.1242727,
+							"pointerAdjust": { "rotate": 180, "dX": 101, "dY": 59.99998, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.302, "y": 0.546 },
+							"size": 0.422,
+							"nameTag": "none",
+							"head": { "rotate": -19.774, "scaleY": -1 },
+							"foot": { "rotate": 0.942 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-joke",
+							"anchor": { "x": 0.528, "y": 0.565 },
+							"size": 0.332,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"head": { "rotate": 0.161, "scaleY": 1 },
+							"foot": { "rotate": -3.978 },
+							"colorFilter": { "filterName": "selected" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.287, "y": 0.128 },
+							"size": 0.237,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.516, "y": 0.042 },
+							"size": 0.622,
+							"nameTag": "none",
+							"color": { "r": "0.8", "g": "0.7", "b": "0.5", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"facing": "left",
+							"anchor": { "x": 0.826, "y": 0.556 },
+							"size": 0.519,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"head": { "rotate": -2.071 }
+						},
+						{
+							"role": "romantic",
+							"anchor": { "x": 0.705, "y": 0.524 },
+							"size": 0.322,
+							"nameTag": null,
+							"head": { "rotate": -12.145, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.448, "y": 0.424 },
+							"size": 0.347,
+							"drawDepth": -7
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.138, "y": 0.492 },
+							"size": 0.62
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.068, "y": 0.657 },
+							"size": 0.295,
+							"drawDepth": -7,
+							"foot": { "rotate": 4.611 }
+						},
+						{
+							"assetSpec": "comic:action_popR.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.17, "y": 0.749 },
+							"size": 0.412,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 17.086 }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.639, "y": 0.685 },
+							"size": 0.157
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_009~1_action",
+							"style": "action",
+							"padXFraction": 0.06,
+							"padYFraction": 0.184,
+							"widthFraction": 0.12573898,
+							"pointerAdjust": { "rotate": 180, "dX": 101, "dY": 59.99998, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.313, "y": 0.54 },
+							"size": 0.835
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.607, "y": 0.352 },
+							"size": 0.741,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.32, "y": 0.099 },
+							"size": 1.187,
+							"drawDepth": -4,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_010~1_npc",
+							"pointerOwner": "npc",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.603, "y": 0.536 },
+							"size": 0.921
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.362, "y": 0.497 },
+							"size": 0.741,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.12, "y": 0.091 },
+							"size": 0.418,
+							"drawDepth": -4,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_011~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.224, "y": 0.612 },
+							"size": 0.47
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.214, "y": -0.021 },
+							"size": 0.741,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.14, "y": 0.063 },
+							"size": 0.418,
+							"drawDepth": -4,
+							"nameTag": "none"
+						},
+						{
+							"role": "bookish",
+							"facing": "left",
+							"anchor": { "x": 0.836, "y": 0.584 },
+							"size": 0.471,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_012~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.757, "y": 0.536 },
+							"size": 0.692
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.214, "y": -0.021 },
+							"size": 0.741,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.04, "y": -0.315 },
+							"size": 0.418,
+							"drawDepth": -4,
+							"nameTag": "none"
+						},
+						{
+							"role": "bookish",
+							"form": "frame-grim",
+							"facing": "left",
+							"anchor": { "x": 0.197, "y": 0.52 },
+							"size": 0.471,
+							"nameTag": "none",
+							"head": { "rotate": -13.691, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_013~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.07,
+							"padYFraction": 0.057,
+							"widthFraction": 0.6199813,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"facing": "left",
+							"anchor": { "x": 0.757, "y": 0.536 },
+							"size": 0.692
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.631, "y": 0.039 },
+							"size": 0.741,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.09, "y": -0.045 },
+							"size": 0.418,
+							"drawDepth": -4,
+							"nameTag": "none"
+						},
+						{
+							"role": "bookish",
+							"form": "frame-grim",
+							"facing": "left",
+							"anchor": { "x": 0.2, "y": 0.548 },
+							"size": 0.471,
+							"nameTag": "none",
+							"head": { "rotate": -13.691, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_014~1_npc",
+							"pointerOwner": "npc"
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_014~2_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.07,
+							"padYFraction": 0.057,
+							"widthFraction": 0.6199813,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.447, "y": 0.5 },
+							"size": 0.754,
+							"head": { "rotate": -15.875, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_015~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"facing": "left",
+							"anchor": { "x": 0.36, "y": 0.52 },
+							"size": 0.443,
+							"head": { "rotate": -0.749, "scaleY": -1 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.08, "y": 0.512 },
+							"size": 0.417,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "snark",
+							"form": "frame-angry",
+							"facing": "left",
+							"anchor": { "x": 0.847, "y": 0.444 },
+							"size": 0.633,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"head": { "rotate": 3.703, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_016~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.152,
+							"padYFraction": 0.172,
+							"widthFraction": 0.34285042
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_016~2_bookish",
+							"pointerOwner": "bookish",
+							"widthFraction": 0.53093135,
+							"pointerAdjust": {
+								"rotate": 32.19572,
+								"dX": -61.000122,
+								"dY": 7.0000153,
+								"scaleX": 0.74698615,
+								"scaleY": 0.74698615
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_016~3_snark",
+							"pointerOwner": "snark",
+							"padXFraction": 0.61,
+							"padYFraction": 0.181,
+							"widthFraction": 0.35842258,
+							"pointerAdjust": { "dX": -23, "dY": -2 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"anchor": { "x": 0.311, "y": 0.54 },
+							"size": 0.754,
+							"head": { "rotate": 3.78, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_017~1_npc",
+							"pointerOwner": "npc"
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_017~2_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.573,
+							"padYFraction": 0.423,
+							"widthFraction": 0.38093805,
+							"pointerAdjust": {
+								"rotate": 9.21098,
+								"dX": 188.99988,
+								"dY": -2.9999695,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_abstractDkGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"anchor": { "x": 0.494, "y": 0.508 },
+							"size": 0.754,
+							"head": { "rotate": 20.723, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "scenery:plantSmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.219, "y": 0.372 },
+							"size": 0.673,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:plantSmall2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.841, "y": 0.484 },
+							"size": 0.497,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:tree2_512x1024.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.359, "y": -0.404 },
+							"size": 0.585,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.485, "y": 0.464 },
+							"size": 0.426,
+							"drawDepth": 2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_018~1_npc",
+							"pointerOwner": "npc"
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_018~2_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.573,
+							"padYFraction": 0.423,
+							"widthFraction": 0.3564205,
+							"pointerAdjust": {
+								"rotate": 9.21098,
+								"dX": 188.99988,
+								"dY": -2.9999695,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.476, "y": 0.472 },
+							"size": 1.006,
+							"head": { "rotate": -0.749, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_019~1_snark",
+							"pointerOwner": "snark"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"anchor": { "x": 0.214, "y": 0.56 },
+							"size": 0.443,
+							"head": { "rotate": -0.749, "scaleY": 1 }
+						},
+						{
+							"role": "snark",
+							"facing": "left",
+							"anchor": { "x": 0.789, "y": 0.528 },
+							"size": 0.417,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_020~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.163,
+							"padYFraction": 0.086,
+							"widthFraction": 0.2816674
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_020~2_snark",
+							"pointerOwner": "snark",
+							"padXFraction": 0.581,
+							"padYFraction": 0.185,
+							"widthFraction": 0.24907593,
+							"pointerAdjust": {
+								"rotate": -6.8499503,
+								"dX": -13.000229,
+								"dY": -6.9999847,
+								"scaleX": 0.8657262,
+								"scaleY": 0.8657262
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"anchor": { "x": 0.211, "y": 0.6 },
+							"size": 0.503
+						},
+						{
+							"role": "bookish",
+							"facing": "left",
+							"anchor": { "x": 0.64, "y": 0.617 },
+							"size": 0.47,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "snark",
+							"facing": "left",
+							"anchor": { "x": 0.811, "y": 0.524 },
+							"size": 0.514,
+							"drawDepth": -7,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"facing": "left",
+							"anchor": { "x": 0.491, "y": 0.548 },
+							"size": 0.461,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"facing": "left",
+							"anchor": { "x": 0.935, "y": 0.532 },
+							"size": 0.423,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_021~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.476, "y": 0.472 },
+							"size": 1.006,
+							"head": { "rotate": -0.749, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_022~1_snark",
+							"pointerOwner": "snark"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"anchor": { "x": 0.169, "y": 0.552 },
+							"size": 0.407
+						},
+						{
+							"role": "bookish",
+							"facing": "left",
+							"anchor": { "x": 0.636, "y": 0.553 },
+							"size": 0.355,
+							"nameTag": "none"
+						},
+						{
+							"role": "snark",
+							"facing": "left",
+							"anchor": { "x": 0.811, "y": 0.524 },
+							"size": 0.39,
+							"drawDepth": -7,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "leader",
+							"facing": "left",
+							"anchor": { "x": 0.491, "y": 0.512 },
+							"size": 0.402,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"facing": "left",
+							"anchor": { "x": 0.975, "y": 0.524 },
+							"size": 0.361,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_023~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.476, "y": 0.472 },
+							"size": 1.006,
+							"head": { "rotate": -0.749, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_024~1_snark",
+							"pointerOwner": "snark"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-scared",
+							"anchor": { "x": 0.213, "y": 0.555 },
+							"size": 0.442,
+							"head": { "rotate": 11.208 },
+							"foot": { "rotate": -11.581 }
+						},
+						{
+							"role": "bookish",
+							"facing": "left",
+							"anchor": { "x": 0.636, "y": 0.553 },
+							"size": 0.355,
+							"nameTag": "none",
+							"head": { "rotate": -9.782, "scaleY": -1 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.794, "y": 0.548 },
+							"size": 0.39,
+							"drawDepth": -7,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": 7.245 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-angry",
+							"facing": "left",
+							"anchor": { "x": 0.491, "y": 0.512 },
+							"size": 0.402,
+							"nameTag": "none",
+							"head": { "rotate": -4.748, "scaleY": -1 }
+						},
+						{
+							"role": "romantic",
+							"facing": "left",
+							"anchor": { "x": 0.975, "y": 0.524 },
+							"size": 0.361,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicEmotion_sweat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.241, "y": 0.725 },
+							"size": 0.496
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_025~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"anchor": { "x": 0.121, "y": 0.42 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_bushSwirly2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.13, "y": -0.288 },
+							"size": 0.409,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": -8.963 }
+						},
+						{
+							"assetSpec": "scenery:plantSmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.412, "y": 0.207 },
+							"size": 0.59,
+							"nameTag": "none",
+							"color": { "r": "0.8", "g": "0.8", "b": "0.7", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:plantSmall1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.965, "y": 0.154 },
+							"size": 0.337,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_boar.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.634, "y": 0.931 },
+							"size": 0.255,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_026~1_npc",
+							"pointerOwner": "npc",
+							"pointerAdjust": { "dX": 2, "dY": -4.0000305 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.222, "y": 0.428 },
+							"size": 0.535,
+							"head": { "rotate": -0.749, "scaleY": 1 }
+						},
+						{
+							"role": "romantic",
+							"facing": "left",
+							"anchor": { "x": 0.798, "y": 0.516 },
+							"size": 0.523,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_027~1_romantic",
+							"pointerOwner": "romantic"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-joke",
+							"facing": "left",
+							"anchor": { "x": 0.244, "y": 0.432 },
+							"size": 0.556,
+							"head": { "rotate": -14.417, "scaleY": -1 }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-grim",
+							"facing": "left",
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"size": 0.57,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_028~1_snark",
+							"pointerOwner": "snark",
+							"padXFraction": 0.047,
+							"padYFraction": 0.132,
+							"widthFraction": 0.64167076,
+							"pointerAdjust": { "dX": -38.99994, "dY": 7.0000153, "scaleX": 0.74491477, "scaleY": 0.74491477 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_028~2_romantic",
+							"pointerOwner": "romantic"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestGreen.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:plantSmall1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.733, "y": 0.34 },
+							"size": 0.903,
+							"drawDepth": 7
+						},
+						{
+							"assetSpec": "scenery:plantSmall1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.267, "y": 0.143 },
+							"size": 0.409,
+							"drawDepth": -8,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": -8.963 }
+						},
+						{
+							"assetSpec": "scenery:plantSmall3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.7, "y": 0.159 },
+							"size": 0.414,
+							"drawDepth": -7,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:plantSmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.57, "y": 0.279 },
+							"size": 0.751,
+							"drawDepth": 4,
+							"nameTag": "none",
+							"color": { "r": "0.6", "g": "0.6", "b": "0.6", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bush_512x512.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.258, "y": 0.074 },
+							"size": 0.657,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_rabbitCrouch.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.55, "y": 0.633 },
+							"size": 0.393,
+							"drawDepth": -7
+						},
+						{
+							"assetSpec": "figure:misc/animal_rabbitStand.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.366, "y": 0.628 },
+							"size": 0.309,
+							"drawDepth": -6
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_029~1_speech",
+							"fallbackSlotOwner": 0,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-scared",
+							"anchor": { "x": 0.455, "y": 0.509 },
+							"size": 0.824
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_030~1_npc",
+							"pointerOwner": "npc",
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-grim",
+							"facing": "left",
+							"anchor": { "x": 0.522, "y": 0.54 },
+							"size": 0.804
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_031~1_bookish",
+							"pointerOwner": "bookish",
+							"pointerAdjust": { "rotate": -18.434946 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.807, "y": 0.444 },
+							"size": 0.556,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 1.785, "scaleY": 1 }
+						},
+						{
+							"role": "romantic",
+							"facing": "left",
+							"anchor": { "x": 0.32, "y": 0.516 },
+							"size": 0.57
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_032~1_snark",
+							"pointerOwner": "snark",
+							"padXFraction": 0.282,
+							"padYFraction": 0.155,
+							"widthFraction": 0.6614762,
+							"pointerAdjust": {
+								"dX": -10.999939,
+								"dY": 0.99998474,
+								"scaleX": 0.74491477,
+								"scaleY": 0.74491477
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_032~2_romantic",
+							"pointerOwner": "romantic",
+							"widthFraction": 0.5195478,
+							"pointerAdjust": {
+								"rotate": -12.875001,
+								"dX": 5,
+								"dY": 11.0000305,
+								"scaleX": 0.7968212,
+								"scaleY": 0.7968212,
+								"pointerOrientV": "up"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_032~3_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.07,
+							"padYFraction": 0.721,
+							"widthFraction": 0.98821396,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -12.875,
+								"dX": 2.1724124,
+								"dY": 88.28739,
+								"scaleX": 0.7968212,
+								"scaleY": 0.7968212,
+								"pointerOrientH": "onRight",
+								"pointerOrientV": "down"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"facing": "left",
+							"anchor": { "x": 0.742, "y": 0.569 },
+							"size": 0.384,
+							"head": { "rotate": -24.464 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.665, "y": 0.19 },
+							"size": 0.408,
+							"drawDepth": 5,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.5", "g": "0.5", "b": "0.7", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.344, "y": 0.34 },
+							"size": 0.294,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_033~1_npc",
+							"pointerOwner": "npc",
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-scared",
+							"facing": "left",
+							"anchor": { "x": 0.54, "y": 0.517 },
+							"size": 0.824,
+							"head": { "rotate": -9.936, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_034~1_npc",
+							"pointerOwner": "npc",
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-scared",
+							"anchor": { "x": 0.211, "y": 0.6 },
+							"size": 0.503
+						},
+						{
+							"role": "bookish",
+							"form": "frame-grim",
+							"facing": "left",
+							"anchor": { "x": 0.64, "y": 0.617 },
+							"size": 0.47,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.811, "y": 0.524 },
+							"size": 0.514,
+							"drawDepth": -7,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.491, "y": 0.548 },
+							"size": 0.461,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"facing": "left",
+							"anchor": { "x": 0.964, "y": 0.588 },
+							"size": 0.423,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_035~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{ "role": "leader", "form": "frame-talk", "facing": "left" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/fireEagles",
+									"textKey": "~02~choice_one~panel_001~1_leader",
+									"pointerOwner": "leader"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{ "role": "snark", "form": "frame-skeptical", "facing": "left" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/fireEagles",
+									"textKey": "~03~choice_two~panel_001~1_snark",
+									"pointerOwner": "snark"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "leader",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "npc", "form": "frame-joy" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/fireEagles",
+										"textKey": "~04~player_chose_one~panel_001~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"role": "leader",
+										"anchor": { "x": 0.257, "y": 0.544 },
+										"size": 0.71
+									},
+									{
+										"role": "snark",
+										"facing": "left",
+										"anchor": { "x": 0.88, "y": 0.596 },
+										"size": 0.712,
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "bookish",
+										"facing": "left",
+										"anchor": { "x": 0.62, "y": 0.572 },
+										"size": 0.571,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/fireEagles",
+										"textKey": "~04~player_chose_one~panel_002~1_leader",
+										"pointerOwner": "leader"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_forestTrunksGreen.jpg",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-talk",
+										"focus": "foot",
+										"anchor": { "x": 0.174, "y": 0.154 },
+										"size": 0.265
+									},
+									{
+										"role": "bookish",
+										"form": "frame-grim",
+										"anchor": { "x": 0.64, "y": 0.617 },
+										"size": 0.47,
+										"drawDepth": 4,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -7.4, "scaleY": -1 }
+									},
+									{
+										"role": "snark",
+										"form": "frame-grim",
+										"anchor": { "x": 0.811, "y": 0.524 },
+										"size": 0.817,
+										"drawDepth": -7,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-angry",
+										"anchor": { "x": 0.483, "y": 0.544 },
+										"size": 0.523,
+										"nameTag": "none"
+									},
+									{
+										"role": "romantic",
+										"anchor": { "x": 0.964, "y": 0.588 },
+										"size": 0.524,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRockSlope.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.359, "y": 0.13 },
+										"size": 0.329
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/fireEagles",
+										"textKey": "~04~player_chose_one~panel_003~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "site",
+					"addAspects": [
+						{ "id": "fireEagles_victory_host", "value": "1" }
+					]
+				},
+				{
+					"class": "AllowFollowup",
+					"id": "encounter_heroesArriveAtSite_fireEagles.0.playerChose_one"
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "snark",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "npc" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/fireEagles",
+										"textKey": "~05~player_chose_two~panel_001~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourth",
+								"actorSlots": [
+									{
+										"role": "snark",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"anchor": { "x": 0.547, "y": 0.528 },
+										"size": 1.35,
+										"head": { "rotate": 1.257 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/fireEagles",
+										"textKey": "~05~player_chose_two~panel_002~1_snark",
+										"pointerOwner": "snark"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "snark",
+										"facing": "left",
+										"anchor": { "x": 0.647, "y": 0.516 },
+										"size": 0.551,
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "leader",
+										"form": "frame-talk",
+										"facing": "left",
+										"anchor": { "x": 0.218, "y": 0.532 },
+										"size": 0.558,
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/fireEagles",
+										"textKey": "~05~player_chose_two~panel_003~1_leader",
+										"pointerOwner": "leader"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_forestTrunksGreen.jpg",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-talk",
+										"focus": "foot",
+										"anchor": { "x": 0.174, "y": 0.154 },
+										"size": 0.265
+									},
+									{
+										"role": "bookish",
+										"form": "frame-grim",
+										"anchor": { "x": 0.64, "y": 0.617 },
+										"size": 0.47,
+										"drawDepth": 4,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -7.4, "scaleY": -1 }
+									},
+									{
+										"role": "snark",
+										"form": "frame-grim",
+										"anchor": { "x": 0.811, "y": 0.524 },
+										"size": 0.817,
+										"drawDepth": -7,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-angry",
+										"anchor": { "x": 0.483, "y": 0.544 },
+										"size": 0.523,
+										"nameTag": "none"
+									},
+									{
+										"role": "romantic",
+										"anchor": { "x": 0.964, "y": 0.588 },
+										"size": 0.524,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRockSlope.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.359, "y": 0.13 },
+										"size": 0.329
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/fireEagles",
+										"textKey": "~05~player_chose_two~panel_004~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "site",
+					"addAspects": [
+						{ "id": "fireEagles_victory_host", "value": "1" }
+					]
+				},
+				{
+					"class": "AllowFollowup",
+					"id": "encounter_heroesArriveAtSite_fireEagles.0.playerChose_one"
+				}
+			]
+		}
+	},
+	{
+		"class": "AddRememberedPlace",
+		"target": "overlandTile",
+		"icon": "remembered_fireEagles"
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "fireEagles_npc",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "mystic" }
+			}
+		}
+	]
+}
+}
