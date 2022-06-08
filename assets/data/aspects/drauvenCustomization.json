@@ -1,34 +1,22 @@
 [
-    {
-        "id": "drauvenHeadCustomization1",
-        "effects": [
-            "alsoAddIfOther|drauvenHeadCustom_warrior1|warrior",
-            "alsoAddIfOther|drauvenHeadCustom_hunter1|hunter",
-            "alsoAddIfOther|drauvenHeadCustom_mystic1|mystic"
-        ]
-    },
-    {
-        "id": "drauvenHeadCustomization2",
-        "effects": [
-            "alsoAddIfOther|drauvenHeadCustom_warrior2|warrior",
-            "alsoAddIfOther|drauvenHeadCustom_hunter2|hunter",
-            "alsoAddIfOther|drauvenHeadCustom_mystic2|mystic"
-        ]
-    },
-    {
-        "id": "drauvenHeadCustomization3",
-        "effects": [
-            "alsoAddIfOther|drauvenHeadCustom_warrior3|warrior",
-            "alsoAddIfOther|drauvenHeadCustom_hunter3|hunter",
-            "alsoAddIfOther|drauvenHeadCustom_mystic3|mystic"
-        ]
-    },
-    {
-        "id": "drauvenHeadCustomization4",
-        "effects": [
-            "alsoAddIfOther|drauvenHeadCustom_warrior4|warrior",
-            "alsoAddIfOther|drauvenHeadCustom_hunter4|hunter",
-            "alsoAddIfOther|drauvenHeadCustom_mystic4|mystic"
-        ]
-    }
+{
+	"modId": "wildermyth-drauven-pcs-main",
+	"id": "drauvenHeadCustomization1",
+	"effects": [ "drauven_fix_customization_head1" ]
+},
+{
+	"modId": "wildermyth-drauven-pcs-main",
+	"id": "drauvenHeadCustomization2",
+	"effects": [ "drauven_fix_customization_head2" ]
+},
+{
+	"modId": "wildermyth-drauven-pcs-main",
+	"id": "drauvenHeadCustomization3",
+	"effects": [ "drauven_fix_customization_head3" ]
+},
+{
+	"modId": "wildermyth-drauven-pcs-main",
+	"id": "drauvenHeadCustomization4",
+	"effects": [ "drauven_fix_customization_head4" ]
+}
 ]

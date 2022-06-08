@@ -1,0 +1,59 @@
+{
+"id": "drauven_fix_customization_head2",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven_fix_customization_head2",
+	"modId": "wildermyth-drauven-pcs-main",
+	"author": "justEthaniguess",
+	"STUB": "Updates Drauven characters to our new system"
+},
+"type": "ABILITIES_CHANGED",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"value": "warrior",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"inlineHistory": {
+				"id": "customHeadFix_warrior.detail2",
+				"associatedAspects": [ "drauvenHeadCustom_warrior2" ],
+				"showInSummary": false
+			}
+		}
+	},
+	{
+		"class": "Test",
+		"value": "hunter",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"inlineHistory": {
+				"id": "customHeadFix_hunter.detail2",
+				"associatedAspects": [ "drauvenHeadCustom_hunter2" ],
+				"showInSummary": false
+			}
+		}
+	},
+	{
+		"class": "Test",
+		"value": "mystic",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"inlineHistory": {
+				"id": "customHeadFix_mystic.detail2",
+				"associatedAspects": [ "drauvenHeadCustom_mystic2" ],
+				"showInSummary": false
+			}
+		}
+	},
+	{
+		"class": "Aspects",
+		"removeAspects": [ "drauvenHeadCustomization2" ]
+	}
+]
+}
