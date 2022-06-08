@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "arriveAtSite/fireEagles",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Ursula Vernon"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -1724,6 +1725,24 @@
 								"scaleX": 0.7968212,
 								"scaleY": 0.7968212,
 								"pointerOrientV": "up"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/fireEagles",
+							"textKey": "~01~prompt~panel_032~3_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.07,
+							"padYFraction": 0.721,
+							"widthFraction": 0.98821396,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -12.875,
+								"dX": 2.1724124,
+								"dY": 88.28739,
+								"scaleX": 0.7968212,
+								"scaleY": 0.7968212,
+								"pointerOrientH": "onRight",
+								"pointerOrientV": "down"
 							}
 						}
 					]
