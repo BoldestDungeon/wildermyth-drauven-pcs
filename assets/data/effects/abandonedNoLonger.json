@@ -70,11 +70,13 @@
 							"form": "frame-dead",
 							"facing": "left",
 							"equipment": { "mode": "leaveEquipment" },
-							"anchor": { "x": 0.597, "y": 0.789 },
+							"anchor": { "x": 0.6, "y": 0.789 },
 							"size": 0.2168,
 							"nameTag": "none",
 							"head": { "rotate": 13.433 },
-							"foot": { "rotate": -173.272 }
+							"foot": { "rotate": -173.272 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "deadBody" }
 						},
 						{
 							"role": "healer",
