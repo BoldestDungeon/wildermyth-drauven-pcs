@@ -1,0 +1,2029 @@
+{
+"id": "missionVictory_fireEagles",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/victory_fireEagles",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ursula Vernon",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"encounterScore": 10000
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_THREAT" },
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "snark",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(snark,greedy,goofball)",
+		"scoreThreshold": "60",
+		"themes": { "eligibleForTheme": "petFireChicken", "eligibleForPiece": "fireChicken" }
+	},
+	{
+		"role": "romantic",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "ROMANTIC",
+		"notAlreadyMatchedAs": [ "snark" ]
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEADER",
+		"notAlreadyMatchedAs": [ "snark", "romantic" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"aspectsOneOf": [ "theme_wolf", "drauven" ]
+	},
+	{
+		"role": "volunteer2",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "(((drauven+theme_wolf)+themePiece_crow_head)*200)+greedy",
+		"notAlreadyMatchedAs": [ "volunteer" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestTrunksGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "romantic",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.229, "y": 0.564 },
+							"size": 0.518,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.403, "y": 0.568 },
+							"size": 0.429,
+							"nameTag": "none",
+							"head": { "rotate": -10.431, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.22, "y": 0.351 },
+							"size": 0.734,
+							"nameTag": "none"
+						},
+						{
+							"role": "snark",
+							"anchor": { "x": 0.69, "y": 0.556 },
+							"size": 0.391,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_001~2_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.069,
+							"padYFraction": 0.156,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_001~3_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.299,
+							"padYFraction": 0.189,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.37, "y": 0.685 },
+							"size": 0.222,
+							"drawDepth": 2,
+							"foot": { "rotate": -6.209 }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.307, "y": 0.363 },
+							"size": 0.638,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_002~1_speech",
+							"fallbackSlotOwner": 0,
+							"padXFraction": 0.467,
+							"padYFraction": 0.066,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 17, "dY": 0 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{ "role": "leader", "form": "frame-surprised" }
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_003~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.33, "y": 0.845 },
+							"size": 0.321,
+							"drawDepth": 2,
+							"foot": { "rotate": -4.042 }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.646, "y": 0.13 },
+							"size": 0.972,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_004~1_speech",
+							"fallbackSlotOwner": 0,
+							"padXFraction": 0.608,
+							"padYFraction": 0.12,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 17, "dY": 0 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.223, "y": 0.371 },
+							"size": 0.136,
+							"drawDepth": 2,
+							"foot": { "rotate": -7.269 }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.299, "y": 0.311 },
+							"size": 0.588,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:actionLines_bouncing.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.065, "y": 0.496 },
+							"size": 0.198,
+							"nameTag": "none",
+							"foot": { "rotate": -25.662 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.26, "y": 0.026 },
+							"size": 0.277,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:actionLines_arcShort.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.447, "y": 0.263 },
+							"size": 0.233,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_005~1_speech",
+							"fallbackSlotOwner": 0,
+							"padXFraction": 0.123,
+							"padYFraction": 0.345,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 24.775167, "dX": -10, "dY": -4.0000153, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.534, "y": 0.407 },
+							"size": 0.136,
+							"drawDepth": 2,
+							"foot": { "rotate": -7.269 }
+						},
+						{
+							"assetSpec": "comic:actionLines_bouncing.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.006, "y": 0.211 },
+							"size": 0.134,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.482, "y": 0.078 },
+							"size": 0.358,
+							"nameTag": "none",
+							"foot": { "rotate": -1.132 }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcShort.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.26, "y": 0.026 },
+							"size": 0.277,
+							"nameTag": "none"
+						},
+						{
+							"role": "snark",
+							"anchor": { "x": 0.223, "y": 0.689 },
+							"size": 0.374,
+							"nameTag": "none",
+							"head": { "rotate": -19.828 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_006~1_speech",
+							"fallbackSlotOwner": 0,
+							"padXFraction": 0.123,
+							"padYFraction": 0.345,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 24.775167,
+								"dX": -10,
+								"dY": -4.0000153,
+								"scaleX": 0.7900672,
+								"scaleY": 0.7900672,
+								"pointerOrientH": "onRight"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.325, "y": 0.392 },
+							"size": 0.4,
+							"foot": { "rotate": -20.949 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"focus": "foot",
+							"anchor": { "x": 0.556, "y": -0.103 },
+							"size": 0.894,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 18.905, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.654, "y": 0.235 },
+							"size": 0.284,
+							"drawDepth": -4,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_007~1_speech",
+							"padXFraction": 0.544,
+							"padYFraction": 0.52,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.325, "y": 0.392 },
+							"size": 0.4,
+							"foot": { "rotate": -20.949 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-grim",
+							"focus": "foot",
+							"anchor": { "x": 0.556, "y": -0.103 },
+							"size": 0.85,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -28.81, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_008~1_snark",
+							"pointerOwner": "snark"
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_008~2_speech",
+							"padXFraction": 0.473,
+							"padYFraction": 0.598,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.711, "y": 0.306 },
+							"size": 0.227,
+							"foot": { "rotate": -7.269 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-angry",
+							"facing": "left",
+							"anchor": { "x": 0.778, "y": 0.605 },
+							"size": 0.394,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -25.857 }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-joy",
+							"anchor": { "x": 0.299, "y": 0.632 },
+							"size": 0.472,
+							"head": { "rotate": -14.927 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_009~1_romantic",
+							"pointerOwner": "romantic"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.291, "y": 0.544 },
+							"size": 0.735,
+							"head": { "rotate": -1.454, "scaleY": 1 },
+							"foot": { "rotate": -5.797 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_010~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"focus": "foot",
+							"anchor": { "x": 0.47, "y": 0.063 },
+							"size": 0.285,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"focus": "foot",
+							"anchor": { "x": 0.16, "y": 0.242 },
+							"size": 0.269,
+							"nameTag": "none",
+							"foot": { "rotate": -7.85 }
+						},
+						{
+							"role": "snark",
+							"focus": "foot",
+							"anchor": { "x": 0.34, "y": 0.139 },
+							"size": 0.288,
+							"nameTag": "none",
+							"head": { "rotate": 5.31 },
+							"foot": { "rotate": -5.31 }
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.755, "y": 0.074 },
+							"size": 0.303,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.249, "y": 0.368 },
+							"size": 0.115,
+							"drawDepth": -7,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landGrassSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.171 },
+							"size": 0.282
+						},
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.962, "y": 0.243 },
+							"size": 0.417,
+							"drawDepth": -7
+						},
+						{
+							"assetSpec": "scenery:trunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.091, "y": 0.07 },
+							"size": 0.355,
+							"drawDepth": -8,
+							"color": { "r": "0.2", "g": "0.2", "b": "0.5", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.987, "y": 0.636 },
+							"size": 0.676,
+							"drawDepth": -6,
+							"color": { "r": "0.5", "g": "0.5", "b": "0.7", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_011~1_speech",
+							"fallbackSlotOwner": 4,
+							"padXFraction": 0.289,
+							"padYFraction": 0.058,
+							"widthFraction": 0.5007295,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 5, "dY": -91.00003, "scaleX": 0.45173925, "scaleY": 0.45173925 }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_011~2_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.144,
+							"padYFraction": 0.512,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -1, "dY": 111.00001 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "romantic",
+							"form": "frame-talk",
+							"anchor": { "x": 0.396, "y": 0.508 },
+							"size": 0.61
+						},
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"size": 0.623,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -23.856 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_012~1_romantic",
+							"pointerOwner": "romantic"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"facing": "left",
+							"anchor": { "x": 0.467, "y": 0.532 },
+							"size": 0.625
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_013~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-talk",
+							"anchor": { "x": 0.116, "y": 0.548 },
+							"size": 0.947,
+							"head": { "rotate": 9.668 },
+							"foot": { "rotate": -10.246 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_014~1_snark",
+							"pointerOwner": "snark",
+							"location": "topRight",
+							"padXFraction": 0.051,
+							"padYFraction": 0.045,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "snark",
+							"focus": "foot",
+							"anchor": { "x": 0.719, "y": -0.066 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.36, "y": 0.621 },
+							"size": 0.418,
+							"drawDepth": -2,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": -15.811 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landGrassSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.315, "y": 0.127 },
+							"size": 0.384,
+							"nameTag": "none",
+							"color": { "r": "0.6", "g": "0.6", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_015~1_snark",
+							"pointerOwner": "snark",
+							"pointerStyle": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "npc",
+							"facing": "left",
+							"anchor": { "x": 0.709, "y": 0.58 },
+							"size": 0.732,
+							"head": { "rotate": -22.203 }
+						},
+						{
+							"assetSpec": "comic:pointerSpeech.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.098, "y": 0.54 },
+							"size": 0.268,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"foot": { "rotate": 12.369 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_016~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.278,
+							"padYFraction": 0.078,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -15, "dY": 3 }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_016~2_speech",
+							"padXFraction": 0.132,
+							"padYFraction": 0.307,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_016~3_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.231,
+							"padYFraction": 0.442,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -26.56505,
+								"dX": -141,
+								"dY": 15.000038,
+								"scaleX": 0.725014,
+								"scaleY": 0.725014
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_016~4_speech",
+							"padXFraction": 0.132,
+							"padYFraction": 0.639,
+							"shrinkToFitText": true,
+							"pointerStyle": "speech"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"focus": "foot",
+							"anchor": { "x": 0.47, "y": 0.063 },
+							"size": 0.285,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"focus": "foot",
+							"anchor": { "x": 0.203, "y": 0.23 },
+							"size": 0.269,
+							"nameTag": "none",
+							"foot": { "rotate": -7.85 }
+						},
+						{
+							"role": "snark",
+							"focus": "foot",
+							"anchor": { "x": 0.34, "y": 0.139 },
+							"size": 0.288,
+							"nameTag": "none",
+							"head": { "rotate": 5.31 },
+							"foot": { "rotate": -5.31 }
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.693, "y": 0.042 },
+							"size": 0.303,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -10.724 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.315, "y": 0.356 },
+							"size": 0.115,
+							"drawDepth": -7,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landGrassSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.171 },
+							"size": 0.282
+						},
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.962, "y": 0.243 },
+							"size": 0.417,
+							"drawDepth": -7
+						},
+						{
+							"assetSpec": "scenery:trunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.091, "y": 0.07 },
+							"size": 0.355,
+							"drawDepth": -8,
+							"color": { "r": "0.2", "g": "0.2", "b": "0.5", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.987, "y": 0.636 },
+							"size": 0.676,
+							"drawDepth": -6,
+							"color": { "r": "0.5", "g": "0.5", "b": "0.7", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_017~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.369,
+							"padYFraction": 0.058,
+							"widthFraction": 0.6349577,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_017~2_speech",
+							"fallbackSlotOwner": 4,
+							"padXFraction": 0.349,
+							"padYFraction": 0.611,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 5, "dY": -91.00003, "scaleX": 0.45173925, "scaleY": 0.45173925 }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_017~3_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.18,
+							"padYFraction": 0.516,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -1, "dY": 111.00001 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-grim",
+							"anchor": { "x": 0.308, "y": 0.584 },
+							"size": 0.608,
+							"head": { "rotate": -28.179 }
+						},
+						{
+							"role": "leader",
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"size": 0.604,
+							"drawDepth": -4,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_018~1_snark",
+							"pointerOwner": "snark",
+							"padXFraction": 0.291,
+							"padYFraction": 0.07,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"facing": "left",
+							"anchor": { "x": 0.629, "y": 0.548 },
+							"size": 0.729,
+							"head": { "rotate": -16.145 }
+						},
+						{
+							"assetSpec": "comic:pointerSpeech.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.065, "y": 0.291 },
+							"size": 0.222,
+							"nameTag": "none",
+							"foot": { "rotate": 11.962 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_019~1_npc",
+							"pointerOwner": "npc"
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_019~2_speech",
+							"padXFraction": 0.063,
+							"padYFraction": 0.541,
+							"shrinkToFitText": true,
+							"pointerStyle": "speech",
+							"pointerAdjust": {}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"focus": "foot",
+							"anchor": { "x": 0.463, "y": -0.045 },
+							"size": 0.33,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"focus": "foot",
+							"anchor": { "x": 0.204, "y": 0.073 },
+							"size": 0.344,
+							"nameTag": "none",
+							"foot": { "rotate": -3.028 }
+						},
+						{
+							"role": "snark",
+							"focus": "foot",
+							"anchor": { "x": 0.337, "y": 0.051 },
+							"size": 0.318,
+							"nameTag": "none",
+							"head": { "rotate": 5.31 },
+							"foot": { "rotate": -2.649 }
+						},
+						{
+							"role": "npc",
+							"focus": "foot",
+							"anchor": { "x": 0.803, "y": 0.021 },
+							"size": 0.303,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.27, "y": 0.324 },
+							"size": 0.161,
+							"drawDepth": -7,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landGrassSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.171 },
+							"size": 0.265
+						},
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.955, "y": 0.171 },
+							"size": 0.433,
+							"drawDepth": -7
+						},
+						{
+							"assetSpec": "scenery:trunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.091, "y": 0.07 },
+							"size": 0.662,
+							"drawDepth": -8,
+							"color": { "r": "0.2", "g": "0.2", "b": "0.5", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.991, "y": 0.608 },
+							"size": 0.748,
+							"drawDepth": -6,
+							"color": { "r": "0.3", "g": "0.3", "b": "0.5", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_020~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.477,
+							"padYFraction": 0.057,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_020~2_speech",
+							"fallbackSlotOwner": 4,
+							"padXFraction": 0.304,
+							"padYFraction": 0.611,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 5, "dY": -91.00003, "scaleX": 0.45173925, "scaleY": 0.45173925 }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_020~3_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.18,
+							"padYFraction": 0.516,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -1, "dY": 111.00001 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"focus": "foot",
+							"anchor": { "x": 0.463, "y": -0.045 },
+							"size": 0.33,
+							"nameTag": "none",
+							"head": { "rotate": -4.022, "scaleY": -1 }
+						},
+						{
+							"role": "romantic",
+							"focus": "foot",
+							"anchor": { "x": 0.204, "y": 0.073 },
+							"size": 0.344,
+							"nameTag": "none",
+							"head": { "rotate": -26.796 },
+							"foot": { "rotate": -3.028 }
+						},
+						{
+							"role": "snark",
+							"focus": "foot",
+							"anchor": { "x": 0.337, "y": 0.051 },
+							"size": 0.318,
+							"nameTag": "none",
+							"head": { "rotate": 16.346, "scaleY": -1 },
+							"foot": { "rotate": -2.649 }
+						},
+						{
+							"role": "npc",
+							"focus": "foot",
+							"anchor": { "x": 1.024, "y": 0.141 },
+							"size": 0.303,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": 1 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_fireChicken.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.27, "y": 0.324 },
+							"size": 0.161,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"foot": { "rotate": -14.524 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landGrassSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.171 },
+							"size": 0.265
+						},
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.955, "y": 0.171 },
+							"size": 0.433,
+							"drawDepth": -7
+						},
+						{
+							"assetSpec": "scenery:trunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.091, "y": 0.07 },
+							"size": 0.662,
+							"drawDepth": -8,
+							"color": { "r": "0.2", "g": "0.2", "b": "0.5", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.991, "y": 0.608 },
+							"size": 0.748,
+							"drawDepth": -6,
+							"color": { "r": "0.3", "g": "0.3", "b": "0.5", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_021~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.477,
+							"padYFraction": 0.057,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_021~2_speech",
+							"fallbackSlotOwner": 4,
+							"padXFraction": 0.304,
+							"padYFraction": 0.611,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 5, "dY": -91.00003, "scaleX": 0.45173925, "scaleY": 0.45173925 }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_021~3_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.18,
+							"padYFraction": 0.516,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -1, "dY": 111.00001 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-talk",
+							"anchor": { "x": 0.825, "y": 0.608 },
+							"size": 0.705,
+							"head": { "scaleY": -1 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.385, "y": 0.613 },
+							"size": 0.62,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -18.083 }
+						},
+						{
+							"role": "romantic",
+							"anchor": { "x": 0.093, "y": 0.593 },
+							"size": 0.675,
+							"drawDepth": -3,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_fireEagles",
+							"textKey": "~01~prompt~panel_022~1_leader",
+							"pointerOwner": "leader",
+							"location": "topRight",
+							"padXFraction": 0.025,
+							"padYFraction": 0.045,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "snark",
+									"form": "frame-skeptical",
+									"head": { "rotate": -14.574 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_fireEagles",
+									"textKey": "~02~choice_one~panel_001~1_snark",
+									"pointerOwner": "snark"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{ "role": "snark", "form": "frame-grim" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_fireEagles",
+									"textKey": "~03~choice_two~panel_001~1_snark",
+									"pointerOwner": "snark"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"actorSlots": [
+								{
+									"role": "volunteer",
+									"form": "frame-interested",
+									"anchor": { "x": 0.28968197, "y": 0.5 },
+									"head": { "scaleY": -1 }
+								},
+								{
+									"role": "volunteer2",
+									"form": "frame-talk",
+									"facing": "left",
+									"equipment": {},
+									"anchor": { "x": 0.710318, "y": 0.5 },
+									"nameTag": "bottomRight"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_fireEagles",
+									"textKey": "~04~choice_three~panel_001~1_volunteer",
+									"pointerOwner": "volunteer",
+									"shrinkToFitText": true,
+									"pointerAdjust": {
+										"dX": -17.93898,
+										"dY": 1.8883133,
+										"pointerOrientH": "onLeft",
+										"forcePointerImage": "speechShort"
+									}
+								},
+								{
+									"textSourceFile": "missionOutcome/victory_fireEagles",
+									"textKey": "~04~choice_three~panel_001~2_volunteer2",
+									"pointerOwner": "volunteer2",
+									"padXFraction": 0.37,
+									"padYFraction": 0.128,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "rotate": 0, "dX": -50.040302, "dY": -1.8883133, "pointerOrientV": "up" }
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "volunteer"
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "snark",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "romantic",
+										"form": "frame-happy",
+										"anchor": { "x": 0.332, "y": 0.628 },
+										"size": 0.523,
+										"foot": { "rotate": -7.815 }
+									},
+									{
+										"preTransformation": true,
+										"role": "snark",
+										"anchor": { "x": 0.622, "y": 0.616 },
+										"size": 0.516,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -16.891, "scaleY": -1 }
+									},
+									{
+										"role": "leader",
+										"facing": "left",
+										"anchor": { "x": 0.832, "y": 0.649 },
+										"size": 0.557,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_fireChicken.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.5, "y": 0.432 },
+										"size": 0.319,
+										"drawDepth": -4,
+										"nameTag": "none",
+										"foot": { "rotate": -16.416 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~05~player_chose_one~panel_001~1_romantic",
+										"pointerOwner": "romantic",
+										"padXFraction": 0.093,
+										"padYFraction": 0.064,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "leader",
+										"focus": "foot",
+										"anchor": { "x": 0.512, "y": 0.04 },
+										"size": 0.268,
+										"nameTag": "none",
+										"head": { "rotate": 9.992, "scaleY": 1 }
+									},
+									{
+										"role": "romantic",
+										"focus": "foot",
+										"anchor": { "x": 0.87, "y": 0.31 },
+										"size": 0.229,
+										"nameTag": "none",
+										"head": { "rotate": 1.959, "scaleY": -1 },
+										"foot": { "rotate": -3.028 }
+									},
+									{
+										"preTransformation": true,
+										"role": "snark",
+										"focus": "foot",
+										"anchor": { "x": 0.751, "y": 0.107 },
+										"size": 0.295,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -12.513, "scaleY": -1 },
+										"foot": { "rotate": 0.39 }
+									},
+									{
+										"assetSpec": "figure:misc/animal_fireChicken.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.622, "y": 0.241 },
+										"size": 0.14,
+										"drawDepth": -7,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": 1 },
+										"foot": { "rotate": -7.724 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landGrassSlope.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.388, "y": 0.168 },
+										"size": 0.401,
+										"drawDepth": -7,
+										"nameTag": "none",
+										"foot": { "rotate": -0.148 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.378, "y": 0.099 },
+										"size": 0.356,
+										"drawDepth": -7
+									},
+									{
+										"assetSpec": "scenery:trunk1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.109, "y": 2.023 },
+										"size": 0.433,
+										"drawDepth": -7,
+										"color": { "r": "0.4", "g": "0.4", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:shrubs1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.147, "y": 0.394 },
+										"size": 0.706,
+										"drawDepth": -8,
+										"color": { "r": "0.2", "g": "0.2", "b": "0.5", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~05~player_chose_one~panel_002~1_snark",
+										"pointerOwner": "snark",
+										"padXFraction": 0.313,
+										"padYFraction": 0.16,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~05~player_chose_one~panel_002~2_speech",
+										"fallbackSlotOwner": 3,
+										"padXFraction": 0.477,
+										"padYFraction": 0.057,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~05~player_chose_one~panel_002~3_speech",
+										"fallbackSlotOwner": 4,
+										"padXFraction": 0.304,
+										"padYFraction": 0.611,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 5, "dY": -91.00003, "scaleX": 0.45173925, "scaleY": 0.45173925 }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ApplyTheme",
+					"theme": "petFireChicken",
+					"piece": "fireChicken",
+					"historyTextKey": "missionVictory_fireEagles.0.playerChose_one.1"
+				},
+				{
+					"class": "AllowFollowup",
+					"id": "missionVictory_fireEagles.fireChickenCareers"
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "snark",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "snark",
+										"anchor": { "x": 0.231, "y": 0.657 },
+										"size": 0.52,
+										"head": { "rotate": 0.062 }
+									},
+									{
+										"assetSpec": "figure:misc/animal_fireChicken.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.74, "y": 0.745 },
+										"size": 0.204,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": -6.047 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.74, "y": 0.114 },
+										"size": 0.253,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~06~player_chose_two~panel_001~1_snark",
+										"pointerOwner": "snark",
+										"padXFraction": 0.325,
+										"padYFraction": 0.045,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "snark",
+										"facing": "left",
+										"anchor": { "x": -0.065, "y": 0.657 },
+										"size": 0.52,
+										"head": { "rotate": 0.062 }
+									},
+									{
+										"assetSpec": "figure:misc/animal_fireChicken.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.74, "y": 0.745 },
+										"size": 0.204,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": -6.047 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.74, "y": 0.114 },
+										"size": 0.253,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~06~player_chose_two~panel_002~1_snark",
+										"pointerOwner": "snark"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/animal_fireChicken.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.535, "y": 0.714 },
+										"size": 0.209,
+										"head": { "rotate": 0.062 },
+										"foot": { "rotate": 3.138 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.526, "y": 0.118 },
+										"size": 0.239,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 0.292949 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~06~player_chose_two~panel_003~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/animal_fireChicken.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.52, "y": 0.722 },
+										"size": 0.22,
+										"head": { "rotate": 0.062 },
+										"foot": { "rotate": -2.93 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.49, "y": 0.118 },
+										"size": 0.239,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": -4.0131736 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~06~player_chose_two~panel_004~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/animal_fireChicken.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.497, "y": 0.734 },
+										"size": 0.22,
+										"head": { "rotate": 0.062 },
+										"foot": { "rotate": -3.635 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.49, "y": 0.118 },
+										"size": 0.239,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": -10.279772 }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcShort.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.197, "y": 0.765 },
+										"size": 0.249,
+										"nameTag": "none",
+										"foot": { "rotate": -169.87 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~06~player_chose_two~panel_005~1_actionSmall",
+										"style": "actionSmall",
+										"padXFraction": 0.13,
+										"padYFraction": 0.096,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/animal_fireChicken.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.527, "y": 0.69 },
+										"size": 0.22,
+										"head": { "rotate": 0.062 },
+										"foot": { "rotate": -99.943 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.332, "y": 0.018 },
+										"size": 0.239,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": -10.279772 }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcShort.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.436, "y": 0.267 },
+										"size": 0.272,
+										"nameTag": "none",
+										"foot": { "rotate": 169.833 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" }
+									},
+									{
+										"assetSpec": "figure:misc/animal_fireEagleSwoop.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.566, "y": 0.998 },
+										"size": 0.226,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.699 }
+									},
+									{
+										"assetSpec": "comic:action_popR.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.351, "y": 0.263 },
+										"size": 0.48,
+										"foot": { "rotate": 97.368 }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.156, "y": 0.874 },
+										"size": 0.499,
+										"foot": { "rotate": -153.316 },
+										"color": { "r": "1", "g": "1", "b": "0.7", "a": "0.6" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~06~player_chose_two~panel_006~1_actionLarge",
+										"style": "actionLarge",
+										"padXFraction": 0.068,
+										"padYFraction": 0.261,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"role": "leader",
+										"focus": "foot",
+										"anchor": { "x": 0.512, "y": 0.04 },
+										"size": 0.268,
+										"nameTag": "none",
+										"head": { "rotate": 9.992, "scaleY": 1 }
+									},
+									{
+										"role": "romantic",
+										"focus": "foot",
+										"anchor": { "x": 0.87, "y": 0.31 },
+										"size": 0.229,
+										"nameTag": "none",
+										"head": { "rotate": 1.959, "scaleY": -1 },
+										"foot": { "rotate": -3.028 }
+									},
+									{
+										"role": "snark",
+										"focus": "foot",
+										"anchor": { "x": 0.751, "y": 0.107 },
+										"size": 0.295,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -12.513, "scaleY": -1 },
+										"foot": { "rotate": 0.39 }
+									},
+									{
+										"assetSpec": "figure:misc/animal_fireChicken.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.972, "y": 0.056 },
+										"size": 0.14,
+										"drawDepth": -7,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": 1 },
+										"foot": { "rotate": -7.724 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landGrassSlope.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.388, "y": 0.168 },
+										"size": 0.401,
+										"drawDepth": -7,
+										"nameTag": "none",
+										"foot": { "rotate": -0.148 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.378, "y": 0.099 },
+										"size": 0.356,
+										"drawDepth": -7
+									},
+									{
+										"assetSpec": "scenery:trunk1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.109, "y": 2.023 },
+										"size": 0.433,
+										"drawDepth": -7,
+										"color": { "r": "0.4", "g": "0.4", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:shrubs1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.147, "y": 0.394 },
+										"size": 0.706,
+										"drawDepth": -8,
+										"color": { "r": "0.2", "g": "0.2", "b": "0.5", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:eagleFar.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.491, "y": 0.85 },
+										"size": 0.206,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.7" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~06~player_chose_two~panel_007~1_actionSmall",
+										"style": "actionSmall",
+										"padXFraction": 0.404,
+										"padYFraction": 0.012,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "Aspects",
+		"target": "site",
+		"removeAspects": [ "fireEagles_victory_host" ]
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "volunteer",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "asset:sites/scenery/campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.714, "y": 0.113 },
+										"size": 0.1818,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cookingPot.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.716, "y": 0.323 },
+										"size": 0.2607,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:figures/images/misc/animal_fireChicken.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.525, "y": 0.169 },
+										"size": 0.1949,
+										"nameTag": "none",
+										"foot": { "rotate": 0.072 }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-joy",
+										"anchor": { "x": 0.417, "y": 0.569 },
+										"size": 0.3338,
+										"nameTag": "bottomRight"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landGrassSlope.png",
+										"role": null,
+										"focus": "foot",
+										"nameTag": "none"
+									},
+									{
+										"role": "volunteer2",
+										"form": "frame-happy",
+										"equipment": {},
+										"anchor": { "x": 0.182, "y": 0.676 },
+										"size": 0.2803
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_fireEagles",
+										"textKey": "~07~player_chose_three~panel_001~1_speech",
+										"fallbackSlotOwner": 2,
+										"padXFraction": 0.587,
+										"padYFraction": 0.502,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "RelationshipPoints",
+					"target": "volunteer",
+					"amount": "4",
+					"who": [ "volunteer2" ]
+				},
+				{
+					"class": "ModifyStats",
+					"target": "volunteer",
+					"value": "1",
+					"lifespan": "chapter"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "volunteer2",
+					"value": "1",
+					"lifespan": "chapter"
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "fireEagles_npc",
+			"createEntity": {
+				"query": { "baseTag": "human" }
+			}
+		}
+	]
+}
+}
