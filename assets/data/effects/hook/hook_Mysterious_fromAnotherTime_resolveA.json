@@ -1,0 +1,3914 @@
+{
+"id": "hook_Mysterious_fromAnotherTime_resolveA",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+	"modId": "wildermyth-drauven-pcs-main",
+	"author": "Douglas Austin"
+},
+"type": "OTHER",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "encounterScore": 100000 },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{ "role": "hook", "template": "INJECTED_HERO", "injectedRole": "hook" },
+	{ "role": "hook2", "template": "INJECTED_HERO", "injectedRole": "hook2" },
+	{
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "hook", "hook2" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.5, "y": 0.503 },
+							"size": 0.28,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-hit",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.838, "y": 0.592 },
+							"size": 0.641,
+							"drawDepth": -1,
+							"head": { "rotate": -50.261, "scaleY": 1 },
+							"foot": { "rotate": 7.489 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-angry",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.086, "y": 0.571 },
+							"drawDepth": -2,
+							"head": { "rotate": 2.116 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.309, "y": 0.506 },
+							"size": 0.543,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": 8.684, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.73, "y": 0.44 },
+							"size": 0.275,
+							"drawDepth": 1,
+							"nameTag": "none",
+							"foot": { "rotate": -21.448 }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.975, "y": 0.686 },
+							"size": 0.275,
+							"drawDepth": 1,
+							"nameTag": "none",
+							"foot": { "rotate": -143.584 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"padXFraction": 0.266,
+							"padYFraction": 0.051,
+							"widthFraction": 0.35300946,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_001~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.241,
+							"padYFraction": 0.137,
+							"widthFraction": 0.53224397,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -37.701153, "dY": -7.5402303 }
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_001~3_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.249,
+							"padYFraction": 0.224,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_001~4_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.348,
+							"padYFraction": 0.313,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_001~5_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.225,
+							"padYFraction": 0.013,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"animation": { "overridePanelOrder": 2, "overridePanelDrawDepth": -1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.988, "y": 0.172 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.893, "y": 0.535 },
+							"size": 0.347,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.201, "y": 0.607 },
+							"drawDepth": -1,
+							"head": { "rotate": -13.252 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.6, "y": 0.5 },
+							"size": 0.653,
+							"drawDepth": -0.5,
+							"head": { "rotate": -17.795, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_002~1_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.043,
+							"padYFraction": 0.211,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_002~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.072,
+							"padYFraction": 0.045,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"animation": { "overridePanelOrder": 1, "overridePanelDrawDepth": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.009, "y": 0.141 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.181, "y": 0.516 },
+							"size": 0.347,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-joke",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.671, "y": 0.289 },
+							"size": 0.839,
+							"drawDepth": -1,
+							"head": { "rotate": 14.736, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.374, "y": 0.412 },
+							"size": 0.329,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"foot": { "rotate": -19.857 },
+							"colorFilter": { "filterName": "hover", "strength": 30 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_003~1_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.516,
+							"padYFraction": 0.24,
+							"widthFraction": 0.7235821,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -7.5402303, "dY": -6.5977015 },
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_003~2_action",
+							"style": "action",
+							"padXFraction": 0.203,
+							"padYFraction": 0.315
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_003~3_narration",
+							"style": "narration",
+							"padXFraction": 0.34,
+							"padYFraction": 0.086,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.497, "y": 0.484 },
+							"size": 0.28,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.912, "y": 0.673 },
+							"size": 0.801,
+							"drawDepth": -1,
+							"head": { "rotate": -2.758, "scaleY": 1 },
+							"foot": { "rotate": 2.592 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"equipment": {},
+							"anchor": { "x": 0.166, "y": 0.675 },
+							"drawDepth": -2,
+							"head": { "rotate": 2.116 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"equipment": {},
+							"anchor": { "x": 0.309, "y": 0.506 },
+							"size": 0.543,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": 8.684, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_004~1_narration",
+							"style": "narration",
+							"padXFraction": 0.56,
+							"padYFraction": 0.022,
+							"widthFraction": 0.35300946,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_004~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.155,
+							"padYFraction": 0.051,
+							"widthFraction": 0.5719288,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -23.56322, "dY": -0.9425288 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": 0.317 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.051, "y": 0.361 },
+							"size": 0.377,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.863, "y": 0.573 },
+							"size": 1.092,
+							"drawDepth": -1,
+							"head": { "rotate": -2.758, "scaleY": 1 },
+							"foot": { "rotate": 2.592 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": -0.697, "y": 0.603 },
+							"drawDepth": -2,
+							"head": { "rotate": 2.116 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": -0.561, "y": 0.537 },
+							"size": 0.543,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": 8.684, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_005~1_narration",
+							"style": "narration",
+							"padXFraction": 0.56,
+							"padYFraction": 0.022,
+							"widthFraction": 0.35300946,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_005~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.355,
+							"padYFraction": 0.051,
+							"widthFraction": 0.6108898,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 10.007979, "dX": -38.64368, "dY": -7.5402303 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.497, "y": 0.484 },
+							"size": 0.28,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.992, "y": 0.576 },
+							"size": 0.641,
+							"drawDepth": -1,
+							"head": { "rotate": -10.682, "scaleY": 1 },
+							"foot": { "rotate": 2.592 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.451, "y": 0.527 },
+							"size": 0.578,
+							"drawDepth": -2,
+							"head": { "rotate": -15.99, "scaleY": -1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.151, "y": 0.487 },
+							"size": 0.543,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": 8.684, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_006~1_narration",
+							"style": "narration",
+							"padXFraction": 0.54,
+							"padYFraction": 0.051,
+							"widthFraction": 0.65957034,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_006~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.045,
+							"padYFraction": 0.054,
+							"widthFraction": 0.5042311,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"size": 1.151,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.304, "y": 0.42 },
+							"size": 1.345,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "rotate": -14.865 },
+							"color": { "r": "0", "g": "0.5594576", "b": "0.93063581", "a": "0.39595374" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.837 },
+							"size": 0.553,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": -0.222, "y": 0.709 },
+							"size": 1.11,
+							"drawDepth": -2,
+							"head": { "rotate": -8.219, "scaleY": 1 },
+							"foot": { "rotate": -19.876 },
+							"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_007~1_narration",
+							"style": "narration",
+							"padXFraction": 0.355,
+							"padYFraction": 0.057,
+							"widthFraction": 0.620205,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_007~2_narration",
+							"style": "narration",
+							"padXFraction": 0.434,
+							"padYFraction": 0.731,
+							"widthFraction": 0.4796486,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.304, "y": 0.42 },
+							"size": 1.345,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "rotate": -14.865 },
+							"color": { "r": "0", "g": "0.5594576", "b": "0.93063581", "a": "0.39595374" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.837 },
+							"size": 0.553,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": -0.222, "y": 0.709 },
+							"size": 1.11,
+							"drawDepth": -2,
+							"head": { "rotate": -8.219, "scaleY": 1 },
+							"foot": { "rotate": -19.876 },
+							"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_008~1_narration",
+							"style": "narration",
+							"padXFraction": 0.768,
+							"padYFraction": 0.092,
+							"widthFraction": 0.620205,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_008~2_narration",
+							"style": "narration",
+							"padXFraction": 0.434,
+							"padYFraction": 0.731,
+							"widthFraction": 0.4796486,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "hook.coward.60",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestGreen.jpg",
+										"role": null,
+										"focus": "foot",
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.063, "y": 0.561 },
+										"size": 0.915,
+										"drawDepth": -2,
+										"head": { "rotate": -8.219, "scaleY": 1 },
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.032, "y": 0.428 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.019, "y": 0.22 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "npc2",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.676, "y": 0.472 },
+										"size": 0.558,
+										"drawDepth": 0.5,
+										"head": { "rotate": -19.579, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_009.(hook_is_coward_>_60)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.182,
+										"padYFraction": 0.06,
+										"widthFraction": 0.70253533,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_009.(hook_is_coward_>_60)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestGreen.jpg",
+										"role": null,
+										"focus": "foot",
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.032, "y": 0.428 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.149, "y": 0.185 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "npc2",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.356, "y": 0.444 },
+										"size": 0.558,
+										"drawDepth": 0.5,
+										"head": { "rotate": 15.329, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:actionLines_shake1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.538, "y": 0.692 },
+										"size": 0.203,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.15419827", "g": "0.14637975", "b": "0.14637975", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_shake2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.872, "y": 0.711 },
+										"size": 0.239,
+										"drawDepth": 0.875,
+										"nameTag": "none",
+										"foot": { "rotate": -170.599 },
+										"color": { "r": "0.15419827", "g": "0.14637975", "b": "0.14637975", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:action_pointerSquiggly1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.957, "y": 0.267 },
+										"size": 0.2,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "hover" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_010.(hook_is_coward_>_60)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.031,
+										"padYFraction": 0.07,
+										"widthFraction": 0.70253533,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_010.(hook_is_coward_>_60)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.576,
+										"padYFraction": 0.811,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_010.(hook_is_coward_>_60)~3_action",
+										"style": "action",
+										"padXFraction": 0.575,
+										"padYFraction": 0.17,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_010.(hook_is_coward_>_60)~4_action",
+										"style": "action",
+										"padXFraction": 0.83,
+										"padYFraction": 0.469,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestGreen.jpg",
+										"role": null,
+										"focus": "foot",
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "hook",
+										"form": "frame-sad",
+										"equipment": {},
+										"anchor": { "x": 0.063, "y": 0.561 },
+										"size": 0.915,
+										"drawDepth": -2,
+										"head": { "rotate": -35.305, "scaleY": 1 },
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.032, "y": 0.428 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.019, "y": 0.22 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.676, "y": 0.472 },
+										"size": 0.558,
+										"drawDepth": 0.5,
+										"head": { "rotate": -19.579, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_011.(hook_is_coward_>_60)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.113,
+										"padYFraction": 0.054,
+										"widthFraction": 0.87320644,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_011.(hook_is_coward_>_60)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestGreen.jpg",
+										"role": null,
+										"focus": "foot",
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.032, "y": 0.428 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.149, "y": 0.185 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "npc2",
+										"form": "frame-angry",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.613, "y": 0.453 },
+										"size": 0.558,
+										"drawDepth": 0.5,
+										"head": { "rotate": 5.686, "scaleY": 1 },
+										"foot": { "rotate": -13 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:actionLines_dash.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.351, "y": 0.333 },
+										"size": 0.347,
+										"drawDepth": 0.75,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_012.(hook_is_coward_>_60)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.031,
+										"padYFraction": 0.057,
+										"widthFraction": 0.6923986,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestGreen.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.139, "y": 0.459 },
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.048, "y": 0.437 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.149, "y": 0.185 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "npc2",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.242, "y": 0.346 },
+										"size": 0.322,
+										"drawDepth": 0.5,
+										"head": { "rotate": 5.686, "scaleY": 1 },
+										"foot": { "rotate": -4.668 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:trunkForegroundThick.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.159, "y": 0.51 },
+										"size": 0.402,
+										"drawDepth": 0.25,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:rockBridgeL.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.229, "y": 0.23 },
+										"size": 0.295,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicEmotion_sweat.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.685, "y": 0.116 },
+										"drawDepth": 0.3125,
+										"nameTag": "none",
+										"foot": { "rotate": 71.161 },
+										"color": { "r": "0.98843932", "g": "0", "b": "0.00000035", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicEmotion_sweat.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.712, "y": 0.269 },
+										"drawDepth": 0.375,
+										"nameTag": "none",
+										"foot": { "rotate": 14.744 },
+										"color": { "r": "0.98843932", "g": "0", "b": "0.00000035", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:drauven/drauven_terrorbird.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.125, "y": -0.085 },
+										"size": 0.903,
+										"drawDepth": 0.125,
+										"nameTag": "none",
+										"color": { "r": "0.1300578", "g": "0.1300578", "b": "0.1300578", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_013.(hook_is_coward_>_60)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.031,
+										"padYFraction": 0.057,
+										"widthFraction": 0.6923986,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_013.(hook_is_coward_>_60)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.239,
+										"padYFraction": 0.283,
+										"widthFraction": 0.6923986,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestGreen.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.133, "y": 0.459 },
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.048, "y": 0.437 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.149, "y": 0.185 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "npc2",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.242, "y": 0.346 },
+										"size": 0.322,
+										"drawDepth": 0.5,
+										"head": { "rotate": 25.074, "scaleY": 1 },
+										"foot": { "rotate": -4.668 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:trunkForegroundThick.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.159, "y": 0.51 },
+										"size": 0.402,
+										"drawDepth": 0.25,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:rockBridgeL.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.229, "y": 0.23 },
+										"size": 0.295,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "figure:drauven/drauven_terrorbird.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.845, "y": 0.031 },
+										"size": 0.903,
+										"drawDepth": 0.125,
+										"nameTag": "none",
+										"color": { "r": "0.1300578", "g": "0.1300578", "b": "0.1300578", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_014.(hook_is_coward_>_60)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.031,
+										"padYFraction": 0.057,
+										"widthFraction": 0.6923986,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_014.(hook_is_coward_>_60)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.037,
+										"padYFraction": 0.286,
+										"widthFraction": 0.60966325,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestGreen.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.133, "y": 0.459 },
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.048, "y": 0.437 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.149, "y": 0.185 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "npc2",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.242, "y": 0.346 },
+										"size": 0.652,
+										"drawDepth": 0.5,
+										"head": { "rotate": 25.074, "scaleY": 1 },
+										"foot": { "rotate": -4.668 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:trunkForegroundThick.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.048, "y": 0.718 },
+										"size": 0.689,
+										"drawDepth": 0.25,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:rockBridgeL.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.708, "y": 0.224 },
+										"size": 0.295,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "figure:drauven/drauven_terrorbird.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.977, "y": 0.063 },
+										"size": 1.234,
+										"drawDepth": 0.125,
+										"nameTag": "none",
+										"color": { "r": "0.1300578", "g": "0.1300578", "b": "0.1300578", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_015.(hook_is_coward_>_60)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.043,
+										"padYFraction": 0.057,
+										"widthFraction": 0.6923986,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_015.(hook_is_coward_>_60)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.817,
+										"padYFraction": 0.77,
+										"widthFraction": 0.60966325,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.4, "y": 0.301 },
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 7.292 },
+										"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.459, "y": 0.714 },
+										"size": 0.417,
+										"nameTag": "none"
+									},
+									{
+										"role": "hook",
+										"form": "frame-hit",
+										"equipment": {},
+										"anchor": { "x": -0.182, "y": 0.848 },
+										"size": 0.915,
+										"drawDepth": -2,
+										"head": { "rotate": -8.737, "scaleY": -1 },
+										"foot": { "rotate": -19.876 },
+										"color": { "r": "0.68408567", "g": "0.85678715", "b": "0.96331316", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_016.(hook_is_coward_>_60)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.365,
+										"padYFraction": 0.553,
+										"widthFraction": 0.5762811,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_016.(hook_is_coward_>_60)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_016.(hook_is_coward_>_60)~3_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.31,
+										"padYFraction": 0.106,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -10.080597, "dX": 38.64368, "dY": -3.7701151 }
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_stoneWallVillage.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.572, "y": 0.409 },
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.063, "y": 0.561 },
+										"size": 0.915,
+										"drawDepth": -2,
+										"head": { "rotate": -8.219, "scaleY": 1 },
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.032, "y": 0.428 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.019, "y": 0.22 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.676, "y": 0.472 },
+										"size": 0.558,
+										"drawDepth": 0.5,
+										"head": { "rotate": -19.579, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:logPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.445, "y": 0.063 },
+										"size": 0.313,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_017.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.182,
+										"padYFraction": 0.06,
+										"widthFraction": 0.70253533,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_017.(hook_NOT_coward)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_stoneWallVillage.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.634, "y": 0.44 },
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.046, "y": 0.684 },
+										"size": 0.915,
+										"drawDepth": -2,
+										"head": { "rotate": -8.219, "scaleY": 1 },
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.228, "y": 0.472 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.019, "y": 0.22 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-talk",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.725, "y": 0.465 },
+										"size": 0.558,
+										"drawDepth": 0.5,
+										"head": { "rotate": -2.095, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:logPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.294, "y": 0.013 },
+										"size": 0.313,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:action_popR.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.851, "y": 0.418 },
+										"size": 0.373,
+										"drawDepth": 0.875,
+										"nameTag": "none",
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_018.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.182,
+										"padYFraction": 0.06,
+										"widthFraction": 0.70253533,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_018.(hook_NOT_coward)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_018.(hook_NOT_coward)~3_narration",
+										"style": "narration",
+										"padXFraction": 0.442,
+										"padYFraction": 0.084,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_stoneWallVillage.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.736, "y": 0.437 },
+										"size": 0.349,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.228, "y": 0.472 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.88, "y": 0.233 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.508, "y": -0.088 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"role": "npc3",
+										"form": "frame-happy",
+										"equipment": {},
+										"anchor": { "x": 0.832, "y": 0.469 },
+										"size": 0.673,
+										"drawDepth": 0.5,
+										"head": { "rotate": -19.462, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_019.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.106,
+										"padYFraction": 0.146,
+										"widthFraction": 0.7757065,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_019.(hook_NOT_coward)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.33, "y": 0.282 },
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 7.292 },
+										"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.255, "y": 0.439 },
+										"size": 1.345,
+										"drawDepth": -3,
+										"nameTag": "none",
+										"foot": { "rotate": -14.865 },
+										"color": { "r": "0", "g": "0.5594576", "b": "0.93063581", "a": "0.39595374" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.501, "y": 0.837 },
+										"size": 0.553,
+										"nameTag": "none"
+									},
+									{
+										"role": "hook",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": -0.467, "y": 0.772 },
+										"size": 1.11,
+										"drawDepth": -2,
+										"head": { "rotate": -8.219, "scaleY": 1 },
+										"foot": { "rotate": -19.876 },
+										"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_020.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.768,
+										"padYFraction": 0.092,
+										"widthFraction": 0.620205,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_020.(hook_NOT_coward)~2_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.581,
+										"padYFraction": 0.673,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -91.36392, "dX": 8.482759, "dY": 75.402336 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_stoneWallVillage.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.217, "y": 0.456 },
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.097, "y": 0.441 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.092, "y": 0.233 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-surprised",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.386, "y": 0.481 },
+										"size": 0.558,
+										"drawDepth": 0.5,
+										"head": { "rotate": -2.095, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:logPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.081, "y": -0.056 },
+										"size": 0.313,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "npc3",
+										"form": "frame-talk",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.831, "y": 0.459 },
+										"size": 0.79,
+										"drawDepth": 0.25,
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:action_popR.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.678, "y": 0.384 },
+										"size": 0.373,
+										"drawDepth": 0.875,
+										"nameTag": "none",
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_021.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.182,
+										"padYFraction": 0.06,
+										"widthFraction": 0.70253533,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_021.(hook_NOT_coward)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_021.(hook_NOT_coward)~3_narration",
+										"style": "narration",
+										"padXFraction": 0.184,
+										"padYFraction": 0.123,
+										"widthFraction": 0.77306,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_stoneWallVillage.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.136, "y": 0.456 },
+										"size": 0.321,
+										"drawDepth": 0.8125,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.09, "y": 0.46 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.166, "y": 0.459 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-angry",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.192, "y": 0.547 },
+										"size": 0.961,
+										"drawDepth": 0.5,
+										"head": { "rotate": -24.882, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:logPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.081, "y": -0.056 },
+										"size": 0.313,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "npc3",
+										"form": "frame-sad",
+										"equipment": {},
+										"anchor": { "x": 0.85, "y": 0.459 },
+										"size": 1.1566278,
+										"drawDepth": 0.25,
+										"head": { "rotate": -32.52 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:action_popR.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.678, "y": 0.384 },
+										"size": 0.373,
+										"drawDepth": 0.875,
+										"nameTag": "none",
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_022.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.182,
+										"padYFraction": 0.06,
+										"widthFraction": 0.70253533,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_022.(hook_NOT_coward)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_022.(hook_NOT_coward)~3_narration",
+										"style": "narration",
+										"padXFraction": 0.346,
+										"padYFraction": 0.078,
+										"widthFraction": 0.77306,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"animation": { "overridePanelOrder": 2 },
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.33, "y": 0.282 },
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 7.292 },
+										"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.255, "y": 0.439 },
+										"size": 1.345,
+										"drawDepth": -3,
+										"nameTag": "none",
+										"foot": { "rotate": -14.865 },
+										"color": { "r": "0", "g": "0.5594576", "b": "0.93063581", "a": "0.39595374" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.501, "y": 0.837 },
+										"size": 0.553,
+										"nameTag": "none"
+									},
+									{
+										"role": "hook",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": -0.131, "y": 0.715 },
+										"size": 1.11,
+										"drawDepth": -2,
+										"head": { "rotate": -26.024, "scaleY": 1 },
+										"foot": { "rotate": -19.876 },
+										"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_023.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.768,
+										"padYFraction": 0.092,
+										"widthFraction": 0.620205,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_023.(hook_NOT_coward)~2_hook",
+										"style": "thought",
+										"pointerOwner": "hook",
+										"padXFraction": 0.602,
+										"padYFraction": 0.156,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -3.7767024, "dX": 45.24138, "dY": -10.367798 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_stoneWallVillage.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.217, "y": 0.456 },
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.097, "y": 0.441 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.092, "y": 0.233 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-sad",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.516, "y": 0.49 },
+										"size": 0.558,
+										"drawDepth": 0.5,
+										"head": { "rotate": -2.095, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:logPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.081, "y": -0.056 },
+										"size": 0.313,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_024.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.182,
+										"padYFraction": 0.06,
+										"widthFraction": 0.70253533,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_024.(hook_NOT_coward)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_024.(hook_NOT_coward)~3_narration",
+										"style": "narration",
+										"padXFraction": 0.085,
+										"padYFraction": 0.065,
+										"widthFraction": 0.86254436,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_villageMorning.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.424, "y": 0.541 },
+										"size": 0.321,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.097, "y": 0.441 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.092, "y": 0.233 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-sad",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.75, "y": 0.274 },
+										"size": 0.332,
+										"drawDepth": 0.5,
+										"head": { "rotate": 11.485, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:logPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.081, "y": -0.056 },
+										"size": 0.313,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "npc3",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.2, "y": 0.419 },
+										"size": 0.79,
+										"drawDepth": 0.25,
+										"head": { "rotate": -20.592, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_025.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.182,
+										"padYFraction": 0.06,
+										"widthFraction": 0.70253533,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_025.(hook_NOT_coward)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_025.(hook_NOT_coward)~3_narration",
+										"style": "narration",
+										"padXFraction": 0.184,
+										"padYFraction": 0.123,
+										"widthFraction": 0.77306,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_interiorDay.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.352, "y": 0.481 },
+										"size": 0.251,
+										"nameTag": "none",
+										"color": { "r": "0.62389326", "g": "0.75307316", "b": "0.83275414", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 1.085 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.097, "y": 0.441 },
+										"size": 2.179,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.092, "y": 0.233 },
+										"size": 3.753,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 89.32, "scaleX": 3 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.546, "y": -0.119 },
+										"size": 1.473,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 8 },
+										"color": { "r": "0.3638193", "g": "0.58232594", "b": "0.71710557", "a": "1" }
+									},
+									{
+										"role": "target",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.176, "y": 0.352 },
+										"size": 0.776,
+										"drawDepth": 0.125,
+										"head": { "rotate": -38.797, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:logPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.081, "y": -0.056 },
+										"size": 0.313,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "npc4",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.821, "y": 0.391 },
+										"size": 0.483,
+										"drawDepth": 0.25,
+										"head": { "rotate": 26.976, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_026.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.182,
+										"padYFraction": 0.06,
+										"widthFraction": 0.70253533,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_026.(hook_NOT_coward)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_026.(hook_NOT_coward)~3_narration",
+										"style": "narration",
+										"padXFraction": 0.04,
+										"padYFraction": 0.062,
+										"widthFraction": 0.9382137,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"mustEndRow": true,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.4, "y": 0.301 },
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 7.292 },
+										"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.459, "y": 0.714 },
+										"size": 0.417,
+										"nameTag": "none"
+									},
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": -0.182, "y": 0.848 },
+										"size": 0.915,
+										"drawDepth": -2,
+										"head": { "rotate": -12.214, "scaleY": 1 },
+										"foot": { "rotate": -19.876 },
+										"color": { "r": "0.68408567", "g": "0.85678715", "b": "0.96331316", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_027.(hook_NOT_coward)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.321,
+										"padYFraction": 0.514,
+										"widthFraction": 0.61677825,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_027.(hook_NOT_coward)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_027.(hook_NOT_coward)~3_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.31,
+										"padYFraction": 0.106,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -10.080597, "dX": 38.64368, "dY": -3.7701151 }
+									}
+								]
+							}
+						}
+					]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.497, "y": 0.484 },
+							"size": 0.28,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.992, "y": 0.576 },
+							"size": 0.641,
+							"drawDepth": -1,
+							"head": { "rotate": -0.826, "scaleY": 1 },
+							"foot": { "rotate": 2.592 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-sad",
+							"equipment": {},
+							"anchor": { "x": 0.475, "y": 0.452 },
+							"size": 0.578,
+							"drawDepth": -2,
+							"head": { "rotate": -15.99, "scaleY": -1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.151, "y": 0.487 },
+							"size": 0.543,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": 8.684, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_028~1_narration",
+							"style": "narration",
+							"padXFraction": 0.54,
+							"padYFraction": 0.051,
+							"widthFraction": 0.65957034,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_028~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.045,
+							"padYFraction": 0.054,
+							"widthFraction": 0.5042311,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_028~3_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.351,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_028~4_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.212,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.497, "y": 0.484 },
+							"size": 0.404,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.599, "y": 0.455 },
+							"size": 0.9324779,
+							"drawDepth": -2,
+							"head": { "rotate": -15.99, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.105, "y": 0.496 },
+							"size": 0.8760129,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": 8.684, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_029~1_narration",
+							"style": "narration",
+							"padXFraction": 0.54,
+							"padYFraction": 0.051,
+							"widthFraction": 0.65957034,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_029~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.045,
+							"padYFraction": 0.054,
+							"widthFraction": 0.5042311,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_029~3_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.486,
+							"padYFraction": 0.048,
+							"widthFraction": 0.5229063,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 18.850576, "dY": -7.5402303 }
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_029~4_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.212,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.628, "y": 0.512 },
+							"size": 0.404,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.838, "y": 0.48 },
+							"size": 0.9324779,
+							"drawDepth": -2,
+							"head": { "rotate": -0.034, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.129, "y": 0.505 },
+							"size": 0.8760129,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": -3.026, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_030~1_narration",
+							"style": "narration",
+							"padXFraction": 0.54,
+							"padYFraction": 0.051,
+							"widthFraction": 0.65957034,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_030~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.045,
+							"padYFraction": 0.054,
+							"widthFraction": 0.5042311,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_030~3_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.236,
+							"padYFraction": 0.048,
+							"widthFraction": 0.7153608,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -12.984709, "dX": -27.333336, "dY": -10.367817 }
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_030~4_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.274,
+							"padYFraction": 0.198,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 13.195403, "dY": -10.367817 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.497, "y": 0.484 },
+							"size": 0.28,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.912, "y": 0.673 },
+							"size": 0.801,
+							"drawDepth": -3,
+							"head": { "rotate": -2.758, "scaleY": 1 },
+							"foot": { "rotate": 2.592 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.568, "y": 0.556 },
+							"size": 0.664,
+							"drawDepth": -2,
+							"head": { "rotate": -23.376, "scaleY": -1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.309, "y": 0.506 },
+							"size": 0.543,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": 8.684, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_031~1_narration",
+							"style": "narration",
+							"padXFraction": 0.56,
+							"padYFraction": 0.022,
+							"widthFraction": 0.35300946,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_031~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.155,
+							"padYFraction": 0.051,
+							"widthFraction": 0.7516779,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -23.56322, "dY": -0.9425288 }
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_031~3_hook",
+							"pointerOwner": "hook",
+							"location": "topRight",
+							"padXFraction": 0.53199995,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.497, "y": 0.484 },
+							"size": 0.28,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.912, "y": 0.673 },
+							"size": 0.801,
+							"drawDepth": -3,
+							"head": { "rotate": -2.758, "scaleY": 1 },
+							"foot": { "rotate": 2.592 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.568, "y": 0.556 },
+							"size": 0.664,
+							"drawDepth": -2,
+							"head": { "rotate": -41.294, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.309, "y": 0.506 },
+							"size": 0.543,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"head": { "rotate": -18.037, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_032~1_narration",
+							"style": "narration",
+							"padXFraction": 0.56,
+							"padYFraction": 0.022,
+							"widthFraction": 0.35300946,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_032~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.155,
+							"padYFraction": 0.051,
+							"widthFraction": 0.5719288,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -23.56322, "dY": -0.9425288 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.497, "y": 0.484 },
+							"size": 0.417,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_033~1_narration",
+							"style": "narration",
+							"padXFraction": 0.491,
+							"padYFraction": 0.067,
+							"widthFraction": 0.35300946,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_033~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.155,
+							"padYFraction": 0.051,
+							"widthFraction": 0.5719288,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -23.56322, "dY": -0.9425288 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"mustStartRow": true,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.451, "y": 0.345 },
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.441, "y": 0.756 },
+							"size": 1.345,
+							"drawDepth": -5,
+							"nameTag": "none",
+							"foot": { "rotate": -14.865 },
+							"color": { "r": "0", "g": "0.5594576", "b": "0.93063581", "a": "0.39595374" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.442, "y": 0.8 },
+							"size": 0.553,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": -0.125, "y": 0.753 },
+							"size": 1.11,
+							"drawDepth": -4,
+							"head": { "rotate": -8.219, "scaleY": 1 },
+							"foot": { "rotate": -19.876 },
+							"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_034~1_narration",
+							"style": "narration",
+							"padXFraction": 0.153,
+							"padYFraction": 0.738,
+							"widthFraction": 0.6971249,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_034~2_narration",
+							"style": "narration",
+							"padXFraction": 0.434,
+							"padYFraction": 0.731,
+							"widthFraction": 0.4796486,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "volunteer.exists",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.4, "y": 0.301 },
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": 7.292 },
+										"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.253, "y": 0.917 },
+										"size": 1.345,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"foot": { "rotate": -14.865 },
+										"color": { "r": "0", "g": "0.5594576", "b": "0.93063581", "a": "0.39595374" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.397, "y": 0.837 },
+										"size": 0.553,
+										"nameTag": "none"
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 1.126, "y": 0.803 },
+										"size": 1.11,
+										"drawDepth": -4,
+										"head": { "rotate": -8.219, "scaleY": 1 },
+										"foot": { "rotate": -19.876 },
+										"color": { "r": "0.70520234", "g": "1", "b": "0.92843062", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_035.(volunteer_exists)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.091,
+										"padYFraction": 0.763,
+										"widthFraction": 0.8318236,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+										"textKey": "~01~~panel_035.(volunteer_exists)~2_narration",
+										"style": "narration",
+										"padXFraction": 0.434,
+										"padYFraction": 0.731,
+										"widthFraction": 0.4796486,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					],
+					[]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.4, "y": 0.301 },
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"foot": { "rotate": 7.292 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_starPondNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.495, "y": 0.471 },
+							"size": 0.28,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.177, "y": 0.382 },
+							"size": 0.664,
+							"drawDepth": -0.25,
+							"head": { "rotate": -17.086, "scaleY": -1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.569, "y": 0.392 },
+							"size": 0.464,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"head": { "rotate": -18.037, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "volunteer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": -0.044, "y": 0.371 },
+							"size": 0.399,
+							"drawDepth": -0.125,
+							"nameTag": "none",
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.961, "y": 0.446 },
+							"size": 0.602,
+							"drawDepth": -2,
+							"head": { "rotate": -3.329 },
+							"color": { "r": "0.53740519", "g": "0.59665918", "b": "0.71114975", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_036~1_narration",
+							"style": "narration",
+							"padXFraction": 0.385,
+							"padYFraction": 0.102,
+							"widthFraction": 0.48491946,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_036~2_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.155,
+							"padYFraction": 0.051,
+							"widthFraction": 0.5719288,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -23.56322, "dY": -0.9425288 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_mountains_blueCliffs.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:caveEnterance_inside.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.278, "y": 0.576 },
+							"size": 0.422,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.68408567", "g": "0.85678715", "b": "0.96331316", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bushField3.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.038, "y": 0.054 },
+							"size": 0.412,
+							"drawDepth": 3,
+							"nameTag": "none",
+							"foot": { "scaleX": 0.75 },
+							"color": { "r": "0.68408567", "g": "0.85678715", "b": "0.96331316", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockForStanding.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.162, "y": 0.129 },
+							"size": 0.418,
+							"drawDepth": 4,
+							"nameTag": "none",
+							"color": { "r": "0.61022758", "g": "0.7380743", "b": "0.80595744", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:brushpile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.913, "y": 0.29 },
+							"size": 0.461,
+							"drawDepth": 2.5,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.266, "y": 0.322 },
+							"size": 0.36,
+							"drawDepth": 1.5,
+							"head": { "rotate": -21.045, "scaleY": 1 },
+							"color": { "r": "0.6038875", "g": "0.7399388", "b": "0.8238582", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.266, "y": 0.799 },
+							"size": 2.651,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.15606937" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_037~1_legend",
+							"pointerOwner": "legend",
+							"location": "topRight",
+							"widthFraction": 0.57,
+							"pointerStyle": "none"
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_037~2_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.231,
+							"padYFraction": 0.054,
+							"widthFraction": 0.67820895,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_mountains_blueCliffs.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:caveEnterance_inside.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.009, "y": 0.497 },
+							"size": 0.599,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.68408567", "g": "0.85678715", "b": "0.96331316", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 2.238, "y": 0.32 },
+							"size": 0.483,
+							"nameTag": "none",
+							"color": { "r": "0.33258706", "g": "0.60536373", "b": "0.68475395", "a": "1" },
+							"colorFilter": {}
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.106, "y": 0.226 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -66.457 },
+							"color": { "r": "0.38728321", "g": "0.94687438", "b": "1", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.725, "y": 0.544 },
+							"drawDepth": -2,
+							"color": { "r": "0.53740519", "g": "0.59665918", "b": "0.71114975", "a": "1" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_mountains_blueCliffs.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.896, "y": 0.409 },
+							"size": 0.541,
+							"nameTag": "none",
+							"head": { "rotate": -11.944, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 1.61, "y": 0.611 },
+							"size": 0.5446078,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"head": { "rotate": -3.752, "scaleY": 1 },
+							"color": { "r": "0.80346823", "g": "0.9250226", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.533, "y": 0.494 },
+							"size": 0.4,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:item_entranceCave.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.304, "y": 0.515 },
+							"size": 0.615,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.68408567", "g": "0.85678715", "b": "0.96331316", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comic:rockForStanding.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.176, "y": 0.057 },
+							"size": 0.532,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.61022758", "g": "0.7380743", "b": "0.80595744", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:brushpile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.089, "y": 0.327 },
+							"size": 0.487,
+							"drawDepth": 1.75,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bushField3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.151 },
+							"size": 0.412,
+							"drawDepth": 1.875,
+							"nameTag": "none",
+							"foot": { "scaleX": 0.75 },
+							"color": { "r": "0.68408567", "g": "0.85678715", "b": "0.96331316", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_039~1_narration",
+							"style": "narration",
+							"padXFraction": 0.028,
+							"padYFraction": 0.044,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_039~2_hook",
+							"pointerOwner": "hook",
+							"location": "topRight",
+							"padXFraction": 0.45700002,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Mysterious_fromAnotherTime_resolveA",
+							"textKey": "~01~~panel_039~3_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.529,
+							"padYFraction": 0.201,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "AddHistory",
+		"target": "hook",
+		"inlineHistory": { "id": "hook_Mysterious_fromAnotherTime_resolveA.outcome" }
+	},
+	{ "class": "AddResources", "amount": "1" }
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "hookMysterious_Warrior",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"localizableName": "hook_Mysterious_Nan",
+					"setClass": "warrior",
+					"setAge": "oldAge",
+					"setEquipment": "tierTwo"
+				}
+			}
+		},
+		{
+			"role": "npc2",
+			"createEntity": {
+				"query": { "baseTag": "human", "inRelationTo": "hook", "cloneRelatedEntity": true }
+			}
+		},
+		{
+			"role": "npc3",
+			"test": "1-hook.drauven_pc",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "hook",
+					"setGender": "oppositeOfRelative",
+					"setClass": "sameAsRelative",
+					"setAge": "closeTo",
+					"setEquipment": "clothesAndWeapons",
+					"looksSimilarTo": "hook"
+				}
+			}
+		},
+		{
+			"role": "npc3",
+			"test": "hook.drauven_pc",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "hook",
+					"setGender": "oppositeOfRelative",
+					"setClass": "sameAsRelative",
+					"setAge": "closeTo",
+					"setEquipment": "clothesAndWeapons",
+					"looksSimilarTo": "hook"
+				},
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" }
+				]
+			}
+		},
+		{
+			"role": "npc4",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "npc3",
+					"cloneRelatedEntity": true,
+					"setGender": "sameAsRelative",
+					"setAge": "oldAge"
+				}
+			}
+		},
+		{
+			"role": "target",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "hook",
+					"cloneRelatedEntity": true,
+					"setGender": "sameAsRelative",
+					"setAge": "oldAge"
+				}
+			}
+		}
+	]
+}
+}
