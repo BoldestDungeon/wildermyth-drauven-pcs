@@ -1,0 +1,658 @@
+{
+"id": "hook_Clown_seriousTrouble_intro",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "hook/hook_Clown_seriousTrouble_intro",
+	"modId": "wildermyth-drauven-pcs-main",
+	"author": "Douglas Austin"
+},
+"type": "ENCOUNTER_HOOK_INTRO",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "heroism",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{
+		"role": "hook",
+		"template": "INJECTED_HERO",
+		"scoreFunction": "max(GOOFBALL,SNARK)",
+		"scoreThreshold": "75",
+		"injectedRole": "hook",
+		"aspectValues": [
+			{ "id": "hook_ClownResolved", "forbidden": true }
+		]
+	},
+	{
+		"template": "ASPECT",
+		"aspects": [ "hook_Clown" ],
+		"relativeTo": "hook"
+	},
+	{
+		"role": "hook2",
+		"template": "INJECTED_HERO",
+		"injectedRole": "hook2",
+		"aspectValues": [
+			{ "id": "familyWith", "forbidden": true, "relativeTo": "hook" }
+		]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_hillsPineDay.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-joke",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"size": 0.6667
+						},
+						{
+							"role": "hook2",
+							"anchor": { "x": 1.27, "y": 0.5 },
+							"size": 0.6667,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_001~1_hook",
+							"pointerOwner": "hook",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_hillsPineDay.jpg",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-dubious",
+							"equipment": {},
+							"size": 0.7407,
+							"head": { "rotate": -23.219 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_002~1_hook2",
+							"pointerOwner": "hook2"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.36, "y": -0.15 },
+							"size": 0.25,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook2",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.64, "y": -0.15 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": 345, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_003~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.382,
+							"padYFraction": 0.236,
+							"widthFraction": 0.5882696,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.517, "y": -0.119 },
+							"size": 0.25,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.76, "y": -0.159 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": 345 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_004~1_hook2",
+							"pointerOwner": "hook2"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.438, "y": -0.153 },
+							"size": 0.25,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook2",
+							"form": "frame-angry",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.674, "y": -0.125 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": 22 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_005~1_hook",
+							"pointerOwner": "hook",
+							"location": "topRight",
+							"padXFraction": 0.355,
+							"padYFraction": 0.173,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_006~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.485,
+							"padYFraction": 0.07,
+							"widthFraction": 0.5653731,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"animation": { "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.22, "y": -0.15 },
+							"size": 0.2985,
+							"nameTag": "none"
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.88, "y": -0.15 },
+							"size": 0.2985,
+							"nameTag": "none",
+							"head": { "rotate": -9.481, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_007~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_008~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.147,
+							"padYFraction": 0.003,
+							"widthFraction": 0.7712285
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hook",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_009~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"size": 0.853,
+							"head": { "rotate": -24.905 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_010~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.066,
+							"padYFraction": 0.07,
+							"widthFraction": 0.5927402
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_011~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.28,
+							"widthFraction": 0.6991044
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"facing": "left",
+							"equipment": {},
+							"size": 0.92
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_012~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.17,
+							"padYFraction": 0.051,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 }
+						},
+						{
+							"role": "hook2",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_013~1_hook",
+							"pointerOwner": "hook",
+							"widthFraction": 0.44557923,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_014~1_hook",
+							"pointerOwner": "hook",
+							"widthFraction": 0.44557923,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-joke",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_015~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.151,
+							"padYFraction": 0.016,
+							"widthFraction": 0.45637584,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-hit",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"head": { "scaleY": -1 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-rage",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~01~prompt~panel_016~1_hook2",
+							"style": "none",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.538,
+							"padYFraction": 0.024
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "yes",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"bg": "comicBG_forestTrunksSunset.jpg",
+							"actorSlots": [
+								{
+									"role": "hook",
+									"form": "frame-joke",
+									"equipment": {}
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+									"textKey": "~02~choice_yes~panel_001~1_hook",
+									"pointerOwner": "hook",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "no",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"bg": "comicBG_library.jpg",
+							"actorSlots": [
+								{
+									"role": "hook",
+									"form": "frame-skeptical",
+									"equipment": {},
+									"anchor": { "x": 0.4, "y": 0.5 },
+									"size": 0.5,
+									"head": { "rotate": -40.365, "scaleY": -1 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+									"textKey": "~03~choice_no~panel_001~1_hook",
+									"pointerOwner": "hook",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"uiCancel": true
+			}
+		]
+	},
+	{
+		"role": "party",
+		"template": "JOB_PARTICIPANT",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_rocksNight.jpg",
+					"actorSlots": [
+						{ "role": "hook", "form": "frame-grim" }
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Clown_seriousTrouble_intro",
+							"textKey": "~04~prompt~panel_001~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			}
+		],
+		"slots": {
+			"min": 2,
+			"max": 3,
+			"requiredRoles": [ "hook", "hook2" ]
+		},
+		"isJobResource": false
+	},
+	{
+		"role": "volunteer",
+		"template": "JOB_PARTICIPANT",
+		"choose": "ANY",
+		"slots": null,
+		"notAlreadyMatchedAs": [ "hook", "hook2" ],
+		"alreadyMatchedAs": [ "party" ],
+		"isJobResource": false
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AssignToPlot",
+					"assignRolesToPlot": [ "volunteer", "aspect", "party" ]
+				},
+				{ "class": "Special", "specialAction": "ADVANCE_PLOT" }
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"role": "legend",
+			"npcId": "hookClown_seriousTrouble",
+			"test": "1-hook2.drauven",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		},
+		{
+			"role": "legend",
+			"npcId": "hookClown_seriousTrouble",
+			"test": "hook2.drauven_pc",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" }
+				],
+				"control": "none"
+			}
+		}
+	]
+}
+}
