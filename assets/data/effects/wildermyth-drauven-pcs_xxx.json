@@ -1,0 +1,75 @@
+{
+"id": "wildermyth-drauven-pcs_xxx",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "wildermyth-drauven-pcs_xxx",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerGame" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" }
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"equipment": { "mode": "swapActive" },
+							"focus": "foot",
+							"anchor": { "x": 0.471, "y": 0.016 },
+							"size": 0.4088,
+							"head": { "rotate": -12.085, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wildermyth-drauven-pcs_xxx",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {}
+			}
+		]
+	},
+	{
+		"class": "Mission",
+		"goal": "liberate",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{ "role": "foes", "side": "enemy" }
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "nonFarmer" },
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" }
+				],
+				"control": "none"
+			}
+		}
+	]
+}
+}

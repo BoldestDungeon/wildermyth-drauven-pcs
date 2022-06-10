@@ -1,0 +1,532 @@
+[
+  
+
+  {
+    "category": "drauvenCustomizationBody",
+    "id": "drauvenCustom.Body.1__",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenBodyCustomization1"]
+  },
+  {
+    "category": "drauvenCustomizationBody",
+    "id": "drauvenCustom.Body._2_",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenBodyCustomization2"]
+  },
+  {
+    "category": "drauvenCustomizationBody",
+    "id": "drauvenCustom.Body.__3",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenBodyCustomization3"]
+  },
+  {
+    "category": "drauvenCustomizationBody",
+    "id": "drauvenCustom.Body.12_",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenBodyCustomization1", "drauvenBodyCustomization2"]
+  },
+  {
+    "category": "drauvenCustomizationBody",
+    "id": "drauvenCustom.Body._23",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenBodyCustomization2", "drauvenBodyCustomization3"]
+  },
+  {
+    "category": "drauvenCustomizationBody",
+    "id": "drauvenCustom.Body.1_3",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenBodyCustomization1", "drauvenBodyCustomization3"]
+  },
+  {
+    "category": "drauvenCustomizationBody",
+    "id": "drauvenCustom.Body.123",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenBodyCustomization1", "drauvenBodyCustomization2", "drauvenBodyCustomization3"]
+  },
+  {
+    "category": "drauvenCustomizationBody",
+    "id": "drauvenCustom.Body.___",
+    "weight": 0.35,
+    "impliedAspects": []
+  },
+
+
+  {
+    "category": "drauvenCustomizationOther",
+    "id": "drauvenCustom.Other.1__",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenOtherCustomization1"]
+  },
+  {
+    "category": "drauvenCustomizationOther",
+    "id": "drauvenCustom.Other._2_",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenOtherCustomization2"]
+  },
+  {
+    "category": "drauvenCustomizationOther",
+    "id": "drauvenCustom.Other.__3",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenOtherCustomization3"]
+  },
+  {
+    "category": "drauvenCustomizationOther",
+    "id": "drauvenCustom.Other.12_",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenOtherCustomization1", "drauvenOtherCustomization2"]
+  },
+  {
+    "category": "drauvenCustomizationOther",
+    "id": "drauvenCustom.Other._23",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenOtherCustomization2", "drauvenOtherCustomization3"]
+  },
+  {
+    "category": "drauvenCustomizationOther",
+    "id": "drauvenCustom.Other.1_3",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenOtherCustomization1", "drauvenOtherCustomization3"]
+  },
+  {
+    "category": "drauvenCustomizationOther",
+    "id": "drauvenCustom.Other.123",
+    "weight": 0.35,
+    "impliedAspects": ["drauvenOtherCustomization1", "drauvenOtherCustomization2", "drauvenOtherCustomization3"]
+  },
+  {
+    "category": "drauvenCustomizationOther",
+    "id": "drauvenCustom.Other.___",
+    "weight": 0.35,
+    "impliedAspects": []
+  },
+
+
+  {
+    "category": "drauvenHeadStyle_haunt",
+    "id": "drauvenHeadStyle.haunt",
+    "weight": 0.1,
+    "impliedAspects": ["drauvenHeadStyle_haunt", "drauvenHeadStyle_override" ]
+  },
+  {
+    "category": "drauvenHeadStyle_deeven",
+    "id": "drauvenHeadStyle.deeven",
+    "weight": 0.1,
+    "impliedAspects": ["drauvenHeadStyle_deeven", "drauvenHeadStyle_override" ]
+  },
+  {
+    "category": "drauvenHeadStyle_stump",
+    "id": "drauvenHeadStyle.stump",
+    "weight": 0.1,
+    "impliedAspects": ["drauvenHeadStyle_stump", "drauvenHeadStyle_override" ]
+  },
+  {
+    "category": "drauvenHeadStyle_pilot",
+    "id": "drauvenHeadStyle.pilot",
+    "weight": 0.1,
+    "impliedAspects": ["drauvenHeadStyle_pilot", "drauvenHeadStyle_override" ]
+  },
+  {
+    "category": "drauvenHeadStyle_stormthroat",
+    "id": "drauvenHeadStyle.stormthroat",
+    "weight": 0.1,
+    "impliedAspects": ["drauvenHeadStyle_stormthroat", "drauvenHeadStyle_override" ]
+  },
+  {
+    "category": "drauvenHeadStyle_gorelord",
+    "id": "drauvenHeadStyle.gorelord",
+    "weight": 0.1,
+    "impliedAspects": ["drauvenHeadStyle_gorelord", "drauvenHeadStyle_override" ]
+  },
+
+  {
+    "category": "drauvenHead_Feathers_haunt",
+    "id": "drauvenHead.Feathers.Haunt.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Feathers_haunt",
+    "id": "drauvenHead.Feathers.Haunt.1",
+    "impliedAspects": [ "drauvenHeadCustom_feathers2" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Feathers_haunt",
+    "id": "drauvenHead.Feathers.Haunt.2",
+    "impliedAspects": [ "drauvenHeadCustom_feathers1" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Feathers_haunt",
+    "id": "drauvenHead.Feathers.Haunt.3",
+    "impliedAspects": [ "drauvenHeadCustom_feathers3" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Feathers_deeven",
+    "id": "drauvenHead.Feathers.Deeven.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Feathers_deeven",
+    "id": "drauvenHead.Feathers.Deeven.1",
+    "impliedAspects": [ "drauvenHeadCustom_feathers3" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Feathers_deeven",
+    "id": "drauvenHead.Feathers.Deeven.2",
+    "impliedAspects": [ "drauvenHeadCustom_feathers2" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Feathers_deeven",
+    "id": "drauvenHead.Feathers.Deeven.3",
+    "impliedAspects": [ "drauvenHeadCustom_feathers1" ],
+    "weight": 0.05
+  },
+  {
+    "category": "drauvenHead_Feathers_stump",
+    "id": "drauvenHead.Feathers.Stump.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Feathers_stump",
+    "id": "drauvenHead.Feathers.Stump.1",
+    "impliedAspects": [ "drauvenHeadCustom_feathers1" ],
+    "weight": 0.45
+  },
+  {
+    "category": "drauvenHead_Feathers_stump",
+    "id": "drauvenHead.Feathers.Stump.2",
+    "impliedAspects": [ "drauvenHeadCustom_feathers2" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Feathers_stump",
+    "id": "drauvenHead.Feathers.Stump.3",
+    "impliedAspects": [ "drauvenHeadCustom_feathers3" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Feathers_stump",
+    "id": "drauvenHead.Feathers.Stump.4",
+    "impliedAspects": [ "drauvenHeadCustom_feathers5" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Feathers_pilot",
+    "id": "drauvenHead.Feathers.Pilot.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Feathers_pilot",
+    "id": "drauvenHead.Feathers.Pilot.1",
+    "impliedAspects": [ "drauvenHeadCustom_feathers4" ],
+    "weight": 0.45
+  },
+  {
+    "category": "drauvenHead_Feathers_pilot",
+    "id": "drauvenHead.Feathers.Pilot.2",
+    "impliedAspects": [ "drauvenHeadCustom_feathers2" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Feathers_pilot",
+    "id": "drauvenHead.Feathers.Pilot.3",
+    "impliedAspects": [ "drauvenHeadCustom_feathers3" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Feathers_stormthroat",
+    "id": "drauvenHead.Feathers.Stormthroat.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Feathers_stormthroat",
+    "id": "drauvenHead.Feathers.Stormthroat.1",
+    "impliedAspects": [ "drauvenHeadCustom_feathers5" ],
+    "weight": 0.55
+  },
+  {
+    "category": "drauvenHead_Feathers_stormthroat",
+    "id": "drauvenHead.Feathers.Stormthroat.2",
+    "impliedAspects": [ "drauvenHeadCustom_feathers2" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Feathers_stormthroat",
+    "id": "drauvenHead.Feathers.Stormthroat.3",
+    "impliedAspects": [ "drauvenHeadCustom_feathers3" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Feathers_gorelord",
+    "id": "drauvenHead.Feathers.Gorelord.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+
+
+  {
+    "category": "drauvenHead_Horns_haunt",
+    "id": "drauvenHead.Horns.Haunt.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Horns_haunt",
+    "id": "drauvenHead.Horns.Haunt.1",
+    "impliedAspects": [ "drauvenHeadCustom_horns2" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Horns_haunt",
+    "id": "drauvenHead.Horns.Haunt.2",
+    "impliedAspects": [ "drauvenHeadCustom_horns4" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Horns_deeven",
+    "id": "drauvenHead.Horns.Deeven.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Horns_deeven",
+    "id": "drauvenHead.Horns.Deeven.1",
+    "impliedAspects": [ "drauvenHeadCustom_horns3" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Horns_deeven",
+    "id": "drauvenHead.Horns.Deeven.2",
+    "impliedAspects": [ "drauvenHeadCustom_horns4" ],
+    "weight": 0.15
+  },
+  {
+    "category": "drauvenHead_Horns_stump",
+    "id": "drauvenHead.Horns.Stump.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Horns_stump",
+    "id": "drauvenHead.Horns.Stump.1",
+    "impliedAspects": [ "drauvenHeadCustom_horns1" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Horns_stump",
+    "id": "drauvenHead.Horns.Stump.2",
+    "impliedAspects": [ "drauvenHeadCustom_horns4" ],
+    "weight": 0.10
+  },
+  {
+    "category": "drauvenHead_Horns_pilot",
+    "id": "drauvenHead.Horns.Pilot.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Horns_pilot",
+    "id": "drauvenHead.Horns.Pilot.1",
+    "impliedAspects": [ "drauvenHeadCustom_horns4" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Horns_pilot",
+    "id": "drauvenHead.Horns.Pilot.2",
+    "impliedAspects": [ "drauvenHeadCustom_horns2" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Horns_stormthroat",
+    "id": "drauvenHead.Horns.Stormthroat.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Horns_stormthroat",
+    "id": "drauvenHead.Horns.Stormthroat.1",
+    "impliedAspects": [ "drauvenHeadCustom_horns5" ],
+    "weight": 0.45
+  },
+  {
+    "category": "drauvenHead_Horns_stormthroat",
+    "id": "drauvenHead.Horns.Stormthroat.2",
+    "impliedAspects": [ "drauvenHeadCustom_horns2" ],
+    "weight": 0.2
+  },
+  {
+    "category": "drauvenHead_Horns_stormthroat",
+    "id": "drauvenHead.Horns.Stormthroat.3",
+    "impliedAspects": [ "drauvenHeadCustom_horns4" ],
+    "weight": 0.2
+  },
+  {
+    "category": "drauvenHead_Horns_gorelord",
+    "id": "drauvenHead.Horns.Gorelord.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Horns_gorelord",
+    "id": "drauvenHead.Horns.Gorelord.1",
+    "impliedAspects": [ "drauvenHeadCustom_horns6" ],
+    "weight": 0.9
+  },
+
+
+  {
+    "category": "drauvenHead_Whiskers_haunt",
+    "id": "drauvenHead.Whiskers.Haunt.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Whiskers_haunt",
+    "id": "drauvenHead.Whiskers.Haunt.1",
+    "impliedAspects": [ "drauvenHeadCustom_whiskers2" ],
+    "weight": 0.45
+  },
+  {
+    "category": "drauvenHead_Whiskers_haunt",
+    "id": "drauvenHead.Whiskers.Haunt.2",
+    "impliedAspects": [ "drauvenHeadCustom_whiskers1" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Whiskers_deeven",
+    "id": "drauvenHead.Whiskers.Deeven.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Whiskers_deeven",
+    "id": "drauvenHead.Whiskers.Deeven.1",
+    "impliedAspects": [ "drauvenHeadCustom_whiskers2" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Whiskers_deeven",
+    "id": "drauvenHead.Whiskers.Deeven.2",
+    "impliedAspects": [ "drauvenHeadCustom_whiskers1" ],
+    "weight": 0.1
+  },
+  {
+    "category": "drauvenHead_Whiskers_stump",
+    "id": "drauvenHead.Whiskers.Stump.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Whiskers_stump",
+    "id": "drauvenHead.Whiskers.Stump.1",
+    "impliedAspects": [ "drauvenHeadCustom_whiskers1" ],
+    "weight": 0.50
+  },
+  {
+    "category": "drauvenHead_Whiskers_pilot",
+    "id": "drauvenHead.Whiskers.Pilot.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Whiskers_stormthroat",
+    "id": "drauvenHead.Whiskers.Stormthroat.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Whiskers_stormthroat",
+    "id": "drauvenHead.Whiskers.Stormthroat.1",
+    "impliedAspects": [ "drauvenHeadCustom_whiskers5" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Whiskers_gorelord",
+    "id": "drauvenHead.Whiskers.Gorelord.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Whiskers_gorelord",
+    "id": "drauvenHead.Whiskers.Gorelord.1",
+    "impliedAspects": [ "drauvenHeadCustom_whiskers6" ],
+    "weight": 0.5
+  },
+
+
+  {
+    "category": "drauvenHead_Helmet_haunt",
+    "id": "drauvenHead.Helmet.Haunt.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Helmet_haunt",
+    "id": "drauvenHead.Helmet.Haunt.1",
+    "impliedAspects": [ "drauvenHeadCustom_helmet2" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Helmet_deeven",
+    "id": "drauvenHead.Helmet.Deeven.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Helmet_deeven",
+    "id": "drauvenHead.Helmet.Deeven.1",
+    "impliedAspects": [ "drauvenHeadCustom_helmet3" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Helmet_stump",
+    "id": "drauvenHead.Helmet.Stump.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Helmet_stump",
+    "id": "drauvenHead.Helmet.Stump.1",
+    "impliedAspects": [ "drauvenHeadCustom_helmet1" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Helmet_pilot",
+    "id": "drauvenHead.Helmet.Pilot.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Helmet_pilot",
+    "id": "drauvenHead.Helmet.Pilot.1",
+    "impliedAspects": [ "drauvenHeadCustom_helmet4" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Helmet_stormthroat",
+    "id": "drauvenHead.Helmet.Stormthroat.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  },
+  {
+    "category": "drauvenHead_Helmet_stormthroat",
+    "id": "drauvenHead.Helmet.Stormthroat.1",
+    "impliedAspects": [ "drauvenHeadCustom_helmet5" ],
+    "weight": 0.25
+  },
+  {
+    "category": "drauvenHead_Helmet_gorelord",
+    "id": "drauvenHead.Helmet.Gorelord.0",
+    "impliedAspects": [],
+    "weight": 0.5
+  }
+
+]

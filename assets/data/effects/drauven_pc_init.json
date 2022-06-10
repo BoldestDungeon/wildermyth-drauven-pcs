@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven_pc_init",
-	"modId": "wildermyth-drauven-pcs-main",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "justEthaniguess & Ironskink",
 	"STUB": "Initialize our Drauven characters"
 },
@@ -24,40 +24,144 @@
 	},
 	{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
 	{
-		"class": "Test",
-		"value": "self.warrior",
-		"threshold": "1",
-		"onPass": {
-			"class": "AddHistory",
-			"target": "self",
-			"addHistory": [
-				[ "drauvenCustomizationHead_warrior" ]
-			]
-		}
-	},
-	{
-		"class": "Test",
-		"value": "self.hunter",
-		"threshold": "1",
-		"onPass": {
-			"class": "AddHistory",
-			"target": "self",
-			"addHistory": [
-				[ "drauvenCustomizationHead_hunter" ]
-			]
-		}
-	},
-	{
-		"class": "Test",
-		"value": "self.mystic",
-		"threshold": "1",
-		"onPass": {
-			"class": "AddHistory",
-			"target": "self",
-			"addHistory": [
-				[ "drauvenCustomizationHead_mystic" ]
-			]
-		}
+		"class": "DoFirstValid",
+		"target": "self",
+		"outcomes": [
+			{ "class": "Test", "value": "self.maxValue.drauvenHeadStyle", "threshold": "1" },
+
+			{
+				"class": "Test",
+				"value": "self.warrior",
+				"threshold": 1,
+				"onPass": {
+					"class": "AddHistory",
+					"target": "self",
+					"addHistory": [
+						[ "drauvenHeadStyle_stump" ],
+						[ "drauvenHead_Feathers_stump" ],
+						[ "drauvenHead_Horns_stump" ],
+						[ "drauvenHead_Whiskers_stump" ],
+						[ "drauvenHead_Helmet_stump" ]
+					]
+				}
+			},
+			{
+				"class": "Test",
+				"value": "self.hunter",
+				"threshold": 1,
+				"onPass": {
+					"class": "AddHistory",
+					"target": "self",
+					"addHistory": [
+						[ "drauvenHeadStyle_haunt" ],
+						[ "drauvenHead_Feathers_haunt" ],
+						[ "drauvenHead_Horns_haunt" ],
+						[ "drauvenHead_Whiskers_haunt" ],
+						[ "drauvenHead_Helmet_haunt" ]
+					]
+				}
+			},
+			{
+				"class": "Test",
+				"value": "self.mystic",
+				"threshold": 1,
+				"onPass": {
+					"class": "AddHistory",
+					"target": "self",
+					"addHistory": [
+						[ "drauvenHeadStyle_deeven" ],
+						[ "drauvenHead_Feathers_deeven" ],
+						[ "drauvenHead_Horns_deeven" ],
+						[ "drauvenHead_Whiskers_deeven" ],
+						[ "drauvenHead_Helmet_deeven" ]
+					]
+				}
+			},
+			
+			{
+				"class": "DoOneRandom",
+				"weightedOutcomes": [
+					{
+						"outcome": {
+							"class": "AddHistory",
+							"target": "self",
+							"addHistory": [
+								[ "drauvenHeadStyle_haunt" ],
+								[ "drauvenHead_Feathers_haunt" ],
+								[ "drauvenHead_Horns_haunt" ],
+								[ "drauvenHead_Whiskers_haunt" ],
+								[ "drauvenHead_Helmet_haunt" ]
+							]
+						}
+					},
+					{
+						"outcome": {
+							"class": "AddHistory",
+							"target": "self",
+							"addHistory": [
+								[ "drauvenHeadStyle_deeven" ],
+								[ "drauvenHead_Feathers_deeven" ],
+								[ "drauvenHead_Horns_deeven" ],
+								[ "drauvenHead_Whiskers_deeven" ],
+								[ "drauvenHead_Helmet_deeven" ]
+							]
+						}
+					},
+					{
+						"outcome": {
+							"class": "AddHistory",
+							"target": "self",
+							"addHistory": [
+								[ "drauvenHeadStyle_stump" ],
+								[ "drauvenHead_Feathers_stump" ],
+								[ "drauvenHead_Horns_stump" ],
+								[ "drauvenHead_Whiskers_stump" ],
+								[ "drauvenHead_Helmet_stump" ]
+							]
+						}
+					},
+					{
+						"outcome": {
+							"class": "AddHistory",
+							"target": "self",
+							"addHistory": [
+								[ "drauvenHeadStyle_pilot" ],
+								[ "drauvenHead_Feathers_pilot" ],
+								[ "drauvenHead_Horns_pilot" ],
+								[ "drauvenHead_Whiskers_pilot" ],
+								[ "drauvenHead_Helmet_pilot" ]
+							]
+						}
+					},
+					{
+						"outcome": {
+							"class": "AddHistory",
+							"target": "self",
+							"addHistory": [
+								[ "drauvenHeadStyle_stormthroat" ],
+								[ "drauvenHead_Feathers_stormthroat" ],
+								[ "drauvenHead_Horns_stormthroat" ],
+								[ "drauvenHead_Whiskers_stormthroat" ],
+								[ "drauvenHead_Helmet_stormthroat" ]
+							]
+						}
+					},
+					{
+						"outcome": {
+							"class": "AddHistory",
+							"target": "self",
+							"addHistory": [
+								[ "drauvenHeadStyle_gorelord" ],
+								[ "drauvenHead_Feathers_gorelord" ],
+								[ "drauvenHead_Horns_gorelord" ],
+								[ "drauvenHead_Whiskers_gorelord" ],
+								[ "drauvenHead_Helmet_gorelord" ]
+							]
+						}
+					}
+				]
+			}
+		]
 	},
 	{
 		"class": "Aspects",

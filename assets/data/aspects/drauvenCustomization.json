@@ -2,21 +2,149 @@
 {
 	"modId": "wildermyth-drauven-pcs-main",
 	"id": "drauvenHeadCustomization1",
-	"effects": [ "drauven_fix_customization_head1" ]
+	"effects": [ "drauven_fix_customization_head1" ],
+	"importance": -1
 },
 {
 	"modId": "wildermyth-drauven-pcs-main",
 	"id": "drauvenHeadCustomization2",
-	"effects": [ "drauven_fix_customization_head2" ]
+	"effects": [ "drauven_fix_customization_head2" ],
+	"importance": -1
 },
 {
 	"modId": "wildermyth-drauven-pcs-main",
 	"id": "drauvenHeadCustomization3",
-	"effects": [ "drauven_fix_customization_head3" ]
+	"effects": [ "drauven_fix_customization_head3" ],
+	"importance": -1
 },
 {
 	"modId": "wildermyth-drauven-pcs-main",
 	"id": "drauvenHeadCustomization4",
-	"effects": [ "drauven_fix_customization_head4" ]
+	"effects": [ "drauven_fix_customization_head4" ],
+	"importance": -1
+},
+
+{
+	"id": "drauvenHeadStyle_override",
+	"importance": -1
+},
+
+{
+	"id": "drauvenHeadStyle_haunt",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadStyle_deeven",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadStyle_stump",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadStyle_pilot",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadStyle_stormthroat",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadStyle_gorelord",
+	"importance": -1
+},
+
+{
+	"id": "drauvenHeadCustom_feathers1",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_feathers2",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_feathers3",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_feathers4",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_feathers5",
+	"importance": -1
+},{
+	"id": "drauvenHeadCustom_feathers6",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_horns1",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_horns2",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_horns3",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_horns4",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_horns5",
+	"importance": -1
+},{
+	"id": "drauvenHeadCustom_horns6",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_whiskers1",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_whiskers2",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_whiskers3",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_whiskers4",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_whiskers5",
+	"importance": -1
+},{
+	"id": "drauvenHeadCustom_whiskers6",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_helmet1",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_helmet2",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_helmet3",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_helmet4",
+	"importance": -1
+},
+{
+	"id": "drauvenHeadCustom_helmet5",
+	"importance": -1
+},{
+	"id": "drauvenHeadCustom_helmet6",
+	"importance": -1
 }
+
 ]
