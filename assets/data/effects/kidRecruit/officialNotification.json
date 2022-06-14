@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "kidRecruit/officialNotification",
+	"modId": "wildermyth-drauven-pcs-main",
 	"author": "Nate Austin"
 },
 "type": "OTHER",
@@ -23,10 +24,22 @@
 ],
 "outcomes": [
 	{
+		"class": "Test",
+		"value": "sponsor.drauven",
+		"threshold": "1",
+		"onPass": {
+			"class": "Aspects",
+			"target": "hero",
+			"addAspects": [
+				{ "id": "drauven_pc_init", "value": "1" }
+			]
+		}
+	},
+	{
 		"class": "Description",
 		"script": [
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "half",
 					"showNameTags": false,
