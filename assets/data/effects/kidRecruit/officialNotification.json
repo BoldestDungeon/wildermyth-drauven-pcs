@@ -1,0 +1,68 @@
+{
+"id": "kidRecruit_officialNotification",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "kidRecruit/officialNotification",
+	"modId": "wildermyth-drauven-pcs-main",
+	"author": "Nate Austin"
+},
+"type": "OTHER",
+"verb": "MANEUVER",
+"ability": { "icon": "heroism", "priority": "1" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "role": "hero", "template": "INJECTED_ENTITY", "injectedRole": "hero" },
+	{
+		"role": "sponsor",
+		"template": "INJECTED_ENTITY",
+		"choose": "ALL",
+		"injectedRole": "sponsor"
+	},
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "COMPANY" }
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"value": "sponsor.drauven",
+		"threshold": "1",
+		"onPass": {
+			"class": "Aspects",
+			"target": "hero",
+			"addAspects": [
+				{ "id": "drauven_pc_init", "value": "1" }
+			]
+		}
+	},
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_fieldTreeNight.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"focus": "middle",
+							"anchor": { "x": 0.314, "y": 0.323 },
+							"size": 0.52,
+							"head": { "rotate": -5.364, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "kidRecruit/officialNotification",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}
