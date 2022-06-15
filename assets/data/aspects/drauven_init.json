@@ -1,8 +1,17 @@
 [
 {
-	"modId": "wildermyth-drauven-pcs-main",
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_init",
-	"effects": [ "drauven_pc_init" ],
+	"effects": [ "drauven_pc_init|1" ],
+	"importance": -1,
+	"showChangeInComics": "never",
+	"invalidatesSkin": true,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_init_NO_YANDRIC",
+	"effects": [ "drauven_pc_init|0" ],
 	"importance": -1,
 	"showChangeInComics": "never",
 	"invalidatesSkin": true,

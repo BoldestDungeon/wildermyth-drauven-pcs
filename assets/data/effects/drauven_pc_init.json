@@ -1,5 +1,5 @@
 {
-"id": "drauven_pc_init",
+"id": "drauven_pc_init|KNOWS_YANDRIC",
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven_pc_init",
@@ -162,6 +162,17 @@
 				]
 			}
 		]
+	},
+	{
+		"class": "Test",
+		"value": "KNOWS_YANDRIC",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"addHistory": [
+				[ "fluentInYandric" ]
+			]
+		}
 	},
 	{
 		"class": "Aspects",

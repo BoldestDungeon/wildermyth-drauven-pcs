@@ -5,7 +5,8 @@
 	"relationships": [
 		{ "role": "hothead", "fromRole": "hothead" },
 		{ "role": "healer", "fromRole": "healer" }
-	]
+	],
+	"impliedAspects": [ "abandonedDrauven" ]
 },
 {
 	"id": "drauvenHealer.default",

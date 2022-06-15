@@ -6,7 +6,18 @@
 	"humanName": "drauvenName",
 	"showInSummary": false
 },
-
+{
+	"id": "language.fluentInYandric",
+	"category": "fluentInYandric",
+	"showInSummary": false,
+	"impliedAspects": [ "fluentInYandric" ]
+},
+{
+	"id": "language.fluentInDruvwail",
+	"category": "fluentInDruvwail",
+	"showInSummary": false,
+	"impliedAspects": [ "fluentInDruvwail" ]
+},
 {
 	"id": "drauvenBase.001",
 	"category": "drauvenBase",
@@ -16,6 +27,7 @@
 		"drauven",
 		"drauven_pc",
 		"drauvenBlood",
+		"fluentInDruvwail",
 		"activeDefender",
 		"alive",
 		"cannotAge",
@@ -44,6 +56,6 @@
 		"extremeOldAge"
 	],
 	"showInSummary": false
-}
+},
 
 ]

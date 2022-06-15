@@ -1,0 +1,2212 @@
+{
+"id": "languageLessons",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/languageLessons",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterWeight": "1+(100000*lessThan(company.legacy_sawLanguageLesson,1))",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Travelling"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "subject",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "(10*drauven)-fluentInYandric",
+		"scoreThreshold": "8",
+		"aspectValues": [],
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "bookish",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "((drauvenHealer*45)+bookish)-(100*rivalWith.subject)",
+		"aspectValues": [
+			{ "id": "nonhuman", "forbidden": true }
+		],
+		"notAlreadyMatchedAs": [ "subject" ]
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "subject", "bookish" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": null,
+		"aspectValues": [
+			{ "id": "drauven" },
+			{ "id": "fluentInYandric", "forbidden": true }
+		]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.841, "y": 0.193 },
+							"size": 0.3114,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_treetrunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.207, "y": 0.409 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"role": "subject",
+							"equipment": {
+								"equipItemsById": [ "bookRough" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.33, "y": -0.104 },
+							"size": 0.33,
+							"head": { "rotate": -23.318, "scaleY": 1 },
+							"foot": { "rotate": 0 }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.56, "y": 0.151 },
+							"size": 0.2556,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.561, "y": 0.233 },
+							"size": 0.1023,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.351, "y": 0.154 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.389, "y": 0.337 },
+							"size": 0.1958,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.841, "y": 0.193 },
+							"size": 0.3114,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_treetrunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.207, "y": 0.409 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"role": "subject",
+							"equipment": {
+								"equipItemsById": [ "bookRough" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.33, "y": -0.104 },
+							"size": 0.33,
+							"head": { "rotate": -23.318, "scaleY": -1 },
+							"foot": { "rotate": 0 }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.56, "y": 0.151 },
+							"size": 0.2556,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.561, "y": 0.233 },
+							"size": 0.1023,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.351, "y": 0.154 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.389, "y": 0.337 },
+							"size": 0.1958,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_002~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.841, "y": 0.193 },
+							"size": 0.3114,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_treetrunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.207, "y": 0.409 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:figures/images/human/items/item_bookRough_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.348, "y": 0.081 },
+							"size": 0.2053,
+							"nameTag": "none",
+							"foot": { "rotate": -36.488 }
+						},
+						{
+							"role": "subject",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.319, "y": -0.207 },
+							"size": 0.33,
+							"head": { "rotate": -23.318, "scaleY": 1 },
+							"foot": { "rotate": 19.521 },
+							"neck": {}
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.56, "y": 0.151 },
+							"size": 0.2556,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.561, "y": 0.233 },
+							"size": 0.1023,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.351, "y": 0.154 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.389, "y": 0.337 },
+							"size": 0.1958,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_003~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.841, "y": 0.193 },
+							"size": 0.3114,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_treetrunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.207, "y": 0.409 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:figures/images/human/items/item_bookRough_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.348, "y": 0.081 },
+							"size": 0.2053,
+							"nameTag": "none",
+							"foot": { "rotate": -36.488 }
+						},
+						{
+							"role": "subject",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.319, "y": -0.207 },
+							"size": 0.33,
+							"head": { "rotate": -23.318, "scaleY": 1 },
+							"foot": { "rotate": 19.521 },
+							"neck": {}
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.56, "y": 0.151 },
+							"size": 0.2556,
+							"nameTag": "none",
+							"color": { "r": "0.67755681", "g": "0.67755681", "b": "0.67755681", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.568, "y": 0.205 },
+							"size": 0.076,
+							"drawDepth": 9,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.351, "y": 0.154 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.389, "y": 0.337 },
+							"size": 0.1958,
+							"nameTag": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.841, "y": 0.193 },
+							"size": 0.3114,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_treetrunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.207, "y": 0.409 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:figures/images/human/items/item_bookRough_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.348, "y": 0.081 },
+							"size": 0.2053,
+							"nameTag": "none",
+							"foot": { "rotate": -36.488 }
+						},
+						{
+							"role": "subject",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.319, "y": -0.207 },
+							"size": 0.33,
+							"head": { "rotate": -2.677, "scaleY": 1 },
+							"foot": { "rotate": 19.521 },
+							"neck": {}
+						},
+						{
+							"assetSpec": "asset:sites/scenery/logPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.836, "y": 0.412 },
+							"size": 0.0911,
+							"nameTag": "none",
+							"foot": { "rotate": -0.98 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "jugClay" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.823, "y": 0.189 },
+							"size": 0.2785,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.56, "y": 0.151 },
+							"size": 0.2556,
+							"nameTag": "none",
+							"color": { "r": "0.45028409", "g": "0.45028409", "b": "0.45028409", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.561, "y": 0.233 },
+							"size": 0.0474,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.351, "y": 0.154 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.389, "y": 0.337 },
+							"size": 0.1958,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_005~1_subject",
+							"pointerOwner": "subject",
+							"padXFraction": 0.109,
+							"padYFraction": 0.247,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 4.712644, "dY": -5.6551723 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.744, "y": 0.068 },
+							"size": 0.4895,
+							"nameTag": "none",
+							"foot": { "rotate": -1.148 }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/logPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.384 },
+							"size": 0.176,
+							"nameTag": "none",
+							"foot": { "rotate": -0.98 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "jugClay" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.405, "y": -0.094 },
+							"size": 0.4478,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_006~1_bookish",
+							"pointerOwner": "bookish",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.744, "y": 0.068 },
+							"size": 0.4895,
+							"nameTag": "none",
+							"foot": { "rotate": -1.148 }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/logPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.384 },
+							"size": 0.176,
+							"nameTag": "none",
+							"foot": { "rotate": -0.98 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "jugClay" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.405, "y": -0.094 },
+							"size": 0.4478,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_007~1_bookish",
+							"pointerOwner": "bookish",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "asset:figures/images/human/items/item_bookRough_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.025207251, "y": 0.081 },
+							"size": 0.22918946,
+							"nameTag": "none",
+							"foot": { "rotate": -36.488 }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/logPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.5495418, "y": 0.412 },
+							"size": 0.10170073,
+							"nameTag": "none",
+							"foot": { "rotate": -0.98 }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.836, "y": 0.393 },
+							"size": 0.3154,
+							"nameTag": "none",
+							"foot": { "rotate": 43.505 }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/logPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.773, "y": 0.258 },
+							"size": 0.1333,
+							"nameTag": "none",
+							"foot": { "rotate": 27.351 }
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.15327638, "y": 0.337 },
+							"size": 0.21858402,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.68741816, "y": 0.151 },
+							"size": 0.28534254,
+							"nameTag": "none",
+							"color": { "r": "0.69744319", "g": "0.69744319", "b": "0.69744319", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.69054174, "y": 0.233 },
+							"size": 0.05291564,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.034578234, "y": 0.154 },
+							"size": 0.27484873,
+							"nameTag": "none"
+						},
+						{
+							"role": "bookish",
+							"equipment": {},
+							"anchor": { "x": 1.336, "y": 0.522 },
+							"size": 0.3808,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_008~1_bookish",
+							"pointerOwner": "bookish",
+							"location": "topRight",
+							"padXFraction": 0.039,
+							"padYFraction": 0.006,
+							"widthFraction": 0.7089755,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -89.54023, "dY": 5.655173, "scaleX": 0.84286505, "scaleY": 0.84286505 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_treetrunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.127, "y": 0.465 },
+							"size": 0.3456,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:figures/images/human/items/item_bookRough_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.734, "y": 0.068 },
+							"size": 0.302,
+							"nameTag": "none",
+							"foot": { "rotate": -36.488 }
+						},
+						{
+							"role": "subject",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.602, "y": -0.308 },
+							"size": 0.4953,
+							"head": { "rotate": -2.677, "scaleY": 1 },
+							"foot": { "rotate": 19.521 },
+							"neck": {}
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.608, "y": 0.157 },
+							"size": 0.27484873,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.946, "y": 0.34 },
+							"size": 0.2539,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_009~1_subject",
+							"pointerOwner": "subject",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "subject.abandonedDrauven",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_interiorDay.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.109, "y": 0.531 },
+										"size": 0.4363,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:figures/images/misc/drauvenJuvenile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.329, "y": 0.154 },
+										"size": 0.2007,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/bowlSoupSteam.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.6, "y": 0.5 },
+										"size": 0.2801,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/entranceWindowBig.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.458, "y": 0.506 },
+										"size": 0.2758,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "npc",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.778, "y": 0.535 },
+										"size": 0.551,
+										"nameTag": "none",
+										"head": { "rotate": 16.377 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_010.(subject_is_abandonedDrauven)~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_interiorDay.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.026596189, "y": 0.531 },
+										"size": 0.4363,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:figures/images/misc/drauvenJuvenile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.422, "y": 0.163 },
+										"size": 0.2007,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/bowlSoupSteam.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.6346794, "y": 0.5 },
+										"size": 0.2801,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/entranceWindowBig.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.4434347, "y": 0.506 },
+										"size": 0.2758,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:smokeDirectional.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.924, "y": 0.419 },
+										"size": 0.136,
+										"nameTag": "none",
+										"foot": { "rotate": 90.944 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-happy",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.87440854, "y": 0.535 },
+										"size": 0.551,
+										"nameTag": "none",
+										"head": { "rotate": -4.88 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_011.(subject_is_abandonedDrauven)~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_interiorDay.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:actionLines_arcShort.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.585, "y": 0.299 },
+										"size": 0.2891,
+										"nameTag": "none",
+										"foot": { "rotate": 40.715 }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.026596189, "y": 0.531 },
+										"size": 0.4363,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/bowlSoupSteam.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.551, "y": 0.116 },
+										"size": 0.2801,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:figures/images/misc/drauvenJuvenile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.422, "y": 0.163 },
+										"size": 0.2007,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/entranceWindowBig.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.4434347, "y": 0.506 },
+										"size": 0.2758,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:smokeDirectional.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.945, "y": 0.381 },
+										"size": 0.3817,
+										"nameTag": "none",
+										"foot": { "rotate": 87.824 },
+										"color": { "r": "0.328125", "g": "0.328125", "b": "0.328125", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-dubious",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.87440854, "y": 0.535 },
+										"size": 0.551,
+										"nameTag": "none",
+										"head": { "rotate": -4.88 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_012.(subject_is_abandonedDrauven)~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_interiorDay.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.026596189, "y": 0.531 },
+										"size": 0.4363,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:bowl.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.539, "y": 0.038 },
+										"size": 0.3013,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:figures/images/misc/drauvenJuvenile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.484, "y": 0.072 },
+										"size": 0.2007,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/entranceWindowBig.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.4434347, "y": 0.506 },
+										"size": 0.2758,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:smokeDirectional.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.945, "y": 0.381 },
+										"size": 0.3817,
+										"nameTag": "none",
+										"foot": { "rotate": 87.824 },
+										"color": { "r": "0.328125", "g": "0.328125", "b": "0.328125", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.87440854, "y": 0.535 },
+										"size": 0.551,
+										"nameTag": "none",
+										"head": { "rotate": -4.88, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_013.(subject_is_abandonedDrauven)~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_013.(subject_is_abandonedDrauven)~2_npc",
+										"style": "action",
+										"pointerOwner": "npc",
+										"padXFraction": 0.55,
+										"pointerStyle": "speech",
+										"pointerAdjust": { "dX": -38.643585, "dY": 17.908045 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_interiorDay.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:actionLines_dash.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.512, "y": 0.179 },
+										"size": 0.2878,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.026596189, "y": 0.531 },
+										"size": 0.4363,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:bowl.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.539, "y": 0.038 },
+										"size": 0.3013,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:figures/images/misc/drauvenJuvenile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.116, "y": 0.154 },
+										"size": 0.2007,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/entranceWindowBig.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.4434347, "y": 0.506 },
+										"size": 0.2758,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:smokeDirectional.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.945, "y": 0.381 },
+										"size": 0.3817,
+										"nameTag": "none",
+										"foot": { "rotate": 87.824 },
+										"color": { "r": "0.328125", "g": "0.328125", "b": "0.328125", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-rage",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.77, "y": 0.57 },
+										"size": 0.551,
+										"nameTag": "none",
+										"head": { "rotate": -4.88, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_014.(subject_is_abandonedDrauven)~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_014.(subject_is_abandonedDrauven)~2_npc",
+										"style": "action",
+										"pointerOwner": "npc",
+										"padXFraction": 0.5,
+										"pointerStyle": "speech",
+										"pointerAdjust": { "dX": -9.425192, "dY": 11.310343 }
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_paper.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "asset:ui/comics/drauvenBakedWeaponless_haunt.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.474, "y": 0.306 },
+										"size": 0.2332,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "subject",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.664, "y": 0.013 },
+										"size": 0.2053,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.853, "y": 0.38 },
+										"size": 0.295,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:brushpile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.706, "y": 0.409 },
+										"size": 0.6349,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia", "strength": 0.9 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.31, "y": 0.016 },
+										"size": 0.1701,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:cottageStone2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.232, "y": 0.343 },
+										"size": 0.117,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:pineTreeline.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.351, "y": 0.89 },
+										"size": 0.4902,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_015.(subject_NOT_abandonedDrauven)~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_paper.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "asset:ui/comics/drauvenBakedWeaponless_haunt.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.433, "y": 0.297 },
+										"size": 0.2332,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "subject",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.605, "y": 0.001 },
+										"size": 0.2053,
+										"nameTag": "none",
+										"head": { "rotate": -18.235, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.827, "y": 0.38 },
+										"size": 0.295,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:brushpile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.77743936, "y": 0.409 },
+										"size": 0.6349,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia", "strength": 0.9 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.24410927, "y": 0.016 },
+										"size": 0.1701,
+										"nameTag": "none"
+									},
+									{
+										"role": "npc",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "foot",
+										"anchor": { "x": 0.178, "y": 0.117 },
+										"size": 0.0517,
+										"nameTag": "none",
+										"color": { "r": "0.51278406", "g": "0.51278406", "b": "0.51278406", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:cottageStone2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.1390594, "y": 0.343 },
+										"size": 0.117,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:pineTreeline.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.29932782, "y": 0.89 },
+										"size": 0.4902,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_016.(subject_NOT_abandonedDrauven)~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_paper.jpg",
+								"actorSlots": [
+									{
+										"role": "subject",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": 0.014 },
+										"size": 0.2053,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": 6.8, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.827, "y": 0.38 },
+										"size": 0.295,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_birdcage.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.4, "y": 0.358 },
+										"size": 0.5158,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.24410927, "y": 0.016 },
+										"size": 0.1701,
+										"nameTag": "none"
+									},
+									{
+										"role": "npc",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"focus": "foot",
+										"anchor": { "x": 0.466, "y": 0.047 },
+										"size": 0.1963,
+										"nameTag": "none",
+										"color": { "r": "0.51278406", "g": "0.51278406", "b": "0.51278406", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:pineTreeline.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.29932782, "y": 0.89 },
+										"size": 0.4902,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_017.(subject_NOT_abandonedDrauven)~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_paper.jpg",
+								"actorSlots": [
+									{
+										"role": "subject",
+										"form": "frame-interested",
+										"equipment": {
+											"equipItemsById": [ "mug", "rope" ]
+										},
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": 0.014 },
+										"size": 0.2403,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": 6.8, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.24410927, "y": 0.016 },
+										"size": 0.1701,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.983, "y": 0.346 },
+										"size": 0.2846,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_cage.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.662, "y": 0.355 },
+										"size": 0.3403,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.062, "y": 0.34 },
+										"size": 0.1922,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-talk",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"focus": "foot",
+										"anchor": { "x": 0.748, "y": 0.078 },
+										"size": 0.2693,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_018.(subject_NOT_abandonedDrauven)~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_paper.jpg",
+								"actorSlots": [
+									{
+										"role": "subject",
+										"form": "frame-scared",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.196, "y": -0.338 },
+										"size": 0.3857,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": 15.831, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.647, "y": 0.323 },
+										"size": 0.604,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.24410927, "y": 0.016 },
+										"size": 0.1701,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:pineTreeline.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.29932782, "y": 0.89 },
+										"size": 0.4902,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_019.(subject_NOT_abandonedDrauven)~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_019.(subject_NOT_abandonedDrauven)~2_narration",
+										"style": "narration",
+										"location": "bottomLeft"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_paper.jpg",
+								"actorSlots": [
+									{
+										"role": "subject",
+										"form": "frame-scheming",
+										"equipment": {
+											"equipItemsById": [ "skinningKnife" ]
+										},
+										"focus": "foot",
+										"anchor": { "x": 0.526, "y": 0.001 },
+										"size": 0.2403,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"head": { "rotate": 6.8, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.24410927, "y": 0.016 },
+										"size": 0.1701,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.983, "y": 0.346 },
+										"size": 0.2846,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_cage.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.662, "y": 0.355 },
+										"size": 0.3403,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.062, "y": 0.34 },
+										"size": 0.1922,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-talk",
+										"equipment": { "mode": "removeWeapons" },
+										"focus": "foot",
+										"anchor": { "x": 0.859, "y": 0.022 },
+										"size": 0.2693,
+										"drawDepth": 4.5,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~01~prompt~panel_020.(subject_NOT_abandonedDrauven)~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						}
+					]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.841, "y": 0.193 },
+							"size": 0.3114,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_treetrunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.207, "y": 0.409 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:figures/images/human/items/item_bookRough_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.348, "y": 0.081 },
+							"size": 0.2053,
+							"nameTag": "none",
+							"foot": { "rotate": -36.488 }
+						},
+						{
+							"role": "subject",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.319, "y": -0.207 },
+							"size": 0.33,
+							"head": { "rotate": -2.677, "scaleY": 1 },
+							"foot": { "rotate": 19.521 },
+							"neck": {}
+						},
+						{
+							"role": "bookish",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "jugClay" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.697, "y": -0.006 },
+							"size": 0.2785,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.56, "y": 0.151 },
+							"size": 0.2556,
+							"nameTag": "none",
+							"color": { "r": "0.97789609", "g": "0.96926731", "b": "0.92267203", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.561, "y": 0.233 },
+							"size": 0.1921,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.351, "y": 0.154 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.389, "y": 0.337 },
+							"size": 0.1958,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_021~1_subject",
+							"pointerOwner": "subject",
+							"padXFraction": 0.032,
+							"padYFraction": 0.155,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 4.712644, "dY": -5.6551723 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_021~2_bookish",
+							"pointerOwner": "bookish",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFifths",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0760453, "y": 0.193 },
+							"size": 0.3114,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_treetrunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.0050403476, "y": 0.409 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:figures/images/human/items/item_bookRough_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.24322909, "y": 0.081 },
+							"size": 0.2053,
+							"nameTag": "none",
+							"foot": { "rotate": -36.488 }
+						},
+						{
+							"role": "subject",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.19423994, "y": -0.207 },
+							"size": 0.33,
+							"head": { "rotate": -2.677, "scaleY": 1 },
+							"foot": { "rotate": 19.521 },
+							"neck": {}
+						},
+						{
+							"role": "bookish",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "jugClay" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.83278865, "y": -0.006 },
+							"size": 0.2785,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.6013569, "y": 0.151 },
+							"size": 0.2556,
+							"nameTag": "none",
+							"color": { "r": "0.97789609", "g": "0.96926731", "b": "0.92267203", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.6030462, "y": 0.233 },
+							"size": 0.1921,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.24829698, "y": 0.154 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.3124897, "y": 0.337 },
+							"size": 0.1958,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_022~1_bookish",
+							"pointerOwner": "bookish",
+							"location": "topRight",
+							"padXFraction": 0.26721138,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "humble",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "twoFifths",
+							"actorSlots": [
+								{
+									"assetSpec": "comic:comicForeground_treetrunk1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.162, "y": 0.429 },
+									"size": 0.2482,
+									"nameTag": "none"
+								},
+								{
+									"role": "subject",
+									"form": "frame-interested",
+									"equipment": {
+										"equipItemsById": [ "bookRough" ]
+									},
+									"anchor": { "x": 0.48, "y": 0.606 },
+									"size": 0.4523
+								},
+								{
+									"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.706, "y": 0.19 },
+									"size": 0.3704,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:tent.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.778, "y": 0.517 },
+									"size": 0.2457,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/languageLessons",
+									"textKey": "~02~choice_humble~panel_001~1_subject",
+									"pointerOwner": "subject"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "brash",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "twoFifths",
+							"actorSlots": [
+								{
+									"assetSpec": "comic:comicForeground_treetrunk1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.197, "y": 0.389 },
+									"size": 0.3072,
+									"nameTag": "none"
+								},
+								{
+									"role": "subject",
+									"form": "frame-grim",
+									"anchor": { "x": 0.518, "y": 0.575 },
+									"size": 0.565
+								},
+								{
+									"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.72, "y": 0.08 },
+									"size": 0.4072,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:tent.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.865, "y": 0.42 },
+									"size": 0.2228,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/languageLessons",
+									"textKey": "~03~choice_brash~panel_001~1_subject",
+									"pointerOwner": "subject"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "subject",
+		"ifPlayerChose": "humble",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourFifth",
+								"bgAuto": "approachingSite",
+								"bgNighttime": true,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:comicForeground_treetrunk1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.114, "y": 0.487 },
+										"size": 0.2386,
+										"nameTag": "none",
+										"color": { "r": "0.43039772", "g": "0.43039772", "b": "0.43039772", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.851, "y": 0.195 },
+										"size": 0.3347,
+										"nameTag": "none"
+									},
+									{
+										"role": "subject",
+										"form": "frame-joy",
+										"equipment": { "mode": "removeWeapons" },
+										"focus": "foot",
+										"anchor": { "x": 0.256, "y": -0.157 },
+										"size": 0.4026,
+										"foot": { "rotate": 4.381 }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-joke",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"focus": "foot",
+										"anchor": { "x": 0.646, "y": -0.116 },
+										"size": 0.3852,
+										"nameTag": "bottomRight"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.438, "y": 0.107 },
+										"size": 0.2393,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:figures/images/human/items/item_jugClay.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.541, "y": 0.123 },
+										"size": 0.218,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.91489387", "b": "0.19034088", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.293, "y": 0.202 },
+										"size": 0.3249,
+										"nameTag": "none",
+										"foot": { "rotate": 0 }
+									},
+									{
+										"assetSpec": "comic:tent.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.313, "y": 0.513 },
+										"size": 0.2332,
+										"nameTag": "none",
+										"color": { "r": "0.72017044", "g": "0.72017044", "b": "0.72017044", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~04~player_chose_humble~panel_001~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "RelationshipPoints",
+					"target": "subject",
+					"amount": "20",
+					"who": [ "bookish" ]
+				},
+				{
+					"class": "Mission",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "subject",
+		"ifPlayerChose": "brash",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "threeFifths",
+								"bgAuto": "approachingSite",
+								"bgNighttime": true,
+								"actorSlots": [
+									{
+										"role": "subject",
+										"form": "frame-rage",
+										"focus": "foot",
+										"anchor": { "x": 0.363, "y": -0.031 },
+										"size": 0.3722,
+										"nameTag": "none"
+									},
+									{
+										"role": "bookish",
+										"form": "frame-grim",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "foot",
+										"anchor": { "x": 0.156, "y": 0.003 },
+										"size": 0.3177,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_flatHillRockGray.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.798, "y": 0.079 },
+										"size": 0.1975,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.71732956", "g": "0.71732956", "b": "0.71732956", "a": "1" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/haybaleArcheryTarget.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.866, "y": 0.368 },
+										"size": 0.2591,
+										"nameTag": "none",
+										"color": { "r": "0.74573863", "g": "0.74573863", "b": "0.74573863", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:dummy.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.577, "y": 0.305 },
+										"size": 0.1677,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~05~player_chose_brash~panel_001~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"bgAuto": "atSite",
+								"actorSlots": [
+									{
+										"role": "subject",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "foot",
+										"anchor": { "x": 0.126, "y": -0.012 },
+										"size": 0.27,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:columnStone.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.514, "y": 0.748 },
+										"size": 0.35,
+										"nameTag": "none"
+									},
+									{
+										"role": "bookish",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "foot",
+										"anchor": { "x": 0.315, "y": -0.022 },
+										"size": 0.27,
+										"nameTag": "none"
+									},
+									{
+										"role": "foes",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.88, "y": 0.045 },
+										"size": 0.3,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/languageLessons",
+										"textKey": "~05~player_chose_brash~panel_002~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{
+							"modifier": "INSIGHT",
+							"roles": [ "bookish", "subject" ]
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "AddHistory",
+		"target": "volunteer",
+		"inlineHistory": {
+			"id": "languageLessons.outcome",
+			"associatedAspects": [ "fluentInYandric" ],
+			"relationships": [
+				{ "role": "bookish" }
+			]
+		}
+	},
+	{
+		"class": "UnlockLegacyAspect",
+		"legacyAspect": "legacy_sawLanguageLesson",
+		"value": "1"
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "farmer",
+					"forbiddenHistoryAspects": [ "nonhuman", "drauven" ]
+				},
+				"legacyHero": { "spawnFromRole": "volunteer", "reset": false },
+				"control": "none"
+			}
+		},
+		{
+			"role": "npc2",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"customHistory": [
+						{ "id": "languageLessons.1", "humanName": "drauvenName" }
+					]
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}
