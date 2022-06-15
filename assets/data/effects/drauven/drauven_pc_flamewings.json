@@ -11,6 +11,7 @@
 "ability": {
 	"icon": "fireleash",
 	"category": "attackAbility",
+	"strictlyBetterThan": [ "mysticRecipeFireleash", "mysticRecipeFlareLamp", "mysticRecipeStealFire" ],
 	"priority": "3",
 	"onlyShowIfPossibleInCharacterSheet": true,
 	"showDescriptionInTooltip": true
@@ -24,9 +25,6 @@
 	{
 		"role": "source",
 		"template": "ANY",
-		"choose": "BY_SCORE",
-		"scoreFunction": "lampIsFireSource+lampCanFlare",
-		"scoreThreshold": "1",
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
 			"hoverScript": "figures.abilitySelectHover",
@@ -35,7 +33,8 @@
 			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
-		"relationship": "interfusedWithEntity"
+		"relationship": "interfusedWithEntity",
+		"aspectsOneOf": [ "lampIsFireSource", "lampCanFlare", "uncontainedFire" ]
 	},
 	{
 		"template": "TILE",
@@ -110,7 +109,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "((2*source.lampIsFireSource)+1d2)+((self.SPELL_DAMAGE+self.POTENCY)*0.5)",
+					"amount": "((2*(source.lampIsFireSource+source.uncontainedFire))+1d2)+((self.SPELL_DAMAGE+self.POTENCY)*0.5)",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
