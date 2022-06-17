@@ -184,7 +184,7 @@
 				{
 					"name": "Drauv_armor_base",
 					"tint": "primary", "tintAmount": 0.6,
-					"depth": 1350
+					"depth": 1349
 				},
                 {
                     "name": "Drauv_armor_detail_torso_1",
@@ -276,13 +276,13 @@
 				{
 					"name": "Drauv_ArmL_2handed_lower",
 					"tint": "skin", "tintAmount": 0.4,
-					"depth": 1200,
+					"depth": 1500,
 					"rigMode": "twoHanded"
 				},
 				{
 					"name": "Drauv_ArmL_2handed_upper",
 					"tint": "skin", "tintAmount": 0.4,
-					"depth": 1401,
+					"depth": 1213,
 					"rigMode": "twoHanded"
 				},
 				{
@@ -316,13 +316,19 @@
 				{
 					"name": "Drauv_ArmR",
 					"tint": "skin", "tintAmount": 0.4,
-					"depth": 1200,
+					"depth": 1350,
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_ArmR_2handed",
+					"name": "Drauv_ArmR_2handed_lower",
 					"tint": "skin", "tintAmount": 0.4,
-					"depth": 1200,
+					"depth": 3000,
+					"rigMode": "twoHanded"
+				},
+				{
+					"name": "Drauv_ArmR_2handed_upper",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 1350,
 					"rigMode": "twoHanded"
 				},
 				{
