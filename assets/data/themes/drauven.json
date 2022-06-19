@@ -46,6 +46,22 @@
                     "ifOwnerAspect": "drauvenHeadCustom_warrior2",
                     "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
                 },
+				               {
+                    "name": "replaceHead_drauvstump_detail1_behind",
+                    "tint": "hair", "tintAmount": 0.6,
+                    "depth": 3900,
+                    "headOffset": true,
+                    "ifOwnerAspect": "drauvenHeadCustom_warrior1",
+                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+                },
+                {
+                    "name": "replaceHead_drauvstump_detail2_behind",
+                    "tint": "hair", "tintAmount": 0.6,
+                    "depth": 3800,
+                    "headOffset": true,
+                    "ifOwnerAspect": "drauvenHeadCustom_warrior2",
+                    "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+                },
                 {
                     "name": "replaceHead_drauvstump_detail3",
                     "tint": "hair", "tintAmount": 0.6,
@@ -282,18 +298,18 @@
 				{
 					"name": "Drauv_ArmL_2handed_upper",
 					"tint": "skin", "tintAmount": 0.4,
-					"depth": 1213,
+					"depth": 1199,
 					"rigMode": "twoHanded"
 				},
 				{
-					"name": "Drauv_handL_open",
+					"name": "Drauv_handL",
 					"tint": "skin", "tintAmount": 0.4,
 					"depth": 8001,
 					"ifLeftHandGrasp": "open",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handL",
+					"name": "Drauv_handL_closed",
 					"tint": "skin", "tintAmount": 0.4,
 					"depth": 8001,
 					"ifLeftHandGrasp": "weapon",
@@ -322,9 +338,15 @@
 			"effects": [],
 			"layers": [
 				{
-					"name": "Drauv_ArmR",
+					"name": "Drauv_ArmR_upper",
 					"tint": "skin", "tintAmount": 0.4,
 					"depth": 1350,
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_ArmR_lower",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 8000,
 					"rigMode": "oneHanded"
 				},
 				{
@@ -374,6 +396,20 @@
                     "tint": "secondary", "tintAmount": 0.6,
                     "depth": 8503,
                     "ifOwnerAspect": "drauvenOtherCustomization3"
+                },
+				                {
+                    "name": "Drauv_armor_detail_armR_1H",
+                    "tint": "secondary", "tintAmount": 0.6,
+                    "depth": 8501,
+                    "ifOwnerAspect": "drauvenOtherCustomization1",
+					"rigMode": "oneHanded"
+                },
+				                {
+                    "name": "Drauv_armor_detail_armR_2H",
+                    "tint": "secondary", "tintAmount": 0.6,
+                    "depth": 8501,
+                    "ifOwnerAspect": "drauvenOtherCustomization1",
+					"rigMode": "twoHanded"
                 }
 			]
 		}
