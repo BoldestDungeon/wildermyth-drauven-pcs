@@ -11,12 +11,17 @@
 "ability": {
 	"icon": "ambush",
 	"priority": "1",
-	"showDescriptionInTooltip": true,
+	"strictlyBetterThan": [ "waitEndTurn", "preparedShot" ],
+	"showDescriptionInTooltip": true
 },
 "targets": [
 	{
 		"template": "SELF",
 		"missionFeedback": { "orientTo": "focus" }
+	},
+	{
+		"template": "RANGED_WEAPON",
+		"aspects": [ "weapon", "ranged", "MAIN_HAND" ]
 	},
 	{
 		"template": "TILE",
@@ -39,7 +44,7 @@
 		"template": "TILE",
 		"choose": "ALL",
 		"relativeTo": "focus",
-		"range": "1.3+(self.drauvenDeck_hunter_preparedShot_upgrade)*0.5",
+		"range": "1.3+(self.drauvenDeck_hunter_preparedShot_upgrade)*0.4+(self.hunterGreenhorn_ambush)*0.4",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	},
@@ -60,9 +65,37 @@
 	{
 		"class": "Aspects",
 		"addAspects": [
-			{ "id": "doneWithTurn", "value": "1" },
-			{ "id": "drauven_hasPreparedShot", "value": "1", "atTiles": "targetTile" }
+			{ "id": "doneWithTurn", "value": "1" }
 		]
+	},
+	{
+		"class": "Test",
+		"value": "self.hunterGreenhorn_ambush",
+		"threshold": "1",
+		"onPass": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "hasPreparedShot", "value": "1", "atTiles": "targetTile" },
+				{ "id": "preparedShotDummy", "value": "1" }
+			]
+
+		},
+		"onFail": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_hasPreparedShot", "value": "1", "atTiles": "targetTile" }
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.drauvenDeck_hunter_preparedShot_upgrade",
+		"onPass": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_preparedShotAlsoPoisons", "value": "1" }
+			]
+		}
 	}
 ]
 }

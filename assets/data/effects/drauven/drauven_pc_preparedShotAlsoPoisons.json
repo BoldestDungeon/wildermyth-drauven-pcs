@@ -1,0 +1,32 @@
+{
+  "id": "drauven_pc_preparedShotAlsoPoisons",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "drauven/drauven_pc_preparedShotAlsoPoisons",
+    "sort": 4
+  },
+  "type": "DAMAGE_ROLL",
+  "targets": [
+    { "template": "SELF" },
+    { "template": "DEFENDER" },
+    {
+      "template": "ABILITY",
+      "abilityHasAnyTags": [ "ranged", "weapon", "themeUsageOverride" ]
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "Aspects",
+      "target": "defender",
+      "removeAspects": [ "damageOverTimeFrom|poison|*" ]
+    },
+    {
+      "class": "Aspects",
+      "target": "defender",
+      "addAspects": [
+        { "id": "poisoned", "value": "1+self.potency/3" },
+        { "id": "damageOverTimeFrom|poison", "value": "1", "inRelationTo": "self" }
+      ]
+    }
+  ]
+  }
