@@ -746,7 +746,7 @@
 					"name": "Drauv_ArmL_upper",
 					"tint": "skin", "tintAmount": 0.4,
 					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
-					"depth": 1201,
+					"depth": 1199,
 					"rigMode": "oneHanded"
 				},
 				{
@@ -760,7 +760,7 @@
 					"name": "Drauv_ArmL_2handed_upper",
 					"tint": "skin", "tintAmount": 0.4,
 					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
-					"depth": 1213,
+					"depth": 1199,
 					"rigMode": "twoHanded"
 				},
 				{
@@ -1033,6 +1033,15 @@
                     "name": "Drauv_armor_detail_armR_1",
                     "tint": "secondary", "tintAmount": 0.6,
                     "depth": 4501,
+					"rigMode": "oneHanded",
+                    "ifOwnerAspect": "drauvenOtherCustomization1",
+										"ifNoOwnerAspect": "themeSkin_drauven_alternate"
+                },
+				{
+                    "name": "Drauv_armor_detail_armR_1_2handed",
+                    "tint": "secondary", "tintAmount": 0.6,
+                    "depth": 4501,
+					"rigMode": "twoHanded",
                     "ifOwnerAspect": "drauvenOtherCustomization1",
 										"ifNoOwnerAspect": "themeSkin_drauven_alternate"
                 },
