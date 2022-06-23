@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven_pc_init",
-	"modId": "wildermyth-drauven-pcs",
+	"modId": "wildermyth-drauven-pcs-main",
 	"author": "justEthaniguess & Ironskink",
 	"STUB": "Initialize our Drauven characters"
 },
@@ -12,6 +12,10 @@
 	{ "template": "SELF" }
 ],
 "outcomes": [
+	{
+		"class": "Aspects",
+		"removeAspects": [ "drauven_pc_init" ]
+	},
 	{
 		"class": "AddHistory",
 		"target": "self",
@@ -28,11 +32,10 @@
 		"target": "self",
 		"outcomes": [
 			{ "class": "Test", "value": "self.maxValue.drauvenHeadStyle", "threshold": "1" },
-
 			{
 				"class": "Test",
 				"value": "self.warrior",
-				"threshold": 1,
+				"threshold": "1",
 				"onPass": {
 					"class": "AddHistory",
 					"target": "self",
@@ -48,7 +51,7 @@
 			{
 				"class": "Test",
 				"value": "self.hunter",
-				"threshold": 1,
+				"threshold": "1",
 				"onPass": {
 					"class": "AddHistory",
 					"target": "self",
@@ -64,7 +67,7 @@
 			{
 				"class": "Test",
 				"value": "self.mystic",
-				"threshold": 1,
+				"threshold": "1",
 				"onPass": {
 					"class": "AddHistory",
 					"target": "self",
@@ -77,7 +80,6 @@
 					]
 				}
 			},
-			
 			{
 				"class": "DoOneRandom",
 				"weightedOutcomes": [
@@ -164,8 +166,36 @@
 		]
 	},
 	{
-		"class": "Aspects",
-		"removeAspects": [ "drauven_pc_init" ]
+		"class": "DoOneRandom",
+		"weightedOutcomes": [
+			{
+				"outcome": {
+					"class": "AddHistory",
+					"inlineHistory": {
+						"id": "drauven_pc_init.4.outcome.random.0",
+						"associatedAspects": [ "humanSkin_overrideSkinColor|ff0000|aa0000|660000|1" ]
+					}
+				}
+			},
+			{
+				"outcome": {
+					"class": "AddHistory",
+					"inlineHistory": {
+						"id": "drauven_pc_init.4.outcome.random.1",
+						"associatedAspects": [ "humanSkin_overrideSkinColor|00ff00|00aa00|006600|1" ]
+					}
+				}
+			},
+			{
+				"outcome": {
+					"class": "AddHistory",
+					"inlineHistory": {
+						"id": "drauven_pc_init.4.outcome.random.2",
+						"associatedAspects": [ "humanSkin_overrideSkinColor|0000ff|0000aa|000066|1" ]
+					}
+				}
+			}
+		]
 	}
 ]
 }
