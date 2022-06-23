@@ -15,7 +15,7 @@
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_battleyell",
+		"upgradeForAbility": "drauvenDeck_common_battleyell",
 		"abilityDeckIcon": "bloodrage"
 	}
 },
@@ -35,7 +35,7 @@
 	"legacyAbilityChoice": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_blastingshard",
+		"upgradeForAbility": "drauvenDeck_mystic_blastingshard",
 		"abilityDeckIcon": "shardnado"
 	}
 },
@@ -116,7 +116,7 @@
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_bloodedFerocity",
+		"upgradeForAbility": "drauvenDeck_warrior_bloodedFerocity",
 		"abilityDeckIcon": "ignite"
 	}
 },
@@ -134,7 +134,7 @@
 	"id": "drauvenDeck_warrior_tailslap_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "crush", "upgradeForAbility": "drauvenDeck_tailslap" }
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "crush", "upgradeForAbility": "drauvenDeck_warrior_tailslap" }
 },
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -151,7 +151,7 @@
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"showInTooltip": true,
-	"info": { "abilityDeckUsage": "upgrade", "upgradeForAbility": "drauvenDeck_concussed", "abilityDeckIcon": "bloodrage" }
+	"info": { "abilityDeckUsage": "upgrade", "upgradeForAbility": "drauvenDeck_warrior_concussed", "abilityDeckIcon": "bloodrage" }
 },
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -187,7 +187,7 @@
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_preparedShot",
+		"upgradeForAbility": "drauvenDeck_hunter_preparedShot",
 		"abilityDeckIcon": "ambush"
 	}
 },
@@ -207,7 +207,7 @@
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_quickblade",
+		"upgradeForAbility": "drauvenDeck_hunter_quickblade",
 		"abilityDeckIcon": "thornfang"
 	}
 },
@@ -227,7 +227,7 @@
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_cower",
+		"upgradeForAbility": "drauvenDeck_hunter_cower",
 		"abilityDeckIcon": "silkstepCloak"
 	}
 },
