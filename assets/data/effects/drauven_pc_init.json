@@ -3,15 +3,24 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven_pc_init",
-	"modId": "wildermyth-drauven-pcs",
+	"modId": "wildermyth-drauven-pcs-main",
 	"author": "justEthaniguess & Ironskink",
 	"STUB": "Initialize our Drauven characters"
 },
 "type": "ABILITIES_CHANGED",
 "targets": [
-	{ "template": "SELF" }
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "drauven", "forbidden": true }
+		]
+	}
 ],
 "outcomes": [
+	{
+		"class": "Aspects",
+		"removeAspects": [ "drauven_pc_init" ]
+	},
 	{
 		"class": "AddHistory",
 		"target": "self",
@@ -28,11 +37,10 @@
 		"target": "self",
 		"outcomes": [
 			{ "class": "Test", "value": "self.maxValue.drauvenHeadStyle", "threshold": "1" },
-
 			{
 				"class": "Test",
 				"value": "self.warrior",
-				"threshold": 1,
+				"threshold": "1",
 				"onPass": {
 					"class": "AddHistory",
 					"target": "self",
@@ -48,7 +56,7 @@
 			{
 				"class": "Test",
 				"value": "self.hunter",
-				"threshold": 1,
+				"threshold": "1",
 				"onPass": {
 					"class": "AddHistory",
 					"target": "self",
@@ -64,7 +72,7 @@
 			{
 				"class": "Test",
 				"value": "self.mystic",
-				"threshold": 1,
+				"threshold": "1",
 				"onPass": {
 					"class": "AddHistory",
 					"target": "self",
@@ -77,7 +85,6 @@
 					]
 				}
 			},
-			
 			{
 				"class": "DoOneRandom",
 				"weightedOutcomes": [
@@ -162,10 +169,6 @@
 				]
 			}
 		]
-	},
-	{
-		"class": "Aspects",
-		"removeAspects": [ "drauven_pc_init" ]
 	}
 ]
 }
