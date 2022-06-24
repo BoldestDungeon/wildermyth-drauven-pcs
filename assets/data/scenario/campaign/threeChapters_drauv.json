@@ -1,0 +1,53 @@
+{
+"scenarioInfo": {
+	"id": "threeChapters_drauv",
+	"type": "CAMPAIGN",
+	"nameKey": "threeChapters_drauv.name",
+	"blurbKey": "threeChapters_drauv.blurb",
+	"newGameImagePath": "assets/ui/reskin/newCampaign_3chp.png",
+	"sortNumber": 110,
+	"rosterSlots": [
+		{
+			"archetype": "warrior",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "warrior" ],
+			"customHistory": {
+				"appendHistory": [
+					{
+						"id": "threeChapters_drauv.0.rosterCustomHistory.",
+						"impliedAspects": [ "drauven_pc_init" ]
+					}
+				]
+			}
+		},
+		{
+			"archetype": "hunter",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "hunter" ],
+			"customHistory": {
+				"appendHistory": [
+					{
+						"id": "threeChapters_drauv.1.rosterCustomHistory.",
+						"impliedAspects": [ "drauven_pc_init" ]
+					}
+				]
+			}
+		},
+		{
+			"archetype": "mystic",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "mystic" ],
+			"customHistory": {
+				"appendHistory": [
+					{
+						"id": "threeChapters_drauv.2.rosterCustomHistory.",
+						"impliedAspects": [ "drauven_pc_init" ]
+					}
+				]
+			}
+		}
+	],
+	"legacyAspectPrerequisites": [ "legacy_beatTutorial" ]
+},
+"villainPlotId": "C_threeChapters_v3"
+}
