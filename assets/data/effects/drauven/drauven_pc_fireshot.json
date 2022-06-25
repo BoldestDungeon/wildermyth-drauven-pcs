@@ -50,10 +50,10 @@
         "outcomes": [
           {
             "class": "Damage",
-            "amount": "self.SPELL_DAMAGE+self.POTENCY+1d2+(self.POTENCY*self.drauvenDeck_fireshot_upgrade)",
+            "amount": "self.SPELL_DAMAGE+self.POTENCY+1d2+(self.POTENCY*self.drauvenDeck_mystic_fireshot_upgrade)",
             "type": "MAGIC",
             "pierce": "1",
-            "overrideStuntDamage": "3 + (3*(1+self.drauvenDeck_fireshot_upgrade))",
+            "overrideStuntDamage": "3 + (3*(1+self.drauvenDeck_mystic_fireshot_upgrade))",
             "onStunt": {
               "class": "BranchAbility",
               "target": "self",

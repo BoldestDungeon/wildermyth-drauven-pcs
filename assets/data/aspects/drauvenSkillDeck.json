@@ -69,6 +69,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_dragonBlood_upgrade",
+	"effects": [ "drauven_pc_dragonBlood" ],
 	"legacyAbilityChoice": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",
