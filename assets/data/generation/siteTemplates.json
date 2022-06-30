@@ -1,0 +1,466 @@
+[
+	{
+		"id": "cavern",
+		"nameAlgorithm": "cavernSite",
+		"featureTags": ["cavern"],
+		"aspects": [
+			"interestingSite",
+			"cavern",
+			"caveSite",
+			"station",
+			"undergroundSite",
+			"organicSite"
+		],
+		"resources": ["ingots", "ingots", "spellthreads"],
+		"missionPlans": [
+			{"plan": "cavern"}, 
+			{"plan": "cavern", "assaultPlan": "customCave1", "weight": 0.25}
+		]
+	},
+
+	{
+		"id": "distillery",
+		"nameAlgorithm": "distillerySite",
+		"featureTags": ["distillery"],
+		"aspects": [
+			"structureSite",
+			"interestingSite",
+			"distillery",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["hides", "spellthreads", null],
+		"missionPlans": [{"plan": "distillery"}]
+	},
+	{
+		"id": "dreamloom",
+		"nameAlgorithm": "dreamloomSite",
+		"featureTags": ["dreamloom"],
+		"aspects": [
+			"interestingSite",
+			"wildernessSite",
+			"station",
+			"dreamloom",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["fabrics", "spellthreads"],
+		"missionPlans": [{"plan": "dreamloom", "assaultPlan": "CustomDreamloom1", "weight": 0.25}]
+	},
+	{
+		"id": "earthworks",
+		"nameAlgorithm": "earthworksSite",
+		"featureTags": ["earthworks"],
+		"aspects": [
+			"earthworks",
+			"interestingSite",
+			"caveSite",
+			"station",
+			"undergroundSite",
+			"constructedSite"
+		],
+		"resources": ["ingots", "heartwoods"],
+		"missionPlans": [{"plan": "earthworks"}]
+	},
+	{
+		"id": "font",
+		"nameAlgorithm": "fontSite",
+		"featureTags": ["font"],
+		"aspects": [
+			"interestingSite",
+			"wildernessSite",
+			"station",
+			"abovegroundSite",
+			"organicSite",
+			"font"
+		],
+		"resources": ["spellthreads", "spellthreads", null],
+		"missionPlans": [{"plan": "font"}]
+	},
+	{
+		"id": "forestShrine",
+		"nameAlgorithm": "forestShrineSite",
+		"featureTags": ["forestShrine"],
+		"aspects": [
+			"forestShrine",
+			"interestingSite",
+			"wildernessSite",
+			"station",
+			"abovegroundSite",
+			"organicSite"
+		],
+		"resources": ["heartwoods", "spellthreads"],
+		"missionPlans": [{"plan": "forestShrine"}]
+	},
+	{
+		"id": "forge",
+		"nameAlgorithm": "forgeSite",
+		"featureTags": ["forge"],
+		"aspects": [
+			"structureSite",
+			"interestingSite",
+			"forge",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["ingots", "ingots", "ingots"],
+		"missionPlans": [
+			{"plan": "forge"},
+			{"plan": "forge", "assaultPlan": "forge2", "weight": 0.25}
+		]
+	},
+	{
+		"id": "grove",
+		"nameAlgorithm": "groveSite",
+		"featureTags": ["grove"],
+		"aspects": [
+			"interestingSite",
+			"grove",
+			"wildernessSite",
+			"station",
+			"abovegroundSite",
+			"organicSite"
+		],
+		"resources": ["heartwoods", "heartwoods", "heartwoods"],
+		"missionPlans": [{"plan": "grove"}]
+	},
+	{
+		"id": "henge",
+		"nameAlgorithm": "hengeSite",
+		"featureTags": ["henge"],
+		"aspects": [
+			"interestingSite",
+			"wildernessSite",
+			"henge",
+			"station",
+			"abovegroundSite",
+			"organicSite"
+		],
+		"resources": ["ingots", "spellthreads"],
+		"missionPlans": [{"plan": "henge"},
+	    {"plan": "henge", "assaultPlan": "customHenge1", "weight": 0.25}]
+	},
+	{
+		"id": "huntersBlind",
+		"nameAlgorithm": "huntersBlindSite",
+		"featureTags": ["huntersBlind"],
+		"aspects": [
+			"interestingSite",
+			"huntersBlind",
+			"wildernessSite",
+			"station",
+			"abovegroundSite",
+			"organicSite"
+		],
+		"resources": ["heartwoods", "hides"],
+		"missionPlans": [{"plan": "huntersBlind"}]
+	},
+	{
+		"id": "laboratory",
+		"nameAlgorithm": "laboratorySite",
+		"featureTags": ["laboratory"],
+		"aspects": [
+			"interestingSite",
+			"laboratory",
+			"caveSite",
+			"station",
+			"undergroundSite",
+			"constructedSite"
+		],
+		"resources": ["ingots", "spellthreads", null],
+		"missionPlans": [{"plan": "laboratory"}]
+	},
+	{
+		"id": "library",
+		"nameAlgorithm": "librarySite",
+		"featureTags": ["library"],
+		"aspects": [
+			"structureSite",
+			"interestingSite",
+			"library",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["spellthreads", "spellthreads", null],
+		"missionPlans": [{"plan": "library"},
+			{"plan": "library", "assaultPlan": "customLibrary1", "weight": 0.25}]
+	},
+	{
+		"id": "lumberyard",
+		"nameAlgorithm": "lumberyardSite",
+		"featureTags": ["lumberyard"],
+		"aspects": [
+			"interestingSite",
+			"wildernessSite",
+			"station",
+			"lumberyard",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["heartwoods", "heartwoods"],
+		"missionPlans": [{"plan": "lumberyard"}]
+	},
+	{
+		"id": "mine",
+		"nameAlgorithm": "mineSite",
+		"featureTags": ["mine"],
+		"aspects": [
+			"mine",
+			"interestingSite",
+			"caveSite",
+			"station",
+			"undergroundSite",
+			"constructedSite"
+		],
+		"resources": ["ingots", "ingots"],
+		"missionPlans": [{"plan": "mine"}]
+	},
+	{
+		"id": "outfitter",
+		"nameAlgorithm": "outfitterSite",
+		"featureTags": ["outfitter"],
+		"aspects": [
+			"interestingSite",
+			"wildernessSite",
+			"station",
+			"outfitter",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["hides", "fabrics"],
+		"missionPlans": [{"plan": "outfitter"}]
+	},
+	{
+		"id": "primalAltar",
+		"nameAlgorithm": "primalAltarSite",
+		"featureTags": ["primalAltar"],
+		"aspects": [
+			"interestingSite",
+			"wildernessSite",
+			"station",
+			"primalAltar",
+			"abovegroundSite",
+			"organicSite"
+		],
+		"resources": ["hides", "spellthreads"],
+		"missionPlans": [{"plan": "primalAltar"},
+			{"plan": "primalAltar", "assaultPlan": "customPrimalAltar1", "weight": 0.25}]
+	},
+	{
+		"id": "quarry",
+		"nameAlgorithm": "quarrySite",
+		"featureTags": ["quarry"],
+		"aspects": [
+			"interestingSite",
+			"caveSite",
+			"station",
+			"undergroundSite",
+			"quarry",
+			"constructedSite"
+		],
+		"resources": ["ingots", "fabrics"],
+		"missionPlans": [{"plan": "quarry"},
+			{"plan": "quarry", "assaultPlan": "customQuarry1", "weight": 0.25}]
+	},
+	{
+		"id": "tannery",
+		"nameAlgorithm": "tannerySite",
+		"featureTags": ["tannery"],
+		"aspects": [
+			"interestingSite",
+			"wildernessSite",
+			"tannery",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["hides", "hides"],
+		"missionPlans": [
+			{"plan": "tannery"},
+			{"plan": "tannery", "assaultPlan": "Tannery1", "weight": 0.25}
+		]
+	},
+	{
+		"id": "threshery",
+		"nameAlgorithm": "thresherySite",
+		"featureTags": ["threshery"],
+		"aspects": [
+			"threshery",
+			"interestingSite",
+			"wildernessSite",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["heartwoods", "fabrics"],
+		"missionPlans": [{"plan": "threshery"}]
+	},
+	{
+		"id": "tomb",
+		"nameAlgorithm": "tombSite",
+		"featureTags": ["tomb"],
+		"aspects": ["caveSite", "undergroundSite", "constructedSite"],
+		"missionPlans": [{"plan": "tomb"}]
+	},
+	{
+		"id": "tower",
+		"nameAlgorithm": "towerSite",
+		"featureTags": ["tower"],
+		"aspects": [
+			"structureSite",
+			"interestingSite",
+			"station",
+			"abovegroundSite",
+			"constructedSite",
+			"tower"
+		],
+		"resources": ["hides", "ingots", "spellthreads"],
+		"missionPlans": [{"plan": "tower"}]
+	},
+	{
+		"id": "town",
+		"nameAlgorithm": "townName",
+		"featureScale": 0.014,
+		"featureTags": ["small", "town"],
+		"aspects": ["structureSite", "station", "abovegroundSite", "constructedSite", "town"],
+		"resources": ["ingots", "heartwoods", "fabrics", "hides"],
+		"missionPlans": [{"plan": "town"}]
+	},
+	{
+		"id": "virtualCave",
+		"nameAlgorithm": "cavernSite",
+		"featureTags": ["battle"],
+		"aspects": ["virtualSite", "caveSite", "undergroundSite", "organicSite"],
+		"missionPlans": [{"plan": "virtualCave"}]
+	},
+	{
+		"id": "virtualWilderness",
+		"nameAlgorithm": "outdoorSiteNoTown",
+		"featureTags": ["battle"],
+		"aspects": ["virtualSite", "wildernessSite", "abovegroundSite", "organicSite"],
+		"missionPlans": [{"plan": "virtualWilderness"}]
+	},
+	{
+		"id": "waterwheel",
+		"nameAlgorithm": "waterwheelSite",
+		"featureTags": ["waterwheel"],
+		"aspects": [
+			"waterwheel",
+			"interestingSite",
+			"wildernessSite",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["fabrics", "heartwoods", null],
+		"missionPlans": [{"plan": "waterwheel"}]
+	},
+	{
+		"id": "weaverworks",
+		"nameAlgorithm": "weaverworksSite",
+		"featureTags": ["weaverworks"],
+		"aspects": [
+			"interestingSite",
+			"weaverworks",
+			"wildernessSite",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["fabrics", "fabrics"],
+		"missionPlans": [{"plan": "weaverworks"}]
+	},
+	{
+		"id": "windmill",
+		"nameAlgorithm": "windmillSite",
+		"featureTags": ["windmill"],
+		"aspects": [
+			"interestingSite",
+			"wildernessSite",
+			"windmill",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": ["fabrics", "fabrics", null],
+		"missionPlans": [{"plan": "windmill"}]
+	},
+	{
+		"id": "drauvenOutpostL1",
+		"nameAlgorithm": "drauvenOutpostName",
+		"featureTags": ["small", "town", "drauven" ],
+		"aspects": [
+			"interestingSite",
+			"town",
+			"drauvenOutpost",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": [ "loreDrauven" ],
+		"missionPlans": [{"plan": "town"}]
+	},
+	{
+		"id": "drauvenOutpostL2",
+		"nameAlgorithm": "drauvenOutpostName",
+		"featureTags": ["small", "town", "drauven" ],
+		"aspects": [
+			"interestingSite",
+			"town",
+			"drauvenOutpost",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": [ "loreDrauven", "hides" ],
+		"missionPlans": [{"plan": "town"}]
+	},
+	{
+		"id": "drauvenOutpostL3",
+		"nameAlgorithm": "drauvenOutpostName",
+		"featureTags": ["small", "town", "drauven" ],
+		"aspects": [
+			"interestingSite",
+			"town",
+			"drauvenOutpost",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": [ "loreDrauven", "heartwoods" ],
+		"missionPlans": [{"plan": "town"}]
+	},
+	{
+		"id": "drauvenOutpostL4",
+		"nameAlgorithm": "drauvenOutpostName",
+		"featureTags": ["small", "town", "drauven" ],
+		"aspects": [
+			"interestingSite",
+			"town",
+			"drauvenOutpost",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": [ "loreDrauven", "spellthreads", "ingots" ],
+		"missionPlans": [{"plan": "town"}]
+	},
+	{
+		"id": "drauvenOutpostL5",
+		"nameAlgorithm": "drauvenOutpostName",
+		"featureTags": ["small", "town", "drauven" ],
+		"aspects": [
+			"interestingSite",
+			"town",
+			"drauvenOutpost",
+			"station",
+			"abovegroundSite",
+			"constructedSite"
+		],
+		"resources": [ "loreDrauven", "fabrics", "hides", "spellthreads", "heartwoods" ],
+		"missionPlans": [{"plan": "town"}]
+	}
+]

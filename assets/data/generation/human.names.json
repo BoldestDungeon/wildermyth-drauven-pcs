@@ -16,7 +16,7 @@
     "drauvenConstructedSurnamePrefix": ["_OR_", [2, ""], [1, ""]],
     "drauvenSurname": ["_OR_", [2, ""], [1, ""]],
 
-
+		"drauvenOutpostName": ["<DrauvenFirstNameBegin><drauvenFirstNameEnd> Outpost"],
 
     "forbiddenWords": ["lochia", "eluna","rivdin", "ryvdin", "rivdyn", "anivia", "vayne", "annelburn","enma", "aynis","enema", "darky","moron","bollock", "just", "anus", "mordor", "whitepride", "White Pride","The White Pride","whitepower", "fartol","fartus","farta","fartana","fartara","farthai","farthaia","farthera","fartia","cocko"],
 	

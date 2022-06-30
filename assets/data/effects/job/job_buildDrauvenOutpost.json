@@ -1,0 +1,393 @@
+{
+"id": "job_buildDrauvenOutpost",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "job/job_buildDrauvenOutpost",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink"
+},
+"type": "OVERLAND_ABILITY",
+"verb": "JOB",
+"ability": {
+	"icon": "utility",
+	"category": "crafting",
+	"priority": "1",
+	"showSiteBanner": true,
+	"labor": {
+		"days": "50",
+		"minParticipantsPresent": "2",
+		"helperContributionSpeed": 1.1,
+		"contributingAspects": [ "drauven", "fluentInDruvwail" ]
+	},
+	"resourceCosts": [
+		{ "type": "legacyPoints" }
+	]
+},
+"targets": [
+	{
+		"template": "SELF_SITE_THIS_JOB_NOT_ACTIVE",
+		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ]
+	},
+	{ "template": "COMPANY", "choose": "BY_SCORE" },
+	{
+		"template": "HERO_BY_SCORE",
+		"choose": "ONE_RANDOM",
+		"scoreFunction": null,
+		"aspectsOneOf": [ "drauven", "fluentInDruvwail" ],
+		"isJobResource": true
+	},
+	{
+		"template": "JOB_PARTICIPANT",
+		"promptText": "",
+		"slots": {}
+	},
+	{
+		"role": "target",
+		"template": "OVERLAND_TILE",
+		"type": "SITE",
+		"choose": "ANY",
+		"chooseAllMaximum": 5,
+		"aspects": [ "drauvenOutpost" ]
+	},
+	{
+		"role": "hero2",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"aspectValues": [
+			{ "id": "nonhuman", "forbidden": true }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "DoFirstValid",
+		"outcomes": [
+			{
+				"class": "Test",
+				"value": "COUNT.target",
+				"threshold": "4",
+				"onPass": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "Spawn",
+							"addRole": "site",
+							"createEntity": { "stationQuery": "drauvenOutpostL5", "controlRelativeTo": "participant" }
+						},
+						{
+							"class": "Test",
+							"value": "company.DrauvenAllies_Built5Stations",
+							"threshold": "1",
+							"onFail": {
+								"class": "DoAll",
+								"outcomes": [
+									{
+										"class": "Description",
+										"STUB": "Show the legacy unlock panel",
+										"script": [
+											{
+												"class": "comicNode_Panel",
+												"panel": {
+													"size": "full",
+													"bgAuto": "approachingSite",
+													"actorSlots": [
+														{
+															"role": "hero",
+															"form": "frame-happy",
+															"equipment": {},
+															"focus": "foot",
+															"anchor": { "x": 0.24, "y": -0.016 },
+															"size": 0.36
+														},
+														{
+															"role": "hero2",
+															"form": "frame-joy",
+															"equipment": {},
+															"focus": "foot",
+															"anchor": { "x": 0.107, "y": -0.037 },
+															"size": 0.35,
+															"nameTag": "none"
+														},
+														{
+															"assetSpec": "comic:drauvenBakedWeaponless_stump3.png",
+															"role": null,
+															"facing": "left",
+															"focus": "foot",
+															"anchor": { "x": 0.828, "y": 0.491 },
+															"size": 0.385,
+															"nameTag": "none"
+														},
+														{
+															"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+															"role": null,
+															"facing": "left",
+															"focus": "foot",
+															"anchor": { "x": 0.501, "y": 0.494 },
+															"size": 0.417,
+															"nameTag": "none"
+														},
+														{
+															"assetSpec": "comic:drauvenBakedWeaponless_haunt.png",
+															"role": null,
+															"facing": "left",
+															"focus": "foot",
+															"anchor": { "x": 0.645, "y": 0.311 },
+															"size": 0.2929,
+															"nameTag": "none"
+														},
+														{
+															"assetSpec": "comic:comicForeground_flatHillGrassy.png",
+															"role": null,
+															"focus": "foot",
+															"anchor": { "x": 0.386, "y": -0.032 },
+															"size": 0.2462,
+															"nameTag": "none"
+														},
+														{
+															"assetSpec": "comic:drauvenBakedWeaponless_stormthroat.png",
+															"role": null,
+															"facing": "left",
+															"focus": "foot",
+															"anchor": { "x": 0.76, "y": 0.415 },
+															"size": 0.2855,
+															"nameTag": "none"
+														},
+														{
+															"assetSpec": "asset:sites/scenery/drauven_birdhouses.png",
+															"role": null,
+															"focus": "foot",
+															"anchor": { "x": 0.214, "y": 0.198 },
+															"size": 0.2072,
+															"nameTag": "none"
+														},
+														{
+															"assetSpec": "asset:sites/scenery/door_GateDoubleDrauven2_closed.png",
+															"role": null,
+															"focus": "foot",
+															"anchor": { "x": 0.33, "y": 0.346 },
+															"size": 0.1533,
+															"nameTag": "none"
+														},
+														{
+															"assetSpec": "scenery:drauven_tapestry.png",
+															"role": null,
+															"focus": "foot",
+															"anchor": { "x": 0.382, "y": 0.5 },
+															"size": 0.1459,
+															"nameTag": "none"
+														}
+													],
+													"textSlots": [
+														{
+															"textSourceFile": "job/job_buildDrauvenOutpost",
+															"textKey": "~01~doFirst_1.test_pass.test_fail~panel_001~1_thought",
+															"style": "thought",
+															"location": "bottomRight",
+															"padXFraction": 0.015,
+															"padYFraction": 0.031,
+															"widthFraction": 0.985,
+															"shrinkToFitText": true
+														},
+														{
+															"textSourceFile": "job/job_buildDrauvenOutpost",
+															"textKey": "~01~doFirst_1.test_pass.test_fail~panel_001~2_narration",
+															"style": "narration"
+														}
+													]
+												}
+											}
+										]
+									},
+									{
+										"class": "UnlockLegacyAspect",
+										"legacyAspect": "DrauvenAllies_Built5Stations",
+										"value": "1"
+									}
+								]
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "Test",
+				"value": "COUNT.target",
+				"threshold": "3",
+				"onPass": {
+					"class": "Spawn",
+					"addRole": "site",
+					"createEntity": { "stationQuery": "drauvenOutpostL4", "controlRelativeTo": "participant" }
+				}
+			},
+			{
+				"class": "Test",
+				"value": "COUNT.target",
+				"threshold": "2",
+				"onPass": {
+					"class": "Spawn",
+					"addRole": "site",
+					"createEntity": { "controlRelativeTo": "participant" }
+				}
+			},
+			{
+				"class": "Test",
+				"value": "COUNT.target",
+				"threshold": "1",
+				"onPass": {
+					"class": "Spawn",
+					"addRole": "site",
+					"createEntity": { "stationQuery": "drauvenOutpostL2", "controlRelativeTo": "participant" }
+				}
+			},
+			{
+				"class": "Spawn",
+				"addRole": "site",
+				"createEntity": {
+					"stationQuery": "drauvenOutpostL1",
+					"controlRelativeTo": "participant",
+					"additionalOutcome": { "class": "DoAll" }
+				}
+			}
+		]
+	},
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_interiorHearth.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:bowlSoupSteam.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.19, "y": 0.245 },
+							"size": 0.1926,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:bowlSoupSteam.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.322, "y": 0.229 },
+							"size": 0.1926,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/tableRound.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.267, "y": -0.006 },
+							"size": 0.335,
+							"nameTag": "none"
+						},
+						{
+							"role": "participant",
+							"form": "frame-happy",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.166, "y": -0.176 },
+							"size": 0.33,
+							"foot": { "rotate": 4.927 }
+						},
+						{
+							"assetSpec": "comic:drauvenBakedWeaponless_stump1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.375, "y": 0.245 },
+							"size": 0.2913,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero2",
+							"form": "frame-joy",
+							"facing": "left",
+							"equipment": {
+								"mode": "leaveEquipment",
+								"equipItemsById": [ "mug" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.811, "y": -0.101 },
+							"size": 0.3671,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 10.685 },
+							"foot": { "rotate": 0 }
+						},
+						{
+							"assetSpec": "comic:drauvenBakedWeaponless_pilot.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.663, "y": 0.408 },
+							"size": 0.4902,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:mug1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.545, "y": 0.396 },
+							"size": 0.3111,
+							"nameTag": "none",
+							"foot": { "rotate": -33.008 }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/drauven_potLifted.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.937, "y": 0.185 },
+							"size": 0.3326,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdStatue.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.051, "y": 0.437 },
+							"size": 0.3833,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.902, "y": 0.33 },
+							"size": 0.2941,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.444, "y": -0.079 },
+							"size": 0.2253,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.549, "y": 0.075 },
+							"size": 0.2071,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_buildDrauvenOutpost",
+							"textKey": "~02~~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}
