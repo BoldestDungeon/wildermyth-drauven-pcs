@@ -1,23 +1,30 @@
 [
-  {
-    "id": "abandonedDrauven",
-    "lifespan": "all",
-    "importance": -1
-  },
-  {
-    "id": "drauvenHealer",
-    "lifespan": "all"
-  },
-  {
-    "id": "drauvenHealer_sawTiding",
-    "lifespan": "all"
-  },
-  {
-    "id": "drauvenSkeptic",
-    "lifespan": "all"
-  },
-  {
-    "id": "killedAbandonedDrauven",
-    "lifespan": "all"
-  }
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHealer",
+	"importance": -1,
+	"listImportance": -1,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenHealer_sawTiding",
+	"importance": -1,
+	"listImportance": -1,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSkeptic",
+	"importance": -1,
+	"listImportance": -1,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "killedAbandonedDrauven",
+	"importance": -1,
+	"listImportance": -1,
+	"lifespan": "all"
+}
 ]

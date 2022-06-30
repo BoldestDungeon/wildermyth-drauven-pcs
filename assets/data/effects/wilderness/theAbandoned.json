@@ -17,7 +17,14 @@
 },
 "targets": [
 	{ "template": "EVENT" },
-	{ "template": "COMPANY", "threatFlavorExists": "drauven" },
+	{
+		"template": "COMPANY",
+		"aspects": null,
+		"aspectValues": [
+			{ "id": "chapterNumber", "maxValue": "4" }
+		],
+		"threatFlavorExists": "drauven"
+	},
 	{ "template": "INJECTED_TILE" },
 	{ "template": "INJECTED_PARTY" },
 	{ "template": "IMMEDIATE_ENEMY" },
@@ -42,6 +49,13 @@
 		"template": "PICK_BY_SCORE",
 		"scoreFunction": "0",
 		"notAlreadyMatchedAs": [ "healer", "hothead" ]
+	},
+	{
+		"role": "subPlot",
+		"template": "PICK_BY_SCORE",
+		"choose": "ALL",
+		"scoreFunction": null,
+		"themes": { "eligibleForTheme": "drauven" }
 	},
 	{
 		"template": "CHOICE",
@@ -3600,7 +3614,7 @@
 						{
 							"class": "AddHistory",
 							"addHistory": [
-								["abandonedDrauven"]
+								[ "abandonedDrauven" ]
 							]
 						}
 					]
