@@ -1,0 +1,523 @@
+{
+"id": "job_drauvenRecruit_branch",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "site/job_drauvenRecruit_branch",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"declaredEncounterResults": []
+},
+"type": "BRANCH",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "encounterEnabled": true },
+"targets": [
+	{ "template": "EVENT" },
+	{
+		"role": "participant",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": null,
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "site",
+		"template": "OVERLAND_TILE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"relativeTo": "participant",
+		"notAlreadyMatchedAs": [],
+		"range": "0",
+		"sameTileAs": "self"
+	},
+	{
+		"template": "INJECTED_PARTY",
+		"type": "HERO",
+		"choose": "BY_SCORE",
+		"injectedRole": null,
+		"notAlreadyMatchedAs": [ "site" ]
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LEADER"
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "fluentInDruvwail",
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "CHARISMA",
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFourths",
+					"bg": "comicBG_cottagePretty.jpg",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"equipment": {},
+							"size": 0.8957655
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "warrior",
+									"equipment": {
+										"equipItemsById": [ "spear2hand_t1_basic" ]
+									},
+									"anchor": { "x": 0.39191282, "y": 0.668 },
+									"size": 0.42280388
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~02~choice_one~panel_001~1_narration",
+									"style": "narration"
+								},
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~02~choice_one~panel_001~2_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"widthFraction": 0.53,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "hunter",
+									"equipment": {
+										"equipItemsById": [ "dagger_t1_basic" ]
+									},
+									"anchor": { "x": 0.6783439, "y": 0.518 },
+									"size": 0.3998954
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~03~choice_two~panel_001~1_narration",
+									"style": "narration"
+								},
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~03~choice_two~panel_001~2_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "mystic",
+									"equipment": {
+										"equipItemsById": [ "staffDrauven_t1" ]
+									},
+									"anchor": { "x": 0.6121404, "y": 0.633 },
+									"size": 0.42533752
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~04~choice_three~panel_001~1_narration",
+									"style": "narration"
+								},
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~04~choice_three~panel_001~2_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "site"
+			},
+			{
+				"id": "four",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "sixth",
+							"actorSlots": [
+								{
+									"role": "party",
+									"form": "frame-skeptical",
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.507, "y": -0.394 },
+									"size": 0.9271,
+									"drawDepth": 1,
+									"nameTag": "bottomRight"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~05~choice_four~panel_001~1_party",
+									"pointerOwner": "party"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "choiceTarget",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Special",
+					"target": "volunteer",
+					"specialAction": "PROMOTE_FARMER_TO_WARRIOR"
+				},
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "threeFifths",
+								"bg": "comicBG_abstractAngry.jpg",
+								"actorSlots": [
+									{
+										"role": "warrior",
+										"form": "frame-rage",
+										"equipment": {
+											"equipItemsById": [ "spear2hand_t1_basic" ]
+										},
+										"anchor": { "x": 0.359, "y": 0.695 },
+										"size": 0.3849
+									},
+									{
+										"assetSpec": "comic:dummy.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.635, "y": 0.484 },
+										"size": 0.2785,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:dragonfly2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.562, "y": 0.947 },
+										"size": 0.2226,
+										"nameTag": "none"
+									}
+								]
+							}
+						}
+					]
+				},
+				{ "class": "AddResources", "amount": "-3" },
+				{
+					"class": "NewJob",
+					"target": "site",
+					"effectId": "job_drauvenRecruit_training_warrior",
+					"post": "site",
+					"injectedRoles": [ "volunteer", "self", "party" ],
+					"choices": [ "participant" ],
+					"promptSlotsImmediately": true
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Special",
+					"target": "volunteer",
+					"specialAction": "PROMOTE_FARMER_TO_HUNTER"
+				},
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "threeFifths",
+								"bg": "comicBG_abstractGray1.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:dummy.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.625, "y": 0.358 },
+										"size": 0.3653,
+										"nameTag": "none"
+									},
+									{
+										"role": "hunter",
+										"form": "frame-grim",
+										"equipment": {
+											"equipItemsById": [ "dagger_t1_basic" ]
+										},
+										"anchor": { "x": 0.438, "y": 0.628 },
+										"size": 0.45,
+										"colorFilter": { "filterName": "specterstep" }
+									},
+									{
+										"assetSpec": "comic:critterRun.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.962, "y": 0.066 },
+										"size": 0.1439,
+										"nameTag": "none"
+									}
+								]
+							}
+						}
+					]
+				},
+				{ "class": "AddResources", "amount": "-3" },
+				{
+					"class": "NewJob",
+					"target": "site",
+					"effectId": "job_drauvenRecruit_training_hunter",
+					"post": "site",
+					"injectedRoles": [ "volunteer", "self", "party" ],
+					"choices": [ "participant" ],
+					"promptSlotsImmediately": true
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "site",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Special",
+					"target": "volunteer",
+					"specialAction": "PROMOTE_FARMER_TO_MYSTIC"
+				},
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "threeFifths",
+								"bg": "comicBG_abstractRadialYellow.jpg",
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"form": "frame-interested",
+										"equipment": {
+											"equipItemsById": [ "staffDrauven_t1" ]
+										},
+										"anchor": { "x": 0.33, "y": 0.755 },
+										"size": 0.4485
+									},
+									{
+										"assetSpec": "comic:sparkleSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.596, "y": 0.318 },
+										"size": 0.4902,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:ui/comics/sparkleBig.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.656, "y": 0.613 },
+										"size": 0.6551,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:sparkleSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.675, "y": 0.358 },
+										"size": 0.2488,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:sparkleSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.802, "y": 0.302 },
+										"size": 0.5768,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.804, "y": 0.463 },
+										"size": 0.3808,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"colorFilter": { "filterName": "interfused", "strength": 0.5 }
+									},
+									{
+										"assetSpec": "comic:birdVrsawl_flying.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.589, "y": 1.006 },
+										"size": 0.1884,
+										"nameTag": "none"
+									}
+								]
+							}
+						}
+					]
+				},
+				{ "class": "AddResources", "amount": "-3" },
+				{
+					"class": "NewJob",
+					"target": "site",
+					"effectId": "job_drauvenRecruit_training_mystic",
+					"post": "site",
+					"injectedRoles": [ "volunteer", "self", "party" ],
+					"choices": [ "participant" ],
+					"promptSlotsImmediately": true
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "party",
+		"ifPlayerChose": "four",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": []
+				},
+				{
+					"class": "NewJob",
+					"target": "site",
+					"effectId": "job_drauvenRecruit",
+					"post": "site"
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"role": "volunteer",
+			"npcId": "DrauvenRecruit",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "farmer" },
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" }
+				],
+				"control": "none"
+			}
+		},
+		{
+			"role": "warrior",
+			"createEntity": {
+				"query": { "baseTag": "human", "inRelationTo": "volunteer", "cloneRelatedEntity": true },
+				"addAspects": [
+					{ "id": "warrior", "value": "1" }
+				],
+				"control": "none"
+			}
+		},
+		{
+			"role": "hunter",
+			"createEntity": {
+				"query": { "baseTag": "human", "inRelationTo": "volunteer", "cloneRelatedEntity": true },
+				"addAspects": [
+					{ "id": "hunter", "value": "1" }
+				],
+				"control": "none"
+			}
+		},
+		{
+			"role": "mystic",
+			"createEntity": {
+				"query": { "baseTag": "human", "inRelationTo": "volunteer", "cloneRelatedEntity": true },
+				"addAspects": [
+					{ "id": "mystic", "value": "1" }
+				],
+				"control": "none"
+			}
+		}
+	]
+}
+}

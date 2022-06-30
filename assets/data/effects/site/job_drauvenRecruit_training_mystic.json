@@ -1,0 +1,128 @@
+{
+"id": "job_drauvenRecruit_training_mystic",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "site/job_drauvenRecruit_training_mystic",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink"
+},
+"type": "OVERLAND_ABILITY",
+"verb": "JOB",
+"ability": {
+	"icon": "utility",
+	"category": "crafting",
+	"priority": "1",
+	"labor": {
+		"days": "100",
+		"speedFactor": "(((((0.6+charisma)+(0.4*drauven))+(0.3*drauvenHealer))-(0.4*drauvenSkeptic))+(0.3*fluentInDruvwail))+(0.5*mystic)",
+		"contributingStats": [ "CHARISMA" ],
+		"contributingAspects": [ "drauven", "drauvenHealer", "fluentInDruvwail", "mystic" ]
+	}
+},
+"targets": [
+	{
+		"template": "SELF_SITE_THIS_JOB_NOT_ACTIVE",
+		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ]
+	},
+	{
+		"template": "JOB_PARTICIPANT",
+		"promptText": "Help train the new recruit.",
+		"promptTextKey": ".target.participant.promptText",
+		"slots": {
+			"hint": "hero",
+			"preFill": "noJobOrParty",
+			"specialSelectionInfo": { "aspect": "drauven" }
+		}
+	},
+	{
+		"role": "volunteer",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "BY_SCORE",
+		"injectedRole": null,
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"template": "INJECTED_PARTY",
+		"type": "HERO",
+		"choose": "BY_SCORE",
+		"injectedRole": null,
+		"notAlreadyMatchedAs": [ "volunteer" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "ChangeControl",
+		"target": "npc",
+		"becomeAllyOf": "party",
+		"makeHero": true,
+		"checkPromotionsNow": true
+	},
+	{
+		"class": "Aspects",
+		"target": "npc",
+		"removeAspects": [ "npcId*" ]
+	},
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "participant",
+							"equipment": {},
+							"anchor": { "x": 0.095, "y": 0.447 },
+							"size": 0.8957655,
+							"nameTag": "none"
+						},
+						{
+							"role": "volunteer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.6024447, "y": 0.5 },
+							"size": 0.8957655,
+							"nameTag": "none"
+						},
+						{
+							"role": "party",
+							"equipment": {},
+							"anchor": { "x": 0.283, "y": 0.513 },
+							"size": 0.8957655,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.816, "y": 0.497 },
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit_training_mystic",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "DrauvenRecruit",
+			"createEntity": {
+				"query": { "baseTag": "human", "findExisting": true },
+				"control": "none"
+			}
+		}
+	]
+}
+}

@@ -1,0 +1,54 @@
+{
+"id": "job_drauvenRecruit",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "site/job_drauvenRecruit",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink"
+},
+"type": "OVERLAND_ABILITY",
+"verb": "JOB",
+"ability": {
+	"icon": "recruit",
+	"category": "site",
+	"priority": "1",
+	"labor": { "days": "3" }
+},
+"targets": [
+	{
+		"template": "SELF_SITE_THIS_JOB_NOT_ACTIVE",
+		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ],
+		"aspectValues": [
+			{ "id": "infestedTile*", "forbidden": true },
+			{ "id": "TILE_CONDITION_NORMAL" }
+		]
+	},
+	{
+		"template": "JOB_PARTICIPANT",
+		"promptText": "Word is there's SOMEONE here willing to join <company>. Who will investigate?",
+		"promptTextKey": ".target.participant.promptText",
+		"slots": {
+			"hint": "hero",
+			"preFill": "noJobOrParty",
+			"specialSelectionInfo": { "aspect": "drauven" }
+		}
+	},
+	{
+		"role": "volunteer",
+		"template": "COMPANY",
+		"STUB": "Test legacy points of the company last, so we can still show the banner if it fails.",
+		"showAnyway": true,
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "RESOURCE.legacyPoints",
+		"b": "3"
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "self",
+		"removeAspects": [ "_THIS_" ]
+	},
+	{ "class": "Branch", "branchEvent": "job_drauvenRecruit_branch" }
+]
+}

@@ -1,0 +1,466 @@
+{
+"id": "buildStation_swamp",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "site/buildStation_swamp",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Douglas Austin"
+},
+"type": "OVERLAND_ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "craft",
+	"category": "resource",
+	"priority": "1",
+	"showSiteBanner": true,
+	"labor": { "days": "40", "speedFactor": "1", "helperContributionSpeed": 0.6 },
+	"resourceCosts": [
+		{ "type": "legacyPoints" }
+	],
+	"musicOverride": ""
+},
+"targets": [
+	{
+		"role": "self",
+		"template": "OVERLAND_TILE",
+		"aspectValues": [
+			{ "id": "infestedTile*", "forbidden": true },
+			{ "id": "TILE_CONDITION_NORMAL" }
+		],
+		"forbidJobIds": [
+			"job_buildStation_dreamloom",
+			"job_buildStation_earthworks",
+			"job_buildStation_forestShrine",
+			"job_buildStation_henge",
+			"job_buildStation_huntersBlind",
+			"job_buildStation_lumberyard",
+			"job_buildStation_mine",
+			"job_buildStation_outfitter",
+			"job_buildStation_primalAltar",
+			"job_buildStation_quarry",
+			"job_buildStation_sawmill",
+			"job_buildStation_tannery",
+			"job_buildStation_threshery",
+			"job_buildStation_weaverworks",
+			"job_buildStation_windmill"
+		]
+	},
+	{
+		"template": "COMPANY",
+		"aspectValues": [
+			{ "id": "forbidBuildStations", "forbidden": true }
+		]
+	},
+	{
+		"template": "OVERLAND_TILE",
+		"fromRoles": [ "self" ],
+		"aspects": [ "VISIBLE_TILE" ],
+		"aspectValues": [
+			{ "id": "forbidBuildStations", "forbidden": true }
+		],
+		"relativeTo": "company"
+	},
+	{
+		"role": "otherSite",
+		"template": "POST",
+		"choose": "FORBID",
+		"onTile": "self",
+		"aspects": [ "station" ]
+	},
+	{
+		"role": "otherSite",
+		"template": "POST",
+		"choose": "FORBID",
+		"onTile": "self",
+		"aspects": [ "town" ]
+	},
+	{
+		"role": "foes",
+		"template": "THREAT",
+		"choose": "FORBID",
+		"overlandFeedback": {
+			"color": { "r": 1, "g": 0, "b": 0, "a": 0.6 }
+		},
+		"onTile": "self"
+	},
+	{
+		"role": "hook",
+		"template": "OVERLAND_TILE",
+		"choose": "ANY",
+		"fromRoles": [ "self" ],
+		"aspects": [ "tileBordersRivers" ]
+	},
+	{
+		"role": "hook2",
+		"template": "OVERLAND_TILE",
+		"choose": "ANY",
+		"fromRoles": [ "self" ],
+		"aspects": [ "tileBordersMountains" ]
+	},
+	{
+		"role": "volunteer",
+		"template": "COMPANY",
+		"STUB": "Test legacy points of the company last, so we can still show the banner if it fails.",
+		"showAnyway": true,
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "RESOURCE.legacyPoints",
+		"b": "1"
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "LEADER",
+		"fromRoles": null,
+		"canPath": { "pathTo": "self", "costLimit": "1000" }
+	},
+	{
+		"role": "hero",
+		"template": "COMPANY",
+		"choose": "ANY",
+		"aspects": [ "DrauvenAllies_FirstStepsComplete" ]
+	},
+	{
+		"role": "site2",
+		"template": "ANY",
+		"type": "OVERLAND_TILE",
+		"choose": "ANY",
+		"scoreFunction": "drauvenOutpost",
+		"scoreThreshold": "1",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_swampFallenTrees.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"anchor": { "x": 0.11, "y": 0.46 },
+							"size": 0.789
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/buildStation_swamp",
+							"textKey": "~01~prompt~panel_001~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.011,
+							"padYFraction": 0.049,
+							"widthFraction": 0.31864604,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "site/buildStation_swamp",
+							"textKey": "~01~prompt~panel_001~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.78482419", "g": "0.19075143", "b": "1", "a": "1" },
+							"location": "bottomRight",
+							"padXFraction": 0.031,
+							"padYFraction": 0.06,
+							"widthFraction": 0.93245596,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "site/buildStation_swamp",
+							"textKey": "~01~prompt~panel_001~3_thought",
+							"style": "thought",
+							"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"padXFraction": 0.358,
+							"padYFraction": 0.088,
+							"widthFraction": 0.61161363,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"bg": "comicBG_undergroundEarthen.jpg",
+							"actorSlots": [
+								{
+									"assetSpec": "item:item_pick.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.209, "y": 0.19 },
+									"size": 0.51412106,
+									"nameTag": "bottomRight",
+									"foot": { "rotate": 13.211 }
+								},
+								{
+									"assetSpec": "item:item_shovel.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.875, "y": -0.021 },
+									"size": 0.5236223,
+									"nameTag": "none",
+									"foot": { "rotate": 10.59 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "site/buildStation_swamp",
+									"textKey": "~02~choice_one~panel_001~1_narration",
+									"style": "narration",
+									"backgroundColor": { "r": "0.78482419", "g": "0.19075143", "b": "1", "a": "1" },
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"bg": "comicBG_starPondNight.jpg",
+							"actorSlots": [
+								{
+									"assetSpec": "scenery:loomLarge2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.303, "y": 0.277 },
+									"size": 0.29242617,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "site/buildStation_swamp",
+									"textKey": "~03~choice_two~panel_001~1_narration",
+									"style": "narration",
+									"backgroundColor": { "r": "0.78482419", "g": "0.19075143", "b": "1", "a": "1" },
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"bg": "comicBG_rocksBrownTeal.jpg",
+							"actorSlots": [
+								{
+									"assetSpec": "item:item_hammer.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.713, "y": 0.336 },
+									"size": 0.47189346,
+									"nameTag": "bottomRight",
+									"foot": { "rotate": 13.625 }
+								},
+								{
+									"assetSpec": "figure:misc/animal_sheepEwe.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.478, "y": 0.523 },
+									"size": 0.46978205,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "site/buildStation_swamp",
+									"textKey": "~04~choice_three~panel_001~1_narration",
+									"style": "narration",
+									"backgroundColor": { "r": "0.78482419", "g": "0.19075143", "b": "1", "a": "1" },
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "four",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"bgAuto": "approachingSite",
+							"actorSlots": [
+								{
+									"assetSpec": "comic:drauvenBakedWeaponless_haunt2.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.509, "y": 0.177 },
+									"size": 0.1548,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "asset:sites/scenery/stumpSwampLarge.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.892, "y": 0.19 },
+									"size": 0.1713,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:comicForeground_flatHillRockGray.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.57, "y": 0.009 },
+									"size": 0.1848,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "scenery:door_GateDoubleDrauven_closed.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.383, "y": 0.358 },
+									"size": 0.183,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "asset:figures/images/drauven/drauven_stormthroat_bird.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.756, "y": 0.372 },
+									"size": 0.1225,
+									"drawDepth": 3,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "scenery:drauven_baskets1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.575, "y": 0.279 },
+									"size": 0.2228,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "asset:sites/scenery/drauven_lanternPoleOn.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.197, "y": 0.323 },
+									"size": 0.1822,
+									"nameTag": "none",
+									"foot": { "rotate": 0 }
+								},
+								{
+									"assetSpec": "scenery:tree3_512x1024.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.463, "y": 0.398 },
+									"size": 0.1593,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "site/buildStation_swamp",
+									"textKey": "~05~choice_four~panel_001~1_narration",
+									"style": "narration",
+									"backgroundColor": { "r": "0.78482419", "g": "0.19075143", "b": "1", "a": "1" }
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "hero"
+			}
+		]
+	},
+	{
+		"role": "participant",
+		"template": "SELECT_PARTY",
+		"slots": { "preFill": "noJobOrParty" },
+		"canPath": { "pathTo": "focus", "costLimit": "1000" },
+		"isJobResource": true
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "NewJob",
+					"effectId": "job_buildStation_earthworks",
+					"post": "self",
+					"injectedRoles": [ "self" ],
+					"choices": [ "participant" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "NewJob",
+					"effectId": "job_buildStation_dreamloom",
+					"post": "self",
+					"injectedRoles": [ "self" ],
+					"choices": [ "participant" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "NewJob",
+					"effectId": "job_buildStation_quarry",
+					"post": "self",
+					"injectedRoles": [ "self" ],
+					"choices": [ "participant" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "hero",
+		"ifPlayerChose": "four",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "NewJob",
+					"effectId": "job_buildDrauvenOutpost",
+					"post": "self",
+					"injectedRoles": [ "self" ],
+					"choices": [ "participant" ]
+				}
+			]
+		}
+	}
+]
+}
