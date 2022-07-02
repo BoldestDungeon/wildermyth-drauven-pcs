@@ -1,74 +1,74 @@
 {
-  "id": "drauven_pc_fireshot",
-  "info": {
-    "dataVersion": 1,
-    "sourceFile": "drauven/drauven_pc_fireshot",
-    "author": "Patrick Belanger",
-    "aiPriority": "2000+target.AI_ATTACK_PRIORITY",
-    "tags": [ "ranged" ]
-  },
-  "type": "ABILITY",
-  "verb": "ATTACK",
-  "ability": { 
-    "icon": "fireleash", 
-    "priority": "10",
-    "branchableAbilityType": "standardRanged",
-    "abilityElementType": "fire"
-  },
-  "targets": [
-    {
-      "template": "SELF",
-      "cost": { "class": "ActionPoints", "actionPoints": "attack" },
-      "showAnyway": true
-    },
-    {
-      "template": "ADJACENT_ENEMY",
-      "showAnyway": true,
-      "alwaysSelect": true,
-      "aspects": [ "HOSTILE_TARGET", "alive" ],
-      "minRange": "1.9 - (self.commonDeck_bowmaster*2)",
-      "range": "5+self.BONUS_RANGE",
-      "lineOfSight": "LIVE_ENEMIES"
-    }
-  ],
-  "outcomes": [
-    {
-      "class": "AttackRoll",
-      "particles": [
-        {
-          "script": "projectileTrailFireball|projectileTrail",
-          "setPosition": "self",
-          "setPosition2": "target"
-        }
-      ],
-      "defenseRollTags": [ "range" ],
-      "attackStrength": "actionRoll(self.RANGE_ACCURACY)",
-      "wield": "fromWeapon",
-      "applyCover": true,
-      "onHit": {
-        "class": "DoAll",
-        "outcomes": [
-          {
-            "class": "Damage",
-            "amount": "self.SPELL_DAMAGE+self.POTENCY+1d2+(self.POTENCY*self.drauvenDeck_mystic_fireshot_upgrade)",
-            "type": "MAGIC",
-            "pierce": "1",
-            "overrideStuntDamage": "3 + (3*(1+self.drauvenDeck_mystic_fireshot_upgrade))",
-            "onStunt": {
-              "class": "BranchAbility",
-              "target": "self",
-              "targetRole": "defender",
-              "branchAbility": "stuntEffect_fire|3"
-            }
-          }
-        ]
-      },
-      "onHitCover": {
-        "class": "Damage",
-        "amount": "max(1,((attacker.PHYSICAL_DAMAGE_BONUS+DAMAGE_EXPRESSION)-2))",
-        "shred": "1"
-      }
-    }
-  ],
-  "expressions": { "aiRange": "MAX_RANGE+self.BONUS_RANGE" }
-  }
+"id": "drauven_pc_fireshot",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_fireshot",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Patrick Belanger",
+	"aiPriority": "2000+target.AI_ATTACK_PRIORITY",
+	"tags": [ "ranged" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "fireleash",
+	"priority": "10",
+	"branchableAbilityType": "standardRanged",
+	"abilityElementType": "fire"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"showAnyway": true
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"minRange": "1.9-(self.commonDeck_bowmaster*2)",
+		"range": "5+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"particles": [
+			{
+				"script": "projectileTrailFireball|projectileTrail",
+				"setPosition": "self",
+				"setPosition2": "target"
+			}
+		],
+		"defenseRollTags": [ "range" ],
+		"attackStrength": "actionRoll(self.RANGE_ACCURACY)",
+		"wield": "fromWeapon",
+		"applyCover": true,
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "((self.SPELL_DAMAGE+self.POTENCY)+1d2)+(self.POTENCY*self.drauvenDeck_mystic_fireshot_upgrade)",
+					"type": "MAGIC",
+					"pierce": "1",
+					"overrideStuntDamage": "3+(3*(1+self.drauvenDeck_mystic_fireshot_upgrade))",
+					"onStunt": {
+						"class": "BranchAbility",
+						"target": "self",
+						"targetRole": "defender",
+						"branchAbility": "stuntEffect_fire|3"
+					}
+				}
+			]
+		},
+		"onHitCover": {
+			"class": "Damage",
+			"amount": "max(1,((attacker.PHYSICAL_DAMAGE_BONUS+DAMAGE_EXPRESSION)-2))",
+			"shred": "1"
+		}
+	}
+]
+}

@@ -10,11 +10,7 @@
 },
 "type": "ABILITY",
 "verb": "MANEUVER",
-"ability": {
-	"icon": "elementalist",
-	"priority": "1",
-	"numUses": "1"
-},
+"ability": { "icon": "elementalist", "priority": "1", "numUses": "2" },
 "targets": [
 	{
 		"template": "SELF",

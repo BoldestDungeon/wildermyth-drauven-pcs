@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_concussed",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Bipen"
 },
 "type": "DAMAGE_ROLL",
@@ -12,16 +13,26 @@
 	{
 		"role": "target",
 		"template": "DEFENDER",
-		"notAlreadyMatchedAs": [ "self" ]
-	}
+		"aspectValues": [
+			{ "id": "ALLY", "forbidden": true },
+			{ "id": "SELF", "forbidden": true }
+		]
+	},
+	{ "role": "weapon", "template": "ABILITY", "abilityHasTag": "melee" }
 ],
 "outcomes": [
-{
+	{
 		"class": "Test",
 		"STUB": "If upgraded, Hobble Enemies",
 		"value": "self.drauvenDeck_warrior_concussed_upgrade",
 		"threshold": "1",
-		"onPass": { "class": "Aspects", "target": "target", "addAspects": [ { "id": "hobbled", "value": "2" } ] }
+		"onPass": {
+			"class": "Aspects",
+			"target": "target",
+			"addAspects": [
+				{ "id": "hobbled", "value": "2" }
+			]
+		}
 	},
 	{
 		"class": "Aspects",
@@ -30,5 +41,5 @@
 			{ "id": "concussed", "value": "1" }
 		]
 	}
-	]
+]
 }
