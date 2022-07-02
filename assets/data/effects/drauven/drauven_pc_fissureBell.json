@@ -4,7 +4,8 @@
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_fissureBell",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "Hero Of Wind"
+	"author": "Hero Of Wind",
+	"tags": [ "interfusionRecipe" ]
 },
 "type": "ABILITY",
 "verb": "ATTACK",
@@ -34,7 +35,6 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspects": null,
 		"aspectsOneOf": [ "bone", "rock", "statue", "stoneScenery" ]
 	},
 	{
