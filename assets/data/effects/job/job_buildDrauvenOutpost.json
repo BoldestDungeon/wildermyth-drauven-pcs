@@ -246,7 +246,12 @@
 				"createEntity": {
 					"stationQuery": "drauvenOutpostL1",
 					"controlRelativeTo": "participant",
-					"additionalOutcome": { "class": "DoAll" }
+					"additionalOutcome": {
+						"class": "DoAll",
+						"outcomes": [
+							{ "class": "NewJob", "effectId": "job_drauvenRecruit", "post": "self" }
+						]
+					}
 				}
 			}
 		]

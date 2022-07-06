@@ -1,0 +1,128 @@
+{
+	"id": "job_drauvenRecruit_branch",
+	"info": {
+		"dataVersion": 1,
+		"sourceFile": "site/job_drauvenRecruit_branch",
+		"modId": "wildermyth-drauven-pcs",
+		"author": "Ironskink",
+		"declaredEncounterResults": []
+	},
+	"type": "BRANCH",
+	"verb": "MANEUVER",
+	"ability": { "icon": "melee", "priority": "1", "encounterEnabled": true },
+	"targets": [
+		{ "template": "EVENT" },
+		{ "template": "INJECTED_HERO" },
+		{ "role": "focus", "template": "INJECTED_TILE", "injectedRole": "focus" },
+		{
+			"role": "participant",
+			"template": "INJECTED_HERO",
+			"injectedRole": "participant"
+		},
+		{ "role": "site", "template": "OVERLAND_TILE", "type": "TILE", "range": "0" },
+		{
+			"template": "CHOICE",
+			"promptScript": [
+				{
+					"class": "comicNode_Panel",
+					"panel": {
+						"actorSlots": [
+							{
+								"role": "npc",
+								"equipment": {}
+							}
+						]
+					}
+				}
+			],
+			"options": [
+				{
+					"id": "one",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"equipment": {},
+										"anchor": { "x": 0.6, "y": 0.5 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_drauvenRecruit_branch",
+										"textKey": "~02~choice_one~panel_001~1_choiceTarget",
+										"pointerOwner": "choiceTarget"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"outcomes": [
+		{
+			"class": "IfPlayerChose",
+			"target": "choiceTarget",
+			"ifPlayerChose": "one",
+			"then": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Special",
+						"target": "npc",
+						"specialAction": "PROMOTE_FARMER_TO_WARRIOR"
+					},
+					{
+						"class": "Description",
+						"script": [
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "npc",
+											"equipment": {},
+											"anchor": { "x": 0.6, "y": 0.5 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "site/job_drauvenRecruit_branch",
+											"textKey": "~03~player_chose_one~panel_001~1_choiceTarget",
+											"pointerOwner": "choiceTarget"
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"class": "NewJob",
+						"target": "self",
+						"effectId": "job_drauvenRecruit_training",
+						"injectedRoles": [ "npc", "self" ],
+						"choices": [ "participant" ],
+						"promptSlotsImmediately": true
+					}
+				]
+			}
+		}
+	],
+	"implications": {
+		"generatedTargets": [
+			{
+				"createEntity": {
+					"query": { "baseTag": "human", "setClass": "farmer" },
+					"addAspects": [
+						{ "id": "drauven_pc_init", "value": "1" }
+					],
+					"control": "none"
+				}
+			}
+		]
+	}
+	}

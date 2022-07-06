@@ -1,0 +1,96 @@
+{
+"id": "job_drauvenRecruit",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "site/job_drauvenRecruit",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink"
+},
+"type": "OVERLAND_ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "recruit",
+	"category": "site",
+	"priority": "1",
+	"labor": {
+		"days": "3",
+		"contributingStats": [ "CHARISMA" ],
+		"contributingAspects": [ "drauven", "fluentInDruvwail", "drauvenHealer" ]
+	},
+	"musicOverride": "Music/Comics - Everyday Moments"
+},
+"targets": [
+	{
+		"template": "SELF_SITE_THIS_JOB_NOT_ACTIVE",
+		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ],
+		"aspectValues": [
+			{ "id": "infestedTile*", "forbidden": true },
+			{ "id": "TILE_CONDITION_NORMAL" }
+		]
+	},
+	{ "template": "COMPANY" },
+	{
+		"template": "OVERLAND_TILE",
+		"fromRoles": [ "self" ],
+		"aspects": [ "VISIBLE_TILE" ],
+		"relativeTo": "company"
+	},
+	{
+		"role": "foes",
+		"template": "THREAT",
+		"choose": "FORBID",
+		"overlandFeedback": {
+			"color": { "r": 1, "g": 0, "b": 0, "a": 0.6 }
+		},
+		"onTile": "self"
+	},
+	{
+		"role": "volunteer",
+		"template": "COMPANY",
+		"STUB": "Test legacy points of the company last, so we can still show the banner if it fails.",
+		"showAnyway": true,
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "RESOURCE.legacyPoints",
+		"b": "3"
+	},
+	{
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "((charisma+(drauven*20))+(drauvenHealer*20))+(fluentInDruvwail*20)",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"template": "JOB_PARTICIPANT",
+		"promptText": "Word is there's SOMEONE here willing to join <company>. Who will investigate?",
+		"promptTextKey": ".target.participant.promptText",
+		"slots": {
+			"hint": "hero",
+			"preFill": "noJobOrParty",
+			"specialSelectionInfo": { "aspect": "commonDeck_bard" }
+		},
+		"canPath": { "pathTo": "focus", "costLimit": "1000" }
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"blockOtherChanges": true,
+		"script": [
+			null,
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFourths",
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		]
+	},
+	{ "class": "Branch", "branchEvent": "job_drauvenRecruit_branch" }
+]
+}
