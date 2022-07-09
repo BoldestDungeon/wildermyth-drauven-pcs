@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "genericCampaignPlots_mid_royalArms_omen",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Douglas Austin",
 	"genericCampaignInfo": {
 		"chapter": "mid",
@@ -811,8 +812,8 @@
 							"textSourceFile": "genericCampaignPlots_mid_royalArms_omen",
 							"textKey": "~01~~panel_003~3_hero2",
 							"pointerOwner": "hero2",
-							"padXFraction": 0.525,
-							"padYFraction": 0.291,
+							"padXFraction": 0.552,
+							"padYFraction": 0.07,
 							"shrinkToFitText": true,
 							"pointerAdjust": { "rotate": -15.524111, "scaleX": 0.82341856, "scaleY": 0.82341856 }
 						}
@@ -2597,6 +2598,21 @@
 			"npcId": "genericPlots_royalArmsDrauvgender",
 			"createEntity": {
 				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		},
+		{
+			"npcId": "drauven_hostile_faction",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"customHistory": [
+						{
+							"id": "genericCampaignPlots_mid_royalArms_omen.1",
+							"humanName": "drauvenHostileFaction"
+						}
+					]
+				},
 				"control": "none"
 			}
 		}
