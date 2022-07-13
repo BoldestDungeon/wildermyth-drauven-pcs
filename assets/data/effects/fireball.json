@@ -1,0 +1,2308 @@
+{
+"id": "encounter_heroesArriveAtSite_fireball",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "fireball",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Nate Austin"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Everyday Moments"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{
+		"template": "INJECTED_THREAT",
+		"aspects": [ "cultist" ]
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "mystic+HAS_RIVAL_IN_PARTY",
+		"scoreThreshold": "2"
+	},
+	{
+		"role": "rival",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "RIVAL_WITH.hero-mystic",
+		"scoreThreshold": "1",
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "poet",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "POET",
+		"notAlreadyMatchedAs": [ "hero", "rival" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "hero", "rival", "poet" ]
+	},
+	{
+		"role": "volunteer2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "hero", "rival", "poet" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bgAuto": "approachingSite",
+					"bgNighttime": true,
+					"actorSlots": [
+						{
+							"role": "poet",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.089, "y": 0.508 },
+							"size": 1.115,
+							"head": { "rotate": -15.257 }
+						},
+						{
+							"assetSpec": "scenery:campfireOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.674, "y": 0.098 },
+							"size": 0.187
+						},
+						{
+							"role": "rival",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.78, "y": -0.086 },
+							"size": 0.266,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -18.638 },
+							"foot": { "rotate": -9.985 }
+						},
+						{
+							"role": "volunteer",
+							"focus": "foot",
+							"anchor": { "x": 0.263, "y": -0.038 },
+							"size": 0.276,
+							"nameTag": "none",
+							"head": { "rotate": -15.442, "scaleY": -1 }
+						},
+						{
+							"role": "volunteer2",
+							"focus": "foot",
+							"anchor": { "x": 0.983, "y": -0.055 },
+							"size": 0.267,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"focus": "foot",
+							"anchor": { "x": 0.468, "y": -0.07 },
+							"size": 0.293,
+							"nameTag": "none",
+							"head": { "rotate": 15.225 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_001~1_poet",
+							"style": "narration",
+							"pointerOwner": "poet",
+							"widthFraction": 0.6155443
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "poet",
+							"form": "frame-talk",
+							"equipment": {},
+							"head": { "rotate": 13.349 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_002~1_poet",
+							"pointerOwner": "poet"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.5, "y": 0.143 },
+							"size": 0.185,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "rival",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.831, "y": 0.504 },
+							"size": 0.829,
+							"nameTag": "none",
+							"head": { "rotate": 6.318 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.61, "y": 0.54 },
+							"size": 0.574,
+							"nameTag": "none",
+							"head": { "rotate": 1.687 }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.47, "y": 0.496 },
+							"size": 0.555,
+							"nameTag": "none",
+							"head": { "rotate": -5.826 }
+						},
+						{
+							"role": "hero",
+							"form": "frame-dubious",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.249, "y": 0.456 },
+							"size": 0.5,
+							"nameTag": "none",
+							"head": { "rotate": -7.696 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_003~1_rival",
+							"pointerOwner": "rival"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_abstractRadialYellow.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-joy",
+							"anchor": { "x": 0.522, "y": 0.624 },
+							"size": 0.558,
+							"head": { "rotate": 12.089 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_004~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_004~2_narration",
+							"style": "narration",
+							"location": "bottomLeft",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"role": "poet",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": -0.085, "y": 0.504 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": 9.782 }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.5, "y": 0.143 },
+							"size": 0.185,
+							"nameTag": "none"
+						},
+						{
+							"role": "rival",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.932, "y": 0.516 },
+							"size": 0.829,
+							"nameTag": "none",
+							"head": { "rotate": 6.318 }
+						},
+						{
+							"role": "volunteer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.708, "y": 0.568 },
+							"size": 0.574,
+							"nameTag": "none",
+							"head": { "rotate": 1.687 }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.559, "y": 0.496 },
+							"size": 0.555,
+							"nameTag": "none",
+							"head": { "rotate": -5.826 }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.356, "y": 0.448 },
+							"size": 0.5,
+							"nameTag": "none",
+							"head": { "rotate": -7.696 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_005~1_poet",
+							"style": "narration",
+							"pointerOwner": "poet",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"role": "poet",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.141, "y": 0.54 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": 15.82 },
+							"foot": { "rotate": 5.389 }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.5, "y": 0.143 },
+							"size": 0.185,
+							"nameTag": "none"
+						},
+						{
+							"role": "rival",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.838, "y": 0.548 },
+							"size": 0.829,
+							"nameTag": "none",
+							"head": { "rotate": -0.313 }
+						},
+						{
+							"role": "volunteer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.679, "y": 0.512 },
+							"size": 0.574,
+							"nameTag": "none",
+							"head": { "rotate": -1.641 }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.577, "y": 0.5 },
+							"size": 0.555,
+							"nameTag": "none",
+							"head": { "rotate": 1.308 }
+						},
+						{
+							"role": "hero",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.426, "y": 0.404 },
+							"size": 0.5,
+							"nameTag": "none",
+							"head": { "rotate": -25.966 }
+						},
+						{
+							"assetSpec": "figure:misc/badgerCaptive_calm.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.311, "y": 0.424 },
+							"size": 0.174,
+							"color": { "r": "0.2", "g": "0.2", "b": "0.2", "a": "8" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_006~1_poet",
+							"pointerOwner": "poet",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -3, "dY": -4, "forcePointerImage": "speechMedium" }
+						},
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_006~2_poet",
+							"pointerOwner": "poet",
+							"location": "bottomLeft",
+							"padXFraction": 0.053,
+							"padYFraction": 0.078,
+							"widthFraction": 0.40325227,
+							"pointerAdjust": { "dX": -23, "dY": 10.000015, "scaleX": 1.3733357, "scaleY": 1.3733357 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"role": "rival",
+							"form": "frame-dubious",
+							"facing": "left",
+							"size": 1.277,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 8.584 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_007~1_rival",
+							"pointerOwner": "rival"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-rage",
+							"facing": "left",
+							"anchor": { "x": 0.64, "y": 0.5 },
+							"size": 1.399,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -14.574, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_008~1_hero",
+							"pointerOwner": "hero"
+						},
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_008~2_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.032,
+							"padYFraction": 0.172,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 38, "dY": -10 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "sixth",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-hit",
+							"facing": "left",
+							"anchor": { "x": 0.61, "y": 0.5 },
+							"size": 2.097,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -14.488, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_009~1_hero",
+							"pointerOwner": "hero",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -25.346212, "dX": 49, "dY": 4, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-rage",
+							"facing": "left",
+							"anchor": { "x": 0.479, "y": 0.5 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": 28.301, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_010~1_hero",
+							"pointerOwner": "hero",
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -17.345459,
+								"dX": 0,
+								"dY": -3.0000916,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_010~2_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 38, "dY": -10 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"role": "poet",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.141, "y": 0.54 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": -6.686 },
+							"foot": { "rotate": 5.389 }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.5, "y": 0.143 },
+							"size": 0.185,
+							"nameTag": "none"
+						},
+						{
+							"role": "rival",
+							"form": "frame-joke",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.838, "y": 0.548 },
+							"size": 0.829,
+							"nameTag": "none",
+							"head": { "rotate": -0.313 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.679, "y": 0.512 },
+							"size": 0.574,
+							"nameTag": "none",
+							"head": { "rotate": -1.641 }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.577, "y": 0.5 },
+							"size": 0.555,
+							"nameTag": "none",
+							"head": { "rotate": 1.308 }
+						},
+						{
+							"role": "hero",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.426, "y": 0.404 },
+							"size": 0.5,
+							"nameTag": "none",
+							"head": { "rotate": -25.966 }
+						},
+						{
+							"assetSpec": "figure:misc/badgerCaptive_calm.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.227, "y": 0.344 },
+							"size": 0.15,
+							"foot": { "rotate": -22.236 },
+							"color": { "r": "0.2", "g": "0.2", "b": "0.2", "a": "8" }
+						},
+						{
+							"assetSpec": "comic:actionLines_dash.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.344, "y": 0.086 },
+							"size": 0.189,
+							"foot": { "rotate": 171.28 }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_squiggleMad.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.396, "y": 0.633 },
+							"size": 0.602,
+							"foot": { "rotate": -9.139 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_011~1_poet",
+							"style": "action",
+							"pointerOwner": "poet",
+							"location": "bottomLeft",
+							"padXFraction": 0.169,
+							"padYFraction": 0.359,
+							"widthFraction": 0.40325227,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -23, "dY": 10.000015, "scaleX": 1.3733357, "scaleY": 1.3733357 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "rival",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_012~1_rival",
+							"pointerOwner": "rival"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bgAuto": "approachingSite",
+					"bgNighttime": true,
+					"actorSlots": [
+						{
+							"role": "rival",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.862, "y": 0.452 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_rockJaggyLarge.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.121, "y": 0.347 },
+							"size": 0.276,
+							"nameTag": "none",
+							"color": { "r": "0.3", "g": "0.3", "b": "0.4", "a": "1" }
+						},
+						{
+							"assetSpec": "figure:misc/badgerCaptive_calm.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.301, "y": 0.348 },
+							"size": 0.144,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": 12.693 },
+							"color": { "r": "0.2", "g": "0.2", "b": "0.2", "a": "8" }
+						},
+						{
+							"assetSpec": "comic:actionLines_dash.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.395, "y": 0.146 },
+							"size": 0.189,
+							"nameTag": "none",
+							"foot": { "rotate": 171.28 }
+						},
+						{
+							"assetSpec": "scenery:rocksSaplingsConifer.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.644, "y": 0.255 },
+							"size": 0.574,
+							"nameTag": "none",
+							"color": { "r": "0.06", "g": "0.05", "b": "0.1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fireball",
+							"textKey": "~01~prompt~panel_013~1_rival",
+							"pointerOwner": "rival"
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "hero",
+									"form": "frame-talk",
+									"anchor": { "x": 0.46, "y": 0.466 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "fireball",
+									"textKey": "~02~choice_one~panel_001~1_hero",
+									"pointerOwner": "hero"
+								},
+								{
+									"textSourceFile": "fireball",
+									"textKey": "~02~choice_one~panel_001~2_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "poet",
+									"form": "frame-grim",
+									"equipment": {}
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "fireball",
+									"textKey": "~03~choice_two~panel_001~1_poet",
+									"pointerOwner": "poet"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "hero",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "Test",
+			"value": "EVENT_ROLL+roll_one",
+			"threshold": "difficulty_one",
+			"onPass": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Description",
+						"script": [
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"bgAuto": "approachingSite",
+									"bgNighttime": true,
+									"actorSlots": [
+										{
+											"role": "hero",
+											"form": "frame-skeptical",
+											"anchor": { "x": 0.488, "y": 0.492 },
+											"size": 0.806,
+											"head": { "rotate": -12.675 },
+											"colorFilter": { "filterName": "vulnerable", "strength": 0.2 }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.983, "y": 0.316 },
+											"size": 0.258,
+											"foot": { "rotate": -8.826 },
+											"color": { "r": "1", "g": "0.9", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.987, "y": 0.42 },
+											"size": 0.32,
+											"nameTag": "none",
+											"color": { "r": "0.9", "g": "0.85", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.822, "y": 0.372 },
+											"size": 0.383,
+											"nameTag": "none",
+											"foot": { "rotate": 13 },
+											"color": { "r": "0.85", "g": "0.7", "b": "1", "a": "0.7" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.822, "y": 0.428 },
+											"size": 0.1,
+											"color": { "r": "1", "g": "0.95", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.733, "y": 0.408 },
+											"size": 0.158,
+											"color": { "r": "0.8", "g": "0.7", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "comic:light_starburstSmall.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.455, "y": 0.263 },
+											"size": 0.355,
+											"color": { "r": "0.9", "g": "0.85", "b": "1", "a": "0.4" }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_001~1_darken",
+											"style": "darken",
+											"padXFraction": 0.303,
+											"padYFraction": 0.08,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"assetSpec": "scenery:treeSmallFoothill3.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.688, "y": 0.468 },
+											"size": 0.439,
+											"colorFilter": { "filterName": "vulnerable", "strength": 0.3 }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": -0.026, "y": 0.308 },
+											"size": 0.258,
+											"foot": { "rotate": -14.299 },
+											"color": { "r": "1", "g": "0.9", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.197, "y": 0.32 },
+											"size": 0.32,
+											"nameTag": "none",
+											"color": { "r": "0.9", "g": "0.85", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.331, "y": 0.368 },
+											"size": 0.383,
+											"nameTag": "none",
+											"foot": { "rotate": 13 },
+											"color": { "r": "0.85", "g": "0.7", "b": "1", "a": "0.7" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.081, "y": 0.348 },
+											"size": 0.1,
+											"nameTag": "none",
+											"color": { "r": "1", "g": "0.95", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.559, "y": 0.46 },
+											"size": 0.158,
+											"color": { "r": "0.8", "g": "0.7", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/ability_scout.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.63, "y": 0.632 },
+											"size": 0.859,
+											"drawDepth": -10
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_002~1_narration",
+											"style": "narration"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "hero",
+											"form": "frame-happy",
+											"anchor": { "x": 0.287, "y": 0.492 },
+											"colorFilter": { "filterName": "vulnerable", "strength": 0.2 }
+										},
+										{
+											"assetSpec": "comic:light_starburstLarge.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.356, "y": 0.476 },
+											"size": 0.125,
+											"nameTag": "bottomRight",
+											"color": { "r": "0.85", "g": "0.7", "b": "1", "a": "0.5" }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_003~1_hero",
+											"pointerOwner": "hero",
+											"location": "topRight",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "hero",
+											"form": "frame-grim",
+											"anchor": { "x": 0.652, "y": 0.536 },
+											"size": 0.479,
+											"head": { "rotate": 1.629 },
+											"foot": { "rotate": -5.329 },
+											"colorFilter": { "filterName": "vulnerable", "strength": 0.15 }
+										},
+										{
+											"assetSpec": "comic:smokeTendrils.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.476, "y": 0.251 },
+											"size": 0.201,
+											"nameTag": "bottomRight",
+											"color": { "r": "1", "g": "0.7", "b": "1", "a": "0.5" }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_004~1_hero",
+											"pointerOwner": "hero",
+											"location": "topRight",
+											"padXFraction": 0.401,
+											"padYFraction": 0.07,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "rival",
+											"form": "frame-angry",
+											"head": { "rotate": 15.255 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_005~1_rival",
+											"pointerOwner": "rival",
+											"location": "topRight",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{ "role": "hero", "form": "frame-skeptical" }
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_006~1_hero",
+											"pointerOwner": "hero"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"bg": "comicBG_hillsRockyNight.jpg",
+									"actorSlots": [
+										{
+											"role": "rival",
+											"form": "frame-grim",
+											"anchor": { "x": 0.069, "y": 0.5 }
+										},
+										{
+											"assetSpec": "figure:misc/badgerCaptive_calm.png",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.482, "y": 0.175 },
+											"size": 0.307,
+											"foot": { "rotate": 14.392 }
+										},
+										{
+											"role": "hero",
+											"form": "frame-surprised",
+											"facing": "left",
+											"anchor": { "x": 0.892, "y": 0.548 },
+											"nameTag": "bottomRight"
+										},
+										{
+											"assetSpec": "comic:comicForeground_bushSwirly1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.007, "y": 0.885 },
+											"size": 0.811,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:comicForeground_rockJaggyLarge.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.878, "y": 0.537 },
+											"size": 0.383,
+											"nameTag": "none",
+											"color": { "r": "0.2", "g": "0.2", "b": "0.4", "a": "1" }
+										},
+										{
+											"assetSpec": "scenery:campfireEmbers.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.543, "y": 0.102 },
+											"size": 0.218,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:ZzLong.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.552, "y": 0.541 },
+											"size": 0.334
+										},
+										{
+											"assetSpec": "figure:cultist/cultist_grunt.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.646, "y": 0.424 },
+											"size": 0.175,
+											"nameTag": "none",
+											"foot": { "rotate": 58.919 }
+										},
+										{
+											"assetSpec": "figure:cultist/cultist_slinger.png",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.465, "y": 0.396 },
+											"size": 0.175,
+											"foot": { "rotate": 45.971 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_007~1_rival",
+											"pointerOwner": "rival",
+											"padXFraction": 0.088,
+											"padYFraction": 0.049,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"actorSlots": [
+										{
+											"role": "hero",
+											"form": "frame-interested",
+											"facing": "left",
+											"anchor": { "x": 0.822, "y": 0.825 },
+											"head": { "rotate": -36.469 }
+										},
+										{
+											"assetSpec": "comic:flask.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.329, "y": 0.114 },
+											"size": 0.298,
+											"nameTag": "none",
+											"foot": { "rotate": -1.338 }
+										},
+										{
+											"assetSpec": "figure:misc/badgerCaptive_calm.png",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.224, "y": 0.533 },
+											"size": 0.313,
+											"nameTag": "bottomRight",
+											"foot": { "rotate": 4.399 }
+										},
+										{
+											"assetSpec": "comic:comicForeground_bushSwirly1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.12, "y": 0.917 },
+											"size": 0.811,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_008~1_hero",
+											"pointerOwner": "hero",
+											"padXFraction": 0.285,
+											"padYFraction": 0.004,
+											"shrinkToFitText": true,
+											"pointerAdjust": { "dX": -33, "dY": -5 }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"bg": "comicBG_abstractGray1.jpg",
+									"actorSlots": [
+										{
+											"role": "hero",
+											"facing": "left",
+											"anchor": { "x": 1.248, "y": 0.557 },
+											"size": 0.268,
+											"nameTag": "bottomRight"
+										},
+										{
+											"assetSpec": "comic:flask.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.415, "y": 0.388 },
+											"size": 0.798,
+											"nameTag": "none",
+											"foot": { "rotate": 49.799 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_009~1_speech",
+											"location": "topRight",
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_009~2_hero",
+											"pointerOwner": "hero",
+											"location": "topRight",
+											"padXFraction": 0.003,
+											"padYFraction": 0.111,
+											"shrinkToFitText": true,
+											"pointerAdjust": {
+												"rotate": 23.19859,
+												"dX": -72,
+												"dY": 7.9999695,
+												"pointerOrientH": "onLeft",
+												"forcePointerImage": "speechMedium"
+											}
+										},
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_009~3_hero",
+											"pointerOwner": "hero",
+											"location": "bottomRight",
+											"padXFraction": 0.125,
+											"padYFraction": 0.188,
+											"shrinkToFitText": true,
+											"pointerAdjust": {
+												"rotate": -8.233778,
+												"dX": -49,
+												"dY": 8,
+												"pointerOrientH": "onLeft",
+												"forcePointerImage": "speechMedium"
+											}
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_tavernDark.jpg",
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-surprised",
+											"facing": "left",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.873, "y": 0.496 },
+											"size": 0.593,
+											"head": { "rotate": 21.451 }
+										},
+										{
+											"role": "npc2",
+											"form": "frame-interested",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.092, "y": 0.416 },
+											"size": 0.482,
+											"nameTag": "bottomRight",
+											"head": { "rotate": 3.779 }
+										},
+										{
+											"role": "npc3",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.304, "y": 0.428 },
+											"size": 0.437,
+											"nameTag": "none",
+											"head": { "rotate": 10.791 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_010~1_poet",
+											"pointerOwner": "poet"
+										},
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_010~2_narration",
+											"style": "narration",
+											"location": "bottomLeft",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"bg": "comicBG_abstractGray1.jpg",
+									"actorSlots": [
+										{
+											"role": "hero",
+											"form": "frame-interested",
+											"facing": "left",
+											"anchor": { "x": 0.643, "y": 0.492 },
+											"size": 1.15,
+											"nameTag": "bottomRight",
+											"head": { "rotate": -24.057 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_011~1_hero",
+											"pointerOwner": "hero",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"showNameTags": false,
+									"bg": "comicBG_tavernDark.jpg",
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-talk",
+											"facing": "left",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.873, "y": 0.496 },
+											"size": 0.593,
+											"head": { "rotate": 6.85 }
+										},
+										{
+											"role": "npc2",
+											"form": "frame-interested",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.092, "y": 0.416 },
+											"size": 0.482,
+											"nameTag": "bottomRight",
+											"head": { "rotate": 3.779 }
+										},
+										{
+											"role": "npc3",
+											"form": "frame-surprised",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.304, "y": 0.428 },
+											"size": 0.437,
+											"nameTag": "none",
+											"head": { "rotate": 4.543 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_012~1_poet",
+											"pointerOwner": "poet",
+											"padXFraction": 0.23,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"bg": "comicBG_hillsRockyNight.jpg",
+									"actorSlots": [
+										{
+											"role": "hero",
+											"form": "frame-grim",
+											"facing": "left",
+											"anchor": { "x": 0.813, "y": 0.777 },
+											"size": 0.983,
+											"head": { "rotate": -12.926 }
+										},
+										{
+											"assetSpec": "figure:misc/badgerCaptive_calm.png",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.156, "y": 0.509 },
+											"size": 0.313,
+											"nameTag": "bottomRight",
+											"foot": { "rotate": 4.399 }
+										},
+										{
+											"assetSpec": "comic:comicForeground_bushSwirly1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.12, "y": 0.917 },
+											"size": 0.811,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_013~1_hero",
+											"pointerOwner": "hero",
+											"widthFraction": 0.5556237,
+											"pointerAdjust": { "rotate": 10.547306, "dX": -25, "dY": 3.0517578E-5 }
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "half",
+									"actorSlots": [
+										{
+											"assetSpec": "comic:actionLines_arcLong.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.776, "y": 0.544 },
+											"size": 0.258,
+											"nameTag": "bottomRight",
+											"foot": { "rotate": 24.732 }
+										},
+										{
+											"assetSpec": "vfx:fire",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.299, "y": 0.814 },
+											"size": 0.039,
+											"nameTag": "none",
+											"foot": { "rotate": 38.772 }
+										},
+										{
+											"assetSpec": "comic:flask.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.385, "y": 0.608 },
+											"size": 0.516,
+											"nameTag": "none",
+											"foot": { "rotate": 28.706 },
+											"colorFilter": { "filterName": "vulnerable", "strength": 0.4 }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.66, "y": 0.372 },
+											"size": 0.258,
+											"foot": { "rotate": 24.112 },
+											"color": { "r": "1", "g": "0.9", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.806, "y": 0.292 },
+											"size": 0.32,
+											"nameTag": "none",
+											"foot": { "rotate": -31.218 },
+											"color": { "r": "0.9", "g": "0.85", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.846, "y": 0.175 },
+											"size": 0.383,
+											"foot": { "rotate": -40.631 },
+											"color": { "r": "0.85", "g": "0.7", "b": "1", "a": "0.7" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.94, "y": 0.171 },
+											"size": 0.1,
+											"foot": { "rotate": -26.565 },
+											"color": { "r": "1", "g": "0.95", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.597, "y": 0.46 },
+											"size": 0.158,
+											"foot": { "rotate": -18.177 },
+											"color": { "r": "0.8", "g": "0.7", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "comic:light_starburstSmall.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.408, "y": 0.532 },
+											"size": 0.189,
+											"color": { "r": "0.9", "g": "0.85", "b": "1", "a": "0.4" }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_014~1_narration",
+											"style": "narration"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"showNameTags": false,
+									"bg": "comicBG_tavernDark.jpg",
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-happy",
+											"facing": "left",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.835, "y": 0.496 },
+											"size": 0.593,
+											"head": { "rotate": 23.324 }
+										},
+										{
+											"role": "volunteer",
+											"form": "frame-happy",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.063, "y": 0.476 },
+											"size": 0.635,
+											"nameTag": "none",
+											"head": { "rotate": -28.359 }
+										},
+										{
+											"role": "npc2",
+											"form": "frame-surprised",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.274, "y": 0.4 },
+											"size": 0.482,
+											"nameTag": "bottomRight",
+											"head": { "rotate": 3.779 }
+										},
+										{
+											"role": "npc3",
+											"form": "frame-interested",
+											"equipment": { "mode": "removeWeapons" },
+											"anchor": { "x": 0.392, "y": 0.42 },
+											"size": 0.437,
+											"nameTag": "none",
+											"head": { "rotate": 11.867 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~04~player_chose_one.test_pass~panel_015~1_poet",
+											"pointerOwner": "poet",
+											"padXFraction": 0.321,
+											"padYFraction": 0.004,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"class": "AddHistory",
+						"inlineHistory": {
+							"id": "encounter_heroesArriveAtSite_fireball.playerChose_one.onPass",
+							"associatedAspects": [ "mysticSpecial_improvisedFireball" ],
+							"persistOverLegacy": "ability",
+							"relationships": [
+								{ "role": "site" }
+							]
+						}
+					},
+					{
+						"class": "Mission",
+						"target": "self",
+						"goal": "liberate",
+						"combatants": [
+							{ "role": "party", "side": "player" },
+							{ "role": "foes", "side": "enemy" }
+						],
+						"mutators": [ "nighttime" ]
+					}
+				]
+			},
+			"onFail": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Description",
+						"script": [
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"bgAuto": "approachingSite",
+									"bgNighttime": true,
+									"actorSlots": [
+										{
+											"role": "hero",
+											"form": "frame-skeptical",
+											"anchor": { "x": 0.488, "y": 0.492 },
+											"size": 0.806,
+											"head": { "rotate": -12.675 },
+											"colorFilter": { "filterName": "vulnerable", "strength": 0.2 }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.983, "y": 0.316 },
+											"size": 0.258,
+											"foot": { "rotate": -8.826 },
+											"color": { "r": "1", "g": "0.9", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.987, "y": 0.42 },
+											"size": 0.32,
+											"nameTag": "none",
+											"color": { "r": "0.9", "g": "0.85", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.822, "y": 0.372 },
+											"size": 0.383,
+											"nameTag": "none",
+											"foot": { "rotate": 13 },
+											"color": { "r": "0.85", "g": "0.7", "b": "1", "a": "0.7" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.822, "y": 0.428 },
+											"size": 0.1,
+											"color": { "r": "1", "g": "0.95", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.733, "y": 0.408 },
+											"size": 0.158,
+											"color": { "r": "0.8", "g": "0.7", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "comic:light_starburstSmall.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.455, "y": 0.263 },
+											"size": 0.355,
+											"color": { "r": "0.9", "g": "0.85", "b": "1", "a": "0.4" }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_001~1_darken",
+											"style": "darken",
+											"padXFraction": 0.303,
+											"padYFraction": 0.08,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"assetSpec": "scenery:treeSmallFoothill3.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.688, "y": 0.468 },
+											"size": 0.439,
+											"colorFilter": { "filterName": "vulnerable", "strength": 0.3 }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": -0.026, "y": 0.308 },
+											"size": 0.258,
+											"foot": { "rotate": -14.299 },
+											"color": { "r": "1", "g": "0.9", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.197, "y": 0.32 },
+											"size": 0.32,
+											"nameTag": "none",
+											"color": { "r": "0.9", "g": "0.85", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.331, "y": 0.368 },
+											"size": 0.383,
+											"nameTag": "none",
+											"foot": { "rotate": 13 },
+											"color": { "r": "0.85", "g": "0.7", "b": "1", "a": "0.7" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl1.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.081, "y": 0.348 },
+											"size": 0.1,
+											"nameTag": "none",
+											"color": { "r": "1", "g": "0.95", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/particle_eyeSwirl2.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.559, "y": 0.46 },
+											"size": 0.158,
+											"color": { "r": "0.8", "g": "0.7", "b": "1", "a": "1" }
+										},
+										{
+											"assetSpec": "asset:ui/scale/unpacked/ability_scout.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.63, "y": 0.632 },
+											"size": 0.859,
+											"drawDepth": -10
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_002~1_narration",
+											"style": "narration"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "hero",
+											"form": "frame-happy",
+											"anchor": { "x": 0.287, "y": 0.492 },
+											"colorFilter": { "filterName": "vulnerable", "strength": 0.2 }
+										},
+										{
+											"assetSpec": "comic:light_starburstLarge.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.356, "y": 0.476 },
+											"size": 0.125,
+											"nameTag": "bottomRight",
+											"color": { "r": "0.85", "g": "0.7", "b": "1", "a": "0.5" }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_003~1_hero",
+											"pointerOwner": "hero",
+											"location": "topRight",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "hero",
+											"form": "frame-grim",
+											"anchor": { "x": 0.652, "y": 0.536 },
+											"size": 0.479,
+											"head": { "rotate": 1.629 },
+											"foot": { "rotate": -5.329 },
+											"colorFilter": { "filterName": "vulnerable", "strength": 0.15 }
+										},
+										{
+											"assetSpec": "comic:smokeTendrils.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.476, "y": 0.251 },
+											"size": 0.201,
+											"nameTag": "bottomRight",
+											"color": { "r": "1", "g": "0.7", "b": "1", "a": "0.5" }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_004~1_hero",
+											"pointerOwner": "hero",
+											"location": "topRight",
+											"padXFraction": 0.401,
+											"padYFraction": 0.07,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{
+											"role": "rival",
+											"form": "frame-angry",
+											"head": { "rotate": 15.255 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_005~1_rival",
+											"pointerOwner": "rival",
+											"location": "topRight",
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"actorSlots": [
+										{ "role": "hero", "form": "frame-skeptical" }
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_006~1_hero",
+											"pointerOwner": "hero"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "full",
+									"showNameTags": false,
+									"bg": "comicBG_hillsRockyNight.jpg",
+									"actorSlots": [
+										{
+											"role": "rival",
+											"form": "frame-grim",
+											"anchor": { "x": 0.069, "y": 0.5 }
+										},
+										{
+											"role": "hero",
+											"form": "frame-surprised",
+											"facing": "left",
+											"anchor": { "x": 0.892, "y": 0.548 },
+											"nameTag": "bottomRight"
+										},
+										{
+											"assetSpec": "comic:comicForeground_bushSwirly1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.17, "y": 0.945 },
+											"size": 0.811,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "comic:comicForeground_rockJaggyLarge.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.929, "y": 0.533 },
+											"size": 0.383,
+											"nameTag": "none",
+											"color": { "r": "0.2", "g": "0.2", "b": "0.4", "a": "1" }
+										},
+										{
+											"assetSpec": "figure:misc/badgerCaptive_calm.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.328, "y": 0.38 },
+											"size": 0.134,
+											"foot": { "rotate": -13.575 }
+										},
+										{
+											"assetSpec": "scenery:campfireOn.png",
+											"role": null,
+											"focus": "foot",
+											"anchor": { "x": 0.543, "y": 0.102 },
+											"size": 0.218,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:cultist/cultist_grunt.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.646, "y": 0.424 },
+											"size": 0.175,
+											"nameTag": "none",
+											"foot": { "rotate": 7.862 }
+										},
+										{
+											"assetSpec": "figure:cultist/cultist_slinger.png",
+											"role": null,
+											"focus": "middle",
+											"anchor": { "x": 0.465, "y": 0.396 },
+											"size": 0.175,
+											"foot": { "rotate": 7.707 }
+										},
+										{
+											"assetSpec": "comic:actionLines_dash.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": 0.415, "y": 0.146 },
+											"size": 0.152,
+											"foot": { "rotate": 14.145 }
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_007~1_rival",
+											"pointerOwner": "rival",
+											"padXFraction": 0.088,
+											"padYFraction": 0.049,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "poet",
+											"form": "frame-interested",
+											"anchor": { "x": 0.18, "y": 0.5 }
+										},
+										{
+											"assetSpec": "comic:comicForeground_bushSwirly1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.13, "y": 0.592 },
+											"size": 0.811,
+											"nameTag": "bottomRight"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_008~1_poet",
+											"pointerOwner": "poet"
+										}
+									]
+								}
+							},
+							{
+								"class": "comicNode_Panel",
+								"panel": {
+									"size": "twoThirds",
+									"showNameTags": false,
+									"actorSlots": [
+										{
+											"role": "rival",
+											"form": "frame-grim",
+											"anchor": { "x": 0.178, "y": 0.512 },
+											"head": { "rotate": 4.927 }
+										},
+										{
+											"role": "hero",
+											"form": "frame-grim",
+											"facing": "left",
+											"anchor": { "x": 0.886, "y": 0.52 },
+											"nameTag": "bottomRight",
+											"head": { "rotate": -5.715 }
+										},
+										{
+											"assetSpec": "comic:comicForeground_bushSwirly1.png",
+											"role": null,
+											"facing": "left",
+											"focus": "foot",
+											"anchor": { "x": -0.223, "y": 0.861 },
+											"size": 0.811,
+											"nameTag": "none"
+										},
+										{
+											"assetSpec": "figure:cultist/cultist_grunt.png",
+											"role": null,
+											"facing": "left",
+											"focus": "middle",
+											"anchor": { "x": 0.606, "y": 0.676 },
+											"size": 0.222,
+											"nameTag": "none"
+										}
+									],
+									"textSlots": [
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_009~1_rival",
+											"pointerOwner": "rival",
+											"padXFraction": 0.242,
+											"padYFraction": 0.004,
+											"shrinkToFitText": true
+										},
+										{
+											"textSourceFile": "fireball",
+											"textKey": "~05~player_chose_one.test_fail~panel_009~2_action",
+											"style": "action",
+											"padXFraction": 0.494,
+											"padYFraction": 0.257,
+											"shrinkToFitText": true
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"class": "Mission",
+						"target": "self",
+						"goal": "liberate",
+						"combatants": [
+							{ "role": "party", "side": "player" },
+							{ "role": "foes", "side": "enemy" }
+						],
+						"mutators": [ "nighttime" ]
+					}
+				]
+			}
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "rival",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_campfire.jpg",
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-talk",
+										"equipment": {},
+										"anchor": { "x": 0.141, "y": 0.54 },
+										"nameTag": "bottomRight",
+										"head": { "rotate": 15.82 },
+										"foot": { "rotate": 5.389 }
+									},
+									{
+										"assetSpec": "vfx:fire",
+										"role": null,
+										"form": "idle",
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.5, "y": 0.143 },
+										"size": 0.185,
+										"nameTag": "none"
+									},
+									{
+										"role": "rival",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.838, "y": 0.548 },
+										"size": 0.829,
+										"nameTag": "none",
+										"head": { "rotate": -17.964, "scaleY": -1 }
+									},
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.679, "y": 0.512 },
+										"size": 0.574,
+										"nameTag": "none",
+										"head": { "rotate": -1.641 }
+									},
+									{
+										"role": "volunteer2",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.577, "y": 0.5 },
+										"size": 0.555,
+										"nameTag": "none",
+										"head": { "rotate": 14.744 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.426, "y": 0.404 },
+										"size": 0.5,
+										"nameTag": "none",
+										"head": { "rotate": 2.74 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "fireball",
+										"textKey": "~06~player_chose_two~panel_001~1_poet",
+										"pointerOwner": "poet",
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -3, "dY": -4, "forcePointerImage": "speechMedium" }
+									},
+									{
+										"textSourceFile": "fireball",
+										"textKey": "~06~player_chose_two~panel_001~2_poet",
+										"pointerOwner": "poet",
+										"location": "bottomLeft",
+										"padXFraction": 0.053,
+										"padYFraction": 0.078,
+										"widthFraction": 0.40325227,
+										"pointerAdjust": { "dX": -23, "dY": 10.000015, "scaleX": 1.3733357, "scaleY": 1.3733357 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_nightStars.jpg",
+								"textSlots": [
+									{
+										"textSourceFile": "fireball",
+										"textKey": "~06~player_chose_two~panel_002~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-grim",
+										"anchor": { "x": 0.12, "y": 0.5 },
+										"head": { "rotate": -7.125 }
+									},
+									{
+										"role": "rival",
+										"form": "frame-joke",
+										"facing": "left",
+										"anchor": { "x": 0.88, "y": 0.5 },
+										"nameTag": "bottomRight",
+										"head": { "rotate": 6.116 }
+									},
+									{
+										"role": "poet",
+										"form": "frame-interested",
+										"focus": "foot",
+										"anchor": { "x": 0.247, "y": -0.323 },
+										"size": 0.436,
+										"nameTag": "none"
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-grim",
+										"focus": "foot",
+										"anchor": { "x": 0.647, "y": -0.186 },
+										"size": 0.33,
+										"nameTag": "none",
+										"head": { "rotate": 16.98 }
+									},
+									{
+										"role": "volunteer2",
+										"focus": "foot",
+										"anchor": { "x": 0.406, "y": -0.464 },
+										"size": 0.49,
+										"nameTag": "none",
+										"head": { "rotate": -10.49, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "fireball",
+										"textKey": "~06~player_chose_two~panel_003~1_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.219,
+										"padYFraction": 0.005,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "fireball",
+										"textKey": "~06~player_chose_two~panel_003~2_rival",
+										"pointerOwner": "rival",
+										"location": "topRight",
+										"padXFraction": 0.01,
+										"padYFraction": 0.065,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"target": "self",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	}
+],
+"expressions": { "difficulty_one": "70", "roll_one": "CHARISMA" },
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "mystic", "setAge": "lateMiddleAge" },
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{ "class": "AddGear", "target": "npc", "itemById": "arkenstag" },
+						{ "class": "AddGear", "target": "npc", "itemById": "mysticRobe2" },
+						{ "class": "AddGear", "target": "npc", "itemById": "augment_talismanWilderness" }
+					]
+				}
+			}
+		},
+		{
+			"role": "npc2",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "farmer" }
+			}
+		},
+		{
+			"role": "npc3",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "farmer" }
+			}
+		}
+	]
+}
+}

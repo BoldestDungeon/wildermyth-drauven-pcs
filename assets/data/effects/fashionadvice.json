@@ -1,0 +1,161 @@
+{
+"id": "tiding_misc_fashionadvice",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "fashionadvice",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Bailey Ashworth"
+},
+"type": "TIDING_MISC",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "heroism",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{
+		"template": "INJECTED_HERO",
+		"themes": { "hasTheme": "tree", "hasPiece": "elmsoul" }
+	},
+	{ "template": "COMPANY" },
+	{
+		"role": "friend",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "FRIEND_WITH.hero",
+		"scoreThreshold": "1",
+		"fromRoles": null,
+		"notAlreadyMatchedAs": [ "hero" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_interiorDay.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-talk",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.155, "y": 0.527 },
+							"size": 0.665,
+							"nameTag": "none",
+							"head": { "rotate": -0.925 },
+							"color": { "r": "0.8499999", "g": "0.77543348", "b": "0.70000005", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.827, "y": 0.509 },
+							"size": 0.709,
+							"drawDepth": 4,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -18.203, "scaleY": -1 },
+							"foot": { "rotate": -2.529 }
+						},
+						{
+							"assetSpec": "scenery:potHolderOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.915, "y": -0.145 },
+							"size": 0.561,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.358, "y": -0.12 },
+							"size": 0.496,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.909, "y": 0.516 },
+							"size": 0.194,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "scaleX": 1.3 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5346821" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "fashionadvice",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"padXFraction": 0.001,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "fashionadvice",
+							"textKey": "~01~~panel_001~2_npc",
+							"style": "narration",
+							"pointerOwner": "npc"
+						},
+						{
+							"textSourceFile": "fashionadvice",
+							"textKey": "~01~~panel_001~3_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.265,
+							"padYFraction": 0.674,
+							"widthFraction": 0.37818697,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -96.79846,
+								"dX": -4.169169,
+								"dY": 78.74728,
+								"pointerOrientH": "onRight",
+								"pointerOrientV": "up"
+							}
+						},
+						{
+							"textSourceFile": "fashionadvice",
+							"textKey": "~01~~panel_001~4_friend",
+							"pointerOwner": "friend",
+							"location": "topRight",
+							"padXFraction": 0.214,
+							"padYFraction": 0.155,
+							"widthFraction": 0.51356864,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 7.1010823,
+								"dX": -3.4261973,
+								"dY": -8.427626,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "fashionadvice",
+							"textKey": "~01~~panel_001~5_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.379,
+							"padYFraction": 0.592,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -93.81406,
+								"dX": -3.426184,
+								"dY": 25.125349,
+								"scaleX": 0.9687778,
+								"scaleY": 0.9687778
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}

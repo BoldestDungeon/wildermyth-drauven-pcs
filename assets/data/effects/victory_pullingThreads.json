@@ -1,0 +1,1610 @@
+{
+"id": "missionVictory_pullingThreads",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "victory_pullingThreads",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Anne Austin",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "DEAD_FOES" },
+	{
+		"role": "mystic",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "pullingThreadsMystic"
+	},
+	{
+		"role": "friend",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "SHIP_WITH.mystic",
+		"notAlreadyMatchedAs": [ "mystic" ]
+	},
+	{
+		"role": "legend",
+		"template": "PICK_BY_SCORE",
+		"choose": "ONE",
+		"scoreFunction": null,
+		"injectedRole": "legend",
+		"fromRoles": null
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.69, "y": -0.249 },
+							"size": 0.551,
+							"nameTag": "none",
+							"foot": { "rotate": -178.939 }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.453, "y": 0.521 },
+							"size": 0.529,
+							"drawDepth": 0,
+							"head": { "rotate": 4.474, "scaleY": -1 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bannerHeroes.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.17, "y": 0.481 },
+							"size": 0.515,
+							"nameTag": "none",
+							"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:printWoodcut.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.278, "y": 0.687 },
+							"size": 0.383,
+							"nameTag": "none",
+							"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:fabricBolts.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.028, "y": 0.039 },
+							"size": 0.594,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:thrixl_fabricRolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.32, "y": 0.147 },
+							"size": 0.531,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.7488324", "g": "0.40252182", "b": "0.21169496", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.109, "y": 0.493 },
+							"size": 0.514,
+							"drawDepth": -0.5,
+							"head": { "rotate": 3.247, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:thrixlSwirlyWebs2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.838, "y": 0.014 },
+							"size": 0.284,
+							"nameTag": "none",
+							"foot": { "rotate": -23.165 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.751, "y": 0.026 },
+							"size": 4.007,
+							"nameTag": "none",
+							"color": { "r": "0.52345586", "g": "0.44578671", "b": "0.83930206", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientLinear.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.032, "y": 0.617 },
+							"drawDepth": -10,
+							"nameTag": "none",
+							"foot": { "rotate": 165.964 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"role": "legend",
+							"form": "frame-hit",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.823, "y": 0.248 },
+							"size": 0.458,
+							"drawDepth": 8.5,
+							"nameTag": "none",
+							"head": { "rotate": -22.047 },
+							"foot": { "rotate": -23.482 },
+							"colorFilter": { "filterName": "ghostly", "strength": 0.3 }
+						},
+						{
+							"assetSpec": "comic:action_popR.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.617, "y": 0.382 },
+							"size": 0.328,
+							"nameTag": "none",
+							"foot": { "rotate": 118.714 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "victory_pullingThreads",
+							"textKey": "~01~prompt~panel_001~1_hero3",
+							"style": "narration",
+							"pointerOwner": "hero3",
+							"padXFraction": 0.032,
+							"padYFraction": 0.063,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.69, "y": -0.249 },
+							"size": 0.8380479,
+							"nameTag": "none",
+							"foot": { "rotate": -178.939 }
+						},
+						{
+							"assetSpec": "comic:thrixlSwirlyWebs2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.903, "y": -0.092 },
+							"size": 0.43195212,
+							"nameTag": "none",
+							"foot": { "rotate": 31.8 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.751, "y": 0.026 },
+							"size": 6.094479,
+							"nameTag": "none",
+							"color": { "r": "0.52345586", "g": "0.44578671", "b": "0.83930206", "a": "0.41403422" }
+						},
+						{
+							"role": "legend",
+							"form": "frame-hit",
+							"facing": "left",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.646, "y": 0.306 },
+							"size": 0.83,
+							"drawDepth": 8.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -22.047 },
+							"foot": { "rotate": -4.206 },
+							"colorFilter": { "filterName": "ghostly", "strength": 0.1 }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.192, "y": 0.687 },
+							"size": 0.367,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.39649081" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.69, "y": -0.249 },
+							"size": 0.8380479,
+							"nameTag": "none",
+							"foot": { "rotate": -178.939 }
+						},
+						{
+							"assetSpec": "comic:thrixlSwirlyWebs2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.874, "y": -0.252 },
+							"size": 0.43195212,
+							"nameTag": "none",
+							"foot": { "rotate": 31.8 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "legend",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.554, "y": 0.305 },
+							"size": 0.83,
+							"drawDepth": 8.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 2.304 },
+							"foot": { "rotate": -0.229 }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_poppedBubbles.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.231, "y": 0.863 },
+							"size": 0.693,
+							"nameTag": "none",
+							"foot": { "rotate": 21.615 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.69, "y": -0.249 },
+							"size": 0.551,
+							"nameTag": "none",
+							"foot": { "rotate": -178.939 }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.11, "y": 0.532 },
+							"size": 0.529,
+							"drawDepth": 0,
+							"head": { "rotate": 2.513 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:printWoodcut.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.008, "y": 0.679 },
+							"size": 0.383,
+							"nameTag": "none",
+							"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:fabricBolts.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.028, "y": 0.039 },
+							"size": 0.594,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:thrixl_fabricRolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.424, "y": 0.105 },
+							"size": 0.531,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.7488324", "g": "0.40252182", "b": "0.21169496", "a": "1" }
+						},
+						{
+							"role": "legend",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.817, "y": 0.546 },
+							"size": 0.53,
+							"drawDepth": 0.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 5.267 },
+							"foot": { "rotate": 2.52 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "victory_pullingThreads",
+							"textKey": "~01~prompt~panel_004~1_legend",
+							"pointerOwner": "legend",
+							"location": "topRight",
+							"padXFraction": 0.071,
+							"padYFraction": 0.043,
+							"widthFraction": 0.65406996,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "deadHero.exists",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"equipment": { "mode": "leaveEquipment" },
+										"size": 0.655,
+										"head": { "rotate": -4.611, "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:printWoodcut.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.19, "y": 0.732 },
+										"size": 0.42667544,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~01~prompt~panel_005.(deadHero_exists)~1_mystic",
+										"pointerOwner": "mystic",
+										"location": "topRight",
+										"padXFraction": 0.038,
+										"padYFraction": 0.058,
+										"widthFraction": 0.81696427,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_stoneWallDark.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.69, "y": -0.249 },
+										"size": 0.551,
+										"nameTag": "none",
+										"foot": { "rotate": -178.939 }
+									},
+									{
+										"role": "mystic",
+										"form": "frame-grim",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.263, "y": 0.532 },
+										"size": 0.529,
+										"drawDepth": 0,
+										"head": { "rotate": -22.469 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:printWoodcut.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.163, "y": 0.671 },
+										"size": 0.383,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:fabricBolts.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.028, "y": 0.039 },
+										"size": 0.594,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:thrixl_fabricRolls.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.424, "y": 0.105 },
+										"size": 0.531,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"color": { "r": "0.7488324", "g": "0.40252182", "b": "0.21169496", "a": "1" }
+									},
+									{
+										"role": "legend",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.765, "y": 0.542 },
+										"size": 0.53,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"head": { "rotate": -20.535 },
+										"foot": { "rotate": 2.52 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~01~prompt~panel_006.(deadHero_exists)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.053,
+										"padYFraction": 0.082,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"form": "frame-talk",
+										"equipment": { "mode": "leaveEquipment" },
+										"size": 0.655,
+										"head": { "rotate": -1.406, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:printWoodcut.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.19, "y": 0.732 },
+										"size": 0.42667544,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~01~prompt~panel_007.(deadHero_is_missing)~1_mystic",
+										"pointerOwner": "mystic",
+										"location": "topRight",
+										"padXFraction": 0.071,
+										"padYFraction": 0.058,
+										"widthFraction": 0.7642957,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "legend",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.441, "y": 0.534 },
+										"size": 0.685,
+										"head": { "rotate": -13.586, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~01~prompt~panel_008.(deadHero_is_missing)~1_legend",
+										"pointerOwner": "legend",
+										"padXFraction": 0.15,
+										"padYFraction": 0.084,
+										"widthFraction": 0.75871724,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onRight" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.487, "y": 0.5 },
+										"size": 0.655,
+										"head": { "rotate": 10.286, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:printWoodcut.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.19, "y": 0.732 },
+										"size": 0.42667544,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~01~prompt~panel_009.(deadHero_is_missing)~1_mystic",
+										"pointerOwner": "mystic",
+										"location": "topRight",
+										"padXFraction": 0.06,
+										"padYFraction": 0.058,
+										"widthFraction": 0.9285714,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.69, "y": -0.249 },
+							"size": 0.551,
+							"nameTag": "none",
+							"foot": { "rotate": -178.939 }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.352, "y": 0.465 },
+							"size": 0.529,
+							"drawDepth": 0,
+							"head": { "rotate": 9.327, "scaleY": 1 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bannerHeroes.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.17, "y": 0.481 },
+							"size": 0.515,
+							"nameTag": "none",
+							"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:printWoodcut.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.278, "y": 0.687 },
+							"size": 0.383,
+							"nameTag": "none",
+							"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:fabricBolts.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.028, "y": 0.039 },
+							"size": 0.594,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.187, "y": 0.47 },
+							"size": 0.514,
+							"drawDepth": -0.5,
+							"head": { "rotate": 3.247, "scaleY": 1 }
+						},
+						{
+							"role": "legend",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.752, "y": 0.48 },
+							"size": 0.53,
+							"drawDepth": 8.5,
+							"nameTag": "none",
+							"head": { "rotate": 0.248, "scaleY": -1 },
+							"foot": { "rotate": 3.998 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "victory_pullingThreads",
+							"textKey": "~01~prompt~panel_010~1_mystic",
+							"pointerOwner": "mystic",
+							"location": "topRight",
+							"padXFraction": 0.693,
+							"padYFraction": 0.085,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": 1.1139603,
+								"dY": -0.7888036,
+								"scaleX": 1.1349763,
+								"scaleY": 1.1349763,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "victory_pullingThreads",
+							"textKey": "~01~prompt~panel_010~2_legend",
+							"pointerOwner": "legend",
+							"location": "topRight",
+							"padXFraction": 0.022,
+							"padYFraction": 0.066,
+							"widthFraction": 0.64447594,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.69, "y": -0.249 },
+							"size": 0.551,
+							"nameTag": "none",
+							"foot": { "rotate": -178.939 }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.162, "y": 0.547 },
+							"size": 0.529,
+							"drawDepth": 0,
+							"head": { "rotate": 2.513 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:printWoodcut.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.008, "y": 0.679 },
+							"size": 0.383,
+							"nameTag": "none",
+							"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:fabricBolts.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.028, "y": 0.039 },
+							"size": 0.594,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:thrixl_fabricRolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.424, "y": 0.105 },
+							"size": 0.531,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.7488324", "g": "0.40252182", "b": "0.21169496", "a": "1" }
+						},
+						{
+							"role": "legend",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.653, "y": 0.531 },
+							"size": 0.53,
+							"drawDepth": 0.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -24.465 },
+							"foot": { "rotate": 2.52 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "victory_pullingThreads",
+							"textKey": "~01~prompt~panel_011~1_legend",
+							"pointerOwner": "legend",
+							"location": "topRight",
+							"padXFraction": 0.147,
+							"padYFraction": 0.077,
+							"widthFraction": 0.65406996,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -26.267479, "dY": -2.2841225 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "mystic",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.428, "y": 0.511 },
+							"size": 0.655,
+							"head": { "rotate": -21.052, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:printWoodcut.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.19, "y": 0.732 },
+							"size": 0.42667544,
+							"nameTag": "none",
+							"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "victory_pullingThreads",
+							"textKey": "~01~prompt~panel_012~1_mystic",
+							"pointerOwner": "mystic",
+							"padXFraction": 0.038,
+							"padYFraction": 0.058,
+							"widthFraction": 0.9285714,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -10.2784815, "dY": -1.1420962, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.69, "y": -0.249 },
+							"size": 0.551,
+							"nameTag": "none",
+							"foot": { "rotate": -178.939 }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.392, "y": 0.46 },
+							"size": 0.529,
+							"drawDepth": 0,
+							"head": { "rotate": 9.327, "scaleY": 1 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bannerHeroes.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.17, "y": 0.481 },
+							"size": 0.515,
+							"nameTag": "none",
+							"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:printWoodcut.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.278, "y": 0.687 },
+							"size": 0.383,
+							"nameTag": "none",
+							"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:fabricBolts.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.028, "y": 0.039 },
+							"size": 0.594,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.187, "y": 0.47 },
+							"size": 0.514,
+							"drawDepth": -0.5,
+							"head": { "rotate": 3.247, "scaleY": 1 }
+						},
+						{
+							"role": "legend",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.752, "y": 0.48 },
+							"size": 0.53,
+							"drawDepth": 8.5,
+							"nameTag": "none",
+							"head": { "rotate": 0.248, "scaleY": 1 },
+							"foot": { "rotate": 3.998 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "victory_pullingThreads",
+							"textKey": "~01~prompt~panel_013~1_mystic",
+							"pointerOwner": "mystic",
+							"padXFraction": 0.2,
+							"padYFraction": 0.073,
+							"shrinkToFitText": true,
+							"pointerStyle": "none",
+							"pointerAdjust": {
+								"dX": -26.26741,
+								"dY": -7.9944277,
+								"scaleX": 1,
+								"scaleY": 1,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "victory_pullingThreads",
+							"textKey": "~01~prompt~panel_013~2_mystic",
+							"pointerOwner": "mystic",
+							"padXFraction": 0.252,
+							"padYFraction": 0.191,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -1.1420631, "dY": -1.1420951, "scaleX": 1, "scaleY": 1 }
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "legend",
+									"form": "frame-grim",
+									"facing": "left",
+									"equipment": {},
+									"size": 0.769,
+									"head": { "rotate": -2.765, "scaleY": -1 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "victory_pullingThreads",
+									"textKey": "~02~choice_one~panel_001~1_legend",
+									"pointerOwner": "legend"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "legend",
+									"form": "frame-talk",
+									"facing": "left",
+									"equipment": {},
+									"anchor": { "x": 0.563, "y": 0.5 },
+									"size": 0.765
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "victory_pullingThreads",
+									"textKey": "~03~choice_two~panel_001~1_legend",
+									"pointerOwner": "legend"
+								},
+								{
+									"textSourceFile": "victory_pullingThreads",
+									"textKey": "~03~choice_two~panel_001~2_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "legend",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_stoneWallDark.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.69, "y": -0.249 },
+										"size": 0.551,
+										"nameTag": "none",
+										"foot": { "rotate": -178.939 }
+									},
+									{
+										"role": "mystic",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.162, "y": 0.547 },
+										"size": 0.529,
+										"drawDepth": 0,
+										"head": { "rotate": 2.513 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:printWoodcut.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.008, "y": 0.679 },
+										"size": 0.383,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:fabricBolts.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.028, "y": 0.039 },
+										"size": 0.594,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:thrixl_fabricRolls.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.424, "y": 0.105 },
+										"size": 0.531,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"color": { "r": "0.7488324", "g": "0.40252182", "b": "0.21169496", "a": "1" }
+									},
+									{
+										"role": "legend",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.653, "y": 0.531 },
+										"size": 0.53,
+										"drawDepth": 0.5,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -13.697, "scaleY": -1 },
+										"foot": { "rotate": 2.52 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~04~player_chose_one~panel_001~1_legend",
+										"pointerOwner": "legend",
+										"location": "topRight",
+										"padXFraction": 0.101,
+										"padYFraction": 0.082,
+										"widthFraction": 0.86158,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -26.267479, "dY": -2.2841225 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.428, "y": 0.511 },
+										"size": 0.655,
+										"head": { "rotate": -1.606, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:printWoodcut.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.19, "y": 0.732 },
+										"size": 0.42667544,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~04~player_chose_one~panel_002~1_mystic",
+										"pointerOwner": "mystic",
+										"padXFraction": 0.049,
+										"padYFraction": 0.092,
+										"widthFraction": 0.9285714,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -10.2784815, "dY": -1.1420962, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_stoneWallDark.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.69, "y": -0.249 },
+										"size": 0.551,
+										"nameTag": "none",
+										"foot": { "rotate": -178.939 }
+									},
+									{
+										"role": "mystic",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.392, "y": 0.46 },
+										"size": 0.529,
+										"drawDepth": 0,
+										"head": { "rotate": 9.327, "scaleY": 1 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bannerHeroes.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.17, "y": 0.481 },
+										"size": 0.515,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:printWoodcut.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.278, "y": 0.687 },
+										"size": 0.383,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:fabricBolts.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.028, "y": 0.039 },
+										"size": 0.594,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+									},
+									{
+										"role": "friend",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.187, "y": 0.47 },
+										"size": 0.514,
+										"drawDepth": -0.5,
+										"head": { "rotate": 3.247, "scaleY": 1 }
+									},
+									{
+										"role": "legend",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.808, "y": 0.518 },
+										"size": 0.53,
+										"drawDepth": 8.5,
+										"nameTag": "none",
+										"head": { "rotate": -13.328, "scaleY": -1 },
+										"foot": { "rotate": 3.998 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~04~player_chose_one~panel_003~1_legend",
+										"pointerOwner": "legend",
+										"location": "topRight",
+										"padXFraction": 0.139,
+										"padYFraction": 0.107,
+										"widthFraction": 0.51759464,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:ruinsCastle.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.723, "y": 0.572 },
+										"size": 0.385,
+										"nameTag": "none",
+										"color": { "r": "0.95549935", "g": "0.91499782", "b": "0.975353", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.253, "y": 1.188 },
+										"size": 5.092,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.88452214", "b": "0.69736838", "a": "1" }
+									},
+									{
+										"role": "friend",
+										"equipment": {},
+										"anchor": { "x": 0.942, "y": 0.149 },
+										"size": 0.154,
+										"drawDepth": 0.875
+									},
+									{
+										"assetSpec": "comic:smokeRising.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.193, "y": 0.707 },
+										"size": 0.182,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": 65.726, "shearX": -40 }
+									},
+									{
+										"role": "mystic",
+										"equipment": {},
+										"anchor": { "x": 0.867, "y": 0.139 },
+										"size": 0.151,
+										"drawDepth": 0.75,
+										"head": { "rotate": 9.452 }
+									},
+									{
+										"role": "friend",
+										"equipment": {},
+										"nameTag": "none"
+									},
+									{
+										"role": "legend",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.385, "y": 0.173 },
+										"size": 0.157,
+										"drawDepth": 0.9375,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~04~player_chose_one~panel_004~1_narration",
+										"style": "narration",
+										"padXFraction": 0.03,
+										"padYFraction": 0.102,
+										"widthFraction": 0.570204,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "legend",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_stoneWallDark.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.69, "y": -0.249 },
+										"size": 0.74232566,
+										"nameTag": "none",
+										"foot": { "rotate": 178.285 }
+									},
+									{
+										"role": "mystic",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.296, "y": 0.517 },
+										"size": 0.71268654,
+										"drawDepth": 0,
+										"head": { "rotate": 9.327, "scaleY": 1 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:printWoodcut.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.174, "y": 0.692 },
+										"size": 0.51599044,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:fabricBolts.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.028, "y": 0.039 },
+										"size": 0.80025667,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+									},
+									{
+										"role": "friend",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.086, "y": 0.509 },
+										"size": 0.69247806,
+										"drawDepth": -0.5,
+										"head": { "rotate": 3.247, "scaleY": 1 }
+									},
+									{
+										"role": "legend",
+										"form": "frame-talk",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.68, "y": 0.518 },
+										"size": 0.7,
+										"drawDepth": 8.5,
+										"nameTag": "none",
+										"head": { "rotate": 15.592, "scaleY": 1 },
+										"foot": { "rotate": -5.537 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~05~player_chose_two~panel_001~1_legend",
+										"pointerOwner": "legend",
+										"location": "topRight",
+										"padXFraction": 0.15,
+										"padYFraction": 0.112,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -21.616873, "dY": -1.4411248 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_stoneWallDark.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.69, "y": -0.249 },
+										"size": 0.551,
+										"nameTag": "none",
+										"foot": { "rotate": -178.939 }
+									},
+									{
+										"role": "mystic",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.162, "y": 0.547 },
+										"size": 0.635,
+										"drawDepth": 0,
+										"head": { "rotate": -10.333 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:printWoodcut.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.008, "y": 0.679 },
+										"size": 0.383,
+										"nameTag": "none",
+										"color": { "r": "0.76319003", "g": "0.72459388", "b": "0.92014408", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:fabricBolts.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.028, "y": 0.039 },
+										"size": 0.594,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"color": { "r": "0.42498219", "g": "0.50064194", "b": "0.62326455", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:thrixl_fabricRolls.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.424, "y": 0.105 },
+										"size": 0.531,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"color": { "r": "0.7488324", "g": "0.40252182", "b": "0.21169496", "a": "1" }
+									},
+									{
+										"role": "legend",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.653, "y": 0.531 },
+										"size": 0.605,
+										"drawDepth": 0.5,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 3.109 },
+										"foot": { "rotate": 2.52 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~05~player_chose_two~panel_002~1_mystic",
+										"pointerOwner": "mystic",
+										"padXFraction": 0.05,
+										"padYFraction": 0.043,
+										"widthFraction": 0.90884537,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 16.966265, "dY": -3.7252474 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "legend",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.575, "y": 0.495 },
+										"size": 0.876,
+										"head": { "rotate": -8.697, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~05~player_chose_two~panel_003~1_legend",
+										"pointerOwner": "legend",
+										"padXFraction": 0.065,
+										"padYFraction": 0.069,
+										"widthFraction": 0.7866109,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -23.057997, "dY": -2.8822496 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:ruinsCastle.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.723, "y": 0.572 },
+										"size": 0.385,
+										"nameTag": "none",
+										"color": { "r": "0.95549935", "g": "0.91499782", "b": "0.975353", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.253, "y": 1.188 },
+										"size": 5.092,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.88452214", "b": "0.69736838", "a": "1" }
+									},
+									{
+										"role": "friend",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.042, "y": 0.178 },
+										"size": 0.154,
+										"drawDepth": 0.875
+									},
+									{
+										"assetSpec": "comic:smokeRising.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.193, "y": 0.707 },
+										"size": 0.182,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": 65.726, "shearX": -40 }
+									},
+									{
+										"role": "mystic",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.087, "y": 0.168 },
+										"size": 0.151,
+										"drawDepth": 0.75,
+										"head": { "rotate": 9.452 }
+									},
+									{
+										"role": "friend",
+										"equipment": {},
+										"nameTag": "none"
+									},
+									{
+										"role": "legend",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.211, "y": 0.173 },
+										"size": 0.157,
+										"drawDepth": 0.9375,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "victory_pullingThreads",
+										"textKey": "~05~player_chose_two~panel_004~1_narration",
+										"style": "narration",
+										"padXFraction": 0.03,
+										"padYFraction": 0.102,
+										"widthFraction": 0.570204,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{ "class": "ChangeControl", "becomeAllyOf": "party", "makeHero": true },
+				{
+					"class": "AddResources",
+					"target": "company",
+					"amount": "0-((legend.legacyTier+1)+RECRUIT_COST_ADJUSTMENT)"
+				}
+			]
+		}
+	}
+]
+}

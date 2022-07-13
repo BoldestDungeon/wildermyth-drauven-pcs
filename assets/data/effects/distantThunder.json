@@ -1,0 +1,2710 @@
+{
+"id": "encounter_heroesArriveAtSite_distantThunder",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "distantThunder",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Anne Austin"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterWeight": "0.25",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Travelling"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"template": "PICK_BY_SCORE",
+		"STUB": "Must have a hero in the company who can recieve the storm theme (This prevents the event from happening if someone else already has the storm theme)",
+		"type": "HERO",
+		"choose": "ALL",
+		"scoreFunction": null,
+		"fromRoles": null,
+		"notAlreadyMatchedAs": [],
+		"themes": { "eligibleForTheme": "storm", "mustBeEligibleForAdditionalPiece": true }
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "rival",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "SHIP_WITH.hero",
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "friend",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "FRIEND_WITH.hero",
+		"notAlreadyMatchedAs": [ "hero", "rival" ]
+	},
+	{
+		"role": "hero4",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hero", "rival", "friend" ]
+	},
+	{
+		"role": "hero5",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hero", "rival", "friend", "hero4" ]
+	},
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(HEALER,LEADER,HOTHEAD)"
+	},
+	{
+		"role": "greedy",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(GREEDY,SNARK,LONER)",
+		"notAlreadyMatchedAs": [ "healer" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:ruinsField_pillar2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.073, "y": 0.336 },
+							"size": 0.44,
+							"drawDepth": 1.75,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallPillar.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.903, "y": 0.325 },
+							"size": 0.289,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.664, "y": 0.053 },
+							"size": 0.558,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.947, "y": 0.475 },
+							"size": 0.714,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.69942194", "g": "0.69942194", "b": "0.69942194", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.399, "y": 0.249 },
+							"size": 0.357,
+							"head": { "rotate": -5.584 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.318,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.127, "y": 0.904 },
+							"size": 1.599,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25657949" }
+						},
+						{
+							"role": "rival",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.294, "y": 0.223 },
+							"size": 0.325,
+							"head": { "rotate": -32.619, "scaleY": -1 },
+							"color": { "r": "0.82415324", "g": "0.86444432", "b": "0.85225111", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.137, "y": 0.232 },
+							"size": 0.417,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"head": { "rotate": 12.675 },
+							"foot": { "rotate": -4.287 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_001~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.344,
+							"padYFraction": 0.151,
+							"widthFraction": 0.42138067,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.953, "y": -0.106 },
+							"size": 0.62310004,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.355,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.746, "y": 0.505 },
+							"size": 0.664,
+							"head": { "rotate": -14.538, "scaleY": -1 }
+						},
+						{
+							"role": "rival",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.251, "y": 0.491 },
+							"size": 0.488
+						},
+						{
+							"assetSpec": "scenery:ruinsField_pillar2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.335, "y": 0.365 },
+							"size": 0.7450747,
+							"drawDepth": 1.75,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_002~1_rival",
+							"pointerOwner": "rival",
+							"padXFraction": 0.279,
+							"padYFraction": 0.117,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 3.5667036 }
+						},
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_002~2_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.076,
+							"padYFraction": 0.136,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:ruinsField_pillar2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.12, "y": 0.336 },
+							"size": 0.44,
+							"drawDepth": 6.75,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallPillar.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.027, "y": 0.296 },
+							"size": 0.289,
+							"drawDepth": 12,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.494, "y": -0.067 },
+							"size": 0.558,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.047, "y": 0.442 },
+							"size": 0.714,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.69942194", "g": "0.69942194", "b": "0.69942194", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.542, "y": 0.259 },
+							"size": 0.357,
+							"head": { "rotate": 9.941 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.318,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.143, "y": 0.678 },
+							"size": 1.599,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25657949" }
+						},
+						{
+							"role": "rival",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.365, "y": 0.252 },
+							"size": 0.36,
+							"drawDepth": 3,
+							"head": { "rotate": -12.791, "scaleY": 1 },
+							"color": { "r": "0.82415324", "g": "0.86444432", "b": "0.85225111", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.239, "y": 0.227 },
+							"size": 0.417,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"head": { "rotate": -4.378 },
+							"foot": { "rotate": -4.287 }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"anchor": { "x": 0.077, "y": 0.38 },
+							"size": 0.346,
+							"drawDepth": 6,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_003~1_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.184,
+							"padYFraction": 0.102,
+							"widthFraction": 0.47839645,
+							"shrinkToFitText": true,
+							"pointerAdjust": {}
+						},
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_003~2_friend",
+							"pointerOwner": "friend",
+							"location": "bottomLeft",
+							"padXFraction": 0.236,
+							"padYFraction": 0.078,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -11.528998, "dY": -7.205624 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"mustStartRow": true,
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:ruinsField_pillar2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.378, "y": 0.351 },
+							"size": 0.832,
+							"drawDepth": 1.75,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.953, "y": -0.106 },
+							"size": 0.62310004,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.35509998,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.05, "y": 1.649 },
+							"size": 1.78555,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25657949" }
+						},
+						{
+							"role": "friend",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.538, "y": 0.155 },
+							"size": 0.736,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"head": { "rotate": 0.974 },
+							"foot": { "rotate": -4.287 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_004~1_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.087,
+							"padYFraction": 0.049,
+							"widthFraction": 0.81450486,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.953, "y": -0.106 },
+							"size": 0.62310004,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.355,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.838, "y": 0.491 },
+							"size": 0.664,
+							"head": { "rotate": -8.368, "scaleY": -1 }
+						},
+						{
+							"role": "rival",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.286, "y": 0.472 },
+							"size": 0.577
+						},
+						{
+							"assetSpec": "scenery:ruinsField_pillar2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.335, "y": 0.365 },
+							"size": 0.7450747,
+							"drawDepth": 1.75,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_005~1_rival",
+							"pointerOwner": "rival",
+							"padXFraction": 0.035,
+							"padYFraction": 0.085,
+							"widthFraction": 0.9296149,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 3.5667036 }
+						},
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_005~2_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.254,
+							"padYFraction": 0.357,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 12.804266,
+								"dX": -23.057997,
+								"dY": -1.4411248,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.461, "y": -0.058 },
+							"size": 0.62310004,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.355,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.639, "y": 0.399 },
+							"size": 0.44,
+							"head": { "rotate": -8.368, "scaleY": 1 }
+						},
+						{
+							"role": "rival",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.519, "y": 0.381 },
+							"size": 0.451,
+							"drawDepth": 1.625
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"anchor": { "x": 0.279, "y": 0.413 },
+							"size": 0.401
+						},
+						{
+							"assetSpec": "scenery:ruinsField_pillar2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.15, "y": 0.548 },
+							"size": 0.464,
+							"drawDepth": 11.5,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"anchor": { "x": 0.068, "y": 0.365 },
+							"size": 0.37,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_006~1_rival",
+							"pointerOwner": "rival",
+							"padXFraction": 0.256,
+							"padYFraction": 0.202,
+							"widthFraction": 0.7011137,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 3.5667036 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.953, "y": -0.106 },
+							"size": 0.62310004,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.355,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.654, "y": 0.486 },
+							"size": 0.57,
+							"head": { "rotate": 1.076, "scaleY": 1 }
+						},
+						{
+							"role": "rival",
+							"equipment": {},
+							"anchor": { "x": 0.228, "y": 0.525 },
+							"size": 0.577,
+							"drawDepth": 2
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.953, "y": -0.106 },
+							"size": 0.62310004,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.355,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.771, "y": 0.481 },
+							"size": 0.57,
+							"head": { "rotate": 1.076, "scaleY": -1 }
+						},
+						{
+							"role": "rival",
+							"equipment": {},
+							"anchor": { "x": 0.32, "y": 0.51 },
+							"size": 0.577,
+							"drawDepth": 2
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_008~1_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.071,
+							"padYFraction": 0.089,
+							"widthFraction": 0.6424022,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -24.499298, "dY": 0, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:ruinsField_pillar2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.073, "y": 0.336 },
+							"size": 0.44,
+							"drawDepth": 1.75,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallPillar.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.903, "y": 0.325 },
+							"size": 0.289,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.664, "y": 0.053 },
+							"size": 0.558,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.947, "y": 0.475 },
+							"size": 0.714,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.69942194", "g": "0.69942194", "b": "0.69942194", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.484, "y": 0.254 },
+							"size": 0.357,
+							"head": { "rotate": 9.941 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.318,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.127, "y": 0.904 },
+							"size": 1.599,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25657949" }
+						},
+						{
+							"role": "rival",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.341, "y": 0.233 },
+							"size": 0.36,
+							"drawDepth": 4,
+							"head": { "rotate": 2.318, "scaleY": 1 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.166, "y": 0.227 },
+							"size": 0.417,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"head": { "rotate": -4.378 },
+							"foot": { "rotate": -4.287 }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"anchor": { "x": 0.254, "y": 0.385 },
+							"size": 0.315,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_009~1_rival",
+							"pointerOwner": "rival",
+							"padXFraction": 0.309,
+							"padYFraction": 0.184,
+							"widthFraction": 0.3723831,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:ruinsField_pillar2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.017, "y": 0.504 },
+							"size": 0.44,
+							"drawDepth": 1.75,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallPile.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.038, "y": 0.07 },
+							"size": 0.481,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.424, "y": -0.028 },
+							"size": 0.558,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.062, "y": 0.283 },
+							"size": 0.714,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.69942194", "g": "0.69942194", "b": "0.69942194", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.687, "y": -0.053 },
+							"size": 0.23,
+							"head": { "rotate": 9.941 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.318,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.199, "y": 1.418 },
+							"size": 1.599,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.25657949" }
+						},
+						{
+							"role": "rival",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.789, "y": -0.034 },
+							"size": 0.202,
+							"drawDepth": 9.5,
+							"head": { "rotate": 7.751, "scaleY": 1 },
+							"foot": { "rotate": 6.312 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.571, "y": -0.121 },
+							"size": 0.26,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"head": { "rotate": 9.574 },
+							"foot": { "rotate": 0.977 }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.424, "y": -0.033 },
+							"size": 0.178,
+							"nameTag": "none",
+							"head": { "rotate": -30.29, "scaleY": -1 }
+						},
+						{
+							"role": "hero5",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.12, "y": 0.02 },
+							"size": 0.178,
+							"nameTag": "none",
+							"foot": { "rotate": -6.663 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.714, "y": 0.019 },
+							"size": 0.423,
+							"drawDepth": 1.875,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallPillar.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.531, "y": 0.197 },
+							"size": 0.218,
+							"nameTag": "none",
+							"color": { "r": "0.82415324", "g": "0.86444432", "b": "0.85225111", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_010~1_narration",
+							"style": "narration",
+							"padXFraction": 0.332,
+							"padYFraction": 0.111,
+							"widthFraction": 0.4886196,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_010~2_narration",
+							"style": "narration",
+							"location": "topRight",
+							"padXFraction": 0.056,
+							"padYFraction": 0.253,
+							"widthFraction": 0.5090157,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:ruinsField_wallPillar.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.499, "y": 0.339 },
+							"size": 0.47274736,
+							"drawDepth": 13,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": -0.284 },
+							"size": 0.9127787,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.42, "y": 0.302 },
+							"size": 1.6066612,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.69942194", "g": "0.69942194", "b": "0.69942194", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": 0.5 },
+							"size": 0.52018565,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"role": "rival",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.799, "y": 0.5 },
+							"size": 0.5316363,
+							"head": { "rotate": 8.565, "scaleY": 1 },
+							"color": { "r": "0.82415324", "g": "0.86444432", "b": "0.85225111", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.22, "y": 0.567 },
+							"size": 0.6821302,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"head": { "rotate": 6.358 },
+							"foot": { "rotate": -4.287 }
+						},
+						{
+							"role": "npc",
+							"equipment": {},
+							"anchor": { "x": 1.433, "y": 0.606 },
+							"size": 0.26653716,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:action_popR.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.565, "y": 0.755 },
+							"size": 0.50208163,
+							"nameTag": "none",
+							"foot": { "rotate": 29.067 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_011~1_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.032,
+							"padYFraction": 0.068,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -86.46748, "dY": 4.3233743 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:ruinsField_pillar2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.379, "y": 0.312 },
+							"size": 0.58058345,
+							"drawDepth": 1.75,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallPillar.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.052, "y": 0.286 },
+							"size": 0.38133776,
+							"drawDepth": 4,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.851, "y": 0.317 },
+							"size": 0.404,
+							"drawDepth": 12,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.568, "y": 0.655 },
+							"size": 0.309,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.424, "y": -0.145 },
+							"size": 2.109893,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.14254385" }
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.775, "y": 0.351 },
+							"size": 0.161,
+							"drawDepth": 9.5,
+							"nameTag": "none",
+							"head": { "rotate": -35.428, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.796, "y": 0.092 },
+							"size": 0.383,
+							"drawDepth": 7.25,
+							"nameTag": "none",
+							"foot": { "rotate": -13.605 },
+							"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallDiag.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.846, "y": 0.298 },
+							"size": 0.537,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"color": { "r": "0.84308207", "g": "0.8630594", "b": "0.8570137", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.231, "y": 0.187 },
+							"size": 0.325,
+							"nameTag": "none",
+							"color": { "r": "0.78574491", "g": "0.70661628", "b": "0.92934859", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.66, "y": 0.639 },
+							"size": 0.15,
+							"drawDepth": 16,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_012~1_narration",
+							"style": "narration",
+							"padXFraction": 0.068,
+							"padYFraction": 0.073,
+							"widthFraction": 0.49485916,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_fieldBeigeTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.231, "y": 0.458 },
+							"size": 0.63098544,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"size": 0.577,
+							"head": { "rotate": -35.501, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.314, "y": 0.976 },
+							"size": 0.664,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_013~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.597,
+							"padYFraction": 0.214,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "distantThunder",
+							"textKey": "~01~prompt~panel_013~2_narration",
+							"style": "narration",
+							"padXFraction": 0.032,
+							"padYFraction": 0.073,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "foes.cdgmt",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldBeigeTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.14, "y": 0.219 },
+										"size": 0.275,
+										"drawDepth": 9.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.21, "y": 0.105 },
+										"size": 0.404,
+										"drawDepth": 12,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.479, "y": 0.573 },
+										"size": 0.344,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.102, "y": 0.086 },
+										"size": 2.109893,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.14254385" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.565, "y": 0.309 },
+										"size": 0.18,
+										"drawDepth": -0.5,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.592, "y": 0.077 },
+										"size": 0.472,
+										"drawDepth": 7.25,
+										"nameTag": "none",
+										"foot": { "rotate": 0.103 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallDiag.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.089, "y": -0.284 },
+										"size": 0.537,
+										"drawDepth": 1.625,
+										"nameTag": "none",
+										"color": { "r": "0.84308207", "g": "0.8630594", "b": "0.8570137", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:boulderField1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.285, "y": 0.085 },
+										"size": 0.325,
+										"nameTag": "none",
+										"color": { "r": "0.78574491", "g": "0.70661628", "b": "0.92934859", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:cultist/cultist_fatherFungus.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.959, "y": 0.206 },
+										"size": 0.566,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"color": { "r": "0.53728068", "g": "0.53728068", "b": "0.53728068", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": 0.085, "y": 0.26 },
+										"size": 0.156,
+										"drawDepth": 16
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.646, "y": 0.687 },
+										"size": 0.158,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.88377196", "g": "0.88377196", "b": "0.88377196", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~01~prompt~panel_014.(foes_Deepists)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.028,
+										"padYFraction": 0.078,
+										"widthFraction": 0.7577112,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldBeigeTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.14, "y": 0.219 },
+										"size": 0.275,
+										"drawDepth": 9.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.21, "y": 0.105 },
+										"size": 0.404,
+										"drawDepth": 12,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.479, "y": 0.573 },
+										"size": 0.344,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.102, "y": 0.086 },
+										"size": 2.109893,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.14254385" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.565, "y": 0.309 },
+										"size": 0.18,
+										"drawDepth": -0.5,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.592, "y": 0.077 },
+										"size": 0.472,
+										"drawDepth": 7.25,
+										"nameTag": "none",
+										"foot": { "rotate": 0.103 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallDiag.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.089, "y": -0.284 },
+										"size": 0.537,
+										"drawDepth": 1.625,
+										"nameTag": "none",
+										"color": { "r": "0.84308207", "g": "0.8630594", "b": "0.8570137", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:boulderField1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.285, "y": 0.085 },
+										"size": 0.325,
+										"nameTag": "none",
+										"color": { "r": "0.78574491", "g": "0.70661628", "b": "0.92934859", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stump2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.959, "y": 0.284 },
+										"size": 0.442,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"color": { "r": "0.53728068", "g": "0.53728068", "b": "0.53728068", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": 0.085, "y": 0.26 },
+										"size": 0.156,
+										"drawDepth": 16
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.646, "y": 0.687 },
+										"size": 0.158,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.88377196", "g": "0.88377196", "b": "0.88377196", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~01~prompt~panel_015.(foes_Drauven)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.028,
+										"padYFraction": 0.078,
+										"widthFraction": 0.7577112,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldBeigeTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.14, "y": 0.219 },
+										"size": 0.275,
+										"drawDepth": 9.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.21, "y": 0.105 },
+										"size": 0.404,
+										"drawDepth": 12,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.479, "y": 0.573 },
+										"size": 0.344,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.102, "y": 0.086 },
+										"size": 2.109893,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.14254385" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.565, "y": 0.309 },
+										"size": 0.18,
+										"drawDepth": -0.5,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.592, "y": 0.077 },
+										"size": 0.472,
+										"drawDepth": 7.25,
+										"nameTag": "none",
+										"foot": { "rotate": 0.103 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallDiag.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.089, "y": -0.284 },
+										"size": 0.537,
+										"drawDepth": 1.625,
+										"nameTag": "none",
+										"color": { "r": "0.84308207", "g": "0.8630594", "b": "0.8570137", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:boulderField1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.285, "y": 0.085 },
+										"size": 0.325,
+										"nameTag": "none",
+										"color": { "r": "0.78574491", "g": "0.70661628", "b": "0.92934859", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:gorgon/gorgon_raccoon.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.989, "y": 0.485 },
+										"size": 0.442,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"foot": { "rotate": -0.086 },
+										"color": { "r": "0.375", "g": "0.375", "b": "0.375", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": 0.085, "y": 0.26 },
+										"size": 0.156,
+										"drawDepth": 16
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.646, "y": 0.687 },
+										"size": 0.158,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.88377196", "g": "0.88377196", "b": "0.88377196", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~01~prompt~panel_016.(foes_Gorgons)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.028,
+										"padYFraction": 0.078,
+										"widthFraction": 0.7577112,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldBeigeTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.14, "y": 0.219 },
+										"size": 0.275,
+										"drawDepth": 9.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.21, "y": 0.105 },
+										"size": 0.404,
+										"drawDepth": 12,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.479, "y": 0.573 },
+										"size": 0.344,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.102, "y": 0.086 },
+										"size": 2.109893,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.14254385" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.565, "y": 0.309 },
+										"size": 0.18,
+										"drawDepth": -0.5,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.592, "y": 0.077 },
+										"size": 0.472,
+										"drawDepth": 7.25,
+										"nameTag": "none",
+										"foot": { "rotate": 0.103 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallDiag.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.089, "y": -0.284 },
+										"size": 0.537,
+										"drawDepth": 1.625,
+										"nameTag": "none",
+										"color": { "r": "0.84308207", "g": "0.8630594", "b": "0.8570137", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:boulderField1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.285, "y": 0.085 },
+										"size": 0.325,
+										"nameTag": "none",
+										"color": { "r": "0.78574491", "g": "0.70661628", "b": "0.92934859", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:morthagi/morthagi_portopump.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.915, "y": 0.26 },
+										"size": 0.566,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"color": { "r": "0.35745615", "g": "0.35745615", "b": "0.35745615", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": 0.085, "y": 0.26 },
+										"size": 0.156,
+										"drawDepth": 16
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.646, "y": 0.687 },
+										"size": 0.158,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.88377196", "g": "0.88377196", "b": "0.88377196", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~01~prompt~panel_017.(foes_Morthagi)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.028,
+										"padYFraction": 0.078,
+										"widthFraction": 0.7577112,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldBeigeTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.14, "y": 0.219 },
+										"size": 0.275,
+										"drawDepth": 9.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.21, "y": 0.105 },
+										"size": 0.404,
+										"drawDepth": 12,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.479, "y": 0.573 },
+										"size": 0.344,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.102, "y": 0.086 },
+										"size": 2.109893,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.14254385" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.565, "y": 0.309 },
+										"size": 0.18,
+										"drawDepth": -0.5,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.592, "y": 0.077 },
+										"size": 0.472,
+										"drawDepth": 7.25,
+										"nameTag": "none",
+										"foot": { "rotate": 0.103 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallDiag.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.089, "y": -0.284 },
+										"size": 0.537,
+										"drawDepth": 1.625,
+										"nameTag": "none",
+										"color": { "r": "0.84308207", "g": "0.8630594", "b": "0.8570137", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:boulderField1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.285, "y": 0.085 },
+										"size": 0.325,
+										"nameTag": "none",
+										"color": { "r": "0.78574491", "g": "0.70661628", "b": "0.92934859", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_mantis.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.012, "y": 0.452 },
+										"size": 0.726,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"color": { "r": "0.33020219", "g": "0.38091049", "b": "0.2989141", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": 0.085, "y": 0.26 },
+										"size": 0.156,
+										"drawDepth": 16
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.646, "y": 0.687 },
+										"size": 0.158,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.88377196", "g": "0.88377196", "b": "0.88377196", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~01~prompt~panel_018.(foes_Thrixl)~1_narration",
+										"style": "narration",
+										"padXFraction": 0.028,
+										"padYFraction": 0.078,
+										"widthFraction": 0.7577112,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				]
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{ "role": "healer", "form": "frame-grim" },
+								{
+									"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 1.079, "y": 0.486 },
+									"size": 0.309,
+									"drawDepth": 20,
+									"nameTag": "none",
+									"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "distantThunder",
+									"textKey": "~02~choice_one~panel_001~1_healer",
+									"pointerOwner": "healer",
+									"location": "topRight",
+									"padXFraction": 0.067,
+									"padYFraction": 0.062,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "greedy",
+									"form": "frame-grim",
+									"head": { "rotate": -6.843, "scaleY": -1 }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.259, "y": 0.547 },
+									"size": 0.309,
+									"drawDepth": 20,
+									"nameTag": "none",
+									"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "distantThunder",
+									"textKey": "~03~choice_two~panel_001~1_greedy",
+									"pointerOwner": "greedy"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "healer",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldBeigeTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.214, "y": 0.33 },
+										"size": 0.54,
+										"drawDepth": 9.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.222, "y": 0.11 },
+										"size": 0.404,
+										"drawDepth": 12,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.479, "y": 0.573 },
+										"size": 0.344,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.332, "y": 0.292 },
+										"size": 1.327,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.14254385" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.068, "y": 0.024 },
+										"size": 0.472,
+										"drawDepth": 4,
+										"nameTag": "none",
+										"foot": { "rotate": 0.103 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallDiag.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.607, "y": -0.121 },
+										"size": 0.537,
+										"drawDepth": 16,
+										"nameTag": "none",
+										"color": { "r": "0.84308207", "g": "0.8630594", "b": "0.8570137", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:boulderField1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.846, "y": 0.301 },
+										"size": 0.562,
+										"nameTag": "none",
+										"color": { "r": "0.78574491", "g": "0.70661628", "b": "0.92934859", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-angry",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "middle",
+										"anchor": { "x": 0.585, "y": 0.227 },
+										"size": 0.32,
+										"drawDepth": 11,
+										"head": { "rotate": 25.821 },
+										"foot": { "rotate": -14.744 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-angry",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "middle",
+										"anchor": { "x": 0.186, "y": 0.25120002 },
+										"size": 0.32,
+										"drawDepth": 16,
+										"head": { "rotate": 10.842 },
+										"foot": { "rotate": -4.674 }
+									},
+									{
+										"role": "rival",
+										"form": "frame-angry",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "middle",
+										"anchor": { "x": 0.45, "y": 0.2752 },
+										"size": 0.32,
+										"drawDepth": 16,
+										"head": { "rotate": 10.842 },
+										"foot": { "rotate": -4.674 }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcShort.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.514, "y": 0.337 },
+										"size": 0.346,
+										"drawDepth": 16,
+										"nameTag": "none",
+										"foot": { "rotate": 4.426 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.42324561" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~04~player_chose_one~panel_001~1_narration",
+										"style": "narration",
+										"padXFraction": 0.448,
+										"padYFraction": 0.137,
+										"widthFraction": 0.5409399,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldBeigeTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.235, "y": 0.042 },
+										"size": 0.404,
+										"drawDepth": 12,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.648, "y": 0.534 },
+										"size": 0.566,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.528, "y": 0.64 },
+										"size": 2.109893,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.14254385" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "foot",
+										"anchor": { "x": 0.554, "y": -0.09 },
+										"size": 0.392,
+										"drawDepth": -0.5,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.499, "y": -0.692 },
+										"size": 1.04,
+										"drawDepth": 7.25,
+										"nameTag": "none",
+										"foot": { "rotate": 0.103 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "scenery:boulderField1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.097, "y": -0.189 },
+										"size": 0.537,
+										"nameTag": "none",
+										"color": { "r": "0.78574491", "g": "0.70661628", "b": "0.92934859", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-rage",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "middle",
+										"anchor": { "x": 0.743, "y": 0.232 },
+										"size": 0.479,
+										"drawDepth": -0.75,
+										"head": { "rotate": 13.271 },
+										"foot": { "rotate": -8.294 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-rage",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "middle",
+										"anchor": { "x": 0.366, "y": 0.102 },
+										"size": 0.566,
+										"drawDepth": -0.75,
+										"head": { "rotate": 13.271 },
+										"foot": { "rotate": -8.294 }
+									},
+									{
+										"role": "rival",
+										"form": "frame-angry",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "middle",
+										"anchor": { "x": 0.116, "y": 0.136 },
+										"size": 0.407,
+										"drawDepth": 3,
+										"head": { "rotate": -4.398 },
+										"foot": { "rotate": -3.94 }
+									},
+									{
+										"role": "hero4",
+										"form": "frame-grim",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "middle",
+										"anchor": { "x": 0.223, "y": 0.165 },
+										"size": 0.288,
+										"drawDepth": 16,
+										"head": { "rotate": 13.271 },
+										"foot": { "rotate": -3.94 }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.76, "y": 0.87 },
+										"size": 0.424,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.88377196", "g": "0.88377196", "b": "0.88377196", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:action_zigzagL.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.862, "y": 0.698 },
+										"size": 0.404,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"foot": { "rotate": -46.169 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~04~player_chose_one~panel_002~1_narration",
+										"style": "narration",
+										"padXFraction": 0.028,
+										"padYFraction": 0.078,
+										"widthFraction": 0.7577112,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{
+							"roles": [ "party", "npc" ],
+							"side": "player"
+						},
+						{ "role": "foes", "side": "enemy" }
+					],
+					"missionPlanOverride": "stormwell",
+					"victoryEventIds": [ "missionVictory_distantThunder" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "greedy",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.581, "y": 0.529 },
+										"size": 0.951849,
+										"drawDepth": 0
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 2.437, "y": 0.559 },
+										"size": 0.50686693,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wall1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 2.152, "y": -0.288 },
+										"size": 1.0314152,
+										"drawDepth": -1,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~05~player_chose_two~panel_001~1_healer",
+										"pointerOwner": "healer",
+										"padXFraction": 0.083,
+										"padYFraction": 0.068,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 14.411248, "dY": 2.8822496, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"role": "greedy",
+										"form": "frame-grim",
+										"anchor": { "x": 0.68, "y": 0.467 },
+										"size": 0.616,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.212, "y": 0.476 },
+										"size": 0.646,
+										"drawDepth": 0
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.918, "y": 0.53 },
+										"size": 0.344,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wall1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.788, "y": -0.177 },
+										"size": 0.7,
+										"drawDepth": -1,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~05~player_chose_two~panel_002~1_greedy",
+										"pointerOwner": "greedy",
+										"padXFraction": 0.389,
+										"padYFraction": 0.058,
+										"widthFraction": 0.56287104
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldBeigeTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:ruinsField_pillar2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.379, "y": 0.312 },
+										"size": 0.58058345,
+										"drawDepth": 1.75,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.184, "y": 0.435 },
+										"size": 0.518,
+										"drawDepth": 4,
+										"nameTag": "none",
+										"color": { "r": "0.49972582", "g": "0.53974783", "b": "0.52763605", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.867, "y": 0.466 },
+										"size": 0.404,
+										"drawDepth": 12,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.444, "y": 0.698 },
+										"size": 0.309,
+										"drawDepth": 16,
+										"nameTag": "none",
+										"color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.424, "y": -0.145 },
+										"size": 2.109893,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.14254385" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-grim",
+										"equipment": { "mode": "leaveEquipment" },
+										"focus": "foot",
+										"anchor": { "x": 0.827, "y": 0.524 },
+										"size": 0.13,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.759, "y": 0.193 },
+										"size": 0.474,
+										"drawDepth": 7.25,
+										"nameTag": "none",
+										"foot": { "rotate": -5.706 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallDiag.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.846, "y": 0.298 },
+										"size": 0.537,
+										"drawDepth": 1.625,
+										"nameTag": "none",
+										"color": { "r": "0.84308207", "g": "0.8630594", "b": "0.8570137", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:boulderField1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.194, "y": 0.321 },
+										"size": 0.325,
+										"nameTag": "none",
+										"color": { "r": "0.78574491", "g": "0.70661628", "b": "0.92934859", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.41, "y": 0.38 },
+										"size": 0.348,
+										"drawDepth": 1.6875,
+										"head": { "rotate": 18.612 },
+										"foot": { "rotate": -4.779 },
+										"color": { "r": "0.34868422", "g": "0.34868422", "b": "0.34868422", "a": "1" }
+									},
+									{
+										"role": "friend",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.277, "y": 0.356 },
+										"size": 0.348,
+										"drawDepth": 0,
+										"head": { "rotate": 4.261 },
+										"foot": { "rotate": -4.779 },
+										"color": { "r": "0.34868422", "g": "0.34868422", "b": "0.34868422", "a": "1" }
+									},
+									{
+										"role": "rival",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.147, "y": 0.361 },
+										"size": 0.401,
+										"drawDepth": -2,
+										"head": { "rotate": -4.978, "scaleY": -1 },
+										"foot": { "rotate": 0.017 },
+										"color": { "r": "0.34868422", "g": "0.34868422", "b": "0.34868422", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.006, "y": 0.375 },
+										"size": 0.401,
+										"drawDepth": -2,
+										"head": { "rotate": -4.978, "scaleY": 1 },
+										"foot": { "rotate": -4.375 },
+										"color": { "r": "0.34868422", "g": "0.34868422", "b": "0.34868422", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.766, "y": 0.764 },
+										"size": 0.139,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~05~player_chose_two~panel_003~1_narration",
+										"style": "narration",
+										"padXFraction": 0.069,
+										"padYFraction": 0.103,
+										"widthFraction": 0.39830127,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "distantThunder",
+										"textKey": "~05~player_chose_two~panel_003~2_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.232,
+										"padYFraction": 0.245,
+										"widthFraction": 0.3959911,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{
+							"roles": [ "npc" ],
+							"side": "player"
+						},
+						{
+							"roles": [ "party" ],
+							"side": "player"
+						},
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{
+							"modifier": "STEALTH",
+							"roles": [ "party" ]
+						}
+					],
+					"missionPlanOverride": "stormwell",
+					"victoryEventIds": [ "missionVictory_distantThunder" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "Aspects",
+		"target": "npc",
+		"addAspects": [
+			{ "id": "stormwellNpcMortalChoice", "value": "1" }
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "stormwell",
+			"createEntity": {
+				"query": { "baseTag": "human", "setAge": "middleAge" },
+				"control": "none"
+			}
+		},
+		{
+			"role": "npc2",
+			"npcId": "stormwellSpouse",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "npc",
+					"setAttraction": "attractedToRelative"
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}
