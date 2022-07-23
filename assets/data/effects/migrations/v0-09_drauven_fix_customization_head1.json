@@ -1,8 +1,8 @@
 {
-"id": "drauven_fix_customization_head2",
+"id": "drauven_fix_customization_head1",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven_fix_customization_head2",
+	"sourceFile": "migrations/v0-09_drauven_fix_customization_head1",
 	"modId": "wildermyth-drauven-pcs-main",
 	"author": "justEthaniguess",
 	"STUB": "Updates Drauven characters to our new system"
@@ -19,8 +19,8 @@
 		"onPass": {
 			"class": "AddHistory",
 			"inlineHistory": {
-				"id": "customHeadFix_warrior.detail2",
-				"associatedAspects": [ "drauvenHeadCustom_warrior2" ],
+				"id": "customHeadFix_warrior.detail1",
+				"associatedAspects": [ "drauvenHeadCustom_warrior1" ],
 				"showInSummary": false
 			}
 		}
@@ -32,8 +32,8 @@
 		"onPass": {
 			"class": "AddHistory",
 			"inlineHistory": {
-				"id": "customHeadFix_hunter.detail2",
-				"associatedAspects": [ "drauvenHeadCustom_hunter2" ],
+				"id": "customHeadFix_hunter.detail1",
+				"associatedAspects": [ "drauvenHeadCustom_hunter1" ],
 				"showInSummary": false
 			}
 		}
@@ -45,15 +45,15 @@
 		"onPass": {
 			"class": "AddHistory",
 			"inlineHistory": {
-				"id": "customHeadFix_mystic.detail2",
-				"associatedAspects": [ "drauvenHeadCustom_mystic2" ],
+				"id": "customHeadFix_mystic.detail1",
+				"associatedAspects": [ "drauvenHeadCustom_mystic1" ],
 				"showInSummary": false
 			}
 		}
 	},
 	{
 		"class": "Aspects",
-		"removeAspects": [ "drauvenHeadCustomization2" ]
+		"removeAspects": [ "drauvenHeadCustomization1" ]
 	}
 ]
 }

@@ -1,0 +1,85 @@
+{
+  "id": "drauvenSkinCheck",
+  "info": { 
+    "dataVersion": 1, 
+    "sourceFile": "drauven/drauvenSkinCheck",
+    "author": "Ironskink",
+    "STUB": "Checks for changes to limbs and removes/adds drauven limb aspects appropriately" 
+  },
+  "type": "ABILITIES_CHANGED",
+  "targets": [
+    {
+      "template": "SELF",
+      "aspectValues": [
+        { "id": "drauven_pc" }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "Test",
+      "value": "themePiece_crow_head + themePiece_wolf_head + themePiece_tree_head",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "removeNaturalDrauvenHead",
+          "showInSummary": false,
+          "removeAspects": [ "drauvenSkin_naturalHead" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "themeSlotFilled_leftArm",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "removeNaturalDrauvenLeftArm",
+          "showInSummary": false,
+          "removeAspects": ["drauvenSkin_naturalLeftArm", "drauvenSkin_naturalLeftHand"]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "themeSlotFilled_leftLeg",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "removeNaturalDrauvenLeftLeg",
+          "showInSummary": false,
+          "removeAspects": ["drauvenSkin_naturalLeftLeg"]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "themeSlotFilled_rightArm",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "removeNaturalDrauvenRightArm",
+          "showInSummary": false,
+          "removeAspects": ["drauvenSkin_naturalRightArm", "drauvenSkin_naturalRightHand"]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "themeSlotFilled_rightLeg",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "removeNaturalDrauvenRightLeg",
+          "showInSummary": false,
+          "removeAspects": ["drauvenSkin_naturalRightLeg"]
+        }
+      }
+    }
+  ]
+}

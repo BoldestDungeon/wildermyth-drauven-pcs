@@ -1,0 +1,299 @@
+{
+  "id": "migration_drauven_updateThemeLimbs",
+  "info": { 
+    "dataVersion": 1, 
+    "sourceFile": "migrations/v0-10_updateThemeLimbs",
+    "author": "Ironskink",
+    "STUB": "Updates theme pieces to use our new system" 
+  },
+  "type": "ABILITIES_CHANGED",
+  "targets": [
+    {
+      "template": "SELF",
+      "aspectValues": [
+        { "id": "drauven_pc" }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "Test",
+      "value": "themePiece_drauven_head",
+      "onPass": {
+        "class": "DoAll",
+        "target": "self",
+        "outcomes": [
+          {
+            "class": "RemoveTheme",
+            "target": "self",
+            "specificTheme": "drauven",
+            "specificPiece": "head"
+          },
+          {
+            "class": "RemoveTheme",
+            "target": "self",
+            "specificTheme": "drauven",
+            "specificPiece": "leftArm"
+          },
+          {
+            "class": "RemoveTheme",
+            "target": "self",
+            "specificTheme": "drauven",
+            "specificPiece": "rightArm"
+          },
+          {
+            "class": "RemoveTheme",
+            "target": "self",
+            "specificTheme": "drauven",
+            "specificPiece": "leftLeg"
+          },
+          {
+            "class": "RemoveTheme",
+            "target": "self",
+            "specificTheme": "drauven",
+            "specificPiece": "rightLeg"
+          },
+          {
+            "class": "AddHistory",
+            "inlineHistory": {
+              "id": "removeHumanSkinAspects",
+              "showInSummary": false,
+              "associatedAspects": [
+                "drauvenSkin_naturalLeftArm",
+                "drauvenSkin_naturalLeftHand",
+                "drauvenSkin_naturalRightArm",
+                "drauvenSkin_naturalRightHand",
+                "drauvenSkin_naturalLeftLeg",
+                "drauvenSkin_naturalRightLeg",
+                "drauvenSkin_naturalHead"
+              ],
+              "removeAspects": [ 
+                "humanSkin_naturalLeftArm",
+                "humanSkin_naturalLeftHand",
+                "humanSkin_naturalRightArm",
+                "humanSkin_naturalRightHand",
+                "humanSkin_naturalLeftLeg",
+                "humanSkin_naturalRightLeg",
+                "humanSkin_naturalHead"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "class": "Test",
+      "target": "self",
+      "value": "maxValue.drauvenHeadStyle",
+      "threshold": "1",
+      "onFail": {
+        "class": "DoFirstValid",
+        "target": "self",
+        "outcomes": [
+          {
+            "class": "Test",
+            "value": "warrior",
+            "threshold": "1",
+            "onPass": {
+              "class": "AddHistory",
+              "inlineHistory": {
+                "id": "setDrauvenHeadStyle_stump",
+                "showInSummary": false,
+                "associatedAspects": [ "drauvenHeadStyle_stump" ]
+              }
+            }
+          },
+          {
+            "class": "Test",
+            "value": "hunter",
+            "threshold": "1",
+            "onPass": {
+              "class": "AddHistory",
+              "inlineHistory": {
+                "id": "setDrauvenHeadStyle_haunt",
+                "showInSummary": false,
+                "associatedAspects": [ "drauvenHeadStyle_haunt" ]
+              }
+            }
+          },
+          {
+            "class": "AddHistory",
+            "inlineHistory": {
+              "id": "setDrauvenHeadStyle_deeven",
+              "showInSummary": false,
+              "associatedAspects": [ "drauvenHeadStyle_deeven" ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_warrior1",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_warrior1",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_warrior1"],
+          "associatedAspects": [ "drauvenHeadCustom_whiskers1" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_warrior2",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_warrior2",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_warrior2"],
+          "associatedAspects": [ "drauvenHeadCustom_feathers1" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_warrior3",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_warrior3",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_warrior3"],
+          "associatedAspects": [ "drauvenHeadCustom_horns1" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_warrior4",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_warrior4",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_warrior4"],
+          "associatedAspects": [ "drauvenHeadCustom_helmet1" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_mystic1",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_mystic1",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_mystic1"],
+          "associatedAspects": [ "drauvenHeadCustom_whiskers3" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_mystic2",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_mystic2",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_mystic2"],
+          "associatedAspects": [ "drauvenHeadCustom_horns3" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_mystic3",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_mystic3",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_mystic3"],
+          "associatedAspects": [ "drauvenHeadCustom_feathers3" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_mystic4",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_mystic4",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_mystic4"],
+          "associatedAspects": [ "drauvenHeadCustom_helmet3" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_hunter1",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_hunter1",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_hunter1"],
+          "associatedAspects": [ "drauvenHeadCustom_whiskers2" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_hunter2",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_hunter2",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_hunter2"],
+          "associatedAspects": [ "drauvenHeadCustom_horns2" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_hunter3",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_hunter3",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_hunter3"],
+          "associatedAspects": [ "drauvenHeadCustom_feathers2" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
+      "value": "drauvenHeadCustom_hunter4",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadCustom_hunter4",
+          "showInSummary": false,
+          "removeAspects": ["drauvenHeadCustom_hunter4"],
+          "associatedAspects": [ "drauvenHeadCustom_helmet2" ]
+        }
+      }
+    }
+  ]
+}

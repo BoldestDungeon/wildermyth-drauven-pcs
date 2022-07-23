@@ -22,7 +22,6 @@
 			[ "drauvenCustomizationOther" ]
 		]
 	},
-	{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
 	{
 		"class": "DoFirstValid",
 		"target": "self",
@@ -163,6 +162,7 @@
 			}
 		]
 	},
+	{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
 	{
 		"class": "Test",
 		"value": "KNOWS_YANDRIC",

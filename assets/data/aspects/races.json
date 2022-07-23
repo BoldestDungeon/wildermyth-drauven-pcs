@@ -1,132 +1,4 @@
 [
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_hunter1",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_hunter2",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_hunter3",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_hunter4",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_mystic1",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_mystic2",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_mystic3",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_mystic4",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_warrior1",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_warrior2",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_warrior3",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenHeadCustom_warrior4",
-	"importance": -1,
-	"invalidatesSkin": true,
-	"lifespan": "all"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenSkin_naturalHead",
-	"importance": -1,
-	"invalidatesSkin": true
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenSkin_naturalLeftArm",
-	"importance": -1,
-	"invalidatesSkin": true
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenSkin_naturalLeftHand",
-	"importance": -1,
-	"invalidatesSkin": true
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenSkin_naturalLeftLeg",
-	"stats": { "SPEED": 1.7 },
-	"importance": -1,
-	"invalidatesSkin": true
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenSkin_naturalRightArm",
-	"importance": -1,
-	"invalidatesSkin": true
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenSkin_naturalRightHand",
-	"importance": -1,
-	"invalidatesSkin": true
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenSkin_naturalRightLeg",
-	"stats": { "SPEED": 1.7 },
-	"importance": -1,
-	"invalidatesSkin": true
-},
 
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -162,7 +34,9 @@
 		"friend_teamwork_meleeBlock",
 		"defaultMoveFeedback",
 		"turnEndAchievementChecks",
+
 		"drauven_aging",
+		"drauvenSkinCheck",
         
 		"drauven_pc_cordAndVines",
 		"drauven_pc_cordAndVines_oneAction",

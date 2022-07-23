@@ -22,28 +22,34 @@
 	"id": "drauvenBase.001",
 	"category": "drauvenBase",
 	"impliedAspects": [
+		"alive",
 		"human",
 		"nonhuman",
+		"humanRig",
+		"activeDefender",
+		"eligibleForDeathChoice",
+		"canWallWithAllies",
+
 		"drauven",
 		"drauven_pc",
 		"drauvenBlood",
 		"fluentInDruvwail",
-		"activeDefender",
-		"alive",
 		"cannotAge",
-		"eligibleForDeathChoice",
-		"canWallWithAllies",
+		
 		"simplePresence",
-		"humanRig",
+
 		"ATTACHMENTS_workingRightArm",
 		"ATTACHMENTS_workingLeftArm",
+
 		"drauvenSkin_naturalLeftArm",
 		"drauvenSkin_naturalLeftHand",
 		"drauvenSkin_naturalRightArm",
 		"drauvenSkin_naturalRightHand",
 		"drauvenSkin_naturalLeftLeg",
 		"drauvenSkin_naturalRightLeg",
-		"drauvenSkin_naturalHead"
+		"drauvenSkin_naturalHead",
+
+		"migration_drauven_updateThemeLimbs"
 
 	],
 	"removeAspects":[
@@ -53,9 +59,16 @@
 		"lateMiddleAge",
 		"oldAge",
 		"veryOldAge",
-		"extremeOldAge"
+		"extremeOldAge",
+		"humanSkin_naturalLeftArm",
+		"humanSkin_naturalLeftHand",
+		"humanSkin_naturalRightArm",
+		"humanSkin_naturalRightHand",
+		"humanSkin_naturalLeftLeg",
+		"humanSkin_naturalRightLeg",
+		"humanSkin_naturalHead"
+
 	],
 	"showInSummary": false
-},
-
+}
 ]

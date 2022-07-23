@@ -1,0 +1,231 @@
+[
+  {
+    "modId": "wildermyth-drauven-pcs-main",
+    "id": "drauvenHeadCustomization1",
+    "effects": [ "drauven_fix_customization_head1" ],
+    "importance": -1
+  },
+  {
+    "modId": "wildermyth-drauven-pcs-main",
+    "id": "drauvenHeadCustomization2",
+    "effects": [ "drauven_fix_customization_head2" ],
+    "importance": -1
+  },
+  {
+    "modId": "wildermyth-drauven-pcs-main",
+    "id": "drauvenHeadCustomization3",
+    "effects": [ "drauven_fix_customization_head3" ],
+    "importance": -1
+  },
+  {
+    "modId": "wildermyth-drauven-pcs-main",
+    "id": "drauvenHeadCustomization4",
+    "effects": [ "drauven_fix_customization_head4" ],
+    "importance": -1
+  },
+
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_hunter1",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_whiskers2",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_hunter2",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_horns2",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_hunter3",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_feathers2",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_hunter4",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_helmet2",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_mystic1",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_whiskers3",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_mystic2",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_horns3",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_mystic3",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_feathers3",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_mystic4",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_helmet3",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_warrior1",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_feathers1",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_warrior2",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_whiskers1",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_warrior3",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_horns1",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_warrior4",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "lifespan": "all",
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_helmet1",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  }
+]
