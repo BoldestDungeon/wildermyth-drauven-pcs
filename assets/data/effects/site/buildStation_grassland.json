@@ -110,16 +110,15 @@
 		"role": "leader",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
-		"scoreFunction": "LEADER+(25*drauven)",
+		"scoreFunction": "LEADER+(1d25*drauven)",
 		"fromRoles": null,
 		"canPath": { "pathTo": "self", "costLimit": "1000" }
 	},
 	{
-		"template": "HERO_BY_SCORE",
-		"choose": "BY_SCORE_OPTIONAL",
-		"scoreFunction": "drauven+fluentInDruvwail",
-		"scoreThreshold": "1",
-		"notAlreadyMatchedAs": []
+		"role": "hero",
+		"template": "COMPANY",
+		"choose": "ANY",
+		"aspects": [ "DrauvenAllies_FirstStepsComplete" ]
 	},
 	{
 		"role": "site2",
