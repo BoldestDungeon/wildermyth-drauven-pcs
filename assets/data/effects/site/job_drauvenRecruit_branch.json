@@ -37,6 +37,29 @@
 		"notAlreadyMatchedAs": [ "site" ]
 	},
 	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LEADER"
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "fluentInDruvwail",
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "CHARISMA",
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
 		"template": "CHOICE",
 		"promptScript": [
 			{
@@ -68,14 +91,15 @@
 					{
 						"class": "comicNode_Panel",
 						"panel": {
+							"size": "fourth",
 							"actorSlots": [
 								{
 									"role": "warrior",
 									"equipment": {
 										"equipItemsById": [ "spear2hand_t1_basic" ]
 									},
-									"anchor": { "x": 0.42, "y": 0.668 },
-									"size": 0.4005
+									"anchor": { "x": 0.39191282, "y": 0.668 },
+									"size": 0.42280388
 								}
 							],
 							"textSlots": [
@@ -83,6 +107,14 @@
 									"textSourceFile": "site/job_drauvenRecruit_branch",
 									"textKey": "~02~choice_one~panel_001~1_narration",
 									"style": "narration"
+								},
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~02~choice_one~panel_001~2_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"widthFraction": 0.53,
+									"shrinkToFitText": true
 								}
 							]
 						}
@@ -95,14 +127,15 @@
 					{
 						"class": "comicNode_Panel",
 						"panel": {
+							"size": "fourth",
 							"actorSlots": [
 								{
 									"role": "hunter",
 									"equipment": {
 										"equipItemsById": [ "dagger_t1_basic" ]
 									},
-									"anchor": { "x": 0.632, "y": 0.518 },
-									"size": 0.3788
+									"anchor": { "x": 0.6783439, "y": 0.518 },
+									"size": 0.3998954
 								}
 							],
 							"textSlots": [
@@ -110,6 +143,13 @@
 									"textSourceFile": "site/job_drauvenRecruit_branch",
 									"textKey": "~03~choice_two~panel_001~1_narration",
 									"style": "narration"
+								},
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~03~choice_two~panel_001~2_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"shrinkToFitText": true
 								}
 							]
 						}
@@ -122,14 +162,15 @@
 					{
 						"class": "comicNode_Panel",
 						"panel": {
+							"size": "fourth",
 							"actorSlots": [
 								{
 									"role": "mystic",
 									"equipment": {
 										"equipItemsById": [ "staffDrauven_t1" ]
 									},
-									"anchor": { "x": 0.583, "y": 0.633 },
-									"size": 0.4029
+									"anchor": { "x": 0.6121404, "y": 0.633 },
+									"size": 0.42533752
 								}
 							],
 							"textSlots": [
@@ -137,12 +178,49 @@
 									"textSourceFile": "site/job_drauvenRecruit_branch",
 									"textKey": "~04~choice_three~panel_001~1_narration",
 									"style": "narration"
+								},
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~04~choice_three~panel_001~2_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"shrinkToFitText": true
 								}
 							]
 						}
 					}
 				],
 				"ifTargetIsPresent": "site"
+			},
+			{
+				"id": "four",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "sixth",
+							"actorSlots": [
+								{
+									"role": "party",
+									"form": "frame-skeptical",
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.507, "y": -0.394 },
+									"size": 0.9271,
+									"drawDepth": 1,
+									"nameTag": "bottomRight"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "site/job_drauvenRecruit_branch",
+									"textKey": "~05~choice_four~panel_001~1_party",
+									"pointerOwner": "party"
+								}
+							]
+						}
+					}
+				]
 			}
 		]
 	}
@@ -199,6 +277,7 @@
 						}
 					]
 				},
+				{ "class": "AddResources", "amount": "-3" },
 				{
 					"class": "NewJob",
 					"target": "site",
@@ -263,6 +342,7 @@
 						}
 					]
 				},
+				{ "class": "AddResources", "amount": "-3" },
 				{
 					"class": "NewJob",
 					"target": "site",
@@ -361,6 +441,7 @@
 						}
 					]
 				},
+				{ "class": "AddResources", "amount": "-3" },
 				{
 					"class": "NewJob",
 					"target": "site",
@@ -369,6 +450,26 @@
 					"injectedRoles": [ "volunteer", "self", "party" ],
 					"choices": [ "participant" ],
 					"promptSlotsImmediately": true
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "party",
+		"ifPlayerChose": "four",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": []
+				},
+				{
+					"class": "NewJob",
+					"target": "site",
+					"effectId": "job_drauvenRecruit",
+					"post": "site"
 				}
 			]
 		}

@@ -32,6 +32,15 @@
 			"preFill": "noJobOrParty",
 			"specialSelectionInfo": { "aspect": "drauven" }
 		}
+	},
+	{
+		"role": "volunteer",
+		"template": "COMPANY",
+		"STUB": "Test legacy points of the company last, so we can still show the banner if it fails.",
+		"showAnyway": true,
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "RESOURCE.legacyPoints",
+		"b": "3"
 	}
 ],
 "outcomes": [

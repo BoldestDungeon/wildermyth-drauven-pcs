@@ -31,8 +31,9 @@
 	{ "template": "COMPANY", "choose": "BY_SCORE" },
 	{
 		"template": "HERO_BY_SCORE",
-		"choose": "ONE_RANDOM",
+		"choose": "ANY",
 		"scoreFunction": null,
+		"chooseAnyMaximum": 1,
 		"aspectsOneOf": [ "drauven", "fluentInDruvwail" ],
 		"isJobResource": true
 	},
