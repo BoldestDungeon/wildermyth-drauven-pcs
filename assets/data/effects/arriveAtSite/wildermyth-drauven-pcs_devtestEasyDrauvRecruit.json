@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "arriveAtSite/wildermyth-drauven-pcs_devtestEasyDrauvRecruit",
-	"modId": "wildermyth-drauven-pcs-main",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Ironskink"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -392,6 +392,7 @@
 	},
 	{
 		"class": "Mission",
+		"goal": "liberate",
 		"combatants": [
 			{ "role": "party", "side": "player" },
 			{ "role": "foes", "side": "enemy" },

@@ -23,9 +23,7 @@
 	{
 		"role": "site",
 		"template": "OVERLAND_TILE",
-		"choose": "BY_SCORE_OPTIONAL",
 		"relativeTo": "participant",
-		"notAlreadyMatchedAs": [],
 		"range": "0",
 		"sameTileAs": "self"
 	},
@@ -37,47 +35,550 @@
 		"notAlreadyMatchedAs": [ "site" ]
 	},
 	{
-		"role": "hero",
+		"role": "leader",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
-		"scoreFunction": "LEADER"
+		"scoreFunction": "LEADER",
+		"aspectValues": [
+			{ "id": "nonhuman", "forbidden": true }
+		]
 	},
 	{
-		"role": "hero2",
+		"role": "friend",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": "fluentInDruvwail",
-		"notAlreadyMatchedAs": [ "hero" ]
+		"notAlreadyMatchedAs": [ "leader" ]
 	},
 	{
-		"role": "hero3",
+		"role": "hero",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": "CHARISMA",
-		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+		"notAlreadyMatchedAs": [ "leader", "friend" ]
 	},
+	{ "role": "foes", "template": "THREAT", "choose": "ONE_RANDOM_TRUE" },
 	{
 		"template": "CHOICE",
 		"promptScript": [
 			{
 				"class": "comicNode_Panel",
 				"panel": {
-					"size": "threeFourths",
-					"bg": "comicBG_cottagePretty.jpg",
+					"size": "full",
+					"bg": "comicBG_kickoffDrauven.jpg",
 					"actorSlots": [
 						{
-							"role": "volunteer",
+							"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.629, "y": 0.494 },
+							"size": 0.45,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
 							"equipment": {},
-							"size": 0.8957655
+							"focus": "foot",
+							"anchor": { "x": 0.371, "y": -0.01 },
+							"size": 0.45
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.229, "y": -0.037 },
+							"size": 0.45,
+							"nameTag": "none"
+						},
+						{
+							"role": "party",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": -0.047 },
+							"size": 0.45,
+							"nameTag": null
 						}
 					],
 					"textSlots": [
 						{
 							"textSourceFile": "site/job_drauvenRecruit_branch",
-							"textKey": "~01~prompt~panel_001~1_narration",
+							"textKey": "~01~prompt~panel_001~1_speech",
+							"fallbackSlotOwner": 0,
+							"backgroundColor": { "r": "0", "g": "0", "b": "0", "a": "1" },
+							"location": "bottomRight",
+							"padXFraction": 0.081,
+							"padYFraction": 0.251,
+							"shrinkToFitText": true,
+							"pointerStyle": "speech"
+						},
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_001~2_friend",
+							"pointerOwner": "friend",
+							"backgroundColor": { "r": "0", "g": "0", "b": "0", "a": "1" },
+							"location": "bottomLeft",
+							"padXFraction": 0.31,
+							"padYFraction": 0.084,
+							"shrinkToFitText": true,
+							"pointerStyle": "speech"
+						},
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_001~3_leader",
+							"pointerOwner": "leader",
+							"location": "bottomRight",
+							"padXFraction": 0.494,
+							"padYFraction": 0.118,
+							"shrinkToFitText": true,
+							"allowOverlap": true
+						},
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_001~4_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.517, "y": 0.374 },
+							"size": 0.545,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_002~1_speech",
+							"fallbackSlotOwner": 0,
+							"backgroundColor": { "r": "0", "g": "0", "b": "0", "a": "1" },
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_interiorStoneChamber.jpg",
+					"actorSlots": [
+						{
+							"role": "friend",
+							"form": "frame-happy",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.352, "y": -0.006 },
+							"size": 0.30354875,
+							"nameTag": "none",
+							"head": { "rotate": 9.408 }
+						},
+						{
+							"role": "leader",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.524, "y": -0.009 },
+							"size": 0.27595618,
+							"nameTag": "none",
+							"head": { "rotate": 5.43 }
+						},
+						{
+							"role": "party",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.173 },
+							"size": 0.28090402,
+							"nameTag": "none",
+							"head": { "rotate": -15.865, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.877, "y": 0.365 },
+							"size": 0.2985,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.674, "y": 0.469 },
+							"size": 0.303,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_pillar.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.239, "y": 0.509 },
+							"size": 0.2206,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_shrineSmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.022, "y": 0.142 },
+							"size": 0.3124,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_003~1_speech",
+							"fallbackSlotOwner": 3,
+							"backgroundColor": { "r": "0", "g": "0", "b": "0", "a": "1" },
+							"padXFraction": 0.376,
+							"padYFraction": 0.085,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_interiorStoneChamber.jpg",
+					"animation": { "overridePanelOrder": 2, "animationDirection": "fromLeft" },
+					"actorSlots": [
+						{
+							"role": "friend",
+							"form": "frame-happy",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.352, "y": -0.006 },
+							"size": 0.30354875,
+							"nameTag": "none",
+							"head": { "rotate": 9.408 }
+						},
+						{
+							"role": "leader",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.524, "y": -0.009 },
+							"size": 0.27595618,
+							"nameTag": "none",
+							"head": { "rotate": 5.43 }
+						},
+						{
+							"role": "party",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.173 },
+							"size": 0.28090402,
+							"nameTag": "none",
+							"head": { "rotate": -15.865, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.877, "y": 0.365 },
+							"size": 0.2985,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.674, "y": 0.469 },
+							"size": 0.303,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_pillar.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.239, "y": 0.509 },
+							"size": 0.2206,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_shrineSmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.022, "y": 0.142 },
+							"size": 0.3124,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_004~1_speech",
+							"fallbackSlotOwner": 3,
+							"backgroundColor": { "r": "0", "g": "0", "b": "0", "a": "1" },
+							"padXFraction": 0.376,
+							"padYFraction": 0.085,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"animation": { "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight",
+							"head": { "rotate": 18.435 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFourths",
+					"showNameTags": false,
+					"bg": "comicBG_forestPurpleZoomedOut.jpg",
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-surprised",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.285, "y": -0.075 },
+							"size": 0.35601255,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.7, "y": -0.047 },
+							"size": 0.35601255,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.495, "y": 0.132 },
+							"size": 0.4523,
+							"nameTag": "none"
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.57832277 },
+							"size": 0.35601255,
+							"nameTag": "none"
+						},
+						{
+							"role": "friend",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.405, "y": -0.06 },
+							"size": 0.35601255,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:door_GateDoubleDrauven_closed.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.988, "y": 0.654 },
+							"size": 0.345,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:treeHollow.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.008, "y": 0.443 },
+							"size": 0.3914,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:treeSmallFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.485, "y": 0.491 },
+							"size": 0.2653,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_006~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"head": { "rotate": 17.879, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_007~1_volunteer",
+							"pointerOwner": "volunteer"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fifth",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.689, "y": 0.484 },
+							"size": 1.7405064,
+							"head": { "rotate": -5.549, "scaleY": 1 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"head": { "rotate": 17.879, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_009~1_volunteer",
+							"pointerOwner": "volunteer"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFourths",
+					"showNameTags": false,
+					"bg": "comicBG_forestPurpleZoomedOut.jpg",
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.285, "y": -0.075 },
+							"size": 0.35601255,
+							"nameTag": "none",
+							"head": { "rotate": 11.179 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.7, "y": -0.047 },
+							"size": 0.35601255,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.495, "y": 0.132 },
+							"size": 0.4523,
+							"nameTag": "none"
+						},
+						{
+							"role": "volunteer",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.57832277 },
+							"size": 0.35601255,
+							"nameTag": "none"
+						},
+						{
+							"role": "friend",
+							"form": "frame-happy",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.405, "y": -0.06 },
+							"size": 0.35601255,
+							"nameTag": "none",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "scenery:door_GateDoubleDrauven_closed.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.988, "y": 0.654 },
+							"size": 0.345,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:treeHollow.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.008, "y": 0.443 },
+							"size": 0.3914,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:treeSmallFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.485, "y": 0.491 },
+							"size": 0.2653,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "site/job_drauvenRecruit_branch",
+							"textKey": "~01~prompt~panel_010~1_narration",
 							"style": "narration"
 						}
 					]
@@ -98,7 +599,8 @@
 									"equipment": {
 										"equipItemsById": [ "spear2hand_t1_basic" ]
 									},
-									"anchor": { "x": 0.39191282, "y": 0.668 },
+									"focus": "foot",
+									"anchor": { "x": 0.518, "y": -0.066 },
 									"size": 0.42280388
 								}
 							],
@@ -205,7 +707,7 @@
 									"form": "frame-skeptical",
 									"facing": "left",
 									"focus": "foot",
-									"anchor": { "x": 0.507, "y": -0.394 },
+									"anchor": { "x": 0.564, "y": -0.549 },
 									"size": 0.9271,
 									"drawDepth": 1,
 									"nameTag": "bottomRight"
@@ -470,6 +972,11 @@
 					"target": "site",
 					"effectId": "job_drauvenRecruit",
 					"post": "site"
+				},
+				{
+					"class": "Aspects",
+					"target": "volunteer",
+					"removeAspects": [ "npcId|*" ]
 				}
 			]
 		}
@@ -481,7 +988,7 @@
 			"role": "volunteer",
 			"npcId": "DrauvenRecruit",
 			"createEntity": {
-				"query": { "baseTag": "human", "setClass": "farmer" },
+				"query": { "baseTag": "human", "localizableName": "", "setClass": "farmer" },
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" }
 				],
