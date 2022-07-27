@@ -80,7 +80,6 @@
 								"additionalOutcome": {
 									"class": "DoAll",
 									"outcomes": [
-										{ "class": "NewJob", "effectId": "job_drauvenRecruit", "post": "self" },
 										{
 											"class": "Description",
 											"script": [
@@ -371,7 +370,6 @@
 						"additionalOutcome": {
 							"class": "DoAll",
 							"outcomes": [
-								{ "class": "NewJob", "effectId": "job_drauvenRecruit", "post": "self" },
 								{
 									"class": "Description",
 									"script": [
@@ -578,7 +576,6 @@
 						"additionalOutcome": {
 							"class": "DoAll",
 							"outcomes": [
-								{ "class": "NewJob", "effectId": "job_drauvenRecruit", "post": "self" },
 								{
 									"class": "Description",
 									"script": [
@@ -761,7 +758,6 @@
 						"additionalOutcome": {
 							"class": "DoAll",
 							"outcomes": [
-								{ "class": "NewJob", "effectId": "job_drauvenRecruit", "post": "self" },
 								{
 									"class": "Description",
 									"script": [

@@ -122,8 +122,8 @@
 	},
 	{
 		"role": "site2",
-		"template": "ANY",
-		"type": "OVERLAND_TILE",
+		"template": "OVERLAND_TILE",
+		"type": "SITE",
 		"choose": "ANY",
 		"scoreFunction": "drauvenOutpost",
 		"scoreThreshold": "1",

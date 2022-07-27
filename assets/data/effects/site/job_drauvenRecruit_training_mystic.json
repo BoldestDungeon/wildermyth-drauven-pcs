@@ -62,56 +62,6 @@
 		"class": "Aspects",
 		"target": "npc",
 		"removeAspects": [ "npcId*" ]
-	},
-	{
-		"class": "Description",
-		"script": [
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "full",
-					"showNameTags": false,
-					"actorSlots": [
-						{
-							"role": "participant",
-							"equipment": {},
-							"anchor": { "x": 0.095, "y": 0.447 },
-							"size": 0.8957655,
-							"nameTag": "none"
-						},
-						{
-							"role": "volunteer",
-							"facing": "left",
-							"equipment": {},
-							"anchor": { "x": 0.6024447, "y": 0.5 },
-							"size": 0.8957655,
-							"nameTag": "none"
-						},
-						{
-							"role": "party",
-							"equipment": {},
-							"anchor": { "x": 0.283, "y": 0.513 },
-							"size": 0.8957655,
-							"nameTag": "none"
-						},
-						{
-							"role": "npc",
-							"facing": "left",
-							"equipment": {},
-							"anchor": { "x": 0.816, "y": 0.497 },
-							"nameTag": "none"
-						}
-					],
-					"textSlots": [
-						{
-							"textSourceFile": "site/job_drauvenRecruit_training_mystic",
-							"textKey": "~01~~panel_001~1_narration",
-							"style": "narration"
-						}
-					]
-				}
-			}
-		]
 	}
 ],
 "implications": {
