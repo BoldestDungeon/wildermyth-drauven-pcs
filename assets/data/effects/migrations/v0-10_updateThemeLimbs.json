@@ -19,6 +19,7 @@
     {
       "class": "Test",
       "value": "themePiece_drauven_head",
+      "target": "self",
       "onPass": {
         "class": "DoAll",
         "target": "self",
@@ -54,7 +55,19 @@
             "specificPiece": "rightLeg"
           },
           {
+            "class": "Aspects",
+            "target": "self",
+            "removeAspects": [
+              "themeSlotFilled_head",
+              "themeSlotFilled_leftArm",
+              "themeSlotFilled_leftLeg",
+              "themeSlotFilled_rightArm",
+              "themeSlotFilled_rightLeg"
+            ]
+          },
+          {
             "class": "AddHistory",
+            "target": "self",
             "inlineHistory": {
               "id": "removeHumanSkinAspects",
               "showInSummary": false,
@@ -93,6 +106,7 @@
           {
             "class": "Test",
             "value": "warrior",
+            "target": "self",
             "threshold": "1",
             "onPass": {
               "class": "AddHistory",
@@ -106,6 +120,7 @@
           {
             "class": "Test",
             "value": "hunter",
+            "target": "self",
             "threshold": "1",
             "onPass": {
               "class": "AddHistory",

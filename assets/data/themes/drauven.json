@@ -50,6 +50,11 @@
 					"depth": 101
 				}
 			]
-		}
+		},
+		{ "id": "head", "effects": ["migration_drauven_updateThemeLimbs"], "canBeAwardedRandomly": false },
+		{ "id": "rightArm", "canBeAwardedRandomly": false },
+		{ "id": "leftArm", "canBeAwardedRandomly": false },
+		{ "id": "rightLeg", "canBeAwardedRandomly": false },
+		{ "id": "leftLeg", "canBeAwardedRandomly": false }
 	]
 }
