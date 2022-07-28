@@ -81,6 +81,11 @@
                 "drauvenSkin_naturalHead"
               ],
               "removeAspects": [ 
+                "themeSlotFilled_head",
+                "themeSlotFilled_leftArm",
+                "themeSlotFilled_leftLeg",
+                "themeSlotFilled_rightArm",
+                "themeSlotFilled_rightLeg",
                 "humanSkin_naturalLeftArm",
                 "humanSkin_naturalLeftHand",
                 "humanSkin_naturalRightArm",
@@ -308,6 +313,14 @@
           "removeAspects": ["drauvenHeadCustom_hunter4"],
           "associatedAspects": [ "drauvenHeadCustom_helmet2" ]
         }
+      }
+    },
+    {
+      "class": "AddHistory",
+      "inlineHistory": {
+        "id": "migration-0-10",
+        "showInSummary": false,
+        "associatedAspects": [ "drauvenSkin_v_0-10" ]
       }
     }
   ]

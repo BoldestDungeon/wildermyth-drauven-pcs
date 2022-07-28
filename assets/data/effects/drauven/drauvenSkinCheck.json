@@ -18,12 +18,12 @@
   "outcomes": [
     {
       "class": "Test",
-      "value": "themePiece_crow_head + themePiece_wolf_head + themePiece_tree_head",
+      "value": "themePiece_crow_head + themePiece_wolf_head + themePiece_tree_head + themePiece_frog_head",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
         "inlineHistory": {
-          "id": "removeNaturalDrauvenHead",
+          "id": "removeNaturalDrauvenHead - themePiece_drauven_head",
           "showInSummary": false,
           "removeAspects": [ "drauvenSkin_naturalHead" ]
         }
@@ -31,7 +31,7 @@
     },
     {
       "class": "Test",
-      "value": "themeSlotFilled_leftArm",
+      "value": "themeSlotFilled_leftArm * drauvenSkin_v_0-10",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
@@ -44,7 +44,7 @@
     },
     {
       "class": "Test",
-      "value": "themeSlotFilled_leftLeg",
+      "value": "themeSlotFilled_leftLeg * drauvenSkin_v_0-10",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
@@ -57,7 +57,7 @@
     },
     {
       "class": "Test",
-      "value": "themeSlotFilled_rightArm",
+      "value": "themeSlotFilled_rightArm * drauvenSkin_v_0-10",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
@@ -70,7 +70,7 @@
     },
     {
       "class": "Test",
-      "value": "themeSlotFilled_rightLeg",
+      "value": "themeSlotFilled_rightLeg * drauvenSkin_v_0-10",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
