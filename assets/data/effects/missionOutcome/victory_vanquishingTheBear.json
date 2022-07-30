@@ -1,0 +1,849 @@
+{
+"id": "missionVictory_vanquishingTheBear",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/victory_vanquishingTheBear",
+	"author": "Heather Albano",
+	"STUB": "How do I make this NPC = shapeOfThings_npc?\n\nTarget should get bear theme at end"
+},
+"type": "OTHER",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterScore": 10000
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{ "role": "threat", "template": "INJECTED_THREAT", "choose": "ANY" },
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{ "template": "INJECTED_ENTITY", "type": "ANY_STATUS" }
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"preTransformation": true,
+							"role": "target",
+							"form": "frame-rage",
+							"facing": "left",
+							"anchor": { "x": 0.842, "y": 0.38 },
+							"size": 0.15,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "figure:misc/bearGhostDead.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.66, "y": 0.548 },
+							"size": 0.272,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_001~1_target",
+							"style": "narration",
+							"pointerOwner": "target"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"preTransformation": true,
+							"role": "target",
+							"form": "frame-rage",
+							"facing": "left",
+							"anchor": { "x": 0.842, "y": 0.38 },
+							"size": 0.15,
+							"nameTag": null
+						},
+						{
+							"assetSpec": "figure:misc/bearGhostDead.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.67, "y": 0.568 },
+							"size": 0.281,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:ghostBear1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.493, "y": 0.428 },
+							"size": 0.197,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:starFigureDance.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.553, "y": 0.299 },
+							"size": 0.121,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_002~1_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.176,
+							"padYFraction": 0.309
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"preTransformation": true,
+							"role": "target",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.496, "y": 0.492 },
+							"size": 0.965,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 27.474 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_003~1_target",
+							"pointerOwner": "target"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"preTransformation": true,
+							"role": "target",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.842, "y": 0.38 },
+							"size": 0.15,
+							"nameTag": null,
+							"head": { "rotate": 21.037 }
+						},
+						{
+							"assetSpec": "figure:misc/bearGhostDead.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.66, "y": 0.548 },
+							"size": 0.272,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:ghostBear1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.374, "y": 0.705 },
+							"size": 0.391
+						},
+						{
+							"assetSpec": "comic:ghostbear2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.636, "y": 0.649 },
+							"size": 0.228
+						},
+						{
+							"assetSpec": "comic:ghostbear3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.534, "y": 0.552 },
+							"size": 0.373,
+							"foot": { "rotate": 8.452 }
+						},
+						{
+							"assetSpec": "comic:starFigureDance.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.438, "y": 0.58 },
+							"size": 0.385,
+							"foot": { "rotate": -20.05 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"assetSpec": "comic:smokeTendrilsWell.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.638, "y": 0.299 },
+							"size": 0.234,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_004~1_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.27,
+							"padYFraction": 0.558,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_004~2_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.083,
+							"padYFraction": 0.257,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_004~3_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.474,
+							"padYFraction": 0.1,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:ghostBear1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.219, "y": 0.773 },
+							"size": 0.148,
+							"foot": { "rotate": 25.44 }
+						},
+						{
+							"assetSpec": "comic:ghostbear2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.453, "y": 0.802 },
+							"size": 0.094,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:ghostbear3.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.607, "y": 0.564 },
+							"size": 0.152,
+							"foot": { "rotate": 27.737 }
+						},
+						{
+							"assetSpec": "comic:starFigureDance.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.495, "y": 0.227 },
+							"size": 0.385,
+							"foot": { "rotate": -20.05 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"assetSpec": "comic:ghostbear2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.121, "y": 0.817 },
+							"size": 0.134,
+							"foot": { "rotate": -35.154 }
+						},
+						{
+							"assetSpec": "comic:ghostBear1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.749, "y": 0.938 },
+							"size": 0.216
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_005~1_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.279,
+							"padYFraction": 0.18
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_005~2_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.063,
+							"padYFraction": 0.357
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_005~3_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.778,
+							"padYFraction": 0.309
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/bearGhostDead.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.321, "y": 0.649 },
+							"size": 0.368,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "dazzled", "strength": 0.3 }
+						},
+						{
+							"preTransformation": true,
+							"role": "target",
+							"facing": "left",
+							"anchor": { "x": 0.62, "y": 0.524 },
+							"size": 0.25,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 40.914, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_006~1_target",
+							"pointerOwner": "target"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/bearGhostDead.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.182, "y": 0.512 },
+							"size": 0.51,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "dazzled", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:smokeTendrils.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.025, "y": 0.219 },
+							"size": 0.336,
+							"nameTag": "none",
+							"foot": { "rotate": -29.518, "scaleX": 0.4 },
+							"colorFilter": { "filterName": "dazzled" }
+						},
+						{
+							"preTransformation": true,
+							"role": "target",
+							"facing": "left",
+							"anchor": { "x": 0.685, "y": 0.552 },
+							"size": 0.42,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 40.239, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_007~1_target",
+							"pointerOwner": "target"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/bearGhostDead.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.182, "y": 0.512 },
+							"size": 0.51,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" },
+							"colorFilter": { "filterName": "dazzled", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:smokeTendrils.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.446, "y": 0.023 },
+							"size": 0.336,
+							"nameTag": "none",
+							"foot": { "rotate": 13.601, "scaleX": 0.7 },
+							"colorFilter": { "filterName": "dazzled" }
+						},
+						{
+							"preTransformation": true,
+							"role": "target",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.703, "y": 0.548 },
+							"size": 0.42,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -15.794, "scaleY": 1 },
+							"colorFilter": { "filterName": "dazzled", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:smokeTendrils.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.283 },
+							"size": 0.336,
+							"nameTag": "none",
+							"foot": { "rotate": -29.518, "scaleX": 0.4 },
+							"colorFilter": { "filterName": "dazzled" }
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.398, "y": 0.504 },
+							"size": 0.428,
+							"nameTag": "none",
+							"foot": { "rotate": 17.56 }
+						},
+						{
+							"assetSpec": "comic:smokeSwirls.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.762, "y": 0.376 },
+							"size": 0.504,
+							"foot": { "rotate": -25.253 },
+							"color": { "r": "0.7", "g": "0.9", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:sparkleBig.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.819, "y": 0.632 },
+							"size": 0.207,
+							"foot": { "rotate": -28.935 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_008~1_speech"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/bearGhostDead.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.222, "y": 0.653 },
+							"size": 0.434,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.4" },
+							"colorFilter": { "filterName": "dazzled", "strength": 0.7 }
+						},
+						{
+							"role": "target",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.703, "y": 0.548 },
+							"size": 0.305,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -15.794, "scaleY": 1 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "dazzled", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:smokeTendrils.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.91, "y": 0.424 },
+							"size": 0.336,
+							"nameTag": "none",
+							"foot": { "rotate": -29.518, "scaleX": 0.4 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" },
+							"colorFilter": { "filterName": "dazzled" }
+						},
+						{
+							"assetSpec": "comic:smokeSwirls.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.762, "y": 0.376 },
+							"size": 0.504,
+							"nameTag": "none",
+							"foot": { "rotate": -25.253 },
+							"color": { "r": "0.7", "g": "0.9", "b": "1", "a": "0.4" }
+						},
+						{
+							"assetSpec": "comic:starConstellation.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.8, "y": 0.556 },
+							"size": 0.295,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_009~1_target",
+							"pointerOwner": "target"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"role": "target",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.703, "y": 0.548 },
+							"size": 0.305,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -7.748, "scaleY": 1 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "dazzled", "strength": 0.3 }
+						},
+						{
+							"assetSpec": "comic:smokeSwirls.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.74, "y": 0.581 },
+							"size": 0.349,
+							"nameTag": "none",
+							"foot": { "rotate": -18.431 },
+							"color": { "r": "0.7", "g": "0.9", "b": "1", "a": "0.2" }
+						},
+						{
+							"assetSpec": "comic:starConstellation.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.8, "y": 0.556 },
+							"size": 0.375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_010~1_target",
+							"pointerOwner": "target"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"role": "target",
+							"form": "frame-interested",
+							"facing": "left",
+							"anchor": { "x": 0.703, "y": 0.548 },
+							"size": 0.305,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -15.794, "scaleY": 1 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "dazzled", "strength": 0.1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_011~1_target",
+							"pointerOwner": "target"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_lowHillsNight.jpg",
+					"actorSlots": [
+						{
+							"role": "target",
+							"form": "frame-interested",
+							"facing": "left",
+							"anchor": { "x": 0.475, "y": 0.532 },
+							"size": 0.6,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -21.451, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_012~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.719,
+							"padYFraction": 0.213,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": 339.00003,
+								"dY": -19.00003,
+								"pointerOrientH": "onLeft",
+								"forcePointerImage": "speechShort"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_012~2_narration",
+							"style": "narration",
+							"padYFraction": 0.001
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "target",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.297, "y": -0.006 },
+							"size": 0.3,
+							"head": { "rotate": 17.241 }
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.767, "y": 0.158 },
+							"size": 0.3,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "deadBody" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_013~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.498,
+							"padYFraction": 0.057,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 177.54512,
+								"dX": -74,
+								"dY": 1,
+								"scaleX": 0.7121754,
+								"scaleY": 0.7121754,
+								"pointerOrientH": "onRight",
+								"pointerOrientV": "down"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "target",
+							"equipment": {},
+							"head": { "rotate": 14.281 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_014~1_target",
+							"pointerOwner": "target",
+							"location": "topRight",
+							"widthFraction": 0.7653529
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"head": { "rotate": -4.97 },
+							"color": { "r": "0.4", "g": "0.7", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "deadBody", "strength": 0.7 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_015~1_npc",
+							"pointerOwner": "npc",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "target",
+							"equipment": {},
+							"head": { "rotate": 12.529 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_016~1_target",
+							"pointerOwner": "target",
+							"location": "topRight",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.665, "y": 0.685 },
+							"size": 0.284,
+							"head": { "rotate": -5.599 },
+							"color": { "r": "0", "g": "0.4", "b": "0.5", "a": "1" },
+							"colorFilter": { "filterName": "deadBody", "strength": 0.8 }
+						},
+						{
+							"role": "target",
+							"anchor": { "x": 0.354, "y": 0.508 },
+							"size": 0.337,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 9.702 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_vanquishingTheBear",
+							"textKey": "~01~~panel_017~1_npc",
+							"style": "actionSmall",
+							"pointerOwner": "npc",
+							"padXFraction": 0.741,
+							"padYFraction": 0.197
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "Test",
+		"target": "target",
+		"value": "drauven",
+		"threshold": "1",
+		"onPass": {
+			"class": "ApplyTheme",
+			"target": "target",
+			"theme": "bear",
+			"piece": "tattoo",
+			"historyTextKey": "missionVictory_vanquishingTheBear.1.outcomeaddTheme.bear.replaceInjuries"
+		},
+		"onFail": {
+			"class": "ApplyTheme",
+			"target": "target",
+			"theme": "bear",
+			"piece": "tattoo",
+			"historyTextKey": "missionVictory_vanquishingTheBear.1.outcomeaddTheme.bear.replaceInjuries",
+			"replaceInjuredLimbs": true
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "shapeOfThings_npc",
+			"createEntity": {
+				"query": { "baseTag": "human" }
+			}
+		}
+	]
+}
+}

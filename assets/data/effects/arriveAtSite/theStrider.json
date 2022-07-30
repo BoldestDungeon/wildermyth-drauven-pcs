@@ -1,0 +1,3074 @@
+{
+"id": "encounter_heroesArriveAtSite_theStrider",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/theStrider",
+	"author": "Shae Rossi",
+	"STUB": "Outcomes: \n1 - flower theme for Hothead\n2 - nothing\n3 - Any of the bonuses will do, but I like Fortitude, Insight, or Endurance."
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterWeight": "2",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - High Magic Encounters"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "hothead",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(HOTHEAD,SNARK)",
+		"scoreThreshold": "80",
+		"notAlreadyMatchedAs": [],
+		"themes": { "eligibleForTheme": "vine", "eligibleForPiece": "head" }
+	},
+	{
+		"role": "coward",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "COWARD",
+		"scoreThreshold": "60",
+		"notAlreadyMatchedAs": [ "hothead" ]
+	},
+	{
+		"role": "bookish",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "BOOKISH",
+		"notAlreadyMatchedAs": [ "hothead", "coward" ]
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEADER",
+		"notAlreadyMatchedAs": [ "hothead", "coward", "bookish" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "BOOKISH",
+		"scoreThreshold": "60",
+		"fromRoles": [ "bookish" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.731, "y": 0.15 },
+							"drawDepth": -2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.178, "y": 0.749 },
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-interested",
+							"facing": "left",
+							"anchor": { "x": 0.456, "y": 0.665 },
+							"drawDepth": -1,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -33.207, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_001~1_coward",
+							"pointerOwner": "coward",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.169, "y": 0.644 },
+							"size": 0.867,
+							"drawDepth": -1,
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.538, "y": 0.263 },
+							"drawDepth": -2,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.145, "y": 0.584 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-grim",
+							"facing": "left",
+							"anchor": { "x": 0.946, "y": 0.556 },
+							"nameTag": "none",
+							"head": { "rotate": 32.8 }
+						},
+						{
+							"role": "coward",
+							"form": "frame-interested",
+							"facing": "left",
+							"anchor": { "x": 0.556, "y": 0.58 },
+							"size": 0.666,
+							"nameTag": "none"
+						},
+						{
+							"role": "hothead",
+							"form": "frame-grim",
+							"facing": "left",
+							"anchor": { "x": 0.796, "y": 0.58 },
+							"size": 0.447,
+							"nameTag": "none",
+							"head": { "rotate": -28.834, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_002~1_leader",
+							"pointerOwner": "leader",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.731, "y": 0.15 },
+							"drawDepth": -2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.178, "y": 0.749 },
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-interested",
+							"facing": "left",
+							"anchor": { "x": 0.473, "y": 0.62 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": 5.587, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_003~1_coward",
+							"pointerOwner": "coward",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 53.999996, "dY": 2.0000153, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.201, "y": 0.681 },
+							"size": 0.727,
+							"drawDepth": -1,
+							"head": { "rotate": 2.392, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.466, "y": 0.368 },
+							"drawDepth": -2,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.144, "y": 0.569 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 0.362 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-interested",
+							"facing": "left",
+							"anchor": { "x": 0.732, "y": 0.635 },
+							"size": 0.656,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 15.479, "scaleY": -1 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-interested",
+							"facing": "left",
+							"anchor": { "x": 0.88, "y": 0.564 },
+							"size": 0.502,
+							"nameTag": "none",
+							"head": { "rotate": 2.959, "scaleY": 1 }
+						},
+						{
+							"role": "bookish",
+							"facing": "left",
+							"anchor": { "x": 0.593, "y": 0.537 },
+							"size": 0.497,
+							"nameTag": "none",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_004~1_coward",
+							"pointerOwner": "coward",
+							"padXFraction": 0.425,
+							"padYFraction": 0.039,
+							"widthFraction": 0.44334278,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.076, "y": 0.509 },
+							"size": 0.423,
+							"drawDepth": -1,
+							"head": { "rotate": -34.719, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.485, "y": 0.368 },
+							"size": 1.037,
+							"drawDepth": -2,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.144, "y": 0.569 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 2.706 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-interested",
+							"anchor": { "x": 0.261, "y": 0.417 },
+							"size": 0.347,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -40.353, "scaleY": 1 }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-dubious",
+							"facing": "left",
+							"anchor": { "x": 0.985, "y": 0.51 },
+							"size": 0.381,
+							"nameTag": "none",
+							"head": { "rotate": -17.275, "scaleY": 1 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.75, "y": 0.411 },
+							"size": 0.338,
+							"nameTag": "none",
+							"head": { "rotate": -34.914, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_005~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.362,
+							"padYFraction": 0.225,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_flowerTrack.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.102, "y": 0.191 },
+							"size": 0.306,
+							"head": { "rotate": -12.671 }
+						},
+						{
+							"role": "bookish",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.848, "y": 0.496 },
+							"size": 0.288,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -27.167 }
+						},
+						{
+							"role": "coward",
+							"form": "frame-surprised",
+							"focus": "foot",
+							"anchor": { "x": 0.28, "y": 0.572 },
+							"size": 0.281,
+							"nameTag": "none",
+							"head": { "rotate": -10.341 }
+						},
+						{
+							"assetSpec": "comic:smokeDirectional.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.076, "y": 0.141 },
+							"size": 0.411,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"foot": { "rotate": 6.239 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_006~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "coward",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.379, "y": 0.527 },
+							"size": 0.871,
+							"head": { "rotate": -27.973 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.325, "y": -0.159 },
+							"drawDepth": -2,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.374, "y": 0.813 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_007~1_coward",
+							"pointerOwner": "coward"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.515, "y": 0.519 },
+							"size": 0.871,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -31.465, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.325, "y": -0.159 },
+							"drawDepth": -2,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.374, "y": 0.813 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_008~1_bookish",
+							"pointerOwner": "bookish"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.515, "y": 0.519 },
+							"size": 0.871,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -35.248, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.325, "y": -0.159 },
+							"drawDepth": -2,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.374, "y": 0.813 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_009~1_bookish",
+							"pointerOwner": "bookish"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.731, "y": 0.15 },
+							"drawDepth": -2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.14, "y": 0.753 },
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-scared",
+							"anchor": { "x": 0.231, "y": 0.649 },
+							"size": 0.73,
+							"drawDepth": -1,
+							"head": { "rotate": 6.624, "scaleY": 1 },
+							"foot": { "rotate": 2.921 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.753, "y": 0.512 },
+							"drawDepth": -1,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -12.926, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_010~1_coward",
+							"pointerOwner": "coward",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 37.999878, "dY": -4.0000153, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_010~2_action",
+							"style": "action",
+							"padXFraction": 0.313,
+							"padYFraction": 0.06
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.202, "y": 0.249 },
+							"drawDepth": -2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.553, "y": 0.568 },
+							"size": 0.823,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": 30.256 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.23, "y": 0.636 },
+							"size": 0.665,
+							"nameTag": "none",
+							"head": { "rotate": -26.971, "scaleY": -1 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-scared",
+							"facing": "left",
+							"anchor": { "x": 0.802, "y": 0.471 },
+							"drawDepth": -1,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -21.078, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_011~1_coward",
+							"pointerOwner": "coward"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_hillsPineEerie.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:crowFlock.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.674, "y": 0.528 },
+							"size": 0.106
+						},
+						{
+							"assetSpec": "comic:crowFlock.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.266, "y": 0.275 },
+							"size": 0.074,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:actionLines_arcShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.927, "y": 0.243 },
+							"size": 0.45,
+							"foot": { "rotate": -83.157 }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.459, "y": 0.239 },
+							"size": 0.45,
+							"foot": { "rotate": 104.381 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.538, "y": -0.01 },
+							"size": 0.438,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_012~1_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.681,
+							"padYFraction": 0.257,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_012~2_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.109,
+							"padYFraction": 0.502,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_012~3_bookish",
+							"style": "action",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.52,
+							"padYFraction": 0.655,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.202, "y": 0.249 },
+							"drawDepth": -2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.014, "y": 0.484 },
+							"size": 0.823,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": 30.256 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.287, "y": 0.55 },
+							"size": 0.664,
+							"head": { "rotate": -39.198, "scaleY": -1 }
+						},
+						{
+							"role": "coward",
+							"form": "frame-grim",
+							"anchor": { "x": 0.847, "y": 0.558 },
+							"size": 0.589,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 30.793 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_013~1_leader",
+							"pointerOwner": "leader",
+							"widthFraction": 0.5755814
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.101, "y": -0.079 },
+							"drawDepth": -2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.039, "y": 0.286 },
+							"size": 0.823,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": 30.256 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.467, "y": 0.49 },
+							"size": 0.878,
+							"head": { "rotate": -39.198, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_014~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.3, "y": -0.449 },
+							"drawDepth": -2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.039, "y": 0.286 },
+							"size": 0.823,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": 30.256 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.628, "y": 0.505 },
+							"size": 0.878,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 5.518, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_015~1_hothead",
+							"pointerOwner": "hothead",
+							"padXFraction": 0.13,
+							"padYFraction": 0.082,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.101, "y": -0.079 },
+							"drawDepth": -2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.039, "y": 0.286 },
+							"size": 0.823,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": 30.256 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.409, "y": 0.506 },
+							"size": 0.885,
+							"head": { "rotate": -5.661, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_016~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.101, "y": -0.079 },
+							"drawDepth": -2,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.039, "y": 0.286 },
+							"size": 0.823,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": 30.256 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+						},
+						{
+							"role": "hothead",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.824, "y": 0.544 },
+							"size": 0.708,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -0.26, "scaleY": -1 }
+						},
+						{
+							"role": "coward",
+							"form": "frame-scared",
+							"anchor": { "x": 0.282, "y": 0.53 },
+							"size": 0.589,
+							"head": { "rotate": -5.225, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_017~1_hothead",
+							"pointerOwner": "hothead",
+							"location": "topRight",
+							"padXFraction": 0.047,
+							"padYFraction": 0.054,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -3, "dY": 2.9999847, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~01~prompt~panel_017~2_coward",
+							"pointerOwner": "coward",
+							"padXFraction": 0.032,
+							"padYFraction": 0.202,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 176.63351,
+								"dX": -106,
+								"dY": -8.9999695,
+								"pointerOrientH": "onRight",
+								"pointerOrientV": "down"
+							}
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"bg": "comicBG_forestBlue.jpg",
+							"actorSlots": [
+								{
+									"role": "hothead",
+									"form": "frame-scheming",
+									"anchor": { "x": 0.512, "y": 0.5 },
+									"size": 0.745,
+									"head": { "rotate": 16.069, "scaleY": 1 },
+									"foot": { "rotate": -1.501 }
+								},
+								{
+									"assetSpec": "comic:smokeCloud.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.606, "y": 0.296 },
+									"size": 0.438,
+									"nameTag": "bottomRight",
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+								},
+								{
+									"assetSpec": "comic:smokeCloud.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.651, "y": 0.346 },
+									"size": 0.74,
+									"drawDepth": -1,
+									"nameTag": "none",
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/theStrider",
+									"textKey": "~02~choice_one~panel_001~1_hothead",
+									"pointerOwner": "hothead"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "coward",
+									"form": "frame-skeptical",
+									"facing": "left",
+									"anchor": { "x": 0.522, "y": 0.499 },
+									"size": 0.793,
+									"head": { "rotate": -14.472, "scaleY": -1 }
+								},
+								{
+									"assetSpec": "comic:smokeCloud.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.538, "y": -0.01 },
+									"size": 0.438,
+									"nameTag": "bottomRight",
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+								},
+								{
+									"assetSpec": "comic:smokeCloud.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.651, "y": 0.346 },
+									"size": 0.438,
+									"drawDepth": -1,
+									"nameTag": "none",
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/theStrider",
+									"textKey": "~03~choice_two~panel_001~1_coward",
+									"pointerOwner": "coward"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "bookish",
+									"form": "frame-interested",
+									"facing": "left",
+									"anchor": { "x": 0.688, "y": 0.468 },
+									"size": 0.941,
+									"head": { "rotate": -38.853 }
+								},
+								{
+									"assetSpec": "comic:smokeCloud.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.538, "y": -0.01 },
+									"size": 0.438,
+									"nameTag": "bottomRight",
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+								},
+								{
+									"assetSpec": "comic:smokeCloud.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.741, "y": 0.609 },
+									"size": 0.614,
+									"drawDepth": -1,
+									"nameTag": "none",
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/theStrider",
+									"textKey": "~04~choice_three~panel_001~1_bookish",
+									"pointerOwner": "bookish",
+									"pointerAdjust": { "dX": -37, "dY": -1.9999847 }
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "volunteer"
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "hothead",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_forestBlue.jpg",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-joke",
+										"facing": "left",
+										"anchor": { "x": 0.112, "y": 0.628 },
+										"size": 0.761,
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.439, "y": 0.403 },
+										"size": 0.551,
+										"drawDepth": -1,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.083, "y": 0.452 },
+										"size": 1.272,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "coward",
+										"form": "frame-grim",
+										"facing": "left",
+										"anchor": { "x": 0.855, "y": 0.637 },
+										"size": 0.542,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -35.028, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_001~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.155,
+										"padYFraction": 0.619,
+										"widthFraction": 0.78169763,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -174.62474, "dX": 155.00006, "dY": 96, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_001~2_coward",
+										"pointerOwner": "coward"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.818, "y": 0.846 },
+										"size": 0.551,
+										"drawDepth": -1,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.187, "y": 0.375 },
+										"size": 1.272,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "coward",
+										"form": "frame-interested",
+										"facing": "left",
+										"anchor": { "x": 0.778, "y": 0.595 },
+										"size": 0.638,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_002~1_coward",
+										"pointerOwner": "coward",
+										"location": "topRight",
+										"padXFraction": 0.361,
+										"padYFraction": 0.061,
+										"widthFraction": 0.571907,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.721, "y": 0.769 },
+										"size": 1.043,
+										"drawDepth": -2,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.23, "y": 0.611 },
+										"size": 1.272,
+										"drawDepth": -2,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-interested",
+										"facing": "left",
+										"anchor": { "x": 0.686, "y": 0.53 },
+										"size": 0.708,
+										"nameTag": "none"
+									},
+									{
+										"role": "bookish",
+										"form": "frame-interested",
+										"facing": "left",
+										"anchor": { "x": 0.492, "y": 0.565 },
+										"size": 0.438,
+										"nameTag": "none"
+									},
+									{
+										"role": "coward",
+										"form": "frame-grim",
+										"facing": "left",
+										"anchor": { "x": 0.886, "y": 0.538 },
+										"size": 0.51,
+										"nameTag": "none",
+										"head": { "rotate": -31.159, "scaleY": -1 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-grim",
+										"facing": "left",
+										"anchor": { "x": 0.204, "y": 0.565 },
+										"size": 0.594,
+										"drawDepth": -1,
+										"head": { "rotate": 14.011 }
+									},
+									{
+										"assetSpec": "comic:actionLines_shake1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.335, "y": 0.695 },
+										"size": 0.302,
+										"foot": { "rotate": -149.237 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_003~1_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.432,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.721, "y": 0.769 },
+										"size": 1.043,
+										"drawDepth": -2,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.294, "y": 0.6 },
+										"size": 1.272,
+										"drawDepth": -2,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-interested",
+										"facing": "left",
+										"anchor": { "x": 0.622, "y": 0.484 },
+										"size": 0.408,
+										"nameTag": "none",
+										"head": { "rotate": -5.759, "scaleY": -1 }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-interested",
+										"facing": "left",
+										"anchor": { "x": 0.511, "y": 0.447 },
+										"size": 0.323,
+										"nameTag": "none"
+									},
+									{
+										"role": "coward",
+										"form": "frame-grim",
+										"facing": "left",
+										"anchor": { "x": 0.774, "y": 0.45 },
+										"size": 0.369,
+										"nameTag": "none",
+										"head": { "rotate": 13.836, "scaleY": 1 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-grim",
+										"facing": "left",
+										"anchor": { "x": 0.143, "y": 0.5 },
+										"size": 0.532,
+										"drawDepth": -1,
+										"head": { "rotate": -34.104, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_004~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.058,
+										"padYFraction": 0.113,
+										"widthFraction": 0.49716714,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onRight" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.721, "y": 0.769 },
+										"size": 1.043,
+										"drawDepth": -2,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.48, "y": 0.077 },
+										"size": 0.99,
+										"drawDepth": -2,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.593, "y": 0.301 },
+										"size": 0.27,
+										"nameTag": "none",
+										"head": { "rotate": -5.759, "scaleY": -1 }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-interested",
+										"facing": "left",
+										"anchor": { "x": 0.503, "y": 0.272 },
+										"size": 0.226,
+										"nameTag": "none",
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "coward",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.715, "y": 0.302 },
+										"size": 0.231,
+										"nameTag": "none",
+										"head": { "rotate": 4.899, "scaleY": -1 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.246, "y": 0.324 },
+										"size": 0.267,
+										"drawDepth": -1,
+										"head": { "rotate": 11.27, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:action_pointerSquiggly2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.907, "y": 0.5 },
+										"size": 0.278,
+										"foot": { "rotate": 10.25 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.185, "y": 0.698 },
+										"size": 0.294,
+										"color": { "r": "0.3", "g": "0.6", "b": "0.5", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_shake1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.078, "y": 0.557 },
+										"size": 0.262,
+										"foot": { "rotate": 147.339 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_005~1_actionLarge",
+										"style": "actionLarge",
+										"padXFraction": 0.047,
+										"padYFraction": 0.188,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_005~2_bookish",
+										"style": "action",
+										"pointerOwner": "bookish",
+										"location": "bottomRight",
+										"padXFraction": 0.09,
+										"padYFraction": 0.488,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_005~3_actionSmall",
+										"style": "actionSmall",
+										"padXFraction": 0.825,
+										"padYFraction": 0.553
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.696, "y": 0.25 },
+										"size": 0.76,
+										"drawDepth": -2,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.766, "y": -0.022 },
+										"size": 0.99,
+										"drawDepth": -2,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-rage",
+										"anchor": { "x": 0.643, "y": 0.305 },
+										"size": 0.27,
+										"nameTag": "none",
+										"head": { "rotate": 4.615, "scaleY": 1 },
+										"foot": { "rotate": -2.511 }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.543, "y": 0.28 },
+										"size": 0.226,
+										"nameTag": "none",
+										"head": { "scaleY": 1 }
+									},
+									{
+										"role": "coward",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.754, "y": 0.291 },
+										"size": 0.231,
+										"nameTag": "none",
+										"head": { "rotate": -9.933, "scaleY": 1 },
+										"foot": { "rotate": 6.257 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.214, "y": 0.324 },
+										"size": 0.267,
+										"drawDepth": -1,
+										"head": { "rotate": 15.171, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:actionLines_shake2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.482, "y": 0.229 },
+										"size": 0.242,
+										"drawDepth": -10,
+										"foot": { "rotate": 34.835 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_006~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.293,
+										"padYFraction": 0.455,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 32, "dY": -1.9999847, "pointerOrientH": "onRight" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_006~2_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.486,
+										"padYFraction": 0.359,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourth",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.491, "y": 0.622 },
+										"head": { "rotate": 14.539 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.052, "y": 0.288 },
+										"size": 0.738,
+										"drawDepth": -2,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_007~1_npc",
+										"pointerOwner": "npc",
+										"location": "topRight",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.817, "y": -0.158 },
+										"size": 1.043,
+										"drawDepth": -2,
+										"color": { "r": "0.6", "g": "1", "b": "0.8", "a": "0.85" }
+									},
+									{
+										"assetSpec": "comic:flowerMonster.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.171, "y": 1.783 },
+										"size": 0.961,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": -10.851 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_008~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourth",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.491, "y": 0.622 },
+										"size": 1.106,
+										"head": { "rotate": 33.19 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.972, "y": 0.013 },
+										"size": 0.738,
+										"drawDepth": -2,
+										"nameTag": "bottomRight"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.52, "y": 0.168 },
+										"size": 1.722,
+										"nameTag": "none",
+										"color": { "r": "0.4", "g": "1", "b": "0.7", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_009~1_npc",
+										"pointerOwner": "npc",
+										"location": "topRight",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.74, "y": 0.292 },
+										"size": 0.76,
+										"drawDepth": -2,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.766, "y": -0.022 },
+										"size": 0.99,
+										"drawDepth": -2,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.4", "g": "1", "b": "0.7", "a": "0.5" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-rage",
+										"anchor": { "x": 0.708, "y": 0.293 },
+										"size": 0.27,
+										"nameTag": "none",
+										"head": { "rotate": 4.615, "scaleY": 1 },
+										"foot": { "rotate": -2.511 },
+										"colorFilter": { "filterName": "dazzled" }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.591, "y": 0.272 },
+										"size": 0.226,
+										"nameTag": "none",
+										"head": { "scaleY": 1 },
+										"colorFilter": { "filterName": "dazzled" }
+									},
+									{
+										"role": "coward",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.885, "y": 0.294 },
+										"size": 0.231,
+										"nameTag": "none",
+										"head": { "rotate": -9.933, "scaleY": 1 },
+										"foot": { "rotate": 6.257 },
+										"colorFilter": { "filterName": "dazzled" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.153, "y": 0.339 },
+										"size": 0.267,
+										"drawDepth": -1,
+										"head": { "rotate": -14.422, "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.492, "y": 0.378 },
+										"size": 0.033,
+										"foot": { "rotate": 128.285 }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": 0.408 },
+										"size": 0.079
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.646, "y": 0.443 },
+										"size": 0.06,
+										"foot": { "rotate": -12.842 }
+									},
+									{
+										"assetSpec": "comic:action_popR.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.772, "y": 0.668 },
+										"size": 0.321,
+										"foot": { "rotate": 43.535 }
+									},
+									{
+										"assetSpec": "comic:action_popR.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.536, "y": 0.645 },
+										"size": 0.323,
+										"foot": { "rotate": 147.872 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_010~1_npc",
+										"style": "actionSmall",
+										"pointerOwner": "npc",
+										"padXFraction": 0.574,
+										"padYFraction": 0.36,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 32, "dY": -1.9999847, "pointerOrientH": "onRight" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_010~2_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.486,
+										"padYFraction": 0.359,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_010~3_bookish",
+										"pointerOwner": "bookish"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-grim",
+										"facing": "left",
+										"anchor": { "x": 0.436, "y": 0.618 },
+										"head": { "rotate": 24.431 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.031, "y": 0.124 },
+										"size": 0.738,
+										"drawDepth": -2,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.5", "g": "1", "b": "0.7", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_011~1_npc",
+										"pointerOwner": "npc",
+										"location": "topRight",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.769, "y": -0.368 },
+										"size": 1.043,
+										"drawDepth": -2,
+										"color": { "r": "0.6", "g": "1", "b": "0.8", "a": "0.85" }
+									},
+									{
+										"assetSpec": "comic:flowerMonster.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.259, "y": 0.72 },
+										"size": 0.369,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": -1.769 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-rage",
+										"focus": "foot",
+										"anchor": { "x": 0.944, "y": -0.02 },
+										"size": 0.12,
+										"nameTag": "none",
+										"head": { "rotate": 4.615, "scaleY": 1 },
+										"foot": { "rotate": -2.511 },
+										"colorFilter": { "filterName": "dazzled" }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-surprised",
+										"focus": "foot",
+										"anchor": { "x": 0.898, "y": -0.01 },
+										"size": 0.094,
+										"nameTag": "none",
+										"head": { "scaleY": 1 },
+										"colorFilter": { "filterName": "dazzled" }
+									},
+									{
+										"role": "coward",
+										"form": "frame-surprised",
+										"focus": "foot",
+										"anchor": { "x": 0.981, "y": -0.026 },
+										"size": 0.109,
+										"nameTag": "none",
+										"head": { "rotate": -9.933, "scaleY": 1 },
+										"foot": { "rotate": 6.257 },
+										"colorFilter": { "filterName": "dazzled" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.636, "y": -0.012 },
+										"size": 0.12,
+										"drawDepth": -1,
+										"head": { "rotate": 19.711, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:actionLines_shake1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.699, "y": 0.157 },
+										"size": 0.099,
+										"foot": { "rotate": -142.595 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_012~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.293,
+										"padYFraction": 0.455,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 32, "dY": -1.9999847, "pointerOrientH": "onRight" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.766, "y": -0.037 },
+										"size": 1.403,
+										"drawDepth": -2,
+										"color": { "r": "0.5", "g": "1", "b": "0.7", "a": "0.5" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.479, "y": 0.485 },
+										"drawDepth": -1,
+										"head": { "rotate": 24.853, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_013~1_action",
+										"style": "action",
+										"padXFraction": 0.087,
+										"padYFraction": 0.011,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-happy",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.86, "y": -0.103 },
+										"size": 0.182,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 40.694 }
+									},
+									{
+										"assetSpec": "comic:flowerMonster.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.087, "y": 0.455 },
+										"size": 0.569,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 0.678 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_014~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hothead",
+										"form": "frame-hit",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.585, "y": 0.637 },
+										"size": 0.542,
+										"head": { "rotate": -41.849 },
+										"color": { "r": "0.8", "g": "1", "b": "1", "a": "1" },
+										"colorFilter": { "filterName": "selected", "strength": 3 }
+									},
+									{
+										"assetSpec": "vfx:bludgeon",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.604, "y": 0.42 },
+										"nameTag": "bottomRight",
+										"color": { "r": "0", "g": "1", "b": "0", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeTendrilsWell.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -1.087, "y": 0.58 },
+										"size": 0.669,
+										"nameTag": "none",
+										"color": { "r": "0.7", "g": "1", "b": "0.6", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_015~1_hothead",
+										"pointerOwner": "hothead"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hothead",
+										"form": "frame-interested",
+										"facing": "left",
+										"anchor": { "x": 0.472, "y": 0.511 },
+										"head": { "rotate": -46.521, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_016~1_actionSmall",
+										"style": "actionSmall",
+										"padXFraction": 0.064,
+										"padYFraction": 0.023
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.769, "y": -0.368 },
+										"size": 1.043,
+										"drawDepth": -2,
+										"color": { "r": "0.6", "g": "1", "b": "0.8", "a": "0.3" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-rage",
+										"focus": "foot",
+										"anchor": { "x": 0.944, "y": -0.02 },
+										"size": 0.12,
+										"nameTag": "none",
+										"head": { "rotate": 4.615, "scaleY": 1 },
+										"foot": { "rotate": -2.511 },
+										"colorFilter": { "filterName": "dazzled", "strength": 0.7 }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-surprised",
+										"focus": "foot",
+										"anchor": { "x": 0.898, "y": -0.01 },
+										"size": 0.094,
+										"nameTag": "none",
+										"head": { "scaleY": 1 },
+										"colorFilter": { "filterName": "dazzled", "strength": 0.7 }
+									},
+									{
+										"role": "coward",
+										"form": "frame-surprised",
+										"focus": "foot",
+										"anchor": { "x": 0.981, "y": -0.026 },
+										"size": 0.109,
+										"nameTag": "none",
+										"head": { "rotate": -9.933, "scaleY": 1 },
+										"foot": { "rotate": 6.257 },
+										"colorFilter": { "filterName": "dazzled", "strength": 0.7 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-interested",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.636, "y": -0.012 },
+										"size": 0.12,
+										"drawDepth": -1,
+										"head": { "rotate": 19.711, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:comicEmotion_exclamation.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.643, "y": 0.355 },
+										"size": 0.426
+									},
+									{
+										"assetSpec": "asset:ui/scale/unpacked/particle_leafBright3.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.091, "y": 0.504 },
+										"size": 0.188,
+										"foot": { "rotate": -80.888 }
+									},
+									{
+										"assetSpec": "asset:ui/scale/unpacked/particle_leaf3.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.049, "y": 0.58 },
+										"size": 0.075,
+										"foot": { "rotate": 20.556 }
+									},
+									{
+										"assetSpec": "asset:ui/scale/unpacked/particle_leaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.041, "y": 0.523 },
+										"size": 0.152,
+										"foot": { "rotate": 37.999 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_017~1_hothead",
+										"style": "action",
+										"pointerOwner": "hothead",
+										"padXFraction": 0.072,
+										"padYFraction": 0.31,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 32, "dY": -1.9999847, "pointerOrientH": "onRight" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_017~2_bookish",
+										"pointerOwner": "bookish"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.305 },
+										"size": 1.043,
+										"drawDepth": -2,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.706, "y": -0.599 },
+										"size": 1.023,
+										"drawDepth": -2,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-rage",
+										"anchor": { "x": 0.743, "y": 0.556 },
+										"size": 0.582,
+										"nameTag": "none",
+										"head": { "rotate": -5.525, "scaleY": 1 },
+										"foot": { "rotate": -2.511 },
+										"colorFilter": { "filterName": "dazzled", "strength": 0.3 }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.537, "y": 0.573 },
+										"size": 0.573,
+										"nameTag": "none",
+										"head": { "rotate": -3.051, "scaleY": 1 },
+										"foot": {},
+										"colorFilter": { "filterName": "dazzled", "strength": 0.4 }
+									},
+									{
+										"role": "coward",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.935, "y": 0.516 },
+										"size": 0.61,
+										"nameTag": "none",
+										"head": { "rotate": -9.933, "scaleY": 1 },
+										"foot": { "rotate": 6.257 },
+										"colorFilter": { "filterName": "dazzled", "strength": 0.4 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.132, "y": 0.588 },
+										"size": 0.623,
+										"drawDepth": -1,
+										"head": { "rotate": 3.7587647 }
+									},
+									{
+										"assetSpec": "comic:comicEmotion_poppedBubbles.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.685, "y": 0.821 },
+										"size": 0.568
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.598, "y": 0.886 },
+										"size": 0.073
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.714 },
+										"size": 0.03
+									},
+									{
+										"assetSpec": "comic:comicEmotion_poppedBubbles.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.472, "y": 0.894 },
+										"size": 0.368,
+										"foot": { "rotate": -63.931 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_018~1_bookish",
+										"style": "actionSmall",
+										"pointerOwner": "bookish",
+										"padXFraction": 0.49,
+										"padYFraction": 0.118
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.636, "y": 0.372 },
+										"size": 1.043,
+										"drawDepth": -2,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.2" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-angry",
+										"anchor": { "x": 0.816, "y": 0.495 },
+										"size": 0.703,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 5.616 },
+										"foot": { "rotate": -1.464 }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-grim",
+										"anchor": { "x": 0.57, "y": 0.5 },
+										"size": 0.517,
+										"nameTag": "none",
+										"head": { "rotate": -4.079, "scaleY": 1 }
+									},
+									{
+										"role": "coward",
+										"form": "frame-grim",
+										"anchor": { "x": 0.891, "y": 0.489 },
+										"size": 0.51,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -1.203, "scaleY": 1 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.17, "y": 0.584 },
+										"size": 0.579,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -3.066 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_019~1_leader",
+										"pointerOwner": "leader",
+										"location": "topRight",
+										"padXFraction": 0.024,
+										"padYFraction": 0.075,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_019~2_bookish",
+										"pointerOwner": "bookish",
+										"padXFraction": 0.354,
+										"padYFraction": 0.062,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_019~3_hothead",
+										"pointerOwner": "hothead",
+										"padXFraction": 0.28,
+										"padYFraction": 0.198,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 19, "dY": -4.0000153 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.636, "y": 0.372 },
+										"size": 1.043,
+										"drawDepth": -2,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.2" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-angry",
+										"anchor": { "x": 0.961, "y": 0.545 },
+										"size": 0.703,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 5.616 },
+										"foot": { "rotate": -1.464 }
+									},
+									{
+										"role": "coward",
+										"form": "frame-skeptical",
+										"anchor": { "x": 0.595, "y": 0.527 },
+										"size": 0.513,
+										"nameTag": "none",
+										"head": { "rotate": -4.079, "scaleY": -1 }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-grim",
+										"anchor": { "x": 0.85, "y": 0.549 },
+										"size": 0.51,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -1.203, "scaleY": 1 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-dubious",
+										"equipment": {},
+										"anchor": { "x": 0.233, "y": 0.569 },
+										"size": 0.579,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -3.066 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_020~1_coward",
+										"pointerOwner": "coward",
+										"padXFraction": 0.343,
+										"padYFraction": 0.062,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~05~player_chose_one~panel_020~2_hothead",
+										"pointerOwner": "hothead",
+										"padXFraction": 0.315,
+										"padYFraction": 0.198,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 19, "dY": -4.0000153 }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Test",
+					"target": "hothead",
+					"value": "drauven",
+					"threshold": "1",
+					"onPass": {
+						"class": "ApplyTheme",
+						"target": "hothead",
+						"theme": "vine",
+						"piece": "head"
+					},
+					"onFail": {
+						"class": "ApplyTheme",
+						"target": "hothead",
+						"theme": "vine",
+						"piece": "head",
+						"replaceInjuredLimbs": true
+					}
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "coward",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "coward",
+										"form": "frame-grim",
+										"anchor": { "x": 0.629, "y": 0.58 },
+										"size": 0.744,
+										"head": { "rotate": -9.884, "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.538, "y": -0.01 },
+										"size": 0.438,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.346 },
+										"size": 0.703,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~06~player_chose_two~panel_001~1_coward",
+										"pointerOwner": "coward"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.8, "y": 0.461 },
+										"size": 0.885,
+										"drawDepth": -1,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-grim",
+										"anchor": { "x": 0.671, "y": 0.637 },
+										"size": 0.61,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -19.789, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~06~player_chose_two~panel_002~1_speech",
+										"fallbackSlotOwner": 0,
+										"pointerAdjust": { "dX": -40, "dY": -0.99993896 }
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~06~player_chose_two~panel_002~2_hothead",
+										"pointerOwner": "hothead",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "bookish",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "bookish",
+										"form": "frame-happy",
+										"anchor": { "x": 0.667, "y": 0.592 },
+										"head": { "rotate": 0.039, "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.8, "y": 0.461 },
+										"size": 0.885,
+										"drawDepth": -1,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~07~player_chose_three~panel_001~1_speech",
+										"fallbackSlotOwner": 1,
+										"pointerAdjust": { "dX": -40, "dY": -0.99993896 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.948, "y": 0.835 },
+										"size": 0.885,
+										"drawDepth": -1,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.282, "y": 0.324 },
+										"size": 0.885,
+										"drawDepth": -1,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-happy",
+										"facing": "left",
+										"anchor": { "x": 0.801, "y": 0.595 },
+										"size": 0.613,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 10.312, "scaleY": -1 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-skeptical",
+										"anchor": { "x": 0.079, "y": 0.58 },
+										"size": 0.611,
+										"nameTag": "none",
+										"head": { "rotate": -0.932, "scaleY": 1 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"anchor": { "x": 0.358, "y": 0.534 },
+										"size": 0.533,
+										"head": { "rotate": 2.338, "scaleY": -1 }
+									},
+									{
+										"role": "coward",
+										"form": "frame-grim",
+										"anchor": { "x": 0.208, "y": 0.573 },
+										"size": 0.481,
+										"head": { "rotate": -0.362, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~07~player_chose_three~panel_002~1_bookish",
+										"pointerOwner": "bookish",
+										"location": "topRight",
+										"padXFraction": 0.031,
+										"padYFraction": 0.058,
+										"widthFraction": 0.4036827,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~07~player_chose_three~panel_002~2_hothead",
+										"pointerOwner": "hothead",
+										"padXFraction": 0.046,
+										"padYFraction": 0.07,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~07~player_chose_three~panel_002~3_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.257,
+										"padYFraction": 0.179,
+										"widthFraction": 0.29036835,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.948, "y": 0.835 },
+										"size": 0.885,
+										"drawDepth": -1,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.159, "y": -0.286 },
+										"size": 0.885,
+										"drawDepth": -1,
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "bookish",
+										"anchor": { "x": 0.469, "y": 0.6 },
+										"head": { "rotate": -23.771, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~07~player_chose_three~panel_003~1_bookish",
+										"pointerOwner": "bookish"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-happy",
+										"anchor": { "x": 0.472, "y": 0.653 },
+										"head": { "rotate": -7.95 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.948, "y": 0.835 },
+										"size": 0.885,
+										"drawDepth": -1,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.596, "y": -0.142 },
+										"size": 0.885,
+										"drawDepth": -1,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~07~player_chose_three~panel_004~1_leader",
+										"pointerOwner": "leader",
+										"location": "topRight",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.948, "y": 0.835 },
+										"size": 0.885,
+										"drawDepth": -1,
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.234, "y": 0.14 },
+										"size": 0.774,
+										"drawDepth": -1,
+										"nameTag": "bottomRight",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"role": "bookish",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.884, "y": -0.123 },
+										"size": 0.367,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -22.371, "scaleY": -1 }
+									},
+									{
+										"role": "hothead",
+										"form": "frame-joke",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.27, "y": -0.118 },
+										"size": 0.384,
+										"nameTag": "none",
+										"head": { "rotate": -11.085, "scaleY": 1 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.369, "y": -0.076 },
+										"size": 0.324,
+										"head": { "rotate": -24.802, "scaleY": 1 }
+									},
+									{
+										"role": "coward",
+										"form": "frame-grim",
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.731, "y": -0.156 },
+										"size": 0.384,
+										"head": { "rotate": -0.362, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "scenery:cookingPot.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.535, "y": 0.107 },
+										"size": 0.207
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.52, "y": -0.149 },
+										"size": 1.447,
+										"color": { "r": "1", "g": "0.8", "b": "0.2", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeRising.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.535, "y": 0.405 },
+										"size": 0.072
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~07~player_chose_three~panel_005~1_bookish",
+										"pointerOwner": "bookish",
+										"location": "topRight",
+										"padXFraction": 0.031,
+										"padYFraction": 0.058,
+										"widthFraction": 0.4036827,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/theStrider",
+										"textKey": "~07~player_chose_three~panel_005~2_hothead",
+										"pointerOwner": "hothead",
+										"padXFraction": 0.105,
+										"padYFraction": 0.113,
+										"widthFraction": 0.32152978,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "FORTITUDE" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "AddRememberedPlace",
+		"target": "overlandTile",
+		"icon": "remembered_theStrider"
+	},
+	{
+		"class": "SnapshotFollowup",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_flowerTrack.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.102, "y": 0.191 },
+							"size": 0.306,
+							"head": { "rotate": -12.671 },
+							"color": { "r": "0.39181358", "g": "0.69590682", "b": "0.59454238", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"role": "bookish",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.848, "y": 0.496 },
+							"size": 0.288,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -27.167 },
+							"color": { "r": "0.39181358", "g": "0.69590682", "b": "0.59454238", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-surprised",
+							"focus": "foot",
+							"anchor": { "x": 0.272, "y": 0.591 },
+							"size": 0.281,
+							"nameTag": "none",
+							"head": { "rotate": -10.341 },
+							"color": { "r": "0.39181358", "g": "0.69590682", "b": "0.59454238", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comic:smokeDirectional.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.148, "y": 0.143 },
+							"size": 0.411,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"foot": { "rotate": 6.239 },
+							"color": { "r": "0.39181358", "g": "0.69590682", "b": "0.59454238", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_flowerTrack.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.278,
+							"nameTag": "none",
+							"color": { "r": "0.79166722", "g": "0.79166722", "b": "0.79166722", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.55 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/theStrider",
+							"textKey": "~08~~panel_001~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			}
+		],
+		"score": "10"
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "inRelationTo": "hothead", "cloneRelatedEntity": true }
+			}
+		}
+	]
+}
+}

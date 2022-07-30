@@ -1,0 +1,2005 @@
+{
+"id": "encounter_heroesArriveAtSite_heartofStone",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/heartofStone",
+	"author": "Jeremy Bernstein"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerGame" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(bookish,coward,goofball,loner,greedy,poet,snark)",
+		"scoreThreshold": "80",
+		"themes": { "eligibleForTheme": "gem", "eligibleForPiece": "head" }
+	},
+	{
+		"role": "target",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(healer,leader)",
+		"scoreThreshold": "1",
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "hero", "target" ]
+	},
+	{
+		"role": "volunteer2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "hero", "target" ]
+	},
+	{
+		"role": "volunteer3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "hero", "target" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_undergroundEarthen.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.425, "y": 0.38 },
+							"size": 0.383,
+							"head": { "rotate": -32.55, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_001~1_hero",
+							"pointerOwner": "hero"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_undergroundEarthen.jpg",
+					"animation": { "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"role": "target",
+							"form": "frame-grim",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "torch" ]
+							},
+							"anchor": { "x": 0.784, "y": 0.396 },
+							"size": 0.408,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -13.252, "scaleY": -1 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.351, "y": 0.412 },
+							"size": 0.397,
+							"nameTag": "none"
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-grim",
+							"equipment": { "mode": null },
+							"anchor": { "x": 0.646, "y": 0.367 },
+							"size": 0.362,
+							"nameTag": "none",
+							"head": { "rotate": 23.552 }
+						},
+						{
+							"role": "volunteer3",
+							"form": "frame-grim",
+							"equipment": { "mode": null },
+							"anchor": { "x": 0.505, "y": 0.407 },
+							"size": 0.306,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/scale/unpacked/particle_glowLarge.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.011, "y": 0.372 },
+							"size": 2.784,
+							"drawDepth": -7,
+							"color": { "r": "1", "g": "0.85", "b": "0.4", "a": "0.4" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_002~1_narration",
+							"style": "narration",
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_002~2_target",
+							"pointerOwner": "target",
+							"location": "topRight",
+							"padXFraction": 0.071,
+							"padYFraction": 0.188,
+							"widthFraction": 0.5117112,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -17.00003, "dY": 1.9999771 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_undergroundEarthen.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.057, "y": 0.52 },
+							"size": 0.657,
+							"head": { "rotate": 42.229, "scaleY": 1 },
+							"foot": { "rotate": -18.435 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-grim",
+							"equipment": { "mode": null },
+							"anchor": { "x": 1.099, "y": 0.496 },
+							"size": 0.694,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:actionLines_shake2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.173, "y": 0.716 },
+							"size": 0.201,
+							"nameTag": "none",
+							"foot": { "rotate": -47.25 }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.483, "y": 0.372 },
+							"size": 0.171,
+							"foot": { "rotate": 160.893 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_003~1_hero",
+							"pointerOwner": "hero"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_undergroundEarthen.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:actionLines_dash.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.359, "y": 0.091 },
+							"size": 0.348,
+							"nameTag": "none",
+							"foot": { "rotate": 88.264 }
+						},
+						{
+							"role": "volunteer",
+							"anchor": { "x": 1.21, "y": 0.512 },
+							"size": 0.612,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_004~1_hero",
+							"style": "action",
+							"pointerOwner": "hero",
+							"padXFraction": 0.201,
+							"padYFraction": 0.265,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:actionLines_dash.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.548, "y": 0.307 },
+							"size": 0.348,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": -92.798 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.555, "y": -0.03 },
+							"size": 0.452,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:particle_shardGrayLarge3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.858, "y": 0.211 },
+							"size": 0.303,
+							"nameTag": "none",
+							"foot": { "rotate": 63.161 }
+						},
+						{
+							"assetSpec": "comic:particle_shardGraySmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.79, "y": 0.376 },
+							"size": 0.26
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_005~1_action",
+							"style": "action",
+							"padXFraction": 0.066,
+							"padYFraction": 0.78,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_005~2_hero",
+							"style": "action",
+							"pointerOwner": "hero",
+							"padXFraction": 0.201,
+							"padYFraction": 0.265,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_caveBlue.jpg",
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_006~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.447,
+							"padYFraction": 0.647,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -62, "dY": -7.0000153 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_caveBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-scared",
+							"anchor": { "x": 0.588, "y": 0.295 },
+							"size": 0.62,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 40.462 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_007~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.071,
+							"padYFraction": 0.324,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -0.5459168,
+								"dX": -5,
+								"dY": -2.0000305,
+								"pointerOrientH": "onLeft",
+								"forcePointerImage": "speechShort"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.473, "y": 0.472 },
+							"size": 0.558,
+							"head": { "rotate": -18.778, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "scenery:rockCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.045, "y": 0.3 },
+							"size": 0.436,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.6", "g": "0.8", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_008~1_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.127,
+							"padYFraction": 0.193,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.46, "y": 0.484 },
+							"size": 0.828,
+							"head": { "rotate": -18.778, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "scenery:rockCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.135, "y": 0.164 },
+							"size": 0.506,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.6", "g": "0.8", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_009~1_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.099,
+							"padYFraction": 0.102,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -21, "dY": 6.0000305, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.446, "y": 0.477 },
+							"size": 1.056,
+							"head": { "rotate": -18.778, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_010~1_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.16,
+							"padYFraction": 0.053,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -14.999878,
+								"dY": 7,
+								"pointerOrientH": "onRight",
+								"forcePointerImage": "speechShort"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.649, "y": 0.424 },
+							"size": 0.393,
+							"head": { "rotate": 10.927 }
+						},
+						{
+							"assetSpec": "comic:statueGem.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.172, "y": 0.536 },
+							"size": 0.302,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "scenery:rockCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.805, "y": 0.408 },
+							"size": 0.559,
+							"nameTag": "none",
+							"color": { "r": "0.6", "g": "0.8", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockcave2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.357, "y": 0.259 },
+							"size": 0.35,
+							"nameTag": "none",
+							"foot": { "rotate": 0.422 },
+							"color": { "r": "0.7", "g": "0.9", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_011~1_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.466,
+							"padYFraction": 0.192,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -29, "dY": -6 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.809, "y": 0.621 },
+							"head": { "rotate": 32.735 }
+						},
+						{
+							"assetSpec": "comic:statueGem.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.134, "y": 0.5 },
+							"size": 0.56,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_012~1_hero",
+							"pointerOwner": "hero"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "hero.bookish/coward/goofball/loner/greedy/poet/snark/60",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.75, "y": 0.541 },
+										"head": { "rotate": -25.377 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~01~prompt~panel_013.(hero_is_bookish)~1_hero",
+										"pointerOwner": "hero"
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-scared",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.75, "y": 0.541 },
+										"head": { "rotate": -25.377 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~01~prompt~panel_014.(hero_is_coward)~1_hero",
+										"pointerOwner": "hero"
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-scheming",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.75, "y": 0.541 },
+										"head": { "rotate": -25.377 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~01~prompt~panel_015.(hero_is_goofball)~1_hero",
+										"pointerOwner": "hero"
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-sad",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.75, "y": 0.541 },
+										"head": { "rotate": -25.377 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~01~prompt~panel_016.(hero_is_loner)~1_hero",
+										"pointerOwner": "hero"
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-scheming",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.75, "y": 0.541 },
+										"head": { "rotate": -25.377 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~01~prompt~panel_017.(hero_is_greedy)~1_hero",
+										"pointerOwner": "hero"
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.75, "y": 0.541 },
+										"head": { "rotate": -25.377 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~01~prompt~panel_018.(hero_is_poet)~1_hero",
+										"pointerOwner": "hero"
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-scheming",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.75, "y": 0.541 },
+										"head": { "rotate": -25.377 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~01~prompt~panel_019.(hero_is_snark)~1_hero",
+										"pointerOwner": "hero"
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.75, "y": 0.541 },
+										"head": { "rotate": -25.377 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~01~prompt~panel_020.(fallback_(60))~1_hero",
+										"pointerOwner": "hero"
+									}
+								]
+							}
+						}
+					]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.798, "y": 0.463 },
+							"head": { "rotate": -18.06 }
+						},
+						{
+							"assetSpec": "comic:statueGem.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.015, "y": 0.64 },
+							"size": 0.704,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/heartofStone",
+							"textKey": "~01~prompt~panel_021~1_hero",
+							"pointerOwner": "hero"
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "hero",
+									"form": "frame-skeptical",
+									"facing": "left",
+									"equipment": {},
+									"anchor": { "x": 0.798, "y": 0.463 },
+									"head": { "rotate": -18.06, "scaleY": -1 }
+								},
+								{
+									"assetSpec": "comic:statueGem.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.015, "y": 0.64 },
+									"size": 0.704,
+									"nameTag": "bottomRight"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/heartofStone",
+									"textKey": "~02~choice_one~panel_001~1_hero",
+									"pointerOwner": "hero"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Split",
+						"splitSpec": "hero.bookish/coward/goofball/loner/greedy/poet/snark/60",
+						"splitBranches": [
+							[
+								{
+									"class": "comicNode_Panel",
+									"panel": {
+										"actorSlots": [
+											{
+												"role": "hero",
+												"form": "frame-happy",
+												"facing": "left",
+												"equipment": {},
+												"anchor": { "x": 0.798, "y": 0.463 },
+												"head": { "rotate": -18.06 }
+											},
+											{
+												"assetSpec": "comic:statueGem.png",
+												"role": null,
+												"focus": "foot",
+												"anchor": { "x": -0.015, "y": 0.64 },
+												"size": 0.704,
+												"nameTag": "bottomRight"
+											}
+										],
+										"textSlots": [
+											{
+												"textSourceFile": "arriveAtSite/heartofStone",
+												"textKey": "~03~choice_two~panel_001.(hero_is_bookish)~1_hero",
+												"pointerOwner": "hero"
+											}
+										]
+									}
+								}
+							],
+							[
+								{
+									"class": "comicNode_Panel",
+									"panel": {
+										"actorSlots": [
+											{
+												"role": "hero",
+												"form": "frame-angry",
+												"facing": "left",
+												"equipment": {},
+												"anchor": { "x": 0.798, "y": 0.463 },
+												"head": { "rotate": -18.06 }
+											},
+											{
+												"assetSpec": "comic:statueGem.png",
+												"role": null,
+												"focus": "foot",
+												"anchor": { "x": -0.015, "y": 0.64 },
+												"size": 0.704,
+												"nameTag": "bottomRight"
+											}
+										],
+										"textSlots": [
+											{
+												"textSourceFile": "arriveAtSite/heartofStone",
+												"textKey": "~03~choice_two~panel_002.(hero_is_coward)~1_hero",
+												"pointerOwner": "hero"
+											}
+										]
+									}
+								}
+							],
+							[
+								{
+									"class": "comicNode_Panel",
+									"panel": {
+										"actorSlots": [
+											{
+												"role": "hero",
+												"form": "frame-scheming",
+												"facing": "left",
+												"equipment": {},
+												"anchor": { "x": 0.798, "y": 0.463 },
+												"head": { "rotate": -18.06 }
+											},
+											{
+												"assetSpec": "comic:statueGem.png",
+												"role": null,
+												"focus": "foot",
+												"anchor": { "x": -0.015, "y": 0.64 },
+												"size": 0.704,
+												"nameTag": "bottomRight"
+											}
+										],
+										"textSlots": [
+											{
+												"textSourceFile": "arriveAtSite/heartofStone",
+												"textKey": "~03~choice_two~panel_003.(hero_is_goofball)~1_hero",
+												"pointerOwner": "hero"
+											}
+										]
+									}
+								}
+							],
+							[
+								{
+									"class": "comicNode_Panel",
+									"panel": {
+										"actorSlots": [
+											{
+												"role": "hero",
+												"form": "frame-happy",
+												"facing": "left",
+												"equipment": {},
+												"anchor": { "x": 0.798, "y": 0.463 },
+												"head": { "rotate": -18.06 }
+											},
+											{
+												"assetSpec": "comic:statueGem.png",
+												"role": null,
+												"focus": "foot",
+												"anchor": { "x": -0.015, "y": 0.64 },
+												"size": 0.704,
+												"nameTag": "bottomRight"
+											}
+										],
+										"textSlots": [
+											{
+												"textSourceFile": "arriveAtSite/heartofStone",
+												"textKey": "~03~choice_two~panel_004.(hero_is_loner)~1_hero",
+												"pointerOwner": "hero"
+											}
+										]
+									}
+								}
+							],
+							[
+								{
+									"class": "comicNode_Panel",
+									"panel": {
+										"actorSlots": [
+											{
+												"role": "hero",
+												"form": "frame-scheming",
+												"facing": "left",
+												"equipment": {},
+												"anchor": { "x": 0.798, "y": 0.463 },
+												"head": { "rotate": -18.06 }
+											},
+											{
+												"assetSpec": "comic:statueGem.png",
+												"role": null,
+												"focus": "foot",
+												"anchor": { "x": -0.015, "y": 0.64 },
+												"size": 0.704,
+												"nameTag": "bottomRight"
+											}
+										],
+										"textSlots": [
+											{
+												"textSourceFile": "arriveAtSite/heartofStone",
+												"textKey": "~03~choice_two~panel_005.(hero_is_greedy)~1_hero",
+												"pointerOwner": "hero"
+											}
+										]
+									}
+								}
+							],
+							[
+								{
+									"class": "comicNode_Panel",
+									"panel": {
+										"actorSlots": [
+											{
+												"role": "hero",
+												"form": "frame-interested",
+												"facing": "left",
+												"equipment": {},
+												"anchor": { "x": 0.798, "y": 0.463 },
+												"head": { "rotate": -18.06 }
+											},
+											{
+												"assetSpec": "comic:statueGem.png",
+												"role": null,
+												"focus": "foot",
+												"anchor": { "x": -0.015, "y": 0.64 },
+												"size": 0.704,
+												"nameTag": "bottomRight"
+											}
+										],
+										"textSlots": [
+											{
+												"textSourceFile": "arriveAtSite/heartofStone",
+												"textKey": "~03~choice_two~panel_006.(hero_is_poet)~1_hero",
+												"pointerOwner": "hero"
+											}
+										]
+									}
+								}
+							],
+							[
+								{
+									"class": "comicNode_Panel",
+									"panel": {
+										"actorSlots": [
+											{
+												"role": "hero",
+												"form": "frame-scheming",
+												"facing": "left",
+												"equipment": {},
+												"anchor": { "x": 0.798, "y": 0.463 },
+												"head": { "rotate": -18.06 }
+											},
+											{
+												"assetSpec": "comic:statueGem.png",
+												"role": null,
+												"focus": "foot",
+												"anchor": { "x": -0.015, "y": 0.64 },
+												"size": 0.704,
+												"nameTag": "bottomRight"
+											}
+										],
+										"textSlots": [
+											{
+												"textSourceFile": "arriveAtSite/heartofStone",
+												"textKey": "~03~choice_two~panel_007.(hero_is_snark)~1_hero",
+												"pointerOwner": "hero"
+											}
+										]
+									}
+								}
+							],
+							[
+								{
+									"class": "comicNode_Panel",
+									"panel": {
+										"actorSlots": [
+											{
+												"role": "hero",
+												"form": "frame-interested",
+												"facing": "left",
+												"equipment": {},
+												"anchor": { "x": 0.798, "y": 0.463 },
+												"head": { "rotate": -18.06 }
+											},
+											{
+												"assetSpec": "comic:statueGem.png",
+												"role": null,
+												"focus": "foot",
+												"anchor": { "x": -0.015, "y": 0.64 },
+												"size": 0.704,
+												"nameTag": "bottomRight"
+											}
+										],
+										"textSlots": [
+											{
+												"textSourceFile": "arriveAtSite/heartofStone",
+												"textKey": "~03~choice_two~panel_008.(fallback_(60))~1_hero",
+												"pointerOwner": "hero"
+											}
+										]
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "hero",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"STUB": "None; no risk, no reward.",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.824, "y": 0.609 },
+										"size": 0.8,
+										"head": { "rotate": 12.414 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~04~player_chose_one~panel_001~1_hero",
+										"pointerOwner": "hero"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_spikyStarburst.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.367, "y": 0.295 },
+										"size": 0.132,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 19.381 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~04~player_chose_one~panel_002~1_hero",
+										"style": "darken",
+										"pointerOwner": "hero",
+										"padXFraction": 0.429,
+										"padYFraction": 0.887,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_undergroundEarthen.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:pointerSpeechMedium.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.485, "y": 0.483 },
+										"size": 0.142,
+										"foot": { "rotate": -152.471 }
+									},
+									{
+										"role": "target",
+										"form": "frame-angry",
+										"equipment": {
+											"mode": null,
+											"equipItemsById": []
+										},
+										"anchor": { "x": 0.604, "y": 0.552 },
+										"size": 0.598,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -11.364, "scaleY": -1 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.071, "y": 0.524 },
+										"size": 0.477,
+										"head": { "rotate": 15.095, "scaleY": 1 }
+									},
+									{
+										"role": "volunteer2",
+										"form": "frame-angry",
+										"anchor": { "x": 0.966, "y": 0.588 },
+										"size": 0.8,
+										"drawDepth": -7,
+										"nameTag": "none",
+										"head": { "rotate": -0.43, "scaleY": 1 }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-rage",
+										"anchor": { "x": 0.699, "y": 0.504 },
+										"size": 0.432,
+										"nameTag": "none",
+										"foot": { "rotate": -3.908 }
+									},
+									{
+										"role": "volunteer3",
+										"form": "frame-rage",
+										"anchor": { "x": 0.826, "y": 0.492 },
+										"size": 0.377,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~04~player_chose_one~panel_003~1_target",
+										"pointerOwner": "target",
+										"padXFraction": 0.199,
+										"padYFraction": 0.062,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -19, "dY": 6.999962, "pointerOrientH": "onLeft", "pointerOrientV": "up" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~04~player_chose_one~panel_003~2_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.171,
+										"padYFraction": 0.323,
+										"widthFraction": 0.24914218,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -16.38954, "dX": 28, "dY": -9.000015, "pointerOrientV": "up" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~04~player_chose_one~panel_003~3_speech",
+										"location": "topRight",
+										"padXFraction": 0.475,
+										"padYFraction": 0.573,
+										"widthFraction": 0.21781293,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"missionPlanOverride": "cavern"
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "hero",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"STUB": "Party has some form of DISADVANTAGE due to alerting the <foes> to their presence.",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.798, "y": 0.463 },
+										"head": { "rotate": -18.06 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.015, "y": 0.64 },
+										"size": 0.704,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_001~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_spikyStarburst.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.749, "y": 0.632 },
+										"size": 0.245,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 76.804 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.024, "y": 1.227 },
+										"size": 1.361,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_002~1_hero",
+										"style": "darken",
+										"pointerOwner": "hero",
+										"padXFraction": 0.396,
+										"padYFraction": 0.837,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-scared",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.963, "y": 0.656 },
+										"head": { "rotate": -18.06 },
+										"colorFilter": { "filterName": "channeling", "strength": 0.2 }
+									},
+									{
+										"assetSpec": "comic:light_spikyStarburst.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.374, "y": 0.291 },
+										"size": 0.201,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 140.934 }
+									},
+									{
+										"assetSpec": "comic:light_starburstSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.353, "y": 0.275 },
+										"size": 0.256,
+										"nameTag": "none",
+										"foot": { "rotate": -17.471 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.015, "y": 0.64 },
+										"size": 0.704,
+										"nameTag": "none",
+										"colorFilter": {}
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_003~1_npc",
+										"pointerOwner": "npc"
+									},
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_003~2_hero",
+										"style": "darken",
+										"pointerOwner": "hero",
+										"padXFraction": 0.165,
+										"padYFraction": 0.88,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstLarge.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.309, "y": 0.223 },
+										"size": 0.257,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:light_spikyStarburst.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.313, "y": 0.262 },
+										"size": 0.35,
+										"foot": { "rotate": 82.844 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-hit",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.821, "y": 0.633 },
+										"nameTag": "bottomRight",
+										"head": { "rotate": 26.025 },
+										"colorFilter": { "filterName": "channeling", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "comic:statueGem.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.134, "y": 0.5 },
+										"size": 0.56,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_004~1_npc",
+										"pointerOwner": "npc",
+										"location": "topRight",
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_004~2_hero",
+										"style": "darken",
+										"pointerOwner": "hero",
+										"padXFraction": 0.466,
+										"padYFraction": 0.88,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:pointerSpeech.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.844, "y": 0.516 },
+										"size": 0.342,
+										"foot": { "rotate": -167.65 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-scared",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.679, "y": 0.677 },
+										"size": 0.773,
+										"head": { "rotate": -29.245 }
+									},
+									{
+										"assetSpec": "comic:statueGem2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.081, "y": 0.472 },
+										"size": 0.56,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_005~1_hero",
+										"pointerOwner": "hero",
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_005~2_speech",
+										"location": "bottomRight",
+										"padXFraction": 0.009,
+										"padYFraction": 0.303,
+										"shrinkToFitText": true,
+										"pointerStyle": "speech",
+										"pointerAdjust": {}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-scared",
+										"equipment": {},
+										"anchor": { "x": 0.275, "y": 0.496 },
+										"size": 0.508,
+										"head": { "rotate": -2.985, "scaleY": 1 }
+									},
+									{
+										"role": "target",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {
+											"mode": null,
+											"equipItemsById": []
+										},
+										"anchor": { "x": 0.645, "y": 0.504 },
+										"size": 0.526,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 3.674, "scaleY": 1 }
+									},
+									{
+										"role": "volunteer2",
+										"form": "frame-scared",
+										"facing": "left",
+										"anchor": { "x": 0.963, "y": 0.496 },
+										"size": 0.517,
+										"nameTag": "none",
+										"head": { "rotate": -0.453, "scaleY": 1 }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-scared",
+										"facing": "left",
+										"anchor": { "x": 0.764, "y": 0.492 },
+										"size": 0.43,
+										"nameTag": "none",
+										"color": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" }
+									},
+									{
+										"role": "volunteer3",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.874, "y": 0.479 },
+										"size": 0.365,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "0.9", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:statueGem2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.08, "y": 0.436 },
+										"size": 0.302
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_006~1_hero",
+										"pointerOwner": "hero",
+										"location": "bottomLeft",
+										"padXFraction": 0.27,
+										"padYFraction": 0.045,
+										"widthFraction": 0.3983291,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -5, "dY": -5 }
+									},
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_006~2_target",
+										"pointerOwner": "target",
+										"padXFraction": 0.033,
+										"padYFraction": 0.065,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 5, "dY": -5.0000076, "pointerOrientH": "onLeft", "pointerOrientV": "up" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Split",
+							"splitSpec": "hero.bookish/coward/goofball/loner/greedy/poet/snark/60",
+							"splitBranches": [
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "hero",
+													"form": "frame-scared",
+													"equipment": {},
+													"anchor": { "x": 0.446, "y": 0.504 },
+													"size": 1.259
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/heartofStone",
+													"textKey": "~05~player_chose_two~panel_007.(hero_is_bookish)~1_hero",
+													"pointerOwner": "hero"
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "hero",
+													"form": "frame-scared",
+													"equipment": {},
+													"anchor": { "x": 0.446, "y": 0.504 },
+													"size": 0.915
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/heartofStone",
+													"textKey": "~05~player_chose_two~panel_008.(hero_is_coward)~1_hero",
+													"pointerOwner": "hero"
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "hero",
+													"form": "frame-skeptical",
+													"equipment": {},
+													"anchor": { "x": 0.446, "y": 0.504 },
+													"size": 0.888
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/heartofStone",
+													"textKey": "~05~player_chose_two~panel_009.(hero_is_goofball)~1_hero",
+													"pointerOwner": "hero"
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "hero",
+													"form": "frame-scared",
+													"equipment": {},
+													"anchor": { "x": 0.446, "y": 0.504 },
+													"size": 0.852
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/heartofStone",
+													"textKey": "~05~player_chose_two~panel_010.(hero_is_loner)~1_hero",
+													"pointerOwner": "hero"
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "hero",
+													"form": "frame-rage",
+													"equipment": {},
+													"anchor": { "x": 0.446, "y": 0.504 },
+													"size": 0.978,
+													"head": { "rotate": 20.083 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/heartofStone",
+													"textKey": "~05~player_chose_two~panel_011.(hero_is_greedy)~1_hero",
+													"pointerOwner": "hero"
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "hero",
+													"form": "frame-sad",
+													"equipment": {},
+													"anchor": { "x": 0.446, "y": 0.504 },
+													"size": 0.994
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/heartofStone",
+													"textKey": "~05~player_chose_two~panel_012.(hero_is_poet)~1_hero",
+													"pointerOwner": "hero"
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "hero",
+													"form": "frame-angry",
+													"equipment": {},
+													"anchor": { "x": 0.446, "y": 0.504 },
+													"size": 0.791
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/heartofStone",
+													"textKey": "~05~player_chose_two~panel_013.(hero_is_snark)~1_hero",
+													"pointerOwner": "hero"
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "hero",
+													"form": "frame-scared",
+													"equipment": {},
+													"anchor": { "x": 0.446, "y": 0.504 },
+													"size": 1.259
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/heartofStone",
+													"textKey": "~05~player_chose_two~panel_014.(fallback_(60))~1_hero",
+													"pointerOwner": "hero"
+												}
+											]
+										}
+									}
+								],
+								[]
+							]
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_caveBlue.jpg",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-scared",
+										"equipment": {},
+										"anchor": { "x": 0.222, "y": 0.548 },
+										"size": 0.573,
+										"head": { "rotate": -17.161, "scaleY": -1 }
+									},
+									{
+										"role": "target",
+										"form": "frame-angry",
+										"facing": "left",
+										"equipment": {
+											"mode": null,
+											"equipItemsById": []
+										},
+										"anchor": { "x": 0.663, "y": 0.54 },
+										"size": 0.632,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -15.819, "scaleY": -1 }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-angry",
+										"facing": "left",
+										"anchor": { "x": 0.883, "y": 0.524 },
+										"size": 0.553,
+										"nameTag": "none",
+										"head": { "rotate": -8.366, "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comic:statueGem2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.092, "y": 0.424 },
+										"size": 0.302
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/heartofStone",
+										"textKey": "~05~player_chose_two~panel_015~1_target",
+										"pointerOwner": "target",
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -16,
+											"dY": -1.0000076,
+											"pointerOrientH": "onLeft",
+											"pointerOrientV": "up"
+										}
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Test",
+					"target": "hero",
+					"value": "drauven",
+					"threshold": "1",
+					"onPass": {
+						"class": "ApplyTheme",
+						"target": "hero",
+						"theme": "gem",
+						"piece": "head",
+						"historyTextKey": "encounter_heroesArriveAtSite_heartofStone.1.playerChose_two.1addTheme.gem.head.replaceInjuries"
+					},
+					"onFail": {
+						"class": "ApplyTheme",
+						"target": "hero",
+						"theme": "gem",
+						"piece": "head",
+						"historyTextKey": "encounter_heroesArriveAtSite_heartofStone.1.playerChose_two.1addTheme.gem.head.replaceInjuries",
+						"replaceInjuredLimbs": true
+					}
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "DISMAY" }
+					],
+					"missionPlanOverride": "cavern"
+				},
+				{
+					"class": "Aspects",
+					"target": "site",
+					"addAspects": [
+						{ "id": "heartOfStone_victory_host", "value": "1" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "AddRememberedPlace",
+		"target": "overlandTile",
+		"icon": "remembered_heartOfStone"
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "inRelationTo": "hero", "cloneRelatedEntity": true }
+			}
+		}
+	]
+}
+}

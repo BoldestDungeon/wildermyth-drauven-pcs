@@ -1,0 +1,121 @@
+{
+"id": "job_troygan_upgradeBasicProstheticToMorthificial",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "job/job_troygan_upgradeBasicProstheticToMorthificial"
+},
+"type": "OVERLAND_ABILITY",
+"verb": "JOB",
+"ability": {
+	"icon": "utility",
+	"category": "research",
+	"priority": "1",
+	"labor": { "days": "60", "role": "volunteer" }
+},
+"targets": [
+	{
+		"template": "SELF_SITE_THIS_JOB_NOT_ACTIVE",
+		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ]
+	},
+	{ "template": "COMPANY" },
+	{
+		"role": "volunteer",
+		"template": "JOB_PARTICIPANT",
+		"promptScript": [
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_library.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/troygan.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.577, "y": 0.861 },
+							"size": 0.355
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_troygan_upgradeBasicProstheticToMorthificial",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		],
+		"slots": { "max": 1 },
+		"scoreFunction": "((humanSkin_prostheticLeftArm+humanSkin_prostheticRightArm)+humanSkin_prostheticLeftLeg)+humanSkin_prostheticRightLeg",
+		"scoreThreshold": "1"
+	}
+],
+"outcomes": [
+	{
+		"class": "DoAll",
+		"target": "volunteer",
+		"outcomes": [
+			{
+				"class": "Description",
+				"script": [
+					{
+						"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+						"panel": {
+							"bg": "comicBG_library.jpg",
+							"actorSlots": [
+								{
+									"role": "volunteer",
+									"focus": "foot",
+									"anchor": { "x": 0.5 },
+									"size": 0.4,
+									"head": { "rotate": -26.24, "scaleY": 1 }
+								},
+								{
+									"assetSpec": "comic:smokeCloud.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.633, "y": 0.091 },
+									"size": 0.568,
+									"nameTag": "bottomRight",
+									"color": { "r": "0.5", "g": "0.5", "b": "0.3", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "job/job_troygan_upgradeBasicProstheticToMorthificial",
+									"textKey": "~02~~panel_001~1_volunteer",
+									"pointerOwner": "volunteer"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"class": "Test",
+				"target": "volunteer",
+				"value": "drauven",
+				"threshold": "1",
+				"onPass": {
+					"class": "ApplyTheme",
+					"theme": "morthagi",
+					"historyTextKey": "job_troygan_upgradeBasicProstheticToMorthificial.0.outcome.1addTheme.morthagi"
+				},
+				"onFail": {
+					"class": "ApplyTheme",
+					"theme": "morthagi",
+					"historyTextKey": "job_troygan_upgradeBasicProstheticToMorthificial.0.outcome.1addTheme.morthagi",
+					"replaceInjuredLimbs": true
+				}
+			},
+			{
+				"class": "Aspects",
+				"target": "self",
+				"removeAspects": [ "_THIS_" ]
+			}
+		]
+	}
+]
+}

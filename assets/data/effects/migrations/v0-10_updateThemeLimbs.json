@@ -25,6 +25,23 @@
         "target": "self",
         "outcomes": [
           {
+            "class": "AddHistory",
+            "target": "self",
+            "inlineHistory": {
+              "id": "resetDrauvenSkinAspects",
+              "showInSummary": false,
+              "removeAspects": [
+                "drauvenSkin_naturalLeftArm",
+                "drauvenSkin_naturalLeftHand",
+                "drauvenSkin_naturalRightArm",
+                "drauvenSkin_naturalRightHand",
+                "drauvenSkin_naturalLeftLeg",
+                "drauvenSkin_naturalRightLeg",
+                "drauvenSkin_naturalHead"
+              ]
+            }
+          },
+          {
             "class": "RemoveTheme",
             "target": "self",
             "specificTheme": "drauven",
@@ -55,31 +72,11 @@
             "specificPiece": "rightLeg"
           },
           {
-            "class": "Aspects",
-            "target": "self",
-            "removeAspects": [
-              "themeSlotFilled_head",
-              "themeSlotFilled_leftArm",
-              "themeSlotFilled_leftLeg",
-              "themeSlotFilled_rightArm",
-              "themeSlotFilled_rightLeg"
-            ]
-          },
-          {
             "class": "AddHistory",
             "target": "self",
             "inlineHistory": {
               "id": "removeHumanSkinAspects",
               "showInSummary": false,
-              "associatedAspects": [
-                "drauvenSkin_naturalLeftArm",
-                "drauvenSkin_naturalLeftHand",
-                "drauvenSkin_naturalRightArm",
-                "drauvenSkin_naturalRightHand",
-                "drauvenSkin_naturalLeftLeg",
-                "drauvenSkin_naturalRightLeg",
-                "drauvenSkin_naturalHead"
-              ],
               "removeAspects": [ 
                 "themeSlotFilled_head",
                 "themeSlotFilled_leftArm",
@@ -93,6 +90,23 @@
                 "humanSkin_naturalLeftLeg",
                 "humanSkin_naturalRightLeg",
                 "humanSkin_naturalHead"
+              ]
+            }
+          },
+          {
+            "class": "AddHistory",
+            "target": "self",
+            "inlineHistory": {
+              "id": "restoreDrauvenSkinAspects",
+              "showInSummary": false,
+              "associatedAspects": [
+                "drauvenSkin_naturalLeftArm",
+                "drauvenSkin_naturalLeftHand",
+                "drauvenSkin_naturalRightArm",
+                "drauvenSkin_naturalRightHand",
+                "drauvenSkin_naturalLeftLeg",
+                "drauvenSkin_naturalRightLeg",
+                "drauvenSkin_naturalHead"
               ]
             }
           }

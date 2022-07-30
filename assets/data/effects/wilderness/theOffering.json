@@ -1,0 +1,4779 @@
+{
+"id": "encounter_wilderness_theOffering",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "wilderness/theOffering",
+	"author": "Anne Austin"
+},
+"type": "ENCOUNTER_WILDERNESS_SCOUTING",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "IMMEDIATE_ENEMY" },
+	{
+		"role": "greedy",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "GREEDY",
+		"scoreThreshold": "60"
+	},
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(HEALER,ROMANTIC,POET,LEADER,LONER)",
+		"scoreThreshold": "80",
+		"notAlreadyMatchedAs": [ "greedy" ],
+		"themes": { "eligibleForTheme": "foothill", "eligibleForPiece": "head" }
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEADER",
+		"notAlreadyMatchedAs": [ "greedy", "healer" ]
+	},
+	{
+		"role": "target",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "greedy", "healer", "leader" ]
+	},
+	{
+		"role": "target2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "greedy", "healer", "leader" ]
+	},
+	{
+		"role": "snark",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "SNARK",
+		"notAlreadyMatchedAs": [ "greedy", "healer", "leader" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "snark",
+							"anchor": { "x": 0.369, "y": 0.451 },
+							"size": 0.567,
+							"drawDepth": -8,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 14.961 }
+						},
+						{
+							"role": "healer",
+							"anchor": { "x": 0.655, "y": 0.428 },
+							"size": 0.453,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"foot": { "rotate": -1.967 }
+						},
+						{
+							"role": "target",
+							"form": "frame-grim",
+							"anchor": { "x": 0.544, "y": 0.351 },
+							"size": 0.588,
+							"drawDepth": -10,
+							"nameTag": "none",
+							"foot": { "rotate": 1.709 }
+						},
+						{
+							"role": "greedy",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.132, "y": 0.431 },
+							"size": 0.438,
+							"drawDepth": -9,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.106, "y": -0.046 },
+							"size": 0.647,
+							"drawDepth": -5,
+							"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.052, "y": 0.456 },
+							"size": 0.401,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.4" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration",
+							"padXFraction": 0.028,
+							"padYFraction": 0.074,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.556, "y": 0.431 },
+							"size": 0.586,
+							"drawDepth": -11,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 4.978 }
+						},
+						{
+							"role": "healer",
+							"anchor": { "x": 0.783, "y": 0.404 },
+							"size": 0.498,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"head": { "rotate": -13.191, "scaleY": -1 },
+							"foot": { "rotate": -1.967 }
+						},
+						{
+							"role": "target",
+							"form": "frame-grim",
+							"anchor": { "x": 0.438, "y": 0.407 },
+							"size": 0.427,
+							"drawDepth": -10,
+							"nameTag": "none",
+							"head": { "rotate": 20.72 },
+							"foot": { "rotate": 1.709 }
+						},
+						{
+							"role": "greedy",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.274, "y": 0.367 },
+							"size": 0.358,
+							"drawDepth": -9,
+							"nameTag": "none",
+							"head": { "rotate": -15.57, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.106, "y": -0.046 },
+							"size": 0.647,
+							"drawDepth": -5,
+							"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.383, "y": 0.825 },
+							"size": 0.418,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.6" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_002~1_narration",
+							"style": "narration",
+							"padXFraction": 0.031,
+							"padYFraction": 0.041,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-surprised",
+							"focus": "middle",
+							"anchor": { "x": 0.366, "y": 0.154 },
+							"size": 0.318,
+							"drawDepth": -11,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 4.978 },
+							"foot": { "rotate": 5.031 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"focus": "middle",
+							"anchor": { "x": 0.501, "y": 0.187 },
+							"size": 0.323,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"head": { "rotate": 16.655, "scaleY": 1 },
+							"foot": { "rotate": 5.078 }
+						},
+						{
+							"role": "target",
+							"form": "frame-grim",
+							"focus": "middle",
+							"anchor": { "x": 0.285, "y": 0.215 },
+							"size": 0.243,
+							"drawDepth": -10,
+							"nameTag": "none",
+							"head": { "rotate": 20.72 },
+							"foot": { "rotate": 1.709 }
+						},
+						{
+							"role": "greedy",
+							"form": "frame-surprised",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "middle",
+							"anchor": { "x": 0.162, "y": 0.186 },
+							"size": 0.254,
+							"drawDepth": -9,
+							"nameTag": "none",
+							"head": { "rotate": 12.399, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.106, "y": -0.046 },
+							"size": 0.647,
+							"drawDepth": -5,
+							"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.717, "y": 0.994 },
+							"size": 0.304
+						},
+						{
+							"assetSpec": "scenery:trunkConifer1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.107, "y": 0.813 },
+							"size": 0.231
+						},
+						{
+							"assetSpec": "scenery:trunk2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.352, "y": 1.239 },
+							"size": 0.325,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_003~1_narration",
+							"style": "narration",
+							"padXFraction": 0.03,
+							"padYFraction": 0.103,
+							"widthFraction": 0.4064076,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.19, "y": 0.544 },
+							"size": 0.631,
+							"head": { "rotate": 3.248 },
+							"foot": { "rotate": -6.298 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"anchor": { "x": 0.606, "y": 0.532 },
+							"size": 0.501,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 1.211, "y": 1.396 },
+							"size": 0.406,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_004~1_snark",
+							"pointerOwner": "snark"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"anchor": { "x": 0.26, "y": 0.536 },
+							"head": { "rotate": 28.217 }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 1.717, "y": 2.271 },
+							"size": 0.809,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_005~1_healer",
+							"pointerOwner": "healer"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.048, "y": 0.367 },
+							"size": 0.358,
+							"head": { "rotate": 19.555 },
+							"foot": { "rotate": -6.298 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-talk",
+							"anchor": { "x": 0.339, "y": 0.364 },
+							"size": 0.299,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 14.645, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.741, "y": 1.147 },
+							"size": 0.336,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_006~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.061,
+							"padYFraction": 0.124,
+							"widthFraction": 0.57783824,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"anchor": { "x": 0.34, "y": 0.492 },
+							"size": 0.737,
+							"head": { "rotate": 10.408 },
+							"foot": { "rotate": 7.125 }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 1.668, "y": 1.761 },
+							"size": 0.617,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_007~1_action",
+							"style": "action",
+							"padXFraction": 0.045,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "snark",
+							"focus": "middle",
+							"anchor": { "x": 0.193, "y": 0.106 },
+							"size": 0.345,
+							"drawDepth": -11,
+							"head": { "rotate": 4.978 },
+							"foot": { "rotate": 5.031 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"focus": "middle",
+							"anchor": { "x": 0.302, "y": 0.159 },
+							"size": 0.28,
+							"drawDepth": -7,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 16.655, "scaleY": 1 },
+							"foot": { "rotate": 5.078 }
+						},
+						{
+							"role": "target",
+							"form": "frame-grim",
+							"focus": "middle",
+							"anchor": { "x": 0.109, "y": 0.175 },
+							"size": 0.243,
+							"drawDepth": -10,
+							"nameTag": "none",
+							"head": { "rotate": -3.175 },
+							"foot": { "rotate": 1.709 }
+						},
+						{
+							"role": "greedy",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "middle",
+							"anchor": { "x": 0.032, "y": 0.182 },
+							"size": 0.254,
+							"drawDepth": -9,
+							"nameTag": "none",
+							"head": { "rotate": 12.399, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.106, "y": -0.046 },
+							"size": 0.647,
+							"drawDepth": -5,
+							"nameTag": "none",
+							"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.554, "y": 0.95 },
+							"size": 0.304,
+							"foot": { "rotate": -10.232 }
+						},
+						{
+							"assetSpec": "scenery:trunkConifer1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.054, "y": 0.697 },
+							"size": 0.231
+						},
+						{
+							"assetSpec": "scenery:trunk2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.352, "y": 1.239 },
+							"size": 0.325,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.8" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_008~1_speech",
+							"fallbackSlotOwner": 5,
+							"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+							"location": "topRight",
+							"padXFraction": 0.022,
+							"padYFraction": 0.09,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 133, "dY": -93.00006 }
+						},
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_008~2_greedy",
+							"pointerOwner": "greedy",
+							"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+							"location": "topRight",
+							"padXFraction": 0.023,
+							"padYFraction": 0.233,
+							"widthFraction": 0.24914214,
+							"shrinkToFitText": true,
+							"pointerStyle": "none"
+						},
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_008~3_speech",
+							"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+							"location": "topRight",
+							"padXFraction": 0.025,
+							"padYFraction": 0.458,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "snark",
+							"anchor": { "x": 0.065, "y": 0.556 },
+							"size": 0.631,
+							"head": { "rotate": 3.248 },
+							"foot": { "rotate": -6.298 }
+						},
+						{
+							"role": "healer",
+							"anchor": { "x": 0.606, "y": 0.532 },
+							"size": 0.501,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 1.645, "y": 1.243 },
+							"size": 0.406,
+							"nameTag": "none",
+							"foot": { "rotate": -6.778 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_009~1_snark",
+							"style": "actionSmall",
+							"pointerOwner": "snark",
+							"padXFraction": 0.33,
+							"padYFraction": 0.172
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"focus": "foot",
+							"anchor": { "x": 0.221, "y": 0.142 },
+							"size": 0.148,
+							"head": { "rotate": 19.555 },
+							"foot": { "rotate": -9.005 },
+							"color": { "r": "0.6", "g": "0.6", "b": "0.6", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"form": "frame-talk",
+							"focus": "foot",
+							"anchor": { "x": 0.35, "y": 0.147 },
+							"size": 0.153,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 14.645, "scaleY": 1 },
+							"foot": { "rotate": -6.072 },
+							"color": { "r": "0.6", "g": "0.6", "b": "0.6", "a": "1" }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.662, "y": 0.677 },
+							"size": 0.16,
+							"nameTag": "none",
+							"color": { "r": "0.5", "g": "0.5", "b": "0.5", "a": "1" }
+						},
+						{
+							"role": "greedy",
+							"focus": "foot",
+							"anchor": { "x": 0.176, "y": 0.227 },
+							"size": 0.115,
+							"nameTag": "none",
+							"color": { "r": "0.5", "g": "0.5", "b": "0.5", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landGrassSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.612, "y": 0.151 },
+							"size": 0.23,
+							"nameTag": "none",
+							"color": { "r": "0.4", "g": "0.4", "b": "0.4", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.385, "y": 0.022 },
+							"size": 0.698,
+							"color": { "r": "0.8", "g": "0.95", "b": "0.9", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_010~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.052,
+							"padYFraction": 0.098,
+							"widthFraction": 0.57783824,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.189, "y": 0.813 },
+							"size": 0.405
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_011~1_speech",
+							"fallbackSlotOwner": 0,
+							"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" }
+						},
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_011~2_speech",
+							"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+							"padXFraction": 0.408,
+							"padYFraction": 0.16,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "greedy",
+							"form": "frame-grim",
+							"focus": "foot",
+							"anchor": { "x": 0.135, "y": 0.156 },
+							"size": 0.268,
+							"head": { "rotate": 6.177 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"focus": "foot",
+							"anchor": { "x": 0.045, "y": 0.123 },
+							"size": 0.294,
+							"drawDepth": 0,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.277, "y": 0.894 },
+							"size": 0.257,
+							"drawDepth": 8,
+							"nameTag": "none",
+							"foot": { "rotate": 5.048 }
+						},
+						{
+							"assetSpec": "scenery:rocksSaplingsConifer.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.204, "y": 0.271 },
+							"size": 0.361,
+							"drawDepth": -8,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.323, "y": 0.179 },
+							"size": 0.258,
+							"drawDepth": -9,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.174, "y": 0.171 },
+							"size": 0.698,
+							"color": { "r": "0.8", "g": "0.95", "b": "0.9", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_012~1_greedy",
+							"pointerOwner": "greedy"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "greedy",
+							"form": "frame-grim",
+							"focus": "foot",
+							"anchor": { "x": 0.135, "y": 0.156 },
+							"size": 0.268,
+							"head": { "rotate": 6.177 }
+						},
+						{
+							"role": "healer",
+							"focus": "foot",
+							"anchor": { "x": 0.045, "y": 0.123 },
+							"size": 0.294,
+							"drawDepth": 0,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.262, "y": 1.159 },
+							"size": 0.257,
+							"drawDepth": 8,
+							"nameTag": "none",
+							"foot": { "rotate": 5.048 }
+						},
+						{
+							"assetSpec": "scenery:shrineMoss1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.676, "y": 0.308 },
+							"size": 0.806,
+							"drawDepth": -10,
+							"nameTag": "none",
+							"color": { "r": "0.2", "g": "0.2", "b": "0.2", "a": "1" }
+						},
+						{
+							"assetSpec": "figure:misc/forestCreature2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.957, "y": 0.881 },
+							"size": 0.24,
+							"nameTag": "none",
+							"color": { "r": "0.2", "g": "0.2", "b": "0.2", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rocksSaplingsConifer.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.204, "y": 0.271 },
+							"size": 0.361,
+							"drawDepth": -8
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.323, "y": 0.179 },
+							"size": 0.258,
+							"drawDepth": -9
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.174, "y": 0.171 },
+							"size": 0.698,
+							"color": { "r": "0.8", "g": "0.95", "b": "0.9", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_013~1_speech",
+							"fallbackSlotOwner": 2,
+							"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+							"padXFraction": 0.473,
+							"padYFraction": 0.045,
+							"widthFraction": 0.27450386,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -24.14554, "dX": 93, "dY": 23.000015 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "greedy",
+							"form": "frame-surprised",
+							"focus": "foot",
+							"anchor": { "x": 0.135, "y": 0.156 },
+							"size": 0.268,
+							"head": { "rotate": 6.177 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"focus": "foot",
+							"anchor": { "x": 0.045, "y": 0.123 },
+							"size": 0.294,
+							"drawDepth": 0,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.262, "y": 1.159 },
+							"size": 0.257,
+							"drawDepth": 8,
+							"nameTag": "none",
+							"foot": { "rotate": 5.048 }
+						},
+						{
+							"assetSpec": "scenery:shrineMoss1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.676, "y": 0.308 },
+							"size": 0.806,
+							"drawDepth": -10,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/forestCreature2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.957, "y": 0.881 },
+							"size": 0.24,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:rocksSaplingsConifer.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.204, "y": 0.271 },
+							"size": 0.361,
+							"drawDepth": -8
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.323, "y": 0.179 },
+							"size": 0.258,
+							"drawDepth": -9
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.174, "y": 0.171 },
+							"size": 0.698,
+							"color": { "r": "0.8", "g": "0.95", "b": "0.9", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_014~1_speech",
+							"fallbackSlotOwner": 4,
+							"location": "topRight",
+							"padXFraction": 0.18,
+							"padYFraction": 0.168,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -75, "dY": -3 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "greedy",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.16, "y": 0.548 },
+							"size": 0.629,
+							"drawDepth": -5
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.435, "y": 0.552 },
+							"size": 0.532,
+							"drawDepth": 8,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"role": "snark",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.755, "y": 0.528 },
+							"size": 0.565,
+							"nameTag": "none",
+							"head": { "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_015~1_snark",
+							"pointerOwner": "snark",
+							"padXFraction": 0.608,
+							"padYFraction": 0.07,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.445, "y": 1.115 },
+							"size": 0.308,
+							"foot": { "rotate": 2.981 }
+						},
+						{
+							"assetSpec": "figure:misc/forestCreature2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.934, "y": 0.789 },
+							"size": 0.21,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "scenery:shrineMoss1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.724, "y": 0.323 },
+							"size": 0.55,
+							"nameTag": "none"
+						},
+						{
+							"role": "snark",
+							"form": "frame-grim",
+							"anchor": { "x": 0.25, "y": 0.347 },
+							"size": 0.567,
+							"drawDepth": -8,
+							"nameTag": "none"
+						},
+						{
+							"role": "healer",
+							"form": "frame-skeptical",
+							"anchor": { "x": 0.136, "y": 0.416 },
+							"size": 0.453,
+							"drawDepth": -7
+						},
+						{
+							"role": "greedy",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.056, "y": 0.5 },
+							"size": 0.682,
+							"drawDepth": -9
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.106, "y": -0.046 },
+							"size": 0.647,
+							"drawDepth": -5,
+							"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_016~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"anchor": { "x": 0.615, "y": 0.56 },
+							"size": 0.779,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -3.571, "scaleY": -1 }
+						},
+						{
+							"role": "snark",
+							"anchor": { "x": 1.187, "y": 0.48 },
+							"size": 0.715,
+							"nameTag": "none"
+						},
+						{
+							"role": "greedy",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.172, "y": 0.488 },
+							"size": 0.797,
+							"drawDepth": -7,
+							"head": { "rotate": 8.865 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_017~1_healer",
+							"style": "thought",
+							"pointerOwner": "healer"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "snark",
+							"form": "frame-dubious",
+							"anchor": { "x": 0.273, "y": 0.512 },
+							"size": 0.912
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_018~1_snark",
+							"style": "thought",
+							"pointerOwner": "snark"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.102, "y": 0.978 },
+							"size": 0.29
+						},
+						{
+							"assetSpec": "scenery:shrineMoss1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.778, "y": 0.448 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_019~1_speech",
+							"fallbackSlotOwner": 0,
+							"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/forestCreature2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.477, "y": 0.841 },
+							"size": 0.241,
+							"foot": { "rotate": 5.815 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_020~1_speech",
+							"fallbackSlotOwner": 0,
+							"pointerAdjust": { "dX": -65, "dY": -4 }
+						},
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_020~2_speech",
+							"padXFraction": 0.358,
+							"padYFraction": 0.213,
+							"widthFraction": 0.5896283,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_020~3_greedy",
+							"pointerOwner": "greedy",
+							"padXFraction": 0.536,
+							"padYFraction": 0.488,
+							"widthFraction": 0.38683602,
+							"shrinkToFitText": true,
+							"pointerStyle": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.17, "y": 0.978 },
+							"size": 0.359,
+							"foot": { "rotate": -7.406 }
+						},
+						{
+							"assetSpec": "scenery:shrineMoss1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.855, "y": 0.291 },
+							"size": 1.152,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_021~1_speech",
+							"fallbackSlotOwner": 0,
+							"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/forestCreature2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.702, "y": 1.311 },
+							"size": 0.366,
+							"foot": { "rotate": 2.759 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_022~1_speech"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.412, "y": 1.17 },
+							"size": 0.327,
+							"foot": { "rotate": -3.702 }
+						},
+						{
+							"assetSpec": "figure:misc/forestCreature2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.845, "y": 0.592 },
+							"size": 0.15,
+							"nameTag": "bottomRight",
+							"foot": { "rotate": 5.857 }
+						},
+						{
+							"assetSpec": "scenery:shrineMoss1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.667, "y": 0.355 },
+							"size": 0.456,
+							"nameTag": "none"
+						},
+						{
+							"role": "snark",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.259, "y": 0.411 },
+							"size": 0.429,
+							"drawDepth": -8,
+							"nameTag": "none",
+							"head": { "rotate": -4.062 },
+							"foot": { "rotate": 6.303 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.162, "y": 0.428 },
+							"size": 0.396,
+							"drawDepth": -7,
+							"foot": { "rotate": 6.622 }
+						},
+						{
+							"role": "target",
+							"form": "frame-surprised",
+							"facing": "left",
+							"anchor": { "x": 0.964, "y": 0.403 },
+							"size": 0.397,
+							"drawDepth": -10
+						},
+						{
+							"role": "greedy",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.048, "y": 0.444 },
+							"size": 0.435,
+							"drawDepth": -9,
+							"foot": { "rotate": 2.09 }
+						},
+						{
+							"assetSpec": "comic:rockRound.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.691, "y": -0.102 },
+							"size": 0.287
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.179, "y": -0.231 },
+							"size": 0.647,
+							"drawDepth": -5,
+							"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_023~1_speech",
+							"fallbackSlotOwner": 0,
+							"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+							"padXFraction": 0.676,
+							"padYFraction": 0.131,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 122, "dY": -6, "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "wilderness/theOffering",
+							"textKey": "~01~prompt~panel_023~2_speech"
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "healer",
+									"head": { "rotate": -7.815 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "wilderness/theOffering",
+									"textKey": "~02~choice_one~panel_001~1_healer",
+									"pointerOwner": "healer"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "snark",
+									"head": { "scaleY": -1 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "wilderness/theOffering",
+									"textKey": "~03~choice_two~panel_001~1_snark",
+									"pointerOwner": "snark"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "greedy",
+									"form": "frame-grim",
+									"head": { "rotate": 3.378 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "wilderness/theOffering",
+									"textKey": "~04~choice_three~panel_001~1_greedy",
+									"pointerOwner": "greedy"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "four",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{
+									"role": "greedy",
+									"form": "frame-skeptical",
+									"anchor": { "x": 0.327, "y": 0.5 },
+									"head": { "rotate": 5.492 },
+									"foot": { "rotate": -9.09 }
+								},
+								{
+									"facing": "left",
+									"anchor": { "x": 0.82, "y": 0.5 },
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "wilderness/theOffering",
+									"textKey": "~05~choice_four~panel_001~1_greedy",
+									"pointerOwner": "greedy"
+								},
+								{
+									"textSourceFile": "wilderness/theOffering",
+									"textKey": "~05~choice_four~panel_001~2_self",
+									"style": "darken",
+									"pointerOwner": "self",
+									"location": "bottomRight",
+									"widthFraction": 0.2
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "healer",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"head": { "rotate": -20.556 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~06~player_chose_one~panel_001~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-talk",
+										"anchor": { "x": 0.219, "y": 0.496 },
+										"size": 0.67,
+										"head": { "rotate": -5.558 }
+									},
+									{
+										"role": "snark",
+										"form": "frame-dubious",
+										"anchor": { "x": 0.847, "y": 0.492 },
+										"size": 0.576,
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~06~player_chose_one~panel_002~1_npc",
+										"pointerOwner": "npc"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.888, "y": 0.876 },
+										"size": 0.291,
+										"foot": { "rotate": 7.945 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.086, "y": 0.432 },
+										"size": 0.804,
+										"nameTag": "bottomRight"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~06~player_chose_one~panel_003~1_speech",
+										"fallbackSlotOwner": 0
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.387, "y": 1.17 },
+										"size": 0.327,
+										"foot": { "rotate": -3.702 }
+									},
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.989, "y": 0.564 },
+										"size": 0.15,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 2.429 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "none"
+									},
+									{
+										"role": "snark",
+										"form": "frame-interested",
+										"anchor": { "x": 0.259, "y": 0.411 },
+										"size": 0.429,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -4.062 },
+										"foot": { "rotate": 6.303 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"anchor": { "x": 0.162, "y": 0.428 },
+										"size": 0.396,
+										"drawDepth": -7,
+										"foot": { "rotate": 6.622 }
+									},
+									{
+										"role": "target",
+										"form": "frame-skeptical",
+										"anchor": { "x": 0.788, "y": 0.391 },
+										"size": 0.371,
+										"drawDepth": -10,
+										"head": { "rotate": -4.603 },
+										"foot": { "rotate": 4.603 }
+									},
+									{
+										"role": "greedy",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.048, "y": 0.444 },
+										"size": 0.435,
+										"drawDepth": -9,
+										"foot": { "rotate": 2.09 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": -0.231 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~06~player_chose_one~panel_004~1_speech",
+										"fallbackSlotOwner": 1,
+										"padXFraction": 0.701,
+										"padYFraction": 0.168,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~06~player_chose_one~panel_004~2_speech"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.397, "y": 1.17 },
+										"size": 0.327,
+										"foot": { "rotate": -8.617 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "snark",
+										"form": "frame-interested",
+										"anchor": { "x": 0.259, "y": 0.411 },
+										"size": 0.429,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": 17.327 },
+										"foot": { "rotate": 6.303 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"anchor": { "x": 0.162, "y": 0.428 },
+										"size": 0.396,
+										"drawDepth": -7,
+										"nameTag": "none",
+										"head": { "rotate": 11.845 },
+										"foot": { "rotate": 6.622 }
+									},
+									{
+										"role": "target",
+										"form": "frame-interested",
+										"anchor": { "x": 0.788, "y": 0.391 },
+										"size": 0.371,
+										"drawDepth": -10,
+										"head": { "rotate": -18.594, "scaleY": -1 },
+										"foot": { "rotate": 4.603 }
+									},
+									{
+										"role": "greedy",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.048, "y": 0.444 },
+										"size": 0.435,
+										"drawDepth": -9,
+										"head": { "rotate": 14.331 },
+										"foot": { "rotate": 2.09 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": -0.231 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~06~player_chose_one~panel_005~1_speech"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"anchor": { "x": 0.18, "y": 0.472 },
+										"size": 0.429,
+										"drawDepth": -7,
+										"head": { "rotate": 10.906 }
+									},
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.717, "y": 1.058 },
+										"size": 0.327,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": -8.617 }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": -0.231 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~06~player_chose_one~panel_006~1_speech",
+										"fallbackSlotOwner": 1
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"anchor": { "x": 0.495, "y": 0.544 },
+										"head": { "rotate": -9.852, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comic:smokeSwirls.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.347, "y": 0.235 },
+										"size": 0.549,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~06~player_chose_one~panel_007~1_healer",
+										"pointerOwner": "healer"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.083, "y": 0.901 },
+										"size": 0.276,
+										"foot": { "rotate": 2.333 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.291, "y": 0.335 },
+										"size": 0.421,
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "snark",
+										"anchor": { "x": 0.894, "y": 0.483 },
+										"size": 0.35,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -4.216 },
+										"foot": { "rotate": -0.037 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"anchor": { "x": 0.555, "y": 0.428 },
+										"size": 0.31,
+										"drawDepth": -7,
+										"nameTag": "none",
+										"head": { "rotate": 2.952 },
+										"foot": { "rotate": -3.487 }
+									},
+									{
+										"role": "target",
+										"form": "frame-interested",
+										"anchor": { "x": 0.996, "y": 0.407 },
+										"size": 0.371,
+										"drawDepth": -10,
+										"head": { "rotate": -18.594, "scaleY": -1 },
+										"foot": { "rotate": 4.603 }
+									},
+									{
+										"role": "greedy",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.79, "y": 0.4 },
+										"size": 0.356,
+										"drawDepth": -9,
+										"head": { "rotate": -2.438 },
+										"foot": { "rotate": 2.09 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.317, "y": -0.118 },
+										"size": 0.287
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": -0.231 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~06~player_chose_one~panel_008~1_speech"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Test",
+					"target": "healer",
+					"value": "drauven",
+					"threshold": "1",
+					"onPass": {
+						"class": "ApplyTheme",
+						"target": "healer",
+						"theme": "foothill",
+						"piece": "head",
+						"historyTextKey": "encounter_wilderness_theOffering.0.playerChose_one.1addTheme.foothill.head.replaceInjuries"
+					},
+					"onFail": {
+						"class": "ApplyTheme",
+						"target": "healer",
+						"theme": "foothill",
+						"piece": "head",
+						"historyTextKey": "encounter_wilderness_theOffering.0.playerChose_one.1addTheme.foothill.head.replaceInjuries",
+						"replaceInjuredLimbs": true
+					}
+				},
+				{
+					"class": "AllowFollowup",
+					"id": "encounter_wilderness_theOffering.0.playerChose_one"
+				},
+				{
+					"class": "AddRememberedPlace",
+					"target": "overlandTile",
+					"icon": "remembered_theOffering_outcome1"
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "snark",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "snark",
+										"form": "frame-grim",
+										"head": { "rotate": -21.801 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_001~1_snark",
+										"pointerOwner": "snark"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "snark", "form": "frame-skeptical" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_002~1_snark",
+										"pointerOwner": "snark"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.412, "y": 1.17 },
+										"size": 0.327,
+										"foot": { "rotate": -3.702 }
+									},
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.845, "y": 0.592 },
+										"size": 0.15,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 5.857 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "none"
+									},
+									{
+										"role": "snark",
+										"form": "frame-interested",
+										"anchor": { "x": 0.259, "y": 0.411 },
+										"size": 0.429,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -19.982, "scaleY": -1 },
+										"foot": { "rotate": 6.303 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.162, "y": 0.428 },
+										"size": 0.396,
+										"drawDepth": -7,
+										"foot": { "rotate": 6.622 }
+									},
+									{
+										"role": "target",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.964, "y": 0.403 },
+										"size": 0.397,
+										"drawDepth": -10
+									},
+									{
+										"role": "greedy",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.048, "y": 0.444 },
+										"size": 0.435,
+										"drawDepth": -9,
+										"foot": { "rotate": 2.09 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": -0.231 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_003~1_snark",
+										"pointerOwner": "snark",
+										"padXFraction": 0.301,
+										"padYFraction": 0.766,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 11, "dY": 61.999996, "pointerOrientV": "down" }
+									},
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_003~2_snark",
+										"pointerOwner": "snark"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.402, "y": 1.166 },
+										"size": 0.327,
+										"foot": { "rotate": -3.702 }
+									},
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.845, "y": 0.592 },
+										"size": 0.15,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 5.857 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "none"
+									},
+									{
+										"role": "snark",
+										"form": "frame-interested",
+										"anchor": { "x": 0.259, "y": 0.411 },
+										"size": 0.429,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -2.6692996, "scaleY": 1 },
+										"foot": { "rotate": 6.303 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"anchor": { "x": 0.162, "y": 0.428 },
+										"size": 0.396,
+										"drawDepth": -7,
+										"head": { "rotate": 10.951 },
+										"foot": { "rotate": 6.622 }
+									},
+									{
+										"role": "target",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.964, "y": 0.403 },
+										"size": 0.397,
+										"drawDepth": -10,
+										"head": { "rotate": 8.786 }
+									},
+									{
+										"role": "greedy",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.048, "y": 0.444 },
+										"size": 0.435,
+										"drawDepth": -9,
+										"head": { "rotate": 12.352 },
+										"foot": { "rotate": 2.09 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": -0.231 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_004~1_snark",
+										"pointerOwner": "snark",
+										"padXFraction": 0.301,
+										"padYFraction": 0.766,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 11, "dY": 61.999996, "pointerOrientV": "down" }
+									},
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_004~2_snark",
+										"pointerOwner": "snark"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.264, "y": 1.146 },
+										"size": 0.327,
+										"foot": { "rotate": -3.702 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.75" }
+									},
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.845, "y": 0.592 },
+										"size": 0.15,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 5.857 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "none"
+									},
+									{
+										"role": "snark",
+										"form": "frame-interested",
+										"anchor": { "x": 0.259, "y": 0.411 },
+										"size": 0.429,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -26.604, "scaleY": -1 },
+										"foot": { "rotate": 6.303 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"anchor": { "x": 0.162, "y": 0.428 },
+										"size": 0.396,
+										"drawDepth": -7,
+										"head": { "rotate": 10.951 },
+										"foot": { "rotate": 6.622 }
+									},
+									{
+										"role": "target",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.964, "y": 0.403 },
+										"size": 0.397,
+										"drawDepth": -10,
+										"head": { "rotate": 8.786 }
+									},
+									{
+										"role": "greedy",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.048, "y": 0.444 },
+										"size": 0.435,
+										"drawDepth": -9,
+										"head": { "rotate": 12.352 },
+										"foot": { "rotate": 4.176 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": -0.231 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_005~1_snark",
+										"pointerOwner": "snark",
+										"padXFraction": 0.301,
+										"padYFraction": 0.766,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 11, "dY": 61.999996, "pointerOrientV": "down" }
+									},
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_005~2_snark",
+										"pointerOwner": "snark"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.026, "y": 1.005 },
+										"size": 0.327,
+										"foot": { "rotate": -3.702 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.4" }
+									},
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.845, "y": 0.592 },
+										"size": 0.15,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 5.857 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "none"
+									},
+									{
+										"role": "snark",
+										"form": "frame-interested",
+										"anchor": { "x": 0.392, "y": 0.415 },
+										"size": 0.429,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -17.494, "scaleY": -1 },
+										"foot": { "rotate": 6.303 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"anchor": { "x": 0.212, "y": 0.424 },
+										"size": 0.396,
+										"drawDepth": -7,
+										"head": { "rotate": -21.691, "scaleY": -1 },
+										"foot": { "rotate": 6.622 }
+									},
+									{
+										"role": "target",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.913, "y": 0.439 },
+										"size": 0.397,
+										"drawDepth": -10,
+										"head": { "rotate": 8.786 }
+									},
+									{
+										"role": "greedy",
+										"form": "frame-scared",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.124, "y": 0.432 },
+										"size": 0.435,
+										"drawDepth": -9,
+										"head": { "rotate": -10.868, "scaleY": -1 },
+										"foot": { "rotate": 2.09 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.179, "y": -0.231 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_006~1_snark",
+										"pointerOwner": "snark",
+										"padXFraction": 0.301,
+										"padYFraction": 0.766,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 11, "dY": 61.999996, "pointerOrientV": "down" }
+									},
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_006~2_snark",
+										"pointerOwner": "snark"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.817, "y": 0.784 },
+										"size": 0.226,
+										"foot": { "rotate": 7.945 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.496, "y": 0.379 },
+										"size": 0.73,
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "snark",
+										"anchor": { "x": 0.09, "y": 0.58 },
+										"size": 0.465,
+										"drawDepth": -4,
+										"nameTag": "none",
+										"head": { "rotate": -15.627 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_007~1_speech",
+										"fallbackSlotOwner": 0
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.817, "y": 0.784 },
+										"size": 0.226,
+										"foot": { "rotate": 7.945 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.496, "y": 0.379 },
+										"size": 0.73,
+										"nameTag": "bottomRight"
+									},
+									{
+										"role": "snark",
+										"form": "frame-interested",
+										"anchor": { "x": 0.09, "y": 0.58 },
+										"size": 0.465,
+										"drawDepth": -4,
+										"nameTag": "none",
+										"head": { "rotate": -15.627 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~07~player_chose_two~panel_008~1_speech",
+										"fallbackSlotOwner": 0
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "AllowFollowup",
+					"id": "encounter_wilderness_theOffering.1.playerChose_two"
+				},
+				{
+					"class": "UpgradeGear",
+					"query": { "forceItemId": "augment_pauldronAutumn" }
+				},
+				{
+					"class": "AddRememberedPlace",
+					"target": "overlandTile",
+					"icon": "remembered_theOffering_outcome2"
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "greedy",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "greedy",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.243, "y": 0.536 },
+										"size": 0.797,
+										"head": { "rotate": 2.734 }
+									},
+									{
+										"role": "healer",
+										"anchor": { "x": 0.63, "y": 0.5 },
+										"size": 0.658,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -8.057, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~08~player_chose_three~panel_001~1_greedy",
+										"pointerOwner": "greedy"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "greedy",
+										"form": "frame-grim",
+										"head": { "rotate": 10.408 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~08~player_chose_three~panel_002~1_greedy",
+										"pointerOwner": "greedy"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.402, "y": 1.166 },
+										"size": 0.327,
+										"foot": { "rotate": -3.702 }
+									},
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.845, "y": 0.592 },
+										"size": 0.15,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 5.857 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "none",
+										"foot": { "rotate": -2.028 }
+									},
+									{
+										"role": "snark",
+										"form": "frame-interested",
+										"anchor": { "x": 0.294, "y": 0.383 },
+										"size": 0.429,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -2.6692996, "scaleY": 1 },
+										"foot": { "rotate": 6.303 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"anchor": { "x": 0.162, "y": 0.428 },
+										"size": 0.396,
+										"drawDepth": -7,
+										"head": { "rotate": -11.8 },
+										"foot": { "rotate": 6.622 }
+									},
+									{
+										"role": "target",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"anchor": { "x": 0.968, "y": 0.419 },
+										"size": 0.397,
+										"drawDepth": -10,
+										"head": { "rotate": -4.576 }
+									},
+									{
+										"role": "greedy",
+										"form": "frame-dubious",
+										"equipment": {},
+										"anchor": { "x": 0.732, "y": 0.492 },
+										"size": 0.547,
+										"drawDepth": -9,
+										"head": { "rotate": -5.296 },
+										"foot": { "rotate": 2.09 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.364, "y": -0.223 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~08~player_chose_three~panel_003~1_greedy",
+										"pointerOwner": "greedy",
+										"location": "bottomRight",
+										"padXFraction": 0.047,
+										"padYFraction": 0.71,
+										"widthFraction": 0.45800388,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 11, "dY": -52.00003, "pointerOrientV": "up" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.402, "y": 1.166 },
+										"size": 0.327,
+										"foot": { "rotate": -3.702 }
+									},
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.845, "y": 0.592 },
+										"size": 0.15,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 5.857 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "none",
+										"foot": { "rotate": -2.028 }
+									},
+									{
+										"role": "snark",
+										"form": "frame-interested",
+										"anchor": { "x": 0.824, "y": 0.451 },
+										"size": 0.51,
+										"drawDepth": -8,
+										"nameTag": "none",
+										"head": { "rotate": -2.669, "scaleY": 1 },
+										"foot": { "rotate": -0.036 }
+									},
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"anchor": { "x": 0.708, "y": 0.392 },
+										"size": 0.396,
+										"drawDepth": -7,
+										"head": { "rotate": -11.8 },
+										"foot": { "rotate": 6.622 }
+									},
+									{
+										"role": "greedy",
+										"form": "frame-dubious",
+										"equipment": {},
+										"anchor": { "x": 0.943, "y": 0.5 },
+										"size": 0.646,
+										"drawDepth": -9,
+										"head": { "rotate": -5.296 },
+										"foot": { "rotate": 2.09 },
+										"color": { "r": "0.7", "g": "0.7", "b": "0.7", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.364, "y": -0.223 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~08~player_chose_three~panel_004~1_greedy",
+										"pointerOwner": "greedy",
+										"location": "bottomRight",
+										"padXFraction": 0.047,
+										"padYFraction": 0.71,
+										"widthFraction": 0.45800388,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 11, "dY": -52.00003, "pointerOrientV": "up" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.402, "y": 1.166 },
+										"size": 0.327,
+										"foot": { "rotate": -3.702 }
+									},
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.845, "y": 0.592 },
+										"size": 0.15,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 5.857 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "none",
+										"foot": { "rotate": -2.028 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.364, "y": -0.223 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~08~player_chose_three~panel_005~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "figure:misc/foothillGuardian.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.402, "y": 1.166 },
+										"size": 0.327,
+										"foot": { "rotate": -3.702 }
+									},
+									{
+										"assetSpec": "figure:misc/forestCreature2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.845, "y": 0.592 },
+										"size": 0.15,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 5.857 }
+									},
+									{
+										"assetSpec": "scenery:shrineMoss1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.667, "y": 0.355 },
+										"size": 0.456,
+										"nameTag": "none",
+										"foot": { "rotate": -2.028 }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.691, "y": -0.102 },
+										"size": 0.287,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.364, "y": -0.223 },
+										"size": 0.647,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~08~player_chose_three~panel_006~1_speech",
+										"fallbackSlotOwner": 0,
+										"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+										"padXFraction": 0.642,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 136, "dY": -3.000061 }
+									},
+									{
+										"textSourceFile": "wilderness/theOffering",
+										"textKey": "~08~player_chose_three~panel_006~2_speech",
+										"fallbackSlotOwner": 1,
+										"padXFraction": 0.718,
+										"padYFraction": 0.324,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -45, "dY": -2 }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "AddRememberedPlace",
+					"target": "overlandTile",
+					"icon": "remembered_theOffering_outcome3"
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "greedy",
+		"ifPlayerChose": "four",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Test",
+					"value": "EVENT_ROLL+roll_four",
+					"threshold": "difficulty_four",
+					"onPass": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Description",
+								"script": [
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-skeptical",
+													"anchor": { "x": 0.615, "y": 0.724 },
+													"size": 0.744,
+													"head": { "rotate": -39.529, "scaleY": 1 },
+													"foot": { "rotate": 12.316 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.654, "y": 0.263 },
+													"size": 1.328,
+													"drawDepth": -6,
+													"nameTag": "bottomRight"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_001~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-skeptical",
+													"anchor": { "x": 0.423, "y": 0.652 },
+													"size": 0.744,
+													"head": { "rotate": 19.446, "scaleY": -1 },
+													"foot": { "rotate": -13.736 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.315, "y": 0.279 },
+													"size": 1.328,
+													"drawDepth": -6,
+													"nameTag": "bottomRight"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_002~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-surprised",
+													"anchor": { "x": 0.496, "y": 0.544 },
+													"head": { "rotate": 14.621, "scaleY": -1 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_003~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.402, "y": 1.166 },
+													"size": 0.327,
+													"foot": { "rotate": -3.702 }
+												},
+												{
+													"assetSpec": "figure:misc/forestCreature2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.845, "y": 0.592 },
+													"size": 0.15,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": 5.857 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.667, "y": 0.355 },
+													"size": 0.456,
+													"nameTag": "none",
+													"foot": { "rotate": -2.028 }
+												},
+												{
+													"role": "snark",
+													"form": "frame-interested",
+													"anchor": { "x": 0.207, "y": 0.359 },
+													"size": 0.429,
+													"drawDepth": -8,
+													"nameTag": "none",
+													"head": { "rotate": -2.6692996, "scaleY": 1 },
+													"foot": { "rotate": 6.303 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-interested",
+													"anchor": { "x": 0.099, "y": 0.44 },
+													"size": 0.396,
+													"drawDepth": -7,
+													"head": { "rotate": -11.8 },
+													"foot": { "rotate": 6.622 }
+												},
+												{
+													"role": "target",
+													"form": "frame-skeptical",
+													"facing": "left",
+													"anchor": { "x": 0.968, "y": 0.419 },
+													"size": 0.397,
+													"drawDepth": -10,
+													"head": { "rotate": -4.576 }
+												},
+												{
+													"role": "greedy",
+													"form": "frame-talk",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.591, "y": 0.255 },
+													"size": 0.294,
+													"drawDepth": -9,
+													"head": { "rotate": 10.602 },
+													"foot": { "rotate": 2.09 }
+												},
+												{
+													"assetSpec": "comic:rockRound.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.691, "y": -0.102 },
+													"size": 0.287
+												},
+												{
+													"assetSpec": "comic:smokeCloud.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.364, "y": -0.223 },
+													"size": 0.647,
+													"drawDepth": -5,
+													"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_004~1_greedy",
+													"pointerOwner": "greedy",
+													"location": "bottomRight",
+													"padXFraction": 0.047,
+													"padYFraction": 0.71,
+													"widthFraction": 0.45800388,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 17, "dY": -53.00003, "pointerOrientV": "up" }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.402, "y": 1.166 },
+													"size": 0.327,
+													"foot": { "rotate": -3.702 }
+												},
+												{
+													"assetSpec": "figure:misc/forestCreature2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.845, "y": 0.592 },
+													"size": 0.15,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": 5.857 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.667, "y": 0.355 },
+													"size": 0.456,
+													"nameTag": "none",
+													"foot": { "rotate": -2.028 }
+												},
+												{
+													"role": "snark",
+													"form": "frame-interested",
+													"anchor": { "x": 0.207, "y": 0.359 },
+													"size": 0.429,
+													"drawDepth": -8,
+													"nameTag": "none",
+													"head": { "rotate": -19.663, "scaleY": -1 },
+													"foot": { "rotate": 6.303 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-interested",
+													"anchor": { "x": 0.099, "y": 0.44 },
+													"size": 0.396,
+													"drawDepth": -7,
+													"head": { "rotate": -19.448 },
+													"foot": { "rotate": 6.622 }
+												},
+												{
+													"role": "target",
+													"form": "frame-skeptical",
+													"facing": "left",
+													"anchor": { "x": 0.968, "y": 0.419 },
+													"size": 0.397,
+													"drawDepth": -10,
+													"head": { "rotate": -24.785 }
+												},
+												{
+													"role": "greedy",
+													"form": "frame-interested",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.591, "y": 0.255 },
+													"size": 0.294,
+													"drawDepth": -9,
+													"head": { "rotate": -28.53, "scaleY": -1 },
+													"foot": { "rotate": 2.09 }
+												},
+												{
+													"assetSpec": "comic:rockRound.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.691, "y": -0.102 },
+													"size": 0.287
+												},
+												{
+													"assetSpec": "comic:smokeCloud.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.364, "y": -0.223 },
+													"size": 0.647,
+													"drawDepth": -5,
+													"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_005~1_greedy",
+													"style": "actionLarge",
+													"pointerOwner": "greedy",
+													"location": "bottomRight",
+													"padXFraction": 0.238,
+													"padYFraction": 0.409,
+													"widthFraction": 0.45800388,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 17, "dY": -53.00003, "pointerOrientV": "up" }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-grim",
+													"anchor": { "x": 0.496, "y": 0.544 },
+													"head": { "rotate": -1.568, "scaleY": 1 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_006~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/forestCreature2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.898, "y": 1.111 },
+													"size": 0.33,
+													"foot": { "rotate": -11.222 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_007~1_speech"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-dubious",
+													"anchor": { "x": 0.496, "y": 0.544 },
+													"head": { "rotate": -1.568, "scaleY": 1 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_008~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.314, "y": 1.182 },
+													"size": 0.327,
+													"foot": { "rotate": -3.702 }
+												},
+												{
+													"assetSpec": "figure:misc/forestCreature2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.845, "y": 0.592 },
+													"size": 0.15,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": 5.857 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.667, "y": 0.355 },
+													"size": 0.456,
+													"nameTag": "none",
+													"foot": { "rotate": -2.028 }
+												},
+												{
+													"role": "snark",
+													"form": "frame-interested",
+													"anchor": { "x": 0.312, "y": 0.367 },
+													"size": 0.429,
+													"drawDepth": -8,
+													"nameTag": "none",
+													"head": { "rotate": -17.735, "scaleY": 1 },
+													"foot": { "rotate": 6.303 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-interested",
+													"anchor": { "x": 0.215, "y": 0.368 },
+													"size": 0.396,
+													"drawDepth": -7,
+													"head": { "rotate": -9.904 },
+													"foot": { "rotate": 6.622 }
+												},
+												{
+													"role": "target",
+													"form": "frame-grim",
+													"facing": "left",
+													"anchor": { "x": 0.968, "y": 0.419 },
+													"size": 0.397,
+													"drawDepth": -10,
+													"head": { "rotate": 6.097 }
+												},
+												{
+													"role": "greedy",
+													"form": "frame-talk",
+													"facing": "left",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.591, "y": 0.255 },
+													"size": 0.294,
+													"drawDepth": -9,
+													"head": { "rotate": 12.308, "scaleY": 1 },
+													"foot": { "rotate": 1.731 }
+												},
+												{
+													"assetSpec": "comic:rockRound.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.691, "y": -0.102 },
+													"size": 0.287
+												},
+												{
+													"assetSpec": "comic:smokeCloud.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.364, "y": -0.223 },
+													"size": 0.647,
+													"drawDepth": -5,
+													"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_009~1_greedy",
+													"pointerOwner": "greedy",
+													"location": "bottomRight",
+													"padXFraction": 0.009,
+													"padYFraction": 0.609,
+													"widthFraction": 0.37744296,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"dX": 20,
+														"dY": -89.00003,
+														"pointerOrientH": "onRight",
+														"pointerOrientV": "up"
+													}
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-interested",
+													"facing": "left",
+													"anchor": { "x": 0.825, "y": 0.4 },
+													"size": 0.349,
+													"head": { "rotate": 13.827 }
+												},
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.13, "y": 1.087 },
+													"size": 0.364,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": -16.763 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_010~1_action",
+													"style": "action",
+													"fallbackSlotOwner": 1,
+													"padXFraction": 0.636,
+													"padYFraction": 0.056
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-interested",
+													"facing": "left",
+													"anchor": { "x": 0.825, "y": 0.4 },
+													"size": 0.349,
+													"head": { "rotate": 13.827 }
+												},
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.13, "y": 1.087 },
+													"size": 0.364,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": -16.763 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_011~1_speech",
+													"fallbackSlotOwner": 1,
+													"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+													"pointerAdjust": { "dX": 145, "dY": -2.0000305 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.093, "y": 1.162 },
+													"size": 0.327,
+													"foot": { "rotate": -3.702 }
+												},
+												{
+													"assetSpec": "figure:misc/forestCreature2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.559, "y": 0.568 },
+													"size": 0.15,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": 5.857 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.368, "y": 0.383 },
+													"size": 0.456,
+													"nameTag": "none",
+													"foot": { "rotate": -2.028 }
+												},
+												{
+													"role": "snark",
+													"form": "frame-interested",
+													"anchor": { "x": 0.824, "y": 0.451 },
+													"size": 0.51,
+													"drawDepth": -8,
+													"nameTag": "none",
+													"head": { "rotate": -2.669, "scaleY": 1 },
+													"foot": { "rotate": -0.036 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-interested",
+													"anchor": { "x": 0.708, "y": 0.392 },
+													"size": 0.396,
+													"drawDepth": -7,
+													"head": { "rotate": -11.8 },
+													"foot": { "rotate": 6.622 }
+												},
+												{
+													"role": "greedy",
+													"equipment": {},
+													"anchor": { "x": 0.943, "y": 0.5 },
+													"size": 0.646,
+													"drawDepth": -9,
+													"head": { "rotate": -5.296 },
+													"foot": { "rotate": 2.09 },
+													"color": { "r": "0.7", "g": "0.7", "b": "0.7", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rockRound.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.345, "y": -0.09 },
+													"size": 0.287
+												},
+												{
+													"assetSpec": "comic:smokeCloud.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.006, "y": -0.199 },
+													"size": 0.647,
+													"drawDepth": -5,
+													"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_012~1_speech",
+													"fallbackSlotOwner": 1,
+													"padXFraction": 0.371,
+													"padYFraction": 0.222,
+													"widthFraction": 0.28047144,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": -37, "dY": -3.9999847 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "twoThirds",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "snark",
+													"form": "frame-grim",
+													"anchor": { "x": 0.371, "y": 0.495 },
+													"size": 0.561,
+													"drawDepth": -8,
+													"nameTag": "bottomRight",
+													"head": { "rotate": 2.512 }
+												},
+												{
+													"role": "healer",
+													"anchor": { "x": 0.526, "y": 0.464 },
+													"size": 0.409,
+													"drawDepth": -7,
+													"nameTag": "none",
+													"foot": { "rotate": -1.967 }
+												},
+												{
+													"role": "target",
+													"form": "frame-grim",
+													"anchor": { "x": 0.102, "y": 0.491 },
+													"size": 0.562,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"foot": { "rotate": 1.709 }
+												},
+												{
+													"role": "greedy",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.859, "y": 0.455 },
+													"size": 0.629,
+													"drawDepth": -9,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_013~1_narration",
+													"style": "narration"
+												},
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_013~2_snark",
+													"pointerOwner": "snark",
+													"padXFraction": 0.236,
+													"padYFraction": 0.156,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-joke",
+													"head": { "rotate": -10.008, "scaleY": -1 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_014~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "twoThirds",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "snark",
+													"form": "frame-surprised",
+													"anchor": { "x": 0.371, "y": 0.495 },
+													"size": 0.561,
+													"drawDepth": -8,
+													"head": { "rotate": 2.512 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-surprised",
+													"anchor": { "x": 0.526, "y": 0.464 },
+													"size": 0.409,
+													"drawDepth": -7,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": -1.967 }
+												},
+												{
+													"role": "target",
+													"form": "frame-surprised",
+													"anchor": { "x": 0.102, "y": 0.491 },
+													"size": 0.562,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"foot": { "rotate": 1.709 }
+												},
+												{
+													"role": "greedy",
+													"form": "frame-joy",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.859, "y": 0.455 },
+													"size": 0.629,
+													"drawDepth": -9,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_015~1_snark",
+													"pointerOwner": "snark"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "snark",
+													"form": "frame-joke",
+													"anchor": { "x": 0.491, "y": 0.46 },
+													"head": { "rotate": -5.074 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_016~1_snark",
+													"pointerOwner": "snark",
+													"location": "bottomRight",
+													"padXFraction": 0.184,
+													"padYFraction": 0.815,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": -11, "dY": -46, "pointerOrientV": "up" }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "snark",
+													"form": "frame-talk",
+													"focus": "foot",
+													"anchor": { "x": 0.516, "y": -0.067 },
+													"size": 0.257,
+													"drawDepth": -8,
+													"head": { "rotate": 2.512 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-happy",
+													"focus": "foot",
+													"anchor": { "x": 0.617, "y": -0.054 },
+													"size": 0.242,
+													"drawDepth": -7,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": -1.967 }
+												},
+												{
+													"role": "target",
+													"focus": "foot",
+													"anchor": { "x": 0.42, "y": -0.055 },
+													"size": 0.26,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"foot": { "rotate": 1.709 }
+												},
+												{
+													"role": "greedy",
+													"form": "frame-happy",
+													"equipment": { "mode": "removeWeapons" },
+													"focus": "foot",
+													"anchor": { "x": 0.806, "y": -0.027 },
+													"size": 0.252,
+													"drawDepth": -9,
+													"nameTag": "none",
+													"head": { "rotate": -13.181, "scaleY": -1 }
+												},
+												{
+													"assetSpec": "scenery:trunkConifer1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.292, "y": 0.805 },
+													"size": 0.242,
+													"drawDepth": 8,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:trunk4.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.114, "y": 1.629 },
+													"size": 0.333
+												},
+												{
+													"assetSpec": "scenery:stumpRockHolePine.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.127, "y": 0.215 },
+													"size": 0.321
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~09~player_chose_four.test_pass~panel_017~1_snark",
+													"pointerOwner": "snark",
+													"location": "bottomLeft",
+													"padXFraction": 0.453,
+													"padYFraction": 0.685,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "rotate": 9.257291, "dX": -3, "dY": -54.000015, "pointerOrientV": "up" }
+												}
+											]
+										}
+									}
+								]
+							},
+							{
+								"class": "UpgradeGear",
+								"query": { "allowArmor": false, "allowAugment": false, "allowOffHand": false }
+							}
+						]
+					},
+					"onFail": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Description",
+								"script": [
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-skeptical",
+													"anchor": { "x": 0.615, "y": 0.724 },
+													"size": 0.744,
+													"head": { "rotate": -39.529, "scaleY": 1 },
+													"foot": { "rotate": 12.316 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.654, "y": 0.263 },
+													"size": 1.328,
+													"drawDepth": -6,
+													"nameTag": "bottomRight"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_001~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-skeptical",
+													"anchor": { "x": 0.423, "y": 0.652 },
+													"size": 0.744,
+													"head": { "rotate": 19.446, "scaleY": -1 },
+													"foot": { "rotate": -13.736 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.315, "y": 0.279 },
+													"size": 1.328,
+													"drawDepth": -6,
+													"nameTag": "bottomRight"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_002~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-surprised",
+													"anchor": { "x": 0.496, "y": 0.544 },
+													"head": { "rotate": 14.621, "scaleY": -1 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_003~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-surprised",
+													"facing": "left",
+													"anchor": { "x": 0.825, "y": 0.4 },
+													"size": 0.349,
+													"head": { "rotate": 13.827 }
+												},
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.13, "y": 1.087 },
+													"size": 0.364,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": -16.763 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_004~1_greedy",
+													"pointerOwner": "greedy"
+												},
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_004~2_action",
+													"style": "action",
+													"fallbackSlotOwner": 1,
+													"padXFraction": 0.636,
+													"padYFraction": 0.056
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "fourth",
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-surprised",
+													"facing": "left",
+													"anchor": { "x": 0.496, "y": 0.544 },
+													"head": { "rotate": 14.621, "scaleY": -1 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_005~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "fourth",
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-joy",
+													"facing": "left",
+													"anchor": { "x": 0.496, "y": 0.544 },
+													"head": { "rotate": 14.621, "scaleY": 1 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_006~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-joy",
+													"facing": "left",
+													"anchor": { "x": 0.825, "y": 0.4 },
+													"size": 0.349,
+													"head": { "rotate": 13.827 }
+												},
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.13, "y": 1.087 },
+													"size": 0.364,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": -16.763 }
+												},
+												{
+													"assetSpec": "comic:comicEmotion_sweat.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.902, "y": 0.536 },
+													"size": 0.475,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_007~1_greedy",
+													"pointerOwner": "greedy"
+												},
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_007~2_action",
+													"style": "action",
+													"fallbackSlotOwner": 1,
+													"padXFraction": 0.636,
+													"padYFraction": 0.056
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-scared",
+													"facing": "left",
+													"anchor": { "x": 0.825, "y": 0.4 },
+													"size": 0.349,
+													"head": { "rotate": -22.451, "scaleY": 1 }
+												},
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.13, "y": 1.087 },
+													"size": 0.364,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": -16.763 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_008~1_greedy",
+													"pointerOwner": "greedy",
+													"location": "topRight",
+													"padXFraction": 0.031,
+													"padYFraction": 0.053,
+													"widthFraction": 0.65062827,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_008~2_action",
+													"style": "action",
+													"fallbackSlotOwner": 1,
+													"padXFraction": 0.636,
+													"padYFraction": 0.056
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.346, "y": 1.146 },
+													"size": 0.327,
+													"foot": { "rotate": -3.702 }
+												},
+												{
+													"assetSpec": "figure:misc/forestCreature2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.845, "y": 0.592 },
+													"size": 0.15,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": 5.857 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.667, "y": 0.355 },
+													"size": 0.456,
+													"nameTag": "none"
+												},
+												{
+													"role": "snark",
+													"form": "frame-scared",
+													"anchor": { "x": 0.259, "y": 0.411 },
+													"size": 0.429,
+													"drawDepth": -8,
+													"nameTag": "none",
+													"head": { "rotate": -2.6692996, "scaleY": 1 },
+													"foot": { "rotate": 6.303 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-skeptical",
+													"anchor": { "x": 0.121, "y": 0.436 },
+													"size": 0.396,
+													"drawDepth": -7,
+													"head": { "rotate": -7.229 },
+													"foot": { "rotate": 6.622 }
+												},
+												{
+													"role": "target",
+													"form": "frame-surprised",
+													"facing": "left",
+													"anchor": { "x": 0.964, "y": 0.403 },
+													"size": 0.397,
+													"drawDepth": -10,
+													"head": { "rotate": 8.786 }
+												},
+												{
+													"role": "greedy",
+													"form": "frame-scared",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.628, "y": 0.468 },
+													"size": 0.347,
+													"drawDepth": -9,
+													"head": { "rotate": -4.405 },
+													"foot": { "rotate": 2.09 }
+												},
+												{
+													"assetSpec": "comic:rockRound.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.691, "y": -0.102 },
+													"size": 0.287
+												},
+												{
+													"assetSpec": "comic:smokeCloud.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.179, "y": -0.231 },
+													"size": 0.647,
+													"drawDepth": -5,
+													"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_009~1_snark",
+													"pointerOwner": "snark",
+													"padXFraction": 0.301,
+													"padYFraction": 0.766,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 11, "dY": 61.999996, "pointerOrientV": "down" }
+												},
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_009~2_snark",
+													"pointerOwner": "snark"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.098, "y": 0.886 },
+													"size": 0.415
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_010~1_speech",
+													"fallbackSlotOwner": 0,
+													"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+													"location": "topRight",
+													"padXFraction": 0.132,
+													"widthFraction": 0.43947247,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 82, "dY": -5 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.098, "y": 0.886 },
+													"size": 0.415,
+													"foot": { "rotate": -14.207 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_011~1_speech",
+													"fallbackSlotOwner": 0,
+													"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+													"pointerAdjust": { "dX": 56, "dY": -2.9999847 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": -0.005, "y": 1.139 },
+													"size": 0.54,
+													"foot": { "rotate": -14.207 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_012~1_speech",
+													"fallbackSlotOwner": 0,
+													"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+													"pointerAdjust": { "dX": 121, "dY": -3 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "twoThirds",
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/forestCreature2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.825, "y": 1.184 },
+													"size": 0.33,
+													"foot": { "rotate": -0.992 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.244, "y": 0.536 },
+													"nameTag": "bottomRight"
+												},
+												{
+													"assetSpec": "comic:rockRound.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.276, "y": -0.271 },
+													"size": 0.561,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_013~1_speech",
+													"fallbackSlotOwner": 0,
+													"pointerAdjust": { "dX": -77, "dY": -3 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"assetSpec": "figure:misc/foothillGuardian.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.346, "y": 1.146 },
+													"size": 0.327,
+													"foot": { "rotate": -3.702 }
+												},
+												{
+													"assetSpec": "figure:misc/forestCreature2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.845, "y": 0.592 },
+													"size": 0.15,
+													"nameTag": "bottomRight",
+													"foot": { "rotate": 5.857 }
+												},
+												{
+													"assetSpec": "scenery:shrineMoss1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.667, "y": 0.355 },
+													"size": 0.456,
+													"nameTag": "none"
+												},
+												{
+													"role": "snark",
+													"form": "frame-scared",
+													"anchor": { "x": 0.36, "y": 0.395 },
+													"size": 0.429,
+													"drawDepth": -8,
+													"nameTag": "none",
+													"head": { "rotate": -2.6692996, "scaleY": 1 },
+													"foot": { "rotate": 6.303 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-skeptical",
+													"anchor": { "x": 0.224, "y": 0.408 },
+													"size": 0.396,
+													"drawDepth": -7,
+													"head": { "rotate": -7.229 },
+													"foot": { "rotate": 6.622 }
+												},
+												{
+													"role": "target",
+													"form": "frame-surprised",
+													"facing": "left",
+													"anchor": { "x": 0.964, "y": 0.403 },
+													"size": 0.397,
+													"drawDepth": -10,
+													"head": { "rotate": 8.786 }
+												},
+												{
+													"role": "greedy",
+													"form": "frame-scared",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.712, "y": 0.432 },
+													"size": 0.347,
+													"drawDepth": -9,
+													"head": { "rotate": -18.956, "scaleY": -1 },
+													"foot": { "rotate": -8.429 }
+												},
+												{
+													"assetSpec": "comic:rockRound.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.691, "y": -0.102 },
+													"size": 0.287
+												},
+												{
+													"assetSpec": "comic:smokeCloud.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.249, "y": -0.175 },
+													"size": 0.647,
+													"drawDepth": -5,
+													"color": { "r": "0.8", "g": "1", "b": "0.9", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_014~1_speech",
+													"fallbackSlotOwner": 0,
+													"backgroundColor": { "r": "0.9", "g": "0.95", "b": "1", "a": "1" },
+													"padXFraction": 0.541,
+													"padYFraction": 0.061,
+													"widthFraction": 0.3873903,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 114, "dY": -1.9999847 }
+												},
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_014~2_snark",
+													"pointerOwner": "snark",
+													"padXFraction": 0.301,
+													"padYFraction": 0.766,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 11, "dY": 61.999996, "pointerOrientV": "down" }
+												},
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_014~3_snark",
+													"pointerOwner": "snark"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-scared",
+													"anchor": { "x": 0.465, "y": 0.505 },
+													"size": 0.838,
+													"head": { "rotate": -10.51, "scaleY": -1 },
+													"foot": { "rotate": -13.393 },
+													"color": { "r": "0.7", "g": "1", "b": "1", "a": "1" },
+													"colorFilter": { "filterName": "selected", "strength": 3 }
+												},
+												{
+													"assetSpec": "comic:smokeSwirls.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.199, "y": 0.295 },
+													"size": 0.426,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicEmotion_lightTriangles.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.184, "y": 0.649 },
+													"drawDepth": -4,
+													"nameTag": "none",
+													"foot": { "rotate": -57.529 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_015~1_action",
+													"style": "action",
+													"padXFraction": 0.098,
+													"padYFraction": 0.012
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "twoThirds",
+											"actorSlots": [
+												{
+													"role": "greedy",
+													"form": "frame-surprised",
+													"focus": "foot",
+													"anchor": { "x": 0.542, "y": -0.034 },
+													"size": 0.412,
+													"head": { "rotate": -1.848, "scaleY": -1 },
+													"foot": { "rotate": -4.163 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-surprised",
+													"anchor": { "x": 0.844, "y": 0.709 },
+													"size": 0.384,
+													"nameTag": "bottomRight",
+													"head": { "scaleY": -1 },
+													"foot": { "rotate": -6.845 }
+												},
+												{
+													"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.881, "y": 0.167 },
+													"size": 0.444,
+													"drawDepth": -4,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:action_popL.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.804, "y": 0.881 },
+													"size": 0.423,
+													"nameTag": "none",
+													"foot": { "rotate": -136.366 }
+												},
+												{
+													"assetSpec": "comic:rockRound.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.128, "y": 0.143 },
+													"size": 0.426,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_016~1_greedy",
+													"pointerOwner": "greedy"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "snark",
+													"form": "frame-rage",
+													"focus": "foot",
+													"anchor": { "x": 0.516, "y": -0.067 },
+													"size": 0.257,
+													"drawDepth": -8,
+													"head": { "rotate": 2.512, "scaleY": -1 },
+													"foot": { "rotate": -5.369 }
+												},
+												{
+													"role": "healer",
+													"form": "frame-scared",
+													"focus": "foot",
+													"anchor": { "x": 0.673, "y": -0.014 },
+													"size": 0.242,
+													"drawDepth": -7,
+													"nameTag": "bottomRight",
+													"head": { "rotate": -12.987, "scaleY": -1 },
+													"foot": { "rotate": 3.498 }
+												},
+												{
+													"role": "target",
+													"form": "frame-grim",
+													"focus": "foot",
+													"anchor": { "x": 0.782, "y": -0.003 },
+													"size": 0.26,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"head": { "rotate": 7.628 },
+													"foot": { "rotate": -12.761 }
+												},
+												{
+													"role": "greedy",
+													"form": "frame-scared",
+													"equipment": { "mode": "removeWeapons" },
+													"focus": "foot",
+													"anchor": { "x": 0.329, "y": 0.001 },
+													"size": 0.252,
+													"drawDepth": -9,
+													"nameTag": "none",
+													"head": { "rotate": -1.051, "scaleY": 1 },
+													"foot": { "rotate": -10.744 }
+												},
+												{
+													"assetSpec": "scenery:trunkConifer1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.292, "y": 0.805 },
+													"size": 0.242,
+													"drawDepth": 8,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:trunk4.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.114, "y": 1.629 },
+													"size": 0.333
+												},
+												{
+													"assetSpec": "scenery:stumpRockHolePine.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.127, "y": 0.215 },
+													"size": 0.321
+												},
+												{
+													"assetSpec": "comic:actionLines_arcLong.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.111, "y": 0.448 },
+													"size": 0.284
+												},
+												{
+													"assetSpec": "comic:actionLines_dash.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.593, "y": 0.327 },
+													"size": 0.321,
+													"foot": { "rotate": 180 },
+													"color": { "r": "1", "g": "1", "b": "1", "a": "0.7" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "wilderness/theOffering",
+													"textKey": "~10~player_chose_four.test_fail~panel_017~1_snark",
+													"pointerOwner": "snark",
+													"location": "bottomLeft",
+													"padXFraction": 0.453,
+													"padYFraction": 0.685,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "rotate": 9.257291, "dX": -6, "dY": -68.00005, "pointerOrientV": "up" }
+												}
+											]
+										}
+									}
+								]
+							},
+							{
+								"class": "ApplyTheme",
+								"target": "greedy",
+								"theme": "rat",
+								"piece": "tail",
+								"historyTextKey": "encounter_wilderness_theOffering.3.playerChose_four.onFail.1addTheme.rat.tail"
+							}
+						]
+					}
+				},
+				{
+					"class": "AddRememberedPlace",
+					"target": "overlandTile",
+					"icon": "remembered_theOffering_outcome4"
+				}
+			]
+		}
+	},
+	{
+		"class": "SnapshotFollowup",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "greedy",
+							"form": "frame-surprised",
+							"focus": "foot",
+							"anchor": { "x": 0.135, "y": 0.156 },
+							"size": 0.268,
+							"head": { "rotate": 6.177 },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"focus": "foot",
+							"anchor": { "x": 0.045, "y": 0.123 },
+							"size": 0.294,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "figure:misc/foothillGuardian.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.262, "y": 1.159 },
+							"size": 0.257,
+							"drawDepth": 8,
+							"nameTag": "none",
+							"foot": { "rotate": 5.048 },
+							"colorFilter": { "filterName": "sepia", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "scenery:shrineMoss1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.676, "y": 0.308 },
+							"size": 0.806,
+							"drawDepth": -10,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "figure:misc/forestCreature2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.957, "y": 0.881 },
+							"size": 0.24,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "scenery:rocksSaplingsConifer.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.204, "y": 0.271 },
+							"size": 0.361,
+							"drawDepth": -8,
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.323, "y": 0.179 },
+							"size": 0.258,
+							"drawDepth": -9,
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.174, "y": 0.171 },
+							"size": 0.698,
+							"color": { "r": "0.8", "g": "0.95", "b": "0.9", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_abstractDkGreen.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.2853,
+							"nameTag": "none",
+							"color": { "r": "0.79949164", "g": "0.54059178", "b": "0.44173753", "a": "1" }
+						}
+					]
+				}
+			}
+		],
+		"score": "10"
+	}
+],
+"expressions": { "difficulty_four": "100", "roll_four": "CHARISMA" },
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "inRelationTo": "healer", "cloneRelatedEntity": true }
+			}
+		}
+	]
+}
+}

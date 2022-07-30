@@ -19,11 +19,13 @@
     {
       "class": "Test",
       "value": "themePiece_crow_head + themePiece_wolf_head + themePiece_tree_head + themePiece_frog_head",
+      "target": "self",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
+        "target": "self",
         "inlineHistory": {
-          "id": "removeNaturalDrauvenHead - themePiece_drauven_head",
+          "id": "removeNaturalDrauvenHead",
           "showInSummary": false,
           "removeAspects": [ "drauvenSkin_naturalHead" ]
         }
@@ -31,10 +33,12 @@
     },
     {
       "class": "Test",
-      "value": "themeSlotFilled_leftArm * drauvenSkin_v_0-10",
+      "target": "self",
+      "value": "themeSlotFilled_leftArm * drauvenSkin_naturalLeftArm",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
+        "target": "self",
         "inlineHistory": {
           "id": "removeNaturalDrauvenLeftArm",
           "showInSummary": false,
@@ -44,10 +48,12 @@
     },
     {
       "class": "Test",
-      "value": "themeSlotFilled_leftLeg * drauvenSkin_v_0-10",
+      "target": "self",
+      "value": "themeSlotFilled_leftLeg * drauvenSkin_naturalLeftLeg",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
+        "target": "self",
         "inlineHistory": {
           "id": "removeNaturalDrauvenLeftLeg",
           "showInSummary": false,
@@ -57,10 +63,12 @@
     },
     {
       "class": "Test",
-      "value": "themeSlotFilled_rightArm * drauvenSkin_v_0-10",
+      "target": "self",
+      "value": "themeSlotFilled_rightArm * drauvenSkin_naturalRightArm",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
+        "target": "self",
         "inlineHistory": {
           "id": "removeNaturalDrauvenRightArm",
           "showInSummary": false,
@@ -70,10 +78,12 @@
     },
     {
       "class": "Test",
-      "value": "themeSlotFilled_rightLeg * drauvenSkin_v_0-10",
+      "target": "self",
+      "value": "themeSlotFilled_rightLeg * drauvenSkin_naturalRightLeg",
       "threshold": "1",
       "onPass": {
         "class": "AddHistory",
+        "target": "self",
         "inlineHistory": {
           "id": "removeNaturalDrauvenRightLeg",
           "showInSummary": false,

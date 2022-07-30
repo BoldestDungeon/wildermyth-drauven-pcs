@@ -1,0 +1,5507 @@
+{
+"id": "job_theStormwell_branch",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "job/job_theStormwell_branch",
+	"author": "Anne Austin",
+	"STUB": "This is part 3 of star_dance. \n\nChoices 1-3 grants Celestial Theme\n\nChoice 4 = party leaves with no transformation"
+},
+"type": "BRANCH",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{
+		"template": "PICK_BY_SCORE",
+		"choose": "ONE",
+		"scoreFunction": null,
+		"injectedRole": "participant",
+		"fromRoles": null
+	},
+	{
+		"role": "hook",
+		"template": "PICK_BY_SCORE",
+		"STUB": "Eligible for head",
+		"choose": "ANY",
+		"scoreFunction": null,
+		"injectedRole": "participant",
+		"fromRoles": null,
+		"themes": { "eligibleForTheme": "storm", "eligibleForPiece": "head" }
+	},
+	{
+		"role": "hook2",
+		"template": "PICK_BY_SCORE",
+		"STUB": "Eligible for left arm",
+		"choose": "ANY",
+		"scoreFunction": null,
+		"injectedRole": "participant",
+		"fromRoles": null,
+		"themes": { "eligibleForTheme": "storm", "eligibleForPiece": "leftArm" }
+	},
+	{
+		"role": "hook3",
+		"template": "PICK_BY_SCORE",
+		"STUB": "Eligible for left leg",
+		"choose": "ANY",
+		"scoreFunction": null,
+		"injectedRole": "participant",
+		"fromRoles": null,
+		"themes": { "eligibleForTheme": "storm", "eligibleForPiece": "leftLeg" }
+	},
+	{
+		"role": "lover",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LOVER_WITH.volunteer",
+		"scoreThreshold": "1",
+		"fromRoles": null,
+		"notAlreadyMatchedAs": [ "volunteer" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:cottageStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.09, "y": 0.539 },
+							"size": 0.136,
+							"drawDepth": 2.375,
+							"nameTag": "none",
+							"color": { "r": "0.80144376", "g": "0.82527566", "b": "0.96610016", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.008, "y": -0.212 },
+							"size": 0.47,
+							"nameTag": "none",
+							"color": { "r": "0.80144376", "g": "0.82527566", "b": "0.96610016", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallPillar.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.988, "y": 0.206 },
+							"size": 0.196,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"color": { "r": "0.80144376", "g": "0.82527566", "b": "0.96610016", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.73, "y": 0.115 },
+							"size": 0.17,
+							"nameTag": "none",
+							"color": { "r": "0.80144376", "g": "0.82527566", "b": "0.96610016", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.184, "y": 0.822 },
+							"size": 3.085,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"foot": { "rotate": 123.564, "scaleY": 1 },
+							"color": { "r": "1", "g": "0.96243072", "b": "0.59210527", "a": "0.43640351" }
+						},
+						{
+							"assetSpec": "figure:misc/animal_goat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.409, "y": 0.303 },
+							"size": 0.081,
+							"nameTag": "none"
+						},
+						{
+							"role": "volunteer",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.294, "y": 0.246 },
+							"size": 0.076,
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.495, "y": 0.077 },
+							"size": 0.117,
+							"drawDepth": 1,
+							"head": { "rotate": 15.242 },
+							"foot": { "rotate": -5.977 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration",
+							"location": "topRight",
+							"padXFraction": 0.049,
+							"padYFraction": 0.083,
+							"widthFraction": 0.8229772
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_001~2_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.622,
+							"padYFraction": 0.356,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "npc",
+							"equipment": {},
+							"anchor": { "x": 0.511, "y": 0.51 },
+							"size": 0.747,
+							"head": { "rotate": 17.745 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_002~1_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.104,
+							"padYFraction": 0.068,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:cottageStone2_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.02, "y": 1.034 },
+							"size": 0.57,
+							"drawDepth": 2.375,
+							"nameTag": "none",
+							"color": { "r": "0.80144376", "g": "0.82527566", "b": "0.96610016", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": 0.178 },
+							"size": 2.054,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"foot": { "rotate": 123.564, "scaleY": 1 },
+							"color": { "r": "1", "g": "0.52510405", "b": "0.07456136", "a": "0.25657895" }
+						},
+						{
+							"assetSpec": "figure:misc/animal_goat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.505, "y": 0.24 },
+							"size": 0.329,
+							"nameTag": "none",
+							"color": { "r": "0.74819714", "g": "0.7595312", "b": "0.8439092", "a": "1" },
+							"colorFilter": { "filterName": "selected", "strength": 0.3 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_goat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.885, "y": 0.249 },
+							"size": 0.398,
+							"nameTag": "none",
+							"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.695, "y": 0.191 },
+							"size": 0.387,
+							"drawDepth": 2.4375,
+							"head": { "scaleY": 1 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.377, "y": 0.16 },
+							"size": 0.39082116,
+							"drawDepth": 1,
+							"head": { "rotate": 15.242 },
+							"foot": { "rotate": -5.977 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.125, "y": 0.327 },
+							"size": 0.365,
+							"nameTag": "none",
+							"head": { "rotate": 12.711 },
+							"foot": { "rotate": -10.429 },
+							"color": { "r": "0.83463663", "g": "0.80950177", "b": "0.66097742", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:entranceArchStone.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.284, "y": 0.327 },
+							"size": 0.4,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_003~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.327,
+							"padYFraction": 0.288,
+							"widthFraction": 0.4258352,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_003~2_action",
+							"style": "action",
+							"location": "topRight",
+							"padXFraction": 0.061,
+							"padYFraction": 0.423,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_003~3_volunteer",
+							"pointerOwner": "volunteer",
+							"location": "topRight",
+							"padXFraction": 0.2,
+							"padYFraction": 0.351,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.034 },
+							"size": 0.423,
+							"nameTag": "none",
+							"foot": { "rotate": -8.452 }
+						},
+						{
+							"role": "volunteer",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.189, "y": -0.043 },
+							"size": 0.217,
+							"nameTag": "none",
+							"head": { "rotate": 13.664 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.356, "y": -0.058 },
+							"size": 0.208,
+							"nameTag": "none",
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.437, "y": -0.014 },
+							"size": 0.2,
+							"nameTag": "none",
+							"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.18, "y": 0.337 },
+							"size": 0.341,
+							"nameTag": "none",
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.872, "y": 0.62 },
+							"size": 0.19,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_004~1_volunteer",
+							"pointerOwner": "volunteer",
+							"padXFraction": 0.088999994,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_004~2_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.51,
+							"padYFraction": 0.337,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.023, "y": 0.413 },
+							"size": 0.35992467,
+							"nameTag": "none",
+							"head": { "rotate": 13.664 }
+						},
+						{
+							"role": "npc2",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.236, "y": 0.38 },
+							"size": 0.34499693,
+							"nameTag": "none",
+							"head": { "rotate": 28.003 }
+						},
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.67, "y": 0.915 },
+							"size": 0.33172783,
+							"nameTag": "none",
+							"head": { "rotate": -31.652 },
+							"foot": { "rotate": 28.988 }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.798, "y": 0.562 },
+							"size": 0.3151414,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_005~1_volunteer",
+							"pointerOwner": "volunteer",
+							"padXFraction": 0.088999994,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_005~2_narration",
+							"style": "narration",
+							"location": "bottomRight",
+							"padXFraction": 0.083,
+							"padYFraction": 0.081,
+							"widthFraction": 0.5390625,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"role": "npc2",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.378, "y": 0.471 },
+							"size": 0.881,
+							"head": { "rotate": 30.987 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldGray.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.903, "y": 0.443 },
+							"size": 0.558,
+							"nameTag": "none",
+							"foot": { "rotate": 0 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_006~1_npc2",
+							"pointerOwner": "npc2",
+							"location": "topRight",
+							"padXFraction": 0.171,
+							"padYFraction": 0.126,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -21.616873, "dY": 2.8822496 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 1.148, "y": 0.865 },
+							"size": 0.826,
+							"head": { "scaleY": -1 },
+							"foot": { "rotate": 25.71 }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.4, "y": -0.254 },
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldGray.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.363, "y": 0.356 },
+							"size": 0.585,
+							"nameTag": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.263, "y": 0.25848 },
+							"size": 0.438,
+							"head": { "rotate": -39.922, "scaleY": -1 }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "middle",
+							"anchor": { "x": 0.607, "y": 0.255 },
+							"size": 0.435,
+							"head": { "rotate": 12.423, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.31, "y": 0.828 },
+							"size": 0.507,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/scale/unpacked/particle_rain3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.235, "y": 0.735 },
+							"size": 0.144,
+							"nameTag": "none",
+							"foot": { "rotate": 10.587 },
+							"color": { "r": "0.83151072", "g": "0.89093775", "b": "0.95357698", "a": "1" }
+						},
+						{
+							"assetSpec": "asset:ui/scale/unpacked/particle_rain3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.549, "y": 0.845 },
+							"size": 0.182,
+							"nameTag": "none",
+							"foot": { "rotate": 10.587 },
+							"color": { "r": "0.83151072", "g": "0.89093775", "b": "0.95357698", "a": "1" }
+						},
+						{
+							"assetSpec": "asset:ui/scale/unpacked/particle_rain1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.114, "y": 0.831 },
+							"size": 0.16,
+							"nameTag": "none",
+							"foot": { "rotate": 10.587 },
+							"color": { "r": "0.83151072", "g": "0.89093775", "b": "0.95357698", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_008~1_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.662,
+							"padYFraction": 0.193,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.263, "y": 0.25848 },
+							"size": 0.438,
+							"head": { "rotate": -15.432, "scaleY": -1 },
+							"color": { "r": "0.75586253", "g": "0.84197104", "b": "0.93273395", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-dubious",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "middle",
+							"anchor": { "x": 0.607, "y": 0.255 },
+							"size": 0.435,
+							"head": { "rotate": -4.187, "scaleY": 1 },
+							"color": { "r": "0.75586253", "g": "0.84197104", "b": "0.93273395", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.31, "y": 0.828 },
+							"size": 0.507,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.356, "y": 0.519 },
+							"size": 0.394,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.121, "y": 0.495 },
+							"size": 0.331,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "0.99999994", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:pointerSpeech.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.852, "y": 0.972 },
+							"size": 0.267,
+							"nameTag": "none",
+							"foot": { "rotate": 113.056 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_009~1_npc",
+							"pointerOwner": "npc",
+							"location": "bottomRight",
+							"padXFraction": 0.082,
+							"padYFraction": 0.79,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -11.528999, "dY": 7.2056236 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.034 },
+							"size": 0.423,
+							"nameTag": "none",
+							"foot": { "rotate": -8.452 }
+						},
+						{
+							"role": "volunteer",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.524, "y": 0.169 },
+							"size": 0.151,
+							"nameTag": "none",
+							"head": { "rotate": 13.664 },
+							"foot": { "rotate": -7.11 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.44, "y": 0.072 },
+							"size": 0.156,
+							"nameTag": "none",
+							"foot": { "rotate": -6.257 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.836, "y": 0.606 },
+							"size": 0.148,
+							"nameTag": "none",
+							"head": { "rotate": -27.074 },
+							"foot": { "rotate": 18.435 },
+							"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.18, "y": 0.337 },
+							"size": 0.341,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.872, "y": 0.62 },
+							"size": 0.19,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.476, "y": 0.552 },
+							"size": 0.33,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_010~1_actionSmall",
+							"style": "actionSmall",
+							"padXFraction": 0.176,
+							"padYFraction": 0.184,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_010~2_npc2",
+							"pointerOwner": "npc2",
+							"padXFraction": 0.32,
+							"padYFraction": 0.389,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.034 },
+							"size": 0.423,
+							"nameTag": "none",
+							"foot": { "rotate": -8.452 }
+						},
+						{
+							"role": "volunteer",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.096, "y": 0.053 },
+							"size": 0.151,
+							"drawDepth": 3.75,
+							"nameTag": "none",
+							"head": { "rotate": 13.664 },
+							"foot": { "rotate": -7.107 },
+							"color": { "r": "0.5675984", "g": "0.55166543", "b": "0.72465146", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.233, "y": 0.086 },
+							"size": 0.156,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"foot": { "rotate": -6.257 },
+							"color": { "r": "0.5675984", "g": "0.55166543", "b": "0.72465146", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.836, "y": 0.606 },
+							"size": 0.148,
+							"nameTag": "none",
+							"head": { "rotate": 6.499 },
+							"foot": { "rotate": 24.974 },
+							"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.18, "y": 0.337 },
+							"size": 0.341,
+							"drawDepth": 3.25,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.872, "y": 0.62 },
+							"size": 0.19,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.476, "y": 0.552 },
+							"size": 0.33,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:actionLines_shake2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.461, "y": 0.779 },
+							"size": 0.14,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.63815844" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_011~1_action",
+							"style": "action",
+							"padXFraction": 0.489,
+							"padYFraction": 0.15,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.323, "y": 0.306 },
+							"size": 0.26473492,
+							"drawDepth": 2.625,
+							"nameTag": "none",
+							"head": { "rotate": 21.465, "scaleY": 1 },
+							"foot": { "rotate": -1.535 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "middle",
+							"anchor": { "x": 0.731, "y": 0.339 },
+							"size": 0.273501,
+							"drawDepth": 2.4375,
+							"nameTag": "none",
+							"head": { "rotate": 0.93 },
+							"foot": { "rotate": -6.257 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.558, "y": 0.472 },
+							"size": 0.5313902,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.476, "y": 0.552 },
+							"size": 0.35,
+							"drawDepth": 0,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_012~1_npc2",
+							"pointerOwner": "npc2",
+							"padXFraction": 0.586,
+							"padYFraction": 0.199,
+							"widthFraction": 0.35850772,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.323, "y": 0.224 },
+							"size": 0.89457726,
+							"drawDepth": 2.34375,
+							"nameTag": "none",
+							"head": { "rotate": 6.366, "scaleY": 1 },
+							"foot": { "rotate": -1.535 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.327, "y": 0.559 },
+							"size": 1.46,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 2.066, "y": 0.451 },
+							"size": 0.617,
+							"drawDepth": 2.4375,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_013~1_volunteer",
+							"pointerOwner": "volunteer",
+							"location": "topRight",
+							"padXFraction": 0.16,
+							"padYFraction": 0.076,
+							"widthFraction": 0.88000005,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "npc2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "middle",
+							"anchor": { "x": 0.582, "y": 0.181 },
+							"size": 0.89457726,
+							"drawDepth": 2.34375,
+							"nameTag": "none",
+							"head": { "rotate": 6.366, "scaleY": 1 },
+							"foot": { "rotate": -1.535 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.01, "y": 0.569 },
+							"size": 1.46,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.311, "y": 0.379 },
+							"size": 0.617,
+							"drawDepth": 2.4375,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_014~1_npc2",
+							"pointerOwner": "npc2",
+							"location": "topRight",
+							"padXFraction": 0.099,
+							"padYFraction": 0.057,
+							"widthFraction": 0.88000005,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onLeft", "pointerOrientV": "up" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.323, "y": 0.306 },
+							"size": 0.2937418,
+							"drawDepth": 2.625,
+							"nameTag": "none",
+							"head": { "rotate": -4.813, "scaleY": 1 },
+							"foot": { "rotate": -1.535 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "middle",
+							"anchor": { "x": 0.728, "y": 0.32 },
+							"size": 0.30346835,
+							"drawDepth": 2.4375,
+							"nameTag": "none",
+							"head": { "rotate": -14.296, "scaleY": -1 },
+							"foot": { "rotate": -11.339 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.558, "y": 0.472 },
+							"size": 0.58961433,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.555, "y": 0.528 },
+							"size": 0.3883493,
+							"drawDepth": 0,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_015~1_npc2",
+							"pointerOwner": "npc2",
+							"location": "topRight",
+							"padXFraction": 0.258,
+							"padYFraction": 0.131,
+							"widthFraction": 0.6320054,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_015~2_volunteer",
+							"pointerOwner": "volunteer",
+							"location": "bottomLeft",
+							"padXFraction": 0.453,
+							"padYFraction": 0.229,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "lover.exists",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-grim",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.211, "y": 0.281 },
+										"size": 0.32819393,
+										"drawDepth": 2.625,
+										"nameTag": "none",
+										"head": { "rotate": -4.813, "scaleY": 1 },
+										"foot": { "rotate": -1.535 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"focus": "middle",
+										"anchor": { "x": 0.477, "y": 0.258 },
+										"size": 0.32,
+										"drawDepth": 2.4375,
+										"nameTag": "none",
+										"head": { "rotate": 5.54, "scaleY": 1 },
+										"foot": { "rotate": -6.257 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_arch2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.319, "y": 0.458 },
+										"size": 0.65876853,
+										"drawDepth": 2.25,
+										"nameTag": "none",
+										"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.476, "y": 0.552 },
+										"size": 0.4338977,
+										"drawDepth": 0,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.233, "y": -0.202 },
+										"size": 0.569,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"foot": { "rotate": -14.578 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~01~prompt~panel_016.(lover_exists)~1_volunteer",
+										"pointerOwner": "volunteer",
+										"padXFraction": 0.07,
+										"padYFraction": 0.151,
+										"widthFraction": 0.5487751,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~01~prompt~panel_016.(lover_exists)~2_npc2",
+										"pointerOwner": "npc2",
+										"padXFraction": 0.499,
+										"padYFraction": 0.372,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -8.530765,
+											"dX": 20.175749,
+											"dY": -2.8821616,
+											"pointerOrientH": "onRight"
+										}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.425, "y": 0.229 },
+										"size": 0.671,
+										"drawDepth": 2.34375,
+										"nameTag": "none",
+										"head": { "rotate": -12.199, "scaleY": -1 },
+										"foot": { "rotate": -1.535 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_arch2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.177, "y": 0.521 },
+										"size": 1.217,
+										"drawDepth": 2.25,
+										"nameTag": "none",
+										"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 2.066, "y": 0.451 },
+										"size": 0.617,
+										"drawDepth": 2.4375,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~01~prompt~panel_017.(lover_exists)~1_volunteer",
+										"pointerOwner": "volunteer",
+										"location": "topRight",
+										"padXFraction": 0.056,
+										"padYFraction": 0.052,
+										"widthFraction": 0.8479777,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.425, "y": 0.229 },
+										"size": 0.671,
+										"drawDepth": 2.34375,
+										"nameTag": "none",
+										"head": { "rotate": 3.169, "scaleY": 1 },
+										"foot": { "rotate": -1.535 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_arch2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.177, "y": 0.521 },
+										"size": 1.217,
+										"drawDepth": 2.25,
+										"nameTag": "none",
+										"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 2.066, "y": 0.451 },
+										"size": 0.617,
+										"drawDepth": 2.4375,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~01~prompt~panel_018.(lover_exists)~1_volunteer",
+										"pointerOwner": "volunteer",
+										"location": "topRight",
+										"padXFraction": 0.056,
+										"padYFraction": 0.052,
+										"widthFraction": 0.8479777,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.425, "y": 0.229 },
+										"size": 0.671,
+										"drawDepth": 2.34375,
+										"nameTag": "none",
+										"head": { "rotate": -5.835, "scaleY": 1 },
+										"foot": { "rotate": -3.501 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_arch2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.177, "y": 0.521 },
+										"size": 1.217,
+										"drawDepth": 2.25,
+										"nameTag": "none",
+										"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 2.066, "y": 0.451 },
+										"size": 0.617,
+										"drawDepth": 2.4375,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~01~prompt~panel_019.(lover_exists)~1_volunteer",
+										"pointerOwner": "volunteer",
+										"location": "topRight",
+										"padXFraction": 0.084,
+										"padYFraction": 0.101,
+										"widthFraction": 0.8479777,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-happy",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.157, "y": 0.276 },
+										"size": 0.4706154,
+										"drawDepth": 2.625,
+										"nameTag": "none",
+										"head": { "rotate": 3.473, "scaleY": 1 },
+										"foot": { "rotate": -1.535 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.581, "y": 0.224 },
+										"size": 0.47320524,
+										"drawDepth": 2.4375,
+										"nameTag": "none",
+										"head": { "rotate": 5.54, "scaleY": 1 },
+										"foot": { "rotate": -6.257 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_arch2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.305, "y": 0.439 },
+										"size": 1.051,
+										"drawDepth": 2.25,
+										"nameTag": "none",
+										"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.464, "y": 0.542 },
+										"size": 0.412,
+										"drawDepth": 0,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~01~prompt~panel_020.(lover_exists)~1_volunteer",
+										"pointerOwner": "volunteer",
+										"padXFraction": 0.083,
+										"padYFraction": 0.078,
+										"widthFraction": 0.5487751,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~01~prompt~panel_020.(lover_exists)~2_volunteer",
+										"pointerOwner": "volunteer",
+										"padXFraction": 0.077,
+										"padYFraction": 0.107,
+										"widthFraction": 0.49532294,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Split",
+							"splitSpec": "volunteer.snark/loner/80",
+							"splitBranches": [
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "volunteer",
+													"form": "frame-dubious",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.156, "y": 0.243 },
+													"size": 0.32819393,
+													"drawDepth": 2.625,
+													"nameTag": "none",
+													"head": { "rotate": -4.813, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"role": "npc2",
+													"form": "frame-interested",
+													"facing": "left",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.449, "y": 0.253 },
+													"size": 0.3390613,
+													"drawDepth": 2.4375,
+													"nameTag": "none",
+													"head": { "rotate": 5.54, "scaleY": 1 },
+													"foot": { "rotate": -6.257 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.319, "y": 0.458 },
+													"size": 0.65876853,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.476, "y": 0.552 },
+													"size": 0.4338977,
+													"drawDepth": 0,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRock1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.233, "y": -0.202 },
+													"size": 0.569,
+													"drawDepth": 2,
+													"nameTag": "none",
+													"foot": { "rotate": -14.578 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_021.(lover_is_missing).(volunteer_is_snark)~1_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": 0.148,
+													"padYFraction": 0.18,
+													"widthFraction": 0.81069034,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_021.(lover_is_missing).(volunteer_is_snark)~2_npc2",
+													"pointerOwner": "npc2",
+													"location": "topRight",
+													"padXFraction": 0.643,
+													"padYFraction": 0.351,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": -21.616873, "dY": -4.3233523 }
+												},
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_021.(lover_is_missing).(volunteer_is_snark)~3_volunteer",
+													"pointerOwner": "volunteer",
+													"location": "bottomLeft",
+													"padXFraction": 0.227,
+													"padYFraction": 0.209,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 5.76451, "dY": 1.4411029 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "volunteer",
+													"form": "frame-skeptical",
+													"equipment": {},
+													"anchor": { "x": 0.508, "y": 0.469 },
+													"size": 0.746,
+													"drawDepth": 2.34375,
+													"nameTag": "none",
+													"head": { "rotate": 6.366, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.984, "y": 0.553 },
+													"size": 1.166,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 2.066, "y": 0.451 },
+													"size": 0.617,
+													"drawDepth": 2.4375,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_022.(lover_is_missing).(volunteer_is_snark)~1_volunteer",
+													"pointerOwner": "volunteer",
+													"location": "topRight",
+													"padXFraction": 0.06,
+													"padYFraction": 0.044,
+													"widthFraction": 0.74268657,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "npc2",
+													"form": "frame-interested",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": 0.587, "y": 0.469 },
+													"size": 0.746,
+													"drawDepth": 2.34375,
+													"nameTag": "none",
+													"head": { "rotate": 6.366, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.29, "y": 0.528 },
+													"size": 1.166,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 2.066, "y": 0.451 },
+													"size": 0.617,
+													"drawDepth": 2.4375,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_023.(lover_is_missing).(volunteer_is_snark)~1_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": -0.222,
+													"padYFraction": 0.325,
+													"widthFraction": 0.74268657,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" },
+													"allowDrawOverEdges": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "volunteer",
+													"form": "frame-interested",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.157, "y": 0.276 },
+													"size": 0.4706154,
+													"drawDepth": 2.625,
+													"nameTag": "none",
+													"head": { "rotate": -10.22, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"role": "npc2",
+													"facing": "left",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.581, "y": 0.224 },
+													"size": 0.47320524,
+													"drawDepth": 2.4375,
+													"nameTag": "none",
+													"head": { "rotate": 5.54, "scaleY": 1 },
+													"foot": { "rotate": -6.257 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.305, "y": 0.439 },
+													"size": 1.051,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.464, "y": 0.542 },
+													"size": 0.412,
+													"drawDepth": 0,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_024.(lover_is_missing).(volunteer_is_snark)~1_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": 0.097,
+													"padYFraction": 0.15,
+													"widthFraction": 0.49532294,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "volunteer",
+													"form": "frame-grim",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.156, "y": 0.243 },
+													"size": 0.32819393,
+													"drawDepth": 2.625,
+													"nameTag": "none",
+													"head": { "rotate": -4.813, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"role": "npc2",
+													"form": "frame-interested",
+													"facing": "left",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.449, "y": 0.253 },
+													"size": 0.3390613,
+													"drawDepth": 2.4375,
+													"nameTag": "none",
+													"head": { "rotate": 5.54, "scaleY": 1 },
+													"foot": { "rotate": -6.257 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.319, "y": 0.458 },
+													"size": 0.65876853,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.476, "y": 0.552 },
+													"size": 0.4338977,
+													"drawDepth": 0,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRock1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.233, "y": -0.202 },
+													"size": 0.569,
+													"drawDepth": 2,
+													"nameTag": "none",
+													"foot": { "rotate": -14.578 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_025.(lover_is_missing).(volunteer_is_loner)~1_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": 0.148,
+													"padYFraction": 0.18,
+													"widthFraction": 0.81069034,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_025.(lover_is_missing).(volunteer_is_loner)~2_npc2",
+													"pointerOwner": "npc2",
+													"location": "topRight",
+													"padXFraction": 0.643,
+													"padYFraction": 0.351,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": -21.616873, "dY": -4.3233523 }
+												},
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_025.(lover_is_missing).(volunteer_is_loner)~3_volunteer",
+													"pointerOwner": "volunteer",
+													"location": "bottomLeft",
+													"padXFraction": 0.227,
+													"padYFraction": 0.209,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 5.76451, "dY": 1.4411029 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "volunteer",
+													"form": "frame-skeptical",
+													"equipment": {},
+													"anchor": { "x": 0.508, "y": 0.469 },
+													"size": 0.746,
+													"drawDepth": 2.34375,
+													"nameTag": "none",
+													"head": { "rotate": 6.366, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.984, "y": 0.553 },
+													"size": 1.166,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 2.066, "y": 0.451 },
+													"size": 0.617,
+													"drawDepth": 2.4375,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_026.(lover_is_missing).(volunteer_is_loner)~1_volunteer",
+													"pointerOwner": "volunteer",
+													"location": "topRight",
+													"padXFraction": 0.06,
+													"padYFraction": 0.044,
+													"widthFraction": 0.74268657,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "npc2",
+													"form": "frame-interested",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": 0.587, "y": 0.469 },
+													"size": 0.746,
+													"drawDepth": 2.34375,
+													"nameTag": "none",
+													"head": { "rotate": 6.366, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.29, "y": 0.528 },
+													"size": 1.166,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 2.066, "y": 0.451 },
+													"size": 0.617,
+													"drawDepth": 2.4375,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_027.(lover_is_missing).(volunteer_is_loner)~1_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": -0.222,
+													"padYFraction": 0.325,
+													"widthFraction": 0.74268657,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" },
+													"allowDrawOverEdges": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "volunteer",
+													"form": "frame-interested",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.157, "y": 0.276 },
+													"size": 0.4706154,
+													"drawDepth": 2.625,
+													"nameTag": "none",
+													"head": { "rotate": -10.22, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"role": "npc2",
+													"facing": "left",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.581, "y": 0.224 },
+													"size": 0.47320524,
+													"drawDepth": 2.4375,
+													"nameTag": "none",
+													"head": { "rotate": 5.54, "scaleY": 1 },
+													"foot": { "rotate": -6.257 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.305, "y": 0.439 },
+													"size": 1.051,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.464, "y": 0.542 },
+													"size": 0.412,
+													"drawDepth": 0,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_028.(lover_is_missing).(volunteer_is_loner)~1_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": 0.097,
+													"padYFraction": 0.15,
+													"widthFraction": 0.49532294,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "volunteer",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.156, "y": 0.243 },
+													"size": 0.32819393,
+													"drawDepth": 2.625,
+													"nameTag": "none",
+													"head": { "rotate": -4.813, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"role": "npc2",
+													"form": "frame-interested",
+													"facing": "left",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.449, "y": 0.253 },
+													"size": 0.3390613,
+													"drawDepth": 2.4375,
+													"nameTag": "none",
+													"head": { "rotate": 5.54, "scaleY": 1 },
+													"foot": { "rotate": -6.257 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.319, "y": 0.458 },
+													"size": 0.65876853,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.476, "y": 0.552 },
+													"size": 0.4338977,
+													"drawDepth": 0,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRock1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.233, "y": -0.202 },
+													"size": 0.569,
+													"drawDepth": 2,
+													"nameTag": "none",
+													"foot": { "rotate": -14.578 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_029.(lover_is_missing).(fallback_(80))~1_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": 0.148,
+													"padYFraction": 0.18,
+													"widthFraction": 0.81069034,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "volunteer",
+													"form": "frame-talk",
+													"equipment": {},
+													"anchor": { "x": 0.508, "y": 0.469 },
+													"size": 0.746,
+													"drawDepth": 2.34375,
+													"nameTag": "none",
+													"head": { "rotate": 6.366, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.984, "y": 0.553 },
+													"size": 1.166,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 2.066, "y": 0.451 },
+													"size": 0.617,
+													"drawDepth": 2.4375,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_030.(lover_is_missing).(fallback_(80))~1_volunteer",
+													"pointerOwner": "volunteer",
+													"location": "topRight",
+													"padXFraction": 0.06,
+													"padYFraction": 0.044,
+													"widthFraction": 0.74268657,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "npc2",
+													"form": "frame-interested",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": 0.587, "y": 0.469 },
+													"size": 0.746,
+													"drawDepth": 2.34375,
+													"nameTag": "none",
+													"head": { "rotate": 6.366, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.29, "y": 0.528 },
+													"size": 1.166,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 2.066, "y": 0.451 },
+													"size": 0.617,
+													"drawDepth": 2.4375,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_031.(lover_is_missing).(fallback_(80))~1_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": -0.222,
+													"padYFraction": 0.325,
+													"widthFraction": 0.74268657,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onRight", "pointerOrientV": "up" },
+													"allowDrawOverEdges": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"bg": "comicBG_fieldGray.jpg",
+											"actorSlots": [
+												{
+													"role": "volunteer",
+													"form": "frame-interested",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.157, "y": 0.276 },
+													"size": 0.4706154,
+													"drawDepth": 2.625,
+													"nameTag": "none",
+													"head": { "rotate": -10.22, "scaleY": 1 },
+													"foot": { "rotate": -1.535 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"role": "npc2",
+													"facing": "left",
+													"equipment": {},
+													"focus": "middle",
+													"anchor": { "x": 0.581, "y": 0.224 },
+													"size": 0.47320524,
+													"drawDepth": 2.4375,
+													"nameTag": "none",
+													"head": { "rotate": 5.54, "scaleY": 1 },
+													"foot": { "rotate": -6.257 },
+													"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:ruinsField_arch2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.305, "y": 0.439 },
+													"size": 1.051,
+													"drawDepth": 2.25,
+													"nameTag": "none",
+													"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rain.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.464, "y": 0.542 },
+													"size": 0.412,
+													"drawDepth": 0,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "job/job_theStormwell_branch",
+													"textKey": "~01~prompt~panel_032.(lover_is_missing).(fallback_(80))~1_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": 0.097,
+													"padYFraction": 0.15,
+													"widthFraction": 0.49532294,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									}
+								]
+							]
+						}
+					],
+					[]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.034 },
+							"size": 0.423,
+							"nameTag": "none",
+							"foot": { "rotate": -8.452 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-scared",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.1, "y": 0.005 },
+							"size": 0.151,
+							"drawDepth": 3.75,
+							"nameTag": "none",
+							"head": { "rotate": 13.664 },
+							"foot": { "rotate": -7.107 },
+							"color": { "r": "0.5675984", "g": "0.55166543", "b": "0.72465146", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-scared",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.238, "y": 0.057 },
+							"size": 0.156,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"head": { "scaleY": -1 },
+							"foot": { "rotate": -13.145 },
+							"color": { "r": "0.5675984", "g": "0.55166543", "b": "0.72465146", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.813, "y": 0.419 },
+							"size": 0.148,
+							"nameTag": "none",
+							"head": { "rotate": 10.4 },
+							"foot": { "rotate": 45.543 },
+							"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.18, "y": 0.337 },
+							"size": 0.341,
+							"drawDepth": 3.25,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.872, "y": 0.62 },
+							"size": 0.19,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" },
+							"colorFilter": { "filterName": "channeling", "strength": 0.07 }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.469, "y": 0.374 },
+							"size": 0.33,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:actionLines_shake2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.713, "y": 0.466 },
+							"size": 0.14,
+							"nameTag": "none",
+							"foot": { "rotate": 43.152 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.63815844" }
+						},
+						{
+							"assetSpec": "comic:lightning.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.773, "y": 1.014 },
+							"size": 0.28,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": -67.224 }
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.853, "y": 0.466 },
+							"size": 0.126,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.54605263" }
+						},
+						{
+							"assetSpec": "comic:action_popL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.756, "y": 0.697 },
+							"size": 0.279,
+							"nameTag": "none",
+							"foot": { "rotate": -103.096 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_033~1_actionLarge",
+							"style": "actionLarge",
+							"padXFraction": 0.539,
+							"padYFraction": 0.154,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_033~2_narration",
+							"style": "narration",
+							"padXFraction": 0.041,
+							"padYFraction": 0.156,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "npc2",
+							"form": "frame-scared",
+							"facing": "left",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.776, "y": 0.258 },
+							"size": 0.89457726,
+							"drawDepth": 2.34375,
+							"nameTag": "none",
+							"head": { "rotate": -7.962, "scaleY": -1 },
+							"foot": { "rotate": -13.782 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.01, "y": 0.569 },
+							"size": 1.46,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.311, "y": 0.379 },
+							"size": 0.617,
+							"drawDepth": 2.4375,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_034~1_npc2",
+							"pointerOwner": "npc2",
+							"location": "topRight",
+							"padXFraction": 0.099,
+							"padYFraction": 0.057,
+							"widthFraction": 0.88000005,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -18.734623, "dY": 5.7645426, "pointerOrientV": "up" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-joke",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.683, "y": 0.649 },
+							"size": 0.58,
+							"head": { "rotate": 6.416, "scaleY": 1 },
+							"foot": { "rotate": -11.747 },
+							"color": { "r": "0.80144376", "g": "0.82527566", "b": "0.96610016", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.374, "y": 1.126 },
+							"size": 0.738,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldGray.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.363, "y": 0.356 },
+							"size": 0.585,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.348, "y": 0.626 },
+							"size": 0.531,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:actionLines_shake1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.743, "y": 0.735 },
+							"size": 0.149,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": -155.877 }
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.377, "y": 0.851 },
+							"size": 0.246,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": 28.787 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_035~1_action",
+							"style": "action",
+							"padXFraction": 0.58,
+							"padYFraction": 0.005,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "npc2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.582, "y": 0.181 },
+							"size": 0.89457726,
+							"drawDepth": 2.34375,
+							"nameTag": "none",
+							"head": { "rotate": -7.962, "scaleY": -1 },
+							"foot": { "rotate": -1.535 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.01, "y": 0.569 },
+							"size": 1.46,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.311, "y": 0.379 },
+							"size": 0.617,
+							"drawDepth": 2.4375,
+							"nameTag": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.034 },
+							"size": 0.423,
+							"nameTag": "none",
+							"foot": { "rotate": -8.452 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.597, "y": 0.216 },
+							"size": 0.151,
+							"drawDepth": 3.75,
+							"nameTag": "none",
+							"head": { "rotate": 6.548 },
+							"foot": { "rotate": 0.064 },
+							"color": { "r": "0.5675984", "g": "0.55166543", "b": "0.72465146", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.149 },
+							"size": 0.156,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"head": { "rotate": 15.098 },
+							"foot": { "rotate": -7.133 },
+							"color": { "r": "0.5675984", "g": "0.55166543", "b": "0.72465146", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.731, "y": 0.284 },
+							"size": 0.152,
+							"nameTag": "none",
+							"head": { "rotate": 18.037 },
+							"foot": { "rotate": 2.514 },
+							"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.18, "y": 0.337 },
+							"size": 0.341,
+							"drawDepth": 3.25,
+							"nameTag": "none",
+							"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.872, "y": 0.62 },
+							"size": 0.19,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.476, "y": 0.552 },
+							"size": 0.33,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_037~1_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.235,
+							"padYFraction": 0.19,
+							"widthFraction": 0.4071269,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -11.528998, "dY": -1.4411248, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.316, "y": 0.274 },
+							"size": 0.39300522,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"head": { "rotate": -15.46 },
+							"foot": { "rotate": -3.841 },
+							"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.945, "y": 0.314 },
+							"size": 0.40601867,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"head": { "rotate": 15.098 },
+							"foot": { "rotate": -7.133 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.789, "y": 0.346 },
+							"size": 0.4,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"head": { "rotate": -18.054 },
+							"foot": { "rotate": 2.514 },
+							"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.547, "y": 0.832 },
+							"size": 0.4945099,
+							"drawDepth": 3.625,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.258, "y": 0.49 },
+							"size": 0.47,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_038~1_narration",
+							"style": "narration",
+							"padXFraction": 0.015,
+							"padYFraction": 0.054,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_038~2_npc",
+							"pointerOwner": "npc",
+							"location": "bottomRight",
+							"padXFraction": 0.265,
+							"padYFraction": 0.253,
+							"widthFraction": 0.4071269,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -11.528998, "dY": -1.4411248, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_038~3_volunteer",
+							"pointerOwner": "volunteer",
+							"padXFraction": 0.156,
+							"padYFraction": 0.185,
+							"widthFraction": 0.4187081,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.316, "y": 0.274 },
+							"size": 0.5557933,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"head": { "rotate": 6.261 },
+							"foot": { "rotate": -3.841 },
+							"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.064, "y": 1.077 },
+							"size": 0.6993426,
+							"drawDepth": 3.625,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.258, "y": 0.49 },
+							"size": 0.66468036,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_039~1_volunteer",
+							"pointerOwner": "volunteer",
+							"padXFraction": 0.251,
+							"padYFraction": 0.112,
+							"widthFraction": 0.59144676,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 14.411248, "dY": -2.8822496 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGray.jpg",
+					"actorSlots": [
+						{
+							"role": "npc2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 1.122, "y": 0.3 },
+							"size": 0.55,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"head": { "rotate": -3.085 },
+							"foot": { "rotate": -7.133 },
+							"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.686, "y": 0.336 },
+							"size": 0.55,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"head": { "rotate": -8.465 },
+							"foot": { "rotate": 2.514 },
+							"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:stormwellOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.027, "y": 1.183 },
+							"size": 0.78136647,
+							"drawDepth": 3.625,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.266, "y": 0.105 },
+							"size": 0.74263877,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_040~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.036,
+							"padYFraction": 0.044,
+							"widthFraction": 0.86988163,
+							"shrinkToFitText": true,
+							"pointerStyle": "none",
+							"pointerAdjust": { "dX": -11.528998, "dY": -1.4411248, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "job/job_theStormwell_branch",
+							"textKey": "~01~prompt~panel_040~2_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.101,
+							"padYFraction": 0.166,
+							"widthFraction": 0.44949958,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 17.525568,
+								"dX": -31.704746,
+								"dY": -2.193451E-5,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"showNameTags": false,
+							"bg": "comicBG_fieldGray.jpg",
+							"actorSlots": [
+								{
+									"role": "volunteer",
+									"form": "frame-interested",
+									"equipment": {},
+									"anchor": { "x": 0.017, "y": 0.551 },
+									"size": 0.795,
+									"drawDepth": 3.5,
+									"nameTag": "none",
+									"head": { "rotate": 6.261 },
+									"foot": { "rotate": -16.324 },
+									"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:stormwellOn.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.064, "y": 1.077 },
+									"size": 0.828,
+									"drawDepth": 3.625,
+									"nameTag": "none",
+									"foot": { "rotate": 0 },
+									"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:rain.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.258, "y": 0.49 },
+									"size": 0.66468036,
+									"drawDepth": 0.5,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "job/job_theStormwell_branch",
+									"textKey": "~02~choice_one~panel_001~1_narration",
+									"style": "narration",
+									"padXFraction": 0.059,
+									"padYFraction": 0.048,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "job/job_theStormwell_branch",
+									"textKey": "~02~choice_one~panel_001~2_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"widthFraction": 0.89642185,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "hook"
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"showNameTags": false,
+							"bg": "comicBG_fieldGray.jpg",
+							"actorSlots": [
+								{
+									"role": "volunteer",
+									"form": "frame-interested",
+									"equipment": {},
+									"anchor": { "x": 0.266, "y": 0.565 },
+									"size": 0.609,
+									"drawDepth": 3.5,
+									"nameTag": "none",
+									"head": { "rotate": 6.261 },
+									"foot": { "rotate": -2.203 },
+									"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:stormwellOn.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.064, "y": 1.077 },
+									"size": 0.6993426,
+									"drawDepth": 3.625,
+									"nameTag": "none",
+									"foot": { "rotate": 0 },
+									"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:rain.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.849, "y": 0.638 },
+									"size": 0.473,
+									"drawDepth": 0.5,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "job/job_theStormwell_branch",
+									"textKey": "~03~choice_two~panel_001~1_narration",
+									"style": "narration",
+									"location": "topRight",
+									"padXFraction": 0.177,
+									"padYFraction": 0.076,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "job/job_theStormwell_branch",
+									"textKey": "~03~choice_two~panel_001~2_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"padXFraction": 0.023,
+									"padYFraction": 0.006,
+									"widthFraction": 0.8097928,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "hook2"
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"showNameTags": false,
+							"bg": "comicBG_fieldGray.jpg",
+							"actorSlots": [
+								{
+									"role": "volunteer",
+									"form": "frame-interested",
+									"equipment": {},
+									"anchor": { "x": 0.031, "y": 0.7 },
+									"size": 0.5318262,
+									"drawDepth": 3.5,
+									"nameTag": "none",
+									"head": { "rotate": -18.811 },
+									"foot": { "rotate": -16.324 },
+									"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:stormwellOn.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.064, "y": 1.077 },
+									"size": 0.55390203,
+									"drawDepth": 3.625,
+									"nameTag": "none",
+									"foot": { "rotate": 0 },
+									"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:rain.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 1.027, "y": 0.375 },
+									"size": 0.4446471,
+									"drawDepth": 0.5,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "job/job_theStormwell_branch",
+									"textKey": "~04~choice_three~panel_001~1_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"padXFraction": 0.096,
+									"padYFraction": 0.545,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "job/job_theStormwell_branch",
+									"textKey": "~04~choice_three~panel_001~2_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"padXFraction": 0.023,
+									"padYFraction": 0.006,
+									"widthFraction": 0.8097928,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "hook3"
+			},
+			{
+				"id": "four",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "snark",
+									"form": "frame-dubious",
+									"anchor": { "x": 0.873, "y": 0.478 },
+									"head": { "scaleY": -1 }
+								},
+								{
+									"role": "volunteer",
+									"form": "frame-skeptical",
+									"equipment": {},
+									"size": 0.824,
+									"head": { "rotate": 0, "scaleY": -1 },
+									"foot": { "rotate": 2.339 }
+								},
+								{
+									"assetSpec": "comic:rain.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.038, "y": 0.426 },
+									"size": 0.67,
+									"drawDepth": 1.5,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:stormwellOn.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.981, "y": 1.331 },
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "job/job_theStormwell_branch",
+									"textKey": "~05~choice_four~panel_001~1_volunteer",
+									"pointerOwner": "volunteer",
+									"location": "topRight",
+									"padXFraction": 0.075,
+									"padYFraction": 0.062,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "volunteer",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"preTransformation": true,
+										"role": "npc4",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.147, "y": 0.716 },
+										"size": 0.798,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -17.847 },
+										"foot": { "rotate": -11.171 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.804, "y": 1.509 },
+										"size": 0.82591844,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.78498256,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~06~player_chose_one~panel_001~1_narration",
+										"style": "narration",
+										"location": "bottomRight",
+										"padXFraction": 0.04,
+										"padYFraction": 0.051,
+										"widthFraction": 0.67456406,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"preTransformation": true,
+										"role": "npc4",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": -0.169, "y": 0.687 },
+										"size": 1.015,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -17.847 },
+										"foot": { "rotate": -11.171 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.804, "y": 1.509 },
+										"size": 0.9222756,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.87656385,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicEmotion_exclamation.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.496, "y": 0.905 },
+										"size": 0.565,
+										"drawDepth": 3.5625,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~06~player_chose_one~panel_002~1_narration",
+										"style": "narration",
+										"location": "bottomRight",
+										"padXFraction": 0.065,
+										"padYFraction": 0.051,
+										"widthFraction": 0.9101742,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.871, "y": 0.343 },
+										"size": 0.55,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -3.085 },
+										"foot": { "rotate": -7.133 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.438, "y": 0.341 },
+										"size": 0.55,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 2.514 },
+										"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.299, "y": 1.159 },
+										"size": 0.78136647,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.276, "y": 0.725 },
+										"size": 0.541,
+										"drawDepth": -2,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.149, "y": 0.399 },
+										"size": 0.81,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "scaleX": 2 },
+										"color": { "r": "0.47835901", "g": "0.4254387", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:action_pointerFake.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.036, "y": 0.294 },
+										"size": 0.289,
+										"drawDepth": -0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -29.1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~06~player_chose_one~panel_003~1_action",
+										"style": "action",
+										"padXFraction": 0.046,
+										"padYFraction": 0.476,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "npc2",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.871, "y": 0.343 },
+										"size": 0.55,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -3.093 },
+										"foot": { "rotate": 0.048 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.438, "y": 0.341 },
+										"size": 0.55,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 5.722 },
+										"color": { "r": "1", "g": "1", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.299, "y": 1.159 },
+										"size": 0.78136647,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.2 }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.778, "y": 0.701 },
+										"size": 0.467,
+										"drawDepth": -1.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.425, "y": 0.451 },
+										"size": 0.565,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"foot": { "rotate": -78.69 },
+										"color": { "r": "0.69338661", "g": "0.6622808", "b": "0.99999988", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.124, "y": 0.437 },
+										"size": 0.235,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"foot": { "rotate": -78.69 },
+										"color": { "r": "1", "g": "1", "b": "0.99999994", "a": "1" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"animation": { "overridePanelOrder": 2 },
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.254, "y": 0.25 },
+										"size": 0.612,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -1.217 },
+										"foot": { "rotate": -2.953 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.1 }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.865, "y": 0.874 },
+										"size": 0.574,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.865, "y": 0.874 },
+										"size": 0.574,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "0.3881579" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.663,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~06~player_chose_one~panel_005~1_volunteer",
+										"pointerOwner": "volunteer",
+										"padXFraction": 0.15,
+										"padYFraction": 0.078,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.38, "y": 0.221 },
+										"size": 0.606,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 2.514 },
+										"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.719, "y": 0.211 },
+										"size": 0.571,
+										"drawDepth": 0.8125,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 2.514 },
+										"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.502, "y": 1.154 },
+										"size": 0.8725259,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.276, "y": 0.725 },
+										"size": 0.623,
+										"drawDepth": -2,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~06~player_chose_one~panel_006~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.387,
+										"padYFraction": 0.063,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -27.38137, "dY": 2.8822057, "pointerOrientH": "onRight" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.145, "y": 0.25 },
+										"size": 0.5,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -1.217 },
+										"foot": { "rotate": -2.953 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.434, "y": 0.826 },
+										"size": 0.49969602,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.432, "y": 0.826 },
+										"size": 0.49969602,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "0.70833331" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.577175,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.56359649" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.844, "y": 0.2579249 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.696, "y": 0.2679249 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.145, "y": 0.25 },
+										"size": 0.5,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -1.217 },
+										"foot": { "rotate": -2.953 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.432, "y": 0.826 },
+										"size": 0.49969602,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.844, "y": 0.2579249 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.696, "y": 0.2679249 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~06~player_chose_one~panel_008~1_volunteer",
+										"pointerOwner": "volunteer",
+										"padXFraction": 0.211,
+										"padYFraction": 0.171,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{ "class": "AllowFollowup", "id": "job_theStormwell_branch.bookish" },
+				{
+					"class": "Test",
+					"value": "drauven",
+					"threshold": "1",
+					"onPass": {
+						"class": "ApplyTheme",
+						"theme": "storm",
+						"piece": "head",
+						"historyTextKey": "job_theStormwell_branch.0.playerChose_one.2addTheme.storm.head.replaceInjuries"
+					},
+					"onFail": {
+						"class": "ApplyTheme",
+						"theme": "storm",
+						"piece": "head",
+						"historyTextKey": "job_theStormwell_branch.0.playerChose_one.2addTheme.storm.head.replaceInjuries",
+						"replaceInjuredLimbs": true
+					}
+				},				
+				{
+					"class": "Aspects",
+					"target": "volunteer",
+					"addAspects": [
+						{ "id": "stormwellThisGame", "value": "1" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "volunteer",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"preTransformation": true,
+										"role": "npc4",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.179, "y": 0.538 },
+										"size": 0.622,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -17.847 },
+										"foot": { "rotate": -11.171 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.852, "y": 1.066 },
+										"size": 0.797,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.5037335,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~07~player_chose_two~panel_001~1_narration",
+										"style": "narration",
+										"location": "topRight",
+										"padXFraction": 0.048,
+										"padYFraction": 0.144,
+										"widthFraction": 0.46267322,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"preTransformation": true,
+										"role": "npc4",
+										"form": "frame-hit",
+										"equipment": {},
+										"anchor": { "x": 0.061, "y": 0.562 },
+										"size": 1.015,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -4.165 },
+										"foot": { "rotate": -9.494 },
+										"color": { "r": "0.97951287", "g": "0.68859655", "b": "0.99999994", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.2 }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.087, "y": 0.783 },
+										"size": 0.9222756,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.99509466", "g": "0.92543864", "b": "1", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.4 }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.87656385,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:light_spikyStarburst.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.778, "y": 0.028 },
+										"size": 0.365,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "channeling", "strength": 0.2 }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.762, "y": 0.101 },
+										"size": 1.868,
+										"drawDepth": 3,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~07~player_chose_two~panel_002~1_narration",
+										"style": "narration",
+										"location": "bottomRight",
+										"padXFraction": 0.065,
+										"padYFraction": 0.051,
+										"widthFraction": 0.9101742,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-hit",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.235, "y": 0.255 },
+										"size": 0.5,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": 9.637 },
+										"foot": { "rotate": 4.392 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.1 }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.434, "y": 0.826 },
+										"size": 0.49969602,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.432, "y": 0.826 },
+										"size": 0.49969602,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "0.70833331" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.577175,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.56359649" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.844, "y": 0.2579249 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625,
+										"head": { "rotate": -3.851 },
+										"foot": { "rotate": 4.448 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.696, "y": 0.2679249 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625,
+										"head": { "rotate": -3.851 },
+										"foot": { "rotate": 3.851 }
+									},
+									{
+										"assetSpec": "comic:light_starburstLarge.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.171, "y": 0.052 },
+										"size": 0.177,
+										"drawDepth": 3.59375,
+										"nameTag": "none",
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "0.74780703" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~07~player_chose_two~panel_003~1_narration",
+										"style": "narration",
+										"padXFraction": 0.023,
+										"padYFraction": 0.068,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-surprised",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.235, "y": 0.255 },
+										"size": 0.5,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -23.69 },
+										"foot": { "rotate": 4.392 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.432, "y": 0.826 },
+										"size": 0.49969602,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.844, "y": 0.2579249 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625,
+										"head": { "rotate": -3.851 },
+										"foot": { "rotate": 4.448 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.684, "y": 0.254 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625,
+										"head": { "rotate": -7.676 },
+										"foot": { "rotate": 3.851 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~07~player_chose_two~panel_004~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.47835901", "g": "0.4254387", "b": "0.99999994", "a": "1" },
+										"padXFraction": 0.326,
+										"padYFraction": 0.59,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.235, "y": 0.255 },
+										"size": 0.5,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -7.339 },
+										"foot": { "rotate": 4.392 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.432, "y": 0.826 },
+										"size": 0.49969602,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.844, "y": 0.2579249 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625,
+										"head": { "rotate": -3.851 },
+										"foot": { "rotate": 4.448 }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.684, "y": 0.254 },
+										"size": 0.4927316,
+										"drawDepth": 3.5625,
+										"head": { "rotate": -7.676 },
+										"foot": { "rotate": 3.851 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.824, "y": 0.034 },
+										"size": 0.423,
+										"nameTag": "none",
+										"foot": { "rotate": -8.452 }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.195, "y": 0.062 },
+										"size": 0.151,
+										"drawDepth": 3.75,
+										"nameTag": "none",
+										"head": { "rotate": 6.548 },
+										"foot": { "rotate": 0.064 },
+										"color": { "r": "0.5675984", "g": "0.55166543", "b": "0.72465146", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-dubious",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.577, "y": 0.226 },
+										"size": 0.156,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": 15.098 },
+										"foot": { "rotate": -7.133 },
+										"color": { "r": "0.5675984", "g": "0.55166543", "b": "0.72465146", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-happy",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.491, "y": 0.125 },
+										"size": 0.152,
+										"nameTag": "none",
+										"head": { "rotate": -18.18, "scaleY": -1 },
+										"foot": { "rotate": -11.59 },
+										"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_arch2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.18, "y": 0.337 },
+										"size": 0.341,
+										"drawDepth": 3.25,
+										"nameTag": "none",
+										"color": { "r": "0.62067729", "g": "0.68435127", "b": "0.83107811", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.872, "y": 0.62 },
+										"size": 0.19,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~07~player_chose_two~panel_006~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.28,
+										"padYFraction": 0.185,
+										"widthFraction": 0.2734965,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -11.528998, "dY": -1.4411248, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~07~player_chose_two~panel_006~2_npc2",
+										"pointerOwner": "npc2",
+										"padXFraction": 0.557,
+										"padYFraction": 0.302,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 24.49912, "dY": 0, "pointerOrientH": "onRight" }
+									}
+								]
+							}
+						}
+					]
+				},
+				{ "class": "AllowFollowup", "id": "job_theStormwell_branch.snark" },
+				{
+					"class": "Test",
+					"value": "drauven",
+					"threshold": "1",
+					"onPass": {
+						"class": "ApplyTheme",
+						"theme": "storm",
+						"piece": "leftArm",
+						"historyTextKey": "job_theStormwell_branch.1.playerChose_two.2addTheme.storm.leftArm.replaceInjuries"
+					},
+					"onFail": {
+						"class": "ApplyTheme",
+						"theme": "storm",
+						"piece": "leftArm",
+						"historyTextKey": "job_theStormwell_branch.1.playerChose_two.2addTheme.storm.leftArm.replaceInjuries",
+						"replaceInjuredLimbs": true
+					}
+				},
+				{
+					"class": "Aspects",
+					"target": "volunteer",
+					"addAspects": [
+						{ "id": "stormwellThisGame", "value": "1" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "volunteer",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"preTransformation": true,
+										"role": "npc4",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.324, "y": 0.657 },
+										"size": 0.622,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -17.847 },
+										"foot": { "rotate": 5.358 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.852, "y": 1.066 },
+										"size": 0.797,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.5037335,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~08~player_chose_three~panel_001~1_narration",
+										"style": "narration",
+										"location": "topRight",
+										"padXFraction": 0.048,
+										"padYFraction": 0.144,
+										"widthFraction": 0.46267322,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"preTransformation": true,
+										"role": "npc4",
+										"form": "frame-surprised",
+										"equipment": {},
+										"anchor": { "x": 0.196, "y": 0.581 },
+										"size": 0.96928066,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -17.847 },
+										"foot": { "rotate": -11.171 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.2 }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.852, "y": 1.066 },
+										"size": 1.2419883,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.7849826,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.727, "y": 0.26 },
+										"size": 0.525,
+										"drawDepth": 2,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:light_spikyStarburst.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.635, "y": -0.062 },
+										"size": 0.367,
+										"drawDepth": 3,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.60745615" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.28, "y": -0.039 },
+										"size": 0.32085648,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -26.695 },
+										"foot": { "rotate": 5.929 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.1 }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.444, "y": 0.614 },
+										"size": 0.32066143,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.05 }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.356 },
+										"size": 0.3703807,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.56359649" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.761, "y": -0.072 },
+										"size": 0.31619227,
+										"drawDepth": 3.5625,
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.633, "y": -0.048 },
+										"size": 0.31619227,
+										"drawDepth": 2.0625,
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.041, "y": 0.188 },
+										"size": 0.307,
+										"nameTag": "none",
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.176, "y": -0.011 },
+										"size": 0.32085648,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -5.287 },
+										"foot": { "rotate": 0.905 },
+										"color": { "r": "1", "g": "1", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.444, "y": 0.614 },
+										"size": 0.32066143,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.891, "y": -0.057 },
+										"size": 0.31619227,
+										"drawDepth": 3.5625
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.75, "y": -0.043 },
+										"size": 0.31619227,
+										"drawDepth": 2.0625
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.224, "y": 0.154 },
+										"size": 0.307,
+										"nameTag": "none",
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.607, "y": 0.505 },
+										"size": 0.76,
+										"head": { "rotate": -11.201, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~08~player_chose_three~panel_005~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.036,
+										"padYFraction": 0.044,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.276, "y": -0.034 },
+										"size": 0.32085648,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -11.79 },
+										"foot": { "rotate": 5.929 },
+										"color": { "r": "1", "g": "1", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.444, "y": 0.614 },
+										"size": 0.32066143,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.761, "y": -0.072 },
+										"size": 0.31619227,
+										"drawDepth": 3.5625
+									},
+									{
+										"role": "npc",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.633, "y": -0.048 },
+										"size": 0.31619227,
+										"drawDepth": 2.0625,
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_wallPillar.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.041, "y": 0.188 },
+										"size": 0.307,
+										"nameTag": "none",
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~08~player_chose_three~panel_006~1_npc2",
+										"pointerOwner": "npc2",
+										"location": "topRight",
+										"padXFraction": 0.2,
+										"padYFraction": 0.194,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{ "class": "AllowFollowup", "id": "job_theStormwell_branch.healer" },
+				{
+					"class": "Test",
+					"value": "drauven",
+					"target": "volunteer",
+					"threshold": "1",
+					"onPass": {
+						"class": "ApplyTheme",
+						"theme": "storm",
+						"piece": "leftLeg",
+						"historyTextKey": "job_theStormwell_branch.2.playerChose_three.2addTheme.storm.rightLeg.replaceInjuries"
+					},
+					"onFail": {
+						"class": "ApplyTheme",
+						"theme": "storm",
+						"piece": "leftLeg",
+						"historyTextKey": "job_theStormwell_branch.2.playerChose_three.2addTheme.storm.rightLeg.replaceInjuries",
+						"replaceInjuredLimbs": true
+					}
+				},
+				{
+					"class": "Aspects",
+					"target": "volunteer",
+					"addAspects": [
+						{ "id": "stormwellThisGame", "value": "1" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "volunteer",
+		"ifPlayerChose": "four",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "npc4",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.281, "y": 0.558 },
+										"size": 0.622,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": 17.882 },
+										"foot": { "rotate": -11.171 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.852, "y": 1.066 },
+										"size": 0.797,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.048 },
+										"size": 0.5037335,
+										"drawDepth": 0.5,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~09~player_chose_four~panel_001~1_npc4",
+										"pointerOwner": "npc4",
+										"padXFraction": 0.258,
+										"padYFraction": 0.112,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.576, "y": 0.298 },
+										"size": 0.4,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -15.46, "scaleY": -1 },
+										"foot": { "rotate": -3.841 },
+										"color": { "r": "0.7889545", "g": "0.76754397", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.949, "y": 0.3 },
+										"size": 0.40601867,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": 15.098 },
+										"foot": { "rotate": -7.133 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.789, "y": 0.298 },
+										"size": 0.4,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": 1.155 },
+										"foot": { "rotate": 2.514 },
+										"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.547, "y": 0.832 },
+										"size": 0.4945099,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.258, "y": 0.49 },
+										"size": 0.47,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.52850878" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~09~player_chose_four~panel_002~1_volunteer",
+										"pointerOwner": "volunteer",
+										"padXFraction": 0.225,
+										"padYFraction": 0.059,
+										"widthFraction": 0.39554566,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -18.734535, "dY": -2.8822496, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.987, "y": 0.577 },
+										"size": 0.596,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 29.492 }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.867, "y": 1.193 },
+										"size": 0.822,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_goat.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.375, "y": 0.384 },
+										"size": 0.505,
+										"nameTag": "none",
+										"foot": { "rotate": -18.171 },
+										"color": { "r": "0.75523788", "g": "0.74206007", "b": "0.88513291", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rain.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"size": 0.624,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.4758772" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~09~player_chose_four~panel_003~1_volunteer",
+										"pointerOwner": "volunteer",
+										"location": "topRight",
+										"padXFraction": 0.055,
+										"padYFraction": 0.084,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~09~player_chose_four~panel_003~2_actionSmall",
+										"style": "actionSmall",
+										"padXFraction": 0.307,
+										"padYFraction": 0.294,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.984, "y": 1.27 },
+										"size": 1.084,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:misc/animal_goat.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.324, "y": 0.443 },
+										"size": 0.6,
+										"nameTag": "none",
+										"foot": { "rotate": 25.844 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~09~player_chose_four~panel_004~1_action",
+										"style": "action",
+										"padXFraction": 0.226,
+										"padYFraction": 0.111,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-scared",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.669, "y": 0.24 },
+										"size": 0.518,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 2.514 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.888, "y": 0.245 },
+										"size": 0.518,
+										"drawDepth": 0.8125,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 2.89 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.206, "y": 1.029 },
+										"size": 0.626,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.1 }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-surprised",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.368, "y": 0.24509996 },
+										"size": 0.535,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"head": { "rotate": -7.26, "scaleY": -1 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstLarge.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.235, "y": 0.726 },
+										"size": 0.263,
+										"drawDepth": -3,
+										"nameTag": "none",
+										"color": { "r": "0.69338661", "g": "0.6622808", "b": "0.99999988", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightning.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.002, "y": 0.549 },
+										"size": 0.136,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"foot": { "rotate": -133.914 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.55482459" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~09~player_chose_four~panel_005~1_action",
+										"style": "action",
+										"padXFraction": 0.037,
+										"padYFraction": 0.111,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-scared",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.787, "y": 0.264 },
+										"size": 0.3662813,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 6.601 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.888, "y": 0.245 },
+										"size": 0.3662813,
+										"drawDepth": 0.8125,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 2.89 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.314, "y": 0.832 },
+										"size": 0.44264883,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" },
+										"colorFilter": { "filterName": "channeling", "strength": 0.1 }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-surprised",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.626, "y": 0.25 },
+										"size": 0.37830213,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"head": { "rotate": -7.26, "scaleY": -1 },
+										"foot": { "rotate": -4.55 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeSwirls.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.3, "y": 0.466 },
+										"size": 0.259,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:goatLightning.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.331, "y": 0.553 },
+										"size": 0.175,
+										"drawDepth": 2,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~09~player_chose_four~panel_006~1_actionLarge",
+										"style": "actionLarge",
+										"padXFraction": 0.478,
+										"padYFraction": 0.126,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~09~player_chose_four~panel_006~2_actionLarge",
+										"style": "actionLarge",
+										"padXFraction": 0.485,
+										"padYFraction": 0.14,
+										"shrinkToFitText": true,
+										"allowOverlap": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_fieldGray.jpg",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-scared",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.787, "y": 0.264 },
+										"size": 0.3662813,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 6.601 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-surprised",
+										"facing": "left",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.888, "y": 0.245 },
+										"size": 0.3662813,
+										"drawDepth": 0.8125,
+										"nameTag": "none",
+										"head": { "rotate": -8.465 },
+										"foot": { "rotate": 2.89 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.314, "y": 0.832 },
+										"size": 0.44264883,
+										"drawDepth": 3.625,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-surprised",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.626, "y": 0.25 },
+										"size": 0.37830213,
+										"drawDepth": -2,
+										"nameTag": "none",
+										"head": { "rotate": -7.26, "scaleY": -1 },
+										"foot": { "rotate": -4.55 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:goatLightning.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.034, "y": 0.548 },
+										"size": 0.175,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"foot": { "rotate": -16.361 }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcShort.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.207, "y": 0.49 },
+										"size": 0.458,
+										"drawDepth": 3,
+										"nameTag": "none",
+										"foot": { "rotate": 24.785 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.66885966" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldGray.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.824, "y": 0.034 },
+										"size": 0.423,
+										"nameTag": "none",
+										"foot": { "rotate": -8.452 }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.562, "y": 0.221 },
+										"size": 0.151,
+										"drawDepth": 3.75,
+										"nameTag": "none",
+										"head": { "rotate": 6.548 },
+										"foot": { "rotate": 0.064 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"role": "npc2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.723, "y": 0.226 },
+										"size": 0.156,
+										"drawDepth": 3.5,
+										"nameTag": "none",
+										"head": { "rotate": -20.203 },
+										"foot": { "rotate": -0.12449433 },
+										"color": { "r": "0.90841424", "g": "0.89912289", "b": "0.99999994", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.661, "y": 0.231 },
+										"size": 0.152,
+										"nameTag": "none",
+										"head": { "rotate": 2.905 },
+										"foot": { "rotate": 2.514 },
+										"color": { "r": "0.84182167", "g": "0.8373009", "b": "0.8863833", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsField_arch2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.18, "y": 0.337 },
+										"size": 0.341,
+										"drawDepth": 3.25,
+										"nameTag": "none",
+										"color": { "r": "0.73583519", "g": "0.72992182", "b": "0.87972736", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:stormwellOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.872, "y": 0.62 },
+										"size": 0.19,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.87109971", "g": "0.87392133", "b": "0.91398799", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:goatLightning.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.177, "y": 0.182 },
+										"size": 0.073,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -6.978 }
+									},
+									{
+										"assetSpec": "comic:actionLines_bouncing.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.326, "y": 0.135 },
+										"size": 0.115,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"foot": { "rotate": 9.954 }
+									},
+									{
+										"assetSpec": "comic:lightning.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.138, "y": 0.418 },
+										"size": 0.051,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"foot": { "rotate": 103.351 }
+									},
+									{
+										"assetSpec": "comic:lightning.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.247, "y": 0.259 },
+										"size": 0.035,
+										"drawDepth": 0.625,
+										"nameTag": "none",
+										"foot": { "rotate": 138.972 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.625" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.189 },
+										"size": 0.982,
+										"drawDepth": 3,
+										"nameTag": "none",
+										"color": { "r": "0.5675984", "g": "0.55166543", "b": "0.72465146", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.124, "y": 0.495 },
+										"size": 0.512,
+										"drawDepth": 3,
+										"nameTag": "none",
+										"color": { "r": "0.69862878", "g": "0.68752396", "b": "0.80809009", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "job/job_theStormwell_branch",
+										"textKey": "~09~player_chose_four~panel_008~1_actionSmall",
+										"style": "actionSmall",
+										"padXFraction": 0.165,
+										"padYFraction": 0.543,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "AllowFollowup",
+					"id": "encounter_wilderness_glitteringPool.6.playerChose_four"
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "stormwell",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		},
+		{
+			"role": "npc2",
+			"npcId": "stormwellSpouse",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		},
+		{
+			"role": "npc3",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		},
+		{
+			"role": "npc4",
+			"createEntity": {
+				"query": { "baseTag": "human", "inRelationTo": "volunteer", "cloneRelatedEntity": true },
+				"control": "none"
+			}
+		}
+	]
+}
+}
