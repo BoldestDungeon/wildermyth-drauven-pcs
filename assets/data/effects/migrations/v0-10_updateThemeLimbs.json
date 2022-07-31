@@ -219,6 +219,20 @@
     },
     {
       "class": "Test",
+      "value": "drauvenHeadStyle_mystic",
+      "threshold": "1",
+      "onPass": {
+        "class": "AddHistory",
+        "inlineHistory": {
+          "id": "setDrauvenHeadStyle_deeven",
+          "showInSummary": false,
+          "associatedAspects": [ "drauvenHeadStyle_deeven" ],
+          "removeAspects": [ "drauvenHeadStyle_mystic" ]
+        }
+      }
+    },
+    {
+      "class": "Test",
       "value": "drauvenHeadCustom_mystic1",
       "threshold": "1",
       "onPass": {
