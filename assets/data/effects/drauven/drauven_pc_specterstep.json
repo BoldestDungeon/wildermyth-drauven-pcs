@@ -35,6 +35,12 @@
             }
             ]
         },
-        { "class": "Animate", "target": "self", "script": "figures.enterGrayplane" }
+        { "class": "Animate", "target": "self", "script": "figures.enterGrayplane" },
+		{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "doneWithTurn", "value": "1" }
+		]
+		}
     ]
 }
