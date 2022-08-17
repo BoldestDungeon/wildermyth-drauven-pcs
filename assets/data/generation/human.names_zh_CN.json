@@ -1,6 +1,25 @@
 {
+    "drauvenName": ["<DrauvenFirstName> <DrauvenConstructedSurnamePrefix><DrauvenSurname>"],
+    "drauvenFirstName": ["_OR_", [2, "<PredefinedDrauvenFirstName>"], [7, "<ConstructedDrauvenFirstName>"], [1, "<SlavicName>"]],
 
-	"forbiddenWords": ["伊露娜", "伊露西", "伊克西斯", "凯莉", "杜隆", "斯柏林", "亚森"],
+    "predefinedDrauvenFirstName": ["Thuvayn", "Pyarc", "Vrsawl", "Zuvyac", "Colr", "Tranyen", "Mulsc",
+        "Lwaug", "Fiorr", "Lauven", "Branok", "Merrek", "Litharel", "Zveth", "Xarro", "Vyxra", "Deek", "Thorall", "Styxis", "Tseth", "Ghirralosh", "Laurok", "Zveek", "Zvarok", "Tsyxra", "Litherrek", "Fiorall", "Stytharel", "Mexxis", "Hoshir", "Thogjuk", "Mophs", "Jipshish", "Masduk", "Kedag", "Idgril", "Uvzig", "Dygid", "Aofyrd", "Aukfethb", "Wfyrn", "Yfyrn", "Wyven", "Yvyrn"],
+
+    "constructedDrauvenFirstName": ["<DrauvenFirstNameBegin><drauvenFirstNameEnd>"],
+    "drauvenFirstNameBegin": ["lwa", "lau", "zve", "xar", "vyx", "styx", "ghirr", "tsyx", "mexx", "idgr", "thog", "thuv", "py", "vrs", "zu", "kyv", "ksu", "dra", "ts", "dee", "vra", "tsyr", "mul", "tran", "co", "du", "kyo", "kree", "cv", "ady", "boh", "dorb", "dar", "dra", "bor", "groz", "ylc", "kal", "uvz", "dyg", "auk", "yvy", "kve", "cas", "marz", "kras", "lju", "rost", "zbyh", "ves", "srbi", "zahv", "zby", "jaro", "zyz", "osor", "przby", "tych", "vla", "vyas", "zvez"],
+    "drauvenFirstNameEnd": ["ysl", "yn", "ayn", "arc", "rc", "rn", "orr", "rek", "ra", "reth", "veth", "xis", "eth", "rok", "xra", "rel", "duk", "yrn", "ish", "ysh", "wn", "osk", "ysk", "ssl", "xol", "awl", "vyac", "orr", "arr", "lr", "lrr", "yen", "sc", "st", "mpv", "yost", "esna", "ka", "jek", "rig", "rut", "myr", "oza", "zet", "ska", "vak", "wia", "cno", "acz", "ki", "cko"],
+
+    "slavicName": ["_OR_", [4, "<PredefinedSlavicName>"], [1, "<DrauvenFirstNameBegin><drauvenFirstNameBegin><drauvenFirstNameEnd>"]],
+    "predefinedSlavicName": ["Adis", "Admir", "Ajdin", "Baran", "Bialas", "Bladimiro", "Blagoje", "Blahoslav", "Boba", "Bohdan", "Boian", "Bojan", "Bojánek", "Bojek", "Bojík", "Bolek", "Boleslao", "Boleslav", "Boleslav", "Boleslaw", "Boras", "Bore", "Borik", "Boris", "Borislav", "Borislaw", "Borja", "Borka", "Borut", "Boryusha", "Boza", "Bozidar", "Bozidar", "Branik", "Branko", "Broda", "Brodny", "Bronislav", "Budimir", "Bylun", "Cas", "Casimear", "Casimir", "Casimyr", "Cich", "Cvetko", "Dalek", "Damear", "Danika", "Dark", "Darko", "Davor", "Desimir", "Dobrica", "Dobromir", "Dragan", "Drago", "Dragomir", "Dragoslav", "Dušan", "Duscha", "Estanislao", "Estanislaw", "Gniew", "Goran", "Izet", "Jarek", "Jarogniew", "Jaromir", "Jarousek", "Jezdimir", "Kąkol", "Kazek", "Kazik", "Kazimeras", "Kvetoslav", "Ladio", "Lao", "Lasota", "László", "Lech", "Ljuba", "Loman", "Łopata", "Lubomierz", "Maslaw", "Mecek", "Mecheslav", "Mecik", "Meckislavek", "Mieczyk", "Mieszko", "Mijo", "Miodrag", "Mladen", "Mscisclaw", "Mylan", "Nebojsa", "Nemanja", "Nenad", "Nepomuceno", "Novac", "Ognjen", "Osorio", "Plamen", "Pravaslav", "Preben", "Predrag", "Przbyslaw", "Radan", "Radek", "Radomir", "Rados", "Rosta", "Rostislav", "Rus", "Semir", "Sinisea", "Sladkea", "Slava", "Slavoljub", "Slawek", "Slobeslav", "Slobodan", "Srba", "Stando", "Stanko", "Svante", "Szydło", "Taman", "Techoslav", "Tihomir", "Uchacz", "Vaclav", "Vela", "Velimir", "Veloucek", "Vencel", "Venselau", "Vlad", "Vladan", "Vladi", "Vladimir", "Vladislav", "Vladja", "Vlatko", "Vojin", "Vojta", "Vuk", "Vukasin", "Vyashaslav", "Wlodzislaw", "Xexen", "Yaromir", "Yaropolk", "Yasen", "Žaba", "Zapototki", "Zbyna", "Zbynek", "Zbysek", "Zdravko", "Zelimir", "Zinion", "Zivon", "Zlatan", "Zlogonje", "Zoro", "Zorya", "Zvezdan", "Zvoncko", "Żyła",
+        "Ajla", "Aleana", "Alyona", "Bilijona", "Biserka", "Brana", "Branka", "Brencis", "Capecca", "Chesna", "Bojana", "Cveta", "Dalenka", "Dalka", "Danja", "Darva", "Divna", "Bojka", "Dobra", "Dobromila", "Dobroslava", "Draga", "Dragica", "Duša", "Eudleana", "Eudlyna", "Gordana", "Grozdana", "Hourig", "Boza", "Ilca", "Iskra", "Kalina", "Dejana", "Jarka", "Jagoda", "Jasna", "Jurissa", "Kalon", "Krasava", "Krasna", "Kveta", "Leposava", "Luba", "Ljuba", "Lubov", "Marzhan", "Mil", "Miloslavia", "Miluša", "Miluska", "Mira", "Mren", "Nada", "Nadia", "Naida", "Nevenë", "Rada", "Radilla", "Radinka", "Radost", "Ratka", "Redmilla", "Roscislawa", "Rostuska", "Sanela", "Slava", "Slavena", "Slavica", "Slobodanka", "Snežana", "Sobena", "Srbijanka", "Sveta", "Svetlana", "Svetochka", "Ural", "Vera", "Vesla", "Vesna", "Zagorka", "Zbyhneushka", "Zahvala", "Zbyna", "Zdiska", "Zdisa", "Zitomeera", "Živa", "Zlata", "Zora", "Żywia", "Zvezdana", "Zyzlila", "Zyzila"],
+
+    "drauvenConstructedSurnamePrefix": ["_OR_", [2, ""], [1, ""]],
+    "drauvenSurname": ["_OR_", [2, ""], [1, ""]],
+
+		"drauvenHostileFaction": ["_OR_", [1, "Zagarac"], [1, "Druvimos"]],
+		"drauvenOutpostName": ["<DrauvenFirstNameBegin><drauvenFirstNameEnd> Outpost"],
+
+	"forbiddenWords": ["伊露娜", "伊露西", "伊克西斯", "凯莉", "杜隆", "斯柏林", "亚森", "cocko"],
 	
 	"maleName": ["<MaleFirstName>"],
 	"maleFirstName": ["_OR_", [3, "<PredefinedMaleFirstName>"], [6, "<ConstructedMaleFirstName>"]],
