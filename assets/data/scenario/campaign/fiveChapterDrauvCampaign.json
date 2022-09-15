@@ -1,0 +1,93 @@
+{
+"scenarioInfo": {
+	"id": "fiveChapterDrauvCampaign",
+	"type": "CAMPAIGN",
+	"nameKey": "fiveChapters.name",
+	"blurbKey": "fiveChapters.blurb",
+	"newGameImagePath": "assets/ui/reskin/newCampaign_5chp.png",
+	"sortNumber": 120,
+	"devOnly": true,
+	"rosterSlots": [
+		{
+			"type": "farmerNoWeapons",
+			"archetype": "warrior",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "warrior" ],
+			"nameConstraints": "regular",
+			"customHistory": {
+				"appendHistory": [
+					{
+						"id": "fiveChapterDrauvCampaign.0.rosterCustomHistory.",
+						"impliedAspects": [
+							"alive",
+							"human",
+							"nonhuman",
+							"humanRig",
+							"activeDefender",
+							"eligibleForDeathChoice",
+							"canWallWithAllies",
+							"drauven",
+							"drauven_pc",
+							"drauvenBlood",
+							"fluentInDruvwail",
+							"cannotAge",
+							"simplePresence",
+							"ATTACHMENTS_workingRightArm",
+							"ATTACHMENTS_workingLeftArm",
+							"drauvenSkin_naturalLeftArm",
+							"drauvenSkin_naturalLeftHand",
+							"drauvenSkin_naturalRightArm",
+							"drauvenSkin_naturalRightHand",
+							"drauvenSkin_naturalLeftLeg",
+							"drauvenSkin_naturalRightLeg",
+							"drauvenSkin_naturalHead",
+							"drauvenSkin_naturalTorso",
+							"drauvenSkin_naturalTail",
+							"drauvenGear_clothes",
+							"themeSkin_crowDravenOverride",
+							"humanSkin_suppressClothes",
+							"humanSkin_suppressTorso"
+						],
+						"removeAspects": [
+							"young",
+							"earlyMiddleAge",
+							"middleAge",
+							"lateMiddleAge",
+							"oldAge",
+							"veryOldAge",
+							"extremeOldAge",
+							"humanSkin_naturalLeftArm",
+							"humanSkin_naturalLeftHand",
+							"humanSkin_naturalRightArm",
+							"humanSkin_naturalRightHand",
+							"humanSkin_naturalLeftLeg",
+							"humanSkin_naturalRightLeg",
+							"humanSkin_naturalHead"
+						],
+						"humanName": "drauvenName"
+					},
+					{ "id": "customHead", "category": "drauvenHeadStyle_stump" },
+					{ "id": "customHorns", "category": "drauvenHead_horns_stump" },
+					{ "id": "customFeathers", "category": "drauvenHead_feathers_stump" },
+					{ "id": "customWhiskers", "category": "drauvenHead_whiskers_stump" },
+					{ "id": "customHelmet", "category": "drauvenHead_helmet_stump" }
+				]
+			}
+		},
+		{
+			"type": "farmerNoWeapons",
+			"archetype": "hunter",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "hunter" ]
+		},
+		{
+			"type": "legacyHero",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "hero" ],
+			"requireLegacyHeroAspect": "drauven"
+		}
+	],
+	"legacyAspectPrerequisites": [ "legacy_beatTutorial" ]
+},
+"villainPlotId": "C_fiveChapters_v2"
+}

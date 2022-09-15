@@ -1,0 +1,323 @@
+[
+  {
+    "id": "themeSkin_crowDravenOverride",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_crowFace_neutral",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "neutral", "happy" ]
+      },
+      {
+        "name": "replaceHead_crowFace_open",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "open" ]
+      },
+      {
+        "name": "replaceHead_crowFace_interested",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "interested" ]
+      },
+      {
+        "name": "replaceHead_crowFace_surprised",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "surprised", "scared" ]
+      },
+      {
+        "name": "replaceHead_crowFace_skeptical",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "skeptical" ]
+      },
+      {
+        "name": "replaceHead_crowFace_dubious",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "dubious" ]
+      },
+      {
+        "name": "replaceHead_crowFace_angry",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "angry", "scheming" ]
+      },
+      {
+        "name": "replaceHead_crowFace_rage",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "rage" ]
+      },
+      {
+        "name": "replaceHead_crowFace_joy",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "joke", "joy" ]
+      },
+      {
+        "name": "replaceHead_crowFace_grim",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "grim", "sad" ]
+      },
+      {
+        "name": "replaceHead_crowFace_hit",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "facialExpression": [ "hit", "dead" ]
+      },
+      {
+        "name": "replaceNeck_crow",
+        "depth": 3999,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"]
+      },
+      {
+        "name": "wingCrowR",
+        "depth": 56,
+        "ifOwnerAspect": "themePiece_crow_wings",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "rigMode": "holdingWeapon"
+      },
+      {
+        "name": "wingCrowL",
+        "depth": 55,
+        "ifOwnerAspect": "themePiece_crow_wings",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "rigMode": "holdingWeapon"
+      },
+      {
+        "name": "wingCrowR_folded",
+        "depth": 56,
+        "ifOwnerAspect": "themePiece_crow_wings",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "rigMode": "notHoldingWeapon"
+      },
+      {
+        "name": "wingCrowL_folded",
+        "depth": 55,
+        "ifOwnerAspect": "themePiece_crow_wings",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"],
+        "rigMode": "notHoldingWeapon"
+      },
+      {
+        "name": "tailCrow_drauven_override",
+        "depth": 102,
+        "ifOwnerAspect": "themePiece_crow_tail",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"]
+      },
+      {
+        "name": "replaceLegL_crow_drauven_override",
+        "depth": 1101,
+        "ifOwnerAspect": "themePiece_crow_leftLeg",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"]
+      },
+      {
+        "name": "replaceLegR_crow_drauven_override",
+        "depth": 1101,
+        "ifOwnerAspect": "themePiece_crow_rightLeg",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"]
+      },
+      {
+        "name": "replaceArmL_crow",
+        "depth": 1202,
+        "ifOwnerAspect": "themePiece_crow_leftArm",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"]
+      },
+      {
+        "name": "replaceArmR_crow",
+        "depth": 1202,
+        "ifOwnerAspect": "themePiece_crow_rightArm",
+        "ifNoOwnerAspects": ["themeSkin_crowWhite"]
+      }
+    ],
+    "lifespan": "all",
+    "themeSkin": "crow",
+    "themeSkinUnlockLegacyAspect": "drauven_devMode_showThemeOverrides"
+  },
+  {
+    "id": "themeSkin_crowWhite",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_crowFaceWhite_neutral",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "neutral", "happy" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_open",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "open" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_interested",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "interested" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_surprised",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "surprised", "scared" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_skeptical",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "skeptical" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_dubious",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "dubious" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_angry",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "angry", "scheming" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_rage",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "rage" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_joy",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "joke", "joy" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_grim",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "grim", "sad" ]
+      },
+      {
+        "name": "replaceHead_crowFaceWhite_hit",
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "themePiece_crow_head",
+        "facialExpression": [ "hit", "dead" ]
+      },
+      {
+        "name": "replaceNeck_crowWhite",
+        "depth": 3999,
+        "ifOwnerAspect": "themePiece_crow_head"
+      },
+      {
+        "name": "wingCrowWhiteR",
+        "depth": 56,
+        "ifOwnerAspect": "themePiece_crow_wings",
+        "rigMode": "holdingWeapon"
+      },
+      {
+        "name": "wingCrowWhiteL",
+        "depth": 55,
+        "ifOwnerAspect": "themePiece_crow_wings",
+        "rigMode": "holdingWeapon"
+      },
+      {
+        "name": "wingCrowWhiteR_folded",
+        "depth": 56,
+        "ifOwnerAspect": "themePiece_crow_wings",
+        "rigMode": "notHoldingWeapon"
+      },
+      {
+        "name": "wingCrowWhiteL_folded",
+        "depth": 55,
+        "ifOwnerAspect": "themePiece_crow_wings",
+        "rigMode": "notHoldingWeapon"
+      },
+      {
+        "name": "tailCrowWhite",
+        "depth": 102,
+        "ifOwnerAspect": "themePiece_crow_tail",
+        "ifNoOwnerAspects": ["drauven"]
+      },
+      {
+        "name": "tailCrowWhite_drauven_override",
+        "depth": 102,
+        "ifOwnerAspects": ["drauven", "themePiece_crow_tail"]
+      },
+      {
+        "name": "replaceLegL_crowWhite",
+        "depth": 1101,
+        "ifOwnerAspect": "themePiece_crow_leftLeg",
+        "ifNoOwnerAspects": ["drauven"]
+      },
+      {
+        "name": "replaceLegL_crowWhite_drauven_override",
+        "depth": 1101,
+        "ifOwnerAspects": ["drauven", "themePiece_crow_leftLeg"]
+      },
+      {
+        "name": "replaceLegR_crowWhite",
+        "depth": 1101,
+        "ifOwnerAspect": "themePiece_crow_rightLeg",
+        "ifNoOwnerAspects": ["drauven"]
+      },
+      {
+        "name": "replaceLegR_crowWhite_drauven_override",
+        "depth": 1101,
+        "ifOwnerAspects": ["drauven", "themePiece_crow_rightLeg"]
+      },
+      {
+        "name": "replaceArmL_crowWhite",
+        "depth": 1202,
+        "ifOwnerAspect": "themePiece_crow_leftArm"
+      },
+      {
+        "name": "replaceArmR_crowWhite",
+        "depth": 1202,
+        "ifOwnerAspect": "themePiece_crow_rightArm"
+      }
+    ],
+    "lifespan": "all",
+    "themeSkin": "crow",
+    "themeSkinUnlockLegacyAspect": "theme_crow_blind20Enemies"
+  }
+]

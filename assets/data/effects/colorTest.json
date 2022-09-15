@@ -1,0 +1,24 @@
+{
+  "id": "colorTest",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "colorTest",
+    "modId": "wildermyth-drauven-pcs",
+    "author": "Zel"
+  },
+  "type": "ABILITIES_CHANGED",
+  "targets": [
+    { "template": "SELF" }
+  ],
+  "outcomes": [
+    {
+      "class": "Aspects",
+      "target": "self",
+      "addAspects": [ {
+        "id": "humanSkin_overrideStreakColor|(self.ASPECT_PARAM2.humanSkin_colorSelections)|1.0",
+        "value": 1
+      } ]
+    }
+  ]
+}
+

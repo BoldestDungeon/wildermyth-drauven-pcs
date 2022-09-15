@@ -13,25 +13,13 @@
 			"canBeAwardedRandomly": false,
 			"slots": ["torso"],
 			"replaces": ["torso"],
-			"extraAspects": ["ATTACHMENTS_suppressArmor"],
+			"extraAspects": ["ATTACHMENTS_suppressArmor", "humanSkin_suppressClothes", "drauvenGear_clothes"],
 			"layers": [
 				{
 					"name": "Drauv_torso",
 					"tint": "skin", "tintAmount": 0.4,
 					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
 					"depth": 1200
-				},
-				{
-					"name": "Drauv_armor_base",
-					"tint": "primary", "tintAmount": 0.6,
-					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
-					"depth": 1350
-				},
-				{
-					"name": "Drauv_armor_base_over",
-					"tint": "primary", "tintAmount": 0.6,
-					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
-					"depth": 1399
 				}
 			]
 		},
@@ -51,10 +39,202 @@
 				}
 			]
 		},
-		{ "id": "head", "effects": ["migration_drauven_updateThemeLimbs"], "canBeAwardedRandomly": false },
-		{ "id": "rightArm", "canBeAwardedRandomly": false },
-		{ "id": "leftArm", "canBeAwardedRandomly": false },
-		{ "id": "rightLeg", "canBeAwardedRandomly": false },
-		{ "id": "leftLeg", "canBeAwardedRandomly": false }
+
+
+
+
+
+		{ 
+			"id": "head", 
+			"name": "Legacy-style Drauven head",
+			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+			"effects": ["migration_drauven_updateThemeLimbs"], 
+			"canBeAwardedRandomly": false 
+		},
+		{ 
+			"id": "rightArm", 
+			"name": "Legacy-style Drauven Right Arm",
+			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+			"canBeAwardedRandomly": false,
+			"layers": [
+				{
+					"name": "Drauv_ArmR_upper",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 1350,
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_ArmR_lower",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 3000,
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_ArmR_2handed_upper",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 1350,
+					"rigMode": "twoHanded"
+				},
+				{
+					"name": "Drauv_ArmR_2handed_lower",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 8000,
+					"rigMode": "twoHanded"
+				},
+				{
+					"name": "Drauv_handR_open",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 6000,
+					"ifRightHandGrasp": "open",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handR_closed",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 8001,
+					"ifRightHandGrasp": "weapon",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handR_closed_thumb",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 6000,
+					"ifRightHandGrasp": "weapon",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handR_book",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 6000,
+					"ifRightHandGrasp": "book",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handR_book_thumb",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 8001,
+					"ifRightHandGrasp": "book",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handR_2handed",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 8002,
+					"rigMode": "twoHanded"
+				},
+				{
+					"name": "Drauv_handR_2handed_thumb",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 6000,
+					"rigMode": "twoHanded"
+				}
+			]
+		},
+		{ 
+			"id": "leftArm", 
+			"name": "Legacy-style Drauven Left Arm",
+			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+			"canBeAwardedRandomly": false,
+			"layers": [
+				{
+					"name": "Drauv_ArmL_upper",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 1199,
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_ArmL_lower",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 1500,
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_ArmL_2handed_upper",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 1199,
+					"rigMode": "twoHanded"
+				},
+				{
+					"name": "Drauv_ArmL_2handed_lower",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 1500,
+					"rigMode": "twoHanded"
+				},
+				{
+					"name": "Drauv_handL_open",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 6000,
+					"ifLeftHandGrasp": "open",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handL_closed",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 6000,
+					"ifLeftHandGrasp": "weapon",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handL_closed_thumb",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 8000,
+					"ifLeftHandGrasp": "weapon",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handL_book",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 6000,
+					"ifLeftHandGrasp": "book",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handL_book_thumb",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 8000,
+					"ifLeftHandGrasp": "book",
+					"rigMode": "oneHanded"
+				},
+				{
+					"name": "Drauv_handL_2handed",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 8002,
+					"rigMode": "twoHanded"
+				},
+				{
+					"name": "Drauv_handL_2handed_thumb",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 4000,
+					"rigMode": "twoHanded"
+				}
+
+			]
+		},
+		{ 
+			"id": "rightLeg", 
+			"name": "Legacy-style Drauven Right Leg",
+			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+			"canBeAwardedRandomly": false,
+			"layers": [
+				{
+					"name": "Drauv_legR",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 1101
+				}
+			]
+		},
+		{ 
+			"id": "leftLeg", 
+			"name": "Legacy-style Drauven Left Leg",
+			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+			"canBeAwardedRandomly": false,
+			"layers": [
+				{
+					"name": "Drauv_LegL",
+					"tint": "skin", "tintAmount": 0.4,
+					"depth": 1101
+				}
+			]
+		}
 	]
 }
