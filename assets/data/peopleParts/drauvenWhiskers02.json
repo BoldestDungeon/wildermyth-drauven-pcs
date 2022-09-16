@@ -16,7 +16,7 @@
       "depth": 4300,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"],
+      "ifOwnerHasPart": "drauvenHead_stump",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -26,7 +26,7 @@
       "depth": 3999,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"],
+      "ifOwnerHasPart": "drauvenHead_stump",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -38,7 +38,7 @@
       "depth": 4300,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+      "ifOwnerHasPart": "drauvenHead_haunt",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -48,7 +48,7 @@
       "depth": 3999,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+      "ifOwnerHasPart": "drauvenHead_haunt",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -60,7 +60,7 @@
       "depth": 4300,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_deeven"],
+      "ifOwnerHasPart": "drauvenHead_deeven",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -70,7 +70,7 @@
       "depth": 3999,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_deeven"],
+      "ifOwnerHasPart": "drauvenHead_deeven",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -82,7 +82,7 @@
       "depth": 4300,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_pilot"],
+      "ifOwnerHasPart": "drauvenHead_pilot",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -92,7 +92,7 @@
       "depth": 3999,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_pilot"],
+      "ifOwnerHasPart": "drauvenHead_pilot",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -104,7 +104,7 @@
       "depth": 4300,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+      "ifOwnerHasPart": "drauvenHead_stormthroat",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -114,7 +114,7 @@
       "depth": 3999,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+      "ifOwnerHasPart": "drauvenHead_stormthroat",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -126,7 +126,7 @@
       "depth": 4300,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifOwnerHasPart": "drauvenHead_gorelord",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
@@ -136,7 +136,7 @@
       "depth": 3999,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifOwnerHasPart": "drauvenHead_gorelord",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     }
