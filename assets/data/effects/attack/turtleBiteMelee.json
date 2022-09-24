@@ -1,0 +1,71 @@
+{
+"id": "turtleBiteMelee",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "attack/turtleBiteMelee",
+	"modId": "drauvenTurtle",
+	"author": "",
+	"aiPriority": "3000",
+	"tags": [ "okToMarkDone", "melee", "specialAbilityButton", "themeUsageOverride" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "jumpjaw",
+	"priority": "19",
+	"extraUI": { "overrideRangeShown": "2+self.BONUS_RANGE" },
+	"cooldown": "oncePerTurn",
+	"branchableAbilityType": "standardMelee"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "free" },
+		"missionFeedback": { "orientTo": "target" }
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"range": "2+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"audioOverride": {
+			"attackStartCue": "Characters/Default/SceneryHitPlant",
+			"attackHitCue": "",
+			"attackDodgedCue": "",
+			"attackBlockedCue": ""
+		},
+		"defenseRollTags": [ "melee" ],
+		"attackStrength": "self.MELEE_ACCURACY",
+		"wield": "fromWeapon",
+		"applyCover": true,
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "(1+1d3)+floor(((attacker.PHYSICAL_DAMAGE_BONUS+attacker.POTENCY)/2))",
+					"flankingBonusDamage": "0",
+					"shred": "0",
+					"pierce": "1",
+					"overrideStuntDamage": "1"
+				}
+			]
+		},
+		"onHitCover": {
+			"class": "Damage",
+			"amount": "(1+1d3)+floor(((attacker.PHYSICAL_DAMAGE_BONUS+attacker.POTENCY)/2))",
+			"flankingBonusDamage": "0",
+			"shred": "0",
+			"pierce": "1",
+			"weapon": null
+		}
+	}
+]
+}

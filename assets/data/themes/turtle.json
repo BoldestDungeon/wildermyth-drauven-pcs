@@ -1,0 +1,94 @@
+{
+"id": "turtle",
+"name": "Turtletouched",
+"blurb": "<self> took on part of the turtle's curse.",
+"pieces": [
+	{
+		"id": "head",
+		"name": "Turtle Head",
+		"blurb": "<self> is a pretty funny looking turtle...",
+		"slots": [ "head" ],
+		"replaces": [ "head" ],
+		"layers": [
+			{
+				"name": "replaceHead_turtle_neutral",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "neutral", "happy" ]
+			},
+			{
+				"name": "replaceHead_turtle_open",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "open" ]
+			},
+			{
+				"name": "replaceHead_turtle_interested",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "interested" ]
+			},
+			{
+				"name": "replaceHead_turtle_surprised",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "surprised", "scared" ]
+			},
+			{
+				"name": "replaceHead_turtle_skeptical",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "skeptical" ]
+			},
+			{
+				"name": "replaceHead_turtle_dubious",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "dubious" ]
+			},
+			{
+				"name": "replaceHead_turtle_angry",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "angry", "scheming" ]
+			},
+			{
+				"name": "replaceHead_turtle_rage",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "rage" ]
+			},
+			{
+				"name": "replaceHead_turtle_joy",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "joke", "joy" ]
+			},
+			{
+				"name": "replaceHead_turtle_grim",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "grim", "sad" ]
+			},
+			{
+				"name": "replaceHead_turtle_hit",
+				"depth": 4000,
+				"headOffset": true,
+				"ifNoOwnerAspect": "themeSkin_crow*",
+				"facialExpression": [ "hit", "dead" ]
+			}
+		],
+		"effects": [ "turtleBiteMelee" ]
+	}
+]
+}
