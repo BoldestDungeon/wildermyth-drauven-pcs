@@ -326,6 +326,93 @@
 						},
 						{
 							"role": "subject",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.319, "y": -0.207 },
+							"size": 0.33,
+							"head": { "rotate": -23.318, "scaleY": 1 },
+							"foot": { "rotate": 19.521 },
+							"neck": {}
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.56, "y": 0.151 },
+							"size": 0.2556,
+							"nameTag": "none",
+							"color": { "r": "0.67755681", "g": "0.67755681", "b": "0.67755681", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.568, "y": 0.205 },
+							"size": 0.076,
+							"drawDepth": 9,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.351, "y": 0.154 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/tent.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.389, "y": 0.337 },
+							"size": 0.1958,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/languageLessons",
+							"textKey": "~01~prompt~panel_004~1_speech",
+							"fallbackSlotOwner": 0,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -456.18393, "dY": 13.195403, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.841, "y": 0.193 },
+							"size": 0.3114,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_treetrunk1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.207, "y": 0.409 },
+							"size": 0.2462,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:figures/images/human/items/item_bookRough_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.348, "y": 0.081 },
+							"size": 0.2053,
+							"nameTag": "none",
+							"foot": { "rotate": -36.488 }
+						},
+						{
+							"role": "subject",
 							"form": "frame-skeptical",
 							"equipment": {},
 							"focus": "foot",
@@ -471,7 +558,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "arriveAtSite/languageLessons",
-							"textKey": "~01~prompt~panel_005~1_subject",
+							"textKey": "~01~prompt~panel_006~1_subject",
 							"pointerOwner": "subject",
 							"padXFraction": 0.109,
 							"padYFraction": 0.247,
@@ -519,7 +606,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "arriveAtSite/languageLessons",
-							"textKey": "~01~prompt~panel_006~1_bookish",
+							"textKey": "~01~prompt~panel_007~1_bookish",
 							"pointerOwner": "bookish",
 							"shrinkToFitText": true
 						}
@@ -565,7 +652,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "arriveAtSite/languageLessons",
-							"textKey": "~01~prompt~panel_007~1_bookish",
+							"textKey": "~01~prompt~panel_008~1_bookish",
 							"pointerOwner": "bookish",
 							"shrinkToFitText": true
 						}
@@ -656,7 +743,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "arriveAtSite/languageLessons",
-							"textKey": "~01~prompt~panel_008~1_bookish",
+							"textKey": "~01~prompt~panel_009~1_bookish",
 							"pointerOwner": "bookish",
 							"location": "topRight",
 							"padXFraction": 0.039,
@@ -720,7 +807,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "arriveAtSite/languageLessons",
-							"textKey": "~01~prompt~panel_009~1_subject",
+							"textKey": "~01~prompt~panel_010~1_subject",
 							"pointerOwner": "subject",
 							"shrinkToFitText": true
 						}
@@ -790,7 +877,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_010.(subject_is_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_011.(subject_is_abandonedDrauven)~1_narration",
 										"style": "narration"
 									}
 								]
@@ -863,7 +950,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_011.(subject_is_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_012.(subject_is_abandonedDrauven)~1_narration",
 										"style": "narration"
 									}
 								]
@@ -947,7 +1034,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_012.(subject_is_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_013.(subject_is_abandonedDrauven)~1_narration",
 										"style": "narration"
 									}
 								]
@@ -1023,12 +1110,12 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_013.(subject_is_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_014.(subject_is_abandonedDrauven)~1_narration",
 										"style": "narration"
 									},
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_013.(subject_is_abandonedDrauven)~2_npc",
+										"textKey": "~01~prompt~panel_014.(subject_is_abandonedDrauven)~2_npc",
 										"style": "action",
 										"pointerOwner": "npc",
 										"padXFraction": 0.55,
@@ -1117,12 +1204,12 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_014.(subject_is_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_015.(subject_is_abandonedDrauven)~1_narration",
 										"style": "narration"
 									},
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_014.(subject_is_abandonedDrauven)~2_npc",
+										"textKey": "~01~prompt~panel_015.(subject_is_abandonedDrauven)~2_npc",
 										"style": "action",
 										"pointerOwner": "npc",
 										"padXFraction": 0.5,
@@ -1208,7 +1295,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_015.(subject_NOT_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_016.(subject_NOT_abandonedDrauven)~1_narration",
 										"style": "narration"
 									}
 								]
@@ -1298,7 +1385,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_016.(subject_NOT_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_017.(subject_NOT_abandonedDrauven)~1_narration",
 										"style": "narration"
 									}
 								]
@@ -1371,7 +1458,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_017.(subject_NOT_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_018.(subject_NOT_abandonedDrauven)~1_narration",
 										"style": "narration"
 									}
 								]
@@ -1449,7 +1536,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_018.(subject_NOT_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_019.(subject_NOT_abandonedDrauven)~1_narration",
 										"style": "narration"
 									}
 								]
@@ -1503,12 +1590,12 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_019.(subject_NOT_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_020.(subject_NOT_abandonedDrauven)~1_narration",
 										"style": "narration"
 									},
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_019.(subject_NOT_abandonedDrauven)~2_narration",
+										"textKey": "~01~prompt~panel_020.(subject_NOT_abandonedDrauven)~2_narration",
 										"style": "narration",
 										"location": "bottomLeft"
 									}
@@ -1587,7 +1674,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "arriveAtSite/languageLessons",
-										"textKey": "~01~prompt~panel_020.(subject_NOT_abandonedDrauven)~1_narration",
+										"textKey": "~01~prompt~panel_021.(subject_NOT_abandonedDrauven)~1_narration",
 										"style": "narration"
 									}
 								]
@@ -1687,7 +1774,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "arriveAtSite/languageLessons",
-							"textKey": "~01~prompt~panel_021~1_subject",
+							"textKey": "~01~prompt~panel_022~1_subject",
 							"pointerOwner": "subject",
 							"padXFraction": 0.032,
 							"padYFraction": 0.155,
@@ -1696,7 +1783,7 @@
 						},
 						{
 							"textSourceFile": "arriveAtSite/languageLessons",
-							"textKey": "~01~prompt~panel_021~2_bookish",
+							"textKey": "~01~prompt~panel_022~2_bookish",
 							"pointerOwner": "bookish",
 							"shrinkToFitText": true
 						}
@@ -1794,7 +1881,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "arriveAtSite/languageLessons",
-							"textKey": "~01~prompt~panel_022~1_bookish",
+							"textKey": "~01~prompt~panel_023~1_bookish",
 							"pointerOwner": "bookish",
 							"location": "topRight",
 							"padXFraction": 0.26721138,

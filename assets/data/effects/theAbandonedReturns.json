@@ -117,6 +117,45 @@
 			{
 				"class": "comicNode_Panel",
 				"panel": {
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-dubious",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_002~1_healer",
+							"pointerOwner": "healer"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hothead",
+							"form": "frame-angry",
+							"equipment": {},
+							"head": { "rotate": -6.213, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "theAbandonedReturns",
+							"textKey": "~01~prompt~panel_003~1_hothead",
+							"pointerOwner": "hothead"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
 					"size": "twoThirds",
 					"showNameTags": false,
 					"animation": {},
@@ -139,7 +178,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_002~1_hothead",
+							"textKey": "~01~prompt~panel_004~1_hothead",
 							"pointerOwner": "hothead",
 							"location": "topRight",
 							"padYFraction": 0.022,
@@ -149,7 +188,7 @@
 						},
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_002~2_hothead",
+							"textKey": "~01~prompt~panel_004~2_hothead",
 							"pointerOwner": "hothead",
 							"location": "topRight",
 							"padXFraction": 0.022,
@@ -176,7 +215,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_003~1_hunter",
+							"textKey": "~01~prompt~panel_005~1_hunter",
 							"pointerOwner": "hunter",
 							"padXFraction": -0.745,
 							"padYFraction": 0.809,
@@ -201,7 +240,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_004~1_healer",
+							"textKey": "~01~prompt~panel_006~1_healer",
 							"pointerOwner": "healer"
 						}
 					]
@@ -222,7 +261,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_005~1_hunter",
+							"textKey": "~01~prompt~panel_007~1_hunter",
 							"pointerOwner": "hunter"
 						}
 					]
@@ -235,14 +274,14 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_006~1_actionHuge",
+							"textKey": "~01~prompt~panel_008~1_actionHuge",
 							"style": "actionHuge",
 							"padXFraction": 0.402,
 							"padYFraction": 0.387
 						},
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_006~2_speech",
+							"textKey": "~01~prompt~panel_008~2_speech",
 							"backgroundColor": { "r": "0.09851378", "g": "0.54069078", "b": "0.16006681", "a": "1" },
 							"format": "white",
 							"padXFraction": 0.755,
@@ -285,7 +324,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_007~1_hothead",
+							"textKey": "~01~prompt~panel_009~1_hothead",
 							"pointerOwner": "hothead",
 							"padXFraction": 0.803,
 							"padYFraction": 0.031,
@@ -318,7 +357,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_008~1_hothead",
+							"textKey": "~01~prompt~panel_010~1_hothead",
 							"pointerOwner": "hothead",
 							"padXFraction": 0.47,
 							"padYFraction": 0.013,
@@ -326,7 +365,7 @@
 						},
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_008~2_hunter",
+							"textKey": "~01~prompt~panel_010~2_hunter",
 							"pointerOwner": "hunter",
 							"padXFraction": 0.288,
 							"padYFraction": 0.781,
@@ -364,7 +403,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_009~1_npc",
+							"textKey": "~01~prompt~panel_011~1_npc",
 							"pointerOwner": "npc",
 							"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
 							"format": "white",
@@ -392,7 +431,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_010~1_healer",
+							"textKey": "~01~prompt~panel_012~1_healer",
 							"pointerOwner": "healer",
 							"pointerAdjust": { "dX": -55.609253, "dY": 1.8850576, "pointerOrientH": "onRight" }
 						}
@@ -443,7 +482,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_011~1_npc",
+							"textKey": "~01~prompt~panel_013~1_npc",
 							"pointerOwner": "npc",
 							"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
 							"format": "white",
@@ -471,7 +510,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_012~1_hunter",
+							"textKey": "~01~prompt~panel_014~1_hunter",
 							"pointerOwner": "hunter",
 							"padXFraction": -0.54,
 							"padYFraction": 0.056,
@@ -508,7 +547,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_013~1_healer",
+							"textKey": "~01~prompt~panel_015~1_healer",
 							"pointerOwner": "healer"
 						}
 					]
@@ -548,7 +587,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_014~1_narration",
+							"textKey": "~01~prompt~panel_016~1_narration",
 							"style": "narration"
 						}
 					]
@@ -612,7 +651,7 @@
 					"textSlots": [
 						{
 							"textSourceFile": "theAbandonedReturns",
-							"textKey": "~01~prompt~panel_017~1_npc",
+							"textKey": "~01~prompt~panel_019~1_npc",
 							"pointerOwner": "npc",
 							"backgroundColor": { "r": "0.09803922", "g": "0.53725493", "b": "0.15686275", "a": "1" },
 							"format": "white",
