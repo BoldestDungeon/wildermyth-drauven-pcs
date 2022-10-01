@@ -29,18 +29,20 @@
 		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ]
 	},
 	{ "template": "COMPANY", "choose": "BY_SCORE" },
+	{ "role": "overlandTile", "template": "OVERLAND_TILE", "range": "0" },
+	{
+		"template": "JOB_PARTICIPANT",
+		"promptText": "",
+		"slots": {}
+	},
 	{
 		"template": "HERO_BY_SCORE",
 		"choose": "ANY",
 		"scoreFunction": null,
 		"chooseAnyMaximum": 1,
+		"fromRoles": [ "participant" ],
 		"aspectsOneOf": [ "drauven", "fluentInDruvwail" ],
 		"isJobResource": true
-	},
-	{
-		"template": "JOB_PARTICIPANT",
-		"promptText": "",
-		"slots": {}
 	},
 	{
 		"role": "target",
@@ -55,12 +57,97 @@
 		"template": "HERO_BY_SCORE",
 		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": null,
+		"fromRoles": [ "participant" ],
 		"aspectValues": [
 			{ "id": "nonhuman", "forbidden": true }
 		]
+	},
+	{
+		"role": "npc",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer1",
+		"relativeTo": "overlandTile"
+	},
+	{
+		"role": "npc2",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer2",
+		"relativeTo": "overlandTile"
+	},
+	{
+		"role": "npc3",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer3",
+		"relativeTo": "overlandTile"
+	},
+	{
+		"role": "npc4",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer4",
+		"relativeTo": "overlandTile"
+	},
+	{
+		"role": "hero5",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer5"
 	}
 ],
 "outcomes": [
+	{
+		"class": "AddHistory",
+		"target": "npc",
+		"addHistory": [
+			[ "drauvenBase" ],
+			[ "bornDrauven" ]
+		]
+	},
+	{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" },
+	{
+		"class": "AddHistory",
+		"target": "npc2",
+		"addHistory": [
+			[ "drauvenBase" ],
+			[ "bornDrauven" ]
+		]
+	},
+	{ "class": "ApplyTheme", "target": "npc2", "theme": "drauven", "piece": "torso" },
+	{
+		"class": "AddHistory",
+		"target": "npc3",
+		"addHistory": [
+			[ "drauvenBase" ],
+			[ "bornDrauven" ]
+		]
+	},
+	{ "class": "ApplyTheme", "target": "npc3", "theme": "drauven", "piece": "torso" },
+	{
+		"class": "AddHistory",
+		"target": "npc4",
+		"addHistory": [
+			[ "drauvenBase" ],
+			[ "bornDrauven" ]
+		]
+	},
+	{ "class": "ApplyTheme", "target": "npc4", "theme": "drauven", "piece": "torso" },
+	{
+		"class": "AddHistory",
+		"target": "hero5",
+		"addHistory": [
+			[ "drauvenBase" ],
+			[ "bornDrauven" ]
+		]
+	},
+	{
+		"class": "ApplyTheme",
+		"target": "hero5",
+		"theme": "drauven",
+		"piece": "torso"
+	},
 	{
 		"class": "DoFirstValid",
 		"outcomes": [
@@ -1029,6 +1116,13 @@
 													"focus": "foot",
 													"anchor": { "x": 0.511, "y": 0.434 },
 													"size": 0.1711,
+													"nameTag": "none"
+												},
+												{
+													"role": "npc",
+													"equipment": {},
+													"anchor": { "x": 0.241, "y": 0.179 },
+													"size": 0.1374,
 													"nameTag": "none"
 												}
 											],
