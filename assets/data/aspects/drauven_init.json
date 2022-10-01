@@ -16,5 +16,13 @@
 	"showChangeInComics": "never",
 	"invalidatesSkin": true,
 	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_theme_init",
+	"effects": ["drauven_theme_init"],
+	"importance": -1,
+	"showChangeInComics": "never",
+	"lifespan": "all"
 }
 ]

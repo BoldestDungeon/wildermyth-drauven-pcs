@@ -1,0 +1,27 @@
+{
+"id": "drauven_theme_init",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven_theme_init",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "justEthaniguess & Ironskink",
+	"STUB": "Initialize our Drauven characters"
+},
+"type": "ABILITIES_CHANGED",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "AddHistory",
+		"target": "self",
+		"inlineHistory": {
+			"id": "drauven_theme_init.0.outcome",
+			"persistOverLegacy": "never",
+			"showInSummary": false,
+			"removeAspects": [ "drauven_theme_init" ]
+		}
+	},
+	{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" }
+]
+}
