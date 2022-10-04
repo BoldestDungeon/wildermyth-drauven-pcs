@@ -34,6 +34,16 @@
 			{ "id": "nonhuman", "forbidden": true }
 		],
 		"notAlreadyMatchedAs": [ "hero2" ]
+	},
+	{
+		"role": "site",
+		"template": "ANY",
+		"type": "SITE",
+		"choose": "BY_SCORE",
+		"scoreFunction": "drauvenOutpost",
+		"scoreThreshold": "1",
+		"aspects": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
 	}
 ],
 "outcomes": [
@@ -48,7 +58,7 @@
 					"bgNighttime": true,
 					"actorSlots": [
 						{
-							"role": "hero2",
+							"role": "hero3",
 							"form": "frame-joke",
 							"facing": "left",
 							"equipment": {},
@@ -57,7 +67,7 @@
 							"nameTag": "bottomRight"
 						},
 						{
-							"role": "hero",
+							"role": "hero2",
 							"form": "frame-happy",
 							"equipment": {},
 							"anchor": { "x": 0.134, "y": 0.465 },
