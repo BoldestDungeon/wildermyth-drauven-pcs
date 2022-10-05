@@ -1,0 +1,85 @@
+{
+"scenarioInfo": {
+	"id": "fiveChapterDrauvCampaignOne",
+	"type": "CAMPAIGN",
+	"nameKey": "fiveChaptersDrauvOne.name",
+	"blurbKey": "fiveChaptersDrauvOne.blurb",
+	"newGameImagePath": "assets/ui/reskin/newCampaign_5chp.png",
+	"sortNumber": 123,
+	"rosterSlots": [
+		{
+			"archetype": "warrior",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "warrior" ],
+			"customHistory": {
+				"appendHistory": [
+					{
+						"id": "fiveChapterDrauvCampaign.0.rosterCustomHistory.",
+						"impliedAspects": [
+							"drauven",
+							"drauven_pc",
+							"drauvenBlood",
+							"fluentInDruvwail",
+							"cannotAge",
+							"simplePresence",
+							"ATTACHMENTS_workingRightArm",
+							"ATTACHMENTS_workingLeftArm",
+							"drauvenSkin_naturalLeftArm",
+							"drauvenSkin_naturalLeftHand",
+							"drauvenSkin_naturalRightArm",
+							"drauvenSkin_naturalRightHand",
+							"drauvenSkin_naturalLeftLeg",
+							"drauvenSkin_naturalRightLeg",
+							"drauvenSkin_naturalHead",
+							"drauvenSkin_naturalTorso",
+							"drauvenSkin_naturalTail",
+							"drauvenGear_clothes",
+							"humanSkin_suppressClothes",
+							"humanSkin_suppressTorso",
+							"nonhuman"
+						],
+						"removeAspects": [
+							"young",
+							"earlyMiddleAge",
+							"middleAge",
+							"lateMiddleAge",
+							"oldAge",
+							"veryOldAge",
+							"extremeOldAge",
+							"humanSkin_naturalLeftArm",
+							"humanSkin_naturalLeftHand",
+							"humanSkin_naturalRightArm",
+							"humanSkin_naturalRightHand",
+							"humanSkin_naturalLeftLeg",
+							"humanSkin_naturalRightLeg",
+							"humanSkin_naturalHead"
+						],
+						"staticName": "",
+						"humanName": "drauvenName",
+						"showInSummary": false
+					},
+					{
+						"id": "fiveChapterDrauvCampaign.0.rosterCustomHistory.needsDrauvenTheme",
+						"impliedAspects": [ "drauven_theme_init" ],
+						"persistOverLegacy": "never",
+						"showInSummary": false
+					}
+				]
+			}
+		},
+		{
+			"archetype": "hunter",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "hunter" ]
+		},
+		{
+			"archetype": "mystic",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "mystic" ]
+		}
+	],
+	"legacyAspectPrerequisites": [ "DrauvenAllies_FirstStepsComplete" ],
+	"legacyAspectShowPrerequisites": [ "DrauvenAllies_FirstStepsComplete" ]
+},
+"villainPlotId": "C_fiveChapters_v3"
+}
