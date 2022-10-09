@@ -5,14 +5,14 @@
     "sourceFile": "drauven/drauven_pc_channelFireball",
     "author": "Ironskink",
     "aiPriority": "2000+min(0,target.AI_ATTACK_PRIORITY)",
-    "tags": [ "ranged" ]
+    "tags": [ "ranged", "sneaky" ]
   },
   "type": "ABILITY",
   "verb": "ATTACK",
   "ability": {
     "icon": "ignite",
     "priority": "1",
-    "extraUI": { 
+    "extraUI": {
       "overrideDamageShown": "((2+1d4)+self.SPELL_DAMAGE)", 
       "overrideDamageType": "MAGIC" },
     "showDescriptionInTooltip": true

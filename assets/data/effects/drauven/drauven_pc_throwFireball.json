@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_throwFireball",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Ironskink",
 	"aiPriority": "4000",
 	"tags": [ "ranged", "aiCanUseBeforeMove" ]
@@ -11,8 +12,8 @@
 "verb": "ATTACK",
 "ability": {
 	"icon": "ignite",
-	"priority": "1",
 	"category": "attack",
+	"priority": "1",
 	"showInCharacterSheet": false,
 	"cooldown": "oncePerTurn"
 },
@@ -122,9 +123,15 @@
 				]
 			},
 			"onHit": {
-				"class": "Damage",
-				"amount": "((2+1d4)+self.SPELL_DAMAGE)",
-				"type": "MAGIC"
+				"class": "DoAll",
+				"outcomes": [
+					{ "class": "Damage", "amount": "(2+1d4)+self.SPELL_DAMAGE", "type": "MAGIC" },
+					{
+						"class": "Aspects",
+						"target": "self",
+						"removeAspects": [ "hidden" ]
+					}
+				]
 			}
 		},
 		"otherwise": {
