@@ -15,8 +15,8 @@
         "depth": 100
       },
       {
-        "name": "DrauvAlternate_torso",
-        "tint": "skin", "tintAmount": 0.4,
+        "name": "DrauvAlternate_Torso_tint",
+        "tint": "skin", "tintAmount": 1.0,
         "ifOwnerAspect": "themePiece_drauven_torso",
         "depth": 1200
       },
@@ -61,16 +61,16 @@
 
 
       {
-        "name": "DrauvAlternate_LegL",
-        "tint": "skin", "tintAmount": 0.4,
+        "name": "DrauvAlternate_LegL_tint",
+        "tint": "skin", "tintAmount": 1.0,
         "ifOwnerAspect": "drauvenSkin_naturalLeftLeg",
         "depth": 1101
       },
 
 
       {
-        "name": "DrauvAlternate_legR",
-        "tint": "skin", "tintAmount": 0.4,
+        "name": "DrauvAlternate_LegR_tint",
+        "tint": "skin", "tintAmount": 1.0,
         "ifOwnerAspect": "drauvenSkin_naturalRightLeg",
         "depth": 1101
       },
@@ -91,17 +91,29 @@
         "rigMode": "oneHanded"
       },
       {
-        "name": "DrauvAlternate_ArmL_2handed_upper",
-        "tint": "skin", "tintAmount": 0.4,
+        "name": "DrauvAlternate_ArmL_2handed_upper_tint",
+        "tint": "skin", "tintAmount": 1.0,
         "ifOwnerAspect": "drauvenSkin_naturalLeftArm",
         "depth": 1213,
         "rigMode": "twoHanded"
       },
       {
-        "name": "DrauvAlternate_ArmL_2handed_lower",
-        "tint": "skin", "tintAmount": 0.4,
+        "name": "DrauvAlternate_ArmL_2handed_upper_untinted",
+        "ifOwnerAspect": "drauvenSkin_naturalLeftArm",
+        "depth": 1214,
+        "rigMode": "twoHanded"
+      },
+      {
+        "name": "DrauvAlternate_ArmL_2handed_lower_tint",
+        "tint": "skin", "tintAmount": 1.0,
         "ifOwnerAspect": "drauvenSkin_naturalLeftArm",
         "depth": 1500,
+        "rigMode": "twoHanded"
+      },
+      {
+        "name": "DrauvAlternate_ArmL_2handed_lower_untinted",
+        "ifOwnerAspect": "drauvenSkin_naturalLeftArm",
+        "depth": 1501,
         "rigMode": "twoHanded"
       },
 
@@ -146,10 +158,16 @@
         "rigMode": "oneHanded"
       },
       {
-        "name": "DrauvAlternate_handL_2handed",
-        "tint": "skin", "tintAmount": 0.4,
+        "name": "DrauvAlternate_HandL_2handed_tint",
+        "tint": "skin", "tintAmount": 1.0,
         "ifOwnerAspect": "drauvenSkin_naturalLeftHand",
         "depth": 8002,
+        "rigMode": "twoHanded"
+      },
+      {
+        "name": "DrauvAlternate_HandL_2handed_untinted",
+        "ifOwnerAspect": "drauvenSkin_naturalLeftHand",
+        "depth": 8003,
         "rigMode": "twoHanded"
       },
       {
@@ -188,15 +206,15 @@
         "rigMode": "oneHanded"
       },
       {
-        "name": "DrauvAlternate_ArmR_2handed_upper",
-        "tint": "skin", "tintAmount": 0.4,
+        "name": "DrauvAlternate_ArmR_2handed_upper_tint",
+        "tint": "skin", "tintAmount": 1.0,
         "ifOwnerAspect": "drauvenSkin_naturalRightArm",
         "depth": 1213,
         "rigMode": "twoHanded"
       },
       {
-        "name": "DrauvAlternate_ArmR_2handed_lower",
-        "tint": "skin", "tintAmount": 0.4,
+        "name": "DrauvAlternate_ArmR_2handed_lower_tint",
+        "tint": "skin", "tintAmount": 1.0,
         "ifOwnerAspect": "drauvenSkin_naturalRightArm",
         "depth": 1500,
         "rigMode": "twoHanded"
@@ -243,8 +261,8 @@
         "rigMode": "oneHanded"
       },
       {
-        "name": "DrauvAlternate_handR_2handed",
-        "tint": "skin", "tintAmount": 0.4,
+        "name": "DrauvAlternate_HandR_2handed_tint",
+        "tint": "skin", "tintAmount": 1.0,
         "ifOwnerAspect": "drauvenSkin_naturalRightHand",
         "depth": 8002,
         "rigMode": "twoHanded"
