@@ -983,7 +983,7 @@
 			"role": "volunteer",
 			"npcId": "DrauvenRecruit",
 			"createEntity": {
-				"query": { "baseTag": "human", "localizableName": "", "setClass": "farmer" },
+				"query": { "baseTag": "human", "localizableName": "", "setClass": "farmer", "setAge": "young" },
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" }
 				],
