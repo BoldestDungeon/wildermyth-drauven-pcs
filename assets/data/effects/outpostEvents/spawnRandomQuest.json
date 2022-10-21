@@ -1,0 +1,60 @@
+{
+  "id": "spawnRandomQuest",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "outpostEvents/spawnRandomQuest",
+    "modId": "wildermyth-drauven-pcs",
+    "debug": true
+  },
+  "type": "MONTHLY",
+  "targets": [
+    {
+      "template": "SELF_SITE",
+      "a": "0.5",
+      "b": "[0,1]"
+    },
+    {
+      "role": "site",
+      "template": "OVERLAND_TILE",
+      "type": "SITE",
+      "choose": "ONE",
+      "aspects": [ "drauvenOutpost" ],
+      "relativeTo": "self",
+      "range": "0",
+      "sameTileAs": "self"
+    },
+    {
+      "template": "COMPANY"
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "DoOneRandom",
+      "weightedOutcomes": [
+        {
+          "outcome": {
+            "class": "Test",
+            "value": "1-self.terrorbirdPen-company.terrorbirdOpportunity",
+            "threshold": "1",
+            "onPass": {
+              "class": "DoAll",
+              "outcomes": [
+                {
+                  "class": "NewJob",
+                  "target": "site",
+                  "effectId": "outpost_spawnTerrorbirdQuest",
+                  "post": "site"
+                },
+                {
+                  "class": "Aspects",
+                  "target": "company",
+                  "addAspects": [{"id": "terrorbirdOpportunity", "value": 1}]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+  }

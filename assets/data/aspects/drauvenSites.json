@@ -7,6 +7,16 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenOutpost",
-	"effects": [ "site_hasDrauvenFarmers" ]
+	"effects": [ "site_hasDrauvenFarmers", "spawnRandomQuest" ]
+},
+{
+  "id": "terrorbirdPen",
+  "lifespan": "all"
+},
+{
+  "id": "terrorbirdGenerating",
+  "effects": [
+    "outpost_spawnTerrorbirdAvailable"
+  ]
 }
 ]

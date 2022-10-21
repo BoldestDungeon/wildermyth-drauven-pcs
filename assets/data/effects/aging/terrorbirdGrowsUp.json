@@ -1,0 +1,49 @@
+{
+"id": "terrorbirdGrowsUp",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "aging/terrorbirdGrowsUp",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"STUB": "Checks to see if the baby Terrorbird should grow up into an adult. If no maturity date is set, adds an aspect to say when that date is based on the current date plus a random number between 2.5 and 3.0 years. Once the the maturity date is reached, the small pet will be replaced by a full-sized Terrorbird pet."
+},
+"type": "DAILY",
+"targets": [
+	{ "template": "SELF" },
+  { "template": "SELF", "role": "hero" }
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "terrorbirdMaturityDate",
+		"threshold": "1",
+		"onFail": {
+			"class": "Aspects",
+			"addAspects": [
+				{
+					"id": "terrorbirdMaturityDate",
+					"value": "(((YEAR+2.5)+[0,0.5])+(SEASON*0.25))+(DAY_OF_MONTH*0.25*0.03125)"
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "(YEAR+(SEASON*0.25)+(DAY_OF_MONTH*0.25*0.03125))",
+		"threshold": "self.terrorbirdMaturityDate",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "RemoveTheme",
+					"specificTheme": "petTerrorbirdChick",
+					"specificPiece": "terrorchick"
+				},
+				{ "class": "Branch", "branchEvent": "terrorbirdGrowsUp_branch" }
+			]
+		}
+	}
+]
+}

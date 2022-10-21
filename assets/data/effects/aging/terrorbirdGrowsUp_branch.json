@@ -1,0 +1,103 @@
+{
+"id": "terrorbirdGrowsUp_branch",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "aging/terrorbirdGrowsUp_branch",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"declaredEncounterResults": []
+},
+"type": "BRANCH",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "encounterEnabled": true },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "INJECTED_HERO" }
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-joy",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.368, "y": -0.023 },
+							"size": 0.31083167,
+							"nameTag": "none",
+							"head": { "rotate": 5.095 }
+						},
+						{
+							"assetSpec": "comic:treeLeverTrunk.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.843, "y": 0.492 },
+							"size": 0.4568,
+							"nameTag": "none"
+						},
+						{
+							"role": "monster",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.554, "y": -0.038 },
+							"size": 0.2960361,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:bush6a.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.603, "y": 0.24 },
+							"size": 0.4606,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.004, "y": 0.073 },
+							"size": 0.1871,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.032, "y": 0.813 },
+							"size": 0.2775,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "aging/terrorbirdGrowsUp_branch",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		]
+	},
+	{ "class": "AddPet", "target": "hero", "pet": "monster" }
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"role": "monster",
+			"createEntity": {
+				"query": { "baseTag": "drauven_terrorbird" }
+			}
+		}
+	]
+}
+}

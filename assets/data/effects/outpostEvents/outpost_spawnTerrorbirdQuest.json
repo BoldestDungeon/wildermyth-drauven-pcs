@@ -1,0 +1,41 @@
+{
+"id": "outpost_spawnTerrorbirdQuest",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "David Bilsky"
+},
+"type": "OVERLAND_ABILITY",
+"verb": "JOB",
+"ability": {
+	"icon": "craft",
+	"category": "crafting",
+	"priority": "1",
+	"showSiteBanner": true,
+	"labor": { "days": "3" },
+	"jobCanBeCancelled": false,
+	"musicOverride": "Music/Comics - Silly and Cute"
+},
+"targets": [
+	{
+		"template": "SELF_SITE_THIS_JOB_NOT_ACTIVE",
+		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ]
+	},
+	{ "role": "site", "template": "SELF_SITE" },
+	{
+		"template": "JOB_PARTICIPANT",
+		"promptText": "Who will build the pen?",
+		"slots": {}
+	},
+	{
+		"role": "overlandTile",
+		"template": "OVERLAND_TILE",
+		"relativeTo": "site",
+		"range": "0"
+	}
+],
+"outcomes": [
+	{ "class": "Branch", "branchEvent": "outpost_spawnTerrorbirdQuest_branch" }
+]
+}
