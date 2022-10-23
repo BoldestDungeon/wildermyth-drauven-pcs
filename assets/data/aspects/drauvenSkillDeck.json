@@ -251,5 +251,14 @@
 		"upgradeForAbility": "drauvenDeck_hunter_specterstep",
 		"abilityDeckIcon": "silkstepCloak"
 	}
-}
+},
+{
+    "id": "drauvenDeck_theme_flight",
+    "effects": [ "drauven_pc_flight" ],
+    "boostType": "ABILITY_MISC",
+    "legacyAbilityChoice": true,
+    "importance": 5,
+    "abilityRequiresOneAspectOf": [ "themePiece_drauvenWings_wings" ],
+    "info": {"abilityDeckIcon": "flyFriend" }
+},
 ]
