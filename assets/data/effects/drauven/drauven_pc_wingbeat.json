@@ -1,0 +1,69 @@
+{
+"id": "drauven_pc_wingbeat",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_wingbeat",
+	"author": "Bipen",
+	"aiPriority": "2000+min(0,target.AI_ATTACK_PRIORITY)"
+},
+"type": "EVERY_TURN_2",
+"verb": "ATTACK",
+"ability": { "icon": "ignite", "priority": "1" },
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "forbidReactions|*", "forbidden": true }
+		]
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"choose": "ANY",
+		"missionFeedback": null,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"range": "1.6",
+		"lineOfSight": "TERRAIN_ONLY",
+		"test": "GREATER_THAN",
+		"a": "TURN_NUMBER",
+		"b": "1"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"attackAnimationType": "ranged",
+		"showAbilityName": "always",
+		"minimumBlockTime": "1000",
+		"timingOverride": { "beforeAnimationTime": "200", "attackTime": "0" },
+		"particles": [
+			{ "script": "wingbeatShockwave", "setPosition": "self", "delay": -0.4 },
+			{ "script": "wingbeatSmoke", "setPosition": "self", "delay": -0.4 }
+		],
+		"audioOverride": { "attackStartCue": "Characters/Theme/Wings/footstep" },
+		"attackerAnimationOverride": "",
+		"markForFlanking": "never",
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{ "class": "Damage", "amount": "(1+(self.POTENCY)*0.5)", "type": "TRUE" },
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"template": "TILE",
+						"pathFrom": "self",
+						"pathTo": "defender",
+						"matchSpecial": "knockBackDestination",
+						"relativeTo": "defender",
+						"range": "1.6",
+						"lineOfSight": "ANY_COVER",
+						"tileFilter": "parentLocationOrValidMoveEnd",
+						"roleMustFit": "defender"
+					}
+				},
+				{ "class": "MoveEntity", "directlyToTile": "focus" },
+				{ "class": "ClearRole", "role": "focus" }
+			]
+		}
+	}
+]
+}
