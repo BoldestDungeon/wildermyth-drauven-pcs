@@ -37,6 +37,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -54,6 +55,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -71,6 +73,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -88,6 +91,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -105,6 +109,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -122,6 +127,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -139,6 +145,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -156,6 +163,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -173,6 +181,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -190,6 +199,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -207,6 +217,7 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
@@ -224,8 +235,546 @@
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
+  },
+
+
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadStyle_haunt",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauven_haunt",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadStyle_deeven",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauven_deeven",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadStyle_stump",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauven_stump",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadStyle_pilot",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauven_pilot",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadStyle_stormthroat",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauven_stormthroat",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadStyle_gorelord",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauven_gorelord_untinted",
+        "depth": 4001,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      },
+      {
+        "name": "replaceHead_drauven_gorelord",
+        "tint": "skin", "tintAmount": 0.4,
+        "depth": 4000,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_feathers1",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_feathers1",
+					"tint": "hair", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven02_Feathers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_feathers1_back",
+					"tint": "hair", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven02_Feathers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_feathers2",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_feathers2",
+					"tint": "hair", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven02_Feathers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_feathers3",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_feathers3",
+					"tint": "hair", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven02_Feathers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_feathers4",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_feathers4",
+					"tint": "hair", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven02_Feathers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_feathers5",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_feathers5",
+					"tint": "hair", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven02_Feathers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_feathers5_back",
+					"tint": "hair", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven02_Feathers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_feathers6",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": []
+  },
+
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_horns1",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_horns1_front",
+        "tint": "skin", "tintAmount": 0.6,
+        "depth": 4400,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      },
+      {
+        "name": "replaceHead_drauvDetail_horns1_back",
+        "tint": "skin", "tintAmount": 0.6,
+        "depth": 3999,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_horns2",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+        "name": "replaceHead_drauvDetail_horns2_front",
+        "tint": "skin", "tintAmount": 0.6,
+        "depth": 4400,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      },
+      {
+        "name": "replaceHead_drauvDetail_horns2_back",
+        "tint": "skin", "tintAmount": 0.6,
+        "depth": 3999,
+        "headOffset": true,
+        "ifOwnerAspect": "drauvenSkin_naturalHead",
+        "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+        "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_horns3",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_horns3_front",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4400,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_horns3_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_horns4",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_horns4_front",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4400,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_horns4_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_horns5",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_horns5_front",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4400,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_horns5_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_horns6",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_horns6_front",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4400,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_horns6_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven03_Horns*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_whiskers1",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_whiskers1",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_whiskers1_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_whiskers2",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_whiskers2",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_whiskers2_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_whiskers3",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_whiskers3",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_whiskers3_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_whiskers4",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_whiskers4",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_whiskers4_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_whiskers5",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_whiskers5",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_whiskers5_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenHeadCustom_whiskers6",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+				{
+					"name": "replaceHead_drauvDetail_whiskers6",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 4300,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				},
+				{
+					"name": "replaceHead_drauvDetail_whiskers6_back",
+					"tint": "skin", "tintAmount": 0.6,
+					"depth": 3999,
+					"headOffset": true,
+					"ifOwnerAspect": "drauvenSkin_naturalHead",
+          "ifNoOwnerAspects": ["humanSkin_extra|zzz_drauven04_Whiskers*", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+					"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+				}
+      ]
   }
 ]

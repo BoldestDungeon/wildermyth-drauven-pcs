@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "wilderness/theAbandoned",
-	"modId": "wildermyth-drauven-pcs-main",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Jeremy Bernstein"
 },
 "type": "ENCOUNTER_WILDERNESS_SCOUTING",
@@ -12,14 +12,13 @@
 	"icon": "melee",
 	"priority": "1",
 	"cooldown": "oncePerGame",
-	"encounterScore": 11,
+	"encounterWeight": "1+(max(0,(1-DrauvenAllies_FirstStepsComplete))*1000)",
 	"encounterEnabled": true
 },
 "targets": [
 	{ "template": "EVENT" },
 	{
 		"template": "COMPANY",
-		"aspects": null,
 		"aspectValues": [
 			{ "id": "chapterNumber", "maxValue": "4" }
 		],

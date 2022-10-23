@@ -26,6 +26,13 @@
 		"template": "ADJACENT_ENEMY",
 		"showAnyway": true,
 		"alwaysSelect": true,
+		"missionFeedback": {
+			"orientTo": "self",
+			"suggestionScript": "figures.attackSuggestion",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+	},
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"minRange": "1.9-(self.commonDeck_bowmaster*2)",
 		"range": "5+self.BONUS_RANGE",

@@ -17,7 +17,7 @@
 		"template": "INJECTED_ENTITY",
 		"type": "HERO",
 		"choose": "ANY",
-		"injectedRole": null,
+		"injectedRole": "participant",
 		"notAlreadyMatchedAs": []
 	},
 	{
@@ -28,17 +28,11 @@
 		"sameTileAs": "self"
 	},
 	{
-		"template": "INJECTED_PARTY",
-		"type": "HERO",
-		"choose": "BY_SCORE",
-		"injectedRole": null,
-		"notAlreadyMatchedAs": [ "site" ]
-	},
-	{
 		"role": "leader",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
+		"fromRoles": ["participant"],
 		"scoreFunction": "LEADER",
 		"aspectValues": [
 			{ "id": "nonhuman", "forbidden": true }
@@ -49,6 +43,7 @@
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
+		"fromRoles": ["participant"],
 		"scoreFunction": "fluentInDruvwail",
 		"notAlreadyMatchedAs": [ "leader" ]
 	},
@@ -57,6 +52,7 @@
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
+		"fromRoles": ["participant"],
 		"scoreFunction": "CHARISMA",
 		"notAlreadyMatchedAs": [ "leader", "friend" ]
 	},
@@ -691,8 +687,7 @@
 							]
 						}
 					}
-				],
-				"ifTargetIsPresent": "site"
+				]
 			},
 			{
 				"id": "four",
@@ -859,7 +854,7 @@
 	},
 	{
 		"class": "IfPlayerChose",
-		"target": "site",
+		"target": "self",
 		"ifPlayerChose": "three",
 		"then": {
 			"class": "DoAll",

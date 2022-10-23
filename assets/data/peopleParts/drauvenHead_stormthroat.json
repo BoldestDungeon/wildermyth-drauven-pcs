@@ -1,0 +1,22 @@
+{
+	"type": "extra",
+	"extraSlot": "zzz_drauven01_Head",
+
+	"groups": [
+		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 1, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 2, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 3, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1}
+	],
+	"layers": [
+    {
+      "name": "replaceHead_drauven_stormthroat",
+      "tint": "skin", "tintAmount": 0.4,
+      "depth": 4000,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+    }
+  ]
+}

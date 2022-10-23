@@ -1,0 +1,248 @@
+{
+    "drauvenName": ["<DrauvenFirstName> <DrauvenConstructedSurnamePrefix><DrauvenSurname>"],
+    "drauvenFirstName": ["_OR_", [2, "<PredefinedDrauvenFirstName>"], [7, "<ConstructedDrauvenFirstName>"], [1, "<SlavicName>"]],
+
+    "predefinedDrauvenFirstName": ["Thuvayn", "Pyarc", "Vrsawl", "Zuvyac", "Colr", "Tranyen", "Mulsc",
+        "Lwaug", "Fiorr", "Lauven", "Branok", "Merrek", "Litharel", "Zveth", "Xarro", "Vyxra", "Deek", "Thorall", "Styxis", "Tseth", "Ghirralosh", "Laurok", "Zveek", "Zvarok", "Tsyxra", "Litherrek", "Fiorall", "Stytharel", "Mexxis", "Hoshir", "Thogjuk", "Mophs", "Jipshish", "Masduk", "Kedag", "Idgril", "Uvzig", "Dygid", "Aofyrd", "Aukfethb", "Wfyrn", "Yfyrn", "Wyven", "Yvyrn"],
+
+    "constructedDrauvenFirstName": ["<DrauvenFirstNameBegin><drauvenFirstNameEnd>"],
+    "drauvenFirstNameBegin": ["lwa", "lau", "zve", "xar", "vyx", "styx", "ghirr", "tsyx", "mexx", "idgr", "thog", "thuv", "py", "vrs", "zu", "kyv", "ksu", "dra", "ts", "dee", "vra", "tsyr", "mul", "tran", "co", "du", "kyo", "kree", "cv", "ady", "boh", "dorb", "dar", "dra", "bor", "groz", "ylc", "kal", "uvz", "dyg", "auk", "yvy", "kve", "cas", "marz", "kras", "lju", "rost", "zbyh", "ves", "srbi", "zahv", "zby", "jaro", "zyz", "osor", "przby", "tych", "vla", "vyas", "zvez"],
+    "drauvenFirstNameEnd": ["ysl", "yn", "ayn", "arc", "rc", "rn", "orr", "rek", "ra", "reth", "veth", "xis", "eth", "rok", "xra", "rel", "duk", "yrn", "ish", "ysh", "wn", "osk", "ysk", "ssl", "xol", "awl", "vyac", "orr", "arr", "lr", "lrr", "yen", "sc", "st", "mpv", "yost", "esna", "ka", "jek", "rig", "rut", "myr", "oza", "zet", "ska", "vak", "wia", "cno", "acz", "ki", "cko"],
+
+    "slavicName": ["_OR_", [4, "<PredefinedSlavicName>"], [1, "<DrauvenFirstNameBegin><drauvenFirstNameBegin><drauvenFirstNameEnd>"]],
+    "predefinedSlavicName": ["Adis", "Admir", "Ajdin", "Baran", "Bialas", "Bladimiro", "Blagoje", "Blahoslav", "Boba", "Bohdan", "Boian", "Bojan", "Bojánek", "Bojek", "Bojík", "Bolek", "Boleslao", "Boleslav", "Boleslav", "Boleslaw", "Boras", "Bore", "Borik", "Boris", "Borislav", "Borislaw", "Borja", "Borka", "Borut", "Boryusha", "Boza", "Bozidar", "Bozidar", "Branik", "Branko", "Broda", "Brodny", "Bronislav", "Budimir", "Bylun", "Cas", "Casimear", "Casimir", "Casimyr", "Cich", "Cvetko", "Dalek", "Damear", "Danika", "Dark", "Darko", "Davor", "Desimir", "Dobrica", "Dobromir", "Dragan", "Drago", "Dragomir", "Dragoslav", "Dušan", "Duscha", "Estanislao", "Estanislaw", "Gniew", "Goran", "Izet", "Jarek", "Jarogniew", "Jaromir", "Jarousek", "Jezdimir", "Kąkol", "Kazek", "Kazik", "Kazimeras", "Kvetoslav", "Ladio", "Lao", "Lasota", "László", "Lech", "Ljuba", "Loman", "Łopata", "Lubomierz", "Maslaw", "Mecek", "Mecheslav", "Mecik", "Meckislavek", "Mieczyk", "Mieszko", "Mijo", "Miodrag", "Mladen", "Mscisclaw", "Mylan", "Nebojsa", "Nemanja", "Nenad", "Nepomuceno", "Novac", "Ognjen", "Osorio", "Plamen", "Pravaslav", "Preben", "Predrag", "Przbyslaw", "Radan", "Radek", "Radomir", "Rados", "Rosta", "Rostislav", "Rus", "Semir", "Sinisea", "Sladkea", "Slava", "Slavoljub", "Slawek", "Slobeslav", "Slobodan", "Srba", "Stando", "Stanko", "Svante", "Szydło", "Taman", "Techoslav", "Tihomir", "Uchacz", "Vaclav", "Vela", "Velimir", "Veloucek", "Vencel", "Venselau", "Vlad", "Vladan", "Vladi", "Vladimir", "Vladislav", "Vladja", "Vlatko", "Vojin", "Vojta", "Vuk", "Vukasin", "Vyashaslav", "Wlodzislaw", "Xexen", "Yaromir", "Yaropolk", "Yasen", "Žaba", "Zapototki", "Zbyna", "Zbynek", "Zbysek", "Zdravko", "Zelimir", "Zinion", "Zivon", "Zlatan", "Zlogonje", "Zoro", "Zorya", "Zvezdan", "Zvoncko", "Żyła",
+        "Ajla", "Aleana", "Alyona", "Bilijona", "Biserka", "Brana", "Branka", "Brencis", "Capecca", "Chesna", "Bojana", "Cveta", "Dalenka", "Dalka", "Danja", "Darva", "Divna", "Bojka", "Dobra", "Dobromila", "Dobroslava", "Draga", "Dragica", "Duša", "Eudleana", "Eudlyna", "Gordana", "Grozdana", "Hourig", "Boza", "Ilca", "Iskra", "Kalina", "Dejana", "Jarka", "Jagoda", "Jasna", "Jurissa", "Kalon", "Krasava", "Krasna", "Kveta", "Leposava", "Luba", "Ljuba", "Lubov", "Marzhan", "Mil", "Miloslavia", "Miluša", "Miluska", "Mira", "Mren", "Nada", "Nadia", "Naida", "Nevenë", "Rada", "Radilla", "Radinka", "Radost", "Ratka", "Redmilla", "Roscislawa", "Rostuska", "Sanela", "Slava", "Slavena", "Slavica", "Slobodanka", "Snežana", "Sobena", "Srbijanka", "Sveta", "Svetlana", "Svetochka", "Ural", "Vera", "Vesla", "Vesna", "Zagorka", "Zbyhneushka", "Zahvala", "Zbyna", "Zdiska", "Zdisa", "Zitomeera", "Živa", "Zlata", "Zora", "Żywia", "Zvezdana", "Zyzlila", "Zyzila"],
+
+    "drauvenConstructedSurnamePrefix": ["_OR_", [2, ""], [1, ""]],
+    "drauvenSurname": ["_OR_", [2, ""], [1, ""]],
+
+		"drauvenHostileFaction": ["_OR_", [1, "Zagarac"], [1, "Druvimos"]],
+		"drauvenOutpostName": ["<DrauvenFirstNameBegin><drauvenFirstNameEnd> Outpost"],
+
+	"forbiddenWords": ["伊露娜", "伊露西", "伊克西斯", "凯莉", "杜隆", "斯柏林", "亚森", "cocko"],
+	
+	"maleName": ["<MaleFirstName>"],
+	"maleFirstName": ["_OR_", [3, "<PredefinedMaleFirstName>"], [6, "<ConstructedMaleFirstName>"]],
+	"constructedMaleFirstName": ["<FirstNameBegin><maleFirstNameEnd>"],
+
+	"femaleName": ["<FemaleFirstName>"],
+	"femaleFirstName": ["_OR_", [3, "<PredefinedFemaleFirstName>"], [6, "<ConstructedFemaleFirstName>"]],
+	"constructedFemaleFirstName": ["<FirstNameBegin><femaleFirstNameEnd>"],
+
+
+
+	
+  "predefinedMaleFirstName":["艾克", "拉克","瑞克","沃什","基斯","塔隆","威利","萨那","艾米斯","尤文","鲁斯","鲁斯毕","尼古拉斯", "克林特","斯洛克","罗克斯","吉玛", "本杰明", "克鲁斯","格罗沃", "胡尔", "凯托","科比", "洛什", "杜恩", "布莱恩", "威斯丁",  "乌尔夫", "库特", "弗林特", "胡恩", "纳塞", "尤威尔", "波恩", "马克", "卢卡","奎尔", "米克", "亚特", "多尔斯", "德拉克", "乔特", "斯威德", "基户", "维克斯", "维尔","鲍德里", "卡尔", "格雷弗", "皮普", "皮蓬", "欧文", "戴格斯","拜恩", "乔治", "德克", "埃罗", "菲斯克", "汤姆", "布莱尔", "范恩", "吉普希", "雷德", "阿莫", "海克斯","洛加斯", "里克斯", "吉姆", "卡里克", "奈特", "洛夫", "拉斯","达拉克","卡里克", "鲁夫", "琼特", "佛勒","达根", "拉谢尔", "布莱恩", "唐吉恩", "斯派克", "卡里姆", "布里格", "吉克", "克兰诺", "波尔", "克雷", "里尔", "梅瑟","罗克斯", "拉兹", "亚克斯","达克","戴克","韦斯莱", "德里亚", "图克", "塔克", "塔克","西姆", "巴罗萨","拉弗斯","戴克斯", "佩恩", "马克", "弗雷","邓肯","卡恩","格兰斯","利安", "隆森", "弗利浦","达肯", "威特", "达斯提", "兰斯", "乌瑟尔","伯根","博尔奇","斯克克","达西","拉维奥","邦德","乔德","阿鲁姆","丹拿姆","凯尔","西格尔","科迪","贾斯汀","埃格姆","恩德拉","波恩","维萨","罗卡","林肯","哈特","萨麦尔","克莱恩","基麦尔","简姆","利夫特","山德邦","纳吉尔","布雷克","拉维吉","泽马","冈布雷","格佩克","奇亚","斯托克","埃里克","杜纳","胡佛","德玛隆","戈达","寇尔","基瑞亚","哈德巴克","兰斯","斯托蒂","维克","达克","塔沃林","李斯特","拉米","杜米","苏恩特","肯塔","雅克","安塞尔","基文","培根","欧查德","萨克","约克","查克","索克","奥克斯通","波里克","波德","斯威奇","维兰德","托巴德","斯威克里","波什","奥利尔","亚尼","基洛","塔洛斯","贝里克","莫德里克","瓦尔","伊斯瑞克","拜德","米斯特","乔尔","乔洛","切瑟里克","斯莱德","胡伯特","格雷奔","欧德尔","安加尔","埃里克斯","亚斯特尔","安森","巴拉德","萨布尔","布拉德","布兰","布恩","布隆克","卡尔","克雷","戴斯","丹恩","杜恩","伊卢德","伊林德","埃里","以瑟","伊文","弗林","盖尔","加拉德","卢特兰德","格兰","格里菲","格鲁斯","哈密西","汉斯","海尔姆","胡尔姆","艾弗","尤尔","朱尔","贾恩","基洛里","琼特","卡兹","凯米","柯尔特","兰斯","莱斯","林洪","林恩","洛克尔","隆恩","马克","马蒂许","马金","米德","梅里","麦特斯","摩尔","摩恩","莫甘特","莫迪","马尔","马力","麦德","梅里","麦特斯","麦尔","南瑟","纳尔","诺林","欧努斯","帕克苏斯","奇恩","昆恩","兰斯","拉斯","罗尔","罗伊","山姆","斯泰尔","斯托恩","泰利","托尔玛","瓦尔","瓦德","卢卡","提尔特","赞恩","达罗","林德海姆","安卡拉斯","奇希尔","米波拉斯","安齐克","查鲁斯","霍尔法","鲁米诺","波鲁卡尔","多路拉斯"],
+  "predefinedFemaleFirstName":["安妮","伊达琳","萨菲儿","伊莫兰","乔尼卡","杰西娜","兰琳","拉拉娜","伊莎","米琳娜","艾米莉","伊娜","艾玛","艾姆", "艾茉莉","卡瑟琳","瑞玛","叶恩","伊欧娜","贝拉","贝里","悠婉娜","约维亚", "埃斯莉","卡诺迪","黎落","梅丽","欧娜","欧琳","法希亚","奇亚","悠亚","亚美利亚","科尔丁娜","苏敏","爱丁娜","亚丁娜","罗莎","莱茵","艾莉","卢卡","卢尔","西亚","尤卡","贝斯", "卡特拉", "简姆", "吉尔", "李斯", "塔莉", "凯莉","卡娅", "特瑞丝", "奥莉弗", "盖安娜","琳恩", "德莱伊", "艾达", "苔丝", "菲尔", "夏娜", "德莱尔", "安娜丽娅", "希恩", "达莉亚", "薇儿", "丽丝","希娜", "布莱迪", "胡瑞","希恩","尼雅", "乌娜", "薇尔莉特", "萨菲亚", "艾蜜拉", "拉尔", "罗塞拉", "乌拉","乌莉", "萝丝", "莱拉", "奥丁娜", "拉蒂娜","奥蒂安娜","莱瑟","朱丽叶", "朱莉安", "艾琳","伊兰诺","佩尔","斯科特","温蒂","妮娜","尼兹", "戴安娜", "亚特蜜丝", "尼姆", "格薇", "西西", "奥崔德", "翠丝", "贝丝","提布瑞恩","艾莎", "芙蕾雅", "弗林", "拉卡","洛特","卢特","乌莉希亚","米妮","泰勒", "莉雅", "莱瑟", "艾姆", "尼姆", "海瑟", "海伦", "珊莎", "塞妮娅", "塞恩", "贝瑞特", "珊妮", "莱伊", "温妮", "奥佩利亚", "悠克","奇恩","奎莉","维乐","卢塔","露提","格莱莉","乌瑟拉","基蒂","黛拉","薇芙","艾萨拉","纳雅", "松恩", "米卡", "丝黛拉","乌玛", "乔丝", "尼芙","奥蕊", "莉丝蒂","布鲁","提莉","卡莉","卡瑞丝","安雅","安西娅","奥拉","米法","科隆娜","苏西","伊文","艾文","米莉","薇安娜","盖尔","卡亚拉","佩欧拉","亚金","布拉迪","黛西","达妮莎","诺瑞","玛希","帕伦","崔恩","崔娜","莉丝基","奥希亚","亚瑟琳娜","金娜","波拉","奇奇","泰玛","泰米尔","奇蒂","吉瑞尔","艾敏娜","德文妮","嘉尔娜","茵特纽斯","蜜儿","希尔瑞","奎灵","莉莉安娜","迪尼希","美纳斯","梅瑞尔","拉卡拉非","芬瑞馨","乔伊娜","奎妮","梅丽莎","尤莉希亚","瓦格林","希娜","奇尔薇","苏伊娜","苏尔","莫伊娜","燕莎","铃兰","菲欧娜","胡波丝","安吉尔","克里斯丁","卓塔莎","莉希亚","丹妮斯","卢丁","奇丝奇姆","安妮塔","安吉莉娅","艾莉尔","布兰奇","布兰达","布列塔尼","雪莉","辛迪","艾玛","埃尔莎","弗洛伦斯","弗朗西斯","贾思敏","珍妮特","凯瑟琳","卡特丽娜","格瑞斯","格罗瑞亚","杰西卡","詹妮弗","汉娜","海莉","莉莲","林德赛","乔伊斯","朱迪斯","路易丝","罗琳","丽贝卡","昆蒂娜","普莉希拉","奥莉薇娅","萨瓦娜","苏珊","特丽莎","惠特妮"],
+  "firstNameBegin":["艾德","安","艾瑟","艾尔","亚尔","艾加","亚","奥","艾弗","艾恩","爱","安","巴拉","贝尔","波尔","波","布","布兰","布雷","布利","布隆","卡","卡尔","奇","卡斯","科博","科","考","科沃","达","丹","戴","德文","德","多","冬","多拉","伊可","伊兰","伊","伊隆","伊恩","伊文","法尔","芬","菲尔","菲","弗林","弗兰","弗","盖尔","盖拉","格伦","格","盖","高","格利","格鲁","哈德","哈尔","哈","海","胡德","胡恩","胡","赫","伊尔","印","吉","简","吉尔","乔恩","乔","凯尔","凯特","凯","卡尔","卡特","卡","昆","寇","兰","拉斯","莱斯","莱尔","林","洛","洛奇","伦","麦克","玛","麦","莫","米尔","梅","梅尔","南","纳","尼尔","诺","奈","欧德","欧","沃","昂","帕尔","帕","派","全","奎","奎斯","拉波","拉","雷","莱","罗斯","罗恩","罗姆","山姆","山","夏","希尔","希","孙","苏斯","苏","塔尔","塔","谭","泰尔","泰","索尔","索","乌","欧","瓦","沃","万","瓦德","韦恩","燕","悠","耀","赞","扎","查","奇","金"],
+  "maleFirstNameEnd":["安","安德","亚","亚里","亚鲁","亚斯","贝尔","贝恩","巴尔","巴隆","巴德","巴恩","贝尔","贝特","波尔","波恩","波洛","康","卡斯","德","丁","冬","道夫","艾欧","芬","法","佛","加","加隆","格林","古尔","古斯","汉德","印","伊奥","伊尔","欧斯","伊","金","拉德","拉夫","兰德","莱克", "林","莱尔","洛克","洛夫","洛普","洛斯","马克","梅尔","莫特","莫斯","尼克","诺克","肯","齐","翁","翁","尔","尔","尔","欧斯","莱克","兰","瑞克","肖","孙","斯塔","塔尔","塔斯","奥夫","恩","维尔","维希","瓦德","温", "沃","佐德"],
+  "femaleFirstNameEnd":["亚","亚","亚","亚","亚","亚","亚","亚","亚","亚拉","艾拉","安娜","安莎","贝拉","贝丝","宾","波拉","达娜","德莱","德琳","伊","茵","艾琳","艾莉","伊娜","伊丝","茵","茵","伊","伊","琴","拉丝","叶塔","叶","瑞","伊莎","莱拉","莱恩","列芙","莉","莉","莉","莉","琳","琳","琳","玛","梅","莫","妮","妮","米娅","欧玛","欧拉","欧塔","拉","拉","蕊","蕊","夏","西","辛","塔","塔拉","泰","提亚","提","蒂","乌娜","乌拉","薇儿","薇","沃","伊莎","薇恩","薇特","燕","伊娜","瑟"],
+  
+
+	
+	
+"oceanTile":["汪洋"],
+	
+	"lakeTile":["<Descriptor><animal><lakeword>","<lakeName>之<lakeWord>"],
+	"lakeWord":["湖", "泪", "池", "海", "源", "泉"],
+	"lakeName":["<FirstName>", "<Descriptor><animal>", "<GenericTile>"],
+
+	"coniferousForestTile":["_OR_", [20, "<ForestTile>"], "<Animal><coniferousTree><ForestWord>", "<Descriptor><coniferousTree><ForestWord>","<Descriptor><animal><ConiferousTreePlural><ForestWord>"],
+	"coniferousTree":["松", "松", "杉", "杉", "柏"],
+	"coniferousTreePlural":["松", "松", "杉", "杉", "柏"],
+	
+	"deciduousForestTile":["_OR_", [20, "<ForestTile>"], "<Animal><deciduousTree><ForestWord>", "<Descriptor><deciduousTree><ForestWord>","<Descriptor><animal><DeciduousTreePlural><ForestWord>"],
+	"deciduousTree":["橡", "枫", "桦", "杨", "柳"],
+	"deciduousTreePlural":["橡", "枫", "桦", "杨", "柳"],
+	
+	"forestTile":["<Descriptor><Animal><forestSuffix>","<GenericTile>之<forestSuffix>","<FirstName>之<forestSuffix>"],
+	"forestWord":["林"],
+	"forestSuffix":["林","森"],
+	
+	"grasslandTile":["<Descriptor><animal><GrasslandWord>", "<GenericTile>", "<GenericTile><GrasslandWord>", "<FirstName><GrasslandWord>"],
+	"grasslandWord":["草原","平原","草原","平原","原野","旷野"],
+	
+	"swampTile": ["<GenericTile>之<SwampWord>", "<FirstName>之<SwampWord>", "<Descriptor><animal><SwampWord>", "<Descriptor><animal><swampSuffix>", "<FirstName><swampSuffix>"],
+	"swampWord": ["沼"],
+	"swampSuffix": ["沼泽", "沼泽", "沼泽", "湿地", "湿地"],
+	
+	
+	"genericTile":["<FirstName><regionSuffix>"],
+	"regionSuffix":["州", "州", "州", "域", "域", "境", "境", "地", "地", "疆", "郡"],
+	
+	
+	"hillTile":["<GenericTile>之<HillWord>", "<FirstName>之<HillWord>", "<FirstName>之<HillWord>", "<Descriptor><animal><hillSuffix>","<Descriptor><animal><hillSuffix>","<Descriptor><animal><hillSuffix>","<Descriptor><animal><HillWord>","<Descriptor><animal><HillWord>","<Descriptor><animal><HillWord>",	"<Descriptor><HillWord>","<Animal><HillWord>"],
+	"hillSuffix":["山脉", "丘陵", "山脉", "丘陵", "山地", "高地"],
+	"hillWord":["山", "丘", "岭", "峰", "顶", "望"],
+	
+	"mountainTile":["<GenericTile>之<MountainWord>", "<FirstName>之<MountainWord>", "<FirstName>之<MountainWord>", "<Descriptor><animal><MountainWord>", "<Descriptor><animal><mountainSuffix>",	"<Descriptor><animal><MountainWord>", "<Descriptor><animal><mountainSuffix>", "<Descriptor><animal><MountainWord>", "<Descriptor><animal><mountainSuffix>",	"<Animal><MountainWord>", "<Descriptor><MountainWord>"],
+	"mountainSuffix":["山脉", "高地", "高原"],
+	"mountainWord":["山", "山", "山", "山", "峰", "峰", "梯", "壁", "墙", "脊", "望", "顶"],
+	
+	
+"townName":["_OR_", [20, "<FounderFormula>"], [20, "<NaturalFormula>"], [1, "<NumericFormula>"]],
+  "founderFormula":["<Founder>屯", "<Founder>庄", "<Founder>店", "<Founder>站", "<Founder>村", "<Founder>镇", "<Founder>堡", "<founderPlace>" ,"<founderPlace>" ,"<founderPlace>" ,"<founderPlace>"],
+	"naturalFormula":["<Place><place>","<Animal><place>", "<Animal><place>", "<Animal><place>", "<Descriptor><place>","<Descriptor><place>","<Descriptor><place>","<Descriptor><animal><Place>","<Descriptor><animal><Place>","<Descriptor><animal><Place>","<Descriptor><animal><Place>","<Descriptor><animal><Place>","<Descriptor><animal><Place>"],
+	"numericFormula":["双<animal><place>", "二<animal><place>", "重<animal><place>" ,"三<animal><place>", "四<animal><place>", "五<animal><place>", "六<animal><place>", "七<animal><place>", "八<animal><place>","九<animal><place>"],
+  "founderPlace": ["<founder>之<Place>"],
+  "founder":["<firstName>"],
+
+	
+	"outdoorSite":["<Founder>之<Place>", "<Founder><Descriptor><Place>", "<Descriptor><Place>", "<Animal><Place>", "<Descriptor><Animal><Place>", "<Descriptor><Animal><Place>"],
+	"outdoorSiteNoFounder":["<Descriptor><Place>", "<Animal><Place>", "<Descriptor><Animal><Place>", "<Descriptor><Animal><Place>"],
+	"outdoorSiteNoTown":["<Founder>之<Place>", "<Founder><Descriptor><Place>", "<Descriptor><Place>", "<Descriptor><Animal><Place>", "<Animal><Place>", "<Descriptor><Animal><Place>"],
+	
+  
+
+  "descriptor":["深", "甜", "高", "矮", "烬", "北","南", "东", "西", "隐", "谦", "傲", "诡","大", "佳","怡", "坏", "满", "银", "金", "骨", "翠", "崎","歌","苔", "暗", "迅", "绯", "赤", "良", "蓝", "紫", "乳", "妖", "飓", "长", "湿", "堕", "亮","灰", "宏", "沃", "漫", "须", "伙", "森", "雪", "木", "邪", "乐", "笑", "哭", "柔", "软", "硬", "静", "永", "平", "晓", "活", "尘", "近", "怪", "怒", "喜", "风", "雨", "严", "锈", "风", "雾", "寒", "暖", "耀", "爽", "雨", "硬", "帅", "友", "滚", "泥", "铜","钢","铁", "残", "缚", "惨", "苍", "阔", "窄", "瘦", "衰", "鲜",  "乱", "苦", "小", "大", "盖", "干", "尽", "幸", "辣", "铃","暗", "潮", "岩","双","对","三", "真","舞","绘","绿", "老","新","血", "云","啸", "断", "碎", "缀", "泡", "奔", "跃", "睡", "烧", "佑","燃","勇","莽","怯","畏","沙","嚎", "漂", "飞", "立","语", "蓬", "丝","孤","独","只","环","谐","清","全","棕","乌", "爬","韵","星","凝"],
+  
+	"place":["庄", "谷", "圈", "山", "吻", "拥", "穴", "洞", "春", "溪", "湖", "家", "岸", "峰", "墓", "野", "丘", "峰", "林", "站", "哨", "沼", "墙", "壁", "堡", "垒", "漠", "泉", "石", "岩", "坝", "咒", "疤", "镇", "村", "乡", "镇", "村", "乡","镇", "村", "乡","镇", "村", "乡","镇", "村", "乡","镇", "村", "乡","镇", "村", "乡","镇", "村", "乡","镇", "村", "乡","镇", "村", "乡","镇", "村", "乡", "店", "歇", "影", "港", "湾", "梦", "州", "厅", "居", "门", "城", "巢", "床", "殇", "悲", "哀", "膝", "足", "脊", "角", "邻", "顶", "底", "点", "路"],
+  
+	"animal":["熊", "鹿", "鹰", "鱼", "狼","狮", "蛛", "蜜", "鹫", "羊", "羔","马","驴", "驹", "匠", "师", "兔", "龙","蛇","蟒","蛟","凤","骑","星", "卫", "怒", "花", "瑰", "鸦", "牛", "兽", "灵", "水", "符", "鸡", "禽", "鹅", "魇", "夏","王", "狐", "獾", "虫", "战", "春", "秋", "冬", "角", "雨", "雷", "雄", "枭", "叶", "魔", "娘", "牧", "鸥", "鹭", "心", "雁", "鹏", "鸽", "谷", "神", "贼", "匪", "贤", "音", "剑", "瓶", "锤", "厨", "蝎", "梅", "幻", "萍", "鹤", "棘", "荆", "枝", "诗", "线", "镜","僧","篮","叉","根","冠","樱","铃","鼓","刷","雀"],
+	
+ 
+
+	"towerSite": ["_OR_",[1, "<FounderTower>"], [0.6, "<TownTower>"], [1, "<NaturalTower>"]],
+	"founderTower": ["<Founder>之<TowerWord>", "<Founder><TowerWord>"],
+	"townTower": ["<Town>之<TowerWord>", "<TileName><TowerWord>", "<TileName>之<TowerWord>"],
+	"naturalTower": ["<Descriptor><animal><TowerWord>", "<Descriptor><place><TowerWord>", "<Animal><place><TowerWord>"],
+	"towerWord": ["塔","塔", "尖", "尖", "堡", "堡", "站","站", "哨", "哨", "柱"],
+
+	
+	"tombSite": ["<Founder>之<TombWord>"],
+	"tombWord":["墓", "墓", "墓", "坟", "坟", "坟", "冢", "冢", "眠", "床", "寂", "碑", "终", "亡", "殇"],
+	
+	
+	"cavernSite": ["_OR_", [1, "<FounderCave>"], [0.5, "<TownCave>"], [1, "<NaturalCave>"]],
+	"founderCave": ["<Founder>之<CaveWord>"],
+	"townCave": ["<Town>之<CaveWord>"],
+	"naturalCave": ["<Descriptor><animal><CaveWord>","<Descriptor><place><CaveWord>", "<Animal><place><CaveWord>"],
+	"caveWord": ["矿洞", "洞穴", "矿井", "矿坑", "洞窟"],
+	
+	
+	"libraryWord": ["图书馆"],
+	"librarySite": ["<Founder>之<LibraryWord>", "<Descriptor><place><LibraryWord>", "<Animal><place><LibraryWord>", "<Descriptor><animal><LibraryWord>", "<TileName><LibraryWord>"],
+	
+	
+	"genericSite": ["<Descriptor><Animal><Place>","<Descriptor><Animal><Place>","<Descriptor><Animal><Place>","<TileName>", "<GenericTile>", "<Descriptor><place>", "<Animal><place>", "<Descriptor><animal>"],
+	
+	"earthworksSite": ["<GenericSite>工厂"],
+	"quarrySite": ["<GenericSite>石场"],
+	"huntersBlindSite": ["<GenericSite>哨站"],
+	"outfitterSite": ["<GenericSite>衣铺"],
+	"thresherySite": ["<GenericSite>谷场"],
+	"tannerySite": ["<GenericSite>革厂"],
+	"mineSite": ["<GenericSite>矿洞"],
+	"lumberyardSite": ["<GenericSite>木场"],
+	"weaverworksSite": ["<GenericSite>织厂"],
+	"forestShrineSite": ["<GenericSite>圣所"],
+	"hengeSite": ["<GenericSite>石阵"],
+	"primalAltarSite": ["<GenericSite>祭坛"],
+	"dreamloomSite": ["<GenericSite>车间"],
+
+	
+	"laboratorySite": ["<GenericSite><LaboratoryWord>"],
+	"laboratoryWord": ["工厂", "商店", "工坊", "车间"],
+	
+	"distillerySite": ["<GenericSite><DistilleryWord>"],
+	"distilleryWord": ["酒厂"],
+	
+	"fontSite": ["<GenericSite>之<FontWord>"],
+	"fontWord": ["泉", "井"],
+
+	"forgeSite": ["<GenericSite><ForgeWord>"],
+	"forgeWord":["之炉", "铁匠铺"],
+
+	"windmillSite": ["<GenericSite>磨坊", "<GenericSite>风车"],
+
+	"waterwheelSite": ["<GenericSite>水车"],
+	
+	"groveSite": ["<Descriptor><animal><GroveWord>", "<Animal><place><GroveWord>"],
+	"groveWord": ["林地","幽林","密林","树丛","树林","之影"],
+	
+	
+	
+	"foeWord": ["强盗","野兽", "鲜血","白骨","锁链", "流云", "白昼", "恶龙", "恐惧", "冰霜","恶鬼","巨人","迷雾","钢铁","希冀","国王","巫妖","生命","光芒","魅影", "女王","毒蛇","暗影","头颅","苍穹","灵魂","咒法","蜘蛛","脊椎","岩石","时间","泰坦","秽恶", "凛冬", "女巫","灾厄", "世界","愤怒","妖灵","巨龙"],
+
+	"crushableFoe": ["强盗","推车","野兽","纽带","骸骨","巨石","光束","甲虫","城堡","链条","王冠","大门","巨龙","恐惧","冰霜","巨人","迷雾","地精","大厅","头盔","山丘","希望","钢铁","堡垒","国王","巫妖","生命","光芒","铠甲","皓月","山脉","女王","戒指","肋骨","毒蛇","暗影","盾牌","恶龙","头骨","苍穹","咒法","蜘蛛","脊椎","岩石","繁星","圆桌","泰坦","脚趾","墓碑","塔楼","城镇","城墙","女巫","灾厄","世界"],
+
+	"woodType": ["木"],
+	"wood1st": ["杉","松","橡","樱","榆","根","柳","荆","乌"],
+
+	"magicType": ["奥术","星界","亘古","呼唤","彗星","咒法","预知","塑梦","多疑","附魔","回环","死灵","引导","护身","辉光","迷幻","凌人","威压","算数","驱雾","神秘","镜像","死灵","祈雨","灾难","虹吸","破咒","召唤","巫术"],
+	"magicEnding":["魔","奥","秘","玄","咒","谜","术"],
+
+	
+	"rapierWord": ["束","剑","剑","剑","剑","剑","剑","剑","息","舞","锋","锐","羽","光","刺","针","歌","牙"],
+	"rapierVirtue": ["黯淡","苍白","耀眼","余烬","猩红","黑暗","暮光","雄鹰","乌黑","琥珀","翡翠","猎鹰","烈焰","银狐","闪金","墓地","青灰","翠绿","威严","寒冰","皓月","暗夜","乌鸦","迅捷","鲜红","暗影","锋锐","繁星","风暴","烈日","确凿","雷霆","紫红","毒蛇","流水","疾风"],
+	"rapierBane": ["灾","咬","霜", "恶","死","击","针","刺","劫","歌","痕","尾","棘","殇"],
+	"rapierName": ["<FoeWord>之<rapierBane>", "<RapierVirtue>之<rapierWord>","<RapierVirtue><foeWord>之<RapierBane>"],
+
+	"sword1handWord": ["束","铃","剑","剑","剑","剑","剑","剑","剑","息","舞","锋","锐","唤","爪","吼","焰","刃","歌","袭","牙","光"],
+	"sword1handVirtue": ["黯淡","苍白","耀眼","余烬","猩红","黑暗","暮光","雄鹰","乌黑","琥珀","翡翠","猎鹰","烈焰","银狐","闪金","墓地","青灰","翠绿","威严","寒冰","皓月","暗夜","乌鸦","迅捷","鲜红","暗影","锋锐","繁星","风暴","烈日","确凿","雷霆","紫红","毒蛇","流水","疾风","山脉","战争","荒野","狼群"],
+	"sword1handBane": ["灾","咬","霜","恶","死","击","劫","歌","痕","劈","棘","殇"],
+	"sword1handName": ["<FoeWord>之<sword1handBane>", "<Sword1handVirtue>之<sword1handWord>","<Sword1handVirtue><foeWord>之<Sword1handBane>"],
+
+	"sword2handWord": ["束","铃","剑","剑","剑","剑","剑","剑","息","誓","锋","锐","唤","爪","吼","焰","刃","袭","牙","光"],
+	"sword2handVirtue": ["黯淡","苍白","耀眼","余烬","猩红","黑暗","暮光","哀伤","乌黑","琥珀","翡翠","蛮熊","烈焰","苦涩","闪金","墓地","青灰","猛虎","威严","寒冰","皓月","暗夜","沉重","鲜红","暗影","锋锐","夺命","风暴","烈日","确凿","雷霆","紫红","毒蛇","流水","疾风","山脉","战争","荒野","狼群"],
+	"sword2handBane": ["灾","咬","霜","恶","死","击","劫","歌","痕","劈","棘","殇","仇","敌"],
+	"sword2handName": ["<FoeWord>之<sword2handBane>", "<Sword2handVirtue>之<sword2handWord>", "<Sword2handVirtue><foeWord>之<Sword2handBane>"],
+
+	"axe1handWord": ["斧","斧","斧","斧","斧","斧","咬","袭","击","誓","锋","吼","颚","歌","潮"],
+	"axe1handVirtue": ["战斗","蛮熊","黯淡","苍白","余烬","猩红","黑暗","暮光","蛮牛","乌黑","琥珀","烈焰","闪金","墓地","青灰","寒冰","皓月","暗夜","古老","骤雨","破碎","白银","风暴","烈日","确凿","雷霆","猩红","彪悍","野蛮","凶残","山脉","战争","荒野"],
+	"axe1handBane": ["灾","咬","袭","劈","眼","死","殇","亡","残","歌","碎","泪","仇","敌"],
+	"axe1handName": ["<FoeWord>之<axe1handBane>", "<Axe1handVirtue>之<axe1handWord>", "<Axe1handVirtue><foeWord>之<Axe1handBane>"],
+
+	"axe2handWord": ["斧","斧","斧","斧","斧","斧","咬","袭","击","誓","锋","吼","颚","歌","潮","震","灾"],
+	"axe2handVirtue": ["战斗","蛮熊","黯淡","苍白","余烬","猩红","黑暗","暮光","蛮牛","乌黑","琥珀","烈焰","闪金","墓地","青灰","寒冰","皓月","暗夜","古老","骤雨","破碎","白银","风暴","烈日","确凿","雷霆","猩红","彪悍","野蛮","凶残","山脉","战争","荒野","苦涩"],
+	"axe2handBane": ["灾","咬","袭","劈","眼","死","殇","亡","残","歌","碎","泪","仇","敌"],
+	"axe2handName": ["<FoeWord>之<axe2handBane>", "<Axe2handVirtue>之<axe2handWord>", "<Axe2handVirtue><foeWord>之<Axe2handBane>"],
+
+	"mace1handWord": ["锤","锤","锤","锤","锤","锤","棍","棒","袭","星","怒","力","拳"],
+	"mace1handVirtue": ["黯淡","苍白","猩红","黑暗","深幽","暮光","乌黑","余烬","闪金","青灰","凶蛮","苍翠","冰霜","山脉","暗夜","古老","震颤","盛怒","鲜红","震撼","白银","风暴","沉重","确凿","雷霆","真实","荒野"],
+	"mace1handBane": ["死","亡","灭","碎","殇","灾","祸","歌"],
+	"mace1handName": ["<Mace1handVirtue>之<mace1handWord>", "<Mace1handVirtue><foeWord>之<Mace1handBane>", "<CrushableFoe>之<mace1handBane>"],
+
+	"mace2handWord": ["锤","锤","锤","锤","锤","锤","袭","怒","力","拳"],
+	"mace2handVirtue": ["黯淡","苍白","猩红","黑暗","深幽","暮光","乌黑","余烬","闪金","青灰","凶蛮","苍翠","冰霜","山脉","暗夜","古老","震颤","盛怒","鲜红","震撼","白银","风暴","沉重","确凿","雷霆","真实","荒野"],
+	"mace2handBane": ["死","亡","灭","碎","殇","灾","祸","歌"],
+	"mace2handName": ["<Mace2handVirtue>之<mace2handWord>", "<Mace2handVirtue><foeWord>之<Mace2handBane>","<CrushableFoe>之<mace2handBane>"],
+
+	"spear1handWord": ["唤","束","刺","根","杆","矛","矛","矛","矛","矛","矛","矛","矛","脊","歌","枪","尾","棘"],
+	"spear1handVirtue": ["蜥蜴","山脉","飞枭","猎豹","翼龙","黯淡","苍白","耀眼","余烬","猩红","黑暗","暮光","雄鹰","乌黑","琥珀","翡翠","猎鹰","烈焰","银狐","闪金","墓地","青灰","翠绿","威严","寒冰","皓月","暗夜","乌鸦","迅捷","鲜红","暗影","锋锐","繁星","风暴","烈日","确凿","雷霆","紫红","毒蛇","流水","疾风"],
+	"spear1handBane": ["死","亡","灭","碎","殇","灾","祸","歌","击","针","刺","劫","尾"],
+	"spear1handName": ["<FoeWord>之<spear1handBane>", "<Spear1handVirtue>之<spear1handWord>", "<Spear1handVirtue><foeWord>之<Spear1handBane>"],
+
+	"spear2handWord": ["唤","束","刺","根","杆","矛","矛","矛","矛","矛","矛","脊","歌","枪","尾","棘"],
+	"spear2handVirtue": ["蜥蜴","山脉","飞枭","猎豹","翼龙","黯淡","苍白","耀眼","余烬","猩红","黑暗","暮光","雄鹰","乌黑","琥珀","翡翠","猎鹰","烈焰","银狐","闪金","墓地","青灰","翠绿","威严","寒冰","皓月","暗夜","乌鸦","迅捷","鲜红","暗影","锋锐","繁星","风暴","烈日","确凿","雷霆","紫红","毒蛇","流水","疾风"],
+	"spear2handBane": ["死","亡","灭","碎","殇","灾","祸","歌","击","针","刺","劫","尾"],
+	"spear2handName": ["<FoeWord>之<spear2handBane>", "<Spear2handVirtue>之<spear2handWord>", "<Spear2handVirtue><foeWord>之<Spear2handBane>"],
+
+	"daggerWord": ["刃","蕊","匕","匕","匕","匕","锋","殇","瑰","花","叹","棘"],
+	"daggerVirtue": ["灰烬","深秋","黯淡","苍白","猩红","黑暗","深幽","暮光","乌黑","余烬","琥珀","翡翠","猎鹰","烈焰","银狐","闪金","墓地","青灰","翠绿","威严","寒冰","皓月","暗夜","乌鸦","迅捷","鲜红","暗影","锋锐","羽翼","雷霆","紫红","毒蛇","流水","疾风"],
+	"daggerBane": ["死","亡","灭","刻","殇","灾","祸","锁","夜","誓","秘","叹"],
+	"daggerName": ["<FoeWord>之<daggerBane>", "<DaggerVirtue>之<daggerWord>","<DaggerVirtue><foeWord>之<DaggerBane>"],
+
+	"bowWord": ["弧","弓","弧","弓","弧","弓","弧","弓","弧","弓","傲","歌","击","羽"],
+	"bowVirtue": ["深秋","暗淡","潮红","明亮","猩红","乌鸦","黯淡","暮色","乌黑","湖泊","永恒","烈焰","狐狸","闪金","狐狸","青灰","翠绿","威严","猎鹰","苍鹭","黄蜂","寒冰","翡翠","皓月","神话","暗夜","深红","暗影","寂静","瘦削","毒蛇","星辰","风暴","烈日","确凿","迅捷","低语","苍白","疾风","飞翼"],
+	"bowBane": ["死","亡","灭","羽","殇","灾","祸","敌"],
+	"bowName": ["<FoeWord>之<bowBane>", "<BowVirtue>之<bowWord>","<BowVirtue><woodType>之<BowWord>","<Wood1st><woodType><bowWord>"],
+
+	"crossbowWord": ["弩","弓","弩","弓","弩","弓","弩","弓","弩","弓","踪","击","命","歌"],
+	"crossbowVirtue": ["深秋","暗淡","潮红","明亮","猩红","乌鸦","黯淡","暮色","乌黑","湖泊","永恒","烈焰","狐狸","闪金","狐狸","青灰","翠绿","狼群","猎鹰","苍鹭","黄蜂","寒冰","翡翠","皓月","神话","暗夜","深红","暗影","寂静","毒蛇","星辰","风暴","烈日","确凿","迅捷","低语","苍白","疾风","飞翼"],
+	"crossbowBane": ["死","亡","灭","羽","殇","灾","祸","敌"],
+	"crossbowName": ["<FoeWord>之<crossbowBane>", "<CrossbowVirtue>之<crossbowWord>","<CrossbowVirtue><woodType>之<CrossbowWord>","<Wood1st><woodType><crossbowWord>"],
+
+	"staffWord": ["魔","奥","秘","玄","咒","谜","术","木","枝","棍","杖","肢","柱","语","护"],
+	"staffVirtue": ["深秋","暗淡","潮红","明亮","猩红","乌鸦","黯淡","暮色","乌黑","湖泊","永恒","烈焰","狐狸","闪金","狐狸","青灰","翠绿","狼群","猎鹰","苍鹭","黄蜂","寒冰","翡翠","皓月","神话","暗夜","深红","暗影","寂静","瘦削","毒蛇","星辰","风暴","烈日","确凿","迅捷","低语","苍白","疾风","飞翼"],
+	"staffBane": ["死","亡","灭","轰","缠","灾","祸","终"],
+	"staffName": ["<FoeWord>之<StaffBane>", "<GenericSite>之<StaffWord>", "<StaffVirtue>之<staffWord>", "<StaffVirtue><woodType>之<StaffWord>","<StaffVirtue><foeWord>之<StaffBane>", "<MagicType><StaffVirtue>之<staffWord>", "<MagicType><Wood1st>之<staffWord>", "<StaffVirtue><woodType>之<StaffWord>", "<CrushableFoe>之<StaffBane>"],
+
+	"wandWord": ["魔","奥","秘","玄","咒","谜","术","木","枝","枝","枝","枝","笔","杖","棒","棒","棒","棒","棒","语","护"],
+	"wandVirtue": ["深秋","暗淡","潮红","明亮","猩红","乌鸦","黯淡","暮色","乌黑","湖泊","永恒","烈焰","狐狸","闪金","狐狸","青灰","翠绿","狼群","猎鹰","苍鹭","黄蜂","寒冰","翡翠","皓月","神话","暗夜","深红","暗影","寂静","瘦削","毒蛇","星辰","风暴","烈日","确凿","迅捷","低语","苍白","疾风","飞翼"],
+	"wandBane": ["死","亡","灭","轰","缠","灾","祸","终"],
+	"wandName": ["<FoeWord>之<WandBane>", "<GenericSite>之<WandWord>", "<WandVirtue>之<wandWord>", "<WandVirtue><woodType>之<WandWord>","<MagicType><WandVirtue>之<wandWord>", "<MagicType><Wood1st>之<wandWord>", "<CrushableFoe>之<WandBane>", "<WandBane>之<CrushableFoe>"]
+	
+	
+	
+}
