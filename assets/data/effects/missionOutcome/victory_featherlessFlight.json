@@ -601,6 +601,34 @@
 						"historyTextKey": "missionVictory_featherlessFlight.1.playerChose_two.onPass.1addTheme.drauvenWings.wings"
 					},
 					{
+						"class": "Test",
+						"value": "bookish.drauven",
+						"threshold": 1,
+						"onPass": {
+							"class": "DoAll",
+							"target": "bookish",
+							"outcomes": [
+								{
+									"class": "AddHistory",
+									"inlineHistory": {
+										"id": "drauvenSpecial_addWingbeat",
+										"associatedAspects": [ "drauvenSpecial_wingbeat" ],
+										"persistOverLegacy": "ability"
+									}
+								},
+								{
+									"class": "AddHistory",
+									"inlineHistory": {
+										"id": "drauvenSpecial_addFlight",
+										"associatedAspects": [ "drauvenSpecial_flight" ],
+										"persistOverLegacy": "ability"
+									}
+								}
+
+							]
+						}
+					},
+					{
 						"class": "AllowFollowup",
 						"id": "missionVictory_featherlessFlight.1.playerChose_two.onPass"
 					}
