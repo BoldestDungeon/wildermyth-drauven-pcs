@@ -49,6 +49,17 @@
 		"target": "self",
 		"removeAspects": [ "_THIS_" ]
 	},
-	{ "class": "Branch", "branchEvent": "job_drauvenRecruit_branch" }
+	{
+		"class": "DoOneRandom",
+		"weightedOutcomes": [
+			{
+				"outcome": { "class": "Branch", "branchEvent": "job_drauvenRecruit_branch" }
+			},
+			{
+				"weight": 10,
+				"outcome": { "class": "Branch", "branchEvent": "job_inspiredDrauvenHero_branch" }
+			}
+		]
+	}
 ]
 }
