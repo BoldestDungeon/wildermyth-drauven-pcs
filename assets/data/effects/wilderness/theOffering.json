@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "wilderness/theOffering",
+	"modId": "wildermyth-drauven-pcs-edit",
 	"author": "Anne Austin"
 },
 "type": "ENCOUNTER_WILDERNESS_SCOUTING",
@@ -3837,6 +3838,7 @@
 										"panel": {
 											"actorSlots": [
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-skeptical",
 													"anchor": { "x": 0.615, "y": 0.724 },
@@ -3869,6 +3871,7 @@
 										"panel": {
 											"actorSlots": [
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-skeptical",
 													"anchor": { "x": 0.423, "y": 0.652 },
@@ -3901,6 +3904,7 @@
 										"panel": {
 											"actorSlots": [
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-surprised",
 													"anchor": { "x": 0.496, "y": 0.544 },
@@ -3922,6 +3926,7 @@
 											"size": "half",
 											"actorSlots": [
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-surprised",
 													"facing": "left",
@@ -3962,6 +3967,7 @@
 											"size": "fourth",
 											"actorSlots": [
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-surprised",
 													"facing": "left",
@@ -3984,6 +3990,7 @@
 											"size": "fourth",
 											"actorSlots": [
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-joy",
 													"facing": "left",
@@ -4006,6 +4013,7 @@
 											"size": "half",
 											"actorSlots": [
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-joy",
 													"facing": "left",
@@ -4055,6 +4063,7 @@
 											"size": "half",
 											"actorSlots": [
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-scared",
 													"facing": "left",
@@ -4155,6 +4164,7 @@
 													"head": { "rotate": 8.786 }
 												},
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-scared",
 													"facing": "left",
@@ -4377,6 +4387,7 @@
 													"head": { "rotate": 8.786 }
 												},
 												{
+													"preTransformation": true,
 													"role": "greedy",
 													"form": "frame-scared",
 													"equipment": { "mode": "removeWeapons" },
@@ -4645,6 +4656,7 @@
 									}
 								]
 							},
+							{ "class": "RemoveTheme", "target": "greedy", "clearSlot": "tail" },
 							{
 								"class": "ApplyTheme",
 								"target": "greedy",
