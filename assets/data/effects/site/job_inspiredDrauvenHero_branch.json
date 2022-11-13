@@ -61,366 +61,738 @@
 		"template": "CHOICE",
 		"promptScript": [
 			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "full",
-					"showNameTags": false,
-					"bg": "comicBG_barnInside.jpg",
-					"actorSlots": [
+				"class": "comicNode_Split",
+				"splitSpec": "leader.exists",
+				"splitBranches": [
+					[
 						{
-							"role": "leader",
-							"form": "frame-talk",
-							"facing": "left",
-							"equipment": { "mode": "removeWeapons" },
-							"anchor": { "x": 0.83, "y": 0.897 },
-							"size": 0.2963,
-							"nameTag": "none",
-							"head": { "rotate": -39.619 }
-						},
-						{
-							"assetSpec": "comic:cageFairBack.png",
-							"role": null,
-							"focus": "foot",
-							"anchor": { "x": 0.789, "y": 0.144 },
-							"size": 0.3478,
-							"nameTag": "none"
-						},
-						{
-							"assetSpec": "asset:world/unpacked/lairDrauven.png",
-							"role": null,
-							"focus": "foot",
-							"anchor": { "x": 0.408, "y": 0.299 },
-							"nameTag": "none"
-						},
-						{
-							"role": "hero",
-							"equipment": {},
-							"anchor": { "x": 0.172, "y": 0.509 },
-							"size": 0.7267,
-							"head": { "scaleY": -1 }
-						}
-					],
-					"textSlots": [
-						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_001~1_leader",
-							"pointerOwner": "leader",
-							"shrinkToFitText": true,
-							"pointerAdjust": {
-								"rotate": 42.109016,
-								"dX": -23.563213,
-								"dY": 31.103456,
-								"pointerOrientV": "up",
-								"forcePointerImage": "speechMedium"
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_barnInside.jpg",
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-talk",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.83, "y": 0.897 },
+										"size": 0.2963,
+										"nameTag": "none",
+										"head": { "rotate": -39.619 }
+									},
+									{
+										"assetSpec": "comic:cageFairBack.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.789, "y": 0.144 },
+										"size": 0.3478,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:world/unpacked/lairDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.408, "y": 0.299 },
+										"nameTag": "none"
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"anchor": { "x": 0.172, "y": 0.509 },
+										"size": 0.7267,
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_001.(leader_exists)~1_leader",
+										"pointerOwner": "leader",
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 42.109016,
+											"dX": -23.563213,
+											"dY": 31.103456,
+											"pointerOrientV": "up",
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_001.(leader_exists)~2_narration",
+										"style": "narration",
+										"padYFraction": 0.901
+									}
+								]
 							}
 						},
 						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_001~2_narration",
-							"style": "narration",
-							"padYFraction": 0.901
-						}
-					]
-				}
-			},
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "half",
-					"actorSlots": [
-						{
-							"role": "hero",
-							"equipment": {}
-						}
-					],
-					"textSlots": [
-						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_002~1_participant",
-							"pointerOwner": "participant"
-						}
-					]
-				}
-			},
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "half",
-					"bg": "comicBG_barnInside.jpg",
-					"actorSlots": [
-						{
-							"role": "hero",
-							"form": "frame-skeptical",
-							"equipment": {},
-							"head": { "scaleY": -1 }
-						}
-					],
-					"textSlots": [
-						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_003~1_participant",
-							"pointerOwner": "participant"
-						}
-					]
-				}
-			},
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "threeFourths",
-					"actorSlots": [
-						{
-							"assetSpec": "comic:cageFairBack.png",
-							"role": null,
-							"focus": "foot",
-							"anchor": { "x": 0.972, "y": 0.104 },
-							"size": 0.4246,
-							"drawDepth": 3,
-							"nameTag": "none"
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"equipment": {}
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_003~1_participant",
+										"pointerOwner": "participant"
+									}
+								]
+							}
 						},
 						{
-							"role": "leader",
-							"form": "frame-interested",
-							"facing": "left",
-							"equipment": {},
-							"anchor": { "x": 0.789, "y": 0.843 },
-							"size": 0.2699,
-							"head": { "scaleY": -1 }
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_barnInside.jpg",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_004~1_participant",
+										"pointerOwner": "participant"
+									}
+								]
+							}
 						},
 						{
-							"role": "hero",
-							"form": "frame-interested",
-							"equipment": {},
-							"anchor": { "x": 0.282, "y": 0.531 },
-							"size": 0.5846
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "threeFourths",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:cageFairBack.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.972, "y": 0.104 },
+										"size": 0.4246,
+										"drawDepth": 3,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.789, "y": 0.843 },
+										"size": 0.2699,
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.282, "y": 0.531 },
+										"size": 0.5846
+									},
+									{
+										"assetSpec": "asset:world/unpacked/lairDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.408, "y": 0.223 },
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_005~1_speech",
+										"fallbackSlotOwner": 0,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 31.32952,
+											"dX": -14.13793,
+											"dY": 13.195404,
+											"scaleX": 1.2554983,
+											"scaleY": 1.2554983,
+											"pointerOrientH": "onLeft",
+											"pointerOrientV": "up"
+										}
+									}
+								]
+							}
 						},
 						{
-							"assetSpec": "asset:world/unpacked/lairDrauven.png",
-							"role": null,
-							"focus": "foot",
-							"anchor": { "x": 0.408, "y": 0.223 },
-							"nameTag": "none"
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourth",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": {}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourFifth",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"equipment": {},
+										"anchor": { "x": 0.165, "y": 0.465 },
+										"size": 0.3645,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"equipment": {},
+										"anchor": { "x": 0.32, "y": 0.5 },
+										"size": 0.4157,
+										"drawDepth": 0,
+										"nameTag": "none"
+									},
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.833, "y": 0.545 },
+										"size": 0.5389,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.531, "y": 0.446 },
+										"size": 0.3752,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_007~1_leader",
+										"pointerOwner": "leader",
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -104.6207, "dY": -8.482759 }
+									},
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_007~2_participant",
+										"pointerOwner": "participant",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.563, "y": 0.368 },
+										"size": 0.8678
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.024, "y": 0.377 },
+										"size": 0.4643,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_008~1_volunteer",
+										"pointerOwner": "volunteer",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.704, "y": 0.528 },
+										"size": 0.6175,
+										"drawDepth": 1,
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.33, "y": 0.5 },
+										"size": 0.3929,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_009~1_volunteer",
+										"pointerOwner": "volunteer",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourFifth",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.18, "y": 0.5 },
+										"size": 0.4516,
+										"drawDepth": 2.5,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.329, "y": 0.519 },
+										"size": 0.5412,
+										"nameTag": "none"
+									},
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.848, "y": 0.497 },
+										"size": 0.4625,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.578, "y": 0.5 },
+										"size": 0.4039,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_010~1_volunteer",
+										"pointerOwner": "volunteer"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fifth",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.221, "y": 0.412 },
+										"drawDepth": 3
+									},
+									{
+										"role": "leader",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.82, "y": 0.431 },
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									}
+								]
+							}
 						}
 					],
-					"textSlots": [
+					[
 						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_004~1_speech",
-							"fallbackSlotOwner": 0,
-							"shrinkToFitText": true,
-							"pointerAdjust": {
-								"rotate": 31.32952,
-								"dX": -14.13793,
-								"dY": 13.195404,
-								"scaleX": 1.2554983,
-								"scaleY": 1.2554983,
-								"pointerOrientH": "onLeft",
-								"pointerOrientV": "up"
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_barnInside.jpg",
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-talk",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.83, "y": 0.897 },
+										"size": 0.2963,
+										"nameTag": "none",
+										"head": { "rotate": -39.619 }
+									},
+									{
+										"assetSpec": "comic:cageFairBack.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.789, "y": 0.144 },
+										"size": 0.3478,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:world/unpacked/lairDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.408, "y": 0.299 },
+										"nameTag": "none"
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"anchor": { "x": 0.172, "y": 0.509 },
+										"size": 0.7267,
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_001.(leader_exists)~1_leader",
+										"pointerOwner": "leader",
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 42.109016,
+											"dX": -23.563213,
+											"dY": 31.103456,
+											"pointerOrientV": "up",
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_001.(leader_exists)~2_narration",
+										"style": "narration",
+										"padYFraction": 0.901
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"equipment": {}
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_003~1_participant",
+										"pointerOwner": "participant"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_barnInside.jpg",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"head": { "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_004~1_participant",
+										"pointerOwner": "participant"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "threeFourths",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:cageFairBack.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.972, "y": 0.104 },
+										"size": 0.4246,
+										"drawDepth": 3,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.789, "y": 0.843 },
+										"size": 0.2699,
+										"head": { "scaleY": -1 }
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.282, "y": 0.531 },
+										"size": 0.5846
+									},
+									{
+										"assetSpec": "asset:world/unpacked/lairDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.408, "y": 0.223 },
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_005~1_speech",
+										"fallbackSlotOwner": 0,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 31.32952,
+											"dX": -14.13793,
+											"dY": 13.195404,
+											"scaleX": 1.2554983,
+											"scaleY": 1.2554983,
+											"pointerOrientH": "onLeft",
+											"pointerOrientV": "up"
+										}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourth",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": {}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourFifth",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"equipment": {},
+										"anchor": { "x": 0.165, "y": 0.465 },
+										"size": 0.3645,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"equipment": {},
+										"anchor": { "x": 0.32, "y": 0.5 },
+										"size": 0.4157,
+										"drawDepth": 0,
+										"nameTag": "none"
+									},
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.833, "y": 0.545 },
+										"size": 0.5389,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.531, "y": 0.446 },
+										"size": 0.3752,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_007~1_leader",
+										"pointerOwner": "leader",
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -104.6207, "dY": -8.482759 }
+									},
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_007~2_participant",
+										"pointerOwner": "participant",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.563, "y": 0.368 },
+										"size": 0.8678
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.024, "y": 0.377 },
+										"size": 0.4643,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_008~1_volunteer",
+										"pointerOwner": "volunteer",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.704, "y": 0.528 },
+										"size": 0.6175,
+										"drawDepth": 1,
+										"head": { "scaleY": -1 }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.33, "y": 0.5 },
+										"size": 0.3929,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_009~1_volunteer",
+										"pointerOwner": "volunteer",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fourFifth",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.18, "y": 0.5 },
+										"size": 0.4516,
+										"drawDepth": 2.5,
+										"nameTag": "none"
+									},
+									{
+										"role": "leader",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.329, "y": 0.519 },
+										"size": 0.5412,
+										"nameTag": "none"
+									},
+									{
+										"role": "volunteer",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.848, "y": 0.497 },
+										"size": 0.4625,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.578, "y": 0.5 },
+										"size": 0.4039,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
+										"textKey": "~01~prompt~panel_010~1_volunteer",
+										"pointerOwner": "volunteer"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "fifth",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 0.221, "y": 0.412 },
+										"drawDepth": 3
+									},
+									{
+										"role": "leader",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.82, "y": 0.431 },
+										"nameTag": "bottomRight",
+										"head": { "scaleY": -1 }
+									}
+								]
 							}
 						}
 					]
-				}
-			},
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "fourth",
-					"actorSlots": [
-						{
-							"role": "volunteer",
-							"facing": "left",
-							"equipment": {}
-						}
-					]
-				}
-			},
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "fourFifth",
-					"actorSlots": [
-						{
-							"role": "hero",
-							"equipment": {},
-							"anchor": { "x": 0.165, "y": 0.465 },
-							"size": 0.3645,
-							"nameTag": "none"
-						},
-						{
-							"role": "leader",
-							"equipment": {},
-							"anchor": { "x": 0.32, "y": 0.5 },
-							"size": 0.4157,
-							"drawDepth": 0,
-							"nameTag": "none"
-						},
-						{
-							"role": "volunteer",
-							"facing": "left",
-							"equipment": {},
-							"anchor": { "x": 0.833, "y": 0.545 },
-							"size": 0.5389,
-							"nameTag": "none"
-						},
-						{
-							"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
-							"role": null,
-							"focus": "foot",
-							"anchor": { "x": 0.531, "y": 0.446 },
-							"size": 0.3752,
-							"nameTag": "none"
-						}
-					],
-					"textSlots": [
-						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_006~1_leader",
-							"pointerOwner": "leader",
-							"shrinkToFitText": true,
-							"pointerAdjust": { "dX": -104.6207, "dY": -8.482759 }
-						},
-						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_006~2_participant",
-							"pointerOwner": "participant",
-							"shrinkToFitText": true
-						}
-					]
-				}
-			},
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"actorSlots": [
-						{
-							"role": "volunteer",
-							"facing": "left",
-							"equipment": {},
-							"anchor": { "x": 0.563, "y": 0.368 },
-							"size": 0.8678
-						},
-						{
-							"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
-							"role": null,
-							"focus": "foot",
-							"anchor": { "x": -0.024, "y": 0.377 },
-							"size": 0.4643,
-							"nameTag": "none"
-						}
-					],
-					"textSlots": [
-						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_007~1_volunteer",
-							"pointerOwner": "volunteer",
-							"shrinkToFitText": true
-						}
-					]
-				}
-			},
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "twoThirds",
-					"actorSlots": [
-						{
-							"role": "volunteer",
-							"facing": "left",
-							"equipment": {},
-							"anchor": { "x": 0.704, "y": 0.528 },
-							"size": 0.6175,
-							"drawDepth": 1,
-							"head": { "scaleY": -1 }
-						},
-						{
-							"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
-							"role": null,
-							"focus": "foot",
-							"anchor": { "x": 0.33, "y": 0.5 },
-							"size": 0.3929,
-							"nameTag": "none"
-						}
-					],
-					"textSlots": [
-						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_008~1_volunteer",
-							"pointerOwner": "volunteer",
-							"shrinkToFitText": true
-						}
-					]
-				}
-			},
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "fourFifth",
-					"actorSlots": [
-						{
-							"role": "hero",
-							"form": "frame-interested",
-							"equipment": {},
-							"anchor": { "x": 0.18, "y": 0.5 },
-							"size": 0.4516,
-							"drawDepth": 2.5,
-							"nameTag": "none"
-						},
-						{
-							"role": "leader",
-							"form": "frame-interested",
-							"equipment": {},
-							"anchor": { "x": 0.329, "y": 0.519 },
-							"size": 0.5412,
-							"nameTag": "none"
-						},
-						{
-							"role": "volunteer",
-							"facing": "left",
-							"equipment": { "mode": "removeWeapons" },
-							"anchor": { "x": 0.848, "y": 0.497 },
-							"size": 0.4625,
-							"nameTag": "none"
-						},
-						{
-							"assetSpec": "asset:sites/scenery/drauven_lanternPoleOff.png",
-							"role": null,
-							"focus": "foot",
-							"anchor": { "x": 0.578, "y": 0.5 },
-							"size": 0.4039,
-							"nameTag": "none"
-						}
-					],
-					"textSlots": [
-						{
-							"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-							"textKey": "~01~prompt~panel_009~1_volunteer",
-							"pointerOwner": "volunteer"
-						}
-					]
-				}
-			},
-			{
-				"class": "comicNode_Panel",
-				"panel": {
-					"size": "fifth",
-					"actorSlots": [
-						{
-							"role": "hero",
-							"form": "frame-interested",
-							"equipment": {},
-							"anchor": { "x": 0.221, "y": 0.412 },
-							"drawDepth": 3
-						},
-						{
-							"role": "leader",
-							"form": "frame-skeptical",
-							"equipment": {},
-							"anchor": { "x": 0.82, "y": 0.431 },
-							"nameTag": "bottomRight",
-							"head": { "scaleY": -1 }
-						}
-					]
-				}
+				]
 			}
 		],
 		"options": [
