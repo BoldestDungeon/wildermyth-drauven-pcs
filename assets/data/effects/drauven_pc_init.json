@@ -24,6 +24,11 @@
 	},
 	{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
 	{
+		"class": "CustomizeHero",
+		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
+		"randomizeColors": [ "skin" ]
+	},
+	{
 		"class": "Test",
 		"value": "KNOWS_YANDRIC",
 		"threshold": "1",
