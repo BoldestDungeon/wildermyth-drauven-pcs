@@ -2,7 +2,7 @@
 "id": "tiding_misc_fashionadvice",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "fashionadvice",
+	"sourceFile": "tidingMisc/fashionadvice",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "Bailey Ashworth"
 },
@@ -93,20 +93,20 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fashionadvice",
+							"textSourceFile": "tidingMisc/fashionadvice",
 							"textKey": "~01~~panel_001~1_narration",
 							"style": "narration",
 							"padXFraction": 0.001,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "fashionadvice",
+							"textSourceFile": "tidingMisc/fashionadvice",
 							"textKey": "~01~~panel_001~2_npc",
 							"style": "narration",
 							"pointerOwner": "npc"
 						},
 						{
-							"textSourceFile": "fashionadvice",
+							"textSourceFile": "tidingMisc/fashionadvice",
 							"textKey": "~01~~panel_001~3_hero",
 							"pointerOwner": "hero",
 							"padXFraction": 0.265,
@@ -122,7 +122,7 @@
 							}
 						},
 						{
-							"textSourceFile": "fashionadvice",
+							"textSourceFile": "tidingMisc/fashionadvice",
 							"textKey": "~01~~panel_001~4_friend",
 							"pointerOwner": "friend",
 							"location": "topRight",
@@ -138,7 +138,7 @@
 							}
 						},
 						{
-							"textSourceFile": "fashionadvice",
+							"textSourceFile": "tidingMisc/fashionadvice",
 							"textKey": "~01~~panel_001~5_hero",
 							"pointerOwner": "hero",
 							"padXFraction": 0.379,

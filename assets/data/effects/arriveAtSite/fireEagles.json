@@ -741,7 +741,8 @@
 							"textSourceFile": "arriveAtSite/fireEagles",
 							"textKey": "~01~prompt~panel_010~1_npc",
 							"pointerOwner": "npc",
-							"shrinkToFitText": true
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 50.8965, "dY": 0, "pointerOrientH": "onLeft" }
 						}
 					]
 				}

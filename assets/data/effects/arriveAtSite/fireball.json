@@ -2,7 +2,7 @@
 "id": "encounter_heroesArriveAtSite_fireball",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "fireball",
+	"sourceFile": "arriveAtSite/fireball",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "Nate Austin"
 },
@@ -118,7 +118,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_001~1_poet",
 							"style": "narration",
 							"pointerOwner": "poet",
@@ -140,7 +140,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_002~1_poet",
 							"pointerOwner": "poet"
 						}
@@ -206,7 +206,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_003~1_rival",
 							"pointerOwner": "rival"
 						}
@@ -230,7 +230,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_004~1_npc",
 							"style": "narration",
 							"pointerOwner": "npc",
@@ -238,7 +238,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_004~2_narration",
 							"style": "narration",
 							"location": "bottomLeft",
@@ -311,7 +311,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_005~1_poet",
 							"style": "narration",
 							"pointerOwner": "poet",
@@ -395,14 +395,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_006~1_poet",
 							"pointerOwner": "poet",
 							"shrinkToFitText": true,
 							"pointerAdjust": { "dX": -3, "dY": -4, "forcePointerImage": "speechMedium" }
 						},
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_006~2_poet",
 							"pointerOwner": "poet",
 							"location": "bottomLeft",
@@ -430,7 +430,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_007~1_rival",
 							"pointerOwner": "rival"
 						}
@@ -454,12 +454,12 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_008~1_hero",
 							"pointerOwner": "hero"
 						},
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_008~2_hero",
 							"pointerOwner": "hero",
 							"location": "bottomLeft",
@@ -489,7 +489,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_009~1_hero",
 							"pointerOwner": "hero",
 							"shrinkToFitText": true,
@@ -514,7 +514,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_010~1_hero",
 							"pointerOwner": "hero",
 							"shrinkToFitText": true,
@@ -526,7 +526,7 @@
 							}
 						},
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_010~2_hero",
 							"pointerOwner": "hero",
 							"location": "bottomLeft",
@@ -630,7 +630,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_011~1_poet",
 							"style": "action",
 							"pointerOwner": "poet",
@@ -657,7 +657,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_012~1_rival",
 							"pointerOwner": "rival"
 						}
@@ -720,7 +720,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "fireball",
+							"textSourceFile": "arriveAtSite/fireball",
 							"textKey": "~01~prompt~panel_013~1_rival",
 							"pointerOwner": "rival"
 						}
@@ -744,12 +744,12 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "fireball",
+									"textSourceFile": "arriveAtSite/fireball",
 									"textKey": "~02~choice_one~panel_001~1_hero",
 									"pointerOwner": "hero"
 								},
 								{
-									"textSourceFile": "fireball",
+									"textSourceFile": "arriveAtSite/fireball",
 									"textKey": "~02~choice_one~panel_001~2_narration",
 									"style": "narration",
 									"location": "bottomRight",
@@ -775,7 +775,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "fireball",
+									"textSourceFile": "arriveAtSite/fireball",
 									"textKey": "~03~choice_two~panel_001~1_poet",
 									"pointerOwner": "poet"
 								}
@@ -872,7 +872,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_001~1_darken",
 											"style": "darken",
 											"padXFraction": 0.303,
@@ -952,7 +952,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_002~1_narration",
 											"style": "narration"
 										}
@@ -982,7 +982,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_003~1_hero",
 											"pointerOwner": "hero",
 											"location": "topRight",
@@ -1016,7 +1016,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_004~1_hero",
 											"pointerOwner": "hero",
 											"location": "topRight",
@@ -1039,7 +1039,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_005~1_rival",
 											"pointerOwner": "rival",
 											"location": "topRight",
@@ -1056,7 +1056,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_006~1_hero",
 											"pointerOwner": "hero"
 										}
@@ -1143,7 +1143,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_007~1_rival",
 											"pointerOwner": "rival",
 											"padXFraction": 0.088,
@@ -1196,7 +1196,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_008~1_hero",
 											"pointerOwner": "hero",
 											"padXFraction": 0.285,
@@ -1233,13 +1233,13 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_009~1_speech",
 											"location": "topRight",
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_009~2_hero",
 											"pointerOwner": "hero",
 											"location": "topRight",
@@ -1255,7 +1255,7 @@
 											}
 										},
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_009~3_hero",
 											"pointerOwner": "hero",
 											"location": "bottomRight",
@@ -1309,12 +1309,12 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_010~1_poet",
 											"pointerOwner": "poet"
 										},
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_010~2_narration",
 											"style": "narration",
 											"location": "bottomLeft",
@@ -1340,7 +1340,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_011~1_hero",
 											"pointerOwner": "hero",
 											"shrinkToFitText": true
@@ -1385,7 +1385,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_012~1_poet",
 											"pointerOwner": "poet",
 											"padXFraction": 0.23,
@@ -1429,7 +1429,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_013~1_hero",
 											"pointerOwner": "hero",
 											"widthFraction": 0.5556237,
@@ -1530,7 +1530,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_014~1_narration",
 											"style": "narration"
 										}
@@ -1583,7 +1583,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~04~player_chose_one.test_pass~panel_015~1_poet",
 											"pointerOwner": "poet",
 											"padXFraction": 0.321,
@@ -1694,7 +1694,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_001~1_darken",
 											"style": "darken",
 											"padXFraction": 0.303,
@@ -1774,7 +1774,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_002~1_narration",
 											"style": "narration"
 										}
@@ -1804,7 +1804,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_003~1_hero",
 											"pointerOwner": "hero",
 											"location": "topRight",
@@ -1838,7 +1838,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_004~1_hero",
 											"pointerOwner": "hero",
 											"location": "topRight",
@@ -1861,7 +1861,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_005~1_rival",
 											"pointerOwner": "rival",
 											"location": "topRight",
@@ -1878,7 +1878,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_006~1_hero",
 											"pointerOwner": "hero"
 										}
@@ -1969,7 +1969,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_007~1_rival",
 											"pointerOwner": "rival",
 											"padXFraction": 0.088,
@@ -2001,7 +2001,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_008~1_poet",
 											"pointerOwner": "poet"
 										}
@@ -2049,7 +2049,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_009~1_rival",
 											"pointerOwner": "rival",
 											"padXFraction": 0.242,
@@ -2057,7 +2057,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "fireball",
+											"textSourceFile": "arriveAtSite/fireball",
 											"textKey": "~05~player_chose_one.test_fail~panel_009~2_action",
 											"style": "action",
 											"padXFraction": 0.494,
@@ -2160,14 +2160,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "fireball",
+										"textSourceFile": "arriveAtSite/fireball",
 										"textKey": "~06~player_chose_two~panel_001~1_poet",
 										"pointerOwner": "poet",
 										"shrinkToFitText": true,
 										"pointerAdjust": { "dX": -3, "dY": -4, "forcePointerImage": "speechMedium" }
 									},
 									{
-										"textSourceFile": "fireball",
+										"textSourceFile": "arriveAtSite/fireball",
 										"textKey": "~06~player_chose_two~panel_001~2_poet",
 										"pointerOwner": "poet",
 										"location": "bottomLeft",
@@ -2186,7 +2186,7 @@
 								"bg": "comicBG_nightStars.jpg",
 								"textSlots": [
 									{
-										"textSourceFile": "fireball",
+										"textSourceFile": "arriveAtSite/fireball",
 										"textKey": "~06~player_chose_two~panel_002~1_narration",
 										"style": "narration"
 									}
@@ -2241,7 +2241,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "fireball",
+										"textSourceFile": "arriveAtSite/fireball",
 										"textKey": "~06~player_chose_two~panel_003~1_hero",
 										"pointerOwner": "hero",
 										"padXFraction": 0.219,
@@ -2249,7 +2249,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "fireball",
+										"textSourceFile": "arriveAtSite/fireball",
 										"textKey": "~06~player_chose_two~panel_003~2_rival",
 										"pointerOwner": "rival",
 										"location": "topRight",

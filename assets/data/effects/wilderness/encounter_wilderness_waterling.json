@@ -125,7 +125,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_001~1_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -135,7 +135,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_001~2_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -145,7 +145,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_001~3_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.335,
@@ -228,7 +228,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_002~1_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.203,
@@ -237,13 +237,13 @@
 							"pointerAdjust": { "scaleX": 0.72718626, "scaleY": 0.72718626 }
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_002~2_narration",
 							"style": "narration",
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_002~3_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.183,
@@ -260,7 +260,7 @@
 							}
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_002~4_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -312,7 +312,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_003~1_romantic",
 							"pointerOwner": "romantic",
 							"location": "topRight",
@@ -385,7 +385,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_004~1_romantic",
 							"pointerOwner": "romantic",
 							"location": "topRight",
@@ -394,7 +394,7 @@
 							"pointerAdjust": { "rotate": 27.072079, "scaleX": 0.775368, "scaleY": 0.775368 }
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_004~2_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.258,
@@ -402,7 +402,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_004~3_healer",
 							"pointerOwner": "healer",
 							"location": "topRight",
@@ -495,7 +495,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_005~1_romantic",
 							"pointerOwner": "romantic",
 							"location": "topRight",
@@ -552,14 +552,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_006~1_romantic",
 							"pointerOwner": "romantic",
 							"location": "topRight",
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_006~2_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -570,7 +570,7 @@
 							"allowDrawOverEdges": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_006~3_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -653,14 +653,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_007~1_romantic",
 							"pointerOwner": "romantic",
 							"location": "topRight",
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_007~2_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -671,7 +671,7 @@
 							"allowDrawOverEdges": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_007~3_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -681,7 +681,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_007~4_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.387,
@@ -773,14 +773,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_008~1_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.072000004,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_008~2_goofball",
 							"pointerOwner": "goofball",
 							"location": "topRight",
@@ -898,14 +898,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_009~1_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.072000004,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_009~2_goofball",
 							"pointerOwner": "goofball",
 							"location": "topRight",
@@ -913,7 +913,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_009~3_romantic",
 							"pointerOwner": "romantic",
 							"location": "topRight",
@@ -930,7 +930,7 @@
 							}
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_009~4_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.204,
@@ -1012,14 +1012,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_010~1_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.072000004,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_010~2_goofball",
 							"pointerOwner": "goofball",
 							"location": "topRight",
@@ -1027,7 +1027,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_010~3_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -1119,14 +1119,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_011~1_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.072000004,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_011~2_goofball",
 							"pointerOwner": "goofball",
 							"location": "topRight",
@@ -1134,7 +1134,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_011~3_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -1143,7 +1143,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_011~4_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.134,
@@ -1151,7 +1151,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_011~5_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.169,
@@ -1242,14 +1242,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_012~1_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.072000004,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_012~2_goofball",
 							"pointerOwner": "goofball",
 							"location": "topRight",
@@ -1257,7 +1257,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_012~3_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -1266,7 +1266,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_012~4_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.134,
@@ -1356,14 +1356,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_013~1_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.072000004,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_013~2_goofball",
 							"pointerOwner": "goofball",
 							"location": "topRight",
@@ -1371,7 +1371,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_013~3_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -1380,7 +1380,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_013~4_healer",
 							"pointerOwner": "healer",
 							"location": "topRight",
@@ -1398,7 +1398,7 @@
 							}
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_013~5_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.416,
@@ -1489,7 +1489,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_014~1_goofball",
 							"pointerOwner": "goofball",
 							"padXFraction": 0.309,
@@ -1582,14 +1582,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_015~1_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.072000004,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_015~2_goofball",
 							"pointerOwner": "goofball",
 							"location": "topRight",
@@ -1597,7 +1597,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_015~3_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -1606,7 +1606,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_015~4_healer",
 							"pointerOwner": "healer",
 							"location": "topRight",
@@ -1624,7 +1624,7 @@
 							}
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_015~5_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.416,
@@ -1632,7 +1632,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_015~6_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.267,
@@ -1641,7 +1641,7 @@
 							"pointerAdjust": { "dX": 6.5977015, "dY": -11.310346, "scaleX": 0.80358136, "scaleY": 0.80358136 }
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_015~7_healer",
 							"pointerOwner": "healer",
 							"location": "topRight",
@@ -1744,14 +1744,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_016~1_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.072000004,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_016~2_goofball",
 							"pointerOwner": "goofball",
 							"location": "topRight",
@@ -1759,7 +1759,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_016~3_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -1769,7 +1769,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_016~4_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -1780,7 +1780,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_016~5_healer",
 							"pointerOwner": "healer",
 							"location": "topRight",
@@ -1798,7 +1798,7 @@
 							}
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_016~6_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.416,
@@ -1924,14 +1924,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_017.(npc_is_male)~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.072000004,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_017.(npc_is_male)~2_goofball",
 										"pointerOwner": "goofball",
 										"location": "topRight",
@@ -1939,7 +1939,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_017.(npc_is_male)~3_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -1949,7 +1949,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_017.(npc_is_male)~4_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -1959,7 +1959,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_017.(npc_is_male)~5_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.134,
@@ -1967,7 +1967,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_017.(npc_is_male)~6_romantic",
 										"pointerOwner": "romantic",
 										"padXFraction": 0.169,
@@ -2007,7 +2007,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_018.(npc_is_male)~1_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2130,14 +2130,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_019.(npc_is_male)~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.072000004,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_019.(npc_is_male)~2_goofball",
 										"pointerOwner": "goofball",
 										"location": "topRight",
@@ -2145,7 +2145,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_019.(npc_is_male)~3_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2155,7 +2155,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_019.(npc_is_male)~4_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.134,
@@ -2163,7 +2163,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_019.(npc_is_male)~5_romantic",
 										"pointerOwner": "romantic",
 										"padXFraction": 0.169,
@@ -2171,7 +2171,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_019.(npc_is_male)~6_goofball",
 										"pointerOwner": "goofball",
 										"padXFraction": 0.312,
@@ -2187,7 +2187,7 @@
 										}
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_019.(npc_is_male)~7_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.128,
@@ -2255,14 +2255,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_020.(npc_is_male)~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.072000004,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_020.(npc_is_male)~2_goofball",
 										"pointerOwner": "goofball",
 										"location": "topRight",
@@ -2270,7 +2270,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_020.(npc_is_male)~3_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2280,7 +2280,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_020.(npc_is_male)~4_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.134,
@@ -2288,7 +2288,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_020.(npc_is_male)~5_romantic",
 										"pointerOwner": "romantic",
 										"padXFraction": 0.169,
@@ -2296,7 +2296,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_020.(npc_is_male)~6_goofball",
 										"pointerOwner": "goofball",
 										"padXFraction": 0.346,
@@ -2311,7 +2311,7 @@
 										}
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_020.(npc_is_male)~7_romantic",
 										"pointerOwner": "romantic",
 										"location": "topRight",
@@ -2389,14 +2389,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_021.(npc_is_male)~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.072000004,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_021.(npc_is_male)~2_goofball",
 										"pointerOwner": "goofball",
 										"location": "topRight",
@@ -2404,7 +2404,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_021.(npc_is_male)~3_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2414,7 +2414,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_021.(npc_is_male)~4_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2424,7 +2424,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_021.(npc_is_male)~5_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.134,
@@ -2432,7 +2432,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_021.(npc_is_male)~6_romantic",
 										"pointerOwner": "romantic",
 										"padXFraction": 0.169,
@@ -2440,7 +2440,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_021.(npc_is_male)~7_goofball",
 										"pointerOwner": "goofball",
 										"padXFraction": 0.346,
@@ -2570,14 +2570,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_022.(npc_is_female)~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.072000004,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_022.(npc_is_female)~2_goofball",
 										"pointerOwner": "goofball",
 										"location": "topRight",
@@ -2585,7 +2585,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_022.(npc_is_female)~3_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2595,7 +2595,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_022.(npc_is_female)~4_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2605,7 +2605,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_022.(npc_is_female)~5_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.134,
@@ -2613,7 +2613,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_022.(npc_is_female)~6_romantic",
 										"pointerOwner": "romantic",
 										"padXFraction": 0.169,
@@ -2653,7 +2653,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_023.(npc_is_female)~1_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2776,14 +2776,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_024.(npc_is_female)~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.072000004,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_024.(npc_is_female)~2_goofball",
 										"pointerOwner": "goofball",
 										"location": "topRight",
@@ -2791,7 +2791,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_024.(npc_is_female)~3_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2801,7 +2801,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_024.(npc_is_female)~4_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.134,
@@ -2809,7 +2809,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_024.(npc_is_female)~5_romantic",
 										"pointerOwner": "romantic",
 										"padXFraction": 0.169,
@@ -2817,7 +2817,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_024.(npc_is_female)~6_goofball",
 										"pointerOwner": "goofball",
 										"padXFraction": 0.312,
@@ -2833,7 +2833,7 @@
 										}
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_024.(npc_is_female)~7_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.128,
@@ -2901,14 +2901,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_025.(npc_is_female)~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.072000004,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_025.(npc_is_female)~2_goofball",
 										"pointerOwner": "goofball",
 										"location": "topRight",
@@ -2916,7 +2916,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_025.(npc_is_female)~3_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -2926,7 +2926,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_025.(npc_is_female)~4_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.134,
@@ -2934,7 +2934,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_025.(npc_is_female)~5_romantic",
 										"pointerOwner": "romantic",
 										"padXFraction": 0.169,
@@ -2942,7 +2942,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_025.(npc_is_female)~6_goofball",
 										"pointerOwner": "goofball",
 										"padXFraction": 0.346,
@@ -2957,7 +2957,7 @@
 										}
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_025.(npc_is_female)~7_romantic",
 										"pointerOwner": "romantic",
 										"location": "topRight",
@@ -3035,14 +3035,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_026.(npc_is_female)~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.072000004,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_026.(npc_is_female)~2_goofball",
 										"pointerOwner": "goofball",
 										"location": "topRight",
@@ -3050,7 +3050,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_026.(npc_is_female)~3_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -3060,7 +3060,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_026.(npc_is_female)~4_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -3070,7 +3070,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_026.(npc_is_female)~5_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.134,
@@ -3078,7 +3078,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_026.(npc_is_female)~6_romantic",
 										"pointerOwner": "romantic",
 										"padXFraction": 0.169,
@@ -3086,7 +3086,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~01~prompt~panel_026.(npc_is_female)~7_goofball",
 										"pointerOwner": "goofball",
 										"padXFraction": 0.346,
@@ -3231,14 +3231,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_027~1_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.072000004,
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_027~2_goofball",
 							"pointerOwner": "goofball",
 							"location": "topRight",
@@ -3246,7 +3246,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_027~3_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -3256,7 +3256,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_027~4_narration",
 							"style": "narration",
 							"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -3267,7 +3267,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_027~5_healer",
 							"pointerOwner": "healer",
 							"padXFraction": 0.134,
@@ -3275,7 +3275,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_027~6_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.169,
@@ -3283,7 +3283,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_027~7_goofball",
 							"pointerOwner": "goofball",
 							"padXFraction": 0.346,
@@ -3298,7 +3298,7 @@
 							}
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_027~8_romantic",
 							"pointerOwner": "romantic",
 							"padXFraction": 0.69,
@@ -3313,7 +3313,7 @@
 							}
 						},
 						{
-							"textSourceFile": "encounter_wilderness_waterling",
+							"textSourceFile": "wilderness/encounter_wilderness_waterling",
 							"textKey": "~01~prompt~panel_027~9_action",
 							"style": "action",
 							"padXFraction": 0.88,
@@ -3387,7 +3387,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "encounter_wilderness_waterling",
+									"textSourceFile": "wilderness/encounter_wilderness_waterling",
 									"textKey": "~02~choice_one~panel_001~1_romantic",
 									"pointerOwner": "romantic",
 									"location": "topRight",
@@ -3395,7 +3395,7 @@
 									"shrinkToFitText": true
 								},
 								{
-									"textSourceFile": "encounter_wilderness_waterling",
+									"textSourceFile": "wilderness/encounter_wilderness_waterling",
 									"textKey": "~02~choice_one~panel_001~2_self",
 									"style": "darken",
 									"pointerOwner": "self",
@@ -3406,7 +3406,7 @@
 									"shrinkToFitText": true
 								},
 								{
-									"textSourceFile": "encounter_wilderness_waterling",
+									"textSourceFile": "wilderness/encounter_wilderness_waterling",
 									"textKey": "~02~choice_one~panel_001~3_goofball",
 									"pointerOwner": "goofball",
 									"padXFraction": 0.073,
@@ -3483,7 +3483,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "encounter_wilderness_waterling",
+									"textSourceFile": "wilderness/encounter_wilderness_waterling",
 									"textKey": "~03~choice_two~panel_001~1_goofball",
 									"pointerOwner": "goofball",
 									"padXFraction": 0.033,
@@ -3498,7 +3498,7 @@
 									}
 								},
 								{
-									"textSourceFile": "encounter_wilderness_waterling",
+									"textSourceFile": "wilderness/encounter_wilderness_waterling",
 									"textKey": "~03~choice_two~panel_001~2_darken",
 									"style": "darken",
 									"location": "topRight",
@@ -3564,7 +3564,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "encounter_wilderness_waterling",
+									"textSourceFile": "wilderness/encounter_wilderness_waterling",
 									"textKey": "~04~choice_three~panel_001~1_healer",
 									"pointerOwner": "healer",
 									"location": "topRight",
@@ -3656,7 +3656,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_001~1_romantic",
 											"style": "narration",
 											"pointerOwner": "romantic",
@@ -3741,7 +3741,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_002~1_romantic",
 											"style": "narration",
 											"pointerOwner": "romantic",
@@ -3778,7 +3778,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_003~1_romantic",
 											"style": "narration",
 											"pointerOwner": "romantic",
@@ -3852,7 +3852,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_004~1_romantic",
 											"style": "narration",
 											"pointerOwner": "romantic",
@@ -4055,7 +4055,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_006~1_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.171,
@@ -4070,7 +4070,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_006~2_goofball",
 											"pointerOwner": "goofball",
 											"padXFraction": 0.565,
@@ -4202,7 +4202,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_007~1_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.11,
@@ -4305,7 +4305,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_008~1_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.168,
@@ -4320,7 +4320,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_008~2_goofball",
 											"pointerOwner": "goofball",
 											"padXFraction": 0.396,
@@ -4329,7 +4329,7 @@
 											"pointerAdjust": { "scaleX": 0.80454093, "scaleY": 0.80454093 }
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_008~3_healer",
 											"pointerOwner": "healer",
 											"location": "topRight",
@@ -4460,7 +4460,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_009~1_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.168,
@@ -4475,7 +4475,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_009~2_goofball",
 											"pointerOwner": "goofball",
 											"padXFraction": 0.396,
@@ -4484,7 +4484,7 @@
 											"pointerAdjust": { "scaleX": 0.80454093, "scaleY": 0.80454093 }
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_009~3_healer",
 											"pointerOwner": "healer",
 											"location": "topRight",
@@ -4501,7 +4501,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_009~4_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -4511,7 +4511,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_009~5_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -4605,7 +4605,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_010~1_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -4614,7 +4614,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_010~2_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -4624,7 +4624,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~05~player_chose_one.test_fail~panel_010~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -4782,14 +4782,14 @@
 												],
 												"textSlots": [
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_001.(npc_is_male)~1_healer",
 														"pointerOwner": "healer",
 														"padXFraction": 0.072000004,
 														"shrinkToFitText": true
 													},
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_001.(npc_is_male)~2_goofball",
 														"pointerOwner": "goofball",
 														"location": "topRight",
@@ -4797,7 +4797,7 @@
 														"shrinkToFitText": true
 													},
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_001.(npc_is_male)~3_healer",
 														"pointerOwner": "healer",
 														"padXFraction": 0.134,
@@ -4805,7 +4805,7 @@
 														"shrinkToFitText": true
 													},
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_001.(npc_is_male)~4_romantic",
 														"pointerOwner": "romantic",
 														"padXFraction": 0.169,
@@ -4813,7 +4813,7 @@
 														"shrinkToFitText": true
 													},
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_001.(npc_is_male)~5_goofball",
 														"pointerOwner": "goofball",
 														"padXFraction": 0.346,
@@ -4968,14 +4968,14 @@
 												],
 												"textSlots": [
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_002.(npc_is_female)~1_healer",
 														"pointerOwner": "healer",
 														"padXFraction": 0.072000004,
 														"shrinkToFitText": true
 													},
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_002.(npc_is_female)~2_goofball",
 														"pointerOwner": "goofball",
 														"location": "topRight",
@@ -4983,7 +4983,7 @@
 														"shrinkToFitText": true
 													},
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_002.(npc_is_female)~3_healer",
 														"pointerOwner": "healer",
 														"padXFraction": 0.134,
@@ -4991,7 +4991,7 @@
 														"shrinkToFitText": true
 													},
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_002.(npc_is_female)~4_romantic",
 														"pointerOwner": "romantic",
 														"padXFraction": 0.169,
@@ -4999,7 +4999,7 @@
 														"shrinkToFitText": true
 													},
 													{
-														"textSourceFile": "encounter_wilderness_waterling",
+														"textSourceFile": "wilderness/encounter_wilderness_waterling",
 														"textKey": "~06~player_chose_one.test_fail~panel_002.(npc_is_female)~5_goofball",
 														"pointerOwner": "goofball",
 														"padXFraction": 0.346,
@@ -5156,14 +5156,14 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_001~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.072000004,
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_001~2_goofball",
 											"pointerOwner": "goofball",
 											"location": "topRight",
@@ -5171,7 +5171,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_001~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -5181,7 +5181,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_001~4_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.134,
@@ -5189,7 +5189,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_001~5_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.169,
@@ -5308,14 +5308,14 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_002~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.072000004,
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_002~2_goofball",
 											"pointerOwner": "goofball",
 											"location": "topRight",
@@ -5323,7 +5323,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_002~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -5333,7 +5333,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_002~4_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.134,
@@ -5341,7 +5341,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_002~5_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.169,
@@ -5349,7 +5349,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_002~6_action",
 											"style": "action",
 											"padXFraction": 0.127,
@@ -5511,7 +5511,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_004~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.35,
@@ -5527,7 +5527,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_004~2_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.481,
@@ -5643,7 +5643,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_005~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.35,
@@ -5659,7 +5659,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_005~2_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.481,
@@ -5674,7 +5674,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_005~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -5770,7 +5770,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_006~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.35,
@@ -5786,7 +5786,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_006~2_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.481,
@@ -5801,7 +5801,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_006~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -5902,14 +5902,14 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_007~1_romantic",
 											"pointerOwner": "romantic",
 											"location": "topRight",
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_007~2_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -5920,7 +5920,7 @@
 											"allowDrawOverEdges": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_007~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -5929,7 +5929,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_007~4_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.387,
@@ -6014,7 +6014,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_008~1_goofball",
 											"pointerOwner": "goofball",
 											"padXFraction": 0.508,
@@ -6092,7 +6092,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_009~1_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.56699198", "g": "0.46877909", "b": "0.36942422", "a": "1" },
@@ -6190,7 +6190,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_010~1_romantic",
 											"pointerOwner": "romantic",
 											"location": "topRight",
@@ -6200,14 +6200,14 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_010~2_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.327,
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_010~3_goofball",
 											"pointerOwner": "goofball",
 											"padXFraction": 0.17500001,
@@ -6287,7 +6287,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~07~player_chose_two.test_pass~panel_011~1_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -6432,14 +6432,14 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_001~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.072000004,
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_001~2_goofball",
 											"pointerOwner": "goofball",
 											"location": "topRight",
@@ -6447,7 +6447,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_001~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -6457,7 +6457,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_001~4_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.134,
@@ -6465,7 +6465,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_001~5_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.169,
@@ -6584,14 +6584,14 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_002~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.072000004,
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_002~2_goofball",
 											"pointerOwner": "goofball",
 											"location": "topRight",
@@ -6599,7 +6599,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_002~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -6609,7 +6609,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_002~4_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.134,
@@ -6617,7 +6617,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_002~5_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.169,
@@ -6625,7 +6625,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_002~6_action",
 											"style": "action",
 											"padXFraction": 0.127,
@@ -6787,7 +6787,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_004~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.35,
@@ -6803,7 +6803,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_004~2_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.481,
@@ -6919,7 +6919,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_005~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.35,
@@ -6935,7 +6935,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_005~2_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.481,
@@ -6950,7 +6950,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_005~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -7036,7 +7036,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_006~1_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.35,
@@ -7052,7 +7052,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_006~2_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.481,
@@ -7067,7 +7067,7 @@
 											}
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_006~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -7076,7 +7076,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_006~4_goofball",
 											"pointerOwner": "goofball",
 											"padXFraction": 0.125,
@@ -7177,14 +7177,14 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_007~1_romantic",
 											"pointerOwner": "romantic",
 											"location": "topRight",
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_007~2_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -7195,7 +7195,7 @@
 											"allowDrawOverEdges": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_007~3_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -7205,7 +7205,7 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_007~4_romantic",
 											"pointerOwner": "romantic",
 											"padXFraction": 0.387,
@@ -7290,7 +7290,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_008~1_goofball",
 											"pointerOwner": "goofball",
 											"padXFraction": 0.506,
@@ -7368,7 +7368,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_009~1_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.56699198", "g": "0.46877909", "b": "0.36942422", "a": "1" },
@@ -7466,7 +7466,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_010~1_romantic",
 											"pointerOwner": "romantic",
 											"location": "topRight",
@@ -7476,14 +7476,14 @@
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_010~2_healer",
 											"pointerOwner": "healer",
 											"padXFraction": 0.327,
 											"shrinkToFitText": true
 										},
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_010~3_goofball",
 											"pointerOwner": "goofball",
 											"padXFraction": 0.17500001,
@@ -7563,7 +7563,7 @@
 									],
 									"textSlots": [
 										{
-											"textSourceFile": "encounter_wilderness_waterling",
+											"textSourceFile": "wilderness/encounter_wilderness_waterling",
 											"textKey": "~08~player_chose_two.test_fail~panel_011~1_narration",
 											"style": "narration",
 											"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -7694,7 +7694,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_001~1_healer",
 										"pointerOwner": "healer",
 										"location": "topRight",
@@ -7802,14 +7802,14 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_002~1_romantic",
 										"pointerOwner": "romantic",
 										"location": "topRight",
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_002~2_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -7820,7 +7820,7 @@
 										"allowDrawOverEdges": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_002~3_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -7830,7 +7830,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_002~4_romantic",
 										"pointerOwner": "romantic",
 										"padXFraction": 0.387,
@@ -7915,7 +7915,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_003~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.614,
@@ -7992,7 +7992,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_004~1_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.56699198", "g": "0.46877909", "b": "0.36942422", "a": "1" },
@@ -8090,7 +8090,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_005~1_romantic",
 										"pointerOwner": "romantic",
 										"location": "topRight",
@@ -8100,14 +8100,14 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_005~2_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.327,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_005~3_goofball",
 										"pointerOwner": "goofball",
 										"padXFraction": 0.17500001,
@@ -8374,7 +8374,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_008~1_romantic",
 										"pointerOwner": "romantic",
 										"location": "topRight",
@@ -8384,7 +8384,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_008~2_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.423,
@@ -8392,14 +8392,14 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_008~3_goofball",
 										"pointerOwner": "goofball",
 										"padXFraction": 0.17500001,
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_008~4_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -8493,7 +8493,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_wilderness_waterling",
+										"textSourceFile": "wilderness/encounter_wilderness_waterling",
 										"textKey": "~09~player_chose_three~panel_009~1_narration",
 										"style": "narration",
 										"backgroundColor": { "r": "0.24277467", "g": "0.67172307", "b": "0.99999994", "a": "1" },
@@ -8518,8 +8518,8 @@
 ],
 "expressions": {
 	"difficulty_one": "105",
-	"difficulty_two": "140",
 	"roll_one": "(CHARISMA+(SPEED*5))+(hook_Wildheart*20)",
+	"difficulty_two": "140",
 	"roll_two": "(SPEED*10)+(MELEE_ACCURACY/2)"
 },
 "implications": {

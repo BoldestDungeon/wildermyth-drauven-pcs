@@ -94,21 +94,10 @@
 				]
 			},
 			{
-				"class": "Test",
-				"target": "volunteer",
-				"value": "drauven",
-				"threshold": "1",
-				"onPass": {
-					"class": "ApplyTheme",
-					"theme": "morthagi",
-					"historyTextKey": "job_troygan_upgradeBasicProstheticToMorthificial.0.outcome.1addTheme.morthagi"
-				},
-				"onFail": {
-					"class": "ApplyTheme",
-					"theme": "morthagi",
-					"historyTextKey": "job_troygan_upgradeBasicProstheticToMorthificial.0.outcome.1addTheme.morthagi",
-					"replaceInjuredLimbs": true
-				}
+				"class": "ApplyTheme",
+				"theme": "morthagi",
+				"historyTextKey": "job_troygan_upgradeBasicProstheticToMorthificial.0.outcome.1addTheme.morthagi",
+				"replaceInjuredLimbs": true
 			},
 			{
 				"class": "Aspects",

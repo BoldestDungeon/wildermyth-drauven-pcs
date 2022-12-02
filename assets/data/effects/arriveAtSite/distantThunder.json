@@ -2,7 +2,7 @@
 "id": "encounter_heroesArriveAtSite_distantThunder",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "distantThunder",
+	"sourceFile": "arriveAtSite/distantThunder",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "Anne Austin"
 },
@@ -176,7 +176,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_001~1_hero",
 							"pointerOwner": "hero",
 							"padXFraction": 0.344,
@@ -241,7 +241,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_002~1_rival",
 							"pointerOwner": "rival",
 							"padXFraction": 0.279,
@@ -250,7 +250,7 @@
 							"pointerAdjust": { "rotate": 3.5667036 }
 						},
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_002~2_hero",
 							"pointerOwner": "hero",
 							"location": "topRight",
@@ -369,7 +369,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_003~1_hero",
 							"pointerOwner": "hero",
 							"location": "topRight",
@@ -380,7 +380,7 @@
 							"pointerAdjust": {}
 						},
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_003~2_friend",
 							"pointerOwner": "friend",
 							"location": "bottomLeft",
@@ -454,7 +454,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_004~1_friend",
 							"pointerOwner": "friend",
 							"padXFraction": 0.087,
@@ -520,7 +520,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_005~1_rival",
 							"pointerOwner": "rival",
 							"padXFraction": 0.035,
@@ -530,7 +530,7 @@
 							"pointerAdjust": { "rotate": 3.5667036 }
 						},
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_005~2_hero",
 							"pointerOwner": "hero",
 							"location": "topRight",
@@ -615,7 +615,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_006~1_rival",
 							"pointerOwner": "rival",
 							"padXFraction": 0.256,
@@ -715,7 +715,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_008~1_hero",
 							"pointerOwner": "hero",
 							"location": "topRight",
@@ -835,7 +835,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_009~1_rival",
 							"pointerOwner": "rival",
 							"padXFraction": 0.309,
@@ -983,7 +983,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_010~1_narration",
 							"style": "narration",
 							"padXFraction": 0.332,
@@ -992,7 +992,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_010~2_narration",
 							"style": "narration",
 							"location": "topRight",
@@ -1088,7 +1088,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_011~1_npc",
 							"pointerOwner": "npc",
 							"location": "topRight",
@@ -1213,7 +1213,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_012~1_narration",
 							"style": "narration",
 							"padXFraction": 0.068,
@@ -1261,7 +1261,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_013~1_npc",
 							"pointerOwner": "npc",
 							"padXFraction": 0.597,
@@ -1270,7 +1270,7 @@
 							"pointerAdjust": { "pointerOrientH": "onRight" }
 						},
 						{
-							"textSourceFile": "distantThunder",
+							"textSourceFile": "arriveAtSite/distantThunder",
 							"textKey": "~01~prompt~panel_013~2_narration",
 							"style": "narration",
 							"padXFraction": 0.032,
@@ -1409,7 +1409,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~01~prompt~panel_014.(foes_Deepists)~1_narration",
 										"style": "narration",
 										"padXFraction": 0.028,
@@ -1546,7 +1546,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~01~prompt~panel_015.(foes_Drauven)~1_narration",
 										"style": "narration",
 										"padXFraction": 0.028,
@@ -1684,7 +1684,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~01~prompt~panel_016.(foes_Gorgons)~1_narration",
 										"style": "narration",
 										"padXFraction": 0.028,
@@ -1820,7 +1820,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~01~prompt~panel_017.(foes_Morthagi)~1_narration",
 										"style": "narration",
 										"padXFraction": 0.028,
@@ -1957,7 +1957,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~01~prompt~panel_018.(foes_Thrixl)~1_narration",
 										"style": "narration",
 										"padXFraction": 0.028,
@@ -1995,7 +1995,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "distantThunder",
+									"textSourceFile": "arriveAtSite/distantThunder",
 									"textKey": "~02~choice_one~panel_001~1_healer",
 									"pointerOwner": "healer",
 									"location": "topRight",
@@ -2034,7 +2034,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "distantThunder",
+									"textSourceFile": "arriveAtSite/distantThunder",
 									"textKey": "~03~choice_two~panel_001~1_greedy",
 									"pointerOwner": "greedy"
 								}
@@ -2184,7 +2184,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~04~player_chose_one~panel_001~1_narration",
 										"style": "narration",
 										"padXFraction": 0.448,
@@ -2334,7 +2334,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~04~player_chose_one~panel_002~1_narration",
 										"style": "narration",
 										"padXFraction": 0.028,
@@ -2408,7 +2408,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~05~player_chose_two~panel_001~1_healer",
 										"pointerOwner": "healer",
 										"padXFraction": 0.083,
@@ -2463,7 +2463,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~05~player_chose_two~panel_002~1_greedy",
 										"pointerOwner": "greedy",
 										"padXFraction": 0.389,
@@ -2628,7 +2628,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~05~player_chose_two~panel_003~1_narration",
 										"style": "narration",
 										"padXFraction": 0.069,
@@ -2637,7 +2637,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "distantThunder",
+										"textSourceFile": "arriveAtSite/distantThunder",
 										"textKey": "~05~player_chose_two~panel_003~2_hero",
 										"pointerOwner": "hero",
 										"padXFraction": 0.232,

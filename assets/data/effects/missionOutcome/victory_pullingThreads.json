@@ -2,7 +2,7 @@
 "id": "missionVictory_pullingThreads",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "victory_pullingThreads",
+	"sourceFile": "missionOutcome/victory_pullingThreads",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "Anne Austin",
 	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
@@ -188,7 +188,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "victory_pullingThreads",
+							"textSourceFile": "missionOutcome/victory_pullingThreads",
 							"textKey": "~01~prompt~panel_001~1_hero3",
 							"style": "narration",
 							"pointerOwner": "hero3",
@@ -380,7 +380,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "victory_pullingThreads",
+							"textSourceFile": "missionOutcome/victory_pullingThreads",
 							"textKey": "~01~prompt~panel_004~1_legend",
 							"pointerOwner": "legend",
 							"location": "topRight",
@@ -419,7 +419,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~01~prompt~panel_005.(deadHero_exists)~1_mystic",
 										"pointerOwner": "mystic",
 										"location": "topRight",
@@ -501,7 +501,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~01~prompt~panel_006.(deadHero_exists)~1_narration",
 										"style": "narration",
 										"padXFraction": 0.053,
@@ -536,7 +536,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~01~prompt~panel_007.(deadHero_is_missing)~1_mystic",
 										"pointerOwner": "mystic",
 										"location": "topRight",
@@ -564,7 +564,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~01~prompt~panel_008.(deadHero_is_missing)~1_legend",
 										"pointerOwner": "legend",
 										"padXFraction": 0.15,
@@ -600,7 +600,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~01~prompt~panel_009.(deadHero_is_missing)~1_mystic",
 										"pointerOwner": "mystic",
 										"location": "topRight",
@@ -693,7 +693,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "victory_pullingThreads",
+							"textSourceFile": "missionOutcome/victory_pullingThreads",
 							"textKey": "~01~prompt~panel_010~1_mystic",
 							"pointerOwner": "mystic",
 							"location": "topRight",
@@ -709,7 +709,7 @@
 							}
 						},
 						{
-							"textSourceFile": "victory_pullingThreads",
+							"textSourceFile": "missionOutcome/victory_pullingThreads",
 							"textKey": "~01~prompt~panel_010~2_legend",
 							"pointerOwner": "legend",
 							"location": "topRight",
@@ -790,7 +790,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "victory_pullingThreads",
+							"textSourceFile": "missionOutcome/victory_pullingThreads",
 							"textKey": "~01~prompt~panel_011~1_legend",
 							"pointerOwner": "legend",
 							"location": "topRight",
@@ -827,7 +827,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "victory_pullingThreads",
+							"textSourceFile": "missionOutcome/victory_pullingThreads",
 							"textKey": "~01~prompt~panel_012~1_mystic",
 							"pointerOwner": "mystic",
 							"padXFraction": 0.038,
@@ -917,7 +917,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "victory_pullingThreads",
+							"textSourceFile": "missionOutcome/victory_pullingThreads",
 							"textKey": "~01~prompt~panel_013~1_mystic",
 							"pointerOwner": "mystic",
 							"padXFraction": 0.2,
@@ -933,7 +933,7 @@
 							}
 						},
 						{
-							"textSourceFile": "victory_pullingThreads",
+							"textSourceFile": "missionOutcome/victory_pullingThreads",
 							"textKey": "~01~prompt~panel_013~2_mystic",
 							"pointerOwner": "mystic",
 							"padXFraction": 0.252,
@@ -964,7 +964,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "victory_pullingThreads",
+									"textSourceFile": "missionOutcome/victory_pullingThreads",
 									"textKey": "~02~choice_one~panel_001~1_legend",
 									"pointerOwner": "legend"
 								}
@@ -991,12 +991,12 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "victory_pullingThreads",
+									"textSourceFile": "missionOutcome/victory_pullingThreads",
 									"textKey": "~03~choice_two~panel_001~1_legend",
 									"pointerOwner": "legend"
 								},
 								{
-									"textSourceFile": "victory_pullingThreads",
+									"textSourceFile": "missionOutcome/victory_pullingThreads",
 									"textKey": "~03~choice_two~panel_001~2_narration",
 									"style": "narration",
 									"location": "bottomRight",
@@ -1088,7 +1088,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~04~player_chose_one~panel_001~1_legend",
 										"pointerOwner": "legend",
 										"location": "topRight",
@@ -1124,7 +1124,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~04~player_chose_one~panel_002~1_mystic",
 										"pointerOwner": "mystic",
 										"padXFraction": 0.049,
@@ -1213,7 +1213,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~04~player_chose_one~panel_003~1_legend",
 										"pointerOwner": "legend",
 										"location": "topRight",
@@ -1296,7 +1296,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~04~player_chose_one~panel_004~1_narration",
 										"style": "narration",
 										"padXFraction": 0.03,
@@ -1391,7 +1391,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~05~player_chose_two~panel_001~1_legend",
 										"pointerOwner": "legend",
 										"location": "topRight",
@@ -1472,7 +1472,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~05~player_chose_two~panel_002~1_mystic",
 										"pointerOwner": "mystic",
 										"padXFraction": 0.05,
@@ -1500,7 +1500,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~05~player_chose_two~panel_003~1_legend",
 										"pointerOwner": "legend",
 										"padXFraction": 0.065,
@@ -1584,7 +1584,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "victory_pullingThreads",
+										"textSourceFile": "missionOutcome/victory_pullingThreads",
 										"textKey": "~05~player_chose_two~panel_004~1_narration",
 										"style": "narration",
 										"padXFraction": 0.03,

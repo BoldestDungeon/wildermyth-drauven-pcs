@@ -2,7 +2,7 @@
 "id": "townRecruit_farmer_coward2party",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "farmer_coward2party",
+	"sourceFile": "townRecruit/farmer_coward2party",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "Anne Austin"
 },
@@ -81,7 +81,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_001~1_hero",
 							"pointerOwner": "hero",
 							"padXFraction": 0.301,
@@ -104,7 +104,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_002~1_ship",
 							"pointerOwner": "ship",
 							"location": "topRight",
@@ -147,7 +147,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_003~1_party",
 							"pointerOwner": "party"
 						}
@@ -196,7 +196,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_004~1_party",
 							"pointerOwner": "party"
 						}
@@ -229,7 +229,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_005~1_aspect",
 							"pointerOwner": "aspect",
 							"location": "topRight",
@@ -271,7 +271,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_006~1_aspect",
 							"pointerOwner": "aspect",
 							"location": "topRight",
@@ -335,7 +335,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_007~1_volunteer",
 							"pointerOwner": "volunteer",
 							"padXFraction": 0.031,
@@ -343,7 +343,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_007~2_npc",
 							"pointerOwner": "npc",
 							"location": "topRight",
@@ -377,7 +377,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_008~1_hero",
 							"pointerOwner": "hero"
 						}
@@ -436,7 +436,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_009~1_volunteer",
 							"pointerOwner": "volunteer",
 							"padXFraction": 0.031,
@@ -444,7 +444,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_009~2_npc",
 							"pointerOwner": "npc",
 							"padXFraction": 0.591,
@@ -522,14 +522,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_010~1_hero",
 							"pointerOwner": "hero",
 							"shrinkToFitText": true,
 							"pointerAdjust": { "dX": -1, "dY": -21.00003 }
 						},
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_010~2_aspect",
 							"pointerOwner": "aspect",
 							"padXFraction": 0.046,
@@ -561,7 +561,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_011~1_hero",
 							"pointerOwner": "hero",
 							"padXFraction": 0.053,
@@ -624,7 +624,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_012~1_volunteer",
 							"pointerOwner": "volunteer",
 							"padXFraction": 0.031,
@@ -632,7 +632,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_012~2_npc",
 							"pointerOwner": "npc",
 							"padXFraction": 0.591,
@@ -710,7 +710,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_013~1_volunteer",
 							"pointerOwner": "volunteer",
 							"padXFraction": 0.453,
@@ -719,7 +719,7 @@
 							"pointerAdjust": { "dX": -21, "dY": 0 }
 						},
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_013~2_npc",
 							"pointerOwner": "npc",
 							"location": "bottomRight",
@@ -751,7 +751,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_014~1_volunteer",
 							"pointerOwner": "volunteer",
 							"shrinkToFitText": true
@@ -813,7 +813,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_015~1_volunteer",
 							"pointerOwner": "volunteer",
 							"padXFraction": 0.064,
@@ -876,7 +876,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_016~1_volunteer",
 							"pointerOwner": "volunteer",
 							"location": "topRight",
@@ -949,7 +949,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_017~1_volunteer",
 							"pointerOwner": "volunteer",
 							"padXFraction": 0.444,
@@ -959,7 +959,7 @@
 							"pointerAdjust": { "pointerOrientH": "onLeft" }
 						},
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_017~2_aspect",
 							"pointerOwner": "aspect",
 							"padXFraction": 0.369,
@@ -1021,7 +1021,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_018~1_aspect",
 							"pointerOwner": "aspect",
 							"padXFraction": 0.369,
@@ -1055,7 +1055,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_019~1_ship",
 							"pointerOwner": "ship"
 						}
@@ -1106,7 +1106,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_020~1_hero",
 							"pointerOwner": "hero",
 							"padXFraction": 0.073,
@@ -1163,7 +1163,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_021~1_ship",
 							"pointerOwner": "ship"
 						}
@@ -1217,7 +1217,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_022~1_ship",
 							"pointerOwner": "ship",
 							"padXFraction": 0.215,
@@ -1292,7 +1292,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_023~1_ship",
 							"pointerOwner": "ship",
 							"padXFraction": 0.161,
@@ -1302,7 +1302,7 @@
 							"pointerAdjust": { "pointerOrientH": "onLeft" }
 						},
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_023~2_hero",
 							"pointerOwner": "hero",
 							"padXFraction": 0.656,
@@ -1310,7 +1310,7 @@
 							"widthFraction": 0.31691867
 						},
 						{
-							"textSourceFile": "farmer_coward2party",
+							"textSourceFile": "townRecruit/farmer_coward2party",
 							"textKey": "~01~prompt~panel_023~3_aspect",
 							"pointerOwner": "aspect",
 							"padXFraction": 0.369,
@@ -1343,7 +1343,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "farmer_coward2party",
+									"textSourceFile": "townRecruit/farmer_coward2party",
 									"textKey": "~02~choice_one~panel_001~1_narration",
 									"style": "narration"
 								}
@@ -1371,7 +1371,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "farmer_coward2party",
+									"textSourceFile": "townRecruit/farmer_coward2party",
 									"textKey": "~03~choice_two~panel_001~1_narration",
 									"style": "narration"
 								}
@@ -1398,7 +1398,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "farmer_coward2party",
+									"textSourceFile": "townRecruit/farmer_coward2party",
 									"textKey": "~04~choice_three~panel_001~1_narration",
 									"style": "narration"
 								}
@@ -1489,7 +1489,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "farmer_coward2party",
+										"textSourceFile": "townRecruit/farmer_coward2party",
 										"textKey": "~05~player_chose_one~panel_001~1_aspect",
 										"pointerOwner": "aspect",
 										"padXFraction": 0.337,
@@ -1578,7 +1578,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "farmer_coward2party",
+										"textSourceFile": "townRecruit/farmer_coward2party",
 										"textKey": "~06~player_chose_two~panel_001~1_aspect2",
 										"pointerOwner": "aspect2"
 									}
@@ -1700,7 +1700,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "farmer_coward2party",
+										"textSourceFile": "townRecruit/farmer_coward2party",
 										"textKey": "~07~player_chose_three~panel_001~1_aspect3",
 										"pointerOwner": "aspect3"
 									}

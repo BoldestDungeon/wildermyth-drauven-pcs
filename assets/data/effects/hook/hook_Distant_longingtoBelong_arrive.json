@@ -2,7 +2,7 @@
 "id": "hook_Distant_longingtoBelong_arrive",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "hook_Distant_longingtoBelong_arrive",
+	"sourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "Douglas Austin"
 },
@@ -86,7 +86,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_001~1_narration",
 							"style": "narration"
 						}
@@ -119,7 +119,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_002~1_hook",
 							"pointerOwner": "hook"
 						}
@@ -152,7 +152,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_003~1_hook2",
 							"pointerOwner": "hook2",
 							"location": "topRight",
@@ -189,7 +189,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_004~1_hook",
 							"pointerOwner": "hook"
 						}
@@ -221,7 +221,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_005~1_hook2",
 							"pointerOwner": "hook2",
 							"padXFraction": 0.37,
@@ -267,7 +267,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_006~1_narration",
 							"style": "narration",
 							"location": "topRight",
@@ -326,7 +326,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_007~1_narration",
 							"style": "narration",
 							"padXFraction": 0.004,
@@ -334,7 +334,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_007~2_narration",
 							"style": "narration",
 							"padXFraction": 0.598,
@@ -343,7 +343,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_007~3_narration",
 							"style": "narration",
 							"padXFraction": 0.464,
@@ -393,7 +393,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_008~1_narration",
 							"style": "narration",
 							"shrinkToFitText": true
@@ -428,7 +428,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_009~1_hook2",
 							"pointerOwner": "hook2",
 							"padXFraction": 0.442,
@@ -488,12 +488,12 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_010~1_hook",
 							"pointerOwner": "hook"
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_010~2_action",
 							"style": "action",
 							"padXFraction": 0.375,
@@ -501,7 +501,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_010~3_narration",
 							"style": "narration",
 							"padXFraction": 0.092,
@@ -509,7 +509,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_010~4_narration",
 							"style": "narration",
 							"padXFraction": 0.603,
@@ -517,7 +517,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_010~5_narration",
 							"style": "narration",
 							"padXFraction": 0.655,
@@ -555,14 +555,14 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_011~1_hook",
 							"style": "narration",
 							"pointerOwner": "hook",
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_011~2_narration",
 							"style": "narration",
 							"padXFraction": 0.514,
@@ -598,7 +598,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_012~1_action",
 							"style": "action",
 							"fallbackSlotOwner": 0,
@@ -644,7 +644,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_013~1_hook",
 							"pointerOwner": "hook",
 							"padXFraction": 0.634,
@@ -653,7 +653,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_013~2_narration",
 							"style": "narration",
 							"padXFraction": 0.005,
@@ -662,7 +662,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_013~3_narration",
 							"style": "narration",
 							"padXFraction": 0.014,
@@ -697,7 +697,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_014~1_action",
 							"style": "action",
 							"fallbackSlotOwner": 0,
@@ -744,7 +744,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_015~1_hook",
 							"pointerOwner": "hook",
 							"padXFraction": 0.105,
@@ -754,7 +754,7 @@
 							"pointerAdjust": { "rotate": 5.4403315, "pointerOrientH": "onLeft" }
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_015~2_narration",
 							"style": "narration",
 							"padXFraction": 0.005,
@@ -763,7 +763,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_015~3_narration",
 							"style": "narration",
 							"padXFraction": 0.014,
@@ -799,7 +799,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_016~1_actionSmall",
 							"style": "actionSmall",
 							"fallbackSlotOwner": 0,
@@ -808,14 +808,14 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_016~2_action",
 							"style": "action",
 							"padXFraction": 0.646,
 							"padYFraction": 0.126
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_016~3_action",
 							"style": "action",
 							"padXFraction": 0.083,
@@ -823,7 +823,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_016~4_narration",
 							"style": "narration",
 							"padYFraction": 0.833,
@@ -894,7 +894,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_017~1_hook",
 							"pointerOwner": "hook",
 							"padXFraction": 0.364,
@@ -933,26 +933,26 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_018~1_speech",
 							"fallbackSlotOwner": 0
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_018~2_action",
 							"style": "action",
 							"padXFraction": 0.029,
 							"padYFraction": 0.003
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_018~3_action",
 							"style": "action",
 							"padXFraction": 0.135,
 							"padYFraction": 0.343
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_018~4_action",
 							"style": "action",
 							"padXFraction": 0.636,
@@ -1035,7 +1035,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_019~1_hook",
 							"pointerOwner": "hook",
 							"padXFraction": 0.123,
@@ -1126,7 +1126,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_020~1_hook",
 							"pointerOwner": "hook",
 							"padXFraction": 0.061,
@@ -1218,7 +1218,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_021~1_hook",
 							"pointerOwner": "hook",
 							"padXFraction": 0.057,
@@ -1311,7 +1311,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_022~1_hook",
 							"pointerOwner": "hook",
 							"padXFraction": 0.131,
@@ -1356,12 +1356,12 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_023~1_speech",
 							"fallbackSlotOwner": 0
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_023~2_action",
 							"style": "action",
 							"padXFraction": 0.157,
@@ -1369,7 +1369,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_023~3_action",
 							"style": "action",
 							"padXFraction": 0.276,
@@ -1377,7 +1377,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_023~4_action",
 							"style": "action",
 							"padXFraction": 0.627,
@@ -1385,7 +1385,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 							"textKey": "~01~prompt~panel_023~5_action",
 							"style": "action",
 							"padXFraction": 0.726,
@@ -1414,7 +1414,7 @@
 									"overrideNameTag": "~02~choice_yes~panel_001~nameTag_0",
 									"head": { "rotate": -35.586, "scaleY": 1 },
 									"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" },
-									"overrideNameTagTextSource": "hook_Distant_longingtoBelong_arrive"
+									"overrideNameTagTextSource": "hook/hook_Distant_longingtoBelong_arrive"
 								},
 								{
 									"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
@@ -1477,7 +1477,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+									"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 									"textKey": "~02~choice_yes~panel_001~1_hook",
 									"style": "thought",
 									"pointerOwner": "hook",
@@ -1511,7 +1511,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+									"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 									"textKey": "~03~choice_no~panel_001~1_hook",
 									"pointerOwner": "hook",
 									"padXFraction": 0.205,
@@ -1584,7 +1584,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_001~1_hook",
 										"style": "thought",
 										"pointerOwner": "hook",
@@ -1592,7 +1592,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_001~2_narration",
 										"style": "narration"
 									}
@@ -1640,7 +1640,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_002~1_hook",
 										"style": "action",
 										"pointerOwner": "hook",
@@ -1655,7 +1655,7 @@
 										}
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_002~2_narration",
 										"style": "narration",
 										"padXFraction": 0.036,
@@ -1664,7 +1664,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_002~3_action",
 										"style": "action",
 										"padXFraction": 0.056,
@@ -1672,7 +1672,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_002~4_action",
 										"style": "action",
 										"padXFraction": 0.7,
@@ -1739,7 +1739,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_003~1_hook2",
 										"pointerOwner": "hook2",
 										"padXFraction": 0.529,
@@ -1749,7 +1749,7 @@
 										"pointerAdjust": { "dX": -1.8851175, "dY": -9.425288 }
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_003~2_action",
 										"style": "action",
 										"padXFraction": 0.163,
@@ -1757,7 +1757,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_003~3_hook2",
 										"pointerOwner": "hook2",
 										"padXFraction": 0.58,
@@ -1772,7 +1772,7 @@
 										}
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_003~4_narration",
 										"style": "narration",
 										"padXFraction": 0.229,
@@ -1841,7 +1841,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_004~1_hook2",
 										"style": "thought",
 										"pointerOwner": "hook2",
@@ -1852,7 +1852,7 @@
 										"pointerAdjust": { "rotate": -15.255117, "dX": 39.586205, "dY": -6.5977015 }
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_004~2_action",
 										"style": "action",
 										"padXFraction": 0.163,
@@ -1860,7 +1860,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_004~3_hook2",
 										"pointerOwner": "hook2",
 										"padXFraction": 0.58,
@@ -1875,7 +1875,7 @@
 										}
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_004~4_narration",
 										"style": "narration",
 										"padXFraction": 0.255,
@@ -1925,12 +1925,12 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_005~1_speech",
 										"fallbackSlotOwner": 0
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_005~2_action",
 										"style": "action",
 										"padXFraction": 0.456,
@@ -1938,7 +1938,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_005~3_action",
 										"style": "action",
 										"padXFraction": 0.699,
@@ -1946,7 +1946,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_005~4_action",
 										"style": "action",
 										"padXFraction": 0.338,
@@ -1987,12 +1987,12 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_006~1_speech",
 										"fallbackSlotOwner": 0
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_006~2_action",
 										"style": "action",
 										"padXFraction": 0.456,
@@ -2000,7 +2000,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_006~3_action",
 										"style": "action",
 										"padXFraction": 0.699,
@@ -2008,7 +2008,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_006~4_action",
 										"style": "action",
 										"padXFraction": 0.338,
@@ -2058,12 +2058,12 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_007~1_speech",
 										"fallbackSlotOwner": 0
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_007~2_action",
 										"style": "action",
 										"padXFraction": 0.197,
@@ -2071,7 +2071,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_007~3_action",
 										"style": "action",
 										"padXFraction": 0.699,
@@ -2079,7 +2079,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_007~4_action",
 										"style": "action",
 										"padXFraction": 0.348,
@@ -2136,7 +2136,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_008~1_hook2",
 										"pointerOwner": "hook2",
 										"padXFraction": 0.529,
@@ -2146,7 +2146,7 @@
 										"pointerAdjust": { "dX": -1.8851175, "dY": -9.425288 }
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_008~2_action",
 										"style": "action",
 										"padXFraction": 0.163,
@@ -2154,7 +2154,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_008~3_hook2",
 										"pointerOwner": "hook2",
 										"padXFraction": 0.238,
@@ -2170,7 +2170,7 @@
 										}
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_008~4_narration",
 										"style": "narration",
 										"padXFraction": 0.475,
@@ -2179,7 +2179,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_008~5_narration",
 										"style": "narration",
 										"padXFraction": 0.574,
@@ -2228,7 +2228,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_009~1_hook2",
 										"pointerOwner": "hook2",
 										"location": "topRight",
@@ -2245,7 +2245,7 @@
 										}
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_009~2_volunteer",
 										"pointerOwner": "volunteer",
 										"padXFraction": 0.113,
@@ -2253,13 +2253,13 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_009~3_narration",
 										"style": "narration",
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_009~4_hook2",
 										"pointerOwner": "hook2",
 										"location": "topRight",
@@ -2312,7 +2312,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_010~1_hook2",
 										"pointerOwner": "hook2",
 										"location": "topRight",
@@ -2329,7 +2329,7 @@
 										}
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_010~2_volunteer",
 										"pointerOwner": "volunteer",
 										"padXFraction": 0.113,
@@ -2337,7 +2337,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_010~3_narration",
 										"style": "narration",
 										"padXFraction": 0.206,
@@ -2345,7 +2345,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~04~player_chose_yes~panel_010~4_hook2",
 										"pointerOwner": "hook2",
 										"location": "topRight",
@@ -2367,7 +2367,7 @@
 				},
 				{
 					"class": "AssignToPlot",
-					"integers": { "skipGear": "1", "skipToResolve": "1" },
+					"integers": { "skipToResolve": "1", "skipGear": "1" },
 					"strings": { "resolveEventId": "hook_Distant_longingtoBelong_resolve_noHook" }
 				},
 				{
@@ -2477,7 +2477,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_001~1_hook",
 										"pointerOwner": "hook"
 									}
@@ -2497,7 +2497,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_002~1_hook",
 										"pointerOwner": "hook"
 									}
@@ -2518,7 +2518,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_003~1_hook",
 										"pointerOwner": "hook"
 									}
@@ -2538,7 +2538,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_004~1_hook",
 										"pointerOwner": "hook"
 									}
@@ -2574,7 +2574,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_005~1_action",
 										"style": "action",
 										"padXFraction": 0.659,
@@ -2582,7 +2582,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_005~2_action",
 										"style": "action",
 										"padXFraction": 0.3,
@@ -2590,7 +2590,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_005~3_action",
 										"style": "action",
 										"padXFraction": 0.223,
@@ -2598,7 +2598,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_005~4_action",
 										"style": "action",
 										"padXFraction": 0.157,
@@ -2623,7 +2623,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_006~1_narration",
 										"style": "narration",
 										"shrinkToFitText": true
@@ -2714,7 +2714,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_008~1_hook2",
 										"pointerOwner": "hook2",
 										"fallbackSlotOwner": 2,
@@ -2722,7 +2722,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "hook_Distant_longingtoBelong_arrive",
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
 										"textKey": "~06~player_chose_no~panel_008~2_hook2",
 										"pointerOwner": "hook2",
 										"padXFraction": 0.182,

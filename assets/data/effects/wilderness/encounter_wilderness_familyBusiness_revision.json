@@ -30,6 +30,7 @@
 		"role": "hero",
 		"template": "PICK_BY_SCORE",
 		"STUB": "This character CANNOT be tagged as <orphan>, <singleparent>, or <happykid>.",
+		"type": "HERO",
 		"scoreFunction": "0",
 		"aspectValues": [
 			{ "id": "historyTag_orphan", "forbidden": true },
@@ -46,6 +47,7 @@
 	{
 		"template": "PICK_BY_SCORE",
 		"STUB": "",
+		"type": "HERO",
 		"scoreFunction": "((LOVER_WITH.hero*10)+FRIEND_WITH.hero)-(FAMILY_WITH.hero*1000)",
 		"scoreThreshold": "1",
 		"notAlreadyMatchedAs": [ "hero" ]

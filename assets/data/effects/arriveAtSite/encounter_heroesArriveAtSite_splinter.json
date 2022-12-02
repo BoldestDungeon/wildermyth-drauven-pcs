@@ -2,7 +2,7 @@
 "id": "encounter_heroesArriveAtSite_splinter",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "encounter_heroesArriveAtSite_splinter",
+	"sourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "Douglas Austin"
 },
@@ -175,7 +175,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_001~1_loner",
 							"pointerOwner": "loner"
 						}
@@ -319,12 +319,12 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_002~1_loner",
 							"pointerOwner": "loner"
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_002~2_action",
 							"style": "action",
 							"padXFraction": 0.287,
@@ -332,7 +332,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_002~3_loner",
 							"pointerOwner": "loner",
 							"padXFraction": 0.294,
@@ -410,12 +410,12 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_003~1_loner",
 							"pointerOwner": "loner"
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_003~2_loner",
 							"pointerOwner": "loner",
 							"location": "topRight",
@@ -518,7 +518,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_004~1_hothead",
 							"pointerOwner": "hothead",
 							"location": "topRight",
@@ -598,7 +598,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_005~1_loner",
 							"pointerOwner": "loner",
 							"location": "topRight",
@@ -735,7 +735,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_006~1_statCharisma",
 							"pointerOwner": "statCharisma",
 							"location": "topRight",
@@ -891,7 +891,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_007~1_statCharisma",
 							"pointerOwner": "statCharisma",
 							"location": "topRight",
@@ -901,7 +901,7 @@
 							"pointerAdjust": { "rotate": 13.448648, "dX": -6.597702, "dY": -9.425288 }
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_007~2_hothead",
 							"pointerOwner": "hothead",
 							"location": "topRight",
@@ -911,7 +911,7 @@
 							"pointerAdjust": { "rotate": 12.380756, "scaleX": 0.65125656, "scaleY": 0.65125656 }
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_007~3_loner",
 							"pointerOwner": "loner",
 							"padXFraction": 0.273,
@@ -1009,7 +1009,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_008~1_loner",
 							"pointerOwner": "loner",
 							"location": "topRight",
@@ -1101,7 +1101,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_009~1_statCharisma",
 							"pointerOwner": "statCharisma",
 							"widthFraction": 0.9016071,
@@ -1115,7 +1115,7 @@
 							"allowOverlap": true
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_009~2_hothead",
 							"pointerOwner": "hothead",
 							"location": "topRight",
@@ -1254,17 +1254,17 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_010~1_loner",
 							"pointerOwner": "loner"
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_010~2_narration",
 							"style": "narration"
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_010~3_hothead",
 							"pointerOwner": "hothead",
 							"location": "topRight",
@@ -1343,7 +1343,7 @@
 					],
 					"textSlots": [
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_011~1_statCharisma",
 							"pointerOwner": "statCharisma",
 							"padXFraction": 0.034,
@@ -1352,7 +1352,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_011~2_action",
 							"style": "action",
 							"padXFraction": 0.368,
@@ -1360,7 +1360,7 @@
 							"shrinkToFitText": true
 						},
 						{
-							"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 							"textKey": "~01~prompt~panel_011~3_loner",
 							"pointerOwner": "loner",
 							"padXFraction": 0.335,
@@ -1431,7 +1431,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 									"textKey": "~02~choice_one~panel_001~1_loner",
 									"pointerOwner": "loner",
 									"padXFraction": 0.112,
@@ -1440,7 +1440,7 @@
 									"pointerAdjust": { "dX": -5.668148, "dY": -6.6129055, "pointerOrientH": "onLeft" }
 								},
 								{
-									"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 									"textKey": "~02~choice_one~panel_001~2_statCharisma",
 									"pointerOwner": "statCharisma",
 									"location": "topRight",
@@ -1588,7 +1588,7 @@
 							],
 							"textSlots": [
 								{
-									"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 									"textKey": "~03~choice_two~panel_001~1_loner",
 									"pointerOwner": "loner",
 									"location": "topRight",
@@ -1675,12 +1675,12 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_001~1_loner",
 										"pointerOwner": "loner"
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_001~2_loner",
 										"pointerOwner": "loner",
 										"padXFraction": 0.803,
@@ -1742,7 +1742,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_002~1_statCharisma",
 										"pointerOwner": "statCharisma",
 										"padXFraction": 0.05,
@@ -1812,12 +1812,12 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_003~1_loner",
 										"pointerOwner": "loner"
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_003~2_loner",
 										"pointerOwner": "loner",
 										"padXFraction": 0.584,
@@ -1871,7 +1871,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_004~1_statCharisma",
 										"pointerOwner": "statCharisma",
 										"location": "topRight",
@@ -2014,7 +2014,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_005~1_loner",
 										"pointerOwner": "loner",
 										"padXFraction": 0.199,
@@ -2030,7 +2030,7 @@
 										}
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_005~2_statCharisma",
 										"pointerOwner": "statCharisma",
 										"location": "topRight",
@@ -2097,7 +2097,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_006~1_statCharisma",
 										"pointerOwner": "statCharisma",
 										"padXFraction": 0.034,
@@ -2106,7 +2106,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_006~2_action",
 										"style": "action",
 										"padXFraction": 0.368,
@@ -2114,7 +2114,7 @@
 										"shrinkToFitText": true
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_006~3_loner",
 										"pointerOwner": "loner",
 										"padXFraction": 0.335,
@@ -2198,7 +2198,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_007~1_narration",
 										"style": "narration",
 										"padXFraction": 0.03,
@@ -2320,7 +2320,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_008~1_hothead",
 										"pointerOwner": "hothead",
 										"location": "topRight",
@@ -2458,7 +2458,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_009~1_statCharisma",
 										"pointerOwner": "statCharisma",
 										"location": "bottomRight",
@@ -2475,7 +2475,7 @@
 										}
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_009~2_loner",
 										"style": "narration",
 										"pointerOwner": "loner",
@@ -2620,7 +2620,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~04~player_chose_one~panel_010~1_loner",
 										"style": "narration",
 										"pointerOwner": "loner",
@@ -2803,7 +2803,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_001~1_loner",
 										"pointerOwner": "loner",
 										"location": "topRight",
@@ -2819,7 +2819,7 @@
 										}
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_001~2_statCharisma",
 										"pointerOwner": "statCharisma",
 										"padXFraction": 0.579,
@@ -2974,7 +2974,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_002~1_hothead",
 										"pointerOwner": "hothead",
 										"location": "topRight",
@@ -2990,7 +2990,7 @@
 										}
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_002~2_statCharisma",
 										"pointerOwner": "statCharisma",
 										"location": "topRight",
@@ -3177,7 +3177,7 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_003~1_hothead",
 										"pointerOwner": "hothead",
 										"location": "topRight",
@@ -3193,7 +3193,7 @@
 										}
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_003~2_statCharisma",
 										"pointerOwner": "statCharisma",
 										"location": "topRight",
@@ -3203,7 +3203,7 @@
 										"pointerAdjust": { "scaleX": 0.74491477, "scaleY": 0.74491477, "pointerOrientH": "onRight" }
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_003~3_loner",
 										"pointerOwner": "loner",
 										"location": "topRight",
@@ -3214,7 +3214,7 @@
 										"pointerAdjust": { "scaleX": 0.6476373, "scaleY": 0.6476373, "pointerOrientH": "onLeft" }
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_003~4_statCharisma",
 										"pointerOwner": "statCharisma",
 										"padXFraction": 0.273,
@@ -3289,13 +3289,13 @@
 								],
 								"textSlots": [
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_004~1_loner",
 										"style": "narration",
 										"pointerOwner": "loner"
 									},
 									{
-										"textSourceFile": "encounter_heroesArriveAtSite_splinter",
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_splinter",
 										"textKey": "~05~player_chose_two~panel_004~2_loner",
 										"style": "narration",
 										"pointerOwner": "loner",
