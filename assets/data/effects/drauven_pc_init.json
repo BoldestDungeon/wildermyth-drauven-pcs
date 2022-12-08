@@ -13,6 +13,10 @@
 ],
 "outcomes": [
 	{
+		"class": "Aspects",
+		"removeAspects": [ "drauven_pc_init" ]
+	},
+	{
 		"class": "AddHistory",
 		"target": "self",
 		"addHistory": [
@@ -36,10 +40,6 @@
 				[ "fluentInYandric" ]
 			]
 		}
-	},
-	{
-		"class": "Aspects",
-		"removeAspects": [ "drauven_pc_init" ]
 	}
 ]
 }
