@@ -12,7 +12,7 @@
 	"icon": "melee",
 	"priority": "1",
 	"cooldown": "oncePerGame",
-	"encounterEnabled": true
+	"encounterEnabled": false
 },
 "targets": [
 	{ "template": "EVENT" },
