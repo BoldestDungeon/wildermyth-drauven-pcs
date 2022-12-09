@@ -102,81 +102,76 @@
 		"class": "AddHistory",
 		"target": "npc",
 		"addHistory": [
-			[ "drauvenBase" ],
-			[ "bornDrauven" ]
+			[ "drauvenBase" ]
 		]
 	},
+	{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" },
 	{
 		"class": "CustomizeHero",
 		"target": "npc",
 		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
 		"randomizeColors": [ "skin" ]
 	},
-	{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" },
 	{
 		"class": "AddHistory",
 		"target": "npc2",
 		"addHistory": [
-			[ "drauvenBase" ],
-			[ "bornDrauven" ]
+			[ "drauvenBase" ]
 		]
-	},
-	{
-		"class": "CustomizeHero",
-		"target": "npc2",
-		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
-		"randomizeColors": [ "skin" ]
 	},
 	{ "class": "ApplyTheme", "target": "npc2", "theme": "drauven", "piece": "torso" },
 	{
+		"class": "CustomizeHero",
+		"target": "npc2",
+		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
+		"randomizeColors": [ "skin" ]
+	},
+	{
 		"class": "AddHistory",
 		"target": "npc3",
 		"addHistory": [
-			[ "drauvenBase" ],
-			[ "bornDrauven" ]
+			[ "drauvenBase" ]
 		]
-	},
-	{
-		"class": "CustomizeHero",
-		"target": "npc3",
-		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
-		"randomizeColors": [ "skin" ]
 	},
 	{ "class": "ApplyTheme", "target": "npc3", "theme": "drauven", "piece": "torso" },
 	{
+		"class": "CustomizeHero",
+		"target": "npc3",
+		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
+		"randomizeColors": [ "skin" ]
+	},
+	{
 		"class": "AddHistory",
 		"target": "npc4",
 		"addHistory": [
-			[ "drauvenBase" ],
-			[ "bornDrauven" ]
+			[ "drauvenBase" ]
 		]
-	},
-	{
-		"class": "CustomizeHero",
-		"target": "npc4",
-		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
-		"randomizeColors": [ "skin" ]
 	},
 	{ "class": "ApplyTheme", "target": "npc4", "theme": "drauven", "piece": "torso" },
 	{
+		"class": "CustomizeHero",
+		"target": "npc4",
+		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
+		"randomizeColors": [ "skin" ]
+	},
+	{
 		"class": "AddHistory",
 		"target": "hero5",
 		"addHistory": [
-			[ "drauvenBase" ],
-			[ "bornDrauven" ]
+			[ "drauvenBase" ]
 		]
-	},
-	{
-		"class": "CustomizeHero",
-		"target": "hero5",
-		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
-		"randomizeColors": [ "skin" ]
 	},
 	{
 		"class": "ApplyTheme",
 		"target": "hero5",
 		"theme": "drauven",
 		"piece": "torso"
+	},
+	{
+		"class": "CustomizeHero",
+		"target": "hero5",
+		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
+		"randomizeColors": [ "skin" ]
 	},
 	{
 		"class": "DoFirstValid",

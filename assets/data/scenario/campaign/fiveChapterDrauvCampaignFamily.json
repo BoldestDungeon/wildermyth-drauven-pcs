@@ -40,6 +40,7 @@
 							"humanSkin_suppressTorso",
 							"nonhuman",
 							"fluentInYandric",
+							"nameFormulaOverride|drauvenName",
 							"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C"
 						],
 						"removeAspects": [
@@ -58,8 +59,7 @@
 							"humanSkin_naturalRightLeg",
 							"humanSkin_naturalHead"
 						],
-						"staticName": "",
-						"humanName": "drauvenName"
+						"showInSummary": false
 					},
 					{
 						"id": "fiveChapterDrauvCampaign.0.rosterCustomHistory.needsDrauvenTheme",
@@ -100,6 +100,7 @@
 							"humanSkin_suppressClothes",
 							"humanSkin_suppressTorso",
 							"fluentInYandric",
+							"nameFormulaOverride|drauvenName",
 							"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C"
 						],
 						"removeAspects": [
@@ -118,8 +119,7 @@
 							"humanSkin_naturalRightLeg",
 							"humanSkin_naturalHead"
 						],
-						"staticName": "",
-						"humanName": "drauvenName"
+						"showInSummary": false
 					},
 					{
 						"id": "fiveChapterDrauvCampaign.0.rosterCustomHistory.needsDrauvenTheme",

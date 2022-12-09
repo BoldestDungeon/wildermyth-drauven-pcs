@@ -2288,7 +2288,10 @@
 				"query": {
 					"baseTag": "human",
 					"customHistory": [
-						{ "id": "languageLessons.1", "humanName": "drauvenName" }
+						{ 
+							"id": "languageLessons.1", 
+							"impliedAspects": [ "nameFormulaOverride|drauvenName" ]
+					  }
 					]
 				},
 				"control": "none"

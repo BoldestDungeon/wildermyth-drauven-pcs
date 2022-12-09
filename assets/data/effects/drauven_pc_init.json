@@ -17,9 +17,7 @@
 		"target": "self",
 		"addHistory": [
 			[ "drauvenBase" ],
-			[ "bornDrauven" ],
-			[ "drauvenCustomizationBody" ],
-			[ "drauvenCustomizationOther" ]
+			[ "drauvenCustomizationBody" ]
 		]
 	},
 	{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
