@@ -40,8 +40,10 @@
 							"humanSkin_suppressTorso",
 							"nonhuman",
 							"fluentInYandric",
+
 							"nameFormulaOverride|drauvenName",
-							"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C"
+							"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C",
+							"rigOverride|Drauven"
 						],
 						"removeAspects": [
 							"young",
@@ -77,7 +79,7 @@
 			"customHistory": {
 				"appendHistory": [
 					{
-						"id": "fiveChapterDrauvCampaign.0.rosterCustomHistory.",
+						"id": "fiveChapterDrauvCampaign.1.rosterCustomHistory.",
 						"impliedAspects": [
 							"nonhuman",
 							"drauven",
@@ -100,8 +102,10 @@
 							"humanSkin_suppressClothes",
 							"humanSkin_suppressTorso",
 							"fluentInYandric",
+							
 							"nameFormulaOverride|drauvenName",
-							"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C"
+							"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C",
+							"rigOverride|Drauven"
 						],
 						"removeAspects": [
 							"young",
@@ -122,7 +126,7 @@
 						"showInSummary": false
 					},
 					{
-						"id": "fiveChapterDrauvCampaign.0.rosterCustomHistory.needsDrauvenTheme",
+						"id": "fiveChapterDrauvCampaign.1.rosterCustomHistory.needsDrauvenTheme",
 						"impliedAspects": [ "drauven_theme_init" ],
 						"persistOverLegacy": "never"
 					}

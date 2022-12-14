@@ -11,7 +11,7 @@
 	],
 	"layers": [
     {
-      "name": "replaceHead_drauven_gorelord_untinted",
+      "name": "replaceHead_Gorelord_Untinted",
       "depth": 4001,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
@@ -19,8 +19,8 @@
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
     {
-      "name": "replaceHead_drauven_gorelord",
-      "tint": "skin", "tintAmount": 0.4,
+      "name": "replaceHead_Gorelord_Skin",
+      "tint": "skin",
       "depth": 4000,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
