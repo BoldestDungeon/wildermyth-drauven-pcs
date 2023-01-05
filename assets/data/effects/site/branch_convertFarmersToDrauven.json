@@ -1,0 +1,94 @@
+{
+  "id": "branch_convertFarmersToDrauven",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "site/branch_convertFarmersToDrauven",
+    "author": "David Bilsky"
+  },
+  "type": "BRANCH",
+  "verb": "MANEUVER",
+  "ability": {
+    "icon": "melee",
+    "priority": "1"
+  },
+  "targets": [
+    { "template": "EVENT" },
+    { "template": "INJECTED_TILE" },
+    {
+      "role": "npc",
+      "template": "LEGEND",
+      "choose": "ANY",
+      "legendId": "tileFarmer1",
+      "relativeTo": "overlandTile"
+    },
+    {
+      "role": "npc2",
+      "template": "LEGEND",
+      "choose": "ANY",
+      "legendId": "tileFarmer2",
+      "relativeTo": "overlandTile"
+    },
+    {
+      "role": "npc3",
+      "template": "LEGEND",
+      "choose": "ANY",
+      "legendId": "tileFarmer3",
+      "relativeTo": "overlandTile"
+    },
+    {
+      "role": "npc4",
+      "template": "LEGEND",
+      "choose": "ANY",
+      "legendId": "tileFarmer4",
+      "relativeTo": "overlandTile"
+    },
+    {
+      "role": "hero5",
+      "template": "LEGEND",
+      "choose": "ANY",
+      "legendId": "tileFarmer5"
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "ForEach",
+      "fromRoles": [ "npc", "npc2", "npc3", "npc4", "hero5" ],
+      "outcome": {
+        "class": "Test",
+        "target": "focus",
+        "value": "drauven",
+        "threshold": "1",
+        "onFail": {
+          "class": "DoAll",
+          "outcomes": [
+            {
+              "class": "AddHistory",
+              "target": "focus",
+              "addHistory": [
+                [ "drauvenBase" ],
+                [ "drauvenNPCName" ]
+              ]
+            },
+            {
+              "class": "ApplyTheme",
+              "target": "focus",
+              "theme": "drauven",
+              "piece": "torso"
+            },
+            {
+              "class": "CustomizeHero",
+              "target": "focus",
+              "randomizeSlots": [
+                "zzz_drauven01_Head",
+                "zzz_drauven02_Feathers",
+                "zzz_drauven03_Horns",
+                "zzz_drauven04_Whiskers"
+              ],
+              "randomizeColors": [ "skin" ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

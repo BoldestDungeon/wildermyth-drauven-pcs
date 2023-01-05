@@ -21,7 +21,8 @@
 	},
 	"resourceCosts": [
 		{ "type": "legacyPoints" }
-	]
+	],
+	"jobCanBeCancelled": false
 },
 "targets": [
 	{
@@ -99,80 +100,15 @@
 ],
 "outcomes": [
 	{
-		"class": "AddHistory",
+		"class": "Branch",
+		"branchEvent": "branch_convertFarmersToDrauven"
+	},
+	{
+		"class": "Special",
 		"target": "npc",
-		"addHistory": [
-			[ "drauvenBase" ]
-		]
+		"specialAction": "PROMOTE_FARMER_TO_MYSTIC_NO_WEAPON"
 	},
-	{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" },
-	{
-		"class": "CustomizeHero",
-		"target": "npc",
-		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
-		"randomizeColors": [ "skin" ]
-	},
-	{
-		"class": "AddHistory",
-		"target": "npc2",
-		"addHistory": [
-			[ "drauvenBase" ]
-		]
-	},
-	{ "class": "ApplyTheme", "target": "npc2", "theme": "drauven", "piece": "torso" },
-	{
-		"class": "CustomizeHero",
-		"target": "npc2",
-		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
-		"randomizeColors": [ "skin" ]
-	},
-	{
-		"class": "AddHistory",
-		"target": "npc3",
-		"addHistory": [
-			[ "drauvenBase" ]
-		]
-	},
-	{ "class": "ApplyTheme", "target": "npc3", "theme": "drauven", "piece": "torso" },
-	{
-		"class": "CustomizeHero",
-		"target": "npc3",
-		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
-		"randomizeColors": [ "skin" ]
-	},
-	{
-		"class": "AddHistory",
-		"target": "npc4",
-		"addHistory": [
-			[ "drauvenBase" ]
-		]
-	},
-	{ "class": "ApplyTheme", "target": "npc4", "theme": "drauven", "piece": "torso" },
-	{
-		"class": "CustomizeHero",
-		"target": "npc4",
-		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
-		"randomizeColors": [ "skin" ]
-	},
-	{
-		"class": "AddHistory",
-		"target": "hero5",
-		"addHistory": [
-			[ "drauvenBase" ]
-		]
-	},
-	{
-		"class": "ApplyTheme",
-		"target": "hero5",
-		"theme": "drauven",
-		"piece": "torso"
-	},
-	{
-		"class": "CustomizeHero",
-		"target": "hero5",
-		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
-		"randomizeColors": [ "skin" ]
-	},
+	{ "class": "AddGear", "target": "npc", "itemById": "walkingStaff" },
 	{
 		"class": "DoFirstValid",
 		"outcomes": [
@@ -235,6 +171,7 @@
 																"focus": "foot",
 																"anchor": { "x": 0.166, "y": -0.176 },
 																"size": 0.33,
+																"nameTag": "none",
 																"foot": { "rotate": 4.927 }
 															},
 															{
@@ -257,7 +194,7 @@
 																"focus": "foot",
 																"anchor": { "x": 0.811, "y": -0.101 },
 																"size": 0.3671,
-																"nameTag": "bottomRight",
+																"nameTag": "none",
 																"head": { "rotate": 10.685 },
 																"foot": { "rotate": 0 }
 															},
@@ -295,12 +232,14 @@
 																"nameTag": "none"
 															},
 															{
-																"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
-																"role": null,
+																"role": "npc",
+																"equipment": {
+																	"equipItemsById": [ "walkingStaff" ]
+																},
 																"focus": "foot",
-																"anchor": { "x": 0.902, "y": 0.33 },
-																"size": 0.2941,
-																"nameTag": "none"
+																"anchor": { "x": 0.898, "y": -0.091 },
+																"size": 0.3294,
+																"nameTag": "bottomRight"
 															},
 															{
 																"role": "hero",
@@ -369,21 +308,23 @@
 															"nameTag": "none"
 														},
 														{
+															"role": "npc",
+															"facing": "left",
+															"equipment": {
+																"equipItemsById": [ "walkingStaff" ]
+															},
+															"focus": "foot",
+															"anchor": { "x": 0.454, "y": -0.139 },
+															"size": 0.4299,
+															"nameTag": "none"
+														},
+														{
 															"assetSpec": "comic:drauvenBakedWeaponless_stump3.png",
 															"role": null,
 															"facing": "left",
 															"focus": "foot",
 															"anchor": { "x": 0.828, "y": 0.491 },
 															"size": 0.385,
-															"nameTag": "none"
-														},
-														{
-															"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
-															"role": null,
-															"facing": "left",
-															"focus": "foot",
-															"anchor": { "x": 0.501, "y": 0.494 },
-															"size": 0.417,
 															"nameTag": "none"
 														},
 														{
@@ -503,6 +444,7 @@
 														"anchor": { "x": 0.308, "y": -0.06 },
 														"size": 0.33,
 														"drawDepth": 1,
+														"nameTag": "none",
 														"foot": { "rotate": 4.927 }
 													},
 													{
@@ -516,7 +458,7 @@
 														"focus": "foot",
 														"anchor": { "x": 0.797, "y": -0.085 },
 														"size": 0.3671,
-														"nameTag": "bottomRight",
+														"nameTag": "none",
 														"head": { "rotate": -12.603 },
 														"foot": { "rotate": 0 }
 													},
@@ -553,6 +495,17 @@
 														"anchor": { "x": 0.665, "y": 0.355 },
 														"size": 0.2941,
 														"nameTag": "none"
+													},
+													{
+														"role": "npc",
+														"facing": "left",
+														"equipment": {
+															"equipItemsById": [ "walkingStaff" ]
+														},
+														"focus": "foot",
+														"anchor": { "x": 0.496, "y": -0.067 },
+														"size": 0.294,
+														"nameTag": "bottomRight"
 													},
 													{
 														"role": "hero",
@@ -709,6 +662,7 @@
 														"anchor": { "x": 0.308, "y": -0.06 },
 														"size": 0.33,
 														"drawDepth": 1,
+														"nameTag": "none",
 														"foot": { "rotate": 4.927 }
 													},
 													{
@@ -722,7 +676,7 @@
 														"focus": "foot",
 														"anchor": { "x": 0.797, "y": -0.085 },
 														"size": 0.3671,
-														"nameTag": "bottomRight",
+														"nameTag": "none",
 														"head": { "rotate": -12.603 },
 														"foot": { "rotate": 0 }
 													},
@@ -833,6 +787,17 @@
 														"nameTag": "none"
 													},
 													{
+														"role": "npc",
+														"facing": "left",
+														"equipment": {
+															"equipItemsById": [ "walkingStaff" ]
+														},
+														"focus": "foot",
+														"anchor": { "x": 0.547, "y": -0.105 },
+														"size": 0.294,
+														"nameTag": "bottomRight"
+													},
+													{
 														"assetSpec": "comic:treeBroadleaf3.png",
 														"role": null,
 														"focus": "foot",
@@ -891,6 +856,7 @@
 														"anchor": { "x": 0.308, "y": -0.06 },
 														"size": 0.33,
 														"drawDepth": 1,
+														"nameTag": "none",
 														"foot": { "rotate": 4.927 }
 													},
 													{
@@ -904,7 +870,7 @@
 														"focus": "foot",
 														"anchor": { "x": 0.797, "y": -0.085 },
 														"size": 0.3671,
-														"nameTag": "bottomRight",
+														"nameTag": "none",
 														"head": { "rotate": -12.603 },
 														"foot": { "rotate": 0 }
 													},
@@ -926,12 +892,14 @@
 														"foot": { "rotate": -86.479 }
 													},
 													{
-														"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
-														"role": null,
+														"role": "npc",
+														"equipment": {
+															"equipItemsById": [ "walkingStaff" ]
+														},
 														"focus": "foot",
-														"anchor": { "x": 0.646, "y": 0.343 },
-														"size": 0.2941,
-														"nameTag": "none"
+														"anchor": { "x": 0.638, "y": -0.091 },
+														"size": 0.3493,
+														"nameTag": "bottomRight"
 													},
 													{
 														"role": "hero",
@@ -1050,6 +1018,17 @@
 											"bgAuto": "approachingSite",
 											"actorSlots": [
 												{
+													"role": "npc",
+													"facing": "left",
+													"equipment": {
+														"equipItemsById": [ "walkingStaff" ]
+													},
+													"focus": "foot",
+													"anchor": { "x": 0.733, "y": -0.11 },
+													"size": 0.294,
+													"nameTag": "bottomRight"
+												},
+												{
 													"role": "participant",
 													"form": "frame-happy",
 													"equipment": {
@@ -1059,6 +1038,7 @@
 													"focus": "foot",
 													"anchor": { "x": 0.118, "y": -0.132 },
 													"size": 0.33,
+													"nameTag": "none",
 													"foot": { "rotate": 4.927 }
 												},
 												{
@@ -1103,15 +1083,8 @@
 													"nameTag": "none"
 												},
 												{
-													"assetSpec": "comic:drauvenBakedWeaponless_skysinger.png",
-													"role": null,
-													"focus": "foot",
-													"anchor": { "x": 0.746, "y": 0.33 },
-													"size": 0.2941,
-													"nameTag": "none"
-												},
-												{
 													"role": "hero",
+													"form": "frame-sad",
 													"facing": "left",
 													"equipment": {},
 													"focus": "foot",
@@ -1144,7 +1117,7 @@
 													"nameTag": "none"
 												},
 												{
-													"role": "npc",
+													"role": "npc2",
 													"equipment": {},
 													"anchor": { "x": 0.241, "y": 0.179 },
 													"size": 0.1374,
@@ -1156,6 +1129,18 @@
 													"textSourceFile": "job/job_buildDrauvenOutpost",
 													"textKey": "~06~doFirst_5.create_additionalOutcome~panel_001~1_narration",
 													"style": "narration"
+												},
+												{
+													"textSourceFile": "job/job_buildDrauvenOutpost",
+													"textKey": "~06~doFirst_5.create_additionalOutcome~panel_001~2_npc",
+													"pointerOwner": "npc",
+													"backgroundColor": { "r": "0.28110707", "g": "0.35047102", "b": "0.3324284", "a": "1" },
+													"location": "bottomLeft",
+													"padXFraction": 0.269,
+													"padYFraction": 0.024,
+													"widthFraction": 0.5238307,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": -40.351494, "dY": 0 }
 												}
 											]
 										}
@@ -1167,6 +1152,15 @@
 				}
 			}
 		]
+	},
+	{
+		"class": "AddHistory",
+		"target": "npc3",
+		"inlineHistory": {
+			"id": "job_buildDrauvenOutpost.outcome",
+			"associatedAspects": [ "rigOverride|DrauvenHunter" ],
+			"showInSummary": false
+		}
 	}
 ]
 }

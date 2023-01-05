@@ -1,5 +1,12 @@
 [
-  {
-    "id": "drauvenOutpost"
-  }
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "site_hasDrauvenFarmers",
+	"effects": [ "site_hasDrauvenFarmers" ]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenOutpost",
+	"effects": [ "site_hasDrauvenFarmers" ]
+}
 ]

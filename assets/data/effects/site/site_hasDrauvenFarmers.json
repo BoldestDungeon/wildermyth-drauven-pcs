@@ -1,0 +1,20 @@
+{
+"id": "site_hasDrauvenFarmers",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "site/site_hasDrauvenFarmers",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "David Bilsky",
+	"debug": true
+},
+"type": "MONTHLY",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1" },
+"targets": [
+	{ "template": "ANY_SELF" },
+	{ "role": "overlandTile", "template": "OVERLAND_TILE", "range": "0" }
+],
+"outcomes": [
+	{ "class": "Branch", "branchEvent": "branch_convertFarmersToDrauven" }
+]
+}
