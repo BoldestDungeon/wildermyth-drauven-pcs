@@ -1,0 +1,26 @@
+{
+"id": "drauven_pcs_enabled",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "misc/drauven_pcs_enabled",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink"
+},
+"type": "LEVEL_START",
+"targets": [
+	{ "template": "ANY_SELF" },
+	{
+		"template": "COMPANY",
+		"aspects": [ "DrauvenAllies_FirstStepsComplete" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "company",
+		"addAspects": [
+			{ "id": "drauven_pcs_enabled", "value": "1", "merge": "max" }
+		]
+	}
+]
+}
