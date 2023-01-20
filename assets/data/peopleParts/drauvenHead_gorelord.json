@@ -20,7 +20,7 @@
     },
     {
       "name": "replaceHead_Gorelord_Skin",
-      "tint": "skin",
+      "tint": "skin", "tintAmount": 0.5,
       "depth": 4000,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
