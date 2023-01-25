@@ -13,7 +13,9 @@
 			"canBeAwardedRandomly": false,
 			"slots": ["torso"],
 			"replaces": ["torso"],
-			"extraAspects": ["ATTACHMENTS_suppressArmor"],
+			"extraAspects": ["ATTACHMENTS_suppressArmor", "rigOverride|Drauven"],
+			"effects": ["migration_drauven_updateRig"],
+			
 			"layers": [
 				{
 					"name": "Torso_Skin",
