@@ -3606,12 +3606,20 @@
 			"createEntity": {
 				"query": {
 					"baseTag": "human",
-					"localizableName": "",
 					"setClass": "nonFarmer",
-					"exactAge": 8
+					"exactAge": 8,
+					"customHistory": [
+						{
+							"id": "wildermyth-drauven-pcs_xxx.0",
+							"persistOverLegacy": "never",
+							"humanName": "drauvenName",
+							"showInSummary": false
+						}
+					]
 				},
 				"addAspects": [
-					{ "id": "drauven_pc_init", "value": "1" }
+					{ "id": "drauven_pc_init", "value": "1" },
+					{ "id": "nameFormulaOverride|drauvenName", "value": "1" }
 				],
 				"control": "none",
 				"additionalOutcome": {

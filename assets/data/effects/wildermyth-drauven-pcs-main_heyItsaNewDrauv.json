@@ -67,9 +67,20 @@
 	"generatedTargets": [
 		{
 			"createEntity": {
-				"query": { "baseTag": "human", "setClass": "nonFarmer" },
+				"query": { 
+					"baseTag": "human", "setClass": "nonFarmer",
+					"customHistory": [
+						{
+							"id": "wildermyth-drauven-pcs_xxx.0",
+							"persistOverLegacy": "never",
+							"humanName": "drauvenName",
+							"showInSummary": false
+						}
+					] 
+				},
 				"addAspects": [
-					{ "id": "drauven_pc_init", "value": "1" }
+					{ "id": "drauven_pc_init", "value": "1" },
+					{ "id": "nameFormulaOverride|drauvenName", "value": "1" }
 				],
 				"control": "none"
 			}

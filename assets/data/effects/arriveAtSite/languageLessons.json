@@ -2291,7 +2291,13 @@
 						{ 
 							"id": "languageLessons.1", 
 							"impliedAspects": [ "nameFormulaOverride|drauvenName" ]
-					  }
+					  }, 
+						{
+							"id": "wildermyth-drauven-pcs_xxx.0",
+							"persistOverLegacy": "never",
+							"humanName": "drauvenName",
+							"showInSummary": false
+						}
 					]
 				},
 				"control": "none"
