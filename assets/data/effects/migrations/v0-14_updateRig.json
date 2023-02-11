@@ -67,6 +67,21 @@
 		}
 	},
 	{
+		"class": "Test",
+		"target": "self",
+		"value": "humanSkin_suppressClothes",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"target": "self",
+			"inlineHistory": {
+				"id": "restoreClothes",
+				"showInSummary": false,
+				"removeAspects": [ "humanSkin_suppressClothes" ]
+			}
+		}
+	},
+	{
 		"class": "AddHistory",
 		"inlineHistory": {
 			"id": "migration-0-14",
