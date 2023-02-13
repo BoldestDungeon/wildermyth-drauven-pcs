@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "missionOutcome/victory_inOurWake",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Anne Austin",
 	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
 },
@@ -68,6 +69,14 @@
 		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": "0",
 		"notAlreadyMatchedAs": [ "healer", "friend" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "drauven",
+		"scoreThreshold": "1",
+		"aspects": null
 	}
 ],
 "outcomes": [
@@ -693,5 +702,22 @@
 			}
 		]
 	}
-]
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"role": "villain1",
+			"npcId": "drauven_hostile_faction",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"customHistory": [
+						{ "id": "missionVictory_inOurWake.0", "humanName": "drauvenHostileFaction" }
+					]
+				},
+				"control": "none"
+			}
+		}
+	]
+}
 }
