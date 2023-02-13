@@ -30,7 +30,8 @@
 		"role": "goofball",
 		"template": "PICK_BY_SCORE",
 		"scoreFunction": "max(GOOFBALL,SNARK)",
-		"scoreThreshold": "80"
+		"scoreThreshold": "80",
+    "aspectValues": [ {"id": "drauven", "forbidden": true} ]
 	},
 	{
 		"role": "bookish",
