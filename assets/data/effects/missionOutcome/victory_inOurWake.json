@@ -1,0 +1,697 @@
+{
+"id": "missionVictory_inOurWake",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/victory_inOurWake",
+	"author": "Anne Austin",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ONE",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES", "choose": "FORBID" },
+	{ "template": "MAIMED_HEROES", "choose": "FORBID" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(HEALER,ROMANTIC,POET,LEADER,COWARD)",
+		"scoreThreshold": "80"
+	},
+	{
+		"role": "friend",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "FRIEND_WITH.healer",
+		"notAlreadyMatchedAs": [ "healer" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "healer", "friend" ]
+	},
+	{
+		"role": "hero4",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "healer", "friend" ]
+	},
+	{
+		"role": "hero5",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "healer", "friend" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.225, "y": 0.5 },
+							"size": 0.5,
+							"head": { "rotate": -18.435, "scaleY": -1 }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"anchor": { "x": 0.455, "y": 0.49 },
+							"size": 0.476
+						},
+						{
+							"role": "hero3",
+							"equipment": {},
+							"anchor": { "x": 0.875, "y": 0.438 },
+							"size": 0.386,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:rocksMossBig1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.174, "y": 0.414 },
+							"size": 0.536,
+							"nameTag": "none",
+							"color": { "r": "0.74279189", "g": "0.79361111", "b": "0.91071796", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsForest_wall1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.282, "y": 0.091 },
+							"size": 0.502,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78728175", "g": "0.78728175", "b": "0.78728175", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.87, "y": 1.5 },
+							"size": 4.627,
+							"drawDepth": 3.75,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.71271986" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-talk",
+							"equipment": {},
+							"head": { "rotate": -11.768, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "scenery:rocksMossBig1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.238, "y": 0.424 },
+							"size": 0.826,
+							"nameTag": "none",
+							"color": { "r": "0.74279189", "g": "0.79361111", "b": "0.91071796", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_inOurWake",
+							"textKey": "~01~~panel_002~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.049,
+							"padYFraction": 0.034,
+							"widthFraction": 0.9065554,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.474, "y": 0.082 },
+							"size": 0.157,
+							"head": { "rotate": -18.435, "scaleY": -1 }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.55, "y": 0.058 },
+							"size": 0.152
+						},
+						{
+							"role": "hero3",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.671, "y": 0.063 },
+							"size": 0.157,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:rocksMossBig1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.164, "y": 0.342 },
+							"size": 0.298,
+							"drawDepth": 7,
+							"nameTag": "none",
+							"color": { "r": "0.74279189", "g": "0.79361111", "b": "0.91071796", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsForest_wall1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.176, "y": 0.25 },
+							"size": 0.22,
+							"drawDepth": 6.5,
+							"nameTag": "none",
+							"color": { "r": "0.78728175", "g": "0.78728175", "b": "0.78728175", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landGrassSlope.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.539, "y": 0.192 },
+							"size": 0.323,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treePine1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.902, "y": 0.582 },
+							"size": 0.365,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.3, "y": 0.091 },
+							"size": 0.15,
+							"drawDepth": 5,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero5",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.714, "y": 0.081 },
+							"size": 0.152,
+							"drawDepth": 5.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.64, "y": 1.192 },
+							"size": 5.173,
+							"drawDepth": 6,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.72149175" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_inOurWake",
+							"textKey": "~01~~panel_003~1_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"padXFraction": 0.157,
+							"padYFraction": 0.292,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": 4.323462,
+								"dY": 7.205624,
+								"scaleX": 0.6756318,
+								"scaleY": 0.6756318,
+								"forcePointerImage": "speechMedium"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.254, "y": 0.495 },
+							"size": 0.664,
+							"head": { "rotate": 17.286 }
+						},
+						{
+							"assetSpec": "comic:gradientLinear.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.846, "y": 0.899 },
+							"nameTag": "none",
+							"foot": { "rotate": 50.599 }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"anchor": { "x": 1.019, "y": 0.476 },
+							"size": 0.654,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_inOurWake",
+							"textKey": "~01~~panel_004~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.037,
+							"padYFraction": 0.029,
+							"widthFraction": 0.8312413,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": 0 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-happy",
+							"equipment": {},
+							"size": 0.664,
+							"head": { "rotate": -16.468, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:gradientLinear.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.739, "y": 0.75 },
+							"nameTag": "none",
+							"foot": { "rotate": 50.599 }
+						},
+						{
+							"role": "friend",
+							"form": "frame-sad",
+							"equipment": {},
+							"anchor": { "x": 1.301, "y": 0.438 },
+							"size": 0.695,
+							"drawDepth": 1.5,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_inOurWake",
+							"textKey": "~01~~panel_005~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.037,
+							"padYFraction": 0.029,
+							"widthFraction": 0.9316597,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.698, "y": 0.519 },
+							"size": 0.664,
+							"head": { "rotate": -27.96, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:gradientLinear.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.739, "y": 0.75 },
+							"nameTag": "none",
+							"foot": { "rotate": 50.599 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_inOurWake",
+							"textKey": "~01~~panel_006~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.037,
+							"padYFraction": 0.029,
+							"widthFraction": 0.8312413,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.618, "y": 0.254 },
+							"size": 0.36572638,
+							"head": { "rotate": -18.435, "scaleY": 1 }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.76, "y": 0.279 },
+							"size": 0.354079,
+							"head": { "rotate": -10.231, "scaleY": -1 }
+						},
+						{
+							"role": "hero3",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 1.02, "y": 0.303 },
+							"size": 0.36572638,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treePine1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.268, "y": 0.813 },
+							"size": 0.659,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.67763156", "g": "0.67763156", "b": "0.67763156", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.318, "y": 0.238 },
+							"size": 0.3494201,
+							"drawDepth": 5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.425, "y": 1.433 },
+							"size": 5.173,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.72149175" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_inOurWake",
+							"textKey": "~01~~panel_007~1_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"padXFraction": 0.121,
+							"padYFraction": 0.165,
+							"widthFraction": 0.54521155,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -4.7683716E-7,
+								"dY": -5.764499,
+								"scaleX": 0.9247822,
+								"scaleY": 0.9247822,
+								"forcePointerImage": "speechShort"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.254, "y": 0.495 },
+							"size": 0.59462684,
+							"head": { "rotate": 3.617 }
+						},
+						{
+							"assetSpec": "comic:gradientLinear.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.951, "y": 1.005 },
+							"size": 0.8955224,
+							"nameTag": "none",
+							"foot": { "rotate": 50.599 }
+						},
+						{
+							"role": "friend",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.686, "y": 0.486 },
+							"size": 0.58567166,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_inOurWake",
+							"textKey": "~01~~panel_008~1_friend",
+							"pointerOwner": "friend",
+							"location": "topRight",
+							"padXFraction": 0.07,
+							"padYFraction": 0.063,
+							"widthFraction": 0.6351231,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.438, "y": 0.481 },
+							"size": 0.86457103,
+							"head": { "rotate": -15.213 }
+						},
+						{
+							"assetSpec": "comic:gradientLinear.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.739, "y": 0.75 },
+							"size": 1.3020649,
+							"nameTag": "none",
+							"foot": { "rotate": 50.599 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.47587773" }
+						},
+						{
+							"role": "friend",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 1.044, "y": 0.481 },
+							"size": 0.85155046,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_inOurWake",
+							"textKey": "~01~~panel_009~1_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.041,
+							"padYFraction": 0.073,
+							"widthFraction": 0.8312413,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.623, "y": -0.024 },
+							"size": 0.22203387,
+							"head": { "rotate": -18.435, "scaleY": 1 },
+							"color": { "r": "0.8508777", "g": "0.8508777", "b": "0.8508777", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.736, "y": 0.029 },
+							"size": 0.19508073,
+							"head": { "rotate": -10.231, "scaleY": -1 },
+							"foot": { "rotate": -0.683 },
+							"color": { "r": "0.8508777", "g": "0.8508777", "b": "0.8508777", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.904, "y": 0.12 },
+							"size": 0.20149788,
+							"nameTag": "none",
+							"color": { "r": "0.8508777", "g": "0.8508777", "b": "0.8508777", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treePine1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.163, "y": 0.515 },
+							"size": 0.452,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"color": { "r": "0.78728175", "g": "0.78728175", "b": "0.78728175", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.432, "y": -0.019 },
+							"size": 0.1925139,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"color": { "r": "0.8508777", "g": "0.8508777", "b": "0.8508777", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.478, "y": 1.245 },
+							"size": 5.173,
+							"drawDepth": 6,
+							"nameTag": "none",
+							"color": { "r": "0.8508777", "g": "0.8508777", "b": "0.8508777", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landGrassSlope.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.492, "y": 0.101 },
+							"size": 0.359,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.8508777", "g": "0.8508777", "b": "0.8508777", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_bushSwirly2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.008, "y": 0.198 },
+							"size": 0.212,
+							"drawDepth": -2.5,
+							"nameTag": "none",
+							"color": { "r": "0.8508777", "g": "0.8508777", "b": "0.8508777", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_inOurWake",
+							"textKey": "~01~~panel_010~1_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"padXFraction": 0.176,
+							"padYFraction": 0.301,
+							"widthFraction": 0.433853,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -4.7683716E-7,
+								"dY": -5.764499,
+								"scaleX": 0.9247822,
+								"scaleY": 0.9247822,
+								"forcePointerImage": "speechShort"
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}
