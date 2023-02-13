@@ -1,0 +1,431 @@
+{
+"id": "missionVictory_satisfaction",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/victory_satisfaction",
+	"author": "Anne Austin",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{ "role": "threat", "template": "INJECTED_THREAT", "choose": "ANY" },
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES", "choose": "FORBID" },
+	{ "template": "MAIMED_HEROES", "choose": "FORBID" },
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{
+		"role": "goofball",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(GOOFBALL,SNARK)",
+		"scoreThreshold": "80"
+	},
+	{
+		"role": "bookish",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(BOOKISH,POET)",
+		"scoreThreshold": "80",
+		"notAlreadyMatchedAs": [ "goofball" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-talk",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_satisfaction",
+							"textKey": "~01~~panel_001~1_goofball",
+							"pointerOwner": "goofball"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.239, "y": 0.462 },
+							"size": 0.6
+						},
+						{
+							"role": "bookish",
+							"equipment": {},
+							"anchor": { "x": 0.48, "y": 0.466 },
+							"size": 0.594,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 },
+							"foot": { "rotate": -1.602 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_satisfaction",
+							"textKey": "~01~~panel_002~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.546,
+							"padYFraction": 0.203,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.568, "y": 0.5 },
+							"head": { "rotate": 7.815 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_satisfaction",
+							"textKey": "~01~~panel_003~1_goofball",
+							"pointerOwner": "goofball",
+							"location": "topRight",
+							"padXFraction": 0.088,
+							"padYFraction": 0.045,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"head": { "rotate": 28.523 },
+							"foot": { "rotate": 2.246 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_satisfaction",
+							"textKey": "~01~~panel_004~1_goofball",
+							"pointerOwner": "goofball"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-joke",
+							"equipment": {},
+							"anchor": { "x": 0.602, "y": 0.485 },
+							"head": { "rotate": -7.134 },
+							"foot": { "rotate": 2.246 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_satisfaction",
+							"textKey": "~01~~panel_005~1_goofball",
+							"pointerOwner": "goofball",
+							"location": "topRight",
+							"padXFraction": 0.073,
+							"padYFraction": 0.051,
+							"widthFraction": 0.72868925,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-joy",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"size": 0.524,
+							"head": { "rotate": 16.878 },
+							"foot": { "rotate": 1.687 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.581, "y": 0.511 },
+							"size": 0.475,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_satisfaction",
+							"textKey": "~01~~panel_006~1_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.038,
+							"padYFraction": 0.089,
+							"widthFraction": 0.7053763,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.513, "y": 0.542 },
+							"size": 1.142,
+							"head": { "scaleY": -1 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"size": 0.524,
+							"head": { "rotate": 0.209 },
+							"foot": { "rotate": 1.687 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.723, "y": 0.515 },
+							"size": 0.475,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": 1 }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.933, "y": 0.389 },
+							"size": 0.612,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_satisfaction",
+							"textKey": "~01~~panel_008~1_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.041,
+							"padYFraction": 0.144,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.221, "y": 0.326 },
+							"size": 0.296,
+							"head": { "rotate": -2.844 },
+							"foot": { "rotate": -0.152 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.788, "y": 0.297 },
+							"size": 0.273,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": 1 }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.72, "y": 0.24 },
+							"size": 0.408,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:treeSmallFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.972, "y": 0.37 },
+							"size": 0.426,
+							"nameTag": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.318, "y": 0.329 },
+							"size": 0.296,
+							"head": { "rotate": 5.173 },
+							"foot": { "rotate": -5.423 }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.879, "y": 0.297 },
+							"size": 0.273,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.213, "y": 0.294 },
+							"size": 0.246,
+							"nameTag": "none",
+							"foot": { "rotate": -17.771 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.71929824" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.72, "y": 0.24 },
+							"size": 0.408,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:treeSmallFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.972, "y": 0.37 },
+							"size": 0.426,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_satisfaction",
+							"textKey": "~01~~panel_010~1_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.221,
+							"padYFraction": 0.323,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "goofball",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.842, "y": 0.31 },
+							"size": 0.296,
+							"head": { "rotate": 30.747 },
+							"foot": { "rotate": -10.588 }
+						},
+						{
+							"assetSpec": "comic:actionLines_shake1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.77, "y": 0.221 },
+							"size": 0.246,
+							"nameTag": "none",
+							"foot": { "rotate": -17.771 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.71929824" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.72, "y": 0.24 },
+							"size": 0.408,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:treeSmallFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.972, "y": 0.37 },
+							"size": 0.426,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_satisfaction",
+							"textKey": "~01~~panel_011~1_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.591,
+							"padYFraction": 0.335,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}
