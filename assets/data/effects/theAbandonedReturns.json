@@ -5,6 +5,7 @@
 	"sourceFile": "theAbandonedReturns",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "Ironskink",
+	"debug": true,
 	"declaredEncounterResults": [ "victory", "defeat", "escape" ]
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -31,8 +32,11 @@
 		"role": "healer",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
-		"scoreFunction": "drauvenHealer_sawTiding",
-		"scoreThreshold": "1",
+		"scoreFunction": "AGE_IN_YEARS",
+		"scoreThreshold": "abandonedDrauvenMaturationYear",
+		"aspectValues": [
+			{ "id": "drauvenHealer" }
+		],
 		"notAlreadyMatchedAs": []
 	},
 	{

@@ -1386,6 +1386,13 @@
 						]
 					},
 					{
+						"class": "Aspects",
+						"target": "healer",
+						"addAspects": [
+							{ "id": "abandonedDrauvenMaturationYear", "value": "healer.AGE_IN_YEARS + 8" }
+						]
+					},
+					{
 						"class": "AllowFollowup",
 						"STUB": "Enable tiding during the next interval so that the drauven child can grow up",
 						"id": "encounter_wilderness_theAbandoned.0.playerChose_one.onPass.3"
