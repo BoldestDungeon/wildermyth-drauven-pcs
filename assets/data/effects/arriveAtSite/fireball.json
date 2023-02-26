@@ -29,7 +29,10 @@
 		"role": "hero",
 		"template": "PICK_BY_SCORE",
 		"scoreFunction": "mystic+HAS_RIVAL_IN_PARTY",
-		"scoreThreshold": "2"
+		"scoreThreshold": "2",
+		"aspectValues": [
+			{ "id": "drauvenDeck_mystic_fireshot_upgrade", "forbidden": true }
+		]
 	},
 	{
 		"role": "rival",
