@@ -4,7 +4,8 @@
     "dataVersion": 1,
     "sourceFile": "site/branch_drauvenOutpostBuilt",
     "modId": "wildermyth-drauven-pcs",
-    "author": "David Bilsky"
+    "author": "David Bilsky",
+    "debug": true
   },
   "type": "BRANCH",
   "verb": "MANEUVER",
@@ -98,163 +99,151 @@
         {
           "class": "Test",
           "value": "COUNT.target",
-          "threshold": "4",
+          "threshold": "5",
           "onPass": {
             "class": "DoAll",
             "outcomes": [
+
               {
-                "class": "Spawn",
-                "addRole": "site",
-                "createEntity": {
-                  "stationQuery": "drauvenOutpostL5",
-                  "controlRelativeTo": "participant",
-                  "additionalOutcome": {
-                    "class": "DoAll",
-                    "outcomes": [
-                      {
-                        "class": "Description",
-                        "script": [
-                          {
-                            "class": "comicNode_Panel",
-                            "panel": {
-                              "size": "full",
-                              "bg": "comicBG_interiorHearth.jpg",
-                              "actorSlots": [
-                                {
-                                  "assetSpec": "comic:bowlSoupSteam.png",
-                                  "role": null,
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.19, "y": 0.245 },
-                                  "size": 0.1926,
-                                  "nameTag": "none"
-                                },
-                                {
-                                  "assetSpec": "comic:bowlSoupSteam.png",
-                                  "role": null,
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.322, "y": 0.229 },
-                                  "size": 0.1926,
-                                  "nameTag": "none"
-                                },
-                                {
-                                  "assetSpec": "asset:sites/scenery/tableRound.png",
-                                  "role": null,
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.267, "y": -0.006 },
-                                  "size": 0.335,
-                                  "nameTag": "none"
-                                },
-                                {
-                                  "role": "participant",
-                                  "form": "frame-happy",
-                                  "equipment": {
-                                    "mode": "removeWeapons",
-                                    "equipItemsById": [ "mug" ]
-                                  },
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.166, "y": -0.176 },
-                                  "size": 0.33,
-                                  "nameTag": "none",
-                                  "foot": { "rotate": 4.927 }
-                                },
-                                {
-                                  "assetSpec": "comic:drauvenBakedWeaponless_stump1.png",
-                                  "role": null,
-                                  "facing": "left",
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.375, "y": 0.245 },
-                                  "size": 0.2913,
-                                  "nameTag": "none"
-                                },
-                                {
-                                  "role": "hero2",
-                                  "form": "frame-joy",
-                                  "facing": "left",
-                                  "equipment": {
-                                    "mode": "leaveEquipment",
-                                    "equipItemsById": [ "mug" ]
-                                  },
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.811, "y": -0.101 },
-                                  "size": 0.3671,
-                                  "nameTag": "none",
-                                  "head": { "rotate": 10.685 },
-                                  "foot": { "rotate": 0 }
-                                },
-                                {
-                                  "assetSpec": "comic:drauvenBakedWeaponless_pilot.png",
-                                  "role": null,
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.663, "y": 0.408 },
-                                  "size": 0.4902,
-                                  "nameTag": "none"
-                                },
-                                {
-                                  "assetSpec": "comic:mug1.png",
-                                  "role": null,
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.545, "y": 0.396 },
-                                  "size": 0.3111,
-                                  "nameTag": "none",
-                                  "foot": { "rotate": -33.008 }
-                                },
-                                {
-                                  "assetSpec": "asset:sites/scenery/drauven_potLifted.png",
-                                  "role": null,
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.937, "y": 0.185 },
-                                  "size": 0.3326,
-                                  "nameTag": "none"
-                                },
-                                {
-                                  "assetSpec": "scenery:drauven_birdStatue.png",
-                                  "role": null,
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.051, "y": 0.437 },
-                                  "size": 0.3833,
-                                  "nameTag": "none"
-                                },
-                                {
-                                  "role": "npc",
-                                  "equipment": {
-                                    "equipItemsById": [ "walkingStaff" ]
-                                  },
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.898, "y": -0.091 },
-                                  "size": 0.3294,
-                                  "nameTag": "bottomRight"
-                                },
-                                {
-                                  "role": "hero",
-                                  "equipment": {},
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.444, "y": -0.079 },
-                                  "size": 0.2253,
-                                  "nameTag": "none"
-                                },
-                                {
-                                  "assetSpec": "scenery:tableWood1.png",
-                                  "role": null,
-                                  "focus": "foot",
-                                  "anchor": { "x": 0.549, "y": 0.075 },
-                                  "size": 0.2071,
-                                  "nameTag": "none"
-                                }
-                              ],
-                              "textSlots": [
-                                {
-                                  "textSourceFile": "site/branch_drauvenOutpostBuilt",
-                                  "textKey": "~01~doFirst_1.test_pass.create_additionalOutcome~panel_001~1_narration",
-                                  "style": "narration"
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                "class": "Description",
+                "script": [
+                  {
+                    "class": "comicNode_Panel",
+                    "panel": {
+                      "size": "full",
+                      "bg": "comicBG_interiorHearth.jpg",
+                      "actorSlots": [
+                        {
+                          "assetSpec": "comic:bowlSoupSteam.png",
+                          "role": null,
+                          "focus": "foot",
+                          "anchor": { "x": 0.19, "y": 0.245 },
+                          "size": 0.1926,
+                          "nameTag": "none"
+                        },
+                        {
+                          "assetSpec": "comic:bowlSoupSteam.png",
+                          "role": null,
+                          "focus": "foot",
+                          "anchor": { "x": 0.322, "y": 0.229 },
+                          "size": 0.1926,
+                          "nameTag": "none"
+                        },
+                        {
+                          "assetSpec": "asset:sites/scenery/tableRound.png",
+                          "role": null,
+                          "focus": "foot",
+                          "anchor": { "x": 0.267, "y": -0.006 },
+                          "size": 0.335,
+                          "nameTag": "none"
+                        },
+                        {
+                          "role": "participant",
+                          "form": "frame-happy",
+                          "equipment": {
+                            "mode": "removeWeapons",
+                            "equipItemsById": [ "mug" ]
+                          },
+                          "focus": "foot",
+                          "anchor": { "x": 0.166, "y": -0.176 },
+                          "size": 0.33,
+                          "nameTag": "none",
+                          "foot": { "rotate": 4.927 }
+                        },
+                        {
+                          "assetSpec": "comic:drauvenBakedWeaponless_stump1.png",
+                          "role": null,
+                          "facing": "left",
+                          "focus": "foot",
+                          "anchor": { "x": 0.375, "y": 0.245 },
+                          "size": 0.2913,
+                          "nameTag": "none"
+                        },
+                        {
+                          "role": "hero2",
+                          "form": "frame-joy",
+                          "facing": "left",
+                          "equipment": {
+                            "mode": "leaveEquipment",
+                            "equipItemsById": [ "mug" ]
+                          },
+                          "focus": "foot",
+                          "anchor": { "x": 0.811, "y": -0.101 },
+                          "size": 0.3671,
+                          "nameTag": "none",
+                          "head": { "rotate": 10.685 },
+                          "foot": { "rotate": 0 }
+                        },
+                        {
+                          "assetSpec": "comic:drauvenBakedWeaponless_pilot.png",
+                          "role": null,
+                          "focus": "foot",
+                          "anchor": { "x": 0.663, "y": 0.408 },
+                          "size": 0.4902,
+                          "nameTag": "none"
+                        },
+                        {
+                          "assetSpec": "comic:mug1.png",
+                          "role": null,
+                          "focus": "foot",
+                          "anchor": { "x": 0.545, "y": 0.396 },
+                          "size": 0.3111,
+                          "nameTag": "none",
+                          "foot": { "rotate": -33.008 }
+                        },
+                        {
+                          "assetSpec": "asset:sites/scenery/drauven_potLifted.png",
+                          "role": null,
+                          "focus": "foot",
+                          "anchor": { "x": 0.937, "y": 0.185 },
+                          "size": 0.3326,
+                          "nameTag": "none"
+                        },
+                        {
+                          "assetSpec": "scenery:drauven_birdStatue.png",
+                          "role": null,
+                          "focus": "foot",
+                          "anchor": { "x": 0.051, "y": 0.437 },
+                          "size": 0.3833,
+                          "nameTag": "none"
+                        },
+                        {
+                          "role": "npc",
+                          "equipment": {
+                            "equipItemsById": [ "walkingStaff" ]
+                          },
+                          "focus": "foot",
+                          "anchor": { "x": 0.898, "y": -0.091 },
+                          "size": 0.3294,
+                          "nameTag": "bottomRight"
+                        },
+                        {
+                          "role": "hero",
+                          "equipment": {},
+                          "focus": "foot",
+                          "anchor": { "x": 0.444, "y": -0.079 },
+                          "size": 0.2253,
+                          "nameTag": "none"
+                        },
+                        {
+                          "assetSpec": "scenery:tableWood1.png",
+                          "role": null,
+                          "focus": "foot",
+                          "anchor": { "x": 0.549, "y": 0.075 },
+                          "size": 0.2071,
+                          "nameTag": "none"
+                        }
+                      ],
+                      "textSlots": [
+                        {
+                          "textSourceFile": "site/branch_drauvenOutpostBuilt",
+                          "textKey": "~01~doFirst_1.test_pass.create_additionalOutcome~panel_001~1_narration",
+                          "style": "narration"
+                        }
+                      ]
+                    }
                   }
-                }
+                ]
               },
               {
                 "class": "Test",
@@ -396,744 +385,693 @@
         {
           "class": "Test",
           "value": "COUNT.target",
-          "threshold": "3",
-          "onPass": {
-            "class": "Spawn",
-            "addRole": "site",
-            "createEntity": {
-              "stationQuery": "drauvenOutpostL4",
-              "controlRelativeTo": "participant",
-              "additionalOutcome": {
-                "class": "DoAll",
-                "outcomes": [
-                  {
-                    "class": "Description",
-                    "script": [
-                      {
-                        "class": "comicNode_Panel",
-                        "panel": {
-                          "size": "full",
-                          "bgAuto": "approachingSite",
-                          "actorSlots": [
-                            {
-                              "role": "participant",
-                              "form": "frame-interested",
-                              "facing": "left",
-                              "equipment": {
-                                "mode": "removeWeapons",
-                                "equipItemsById": [ "sack" ]
-                              },
-                              "focus": "foot",
-                              "anchor": { "x": 0.308, "y": -0.06 },
-                              "size": 0.33,
-                              "drawDepth": 1,
-                              "nameTag": "none",
-                              "foot": { "rotate": 4.927 }
-                            },
-                            {
-                              "role": "hero2",
-                              "form": "frame-dubious",
-                              "facing": "left",
-                              "equipment": {
-                                "mode": "leaveEquipment",
-                                "equipItemsById": [ "mug" ]
-                              },
-                              "focus": "foot",
-                              "anchor": { "x": 0.797, "y": -0.085 },
-                              "size": 0.3671,
-                              "nameTag": "none",
-                              "head": { "rotate": -12.603 },
-                              "foot": { "rotate": 0 }
-                            },
-                            {
-                              "assetSpec": "asset:sites/scenery/drauven_potLifted.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.704, "y": 0.166 },
-                              "size": 0.3326,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:smokeDirectional.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.714, "y": 0.77 },
-                              "size": 0.1023,
-                              "nameTag": "none",
-                              "foot": { "rotate": -92.912 }
-                            },
-                            {
-                              "assetSpec": "asset:figures/images/human/items/item_spoon.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.681, "y": 0.424 },
-                              "size": 0.1702,
-                              "nameTag": "none",
-                              "foot": { "rotate": -70.513 }
-                            },
-                            {
-                              "assetSpec": "comic:drauvenBakedWeaponless_stormthroat.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.665, "y": 0.355 },
-                              "size": 0.2941,
-                              "nameTag": "none"
-                            },
-                            {
-                              "role": "npc",
-                              "facing": "left",
-                              "equipment": {
-                                "equipItemsById": [ "walkingStaff" ]
-                              },
-                              "focus": "foot",
-                              "anchor": { "x": 0.496, "y": -0.067 },
-                              "size": 0.294,
-                              "nameTag": "bottomRight"
-                            },
-                            {
-                              "role": "hero",
-                              "equipment": { "mode": "removeWeapons" },
-                              "focus": "foot",
-                              "anchor": { "x": 0.51, "y": -0.041 },
-                              "size": 0.3142,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:flask.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.143, "y": 0.239 },
-                              "size": 0.1719,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:bowlStuff.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.216, "y": 0.22 },
-                              "size": 0.2274,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:drauvenCandleUnlit.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.259, "y": 0.27 },
-                              "size": 0.093,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "scenery:tableWood1.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.191, "y": 0.078 },
-                              "size": 0.2071,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:drauvenBakedWeaponless_pilot.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.154, "y": 0.312 },
-                              "size": 0.3095,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "scenery:drauven_birdStatue.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.058, "y": 0.348 },
-                              "size": 0.2996,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:comicForeground_flatHillRockBrown.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 1.039, "y": 0.1 },
-                              "size": 0.3301,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "asset:sites/scenery/door_GateDoubleDrauven_closed.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.934, "y": 0.651 },
-                              "size": 0.2409,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:treeBroadleaf3.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.39, "y": 0.5 },
-                              "size": 0.1901,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:fencePlankShortBanners.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.318, "y": 0.314 },
-                              "size": 0.3051,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:comicForeground_flatHillGrassy.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.307, "y": 0.06 },
-                              "size": 0.3117,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "asset:sites/scenery/flagFair.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.732, "y": 0.412 },
-                              "size": 0.2169,
-                              "nameTag": "none"
-                            }
-                          ],
-                          "textSlots": [
-                            {
-                              "textSourceFile": "site/branch_drauvenOutpostBuilt",
-                              "textKey": "~03~doFirst_2.test_pass.create_additionalOutcome~panel_001~1_narration",
-                              "style": "narration"
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ]
+          "threshold": "4",
+          "onPass": 
+          {
+            "class": "Description",
+            "script": [
+              {
+                "class": "comicNode_Panel",
+                "panel": {
+                  "size": "full",
+                  "bgAuto": "approachingSite",
+                  "actorSlots": [
+                    {
+                      "role": "participant",
+                      "form": "frame-interested",
+                      "facing": "left",
+                      "equipment": {
+                        "mode": "removeWeapons",
+                        "equipItemsById": [ "sack" ]
+                      },
+                      "focus": "foot",
+                      "anchor": { "x": 0.308, "y": -0.06 },
+                      "size": 0.33,
+                      "drawDepth": 1,
+                      "nameTag": "none",
+                      "foot": { "rotate": 4.927 }
+                    },
+                    {
+                      "role": "hero2",
+                      "form": "frame-dubious",
+                      "facing": "left",
+                      "equipment": {
+                        "mode": "leaveEquipment",
+                        "equipItemsById": [ "mug" ]
+                      },
+                      "focus": "foot",
+                      "anchor": { "x": 0.797, "y": -0.085 },
+                      "size": 0.3671,
+                      "nameTag": "none",
+                      "head": { "rotate": -12.603 },
+                      "foot": { "rotate": 0 }
+                    },
+                    {
+                      "assetSpec": "asset:sites/scenery/drauven_potLifted.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.704, "y": 0.166 },
+                      "size": 0.3326,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:smokeDirectional.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.714, "y": 0.77 },
+                      "size": 0.1023,
+                      "nameTag": "none",
+                      "foot": { "rotate": -92.912 }
+                    },
+                    {
+                      "assetSpec": "asset:figures/images/human/items/item_spoon.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.681, "y": 0.424 },
+                      "size": 0.1702,
+                      "nameTag": "none",
+                      "foot": { "rotate": -70.513 }
+                    },
+                    {
+                      "assetSpec": "comic:drauvenBakedWeaponless_stormthroat.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.665, "y": 0.355 },
+                      "size": 0.2941,
+                      "nameTag": "none"
+                    },
+                    {
+                      "role": "npc",
+                      "facing": "left",
+                      "equipment": {
+                        "equipItemsById": [ "walkingStaff" ]
+                      },
+                      "focus": "foot",
+                      "anchor": { "x": 0.496, "y": -0.067 },
+                      "size": 0.294,
+                      "nameTag": "bottomRight"
+                    },
+                    {
+                      "role": "hero",
+                      "equipment": { "mode": "removeWeapons" },
+                      "focus": "foot",
+                      "anchor": { "x": 0.51, "y": -0.041 },
+                      "size": 0.3142,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:flask.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.143, "y": 0.239 },
+                      "size": 0.1719,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:bowlStuff.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.216, "y": 0.22 },
+                      "size": 0.2274,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:drauvenCandleUnlit.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.259, "y": 0.27 },
+                      "size": 0.093,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "scenery:tableWood1.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.191, "y": 0.078 },
+                      "size": 0.2071,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:drauvenBakedWeaponless_pilot.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.154, "y": 0.312 },
+                      "size": 0.3095,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "scenery:drauven_birdStatue.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.058, "y": 0.348 },
+                      "size": 0.2996,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 1.039, "y": 0.1 },
+                      "size": 0.3301,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "asset:sites/scenery/door_GateDoubleDrauven_closed.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.934, "y": 0.651 },
+                      "size": 0.2409,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:treeBroadleaf3.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.39, "y": 0.5 },
+                      "size": 0.1901,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:fencePlankShortBanners.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.318, "y": 0.314 },
+                      "size": 0.3051,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:comicForeground_flatHillGrassy.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.307, "y": 0.06 },
+                      "size": 0.3117,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "asset:sites/scenery/flagFair.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.732, "y": 0.412 },
+                      "size": 0.2169,
+                      "nameTag": "none"
+                    }
+                  ],
+                  "textSlots": [
+                    {
+                      "textSourceFile": "site/branch_drauvenOutpostBuilt",
+                      "textKey": "~03~doFirst_2.test_pass.create_additionalOutcome~panel_001~1_narration",
+                      "style": "narration"
+                    }
+                  ]
+                }
               }
-            }
+            ]
+          }
+        },
+        {
+          "class": "Test",
+          "value": "COUNT.target",
+          "threshold": "3",
+          "onPass": 
+          {
+            "class": "Description",
+            "script": [
+              {
+                "class": "comicNode_Panel",
+                "panel": {
+                  "size": "full",
+                  "bgAuto": "approachingSite",
+                  "actorSlots": [
+                    {
+                      "role": "participant",
+                      "form": "frame-interested",
+                      "facing": "left",
+                      "equipment": {
+                        "mode": "removeWeapons",
+                        "equipItemsById": [ "sack" ]
+                      },
+                      "focus": "foot",
+                      "anchor": { "x": 0.308, "y": -0.06 },
+                      "size": 0.33,
+                      "drawDepth": 1,
+                      "nameTag": "none",
+                      "foot": { "rotate": 4.927 }
+                    },
+                    {
+                      "role": "hero2",
+                      "form": "frame-dubious",
+                      "facing": "left",
+                      "equipment": {
+                        "mode": "leaveEquipment",
+                        "equipItemsById": [ "mug" ]
+                      },
+                      "focus": "foot",
+                      "anchor": { "x": 0.797, "y": -0.085 },
+                      "size": 0.3671,
+                      "nameTag": "none",
+                      "head": { "rotate": -12.603 },
+                      "foot": { "rotate": 0 }
+                    },
+                    {
+                      "assetSpec": "asset:sites/scenery/drauven_potLifted.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.704, "y": 0.166 },
+                      "size": 0.3326,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:smokeDirectional.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.714, "y": 0.77 },
+                      "size": 0.1023,
+                      "nameTag": "none",
+                      "foot": { "rotate": -92.912 }
+                    },
+                    {
+                      "assetSpec": "asset:figures/images/human/items/item_spoon.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.681, "y": 0.424 },
+                      "size": 0.1702,
+                      "nameTag": "none",
+                      "foot": { "rotate": -70.513 }
+                    },
+                    {
+                      "assetSpec": "comic:drauvenBakedWeaponless_stormthroat.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.665, "y": 0.355 },
+                      "size": 0.2941,
+                      "nameTag": "none"
+                    },
+                    {
+                      "role": "hero",
+                      "equipment": { "mode": "removeWeapons" },
+                      "focus": "foot",
+                      "anchor": { "x": 0.482, "y": -0.035 },
+                      "size": 0.3142,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:flask.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.143, "y": 0.239 },
+                      "size": 0.1719,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:bowlStuff.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.216, "y": 0.22 },
+                      "size": 0.2274,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:drauvenCandleUnlit.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.259, "y": 0.27 },
+                      "size": 0.093,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "scenery:tableWood1.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.191, "y": 0.078 },
+                      "size": 0.2071,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:drauvenBakedWeaponless_haunt.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.154, "y": 0.312 },
+                      "size": 0.3095,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "scenery:drauven_birdStatue.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.147, "y": 0.342 },
+                      "size": 0.2996,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 1.039, "y": 0.1 },
+                      "size": 0.3301,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "asset:sites/scenery/door_GateDoubleDrauven_closed.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.934, "y": 0.651 },
+                      "size": 0.2409,
+                      "nameTag": "none"
+                    },
+                    {
+                      "role": "npc",
+                      "facing": "left",
+                      "equipment": {
+                        "equipItemsById": [ "walkingStaff" ]
+                      },
+                      "focus": "foot",
+                      "anchor": { "x": 0.547, "y": -0.105 },
+                      "size": 0.294,
+                      "nameTag": "bottomRight"
+                    },
+                    {
+                      "assetSpec": "comic:treeBroadleaf3.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.39, "y": 0.5 },
+                      "size": 0.1901,
+                      "nameTag": "none"
+                    }
+                  ],
+                  "textSlots": [
+                    {
+                      "textSourceFile": "site/branch_drauvenOutpostBuilt",
+                      "textKey": "~04~doFirst_3.test_pass.create_additionalOutcome~panel_001~1_narration",
+                      "style": "narration"
+                    }
+                  ]
+                }
+              }
+            ]
           }
         },
         {
           "class": "Test",
           "value": "COUNT.target",
           "threshold": "2",
-          "onPass": {
-            "class": "Spawn",
-            "addRole": "site",
-            "createEntity": {
-              "stationQuery": "drauvenOutpostL3",
-              "controlRelativeTo": "participant",
-              "additionalOutcome": {
-                "class": "DoAll",
-                "outcomes": [
-                  {
-                    "class": "Description",
-                    "script": [
-                      {
-                        "class": "comicNode_Panel",
-                        "panel": {
-                          "size": "full",
-                          "bgAuto": "approachingSite",
-                          "actorSlots": [
-                            {
-                              "role": "participant",
-                              "form": "frame-interested",
-                              "facing": "left",
-                              "equipment": {
-                                "mode": "removeWeapons",
-                                "equipItemsById": [ "sack" ]
-                              },
-                              "focus": "foot",
-                              "anchor": { "x": 0.308, "y": -0.06 },
-                              "size": 0.33,
-                              "drawDepth": 1,
-                              "nameTag": "none",
-                              "foot": { "rotate": 4.927 }
-                            },
-                            {
-                              "role": "hero2",
-                              "form": "frame-dubious",
-                              "facing": "left",
-                              "equipment": {
-                                "mode": "leaveEquipment",
-                                "equipItemsById": [ "mug" ]
-                              },
-                              "focus": "foot",
-                              "anchor": { "x": 0.797, "y": -0.085 },
-                              "size": 0.3671,
-                              "nameTag": "none",
-                              "head": { "rotate": -12.603 },
-                              "foot": { "rotate": 0 }
-                            },
-                            {
-                              "assetSpec": "asset:sites/scenery/drauven_potLifted.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.704, "y": 0.166 },
-                              "size": 0.3326,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:smokeDirectional.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.714, "y": 0.77 },
-                              "size": 0.1023,
-                              "nameTag": "none",
-                              "foot": { "rotate": -92.912 }
-                            },
-                            {
-                              "assetSpec": "asset:figures/images/human/items/item_spoon.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.681, "y": 0.424 },
-                              "size": 0.1702,
-                              "nameTag": "none",
-                              "foot": { "rotate": -70.513 }
-                            },
-                            {
-                              "assetSpec": "comic:drauvenBakedWeaponless_stormthroat.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.665, "y": 0.355 },
-                              "size": 0.2941,
-                              "nameTag": "none"
-                            },
-                            {
-                              "role": "hero",
-                              "equipment": { "mode": "removeWeapons" },
-                              "focus": "foot",
-                              "anchor": { "x": 0.482, "y": -0.035 },
-                              "size": 0.3142,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:flask.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.143, "y": 0.239 },
-                              "size": 0.1719,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:bowlStuff.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.216, "y": 0.22 },
-                              "size": 0.2274,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:drauvenCandleUnlit.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.259, "y": 0.27 },
-                              "size": 0.093,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "scenery:tableWood1.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.191, "y": 0.078 },
-                              "size": 0.2071,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:drauvenBakedWeaponless_haunt.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.154, "y": 0.312 },
-                              "size": 0.3095,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "scenery:drauven_birdStatue.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.147, "y": 0.342 },
-                              "size": 0.2996,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:comicForeground_flatHillRockBrown.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 1.039, "y": 0.1 },
-                              "size": 0.3301,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "asset:sites/scenery/door_GateDoubleDrauven_closed.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.934, "y": 0.651 },
-                              "size": 0.2409,
-                              "nameTag": "none"
-                            },
-                            {
-                              "role": "npc",
-                              "facing": "left",
-                              "equipment": {
-                                "equipItemsById": [ "walkingStaff" ]
-                              },
-                              "focus": "foot",
-                              "anchor": { "x": 0.547, "y": -0.105 },
-                              "size": 0.294,
-                              "nameTag": "bottomRight"
-                            },
-                            {
-                              "assetSpec": "comic:treeBroadleaf3.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.39, "y": 0.5 },
-                              "size": 0.1901,
-                              "nameTag": "none"
-                            }
-                          ],
-                          "textSlots": [
-                            {
-                              "textSourceFile": "site/branch_drauvenOutpostBuilt",
-                              "textKey": "~04~doFirst_3.test_pass.create_additionalOutcome~panel_001~1_narration",
-                              "style": "narration"
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            }
-          }
-        },
-        {
-          "class": "Test",
-          "value": "COUNT.target",
-          "threshold": "1",
-          "onPass": {
-            "class": "Spawn",
-            "addRole": "site",
-            "createEntity": {
-              "stationQuery": "drauvenOutpostL2",
-              "controlRelativeTo": "participant",
-              "additionalOutcome": {
-                "class": "DoAll",
-                "outcomes": [
-                  {
-                    "class": "Description",
-                    "script": [
-                      {
-                        "class": "comicNode_Panel",
-                        "panel": {
-                          "size": "full",
-                          "bgAuto": "approachingSite",
-                          "actorSlots": [
-                            {
-                              "role": "participant",
-                              "form": "frame-interested",
-                              "facing": "left",
-                              "equipment": {
-                                "mode": "removeWeapons",
-                                "equipItemsById": [ "sack" ]
-                              },
-                              "focus": "foot",
-                              "anchor": { "x": 0.308, "y": -0.06 },
-                              "size": 0.33,
-                              "drawDepth": 1,
-                              "nameTag": "none",
-                              "foot": { "rotate": 4.927 }
-                            },
-                            {
-                              "role": "hero2",
-                              "form": "frame-dubious",
-                              "facing": "left",
-                              "equipment": {
-                                "mode": "leaveEquipment",
-                                "equipItemsById": [ "mug" ]
-                              },
-                              "focus": "foot",
-                              "anchor": { "x": 0.797, "y": -0.085 },
-                              "size": 0.3671,
-                              "nameTag": "none",
-                              "head": { "rotate": -12.603 },
-                              "foot": { "rotate": 0 }
-                            },
-                            {
-                              "assetSpec": "asset:sites/scenery/drauven_potLifted.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.704, "y": 0.166 },
-                              "size": 0.3326,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:smokeDirectional.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.714, "y": 0.77 },
-                              "size": 0.1023,
-                              "nameTag": "none",
-                              "foot": { "rotate": -86.479 }
-                            },
-                            {
-                              "role": "npc",
-                              "equipment": {
-                                "equipItemsById": [ "walkingStaff" ]
-                              },
-                              "focus": "foot",
-                              "anchor": { "x": 0.638, "y": -0.091 },
-                              "size": 0.3493,
-                              "nameTag": "bottomRight"
-                            },
-                            {
-                              "role": "hero",
-                              "equipment": { "mode": "removeWeapons" },
-                              "focus": "foot",
-                              "anchor": { "x": 0.482, "y": -0.035 },
-                              "size": 0.3142,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:flask.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.143, "y": 0.239 },
-                              "size": 0.1719,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:bowlStuff.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.216, "y": 0.22 },
-                              "size": 0.2274,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:drauvenCandleUnlit.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.259, "y": 0.27 },
-                              "size": 0.093,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "scenery:tableWood1.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.191, "y": 0.078 },
-                              "size": 0.2071,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:drauvenBakedWeaponless_haunt2.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.154, "y": 0.312 },
-                              "size": 0.3095,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "scenery:drauven_birdStatue.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.147, "y": 0.342 },
-                              "size": 0.2996,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:comicForeground_flatHillRockBrown.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 1.039, "y": 0.1 },
-                              "size": 0.3301,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "asset:sites/scenery/door_GateDoubleDrauven_closed.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.934, "y": 0.651 },
-                              "size": 0.2409,
-                              "nameTag": "none"
-                            },
-                            {
-                              "assetSpec": "comic:treeBroadleaf3.png",
-                              "role": null,
-                              "focus": "foot",
-                              "anchor": { "x": 0.386, "y": 0.503 },
-                              "size": 0.1901,
-                              "nameTag": "none"
-                            }
-                          ],
-                          "textSlots": [
-                            {
-                              "textSourceFile": "site/branch_drauvenOutpostBuilt",
-                              "textKey": "~05~doFirst_4.test_pass.create_additionalOutcome~panel_001~1_narration",
-                              "style": "narration"
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            }
-          }
-        },
-        {
-          "class": "Spawn",
-          "addRole": "site",
-          "createEntity": {
-            "stationQuery": "drauvenOutpostL1",
-            "controlRelativeTo": "participant",
-            "additionalOutcome": {
-              "class": "DoAll",
-              "outcomes": [
-                { "class": "NewJob", "effectId": "job_drauvenRecruit", "post": "self" },
-                {
-                  "class": "Description",
-                  "blockOtherChanges": true,
-                  "script": [
+          "onPass": 
+          {
+            "class": "Description",
+            "script": [
+              {
+                "class": "comicNode_Panel",
+                "panel": {
+                  "size": "full",
+                  "bgAuto": "approachingSite",
+                  "actorSlots": [
                     {
-                      "class": "comicNode_Panel",
-                      "panel": {
-                        "size": "full",
-                        "bgAuto": "approachingSite",
-                        "actorSlots": [
-                          {
-                            "role": "npc",
-                            "facing": "left",
-                            "equipment": {
-                              "equipItemsById": [ "walkingStaff" ]
-                            },
-                            "focus": "foot",
-                            "anchor": { "x": 0.733, "y": -0.11 },
-                            "size": 0.294,
-                            "nameTag": "bottomRight"
-                          },
-                          {
-                            "role": "participant",
-                            "form": "frame-happy",
-                            "equipment": {
-                              "mode": "removeWeapons",
-                              "equipItemsById": [ "jugClay" ]
-                            },
-                            "focus": "foot",
-                            "anchor": { "x": 0.118, "y": -0.132 },
-                            "size": 0.33,
-                            "nameTag": "none",
-                            "foot": { "rotate": 4.927 }
-                          },
-                          {
-                            "assetSpec": "comic:drauvenBakedWeaponless_stump1.png",
-                            "role": null,
-                            "facing": "left",
-                            "focus": "foot",
-                            "anchor": { "x": 0.308, "y": 0.248 },
-                            "size": 0.2913,
-                            "nameTag": "none"
-                          },
-                          {
-                            "assetSpec": "asset:sites/scenery/drauven_lanternPoleOn.png",
-                            "role": null,
-                            "focus": "foot",
-                            "anchor": { "x": 0.86, "y": 0.399 },
-                            "size": 0.3326,
-                            "nameTag": "none"
-                          },
-                          {
-                            "assetSpec": "asset:figures/images/drauven2/drauvenStormthroat_bird.png",
-                            "role": null,
-                            "focus": "foot",
-                            "anchor": { "x": 0.226, "y": 0.54 },
-                            "size": 0.1811,
-                            "nameTag": "none"
-                          },
-                          {
-                            "assetSpec": "scenery:drauven_birdhouses.png",
-                            "role": null,
-                            "focus": "foot",
-                            "anchor": { "x": 0.201, "y": 0.321 },
-                            "size": 0.297,
-                            "nameTag": "none"
-                          },
-                          {
-                            "assetSpec": "scenery:drauven_birdStatue.png",
-                            "role": null,
-                            "focus": "foot",
-                            "anchor": { "x": 0.385, "y": 0.314 },
-                            "size": 0.117,
-                            "nameTag": "none"
-                          },
-                          {
-                            "role": "hero",
-                            "form": "frame-sad",
-                            "facing": "left",
-                            "equipment": {},
-                            "focus": "foot",
-                            "anchor": { "x": 0.953, "y": -0.007 },
-                            "size": 0.2789,
-                            "nameTag": "none"
-                          },
-                          {
-                            "assetSpec": "asset:sites/scenery/drauven_lanternPoleOn.png",
-                            "role": null,
-                            "focus": "foot",
-                            "anchor": { "x": 0.592, "y": 0.293 },
-                            "size": 0.1356,
-                            "nameTag": "none"
-                          },
-                          {
-                            "assetSpec": "comic:comicForeground_flatHillGrassy.png",
-                            "role": null,
-                            "focus": "foot",
-                            "anchor": { "x": 0.499, "y": 0.104 },
-                            "size": 0.1672,
-                            "nameTag": "none"
-                          },
-                          {
-                            "assetSpec": "asset:sites/scenery/door_GateDoubleDrauven_closed.png",
-                            "role": null,
-                            "focus": "foot",
-                            "anchor": { "x": 0.511, "y": 0.434 },
-                            "size": 0.1711,
-                            "nameTag": "none"
-                          },
-                          {
-                            "role": "npc2",
-                            "equipment": {},
-                            "anchor": { "x": 0.241, "y": 0.179 },
-                            "size": 0.1374,
-                            "nameTag": "none"
-                          }
-                        ],
-                        "textSlots": [
-                          {
-                            "textSourceFile": "site/branch_drauvenOutpostBuilt",
-                            "textKey": "~06~doFirst_5.create_additionalOutcome~panel_001~1_narration",
-                            "style": "narration"
-                          },
-                          {
-                            "textSourceFile": "site/branch_drauvenOutpostBuilt",
-                            "textKey": "~06~doFirst_5.create_additionalOutcome~panel_001~2_npc",
-                            "pointerOwner": "npc",
-                            "backgroundColor": { "r": "0.28110707", "g": "0.35047102", "b": "0.3324284", "a": "1" },
-                            "location": "bottomLeft",
-                            "padXFraction": 0.269,
-                            "padYFraction": 0.024,
-                            "widthFraction": 0.5238307,
-                            "shrinkToFitText": true,
-                            "pointerAdjust": { "dX": -40.351494, "dY": 0 }
-                          }
-                        ]
-                      }
+                      "role": "participant",
+                      "form": "frame-interested",
+                      "facing": "left",
+                      "equipment": {
+                        "mode": "removeWeapons",
+                        "equipItemsById": [ "sack" ]
+                      },
+                      "focus": "foot",
+                      "anchor": { "x": 0.308, "y": -0.06 },
+                      "size": 0.33,
+                      "drawDepth": 1,
+                      "nameTag": "none",
+                      "foot": { "rotate": 4.927 }
+                    },
+                    {
+                      "role": "hero2",
+                      "form": "frame-dubious",
+                      "facing": "left",
+                      "equipment": {
+                        "mode": "leaveEquipment",
+                        "equipItemsById": [ "mug" ]
+                      },
+                      "focus": "foot",
+                      "anchor": { "x": 0.797, "y": -0.085 },
+                      "size": 0.3671,
+                      "nameTag": "none",
+                      "head": { "rotate": -12.603 },
+                      "foot": { "rotate": 0 }
+                    },
+                    {
+                      "assetSpec": "asset:sites/scenery/drauven_potLifted.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.704, "y": 0.166 },
+                      "size": 0.3326,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:smokeDirectional.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.714, "y": 0.77 },
+                      "size": 0.1023,
+                      "nameTag": "none",
+                      "foot": { "rotate": -86.479 }
+                    },
+                    {
+                      "role": "npc",
+                      "equipment": {
+                        "equipItemsById": [ "walkingStaff" ]
+                      },
+                      "focus": "foot",
+                      "anchor": { "x": 0.638, "y": -0.091 },
+                      "size": 0.3493,
+                      "nameTag": "bottomRight"
+                    },
+                    {
+                      "role": "hero",
+                      "equipment": { "mode": "removeWeapons" },
+                      "focus": "foot",
+                      "anchor": { "x": 0.482, "y": -0.035 },
+                      "size": 0.3142,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:flask.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.143, "y": 0.239 },
+                      "size": 0.1719,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:bowlStuff.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.216, "y": 0.22 },
+                      "size": 0.2274,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:drauvenCandleUnlit.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.259, "y": 0.27 },
+                      "size": 0.093,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "scenery:tableWood1.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.191, "y": 0.078 },
+                      "size": 0.2071,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:drauvenBakedWeaponless_haunt2.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.154, "y": 0.312 },
+                      "size": 0.3095,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "scenery:drauven_birdStatue.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.147, "y": 0.342 },
+                      "size": 0.2996,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 1.039, "y": 0.1 },
+                      "size": 0.3301,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "asset:sites/scenery/door_GateDoubleDrauven_closed.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.934, "y": 0.651 },
+                      "size": 0.2409,
+                      "nameTag": "none"
+                    },
+                    {
+                      "assetSpec": "comic:treeBroadleaf3.png",
+                      "role": null,
+                      "focus": "foot",
+                      "anchor": { "x": 0.386, "y": 0.503 },
+                      "size": 0.1901,
+                      "nameTag": "none"
+                    }
+                  ],
+                  "textSlots": [
+                    {
+                      "textSourceFile": "site/branch_drauvenOutpostBuilt",
+                      "textKey": "~05~doFirst_4.test_pass.create_additionalOutcome~panel_001~1_narration",
+                      "style": "narration"
                     }
                   ]
                 }
-              ]
-            }
+              }
+            ]
           }
+        },
+        {
+          "class": "Description",
+          "script": [
+            {
+              "class": "comicNode_Panel",
+              "panel": {
+                "size": "full",
+                "bgAuto": "approachingSite",
+                "actorSlots": [
+                  {
+                    "role": "npc",
+                    "facing": "left",
+                    "equipment": {
+                      "equipItemsById": [ "walkingStaff" ]
+                    },
+                    "focus": "foot",
+                    "anchor": { "x": 0.733, "y": -0.11 },
+                    "size": 0.294,
+                    "nameTag": "bottomRight"
+                  },
+                  {
+                    "role": "participant",
+                    "form": "frame-happy",
+                    "equipment": {
+                      "mode": "removeWeapons",
+                      "equipItemsById": [ "jugClay" ]
+                    },
+                    "focus": "foot",
+                    "anchor": { "x": 0.118, "y": -0.132 },
+                    "size": 0.33,
+                    "nameTag": "none",
+                    "foot": { "rotate": 4.927 }
+                  },
+                  {
+                    "assetSpec": "comic:drauvenBakedWeaponless_stump1.png",
+                    "role": null,
+                    "facing": "left",
+                    "focus": "foot",
+                    "anchor": { "x": 0.308, "y": 0.248 },
+                    "size": 0.2913,
+                    "nameTag": "none"
+                  },
+                  {
+                    "assetSpec": "asset:sites/scenery/drauven_lanternPoleOn.png",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.86, "y": 0.399 },
+                    "size": 0.3326,
+                    "nameTag": "none"
+                  },
+                  {
+                    "assetSpec": "asset:figures/images/drauven2/drauvenStormthroat_bird.png",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.226, "y": 0.54 },
+                    "size": 0.1811,
+                    "nameTag": "none"
+                  },
+                  {
+                    "assetSpec": "scenery:drauven_birdhouses.png",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.201, "y": 0.321 },
+                    "size": 0.297,
+                    "nameTag": "none"
+                  },
+                  {
+                    "assetSpec": "scenery:drauven_birdStatue.png",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.385, "y": 0.314 },
+                    "size": 0.117,
+                    "nameTag": "none"
+                  },
+                  {
+                    "role": "hero",
+                    "form": "frame-sad",
+                    "facing": "left",
+                    "equipment": {},
+                    "focus": "foot",
+                    "anchor": { "x": 0.953, "y": -0.007 },
+                    "size": 0.2789,
+                    "nameTag": "none"
+                  },
+                  {
+                    "assetSpec": "asset:sites/scenery/drauven_lanternPoleOn.png",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.592, "y": 0.293 },
+                    "size": 0.1356,
+                    "nameTag": "none"
+                  },
+                  {
+                    "assetSpec": "comic:comicForeground_flatHillGrassy.png",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.499, "y": 0.104 },
+                    "size": 0.1672,
+                    "nameTag": "none"
+                  },
+                  {
+                    "assetSpec": "asset:sites/scenery/door_GateDoubleDrauven_closed.png",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.511, "y": 0.434 },
+                    "size": 0.1711,
+                    "nameTag": "none"
+                  },
+                  {
+                    "role": "npc2",
+                    "equipment": {},
+                    "anchor": { "x": 0.241, "y": 0.179 },
+                    "size": 0.1374,
+                    "nameTag": "none"
+                  }
+                ],
+                "textSlots": [
+                  {
+                    "textSourceFile": "site/branch_drauvenOutpostBuilt",
+                    "textKey": "~06~doFirst_5.create_additionalOutcome~panel_001~1_narration",
+                    "style": "narration"
+                  },
+                  {
+                    "textSourceFile": "site/branch_drauvenOutpostBuilt",
+                    "textKey": "~06~doFirst_5.create_additionalOutcome~panel_001~2_npc",
+                    "pointerOwner": "npc",
+                    "backgroundColor": { "r": "0.28110707", "g": "0.35047102", "b": "0.3324284", "a": "1" },
+                    "location": "bottomLeft",
+                    "padXFraction": 0.269,
+                    "padYFraction": 0.024,
+                    "widthFraction": 0.5238307,
+                    "shrinkToFitText": true,
+                    "pointerAdjust": { "dX": -40.351494, "dY": 0 }
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     }

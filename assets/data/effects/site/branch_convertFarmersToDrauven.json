@@ -7,8 +7,7 @@
 	"author": "David Bilsky"
 },
 "type": "BRANCH",
-"verb": "MANEUVER",
-"ability": { "icon": "melee", "priority": "1" },
+"ability": { "icon": "melee", "priority": "-1", "suppressNotification": true },
 "targets": [
 	{ "template": "EVENT" },
 	{ "template": "INJECTED_TILE" },

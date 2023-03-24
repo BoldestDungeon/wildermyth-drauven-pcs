@@ -11,11 +11,11 @@
 "verb": "ATTACK",
 "ability": { "priority": "1", "hideOnAbilityBar": true },
 "targets": [
-	{ "template": "SELF" },	
-  {
+	{ "template": "SELF" },
+	{
 		"template": "ADJACENT_ALLY",
 		"choose": "ALL",
-		"range": "self.PERCEPTION * 0.5",
+		"range": "self.PERCEPTION*0.5",
 		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],
@@ -23,7 +23,7 @@
 	{
 		"class": "Test",
 		"value": "[0,100]",
-		"threshold": "self.TENACITY+(40*(self.terrorbirdMaturityDate/(YEAR+(SEASON*0.25)+(DAY_OF_MONTH*0.25*0.03125))))",
+		"threshold": "self.TENACITY+(40*(self.terrorbirdMaturityDate/((YEAR+(SEASON*0.25))+((DAY_OF_MONTH*0.25)*0.03125))))",
 		"onPass": {
 			"class": "DoAll",
 			"outcomes": [
@@ -35,7 +35,7 @@
 					"particles": [
 						{ "script": "Alarm", "setPosition": "self", "delay": -0.5 }
 					],
-					"audioOverride": { "attackStartCue": "Characters/TerrorBird/shriek" },
+					"audioOverride": { "attackStartCue": "Characters/TerrorBird/debuff" },
 					"always": {
 						"class": "DoAll",
 						"outcomes": [
@@ -46,42 +46,40 @@
 				}
 			]
 		},
-    "onFail": {
-      "class": "DoOneRandom",
-      "weightedOutcomes": [
-        {
-          "weight": 0.7,
-          "outcome": null
-        },
-        {
-          "weight": 0.3,
-          "outcome": {
-            "class": "AttackRoll",
-            "attackAnimationType": "ranged",
-            "showAbilityName": "always",
-            "timingOverride": { "beforeAnimationTime": "0" },
-            "particles": [
-              { "script": "Alarm", "setPosition": "self" },
-              {
-                "script": "statusEffectApplyLightning",
-                "setPosition": "self",
-                "setPosition2": "target",
-                "emitterVars": { "colorR": "1", "colorB": "0.02", "colorG": "0.1" }
-              }
-            ],
-            "attackerAnimationOverride": "",
-            "defenderAnimationOverride": "",
-            "markForFlanking": "never",
-            "onHit": {
-              "class": "Aspects",
-              "addAspects": [
-                { "id": "inspiredByMascot", "value": "0.8" }
-              ]
-            }
-          }
-        }
-      ]
-    }
+		"onFail": {
+			"class": "DoOneRandom",
+			"weightedOutcomes": [
+				{ "weight": 0.7 },
+				{
+					"weight": 0.3,
+					"outcome": {
+						"class": "AttackRoll",
+						"attackAnimationType": "ranged",
+						"showAbilityName": "always",
+						"timingOverride": { "beforeAnimationTime": "0" },
+						"particles": [
+							{ "script": "Alarm", "setPosition": "self" },
+							{
+								"script": "statusEffectApplyLightning",
+								"setPosition": "self",
+								"setPosition2": "target",
+								"emitterVars": { "colorB": "0.02", "colorG": "0.1", "colorR": "1" }
+							}
+						],
+						"audioOverride": { "attackStartCue": "Characters/TerrorBird/shriek" },
+						"attackerAnimationOverride": "",
+						"defenderAnimationOverride": "",
+						"markForFlanking": "never",
+						"onHit": {
+							"class": "Aspects",
+							"addAspects": [
+								{ "id": "inspiredByMascot", "value": "0.8" }
+							]
+						}
+					}
+				}
+			]
+		}
 	}
 ]
 }
