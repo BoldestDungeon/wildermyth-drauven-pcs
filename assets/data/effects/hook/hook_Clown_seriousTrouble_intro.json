@@ -647,15 +647,7 @@
 			"test": "hook2.drauven_pc",
 			"createEntity": {
 				"query": {
-					"baseTag": "human",
-					"customHistory": [
-						{
-							"id": "wildermyth-drauven-pcs_xxx.0",
-							"persistOverLegacy": "never",
-							"humanName": "drauvenName",
-							"showInSummary": false
-						}
-					]
+					"baseTag": "human"
 				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },
