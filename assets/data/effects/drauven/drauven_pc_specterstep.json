@@ -6,13 +6,11 @@
         "author": "Bipen",
         "tags": [ "sneaky" ]
     },
-    "type": "ABILITY",
+    "type": "TURN_END",
     "verb": "MANEUVER",
     "ability": {
         "icon": "silkstepCloak",
         "priority": "1",
-		"showInCharacterSheet": false,
-        "extraUI": { "overrideCooldownShown": "2-drauvenDeck_hunter_specterstep_upgrade" }
     },
     "targets": [
 		{
@@ -21,7 +19,6 @@
                 { "id": "drauven_specterstepActive", "forbidden": true },
                 { "id": "wasRevealedThisTurn", "forbidden": true }
             ],
-			"cost": { "class": "ActionPoints", "actionPoints": "free" },
         }
     ],
     "outcomes": [
@@ -36,11 +33,5 @@
             ]
         },
         { "class": "Animate", "target": "self", "script": "figures.enterGrayplane" },
-		{
-		"class": "Aspects",
-		"addAspects": [
-			{ "id": "doneWithTurn", "value": "1" }
-		]
-		}
     ]
 }
