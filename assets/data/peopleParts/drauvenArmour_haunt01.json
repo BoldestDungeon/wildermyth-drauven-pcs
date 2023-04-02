@@ -1,0 +1,54 @@
+{
+	"type": "extra",
+	"extraSlot": "zzz_drauven06_Armour",
+	"requireAspects": ["themePiece_drauven_torso", "hunter"],
+
+	"groups": [
+		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 1, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 2, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 3, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1}
+	],
+  "layers": [
+		{
+			"name": "outfitVariation1",
+			"tint": "secondary", "tintAmount": 0.6,
+			"depth": 1351,
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
+		},
+		{
+			"name": "outfitVariation1_armL_1hand",
+			"tint": "secondary", "tintAmount": 0.6,
+			"depth": 1501,
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_leftArm"],
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "outfitVariation1_armL_2hand",
+			"tint": "secondary", "tintAmount": 0.6,
+			"depth": 1501,
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_leftArm"],
+			"rigMode": "twoHanded"
+		},
+		{
+			"name": "outfitVariation1_armR_1hand",
+			"tint": "secondary", "tintAmount": 0.6,
+			"depth": 3001,
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm"],
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "outfitVariation1_armR_2hand",
+			"tint": "secondary", "tintAmount": 0.6,
+			"depth": 8001,
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm"],
+			"rigMode": "twoHanded"
+		},
+		{
+			"name": "outfitVariation1_shoulderR",
+			"tint": "secondary", "tintAmount": 0.6,
+			"depth": 1351,
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm"]
+		}
+	]
+}
