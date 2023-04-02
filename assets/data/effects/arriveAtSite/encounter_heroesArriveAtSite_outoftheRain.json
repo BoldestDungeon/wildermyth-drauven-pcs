@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "arriveAtSite/encounter_heroesArriveAtSite_outoftheRain",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Douglas Austin"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -27205,10 +27206,10 @@
 	}
 ],
 "expressions": {
+	"difficulty_three": "100",
 	"difficulty_two": "100",
-	"roll_two": "CHARISMA",
 	"roll_three": "TENACITY",
-	"difficulty_three": "100"
+	"roll_two": "CHARISMA"
 },
 "implications": {
 	"generatedTargets": [
