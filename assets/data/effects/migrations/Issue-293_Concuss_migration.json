@@ -1,0 +1,43 @@
+{
+  "id": "Concuss_migration",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "migrations/Issue-293_Concuss_migration",
+    "modId": "wildermyth-drauven-pcs",
+    "author": "psionusoid",
+    "STUB": "Updates character to use the Drauven rig"
+  },
+  "type": "ABILITIES_CHANGED",
+  "targets": [
+    {
+      "template": "SELF",
+      "aspectValues": [
+        { "id": "drauven_pc" }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "Test",
+      "target": "self",
+      "value": "self.drauvenDeck_warrior_concussed",
+      "threshold": "1",
+      "onPass": {
+        "class": "Aspects",
+        "addAspects": [ {"id": "drauvenDeck_common_concussed", "value": 1 }],
+        "removeAspects": [ "drauvenDeck_warrior_concussed" ]
+      }
+    },
+    {
+      "class": "Test",
+      "target": "self",
+      "value": "self.drauvenDeck_warrior_concussed_upgrade",
+      "threshold": "1",
+      "onPass": {
+        "class": "Aspects",
+        "addAspects": [ {"id": "drauvenDeck_common_concussed_upgrade", "value": 1} ],
+        "removeAspects": [ "drauvenDeck_warrior_concussed_upgrade" ]
+      }
+    }
+  ]
+  }
