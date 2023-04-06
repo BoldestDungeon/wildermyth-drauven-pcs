@@ -1,0 +1,30 @@
+{
+"id": "drauven_pc_drauven_guerilla_upgrade_hit",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_drauven_guerilla_upgrade_hit",
+	"author": "Bipen",
+	"tags": [ "okToMarkDone", "sneaky" ]
+},
+"type": "DAMAGE_ROLL",
+"verb": "MANEUVER",
+"ability": { "icon": "zealousLeap", "priority": "1", "showInCharacterSheet": false },
+"targets": [
+	{
+		"template": "SELF",
+	},
+	{
+		"template": "ABILITY",
+		"abilityHasTags": [ "melee" ],
+		"abilityDoesNotHaveTag": "okToMarkDone"
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauven_pc_drauven_guerilla_upgrade_movement", "value": "1", "merge": "max" }
+		]
+	}
+]
+}

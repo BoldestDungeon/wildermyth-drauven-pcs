@@ -256,5 +256,33 @@
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_preparedShotAlsoPoisons",
 	"effects": [ "drauven_pc_preparedShotAlsoPoisons", "removeAtStartOfTurn"]
-}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_hunter_drauven_guerilla",
+	"effects": [ "drauven_pc_drauven_guerilla" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
+},
+{
+	"id": "drauvenDeck_hunter_drauven_guerilla_upgrade",
+	"effects": [ "drauven_pc_drauven_guerilla_upgrade_hit" ],
+	"legacyAbilityChoice": true,
+	"importance": 5,
+	"showInTooltip": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_hunter_drauven_guerilla",
+		"abilityDeckIcon": "thornfang"
+	}
+},
+{
+	"id": "drauvenDeck_hunter_drauven_guerilla_freemove",
+	"effects": [ "drauven_pc_drauven_guerilla_upgrade_movement", "removeAtEndOfTurn" ],
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0.5
+},
+
 ]

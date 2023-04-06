@@ -1,0 +1,42 @@
+{
+"id": "drauven_pc_drauven_guerilla",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_drauven_guerilla",
+	"author": "Bipen",
+	"tags": [ "melee" ]
+},
+"type": "DAMAGE_ROLL_AFTER_ARMOR",
+"ability": {
+	"priority": "1",
+	"customSpecialAnimationEffect": {}
+},
+"targets": [
+	{
+		"template": "SELF",
+	},
+	{ "template": "ABILITY", "abilityHasTag": "melee" }
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"value": "IS_FLANKING",
+		"threshold": "1",
+		"onPass": 
+			{ "class": "Impact", "impact": "2+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)" }
+	},
+	{
+		"class": "Test",
+		"value": "IS_FLANKING",
+		"threshold": "1",
+		"onPass": 
+			{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "hidden", "value": "1", "merge": "max" },
+			{ "id": "okToRemainInStealth", "value": "1" }
+		]
+	}
+	}
+]
+}
