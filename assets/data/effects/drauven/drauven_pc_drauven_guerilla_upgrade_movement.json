@@ -41,7 +41,7 @@
 	{ "class": "MoveEntity", "directlyToTile": "targetTile" },
 	{
 		"class": "Aspects",
-		"removeAspects": [ "drauven_pc_drauven_guerilla_upgrade_movement" ]
+		"removeAspects": [ "drauvenDeck_hunter_drauven_guerilla_freemove" ]
 	}
 ]
 }
