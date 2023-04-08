@@ -1,0 +1,44 @@
+{
+"id": "drauven_pc_drauven_teamwork_upgrade_movement",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_drauven_teamwork_upgrade_movement",
+	"author": "Bipen",
+	"tags": ["sneaky" ]
+},
+"type": "ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "zealousLeap",
+	"category": "research",
+	"priority": "1",
+	"showInCharacterSheet": false
+},
+"targets": [
+	{
+		"template": "SELF",
+		"choose": "BY_SCORE",
+		"scoreFunction": "1-min(1,pinned)",
+		"scoreThreshold": "1",
+	},
+	{
+		"template": "PATH",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"rangeFeedback": "WALKABLE",
+			"rangeFeedback2": "WALKABLE_NO_ATTACK",
+			"suggestionFeedback": "PATH_SEGMENT",
+			"hoverFeedback": "PATH_TARGET"
+		},
+		"range": "SPEED"
+	}
+],
+"outcomes": [
+	{ "class": "MoveEntity", "alongPath": "pathMotion" },
+	{
+		"class": "Aspects",
+		"removeAspects": [ "drauvenDeck_hunter_drauven_teamwork_freemove" ]
+	}
+]
+}

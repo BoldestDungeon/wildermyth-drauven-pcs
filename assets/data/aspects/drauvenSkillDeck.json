@@ -259,32 +259,24 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_hunter_drauven_guerilla",
-	"effects": [ "drauven_pc_drauven_guerilla" ],
+	"id": "drauvenDeck_hunter_drauven_teamwork",
+	"effects": [ "drauven_pc_drauven_teamwork" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
 },
 {
-	"id": "drauvenDeck_hunter_drauven_guerilla_upgrade",
-	"effects": [ "drauven_pc_drauven_guerilla_upgrade_hit" ],
+	"id": "drauvenDeck_hunter_drauven_teamwork_upgrade",
+	"effects": [ "drauven_pc_drauven_teamwork_upgrade_hit" ],
 	"legacyAbilityChoice": true,
 	"importance": 5,
 	"showInTooltip": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_hunter_drauven_guerilla",
+		"upgradeForAbility": "drauvenDeck_hunter_drauven_teamwork",
 		"abilityDeckIcon": "thornfang"
 	}
-},
-{
-	"id": "drauvenDeck_hunter_drauven_guerilla_freemove",
-	"effects": [ "drauven_pc_drauven_guerilla_upgrade_movement", "removeAtEndOfTurn" ],
-	"boostType": "ADVANTAGE",
-	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"removedImportance": 0.5
-},
-
+}
 ]

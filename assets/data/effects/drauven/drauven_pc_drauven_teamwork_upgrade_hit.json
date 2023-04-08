@@ -1,10 +1,10 @@
 {
-"id": "drauven_pc_drauven_guerilla_upgrade_hit",
+"id": "drauven_pc_drauven_teamwork_upgrade_hit",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_drauven_guerilla_upgrade_hit",
+	"sourceFile": "drauven/drauven_pc_drauven_teamwork_upgrade_hit",
 	"author": "Bipen",
-	"tags": [ "okToMarkDone", "sneaky" ]
+	"tags": ["sneaky" ]
 },
 "type": "DAMAGE_ROLL",
 "verb": "MANEUVER",
@@ -23,7 +23,7 @@
 	{
 		"class": "Aspects",
 		"addAspects": [
-			{ "id": "drauvenDeck_hunter_drauven_guerilla_freemove", "value": "1", "merge": "max" }
+			{ "id": "drauvenDeck_hunter_drauven_teamwork_freemove", "value": "1", "merge": "max" }
 		]
 	}
 ]
