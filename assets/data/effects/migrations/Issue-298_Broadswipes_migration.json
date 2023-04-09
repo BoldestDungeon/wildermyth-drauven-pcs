@@ -1,0 +1,77 @@
+{
+"id": "Broadswipes_migration",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "migrations/Issue-298_Broadswipes_migration",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Updates character to use migrated abilities"
+},
+"type": "ABILITIES_CHANGED",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "drauven_pc" }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "self.warriorDeck_broadswipes",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Broadswipes_migration_add",
+						"associatedAspects": [ "drauvenDeck_warrior_ravage" ],
+						"persistOverLegacy": "ability"
+					}
+				},
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Broadswipes_migration_remove",
+						"removeAspects": [ "warriorDeck_broadswipes" ]
+					}
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "self.warriorDeck_broadswipes_upgrade",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Broadswipes_upgrade_migration_add",
+						"associatedAspects": [ "drauvenDeck_warrior_ravage_upgrade" ],
+						"persistOverLegacy": "ability"
+					}
+				},
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Broadswipes_upgrade_migration_remove",
+						"removeAspects": [ "warriorDeck_broadswipes_upgrade" ]
+					}
+				}
+			]
+		}
+	}
+]
+}

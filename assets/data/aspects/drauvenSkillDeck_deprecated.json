@@ -57,6 +57,7 @@
 		"modId": "wildermyth-drauven-pcs",
 		"id": "drauvenDeck_warrior_outrage",
 		"effects": [ "drauven_pc_outrage" ],
+		"abilityForbidAspects": [ "alive" ],
 		"boostType": "ABILITY_CLASS",
 		"legacyAbilityChoice": true,
 		"abilityRequiresOneAspectOf": [ "drauven_pc" ],

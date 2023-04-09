@@ -1,218 +1,218 @@
 {
-"id": "drauven_pc_ravage",
-"info": {
-	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_ravage",
-	"modId": "wildermyth-drauven-pcs",
-	"author": "psionusoid",
-	"tags": [ "melee", "weapon" ]
-},
-"type": "ABILITY",
-"verb": "ATTACK",
-"ability": {
-	"icon": "soulHarvest",
-	"strictlyBetterThan": [ "weaponAttack_basicMelee", "weaponAttack_knockbackMelee", "treeArmBashBoth" ],
-	"priority": "18",
-	"onlyShowIfPossibleInCharacterSheet": true
-},
-"targets": [
-	{
-		"template": "SELF",
-		"cost": { "class": "ActionPoints", "actionPoints": "attack" }
+	"id": "drauven_pc_ravage",
+	"info": {
+		"dataVersion": 1,
+		"sourceFile": "drauven/drauven_pc_ravage",
+		"modId": "wildermyth-drauven-pcs",
+		"author": "psionusoid",
+		"tags": [ "melee", "weapon" ]
 	},
-	{
-		"template": "ADJACENT_ENEMY",
-		"showAnyway": true,
-		"alwaysSelect": true,
-		"aspects": [ "HOSTILE_TARGET", "alive" ],
-		"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
-		"lineOfSight": "LIVE_ENEMIES"
+	"type": "ABILITY",
+	"verb": "ATTACK",
+	"ability": {
+		"icon": "soulHarvest",
+		"strictlyBetterThan": [],
+		"priority": "110",
+		"onlyShowIfPossibleInCharacterSheet": true
 	},
-	{
-		"template": "MELEE_WEAPON",
-		"choose": "ANY",
-		"aspects": [ "weapon", "MAIN_HAND", "melee" ]
-	},
-	{
-		"role": "volunteer",
-		"template": "ADJACENT_ENEMY",
-		"choose": "ALL",
-		"showAnyway": true,
-		"aspects": [ "HOSTILE_TARGET", "alive" ],
-		"alreadyMatchedAs": [ "target" ],
-		"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
-		"lineOfSight": "LIVE_ENEMIES"
-	},
-	{
-		"role": "targetTile",
-		"template": "TILE",
-		"relativeTo": "volunteer",
-		"range": null,
-		"roleMustFit": "target"
-	}
-],
-"outcomes": [
-	{
-		"class": "BranchAbility",
-		"target": "self",
-		"branchType": "standardMelee",
-		"targetRole": "target",
-		"tileRole": "targetTile",
-		"targetingAspects": [
-			{ "id": "noFriendlyFire", "value": "1" }
-		]
-	},
-	{
-		"class": "MatchTarget",
-		"abilityTarget": {
-			"role": "target2",
+	"targets": [
+		{
+			"template": "SELF",
+			"cost": { "class": "ActionPoints", "actionPoints": "attack" }
+		},
+		{
 			"template": "ADJACENT_ENEMY",
-			"choose": "ONE_RANDOM_TRUE",
 			"showAnyway": true,
 			"alwaysSelect": true,
 			"aspects": [ "HOSTILE_TARGET", "alive" ],
-			"notAlreadyMatchedAs": [ "target" ],
 			"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
 			"lineOfSight": "LIVE_ENEMIES"
+		},
+		{
+			"template": "MELEE_WEAPON",
+			"choose": "ANY",
+			"aspects": [ "weapon", "MAIN_HAND", "melee" ]
+		},
+		{
+			"role": "volunteer",
+			"template": "ADJACENT_ENEMY",
+			"choose": "ALL",
+			"showAnyway": true,
+			"aspects": [ "HOSTILE_TARGET", "alive" ],
+			"alreadyMatchedAs": [ "target" ],
+			"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
+			"lineOfSight": "LIVE_ENEMIES"
+		},
+		{
+			"role": "targetTile",
+			"template": "TILE",
+			"relativeTo": "volunteer",
+			"range": null,
+			"roleMustFit": "target"
 		}
-	},
-	{
-		"class": "IfRolesArePresent",
-		"rolesArePresent": [ "target2" ],
-		"then": {
-			"class": "DoAll",
-			"outcomes": [
-				{
-					"class": "MatchTarget",
-					"abilityTarget": {
-						"role": "monster2",
-						"template": "TILE",
-						"relativeTo": "target2",
-						"notAlreadyMatchedAs": [ "targetTile" ],
-						"range": null,
-						"roleMustFit": "target"
-					}
-				},
-				{
-					"class": "BranchAbility",
-					"target": "self",
-					"branchType": "standardMelee",
-					"targetRole": "target2",
-					"tileRole": "monster2",
-					"targetingAspects": [
-						{ "id": "noFriendlyFire", "value": "1" }
-					]
-				}
+	],
+	"outcomes": [
+		{
+			"class": "BranchAbility",
+			"target": "self",
+			"branchType": "standardMelee",
+			"targetRole": "target",
+			"tileRole": "targetTile",
+			"targetingAspects": [
+				{ "id": "noFriendlyFire", "value": "1" }
 			]
-		}
-	},
-	{
-		"class": "Test",
-		"value": "self.drauvenDeck_warrior_ravage_upgrade",
-		"threshold": "1",
-		"onPass": {
-			"class": "DoAll",
-			"outcomes": [
-				{
-					"class": "MatchTarget",
-					"abilityTarget": {
-						"role": "target3",
-						"template": "ADJACENT_ENEMY",
-						"choose": "ONE_RANDOM_TRUE",
-						"showAnyway": true,
-						"alwaysSelect": true,
-						"aspects": [ "HOSTILE_TARGET", "alive" ],
-						"notAlreadyMatchedAs": [ "target", "target2" ],
-						"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
-						"lineOfSight": "LIVE_ENEMIES"
-					}
-				},
-				{
-					"class": "IfRolesArePresent",
-					"rolesArePresent": [ "target3" ],
-					"then": {
-						"class": "DoAll",
-						"outcomes": [
-							{
-								"class": "MatchTarget",
-								"abilityTarget": {
-									"role": "monster3",
-									"template": "TILE",
-									"relativeTo": "target3",
-									"notAlreadyMatchedAs": [ "targetTile", "monster2" ],
-									"range": null,
-									"roleMustFit": "target"
-								}
-							},
-							{
-								"class": "BranchAbility",
-								"target": "self",
-								"branchType": "standardMelee",
-								"targetRole": "target3",
-								"tileRole": "monster3",
-								"targetingAspects": [
-									{ "id": "noFriendlyFire", "value": "1" }
-								]
-							}
+		},
+		{
+			"class": "MatchTarget",
+			"abilityTarget": {
+				"role": "target2",
+				"template": "ADJACENT_ENEMY",
+				"choose": "ONE_RANDOM_TRUE",
+				"showAnyway": true,
+				"alwaysSelect": true,
+				"aspects": [ "HOSTILE_TARGET", "alive" ],
+				"notAlreadyMatchedAs": [ "target" ],
+				"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
+				"lineOfSight": "LIVE_ENEMIES"
+			}
+		},
+		{
+			"class": "IfRolesArePresent",
+			"rolesArePresent": [ "target2" ],
+			"then": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "MatchTarget",
+						"abilityTarget": {
+							"role": "monster2",
+							"template": "TILE",
+							"relativeTo": "target2",
+							"notAlreadyMatchedAs": [ "targetTile" ],
+							"range": null,
+							"roleMustFit": "target"
+						}
+					},
+					{
+						"class": "BranchAbility",
+						"target": "self",
+						"branchType": "standardMelee",
+						"targetRole": "target2",
+						"tileRole": "monster2",
+						"targetingAspects": [
+							{ "id": "noFriendlyFire", "value": "1" }
 						]
 					}
-				}
-			]
-		}
-	},
-	{
-		"class": "Test",
-		"value": "self.drauvenDeck_warrior_ravage_upgrade",
-		"threshold": "1",
-		"onPass": {
-			"class": "DoAll",
-			"outcomes": [
-				{
-					"class": "MatchTarget",
-					"abilityTarget": {
-						"role": "volunteer2",
-						"template": "ADJACENT_ENEMY",
-						"choose": "ONE_RANDOM_TRUE",
-						"showAnyway": true,
-						"alwaysSelect": true,
-						"aspects": [ "HOSTILE_TARGET", "alive" ],
-						"notAlreadyMatchedAs": [ "target", "target2", "target3" ],
-						"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
-						"lineOfSight": "LIVE_ENEMIES"
-					}
-				},
-				{
-					"class": "IfRolesArePresent",
-					"rolesArePresent": [ "volunteer2" ],
-					"then": {
-						"class": "DoAll",
-						"outcomes": [
-							{
-								"class": "MatchTarget",
-								"abilityTarget": {
-									"role": "monster4",
-									"template": "TILE",
-									"relativeTo": "volunteer2",
-									"notAlreadyMatchedAs": [ "targetTile", "monster2", "monster3" ],
-									"range": null,
-									"roleMustFit": "target"
+				]
+			}
+		},
+		{
+			"class": "Test",
+			"value": "self.drauvenDeck_warrior_ravage_upgrade",
+			"threshold": "1",
+			"onPass": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "MatchTarget",
+						"abilityTarget": {
+							"role": "target3",
+							"template": "ADJACENT_ENEMY",
+							"choose": "ONE_RANDOM_TRUE",
+							"showAnyway": true,
+							"alwaysSelect": true,
+							"aspects": [ "HOSTILE_TARGET", "alive" ],
+							"notAlreadyMatchedAs": [ "target", "target2" ],
+							"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
+							"lineOfSight": "LIVE_ENEMIES"
+						}
+					},
+					{
+						"class": "IfRolesArePresent",
+						"rolesArePresent": [ "target3" ],
+						"then": {
+							"class": "DoAll",
+							"outcomes": [
+								{
+									"class": "MatchTarget",
+									"abilityTarget": {
+										"role": "monster3",
+										"template": "TILE",
+										"relativeTo": "target3",
+										"notAlreadyMatchedAs": [ "targetTile", "monster2" ],
+										"range": null,
+										"roleMustFit": "target"
+									}
+								},
+								{
+									"class": "BranchAbility",
+									"target": "self",
+									"branchType": "standardMelee",
+									"targetRole": "target3",
+									"tileRole": "monster3",
+									"targetingAspects": [
+										{ "id": "noFriendlyFire", "value": "1" }
+									]
 								}
-							},
-							{
-								"class": "BranchAbility",
-								"target": "self",
-								"branchType": "standardMelee",
-								"targetRole": "volunteer2",
-								"tileRole": "monster4",
-								"targetingAspects": [
-									{ "id": "noFriendlyFire", "value": "1" }
-								]
-							}
-						]
+							]
+						}
 					}
-				}
-			]
+				]
+			}
+		},
+		{
+			"class": "Test",
+			"value": "self.drauvenDeck_warrior_ravage_upgrade",
+			"threshold": "1",
+			"onPass": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "MatchTarget",
+						"abilityTarget": {
+							"role": "volunteer2",
+							"template": "ADJACENT_ENEMY",
+							"choose": "ONE_RANDOM_TRUE",
+							"showAnyway": true,
+							"alwaysSelect": true,
+							"aspects": [ "HOSTILE_TARGET", "alive" ],
+							"notAlreadyMatchedAs": [ "target", "target2", "target3" ],
+							"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
+							"lineOfSight": "LIVE_ENEMIES"
+						}
+					},
+					{
+						"class": "IfRolesArePresent",
+						"rolesArePresent": [ "volunteer2" ],
+						"then": {
+							"class": "DoAll",
+							"outcomes": [
+								{
+									"class": "MatchTarget",
+									"abilityTarget": {
+										"role": "monster4",
+										"template": "TILE",
+										"relativeTo": "volunteer2",
+										"notAlreadyMatchedAs": [ "targetTile", "monster2", "monster3" ],
+										"range": null,
+										"roleMustFit": "target"
+									}
+								},
+								{
+									"class": "BranchAbility",
+									"target": "self",
+									"branchType": "standardMelee",
+									"targetRole": "volunteer2",
+									"tileRole": "monster4",
+									"targetingAspects": [
+										{ "id": "noFriendlyFire", "value": "1" }
+									]
+								}
+							]
+						}
+					}
+				]
+			}
 		}
+	]
 	}
-]
-}
