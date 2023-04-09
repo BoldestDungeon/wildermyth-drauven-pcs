@@ -89,6 +89,82 @@
 				{ "id": "noFriendlyFire", "value": "1" }
 			]
 		}
+	},
+	{
+		"class": "Test",
+		"value": "self.drauvenDeck_warrior_ravage_upgrade",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "target3",
+						"template": "ADJACENT_ENEMY",
+						"choose": "ONE_RANDOM_TRUE",
+						"showAnyway": true,
+						"alwaysSelect": true,
+						"aspects": [ "HOSTILE_TARGET", "alive" ],
+						"notAlreadyMatchedAs": [ "target", "target2" ],
+						"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
+						"lineOfSight": "LIVE_ENEMIES"
+					}
+				},
+				{
+					"class": "IfRolesArePresent",
+					"rolesArePresent": [ "target3" ],
+					"then": {
+						"class": "BranchAbility",
+						"target": "self",
+						"branchType": "standardMelee",
+						"targetRole": "target3",
+						"tileRole": "targetTile",
+						"targetingAspects": [
+							{ "id": "noFriendlyFire", "value": "1" }
+						]
+					}
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.drauvenDeck_warrior_ravage_upgrade",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "volunteer2",
+						"template": "ADJACENT_ENEMY",
+						"choose": "ONE_RANDOM_TRUE",
+						"showAnyway": true,
+						"alwaysSelect": true,
+						"aspects": [ "HOSTILE_TARGET", "alive" ],
+						"notAlreadyMatchedAs": [ "target", "target2", "target3" ],
+						"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
+						"lineOfSight": "LIVE_ENEMIES"
+					}
+				},
+				{
+					"class": "IfRolesArePresent",
+					"rolesArePresent": [ "volunteer2" ],
+					"then": {
+						"class": "BranchAbility",
+						"target": "self",
+						"branchType": "standardMelee",
+						"targetRole": "volunteer2",
+						"tileRole": "targetTile",
+						"targetingAspects": [
+							{ "id": "noFriendlyFire", "value": "1" }
+						]
+					}
+				}
+			]
+		}
 	}
 ]
 }
