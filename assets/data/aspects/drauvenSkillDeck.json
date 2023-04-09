@@ -246,6 +246,28 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_warrior_ravage",
+	"effects": [ "drauven_pc_ravage" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "soulHarvest" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_warrior_ravage_upgrade",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_warrior_ravage",
+		"abilityDeckIcon": "soulHarvest"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_warrior_tailslap",
 	"effects": [ "drauven_pc_tailslap" ],
 	"boostType": "ABILITY_CLASS",
