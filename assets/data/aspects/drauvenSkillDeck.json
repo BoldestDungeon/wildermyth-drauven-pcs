@@ -267,16 +267,14 @@
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
 },
 {
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_hunter_drauven_teamwork_upgrade",
-	"effects": [ "drauven_pc_drauven_teamwork_upgrade_hit" ],
 	"legacyAbilityChoice": true,
-	"importance": 5,
-	"showInTooltip": true,
+	"effects": [ "drauven_pc_teamwork_shred" ],
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": {
-		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_hunter_drauven_teamwork",
-		"abilityDeckIcon": "thornfang"
-	}
+	"info": { 
+	"abilityDeckUsage": "upgrade",
+	"upgradeForAbility": "drauvenDeck_hunter_drauven_teamwork",
+	"abilityDeckIcon": "thornfang" }
 }
 ]

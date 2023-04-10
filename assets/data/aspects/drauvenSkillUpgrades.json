@@ -26,11 +26,4 @@
     "lifespan": "all",
     "info": { "abilityDeckIcon": "flyFriend" }
   },
-  {
-	"id": "drauvenDeck_hunter_drauven_teamwork_freemove",
-	"effects": [ "drauven_pc_drauven_teamwork_upgrade_movement", "removeAtEndOfTurn" ],
-	"boostType": "ADVANTAGE",
-	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"removedImportance": 0.5
-}
 ]
