@@ -11,7 +11,7 @@
 "verb": "ATTACK",
 "ability": {
 	"icon": "soulHarvest",
-	"strictlyBetterThan": [ "weaponAttack_basicMelee" ],
+	"strictlyBetterThan": [ "weaponAttack_basicMelee", "weaponAttack_knockbackMelee", "treeArmBashBoth" ],
 	"priority": "18",
 	"onlyShowIfPossibleInCharacterSheet": true
 },
