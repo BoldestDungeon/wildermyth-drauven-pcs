@@ -80,13 +80,29 @@
 		"class": "IfRolesArePresent",
 		"rolesArePresent": [ "target2" ],
 		"then": {
-			"class": "BranchAbility",
-			"target": "self",
-			"branchType": "standardMelee",
-			"targetRole": "target2",
-			"tileRole": "targetTile",
-			"targetingAspects": [
-				{ "id": "noFriendlyFire", "value": "1" }
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "monster2",
+						"template": "TILE",
+						"relativeTo": "target2",
+						"notAlreadyMatchedAs": [ "targetTile" ],
+						"range": null,
+						"roleMustFit": "target"
+					}
+				},
+				{
+					"class": "BranchAbility",
+					"target": "self",
+					"branchType": "standardMelee",
+					"targetRole": "target2",
+					"tileRole": "monster2",
+					"targetingAspects": [
+						{ "id": "noFriendlyFire", "value": "1" }
+					]
+				}
 			]
 		}
 	},
@@ -115,13 +131,29 @@
 					"class": "IfRolesArePresent",
 					"rolesArePresent": [ "target3" ],
 					"then": {
-						"class": "BranchAbility",
-						"target": "self",
-						"branchType": "standardMelee",
-						"targetRole": "target3",
-						"tileRole": "targetTile",
-						"targetingAspects": [
-							{ "id": "noFriendlyFire", "value": "1" }
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "MatchTarget",
+								"abilityTarget": {
+									"role": "monster3",
+									"template": "TILE",
+									"relativeTo": "target3",
+									"notAlreadyMatchedAs": [ "targetTile", "monster2" ],
+									"range": null,
+									"roleMustFit": "target"
+								}
+							},
+							{
+								"class": "BranchAbility",
+								"target": "self",
+								"branchType": "standardMelee",
+								"targetRole": "target3",
+								"tileRole": "monster3",
+								"targetingAspects": [
+									{ "id": "noFriendlyFire", "value": "1" }
+								]
+							}
 						]
 					}
 				}
@@ -153,13 +185,29 @@
 					"class": "IfRolesArePresent",
 					"rolesArePresent": [ "volunteer2" ],
 					"then": {
-						"class": "BranchAbility",
-						"target": "self",
-						"branchType": "standardMelee",
-						"targetRole": "volunteer2",
-						"tileRole": "targetTile",
-						"targetingAspects": [
-							{ "id": "noFriendlyFire", "value": "1" }
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "MatchTarget",
+								"abilityTarget": {
+									"role": "monster4",
+									"template": "TILE",
+									"relativeTo": "volunteer2",
+									"notAlreadyMatchedAs": [ "targetTile", "monster2", "monster3" ],
+									"range": null,
+									"roleMustFit": "target"
+								}
+							},
+							{
+								"class": "BranchAbility",
+								"target": "self",
+								"branchType": "standardMelee",
+								"targetRole": "volunteer2",
+								"tileRole": "monster4",
+								"targetingAspects": [
+									{ "id": "noFriendlyFire", "value": "1" }
+								]
+							}
 						]
 					}
 				}
