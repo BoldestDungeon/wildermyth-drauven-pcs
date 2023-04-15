@@ -19,14 +19,66 @@
 	},
 	{
 		"template": "ADJACENT_ENEMY",
-		"choose": "ANY",
-		"missionFeedback": null,
+		"choose": "ALL",
+		"showAnyway": true,
+		"missionFeedback": {
+			"orientTo": "self",
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_SUGGESTION",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
-		"range": "(1.6+(self.drauvenDeck_warrior_tailslap_upgrade*1.5))+self.BONUS_RANGE",
-		"lineOfSight": "TERRAIN_ONLY"
+		"range": "(1.6+(self.drauvenDeck_common_tailslap_upgrade*1.5))+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"relativeToLocation": "targetTile"	
+	},
+	{
+		"template": "TILE",
+		"choose": "ALL",
+		"showAnyway": true,
+		"missionFeedback": {
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+			"applyRoleFootprint": "target",
+			"showMovementFeedback": true
+		},
+		"pathFrom": "self",
+		"pathTo": "target",
+		"matchSpecial": "knockBackDestination",
+		"relativeTo": "target",
+		"range": "1.6+((self.raw.POTENCY*0.5)*(1+self.drauvenDeck_common_tailslap_upgrade))",
+		"lineOfSight": "ANY_COVER",
+		"tileFilter": "parentLocationOrValidMoveEnd",
+		"roleMustFit": "target"
 	}
 ],
 "outcomes": [
+	{
+		"class": "MatchTarget",
+		"target": "target",
+		"abilityTarget": {
+			"template": "TILE",
+			"showAnyway": true,
+			"missionFeedback": {
+				"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+				"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+				"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+				"applyRoleFootprint": "defender",
+				"showMovementFeedback": true
+			},
+			"pathFrom": "self",
+			"pathTo": "defender",
+			"matchSpecial": "knockBackDestination",
+			"relativeTo": "target",
+			"range": "1.6+((self.raw.POTENCY*0.5)*(1+self.drauvenDeck_common_tailslap_upgrade))",
+			"lineOfSight": "ANY_COVER",
+			"tileFilter": "parentLocationOrValidMoveEnd",
+			"roleMustFit": "defender"
+		}
+	},
 	{
 		"class": "AttackRoll",
 		"attackAnimationType": "melee",
@@ -44,18 +96,26 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1+self.BONUS_DAMAGE)+(2*self.drauvenDeck_warrior_tailslap_upgrade)"
+					"amount": "(1+self.PHYSICAL_DAMAGE_BONUS)+(2*self.drauvenDeck_common_tailslap_upgrade)"
 				},
 				{
 					"class": "MatchTarget",
 					"STUB": "Range will calculate half potency, or if the Upgrade is taken will calculate based on full potency.",
 					"abilityTarget": {
 						"template": "TILE",
+						"showAnyway": true,
+						"missionFeedback": {
+							"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+							"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+							"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+							"applyRoleFootprint": "defender",
+							"showMovementFeedback": true
+						},
 						"pathFrom": "self",
 						"pathTo": "defender",
 						"matchSpecial": "knockBackDestination",
 						"relativeTo": "defender",
-						"range": "1.6+((self.raw.POTENCY*0.5)+((self.drauvenDeck_warrior_tailslap_upgrade*self.raw.POTENCY)/2))",
+						"range": "1.6+((self.raw.POTENCY*0.5)*(1+self.drauvenDeck_common_tailslap_upgrade))",
 						"lineOfSight": "ANY_COVER",
 						"tileFilter": "parentLocationOrValidMoveEnd",
 						"roleMustFit": "defender"
