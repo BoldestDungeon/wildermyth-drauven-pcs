@@ -1,0 +1,77 @@
+{
+"id": "Tailslap_migration",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "migrations/Issue-300_Tailslap_migration",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Updates character to use migrated abilities"
+},
+"type": "ABILITIES_CHANGED",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "drauven_pc" }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "self.drauvenDeck_warrior_tailslap",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Tailslap_migration_add",
+						"associatedAspects": [ "drauvenDeck_common_tailslap" ],
+						"persistOverLegacy": "ability"
+					}
+				},
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Tailslap_migration_remove",
+						"removeAspects": [ "drauvenDeck_warrior_tailslap" ]
+					}
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "self.drauvenDeck_warrior_tailslap_upgrade",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Tailslap_upgrade_migration_add",
+						"associatedAspects": [ "drauvenDeck_common_tailslap_upgrade" ],
+						"persistOverLegacy": "ability"
+					}
+				},
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Tailslap_upgrade_migration_remove",
+						"removeAspects": [ "drauvenDeck_warrior_tailslap_upgrade" ]
+					}
+				}
+			]
+		}
+	}
+]
+}
