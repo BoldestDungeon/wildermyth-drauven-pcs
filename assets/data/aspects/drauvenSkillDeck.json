@@ -2,15 +2,16 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_common_battleyell",
-	"effects": [ "drauven_pc_battleyell" ],
+	"effects": [ "drauven_pc_battleyell", "Battleyell_migration" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "common", "abilityDeckIcon": "bloodrage" }
+	"info": { "abilityDeckUsage": "none", "abilityDeckIcon": "bloodrage" }
 },
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_common_battleyell_upgrade",
+	"effects": [ "attackActionWithTagToSwiftAction|drauven_pc_battleyell" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
@@ -218,6 +219,27 @@
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_mystic_fireshot",
 		"abilityDeckIcon": "fireleash"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_warrior_battleyell",
+	"effects": [ "drauven_pc_battleyell" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "bloodrage" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_warrior_battleyell_upgrade",
+	"effects": [ "attackActionWithTagToSwiftAction|drauven_pc_battleyell" ],
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_warrior_battleyell",
+		"abilityDeckIcon": "bloodrage"
 	}
 },
 {
