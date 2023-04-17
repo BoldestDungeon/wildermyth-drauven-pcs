@@ -1,0 +1,11 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "commonDeck_aid",
+	"effects": [ "commonAid" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "common", "abilityDeckIcon": "aid" }
+}
+]
