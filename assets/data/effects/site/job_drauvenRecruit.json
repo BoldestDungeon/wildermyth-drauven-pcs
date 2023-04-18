@@ -56,7 +56,6 @@
 				"outcome": { "class": "Branch", "branchEvent": "job_drauvenRecruit_branch" }
 			},
 			{
-				"weight": 10,
 				"outcome": { "class": "Branch", "branchEvent": "job_inspiredDrauvenHero_branch" }
 			}
 		]

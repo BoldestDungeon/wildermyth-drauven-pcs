@@ -32,8 +32,8 @@
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
-		"fromRoles": ["participant"],
 		"scoreFunction": "LEADER",
+		"fromRoles": [ "participant" ],
 		"aspectValues": [
 			{ "id": "nonhuman", "forbidden": true }
 		]
@@ -43,8 +43,8 @@
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
-		"fromRoles": ["participant"],
 		"scoreFunction": "fluentInDruvwail",
+		"fromRoles": [ "participant" ],
 		"notAlreadyMatchedAs": [ "leader" ]
 	},
 	{
@@ -52,8 +52,8 @@
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
 		"choose": "BY_SCORE_OPTIONAL",
-		"fromRoles": ["participant"],
 		"scoreFunction": "CHARISMA",
+		"fromRoles": [ "participant" ],
 		"notAlreadyMatchedAs": [ "leader", "friend" ]
 	},
 	{ "role": "foes", "template": "THREAT", "choose": "ONE_RANDOM_TRUE" },

@@ -28,6 +28,16 @@
 		"sameTileAs": "self"
 	},
 	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "participant" ],
+		"aspectValues": [],
+		"notAlreadyMatchedAs": []
+	},
+	{
 		"role": "leader",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
@@ -36,25 +46,8 @@
 		"fromRoles": [ "participant" ],
 		"aspectValues": [
 			{ "id": "nonhuman", "forbidden": true }
-		]
-	},
-	{
-		"role": "friend",
-		"template": "PICK_BY_SCORE",
-		"type": "HERO",
-		"choose": "BY_SCORE_OPTIONAL",
-		"scoreFunction": "fluentInDruvwail",
-		"fromRoles": [ "participant" ],
-		"notAlreadyMatchedAs": [ "leader" ]
-	},
-	{
-		"role": "hero",
-		"template": "PICK_BY_SCORE",
-		"type": "HERO",
-		"choose": "BY_SCORE_OPTIONAL",
-		"scoreFunction": "CHARISMA",
-		"fromRoles": [ "participant" ],
-		"notAlreadyMatchedAs": [ "leader", "friend" ]
+		],
+		"notAlreadyMatchedAs": [ "hero" ]
 	},
 	{ "role": "foes", "template": "THREAT", "choose": "ONE_RANDOM_TRUE" },
 	{
@@ -135,13 +128,14 @@
 								"actorSlots": [
 									{
 										"role": "hero",
-										"equipment": {}
+										"equipment": {},
+										"head": { "scaleY": 1 }
 									}
 								],
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_003~1_participant",
+										"textKey": "~01~prompt~panel_002.(leader_exists)~1_participant",
 										"pointerOwner": "participant"
 									}
 								]
@@ -163,7 +157,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_004~1_participant",
+										"textKey": "~01~prompt~panel_003.(leader_exists)~1_participant",
 										"pointerOwner": "participant"
 									}
 								]
@@ -210,7 +204,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_005~1_speech",
+										"textKey": "~01~prompt~panel_004.(leader_exists)~1_speech",
 										"fallbackSlotOwner": 0,
 										"shrinkToFitText": true,
 										"pointerAdjust": {
@@ -247,8 +241,9 @@
 									{
 										"role": "hero",
 										"equipment": {},
-										"anchor": { "x": 0.165, "y": 0.465 },
-										"size": 0.3645,
+										"anchor": { "x": 0.156, "y": 0.515 },
+										"size": 0.4272,
+										"drawDepth": -1,
 										"nameTag": "none"
 									},
 									{
@@ -279,14 +274,14 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_007~1_leader",
+										"textKey": "~01~prompt~panel_006.(leader_exists)~1_leader",
 										"pointerOwner": "leader",
 										"shrinkToFitText": true,
 										"pointerAdjust": { "dX": -104.6207, "dY": -8.482759 }
 									},
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_007~2_participant",
+										"textKey": "~01~prompt~panel_006.(leader_exists)~2_participant",
 										"pointerOwner": "participant",
 										"shrinkToFitText": true
 									}
@@ -316,7 +311,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_008~1_volunteer",
+										"textKey": "~01~prompt~panel_007.(leader_exists)~1_volunteer",
 										"pointerOwner": "volunteer",
 										"shrinkToFitText": true
 									}
@@ -349,7 +344,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_009~1_volunteer",
+										"textKey": "~01~prompt~panel_008.(leader_exists)~1_volunteer",
 										"pointerOwner": "volunteer",
 										"shrinkToFitText": true
 									}
@@ -367,7 +362,7 @@
 										"equipment": {},
 										"anchor": { "x": 0.18, "y": 0.5 },
 										"size": 0.4516,
-										"drawDepth": 2.5,
+										"drawDepth": 1,
 										"nameTag": "none"
 									},
 									{
@@ -398,7 +393,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_010~1_volunteer",
+										"textKey": "~01~prompt~panel_009.(leader_exists)~1_volunteer",
 										"pointerOwner": "volunteer"
 									}
 								]
@@ -414,7 +409,7 @@
 										"form": "frame-interested",
 										"equipment": {},
 										"anchor": { "x": 0.221, "y": 0.412 },
-										"drawDepth": 3
+										"drawDepth": 1
 									},
 									{
 										"role": "leader",
@@ -436,16 +431,6 @@
 								"showNameTags": false,
 								"bg": "comicBG_barnInside.jpg",
 								"actorSlots": [
-									{
-										"role": "leader",
-										"form": "frame-talk",
-										"facing": "left",
-										"equipment": { "mode": "removeWeapons" },
-										"anchor": { "x": 0.83, "y": 0.897 },
-										"size": 0.2963,
-										"nameTag": "none",
-										"head": { "rotate": -39.619 }
-									},
 									{
 										"assetSpec": "comic:cageFairBack.png",
 										"role": null,
@@ -472,20 +457,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_001.(leader_exists)~1_leader",
-										"pointerOwner": "leader",
-										"shrinkToFitText": true,
-										"pointerAdjust": {
-											"rotate": 42.109016,
-											"dX": -23.563213,
-											"dY": 31.103456,
-											"pointerOrientV": "up",
-											"forcePointerImage": "speechMedium"
-										}
-									},
-									{
-										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_001.(leader_exists)~2_narration",
+										"textKey": "~01~prompt~panel_011.(leader_is_missing)~1_narration",
 										"style": "narration",
 										"padYFraction": 0.901
 									}
@@ -505,8 +477,8 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_003~1_participant",
-										"pointerOwner": "participant"
+										"textKey": "~01~prompt~panel_012.(leader_is_missing)~1_hero",
+										"pointerOwner": "hero"
 									}
 								]
 							}
@@ -527,7 +499,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_004~1_participant",
+										"textKey": "~01~prompt~panel_013.(leader_is_missing)~1_participant",
 										"pointerOwner": "participant"
 									}
 								]
@@ -548,15 +520,6 @@
 										"nameTag": "none"
 									},
 									{
-										"role": "leader",
-										"form": "frame-interested",
-										"facing": "left",
-										"equipment": {},
-										"anchor": { "x": 0.789, "y": 0.843 },
-										"size": 0.2699,
-										"head": { "scaleY": -1 }
-									},
-									{
 										"role": "hero",
 										"form": "frame-interested",
 										"equipment": {},
@@ -574,7 +537,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_005~1_speech",
+										"textKey": "~01~prompt~panel_014.(leader_is_missing)~1_speech",
 										"fallbackSlotOwner": 0,
 										"shrinkToFitText": true,
 										"pointerAdjust": {
@@ -612,15 +575,7 @@
 										"role": "hero",
 										"equipment": {},
 										"anchor": { "x": 0.165, "y": 0.465 },
-										"size": 0.3645,
-										"nameTag": "none"
-									},
-									{
-										"role": "leader",
-										"equipment": {},
-										"anchor": { "x": 0.32, "y": 0.5 },
-										"size": 0.4157,
-										"drawDepth": 0,
+										"size": 0.4179,
 										"nameTag": "none"
 									},
 									{
@@ -643,15 +598,8 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_007~1_leader",
-										"pointerOwner": "leader",
-										"shrinkToFitText": true,
-										"pointerAdjust": { "dX": -104.6207, "dY": -8.482759 }
-									},
-									{
-										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_007~2_participant",
-										"pointerOwner": "participant",
+										"textKey": "~01~prompt~panel_016.(leader_is_missing)~1_hero",
+										"pointerOwner": "hero",
 										"shrinkToFitText": true
 									}
 								]
@@ -680,7 +628,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_008~1_volunteer",
+										"textKey": "~01~prompt~panel_017.(leader_is_missing)~1_volunteer",
 										"pointerOwner": "volunteer",
 										"shrinkToFitText": true
 									}
@@ -713,7 +661,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_009~1_volunteer",
+										"textKey": "~01~prompt~panel_018.(leader_is_missing)~1_volunteer",
 										"pointerOwner": "volunteer",
 										"shrinkToFitText": true
 									}
@@ -732,14 +680,6 @@
 										"anchor": { "x": 0.18, "y": 0.5 },
 										"size": 0.4516,
 										"drawDepth": 2.5,
-										"nameTag": "none"
-									},
-									{
-										"role": "leader",
-										"form": "frame-interested",
-										"equipment": {},
-										"anchor": { "x": 0.329, "y": 0.519 },
-										"size": 0.5412,
 										"nameTag": "none"
 									},
 									{
@@ -762,7 +702,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
-										"textKey": "~01~prompt~panel_010~1_volunteer",
+										"textKey": "~01~prompt~panel_019.(leader_is_missing)~1_volunteer",
 										"pointerOwner": "volunteer"
 									}
 								]
@@ -775,18 +715,10 @@
 								"actorSlots": [
 									{
 										"role": "hero",
-										"form": "frame-interested",
+										"form": "frame-happy",
 										"equipment": {},
 										"anchor": { "x": 0.221, "y": 0.412 },
 										"drawDepth": 3
-									},
-									{
-										"role": "leader",
-										"form": "frame-skeptical",
-										"equipment": {},
-										"anchor": { "x": 0.82, "y": 0.431 },
-										"nameTag": "bottomRight",
-										"head": { "scaleY": -1 }
 									}
 								]
 							}
