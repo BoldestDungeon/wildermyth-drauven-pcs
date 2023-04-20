@@ -127,5 +127,10 @@
 	"STUB": "Used for the Drauven Camp Defense, makes whoever has it spawn into missions take a silent amount of damage at the start of the mission.",
 	"effects": [ "drauven_pc_random_spawn_damage" ],
 	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "eligibleForTerrorbirdTiding",
+	"STUB": "Used for showing tiding when Terrorbird grows up over an interval"
 }
 ]
