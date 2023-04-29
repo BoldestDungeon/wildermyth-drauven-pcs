@@ -10,6 +10,6 @@
 	}
 ],
 "outcomes": [
-	{ "class": "Impact", "impact": "1" }
+	{ "class": "Impact", "impact": "self.POTENCY*0.5" }
 ]
 }
