@@ -1,0 +1,36 @@
+{
+"id": "drauven_pc_drauven_teamwork",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_drauven_teamwork",
+	"author": "Bipen",
+	"tags": [ "melee" ]
+},
+"type": "DAMAGE_ROLL",
+"ability": {
+	"priority": "1",
+	"customSpecialAnimationEffect": {}
+},
+"targets": [
+	{ 
+	"template": "DEFENDER" 
+	},
+	{
+		"template": "SELF",
+	},
+	{ "template": "ABILITY", "abilityHasTag": "melee" },
+],
+"outcomes": [
+    {
+        "class": "Test",
+        "value": "IS_FLANKING",
+        "threshold": "1",
+        "onPass": {
+          "class": "DoAll",
+          "outcomes": [
+            { "class": "Impact", "impact": "2+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)" }
+        ]
+      }       
+    }
+  ]
+}
