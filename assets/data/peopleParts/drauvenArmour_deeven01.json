@@ -1,7 +1,7 @@
 {
 	"type": "extra",
 	"extraSlot": "zzz_drauven06_Armour",
-	"requireAspects": ["themePiece_drauven_torso", "mystic"],
+	"requireAspects": ["themePiece_drauven_torso", "mystic", "rigOverride|Drauven"],
 
 	"groups": [
 		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
@@ -11,10 +11,48 @@
 	],
   "layers": [
 		{
-			"name": "outfitVariation1",
-			"tint": "secondary", "tintAmount": 0.6,
-			"depth": 1351,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
+			"name": "OutfitVariation_Cape_Behind_Primary",
+			"tint": "primary",
+			"tintAmount": 0.2,
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 500
+		},
+		{
+			"name": "OutfitVariation_Cape_Front_Primary",
+			"tint": "primary",
+			"tintAmount": 0.2,
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 3565
+		},
+		{
+			"name": "OutfitVariation_Cape_Front_Detail_Secondary",
+			"tint": "secondary",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 3566
+		},
+		{
+			"name": "OutfitVariation_Cape_Front_Detail_Primary",
+			"tint": "primary",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 3567
+		},
+		{
+			"name": "OutfitVariation_Cape_Front_Texture_Primary",
+			"tint": "primary",
+			"tintAmount": 0.7,
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 3568
+		},
+		{
+			"name": "OutfitVariation_Cape_Front_Untinted",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 3569
 		}
 	]
 }
