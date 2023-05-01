@@ -11,10 +11,62 @@
 	],
   "layers": [
 		{
-			"name": "outfitVariation2",
-			"tint": "secondary", "tintAmount": 0.6,
-			"depth": 1351,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
+			"name": "OutfitVariation_Feathercloak_Back_Primary",
+			"tint": "primary",
+			"tintAmount": 0.2,
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 50
+		},
+		{
+			"name": "OutfitVariation_Feathercloak_Back_Secondary",
+			"tint": "secondary",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 51
+		},
+		{
+			"name": "OutfitVariation_Feathercloak_Back_Texture",
+			"tint": "primary",
+			"tintAmount": 0.2,
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 52
+		},
+		{
+			"name": "OutfitVariation_Feathercloak_Back_Untinted",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 53
+		},
+		{
+			"name": "OutfitVariation_Feathercloak_Front_Primary",
+			"tint": "primary",
+			"tintAmount": 0.8,
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 3565
+		},
+		{
+			"name": "OutfitVariation_Feathercloak_Front_Secondary",
+			"tint": "secondary",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 3566
+		},
+		{
+			"name": "OutfitVariation_Feathercloak_Front_Texture_Primary",
+			"tint": "primary",
+			"tintAmount": 0.7,
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 3568
+		},
+		{
+			"name": "OutfitVariation_Feathercloak_Front_Untinted",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 3569
 		}
 	]
 }

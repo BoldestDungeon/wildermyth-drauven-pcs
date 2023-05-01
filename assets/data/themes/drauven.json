@@ -30,6 +30,12 @@
 					"depth": 1350
 				},
 				{
+					"name": "armor_base_Primary",
+					"tint": "primary", "tintAmount": 0.6,
+					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenGear_clothes" ],
+					"depth": 1350
+				},
+				{
 					"name": "armor_base_over",
 					"tint": "primary", "tintAmount": 0.6,
 					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenGear_clothes" ],
