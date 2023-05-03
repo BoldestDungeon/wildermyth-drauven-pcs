@@ -16,14 +16,14 @@
 			"tintAmount": 0.2,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 50
+			"depth": 70
 		},
 		{
 			"name": "OutfitVariation_Feathercloak_Back_Secondary",
 			"tint": "secondary",
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 51
+			"depth": 71
 		},
 		{
 			"name": "OutfitVariation_Feathercloak_Back_Texture",
@@ -31,13 +31,13 @@
 			"tintAmount": 0.2,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 52
+			"depth": 72
 		},
 		{
 			"name": "OutfitVariation_Feathercloak_Back_Untinted",
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 53
+			"depth": 73
 		},
 		{
 			"name": "OutfitVariation_Feathercloak_Front_Primary",
