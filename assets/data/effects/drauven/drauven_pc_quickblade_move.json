@@ -1,8 +1,8 @@
 {
-"id": "drauven_pc_drauven_unuse_ability_movement",
+"id": "drauven_pc_quickblade_move",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_drauven_unuse_ability_movement",
+	"sourceFile": "drauven/drauven_pc_quickblade_move",
 	"author": "Bipen",
 	"tags": ["sneaky" ]
 },
@@ -38,7 +38,7 @@
 	{ "class": "MoveEntity", "alongPath": "pathMotion" },
 	{
 		"class": "Aspects",
-		"removeAspects": [ "drauvenDeck_hunter_drauven_teamwork_freemove" ]
+		"removeAspects": [ "drauvenDeck_hunter_quickblade_move" ]
 	}
 ]
 }
