@@ -57,6 +57,13 @@
 					"tint": "skin", "tintAmount": 0.5,
 					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
 					"depth": 101
+				},
+
+				{
+					"name": "skinBlueTattoo_tail",
+					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_tail"],
+					"ifOwnerAspect": "themeSkin_spellTouchedTattoo",
+					"depth": 102
 				}
 			]
 		},
