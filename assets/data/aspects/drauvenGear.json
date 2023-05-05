@@ -125,15 +125,8 @@
       {
         "name": "armor_base",
         "tint": "primary", "tintAmount": 0.6,
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "hunter", "drauvenSkin_suppressClothes", "mystic"],
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes", "mystic", "hunter"],
         "depth": 1350
-      },
-      {
-        "name": "armor_base_over",
-        "tint": "primary", "tintAmount": 0.6,
-        "ifOwnerAspect": "hunter",
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes", "mystic"],
-        "depth": 1399
       },
 
       {
@@ -164,7 +157,66 @@
         "ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
         "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
         "depth": 1353
+      },
+
+      {
+        "name": "armor_base_Primary",
+        "tint": "primary",
+        "tintAmount": 1,
+        "ifOwnerAspects": ["rigOverride|Drauven", "hunter"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1350
+      },
+      {
+        "name": "armor_base_Texture_Primary",
+        "tint": "primary",
+        "tintAmount": 0.7,
+        "ifOwnerAspects": ["rigOverride|Drauven", "hunter"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1352
+      },
+      {
+        "name": "armor_base_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "hunter"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1353
+      },
+      {
+        "name": "Haunt_Belt_Secondary",
+        "tint": "secondary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "hunter"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_BELT"],
+        "depth": 3560
+      },
+      {
+        "name": "Haunt_Belt_Texture_Secondary",
+        "tint": "secondary",
+        "tintAmount": 0.7,
+        "ifOwnerAspects": ["rigOverride|Drauven", "hunter"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_BELT"],
+        "depth": 3561
+      },
+      {
+        "name": "Haunt_Belt_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "hunter"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_BELT"],
+        "depth": 3562
+      },
+      {
+        "name": "Haunt_Pouches_Secondary",
+        "tint": "secondary",
+        "tintAmount": 0.5,
+        "ifOwnerAspects": ["rigOverride|Drauven", "hunter"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_TALISMAN"],
+        "depth": 2950
+      },
+      {
+        "name": "Haunt_Pouches_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "hunter"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_TALISMAN"],
+        "depth": 2951
       }
+
     ]
   },
 

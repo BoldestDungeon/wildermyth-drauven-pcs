@@ -11,11 +11,21 @@
 	],
   "layers": [
 		{
-			"name": "outfitVariation1",
-			"tint": "secondary", "tintAmount": 0.6,
-			"depth": 1351,
+			"name": "OutfitVariation_Feathersteel_Pauldron_Untinted",
+			"depth": 3581,
 			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
 		},
+		{
+			"name": "OutfitVariation_Feathersteel_ArmR_Upper_Untinted",
+			"depth": 3580,
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm"]
+		},
+		{
+			"name": "OutfitVariation_Feathersteel_Straps_Untinted",
+			"depth": 1340,
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "slotFilled_AUGMENT_STRAP"]
+		},
+
 		{
 			"name": "outfitVariation1_armL_1hand",
 			"tint": "secondary", "tintAmount": 0.6,
