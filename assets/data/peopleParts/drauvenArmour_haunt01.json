@@ -13,7 +13,7 @@
 		{
 			"name": "OutfitVariation_Feathersteel_Pauldron_Untinted",
 			"depth": 3581,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "slotFilled_AUGMENT_PAULDRON"]
 		},
 		{
 			"name": "OutfitVariation_Feathersteel_ArmR_Upper_Untinted",
@@ -23,7 +23,7 @@
 		{
 			"name": "OutfitVariation_Feathersteel_Straps_Untinted",
 			"depth": 1340,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "slotFilled_AUGMENT_STRAP"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_STRAP"]
 		},
 
 		{

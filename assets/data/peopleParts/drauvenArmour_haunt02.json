@@ -13,12 +13,14 @@
 		{
 			"name": "OutfitVariation_Shouldersash_Back_Secondary",
 			"tint": "secondary",
-			"depth": 500
+			"depth": 500,
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Back_Texture_Secondary",
 			"tint": "secondary",
-			"depth": 501
+			"depth": 501,
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Back_Untinted",
@@ -28,24 +30,24 @@
 			"name": "OutfitVariation_Shouldersash_Front_Secondary",
 			"tint": "secondary",
 			"depth": 1340,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Front_Texture_Secondary",
 			"tint": "secondary",
 			"depth": 1341,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Front_Highlight_Secondary",
 			"tint": "secondary",
 			"depth": 1342,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Front_Untinted",
 			"depth": 1343,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Strap_Untinted",
@@ -55,7 +57,7 @@
 		{
 			"name": "OutfitVariation_Shouldersash_Pauldron_Untinted",
 			"depth": 3581,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "slotFilled_AUGMENT_PAULDRON"]
 		},
 
 
