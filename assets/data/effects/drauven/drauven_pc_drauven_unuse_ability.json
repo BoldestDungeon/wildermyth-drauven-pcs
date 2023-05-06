@@ -1,0 +1,30 @@
+{
+"id": "drauven_pc_drauven_unuse_ability",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_drauven_unuse_ability",
+	"author": "Bipen",
+	"tags": ["sneaky" ]
+},
+"type": "DAMAGE_ROLL",
+"verb": "MANEUVER",
+"ability": { "icon": "zealousLeap", "priority": "1", "showInCharacterSheet": false },
+"targets": [
+	{
+		"template": "SELF",
+	},
+	{
+		"template": "ABILITY",
+		"abilityHasTags": [ "melee" ],
+		"abilityDoesNotHaveTag": "okToMarkDone"
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauvenDeck_hunter_drauven_teamwork_freemove", "value": "1", "merge": "max" }
+		]
+	}
+]
+}
