@@ -26,4 +26,13 @@
     "lifespan": "all",
     "info": { "abilityDeckIcon": "flyFriend" }
   },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenDeck_hunter_quickblade_move",
+    "boostType": "ABILITY_CLASS",
+    "legacyAbilityChoice": true,
+    "effects": ["drauven_pc_quickblade_move"],
+    "lifespan": "all",
+    "info": { "abilityDeckIcon": "zealousLeap" }
+  },
 ]
