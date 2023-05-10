@@ -134,7 +134,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "1d3+((((self.SPELL_DAMAGE+self.POTENCY)*0.5)+(2*COUNT.fire))*(1+self.drauvenDeck_mystic_dragonBreath_upgrade))",
+					"amount": "1d3+((((self.SPELL_DAMAGE+self.POTENCY)*0.5))*(1+self.drauvenDeck_mystic_dragonBreath_upgrade))+(2*COUNT.fire)",
 					"type": "MAGIC",
 					"overrideStuntDamage": "3",
 					"onStunt": {
