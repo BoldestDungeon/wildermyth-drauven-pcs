@@ -11,8 +11,14 @@
 "verb": "ATTACK",
 "ability": {
 	"icon": "soulHarvest",
-	"strictlyBetterThan": [ "weaponAttack_basicMelee", "weaponAttack_knockbackMelee", "treeArmBashBoth" ],
-	"priority": "18",
+	"strictlyBetterThan": [
+		"weaponAttack_basicMelee",
+		"weaponAttack_knockbackMelee",
+		"treeArmBashBoth",
+		"crowArmFrenzy",
+		"shadowArmSoulHarvest"
+	],
+	"priority": "110",
 	"onlyShowIfPossibleInCharacterSheet": true
 },
 "targets": [
