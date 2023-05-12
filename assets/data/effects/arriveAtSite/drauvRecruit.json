@@ -1503,23 +1503,11 @@
 					"setAge": "ageless",
 					"exactAge": 21,
 					"setEquipment": "tierTwo",
-					"nameAlgorithm": "",
-					"customHistory": []
+					"nameAlgorithm": ""
 				},
 				"additionalOutcome": {
 					"class": "DoAll",
 					"outcomes": [
-						{
-							"class": "AddHistory",
-							"target": "npc",
-							"addHistory": [
-								[ "drauvenBase" ],
-								[ "drauvenCustomizationBody" ],
-								[ "origin" ],
-								[ "origin" ],
-								[ "origin" ]
-							]
-						},
 						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" },
 						{
 							"class": "CustomizeHero",

@@ -214,7 +214,7 @@
         "name": "ArmL_1hand_Lower_Skin",
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
-        "depth": 1500,
+        "depth": 1200,
         "rigMode": "oneHanded"
       },
       {
@@ -229,6 +229,28 @@
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
         "depth": 1500,
+        "rigMode": "twoHanded"
+      },
+
+      {
+        "name": "skinBlueTattoo_armL",
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
+        "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
+        "depth": 1201,
+        "rigMode": "oneHanded"
+      },
+      {
+        "name": "skinBlueTattoo_armL2lower",
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
+        "depth": 1501,
+        "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
+        "rigMode": "twoHanded"
+      },
+      {
+        "name": "skinBlueTattoo_armL2upper",
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
+        "depth": 1201,
+        "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
         "rigMode": "twoHanded"
       }
     ]
@@ -307,6 +329,12 @@
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftLeg", "drauvenSkin_bandagedLeftLeg", "drauvenSkin_prostheticLeftLeg"],
         "depth": 1101
+      },
+      { 
+        "name": "skinBlueTattoo_legL",
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftLeg", "drauvenSkin_bandagedLeftLeg", "drauvenSkin_prostheticLeftLeg"],
+        "depth": 1200,
+        "ifOwnerAspect": "themeSkin_spellTouchedTattoo"
       }
     ]
   },
@@ -342,6 +370,21 @@
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
         "depth": 8000,
+        "rigMode": "twoHanded"
+      },
+
+      {
+        "name": "skinBlueTattoo_armR",
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
+        "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
+        "depth": 3001,
+        "rigMode": "oneHanded"
+      },
+      {
+        "name": "skinBlueTattoo_armR2",
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
+        "depth": 8001,
+        "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
         "rigMode": "twoHanded"
       }
     ]
@@ -418,8 +461,14 @@
       {
         "name": "LegR_Skin",
         "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightLeg"],
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightLeg", "drauvenSkin_bandagedRightLeg", "drauvenSkin_prostheticRightLeg"],
         "depth": 1101
+      },
+      { 
+        "name": "skinBlueTattoo_legR",
+        "depth": 1200,
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightLeg"],
+        "ifOwnerAspect": "themeSkin_spellTouchedTattoo"
       }
     ]
   },
@@ -434,7 +483,12 @@
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_torso"],
         "depth": 1101
-      }
+      },
+      { 
+        "name": "skinBlueTattoo_torso", 
+        "depth": 1211,
+        "ifOwnerAspect": "themeSkin_spellTouchedTattoo"
+       }
     ]
   },
   {
@@ -447,7 +501,14 @@
         "name": "Tail_Skin",
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_tail"],
-        "depth": 1101
+        "depth": 101
+      },
+
+      {
+        "name": "skinBlueTattoo_tail",
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_tail"],
+        "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
+        "depth": 102
       }
     ]
   },

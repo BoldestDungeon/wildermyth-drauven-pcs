@@ -3607,15 +3607,7 @@
 				"query": {
 					"baseTag": "human",
 					"setClass": "nonFarmer",
-					"exactAge": 8,
-					"customHistory": [
-						{
-							"id": "wildermyth-drauven-pcs_xxx.0",
-							"persistOverLegacy": "never",
-							"humanName": "drauvenName",
-							"showInSummary": false
-						}
-					]
+					"exactAge": 8
 				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },

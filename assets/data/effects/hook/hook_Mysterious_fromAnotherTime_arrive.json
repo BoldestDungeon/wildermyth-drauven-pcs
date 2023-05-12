@@ -4716,15 +4716,7 @@
 					"setClass": "mystic",
 					"setAge": "earlyMiddleAge",
 					"setEquipment": "clothes",
-					"looksSimilarTo": "hook",
-					"customHistory": [
-						{
-							"id": "wildermyth-drauven-pcs_xxx.0",
-							"persistOverLegacy": "never",
-							"humanName": "drauvenName",
-							"showInSummary": false
-						}
-					]
+					"looksSimilarTo": "hook"
 				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },
@@ -4758,15 +4750,7 @@
 					"setClass": "warrior",
 					"setAge": "earlyMiddleAge",
 					"setEquipment": "clothes",
-					"looksSimilarTo": "hook",
-					"customHistory": [
-						{
-							"id": "wildermyth-drauven-pcs_xxx.0",
-							"persistOverLegacy": "never",
-							"humanName": "drauvenName",
-							"showInSummary": false
-						}
-					]
+					"looksSimilarTo": "hook"
 				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },

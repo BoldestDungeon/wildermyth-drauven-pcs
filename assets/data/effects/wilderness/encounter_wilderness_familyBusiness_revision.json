@@ -13398,15 +13398,7 @@
 					"inRelationTo": "hero",
 					"setClass": "farmer",
 					"setAge": "veryOldAge",
-					"looksSimilarTo": "hero",
-					"customHistory": [
-						{
-							"id": "wildermyth-drauven-pcs_xxx.0",
-							"persistOverLegacy": "never",
-							"humanName": "drauvenName",
-							"showInSummary": false
-						}
-					]
+					"looksSimilarTo": "hero"
 				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },
@@ -13458,15 +13450,7 @@
 					"setGender": "oppositeOfRelative",
 					"setClass": "farmer",
 					"setAge": "veryOldAge",
-					"looksSimilarTo": "hero",
-					"customHistory": [
-						{
-							"id": "wildermyth-drauven-pcs_xxx.0",
-							"persistOverLegacy": "never",
-							"humanName": "drauvenName",
-							"showInSummary": false
-						}
-					]
+					"looksSimilarTo": "hero"
 				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },
@@ -13510,15 +13494,7 @@
 					"setGender": "male",
 					"setClass": "farmer",
 					"setAge": "any",
-					"setEquipment": "clothes",
-					"customHistory": [
-						{
-							"id": "wildermyth-drauven-pcs_xxx.0",
-							"persistOverLegacy": "never",
-							"humanName": "drauvenName",
-							"showInSummary": false
-						}
-					]
+					"setEquipment": "clothes"
 				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },
@@ -13550,15 +13526,7 @@
 					"setGender": "female",
 					"setClass": "farmer",
 					"setAge": "any",
-					"setEquipment": "clothes",
-					"customHistory": [
-						{
-							"id": "wildermyth-drauven-pcs_xxx.0",
-							"persistOverLegacy": "never",
-							"humanName": "drauvenName",
-							"showInSummary": false
-						}
-					]
+					"setEquipment": "clothes"
 				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },
@@ -13592,15 +13560,7 @@
 					"setGender": "relativeIsAttracted",
 					"setClass": "farmer",
 					"setAge": "any",
-					"setEquipment": "clothes",
-					"customHistory": [
-						{
-							"id": "wildermyth-drauven-pcs_xxx.0",
-							"persistOverLegacy": "never",
-							"humanName": "drauvenName",
-							"showInSummary": false
-						}
-					]
+					"setEquipment": "clothes"
 				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },

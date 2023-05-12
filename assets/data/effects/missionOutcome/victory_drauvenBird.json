@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "missionOutcome/victory_drauvenBird",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Anne Austin",
 	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
 },
@@ -59,7 +60,7 @@
 		"template": "CHOICE",
 		"promptScript": [
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "full",
 					"showNameTags": false,
@@ -127,7 +128,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "half",
 					"actorSlots": [
@@ -247,7 +248,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "half",
 					"showNameTags": false,
@@ -291,7 +292,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "twoThirds",
 					"showNameTags": false,
@@ -408,7 +409,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"showNameTags": false,
 					"actorSlots": [
@@ -481,7 +482,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "half",
 					"actorSlots": [
@@ -522,7 +523,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "half",
 					"actorSlots": [
@@ -563,7 +564,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "twoThirds",
 					"actorSlots": [
@@ -642,7 +643,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"actorSlots": [
 						{
@@ -665,7 +666,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "twoThirds",
 					"showNameTags": false,
@@ -714,7 +715,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"actorSlots": [
 						{
@@ -736,7 +737,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "half",
 					"actorSlots": [
@@ -776,7 +777,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "half",
 					"actorSlots": [
@@ -820,7 +821,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "fourth",
 					"actorSlots": [
@@ -850,7 +851,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "fourth",
 					"actorSlots": [
@@ -877,7 +878,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "half",
 					"actorSlots": [
@@ -921,7 +922,7 @@
 				}
 			},
 			{
-				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"class": "comicNode_Panel",
 				"panel": {
 					"size": "full",
 					"showNameTags": false,
@@ -1023,7 +1024,7 @@
 				"id": "one",
 				"script": [
 					{
-						"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+						"class": "comicNode_Panel",
 						"panel": {
 							"actorSlots": [
 								{
@@ -1048,7 +1049,7 @@
 				"id": "two",
 				"script": [
 					{
-						"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+						"class": "comicNode_Panel",
 						"panel": {
 							"actorSlots": [
 								{
@@ -1084,7 +1085,7 @@
 					"class": "Description",
 					"script": [
 						{
-							"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+							"class": "comicNode_Panel",
 							"panel": {
 								"size": "full",
 								"showNameTags": false,
@@ -1179,7 +1180,7 @@
 					"class": "Description",
 					"script": [
 						{
-							"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+							"class": "comicNode_Panel",
 							"panel": {
 								"size": "half",
 								"animation": { "overridePanelOrder": 2 },
@@ -1223,7 +1224,7 @@
 							}
 						},
 						{
-							"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+							"class": "comicNode_Panel",
 							"panel": {
 								"size": "half",
 								"animation": { "overridePanelOrder": 1 },
@@ -1255,7 +1256,7 @@
 							}
 						},
 						{
-							"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+							"class": "comicNode_Panel",
 							"panel": {
 								"size": "full",
 								"showNameTags": false,

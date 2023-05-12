@@ -34,6 +34,7 @@
 		"type": "HERO",
 		"scoreFunction": "AGE_IN_YEARS",
 		"scoreThreshold": "abandonedDrauvenMaturationYear",
+		"aspects": [ "abandonedDrauvenMaturationYear" ],
 		"aspectValues": [
 			{ "id": "drauvenHealer" }
 		],

@@ -18,11 +18,10 @@
     {
       "template": "HERO_BY_SCORE",
       "choose": "ANY",
-      "scoreFunction": null,
+      "scoreFunction": "CHARISMA",
       "chooseAnyMaximum": 1,
       "fromRoles": [ "participant" ],
-      "aspectsOneOf": [ "drauven", "fluentInDruvwail" ],
-      "isJobResource": true
+      "aspectsOneOf": [ "drauven", "fluentInDruvwail" ]
     },
     {
       "role": "target",

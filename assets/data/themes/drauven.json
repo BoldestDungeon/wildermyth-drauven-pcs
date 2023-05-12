@@ -30,6 +30,12 @@
 					"depth": 1350
 				},
 				{
+					"name": "armor_base_Primary",
+					"tint": "primary", "tintAmount": 0.6,
+					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenGear_clothes" ],
+					"depth": 1350
+				},
+				{
 					"name": "armor_base_over",
 					"tint": "primary", "tintAmount": 0.6,
 					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenGear_clothes" ],
@@ -51,6 +57,13 @@
 					"tint": "skin", "tintAmount": 0.5,
 					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
 					"depth": 101
+				},
+
+				{
+					"name": "skinBlueTattoo_tail",
+					"ifNoOwnerAspects": ["themeSkin_drauven_alternate"],
+					"ifOwnerAspect": "themeSkin_spellTouchedTattoo",
+					"depth": 102
 				}
 			]
 		},

@@ -1,0 +1,160 @@
+{
+"id": "tiding_terrorbirdGrowsUpOverInterval",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "tidingMisc/tiding_terrorbirdGrowsUpOverInterval",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink"
+},
+"type": "TIDING_MISC_GENERAL",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "heroism",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterScore": 100,
+	"encounterWeight": "50",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{
+		"template": "INJECTED_HERO",
+		"choose": "BY_SCORE",
+		"scoreFunction": "eligibleForTerrorbirdTiding",
+		"scoreThreshold": "1",
+		"injectedRole": null
+	},
+	{ "template": "COMPANY" },
+	{
+		"role": "hero2",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "100-CHARISMA",
+		"notAlreadyMatchedAs": [ "hero" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestGreen.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-joy",
+							"focus": "foot",
+							"anchor": { "x": 0.322, "y": -0.023 },
+							"size": 0.3462,
+							"head": { "rotate": 8.104 }
+						},
+						{
+							"role": "monster",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.575, "y": 0.007 },
+							"size": 0.3301,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.671, "y": 0.749 },
+							"size": 0.2328,
+							"nameTag": "none",
+							"foot": { "rotate": -4.188 },
+							"color": { "r": "0.41506529", "g": "0.07073018", "b": "0.07073031", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillGrassy.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.73, "y": 0.122 },
+							"size": 0.2847,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero2",
+							"form": "frame-dubious",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.904, "y": 0.13 },
+							"size": 0.2634,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.173, "y": 0.789 },
+							"size": 0.3499,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicEmotion_heart.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.476, "y": 0.84 },
+							"size": 0.3154,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "tidingMisc/tiding_terrorbirdGrowsUpOverInterval",
+							"textKey": "~01~~panel_001~1_hero",
+							"style": "narration",
+							"pointerOwner": "hero"
+						},
+						{
+							"textSourceFile": "tidingMisc/tiding_terrorbirdGrowsUpOverInterval",
+							"textKey": "~01~~panel_001~2_action",
+							"style": "action",
+							"location": "bottomRight",
+							"padXFraction": 0.231,
+							"padYFraction": 0.688,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "tidingMisc/tiding_terrorbirdGrowsUpOverInterval",
+							"textKey": "~01~~panel_001~3_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomRight",
+							"padXFraction": 0.089,
+							"padYFraction": 0.053,
+							"widthFraction": 0.66999996,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	},
+	{ "class": "AddPet", "target": "hero", "pet": "monster" },
+	{
+		"class": "Aspects",
+		"target": "hero",
+		"removeAspects": [ "eligibleForTerrorbirdTiding" ]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"role": "monster",
+			"createEntity": {
+				"query": { "baseTag": "drauven_terrorbird" },
+				"control": "none"
+			}
+		}
+	]
+}
+}
