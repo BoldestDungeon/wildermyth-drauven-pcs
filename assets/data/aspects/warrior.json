@@ -1,0 +1,12 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "warriorDeck_broadswipes",
+	"effects": [ "warriorBroadswipes", "Broadswipes_migration" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "broadswipes" }
+}
+]
