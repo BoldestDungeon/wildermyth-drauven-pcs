@@ -61,7 +61,7 @@
 
 				{
 					"name": "skinBlueTattoo_tail",
-					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_tail"],
+					"ifNoOwnerAspects": ["themeSkin_drauven_alternate"],
 					"ifOwnerAspect": "themeSkin_spellTouchedTattoo",
 					"depth": 102
 				}

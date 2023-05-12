@@ -214,7 +214,7 @@
         "name": "ArmL_1hand_Lower_Skin",
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
-        "depth": 1500,
+        "depth": 1200,
         "rigMode": "oneHanded"
       },
       {
@@ -236,7 +236,7 @@
         "name": "skinBlueTattoo_armL",
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
         "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
-        "depth": 1501,
+        "depth": 1201,
         "rigMode": "oneHanded"
       },
       {
@@ -332,7 +332,7 @@
       },
       { 
         "name": "skinBlueTattoo_legL",
-        "bodyPart": "leftLeg",
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftLeg", "drauvenSkin_bandagedLeftLeg", "drauvenSkin_prostheticLeftLeg"],
         "depth": 1200,
         "ifOwnerAspect": "themeSkin_spellTouchedTattoo"
       }
@@ -377,20 +377,13 @@
         "name": "skinBlueTattoo_armR",
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
         "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
-        "depth": 1301,
+        "depth": 3001,
         "rigMode": "oneHanded"
       },
       {
-        "name": "skinBlueTattoo_armR2lower",
+        "name": "skinBlueTattoo_armR2",
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
         "depth": 8001,
-        "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
-        "rigMode": "twoHanded"
-      },
-      {
-        "name": "skinBlueTattoo_armR2upper",
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
-        "depth": 1301,
         "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
         "rigMode": "twoHanded"
       }
@@ -468,14 +461,13 @@
       {
         "name": "LegR_Skin",
         "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightLeg"],
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightLeg", "drauvenSkin_bandagedRightLeg", "drauvenSkin_prostheticRightLeg"],
         "depth": 1101
       },
       { 
-        "name": "skinBlueTattoo_legL",
-        "bodyPart": "leftLeg",
+        "name": "skinBlueTattoo_legR",
         "depth": 1200,
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftLeg"],
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightLeg"],
         "ifOwnerAspect": "themeSkin_spellTouchedTattoo"
       }
     ]

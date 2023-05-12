@@ -288,6 +288,26 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_preparedShotAlsoPoisons",
-	"effects": [ "drauven_pc_preparedShotAlsoPoisons", "removeAtStartOfTurn" ]
+	"effects": [ "drauven_pc_preparedShotAlsoPoisons", "removeAtStartOfTurn"]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_hunter_drauven_teamwork",
+	"effects": [ "drauven_pc_drauven_teamwork" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_hunter_drauven_teamwork_upgrade",
+	"legacyAbilityChoice": true,
+	"effects": [ "drauven_pc_teamwork_shred" ],
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { 
+	"abilityDeckUsage": "upgrade",
+	"upgradeForAbility": "drauvenDeck_hunter_drauven_teamwork",
+	"abilityDeckIcon": "thornfang" }
 }
 ]
