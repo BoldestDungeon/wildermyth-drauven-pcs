@@ -1,0 +1,24 @@
+{
+"id": "drauven_pc_bloodedFerocityActiveTrueDamageReduction",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_bloodedFerocityActiveTrueDamageReduction",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"aiPriority": "2000+min(0,target.AI_ATTACK_PRIORITY)",
+	"tags": [ "ranged" ]
+},
+"type": "TRUE_DAMAGE_ROLL_INCOMING",
+"verb": "ATTACK",
+"ability": {
+	"icon": "ignite",
+	"priority": "1",
+	"customSpecialAnimationEffect": {}
+},
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{ "class": "Impact", "impact": "0-floor((DAMAGE/2))" }
+]
+}
