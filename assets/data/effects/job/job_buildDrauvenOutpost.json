@@ -52,10 +52,7 @@
 						{
 							"class": "Spawn",
 							"addRole": "site",
-							"createEntity": {
-								"stationQuery": "drauvenOutpostL5",
-								"controlRelativeTo": "participant"
-							}
+							"createEntity": { "stationQuery": "drauvenOutpostL5", "controlRelativeTo": "participant" }
 						}
 					]
 				}
@@ -67,10 +64,7 @@
 				"onPass": {
 					"class": "Spawn",
 					"addRole": "site",
-					"createEntity": {
-						"stationQuery": "drauvenOutpostL4",
-						"controlRelativeTo": "participant"
-					}
+					"createEntity": { "stationQuery": "drauvenOutpostL4", "controlRelativeTo": "participant" }
 				}
 			},
 			{
@@ -80,10 +74,7 @@
 				"onPass": {
 					"class": "Spawn",
 					"addRole": "site",
-					"createEntity": {
-						"stationQuery": "drauvenOutpostL3",
-						"controlRelativeTo": "participant"
-					}
+					"createEntity": { "stationQuery": "drauvenOutpostL3", "controlRelativeTo": "participant" }
 				}
 			},
 			{
@@ -93,10 +84,7 @@
 				"onPass": {
 					"class": "Spawn",
 					"addRole": "site",
-					"createEntity": {
-						"stationQuery": "drauvenOutpostL2",
-						"controlRelativeTo": "participant"
-					}
+					"createEntity": { "stationQuery": "drauvenOutpostL2", "controlRelativeTo": "participant" }
 				}
 			},
 			{
@@ -115,9 +103,6 @@
 			}
 		]
 	},
-	{
-		"class": "Branch",
-		"branchEvent": "branch_drauvenOutpostBuilt"
-	}
+	{ "class": "Branch", "branchEvent": "branch_drauvenOutpostBuilt" }
 ]
 }
