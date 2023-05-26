@@ -4,5 +4,17 @@
 	"id": "drauven_guerilla",
 	"effects": [ "monsterDrauvenShred", "hunterSilkstep" ],
 	"boostType": "ABILITY_MISC"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_bloodedFerocityActive",
+	"effects": [
+		"drauven_bloodedFerocityActive",
+		"drauven_pc_bloodedFerocityActiveTrueDamageReduction"
+	],
+	"boostType": "ADVANTAGE",
+	"script": "figures.bloodedFerocity",
+	"importance": 1,
+	"showInTooltip": true
 }
 ]

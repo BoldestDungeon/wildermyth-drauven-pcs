@@ -2,20 +2,6 @@
 
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenGear_clothes",
-    "invalidatesSkin": true,
-    "importance": -1,
-    "skinLayers": [
-      {
-        "name": "armor_base",
-        "tint": "primary", "tintAmount": 0.6,
-        "ifNoOwnerAspect": "themeSkin_drauven_alternate",
-        "depth": 1350
-      }
-    ]
-  },
-  {
-    "modId": "wildermyth-drauven-pcs",
     "id": "drauvenSkin_suppressClothes",
     "STUB": "All clothing layers should be turned off if this aspect is set.",
     "importance": -1,
@@ -122,12 +108,6 @@
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
-      {
-        "name": "armor_base",
-        "tint": "primary", "tintAmount": 0.6,
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes", "mystic", "hunter"],
-        "depth": 1350
-      },
 
       {
         "name": "armor_base_Primary",
@@ -232,6 +212,227 @@
         "ifOwnerAspects": ["rigOverride|Drauven", "hunter"],
         "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_TALISMAN"],
         "depth": 2951
+      },
+
+      {
+        "name": "armor_Lower_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1350
+      },
+      {
+        "name": "armor_Lower_Texture_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1351
+      },
+      {
+        "name": "armor_Lower_Primary",
+        "tint": "primary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1352
+      },
+      {
+        "name": "armor_Lower_Texture_Primary",
+        "tint": "primary",
+        "tintAmount": 0.5,
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1353
+      },
+      {
+        "name": "armor_Lower_Secondary",
+        "tint": "secondary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1352
+      },
+      {
+        "name": "armor_Lower_Texture_Secondary",
+        "tint": "secondary",
+        "tintAmount": 0.5,
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1353
+      },
+      {
+        "name": "armor_Lower_Outline_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1354        
+      },
+      {
+        "name": "Stump_Belt_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_BELT", "slotFilled_AUGMENT_SASH"],
+        "depth": 1355
+      },
+
+      {
+        "name": "armor_Upper_Primary",
+        "tint": "primary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_extra|zzz_drauven06_Armour|*"],
+        "depth": 3565
+      },
+      {
+        "name": "armor_Upper_Texture_Primary",
+        "tint": "primary",
+        "tintAmount": 0.5,
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_extra|zzz_drauven06_Armour|*"],
+        "depth": 3566
+      },
+      {
+        "name": "armor_Upper_Detail",
+        "tint": "primary",
+        "tintAmount": 0.3,
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_extra|zzz_drauven06_Armour|*"],
+        "depth": 3567
+      },
+      {
+        "name": "armor_Upper_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_extra|zzz_drauven06_Armour|*"],
+        "depth": 3568        
+      },
+      {
+        "name": "armor_Upper_Tuck_Primary",
+        "tint": "primary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_extra|zzz_drauven06_Armour|*"],
+        "depth": 1455
+      },
+      {
+        "name": "armor_Upper_Tuck_Texture_Primary",
+        "tint": "primary",
+        "tintAmount": 0.5,
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_extra|zzz_drauven06_Armour|*"],
+        "depth": 1456
+      },
+      {
+        "name": "armor_Upper_Tuck_Detail",
+        "tint": "primary",
+        "tintAmount": 0.3,
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_extra|zzz_drauven06_Armour|*"],
+        "depth": 1457
+      },
+      {
+        "name": "armor_Upper_Tuck_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_extra|zzz_drauven06_Armour|*"],
+        "depth": 1458        
+      },
+
+
+      {
+        "name": "armor_Lower_Primary",
+        "tint": "primary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1350
+      },
+      {
+        "name": "armor_Lower_Texture_Primary",
+        "tint": "primary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1351
+      },
+      {
+        "name": "armor_Lower_Secondary",
+        "tint": "secondary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1350
+      },
+      {
+        "name": "armor_Lower_Texture_Secondary",
+        "tint": "secondary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1351
+      },
+      {
+        "name": "armor_Lower_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1350
+      },
+      {
+        "name": "armor_Lower_Texture_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1351
+      },
+      {
+        "name": "armor_Lower_Outline_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1352        
+      },
+
+      {
+        "name": "armor_Upper_Primary",
+        "tint": "primary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 3565
+      },
+      {
+        "name": "armor_Upper_Texture_Primary",
+        "tint": "primary",
+        "tintAmount": 0.5,
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 3566
+      },
+      {
+        "name": "armor_Upper_Detail",
+        "tint": "primary",
+        "tintAmount": 0.3,
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 3567
+      },
+      {
+        "name": "armor_Upper_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 3568        
+      },
+      {
+        "name": "armor_Upper_Tuck_Primary",
+        "tint": "primary",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1455
+      },
+      {
+        "name": "armor_Upper_Tuck_Texture_Primary",
+        "tint": "primary",
+        "tintAmount": 0.5,
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1456
+      },
+      {
+        "name": "armor_Upper_Tuck_Detail",
+        "tint": "primary",
+        "tintAmount": 0.3,
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1457
+      },
+      {
+        "name": "armor_Upper_Tuck_Untinted",
+        "ifOwnerAspects": ["rigOverride|Drauven", "farmer"],
+        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+        "depth": 1458        
       }
 
     ]

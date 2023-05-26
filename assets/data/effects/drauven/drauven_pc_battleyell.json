@@ -3,30 +3,28 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_battleyell",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Bipen",
 	"STUB": "Priority: if we can't get further than 3.6 tiles away from all heroes, we'd prefer to use our melee attack",
-	"aiPriority": "2100-(min(1,COUNT.volunteer)*100)"
+	"aiPriority": "2100-(min(1,COUNT.volunteer)*100)",
+	"tags": [ "drauven_pc_battleyell" ]
 },
 "type": "ABILITY",
 "verb": "ATTACK",
-"ability": { "icon": "bloodrage", "priority": "1", "showDescriptionInTooltip": true, },
+"ability": {
+	"icon": "bloodrage",
+	"priority": "1",
+	"showDescriptionInTooltip": true,
+	"cooldown": "oncePerTurn"
+},
 "targets": [
 	{
 		"template": "SELF",
 		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
-		"missionFeedback": { "orientTo": "source" }
+		"missionFeedback": { "orientTo": "subject" }
 	},
 	{
-		"role": "volunteer",
-		"template": "ADJACENT_ENEMY",
-		"STUB": "If there are nearby enemies, we'd prefer to use our melee attack",
-		"choose": "ANY",
-		"missionFeedback": null,
-		"aspects": [ "HOSTILE_TARGET", "alive" ],
-		"range": "3.6"
-	},
-	{
-		"role": "source",
+		"role": "subject",
 		"template": "ADJACENT_ALLY",
 		"showAnyway": true,
 		"alwaysSelect": true,
@@ -38,32 +36,104 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"aspectValues": [
-			{ "id": "forbidReactions|*", "forbidden": true }
+			{ "id": "senseless", "forbidden": true },
+			{ "id": "senselessPermanent", "forbidden": true },
+			{ "id": "stasis", "forbidden": true },
+			{ "id": "crystalChrysalis", "forbidden": true }
 		],
-		"range": "5+(self.drauvenDeck_common_battleyell_upgrade*3)",
+		"range": "5+(max(self.drauvenDeck_common_battleyell_upgrade,self.drauvenDeck_warrior_battleyell_upgrade)*3)",
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"role": "volunteer",
+		"template": "ADJACENT_ENEMY",
+		"STUB": "Enemies we have LOS to",
+		"promptText": "Pick a target",
+		"promptTextKey": ".target.target.promptText",
+		"choose": "ANY",
+		"missionFeedback": null,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"relativeTo": "subject",
+		"minRange": "subject.MIN_MELEE_ATTACK_RANGE",
+		"range": "subject.MAX_MELEE_ATTACK_RANGE+subject.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	},
+	{
+		"role": "target2",
+		"template": "ADJACENT_ENEMY",
+		"STUB": "Enemies we have LOS to",
+		"promptText": "Pick a target",
+		"promptTextKey": ".target.target.promptText",
+		"choose": "ANY",
+		"missionFeedback": null,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"relativeTo": "subject",
+		"minRange": "subject.MIN_RANGED_ATTACK_RANGE",
+		"range": "subject.MAX_RANGED_ATTACK_RANGE+subject.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	},
+	{
+		"template": "RANGED_WEAPON",
+		"STUB": "Check if we're using a weapon, because that'll take priority over theme attacks, and thus we'll want to use different LOS settings (weird special case for e.g. holding a crossbow and also having a fire arm?)",
+		"choose": "ANY",
+		"aspects": [ "weapon", "ranged", "MAIN_HAND" ]
+	},
+	{
+		"role": "target3",
+		"template": "ADJACENT_ENEMY",
+		"promptText": "Pick a target",
+		"promptTextKey": ".target.target.promptText",
+		"choose": "ANY",
+		"missionFeedback": null,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"relativeTo": "subject",
+		"minRange": "subject.MIN_RANGED_ATTACK_RANGE",
+		"range": "subject.MAX_RANGED_ATTACK_RANGE+subject.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "min(subject.themeAbility_rangedNoLOS,(1-COUNT.weapon))+subject.hunterDeck_throughShot",
+		"b": "1"
 	},
 	{
 		"template": "ADJACENT_ENEMY",
-		"showAnyway": true,
+		"promptText": "Pick a target",
+		"promptTextKey": ".target.target.promptText",
 		"alwaysSelect": true,
 		"missionFeedback": {
+			"orientTo": "subject",
 			"suggestionScript": "figures.attackSuggestion",
 			"hoverScript": "figures.attackHovered",
 			"rangeFeedback": "ATTACK_RANGE",
 			"suggestionFeedback": "ATTACK_SUGGESTION",
 			"hoverFeedback": "ATTACK_HOVER"
 		},
-		"aspects": [ "HOSTILE_TARGET" ],
-		"relativeTo": "source",
-		"range": "(source.MAX_ATTACK_RANGE+source.BONUS_RANGE)",
-		"lineOfSight": "LIVE_ENEMIES"
+		"fromRoles": [ "target2", "target3", "volunteer" ],
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"relativeTo": "subject",
+		"range": null
+	},
+	{
+		"role": "hook3",
+		"template": "TILE",
+		"STUB": "All footprint tiles",
+		"choose": "ALL",
+		"relativeTo": "target",
+		"range": "0"
+	},
+	{
+		"template": "TILE",
+		"STUB": "Closest within LOS footprint tile (to be sure it's actually in-range and targetable by the branched ability)",
+		"choose": "ONE_CLOSEST",
+		"fromRoles": [ "hook3" ],
+		"relativeTo": "subject",
+		"range": null,
+		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],
 "outcomes": [
 	{
 		"class": "AttackRoll",
-		"defender": "source",
+		"defender": "subject",
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"stopBlockingTime": "onHit",
@@ -83,21 +153,23 @@
 		"flankingBoostsAttackRoll": false,
 		"always": {
 			"class": "Test",
-            "value": "source.RANGE_EQUIPPED",
-            "threshold": "1",
-            "onFail": {
-                "class": "BranchAbility",
-                "target": "source",
-                "branchType": "standardMelee",
-                "targetRole": "target"
-            },
-            "onPass": {
-                "class": "BranchAbility",
-                "target": "source",
-                "branchType": "standardRanged",
-                "targetRole": "target"
-            }
-        }
+			"value": "subject.RANGE_EQUIPPED*greaterThan(subject.distanceTo.focus,subject.MIN_RANGED_ATTACK_RANGE)",
+			"threshold": "1",
+			"onPass": {
+				"class": "BranchAbility",
+				"target": "subject",
+				"branchType": "standardRanged",
+				"targetRole": "target",
+				"tileRole": "focus"
+			},
+			"onFail": {
+				"class": "BranchAbility",
+				"target": "subject",
+				"branchType": "standardMelee",
+				"targetRole": "target",
+				"tileRole": "focus"
+			}
+		}
 	}
 ]
 }

@@ -1,0 +1,22 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "warriorDeck_bloodrage",
+	"effects": [ "warriorBloodrageDamageBoost" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "bloodrage" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "warriorDeck_wolfcall",
+	"effects": [ "warrior_wolfcallTriggerOnKill" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "wolfcall" }
+}
+]
