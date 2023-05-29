@@ -99,9 +99,9 @@
 
 
     {
-      "name": "replaceHead_drauvDetail_stormthroat_whiskers3",
-      "tint": "skin", "tintAmount": 0.6,
-      "depth": 4300,
+      "name": "replaceHead_Stormthroat_DrauvDetail_Whiskers3_Skin",
+      "tint": "skin", 
+      "depth": 4050,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
@@ -109,13 +109,31 @@
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
     {
-      "name": "replaceHead_drauvDetail_stormthroat_whiskers3_back",
-      "tint": "skin", "tintAmount": 0.6,
-      "depth": 3999,
+      "name": "replaceHead_Stormthroat_DrauvDetail_Whiskers3_Texture_Skin",
+      "tint": "skin", "tintAmount": 0.5,
+      "depth": 4051,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+    },
+    {
+      "name": "replaceHead_Stormthroat_DrauvDetail_Whiskers3_Untinted",
+      "depth": 4052,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+    },
+    {
+      "name": "replaceHead_Stormthroat_DrauvDetail_Whiskers3_Rings_Untinted",
+      "depth": 4053,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+      "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
 

@@ -1,7 +1,7 @@
 {
 	"type": "extra",
 	"extraSlot": "zzz_drauven04_Whiskers",
-	"requireAspects": ["drauvenSkin_naturalHead"],
+	"requireAspects": ["drauvenSkin_naturalHead", "NEVER"],
 
 	"groups": [
 		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
@@ -109,7 +109,7 @@
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
     {
-      "name": "replaceHead_drauvDetail_stormthroat_whiskers4_back",
+      "name": "replaceHead_Stormthroat_DrauvDetail_Whiskers4_back",
       "tint": "skin", "tintAmount": 0.6,
       "depth": 3999,
       "headOffset": true,

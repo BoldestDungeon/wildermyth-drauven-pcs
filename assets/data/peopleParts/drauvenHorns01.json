@@ -99,7 +99,7 @@
 
 
     {
-      "name": "replaceHead_drauvDetail_stormthroat_horns1_front",
+      "name": "replaceHead_Stormthroat_DrauvDetail_Horns1_Front",
       "tint": "skin", "tintAmount": 0.6,
       "depth": 4400,
       "headOffset": true,
@@ -109,7 +109,17 @@
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
     {
-      "name": "replaceHead_drauvDetail_stormthroat_horns1_back",
+      "name": "replaceHead_Stormthroat_DrauvDetail_Horns1_Mid",
+      "tint": "skin", "tintAmount": 0.6,
+      "depth": 4010,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+    },
+    {
+      "name": "replaceHead_Stormthroat_DrauvDetail_Horns1_Back",
       "tint": "skin", "tintAmount": 0.6,
       "depth": 3999,
       "headOffset": true,
