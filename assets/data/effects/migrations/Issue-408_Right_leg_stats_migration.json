@@ -1,0 +1,33 @@
+{
+  "id": "Right_Leg_Stats_Migration",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "migrations/Issue-408_Right_leg_stats_migration",
+    "modId": "wildermyth-drauven-pcs",
+    "author": "Ironskink",
+    "STUB": "Ensures character has leg speed applied now that Druaven legs don't have the inherent speed bonus"
+  },
+  "type": "ABILITIES_CHANGED",
+  "targets": [
+    {
+      "template": "SELF",
+      "aspectValues": [
+        { "id": "drauven_pc" },
+        { "id": "humanSkin_naturalRightLeg", "forbidden": true },
+        { "id": "themeSlotFilled_rightLeg", "forbidden": true }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "AddHistory",
+      "target": "self",
+      "inlineHistory": {
+        "id": "Right_Leg_Stats_Migration",
+        "associatedAspects": [
+          "humanSkin_naturalRightLeg"
+        ]
+      }
+    }
+  ]
+  }

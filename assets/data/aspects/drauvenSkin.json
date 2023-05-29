@@ -322,6 +322,7 @@
     "id": "drauvenSkin_naturalLeftLeg",
     "importance": -1,
     "invalidatesSkin": true,
+    "effects": ["Left_Leg_Stats_Migration"],
     "skinLayers": [
       {
         "name": "LegL_Skin",
@@ -455,6 +456,7 @@
     "id": "drauvenSkin_naturalRightLeg",
     "importance": -1,
     "invalidatesSkin": true,
+    "effects": ["Right_Leg_Stats_Migration"],
     "skinLayers": [
       {
         "name": "LegR_Skin",

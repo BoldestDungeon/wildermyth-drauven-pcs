@@ -53,12 +53,8 @@
 						"id": "removeHumanSkinAspects",
 						"showInSummary": false,
 						"removeAspects": [
-							"humanSkin_naturalLeftArm",
 							"humanSkin_naturalLeftHand",
-							"humanSkin_naturalRightArm",
 							"humanSkin_naturalRightHand",
-							"humanSkin_naturalLeftLeg",
-							"humanSkin_naturalRightLeg",
 							"humanSkin_naturalHead"
 						]
 					}
