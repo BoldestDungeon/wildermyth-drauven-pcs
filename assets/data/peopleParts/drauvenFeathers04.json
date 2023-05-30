@@ -13,7 +13,7 @@
     {
       "name": "replaceHead_drauvDetail_stump_feathers4",
       "tint": "hair", "tintAmount": 0.6,
-      "depth": 4300,
+      "depth": 400,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"],
@@ -23,9 +23,9 @@
 
 
     {
-      "name": "replaceHead_drauvDetail_haunt_feathers4",
+      "name": "replaceHead_Haunt_DrauvDetail_Feathers4",
       "tint": "hair", "tintAmount": 0.6,
-      "depth": 4300,
+      "depth": 4100,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],

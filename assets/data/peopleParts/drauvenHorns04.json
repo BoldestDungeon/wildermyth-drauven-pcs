@@ -33,8 +33,8 @@
 
 
     {
-      "name": "replaceHead_drauvDetail_horns4_front",
-      "tint": "skin", "tintAmount": 0.6,
+      "name": "replaceHead_Haunt_DrauvDetail_Horns4_Front_Skin",
+      "tint": "skin",
       "depth": 4400,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
@@ -43,9 +43,29 @@
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
     {
-      "name": "replaceHead_drauvDetail_horns4_back",
+      "name": "replaceHead_Haunt_DrauvDetail_Horns4_Front_Untinted",
       "tint": "skin", "tintAmount": 0.6,
-      "depth": 3999,
+      "depth": 4401,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+    },
+    {
+      "name": "replaceHead_Haunt_DrauvDetail_Horns4_Back_Skin",
+      "tint": "skin", 
+      "depth": 4090,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+    },
+    {
+      "name": "replaceHead_Haunt_DrauvDetail_Horns4_Back_Untinted",
+      "tint": "skin", "tintAmount": 0.6,
+      "depth": 4091,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
@@ -111,7 +131,7 @@
     {
       "name": "replaceHead_Stormthroat_DrauvDetail_Horns4_back",
       "tint": "skin", "tintAmount": 0.6,
-      "depth": 3999,
+      "depth": 4090,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
