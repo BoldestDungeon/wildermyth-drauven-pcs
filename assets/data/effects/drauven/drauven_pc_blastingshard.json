@@ -38,7 +38,19 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspects": [ "wood", "rock", "lampIsFireSource", "lampIsFireSink" ]
+		"aspects": [
+			"wood",
+			"rock",
+			"bone",
+			"plant",
+			"metal",
+			"textile",
+			"shards",
+			"tools",
+			"lampIsFireSource",
+			"lampCanFlare",
+			"interactiveLampOff"
+		]
 	},
 	{
 		"template": "TILE",
