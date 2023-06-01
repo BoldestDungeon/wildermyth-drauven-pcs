@@ -6,7 +6,7 @@
 	"modId": "wildermyth-drauven-pcs",
 	"author": "timcrosby",
 	"aiPriority": "(2000*COUNT.foes)-(1500*COUNT.friend)",
-	"tags": [ "sneaky", "okToMarkDone" ]
+	"tags": [ "sneaky", "okToMarkDone", "interfusionRecipe" ]
 },
 "type": "ABILITY",
 "verb": "MANEUVER",
@@ -37,8 +37,9 @@
 			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
-		"relationship": "interfusedWithEntity"
-    },
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "wood", "rock", "lampIsFireSource", "lampIsFireSink" ]
+	},
 	{
 		"template": "TILE",
 		"alwaysSelect": true,
@@ -141,12 +142,12 @@
 			"class": "DoAll",
 			"target": "source",
 			"outcomes": [
-                { "class": "Spawn", "modifyTerrain": "makeWalkableAndCreateDebris" },
-                {
-                    "class": "Aspects",
-                    "removeAspects": [ "scenery" ]
-                },
-                { "class": "Delete" },
+				{ "class": "Spawn", "modifyTerrain": "makeWalkableAndCreateDebris" },
+				{
+					"class": "Aspects",
+					"removeAspects": [ "scenery" ]
+				},
+				{ "class": "Delete" },
 				{
 					"class": "Spawn",
 					"target": "targetTile",
@@ -158,10 +159,10 @@
 			"class": "DoAll",
 			"outcomes": [
 				{
-                    "class": "Damage",
-                    "amount": "(1d3-1 + self.drauvenDeck_mystic_blastingshard_upgrade)+(self.SPELL_DAMAGE * 0.66)+(source.HEALTH * (0.25 + self.drauvenDeck_mystic_blastingshard_upgrade * 0.5))",
-                    "shred": "(self.POTENCY * (1 + self.drauvenDeck_mystic_blastingshard_upgrade))",
-                    "pierce": "self.POTENCY * self.drauvenDeck_mystic_blastingshard_upgrade)",
+					"class": "Damage",
+					"amount": "(((1d3-1)+self.drauvenDeck_mystic_blastingshard_upgrade)+(self.SPELL_DAMAGE*0.66))+(source.HEALTH*(0.25+(self.drauvenDeck_mystic_blastingshard_upgrade*0.5)))",
+					"shred": "self.POTENCY*(1+self.drauvenDeck_mystic_blastingshard_upgrade)",
+					"pierce": "self.POTENCY*self.drauvenDeck_mystic_blastingshard_upgrade",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
 				}
