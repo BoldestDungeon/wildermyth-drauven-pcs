@@ -10,7 +10,6 @@
 		{"groupIndex": 3, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1}
 	],
 	"layers": [
-
     {
       "name": "replaceHead_Stormthroat_Base_Open_Skin",
       "tint": "skin",
@@ -278,5 +277,47 @@
        "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
        "facialExpression": ["interested", "surprised", "scared", "joy"]
      }
+     {
+        "name": "face_stormthroat_stormTattoo_Eye_Wide",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["interested", "surprised", "scared", "joy"]
+     },
+     {
+        "name": "face_stormthroat_stormTattoo_Closed",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["dubious", "hit", "dead"]
+     },
+     {
+        "name": "face_stormthroat_stormTattoo_Sad",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["skeptical", "sad"]
+     },
+     {
+        "name": "face_stormthroat_stormTattoo_Happy",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["happy", "joke"]
+     },
+     {
+        "name": "face_stormthroat_stormTattoo_Neutral",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["neutral", "open"]
+     },
+     {
+        "name": "face_stormthroat_stormTattoo_Squint",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["grim", "angry", "rage", "scheming"]
+     },
   ]
 }
