@@ -165,11 +165,102 @@
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       },
       {
+        "name": "face_haunt_stormTattoo_Angry",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+        "facialExpression": ["grim", "angry", "rage", "scheming"]
+      },
+      {
+        "name": "face_haunt_stormTattoo_Closed",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+        "facialExpression": ["hit", "dead"]
+      },
+      {
+        "name": "face_haunt_stormTattoo_Eye_Wide",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+        "facialExpression": ["interested", "surprised"]
+      },
+      {
+        "name": "face_haunt_stormTattoo_Happy",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+        "facialExpression": ["happy", "joke", "joy"]
+      },
+      {
+        "name": "face_haunt_stormTattoo_Neutral",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+        "facialExpression": ["neutral", "open"]
+      },
+      {
+        "name": "face_haunt_stormTattoo_Sad",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+        "facialExpression": ["sad", "scared"]
+      },
+      {
+        "name": "face_haunt_stormTattoo_Squint",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
+        "facialExpression": ["skeptical", "dubious"]
+      },
+      {
         "name": "face_pilot_stormTattoo",
         "depth": 4200,
         "headOffset": true,
         "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_pilot"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      },
+      {
+        "name": "face_stormthroat_stormTattoo_Eye_Wide",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["interested", "surprised", "scared", "joy"]
+      },
+      {
+        "name": "face_stormthroat_stormTattoo_Closed",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["dubious", "hit", "dead"]
+      },
+      {
+        "name": "face_stormthroat_stormTattoo_Sad",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["skeptical", "sad"]
+      },
+      {
+        "name": "face_stormthroat_stormTattoo_Happy",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["happy", "joke"]
+      },
+      {
+        "name": "face_stormthroat_stormTattoo_Neutral",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["neutral", "open"]
+      },
+      {
+        "name": "face_stormthroat_stormTattoo_Squint",
+        "depth": 4200,
+        "headOffset": true,
+        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stormthroat"],
+        "facialExpression": ["grim", "angry", "rage", "scheming"]
       },
       {
         "name": "face_stump_stormTattoo",

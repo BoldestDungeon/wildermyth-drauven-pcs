@@ -150,54 +150,5 @@
        "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
        "facialExpression": ["hit", "dead"]
     }
-      {
-        "name": "face_haunt_stormTattoo_Angry",
-        "depth": 4200,
-        "headOffset": true,
-        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
-        "facialExpression": ["grim", "angry", "rage", "scheming"]
-      },
-      {
-        "name": "face_haunt_stormTattoo_Closed",
-        "depth": 4200,
-        "headOffset": true,
-        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
-        "facialExpression": ["hit", "dead"]
-      },
-      {
-        "name": "face_haunt_stormTattoo_Eye_Wide",
-        "depth": 4200,
-        "headOffset": true,
-        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
-        "facialExpression": ["interested", "surprised"]
-      },
-      {
-        "name": "face_haunt_stormTattoo_Happy",
-        "depth": 4200,
-        "headOffset": true,
-        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
-        "facialExpression": ["happy", "joke", "joy"]
-      },
-      {
-        "name": "face_haunt_stormTattoo_Neutral",
-        "depth": 4200,
-        "headOffset": true,
-        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
-        "facialExpression": ["neutral", "open"]
-      },
-      {
-        "name": "face_haunt_stormTattoo_Sad",
-        "depth": 4200,
-        "headOffset": true,
-        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
-        "facialExpression": ["sad", "scared"]
-      },
-      {
-        "name": "face_haunt_stormTattoo_Squint",
-        "depth": 4200,
-        "headOffset": true,
-        "ifOwnerAspects": ["themePiece_storm_head", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_haunt"],
-        "facialExpression": ["skeptical", "dubious"]
-      },
   ]
 }
