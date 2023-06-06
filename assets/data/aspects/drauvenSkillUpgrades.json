@@ -1,0 +1,29 @@
+[
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenSpecial_wingbeat",
+    "boostType": "ABILITY_CLASS",
+    "legacyAbilityChoice": true,
+    "effects": ["drauven_wingbeat"],
+    "lifespan": "all",
+    "info": { "abilityDeckIcon": "fly" }
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenSpecial_harass",
+    "boostType": "ABILITY_CLASS",
+    "legacyAbilityChoice": true,
+    "effects": ["drauven_pc_harass"],
+    "lifespan": "all",
+    "info": { "abilityDeckIcon": "peck" }
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenSpecial_flight",
+    "boostType": "ABILITY_CLASS",
+    "legacyAbilityChoice": true,
+    "effects": ["flight"],
+    "lifespan": "all",
+    "info": { "abilityDeckIcon": "flyFriend" }
+  }
+]

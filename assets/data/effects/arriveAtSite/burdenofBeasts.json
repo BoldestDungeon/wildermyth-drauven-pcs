@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "arriveAtSite/burdenofBeasts",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Anne Austin"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -37,7 +38,7 @@
 	{
 		"role": "healer",
 		"template": "PICK_BY_SCORE",
-		"scoreFunction": "max(HEALER,BOOKISH,ROMANTIC,GREEDY)",
+		"scoreFunction": "max(HEALER,BOOKISH,ROMANTIC,GREEDY)-(30*drauven)",
 		"notAlreadyMatchedAs": [ "leader" ]
 	},
 	{

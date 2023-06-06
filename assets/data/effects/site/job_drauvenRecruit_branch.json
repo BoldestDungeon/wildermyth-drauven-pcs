@@ -9,7 +9,11 @@
 },
 "type": "BRANCH",
 "verb": "MANEUVER",
-"ability": { "icon": "melee", "priority": "1", "encounterEnabled": true },
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"encounterEnabled": true
+},
 "targets": [
 	{ "template": "EVENT" },
 	{
@@ -45,7 +49,10 @@
 		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": "fluentInDruvwail",
 		"fromRoles": [ "participant" ],
-		"notAlreadyMatchedAs": [ "leader" ]
+		"notAlreadyMatchedAs": [ "leader" ],
+		"aspectValues": [
+			{ "id": "fluentInDruvwail" }
+		]
 	},
 	{
 		"role": "hero",
@@ -731,11 +738,6 @@
 			"class": "DoAll",
 			"outcomes": [
 				{
-					"class": "Special",
-					"target": "volunteer",
-					"specialAction": "PROMOTE_FARMER_TO_WARRIOR"
-				},
-				{
 					"class": "Description",
 					"script": [
 						{
@@ -780,7 +782,7 @@
 					"target": "site",
 					"effectId": "job_drauvenRecruit_training_warrior",
 					"post": "site",
-					"injectedRoles": [ "volunteer", "self", "party" ],
+					"injectedRoles": [ "volunteer", "self" ],
 					"choices": [ "participant" ],
 					"promptSlotsImmediately": true
 				}
@@ -794,11 +796,6 @@
 		"then": {
 			"class": "DoAll",
 			"outcomes": [
-				{
-					"class": "Special",
-					"target": "volunteer",
-					"specialAction": "PROMOTE_FARMER_TO_HUNTER"
-				},
 				{
 					"class": "Description",
 					"script": [
@@ -845,7 +842,7 @@
 					"target": "site",
 					"effectId": "job_drauvenRecruit_training_hunter",
 					"post": "site",
-					"injectedRoles": [ "volunteer", "self", "party" ],
+					"injectedRoles": [ "volunteer", "self" ],
 					"choices": [ "participant" ],
 					"promptSlotsImmediately": true
 				}
@@ -859,11 +856,6 @@
 		"then": {
 			"class": "DoAll",
 			"outcomes": [
-				{
-					"class": "Special",
-					"target": "volunteer",
-					"specialAction": "PROMOTE_FARMER_TO_MYSTIC"
-				},
 				{
 					"class": "Description",
 					"script": [
@@ -944,34 +936,9 @@
 					"target": "site",
 					"effectId": "job_drauvenRecruit_training_mystic",
 					"post": "site",
-					"injectedRoles": [ "volunteer", "self", "party" ],
+					"injectedRoles": [ "volunteer", "self" ],
 					"choices": [ "participant" ],
 					"promptSlotsImmediately": true
-				}
-			]
-		}
-	},
-	{
-		"class": "IfPlayerChose",
-		"target": "party",
-		"ifPlayerChose": "four",
-		"then": {
-			"class": "DoAll",
-			"outcomes": [
-				{
-					"class": "Description",
-					"script": []
-				},
-				{
-					"class": "NewJob",
-					"target": "site",
-					"effectId": "job_drauvenRecruit",
-					"post": "site"
-				},
-				{
-					"class": "Aspects",
-					"target": "volunteer",
-					"removeAspects": [ "npcId|*" ]
 				}
 			]
 		}
@@ -983,9 +950,14 @@
 			"role": "volunteer",
 			"npcId": "DrauvenRecruit",
 			"createEntity": {
-				"query": { "baseTag": "human", "localizableName": "", "setClass": "farmer" },
+				"query": {
+					"baseTag": "human",
+					"setClass": "farmer",
+					"setAge": "young"
+				},
 				"addAspects": [
-					{ "id": "drauven_pc_init", "value": "1" }
+					{ "id": "drauven_pc_init", "value": "1" },
+					{ "id": "nameFormulaOverride|drauvenName", "value": "1" }
 				],
 				"control": "none"
 			}

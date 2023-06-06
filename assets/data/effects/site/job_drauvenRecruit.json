@@ -12,7 +12,8 @@
 	"icon": "recruit",
 	"category": "site",
 	"priority": "1",
-	"labor": { "days": "3" }
+	"labor": { "days": "3" },
+	"jobCanBeCancelled": false
 },
 "targets": [
 	{

@@ -1,0 +1,93 @@
+{
+"id": "migration_drauven_updateRig",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "migrations/v0-14_updateRig",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"STUB": "Updates character to use the Drauven rig"
+},
+"type": "ABILITIES_CHANGED",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "drauven_pc" },
+			{ "id": "rigOverride*", "forbidden": true }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "maxValue.rigOverride",
+		"threshold": "1",
+		"onFail": {
+			"class": "DoAll",
+			"target": "self",
+			"outcomes": [
+				{
+					"class": "RemoveTheme",
+					"target": "self",
+					"specificTheme": "drauven",
+					"specificPiece": "torso"
+				},
+				{ "class": "ApplyTheme", "target": "self", "theme": "drauven", "piece": "torso" }
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "maxValue.humanSkin_natural",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"target": "self",
+			"outcomes": [
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "removeHumanSkinAspects",
+						"showInSummary": false,
+						"removeAspects": [
+							"humanSkin_naturalLeftArm",
+							"humanSkin_naturalLeftHand",
+							"humanSkin_naturalRightArm",
+							"humanSkin_naturalRightHand",
+							"humanSkin_naturalLeftLeg",
+							"humanSkin_naturalRightLeg",
+							"humanSkin_naturalHead"
+						]
+					}
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "humanSkin_suppressClothes",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"target": "self",
+			"inlineHistory": {
+				"id": "restoreClothes",
+				"showInSummary": false,
+				"removeAspects": [ "humanSkin_suppressClothes" ]
+			}
+		}
+	},
+	{
+		"class": "AddHistory",
+		"inlineHistory": {
+			"id": "migration-0-14",
+			"associatedAspects": [ "drauvenSkin_v_0-14" ],
+			"showInSummary": false
+		}
+	}
+]
+}

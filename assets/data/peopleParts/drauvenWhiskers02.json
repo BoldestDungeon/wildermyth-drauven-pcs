@@ -2,6 +2,7 @@
 {
 	"type": "extra",
 	"extraSlot": "zzz_drauven04_Whiskers",
+	"requireAspects": ["drauvenSkin_naturalHead"],
 
 	"groups": [
 		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},

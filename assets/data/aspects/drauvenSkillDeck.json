@@ -251,5 +251,10 @@
 		"upgradeForAbility": "drauvenDeck_hunter_specterstep",
 		"abilityDeckIcon": "silkstepCloak"
 	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_preparedShotAlsoPoisons",
+	"effects": [ "drauven_pc_preparedShotAlsoPoisons", "removeAtStartOfTurn"]
 }
 ]

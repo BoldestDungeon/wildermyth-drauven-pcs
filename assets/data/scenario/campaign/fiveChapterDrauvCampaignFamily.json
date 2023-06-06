@@ -1,0 +1,152 @@
+{
+"scenarioInfo": {
+	"id": "fiveChapterDrauvCampaign",
+	"type": "CAMPAIGN",
+	"nameKey": "fiveChaptersDrauvFamily.name",
+	"blurbKey": "fiveChaptersDrauvFamily.blurb",
+	"newGameImagePath": "assets/ui/reskin/drauven-campaign-cover.png",
+	"sortNumber": 121,
+	"rosterSlots": [
+		{
+			"archetype": "warrior",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "hunter" ],
+			"nameConstraints": "regular",
+			"relationship": { "relatedTo": 3, "relationshipType": "childOf" },
+			"customHistory": {
+				"appendHistory": [
+					{
+						"id": "fiveChapterDrauvCampaignFamily.0.rosterCustomHistory.",
+						"impliedAspects": [
+							"drauven",
+							"drauven_pc",
+							"drauvenBlood",
+							"fluentInDruvwail",
+							"cannotAge",
+							"simplePresence",
+							"ATTACHMENTS_workingRightArm",
+							"ATTACHMENTS_workingLeftArm",
+							"drauvenSkin_naturalLeftArm",
+							"drauvenSkin_naturalLeftHand",
+							"drauvenSkin_naturalRightArm",
+							"drauvenSkin_naturalRightHand",
+							"drauvenSkin_naturalLeftLeg",
+							"drauvenSkin_naturalRightLeg",
+							"drauvenSkin_naturalHead",
+							"drauvenSkin_naturalTorso",
+							"drauvenSkin_naturalTail",
+							"drauvenGear_clothes",
+							"humanSkin_suppressTorso",
+							"nonhuman",
+							"fluentInYandric",
+
+							"nameFormulaOverride|drauvenName",
+							"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C",
+							"rigOverride|Drauven"
+						],
+						"removeAspects": [
+							"young",
+							"earlyMiddleAge",
+							"middleAge",
+							"lateMiddleAge",
+							"oldAge",
+							"veryOldAge",
+							"extremeOldAge",
+							"humanSkin_naturalLeftArm",
+							"humanSkin_naturalLeftHand",
+							"humanSkin_naturalRightArm",
+							"humanSkin_naturalRightHand",
+							"humanSkin_naturalLeftLeg",
+							"humanSkin_naturalRightLeg",
+							"humanSkin_naturalHead"
+						],
+						"showInSummary": false
+					},
+					{
+						"id": "fiveChapterDrauvCampaign.0.rosterCustomHistory.needsDrauvenTheme",
+						"impliedAspects": [ "drauven_theme_init" ],
+						"persistOverLegacy": "never"
+					}
+				]
+			}
+		},
+		{
+			"archetype": "warrior",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "warrior" ],
+			"nameConstraints": "regular",
+			"customHistory": {
+				"appendHistory": [
+					{
+						"id": "fiveChapterDrauvCampaign.1.rosterCustomHistory.",
+						"impliedAspects": [
+							"nonhuman",
+							"drauven",
+							"drauven_pc",
+							"drauvenBlood",
+							"fluentInDruvwail",
+							"cannotAge",
+							"ATTACHMENTS_workingRightArm",
+							"ATTACHMENTS_workingLeftArm",
+							"drauvenSkin_naturalLeftArm",
+							"drauvenSkin_naturalLeftHand",
+							"drauvenSkin_naturalRightArm",
+							"drauvenSkin_naturalRightHand",
+							"drauvenSkin_naturalLeftLeg",
+							"drauvenSkin_naturalRightLeg",
+							"drauvenSkin_naturalHead",
+							"drauvenSkin_naturalTorso",
+							"drauvenSkin_naturalTail",
+							"drauvenGear_clothes",
+							"humanSkin_suppressTorso",
+							"fluentInYandric",
+							
+							"nameFormulaOverride|drauvenName",
+							"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C",
+							"rigOverride|Drauven"
+						],
+						"removeAspects": [
+							"young",
+							"earlyMiddleAge",
+							"middleAge",
+							"lateMiddleAge",
+							"oldAge",
+							"veryOldAge",
+							"extremeOldAge",
+							"humanSkin_naturalLeftArm",
+							"humanSkin_naturalLeftHand",
+							"humanSkin_naturalRightArm",
+							"humanSkin_naturalRightHand",
+							"humanSkin_naturalLeftLeg",
+							"humanSkin_naturalRightLeg",
+							"humanSkin_naturalHead"
+						],
+						"showInSummary": false
+					},
+					{
+						"id": "fiveChapterDrauvCampaign.1.rosterCustomHistory.needsDrauvenTheme",
+						"impliedAspects": [ "drauven_theme_init" ],
+						"persistOverLegacy": "never"
+					}
+				]
+			}
+		},
+		{
+			"archetype": "hunter",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "mystic" ]
+		},
+		{
+			"type": "legacyHero",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "hero" ],
+			"setAge": "42",
+			"requireLegacyHeroAspect": "drauven"
+		}
+	],
+	"legacyAspectPrerequisites": [ "DrauvenAllies_FirstStepsComplete" ],
+	"legacyAspectShowPrerequisites": [ "DrauvenAllies_FirstStepsComplete" ]
+},
+"villainPlotId": "C_fiveChapters_v3",
+"forbidEvents": [ "encounter_wilderness_theAbandoned" ]
+}

@@ -1,0 +1,2780 @@
+{
+"id": "missionVictory_dreamsOfIcarus",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/victory_dreamsOfIcarus",
+	"author": "Shae Rossi",
+	"STUB": "Victory after Drauven win in a swamp. \n\nIntention is to give the character wings via an amulet or a special feather or something. This amulet will be a Legacy item that can be passed down to the next generation."
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"encounterEnabled": true,
+	"onlyShowForNewSites": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{
+		"template": "INJECTED_SITE",
+		"overlandTileBiomes": [ "swamp", "forestDeciduous", "forestConiferous" ]
+	},
+	{
+		"template": "INJECTED_THREAT",
+		"aspectValues": [
+			{ "id": "drauven" }
+		]
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"template": "DEAD_FOES",
+		"choose": "ALL",
+		"aspects": [ "drauven_skysinger" ]
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "max(LEADER,HOTHEAD,GREEDY)",
+		"scoreThreshold": "80",
+		"themes": { "eligibleForTheme": "hawk" }
+	},
+	{
+		"role": "poet",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "GOOFBALL",
+		"scoreThreshold": "60",
+		"notAlreadyMatchedAs": [ "leader" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_swampFallenTreesBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-joke",
+							"anchor": { "x": 0.556, "y": 0.608 },
+							"size": 0.701,
+							"head": { "rotate": -30.964, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_001~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.043,
+							"padYFraction": 0.012,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "poet",
+							"form": "frame-grim",
+							"anchor": { "x": 0.672, "y": 0.637 },
+							"head": { "rotate": -11.725, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_002~1_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.107,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.316, "y": 0.535 },
+							"size": 0.678
+						},
+						{
+							"role": "poet",
+							"form": "frame-grim",
+							"anchor": { "x": 0.603, "y": 0.502 },
+							"size": 0.63,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 13.557 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_003~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.295,
+							"padYFraction": 0.058,
+							"shrinkToFitText": true,
+							"pointerAdjust": {}
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_003~2_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.74,
+							"padYFraction": 0.203,
+							"widthFraction": 0.24787535,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:drauvenCandleUnlit.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.546, "y": 0.092 },
+							"size": 0.158,
+							"drawDepth": -10,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.849, "y": 0.223 },
+							"size": 0.703,
+							"drawDepth": -1
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOn.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.137, "y": 0.219 },
+							"size": 0.703,
+							"drawDepth": -2,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.282, "y": 0.279 },
+							"size": 0.443,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/rockRoots.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.593, "y": 0.648 },
+							"size": 1.264,
+							"nameTag": "none",
+							"foot": { "rotate": 0.231 }
+						},
+						{
+							"assetSpec": "scenery:drauven_scarecrow.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.527, "y": 0.445 },
+							"size": 0.72,
+							"drawDepth": 2,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/offeringsDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.537, "y": 0.256 },
+							"size": 0.234,
+							"drawDepth": -3
+						},
+						{
+							"assetSpec": "scenery:drauven_lanternPoleOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.082, "y": 0.488 },
+							"size": 0.444
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.591, "y": 0.139 },
+							"size": 0.29,
+							"drawDepth": -4
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.463, "y": 0.083 },
+							"size": 0.264,
+							"drawDepth": -4
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_004~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.485, "y": 0.673 },
+							"size": 0.746,
+							"nameTag": "none",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"role": "poet",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.768, "y": 0.613 },
+							"size": 0.764,
+							"nameTag": "none",
+							"head": { "rotate": 20.283, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_005~1_darken",
+							"style": "darken",
+							"padXFraction": 0.016,
+							"padYFraction": 0.283,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"anchor": { "x": 0.444, "y": 0.585 },
+							"size": 0.701
+						},
+						{
+							"role": "poet",
+							"form": "frame-grim",
+							"anchor": { "x": 0.748, "y": 0.583 },
+							"size": 0.656,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -4.859, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_006~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.085,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_006~2_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.776,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:drauvenBaked_skysinger.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.331, "y": 0.302 },
+							"size": 0.561,
+							"nameTag": "none",
+							"foot": { "rotate": -8.247 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_007~1_darken",
+							"style": "darken",
+							"padXFraction": 0.057,
+							"padYFraction": 0.058
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:drauvenBaked_skysinger.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.348, "y": 0.122 },
+							"size": 0.644,
+							"nameTag": "none",
+							"foot": { "rotate": 28.207 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_008~1_darken",
+							"style": "darken",
+							"padXFraction": 0.057,
+							"padYFraction": 0.058
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:drauvenBaked_skysinger.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.242, "y": -0.164 },
+							"size": 0.78,
+							"nameTag": "none",
+							"foot": { "rotate": 45.618 }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.783, "y": 0.753 },
+							"size": 0.239,
+							"nameTag": "none",
+							"foot": { "rotate": -28.673 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_009~1_darken",
+							"style": "darken",
+							"padXFraction": 0.509,
+							"padYFraction": 0.344,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"anchor": { "x": 0.483, "y": 0.646 },
+							"size": 0.683,
+							"nameTag": "none"
+						},
+						{
+							"role": "poet",
+							"form": "frame-grim",
+							"anchor": { "x": 0.745, "y": 0.625 },
+							"size": 0.638,
+							"nameTag": "none",
+							"head": { "rotate": -4.859, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.06, "y": 0.32 },
+							"size": 0.329,
+							"nameTag": "none",
+							"foot": { "rotate": -45 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_010~1_darken",
+							"style": "darken",
+							"padXFraction": 0.031,
+							"padYFraction": 0.422,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"facing": "left",
+							"anchor": { "x": 0.411, "y": 0.573 },
+							"size": 0.685,
+							"nameTag": "none",
+							"head": { "rotate": -25.843, "scaleY": 1 }
+						},
+						{
+							"role": "poet",
+							"form": "frame-grim",
+							"facing": "left",
+							"anchor": { "x": 0.748, "y": 0.545 },
+							"size": 0.65,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"head": { "rotate": -32.605, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_poppedBubbles.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.092, "y": 0.33 },
+							"size": 0.779,
+							"drawDepth": -1,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_011~1_darken",
+							"style": "darken",
+							"padXFraction": 0.046,
+							"padYFraction": 0.348,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"anchor": { "x": 0.417, "y": 0.639 },
+							"size": 0.657,
+							"head": { "rotate": -25.843, "scaleY": 1 }
+						},
+						{
+							"role": "poet",
+							"form": "frame-happy",
+							"facing": "left",
+							"anchor": { "x": 0.76, "y": 0.589 },
+							"size": 0.623,
+							"drawDepth": -1,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -32.605, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_012~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.098,
+							"padYFraction": 0.07,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -63, "dY": -10.000015 }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_012~2_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.597,
+							"padYFraction": 0.041,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-joke",
+							"facing": "left",
+							"anchor": { "x": 0.433, "y": 0.531 },
+							"size": 0.721,
+							"head": { "rotate": -25.843, "scaleY": -1 }
+						},
+						{
+							"role": "poet",
+							"form": "frame-happy",
+							"facing": "left",
+							"anchor": { "x": 0.8, "y": 0.523 },
+							"size": 0.602,
+							"drawDepth": -1,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -32.605, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_013~1_leader",
+							"pointerOwner": "leader",
+							"padYFraction": 0.033,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -63, "dY": -10.000015 }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_013~2_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.479,
+							"padYFraction": 0.139,
+							"widthFraction": 0.30583316,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -34.261837, "dY": -2.2841575 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:drauven_brazierOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.821, "y": 0.112 },
+							"size": 0.675,
+							"drawDepth": -4
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.139, "y": 0.444 },
+							"size": 0.877,
+							"drawDepth": -1,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/rockRoots.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.633, "y": 1.013 },
+							"size": 1.733,
+							"nameTag": "none",
+							"foot": { "rotate": 0.231 }
+						},
+						{
+							"assetSpec": "scenery:drauven_scarecrow.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.587, "y": 0.79 },
+							"size": 1.136,
+							"drawDepth": 2,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/offeringsDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.431, "y": 0.492 },
+							"size": 0.434,
+							"drawDepth": -3,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"anchor": { "x": 0.197, "y": 0.609 },
+							"size": 0.597,
+							"drawDepth": -4,
+							"head": { "rotate": -24.298 }
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.563, "y": 0.195 },
+							"size": 0.396,
+							"drawDepth": -4
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.508, "y": 0.076 },
+							"size": 0.228,
+							"drawDepth": -4,
+							"foot": { "rotate": 19.124 }
+						},
+						{
+							"assetSpec": "comic:drauvenCandleUnlit.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.448, "y": 0.191 },
+							"size": 0.303,
+							"drawDepth": -10,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_014~1_leader",
+							"pointerOwner": "leader",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:drauvenCandleUnlit.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.528 },
+							"size": 0.626,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:ui/comics/offeringsDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.548, "y": 0.644 },
+							"size": 0.708
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.32, "y": 0.174 },
+							"size": 0.255,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 2.106 }
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.155, "y": 0.395 },
+							"size": 0.467,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 8.527 }
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.827, "y": 0.264 },
+							"size": 0.396,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 36.616 }
+						},
+						{
+							"assetSpec": "scenery:drauven_scarecrow.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.539, "y": 1.004 },
+							"size": 1.398,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+							"textKey": "~01~prompt~panel_015~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "leader",
+									"form": "frame-talk",
+									"head": { "rotate": -7.223, "scaleY": -1 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+									"textKey": "~02~choice_one~panel_001~1_leader",
+									"pointerOwner": "leader"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"assetSpec": "comic:icon_dice.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.916, "y": 0.081 },
+									"size": 0.45,
+									"nameTag": "none"
+								},
+								{ "role": "leader", "form": "frame-happy" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+									"textKey": "~03~choice_two~panel_001~1_leader",
+									"pointerOwner": "leader"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "AddRememberedPlace",
+		"target": "site",
+		"icon": "remembered_dreamsOfIcarus"
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "leader",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"blockOtherChanges": true,
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "leader",
+										"head": { "rotate": -5.711 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+										"textKey": "~04~player_chose_one~panel_001~1_leader",
+										"pointerOwner": "leader"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "leader",
+										"form": "frame-talk",
+										"anchor": { "x": 0.592, "y": 0.512 },
+										"size": 0.647,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -15.006, "scaleY": -1 }
+									},
+									{
+										"role": "poet",
+										"equipment": {},
+										"anchor": { "x": 0.188, "y": 0.553 },
+										"size": 0.582
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+										"textKey": "~04~player_chose_one~panel_002~1_leader",
+										"pointerOwner": "leader"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:offeringsDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.448, "y": 0.279 },
+										"size": 0.284,
+										"nameTag": "none",
+										"color": { "r": "0.17506926", "g": "0.17954805", "b": "0.24598338", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_scarecrow.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.869, "y": -0.084 },
+										"size": 0.572,
+										"nameTag": "none",
+										"foot": { "rotate": -32.566 },
+										"color": { "r": "0.50786084", "g": "0.65266669", "b": "0.93775314", "a": "1" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.657, "y": 0.531 },
+										"size": 0.419,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 8.199, "scaleY": -1 },
+										"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_birdcage.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.21, "y": 0.091 },
+										"size": 0.55,
+										"nameTag": "none",
+										"foot": { "rotate": -45.452 },
+										"color": { "r": "0.17506926", "g": "0.17954805", "b": "0.24598338", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.215, "y": 0.489 },
+										"size": 0.311,
+										"head": { "rotate": -11.562 },
+										"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+										"textKey": "~04~player_chose_one~panel_003~1_narration",
+										"style": "narration",
+										"padXFraction": 0.038,
+										"padYFraction": 0.062,
+										"widthFraction": 0.72676057
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "UpgradeGear",
+					"query": {
+						"allowArmor": false,
+						"allowWeapon": false,
+						"allowOffHand": false,
+						"specificAugment": "AUGMENT_TALISMAN"
+					}
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "leader",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoOneRandom",
+			"weightedOutcomes": [
+				{
+					"outcome": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Description",
+								"script": [
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-skeptical",
+													"equipment": {},
+													"anchor": { "x": 0.076, "y": 0.64 },
+													"size": 0.71,
+													"head": { "rotate": 4.52 },
+													"foot": { "rotate": -16.891 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleUnlit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.621, "y": 0.176 },
+													"size": 0.311,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.626, "y": 0.466 },
+													"size": 0.5,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.643, "y": 0.901 },
+													"nameTag": "none"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": -0.323, "y": 0.945 },
+													"size": 1.05,
+													"head": { "rotate": 4.52 },
+													"foot": { "rotate": -16.891 },
+													"colorFilter": { "filterName": "selected", "strength": 2 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.604, "y": 0.073 },
+													"size": 0.504,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:action_popL.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.458, "y": 0.904 },
+													"size": 0.453,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:action_popR.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.753, "y": 0.905 },
+													"size": 0.487,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:light_starburstSmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.612, "y": 0.561 },
+													"size": 0.254,
+													"nameTag": "none",
+													"color": { "r": "1", "g": "0.96927047", "b": "0.77543819", "a": "0.85263139" }
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.626, "y": 0.382 },
+													"size": 0.862,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.643, "y": 0.901 },
+													"size": 1.336,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~05~player_chose_two.random_1~panel_002~1_action",
+													"style": "action",
+													"padXFraction": 0.503,
+													"padYFraction": 0.011,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-hit",
+													"size": 0.985,
+													"head": { "rotate": -29.83 },
+													"color": { "r": "0.55076617", "g": "0.42015928", "b": "0.12291783", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:light_starburstSixth.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.841, "y": 0.439 },
+													"size": 0.506,
+													"nameTag": "none",
+													"foot": { "rotate": -46.176 }
+												},
+												{
+													"assetSpec": "comic:light_starburstSixth.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.15, "y": 0.584 },
+													"size": 0.506,
+													"nameTag": "none",
+													"foot": { "rotate": 28.124 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_rockDragon.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.224, "y": 0.523 },
+													"size": 0.303,
+													"nameTag": "none",
+													"color": { "r": "0.8002584", "g": "0.66460085", "b": "0.526057", "a": "1" },
+													"colorFilter": { "filterName": "selected", "strength": 4 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~05~player_chose_two.random_1~panel_003~1_narration",
+													"style": "narration"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-hit",
+													"anchor": { "x": 0.672, "y": 0.545 },
+													"size": 1.1,
+													"head": { "rotate": 22.28 },
+													"foot": { "rotate": 8.68 },
+													"color": { "r": "0.2811203", "g": "0.24663883", "b": "0.06273934", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:light_starburstLarge.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.43, "y": 0.092 },
+													"size": 0.17,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comicBg:comicBG_rockDragon.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.244, "y": 0.531 },
+													"size": 0.303,
+													"nameTag": "none",
+													"color": { "r": "0.98335469", "g": "0.97204989", "b": "0.96050453", "a": "1" },
+													"colorFilter": { "filterName": "selected", "strength": 4 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~05~player_chose_two.random_1~panel_004~1_narration",
+													"style": "narration"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.602, "y": 0.638 },
+													"size": 0.649,
+													"head": { "rotate": 4.769 }
+												},
+												{
+													"role": "poet",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.148, "y": 0.553 },
+													"size": 0.611
+												},
+												{
+													"assetSpec": "comic:smokeDirectional.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.492, "y": 0.279 },
+													"size": 0.34,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.849, "y": 0.141 },
+													"size": 0.239,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.837, "y": 0.297 },
+													"size": 0.47,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.342, "y": 0.114 },
+													"size": 0.553,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.465, "y": 0.244 },
+													"size": 0.638,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.806, "y": 0.74 },
+													"size": 0.886,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.327, "y": 0.503 },
+													"size": 0.461,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~05~player_chose_two.random_1~panel_005~1_narration",
+													"style": "narration",
+													"padXFraction": 0.744,
+													"padYFraction": 0.187,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.602, "y": 0.638 },
+													"size": 0.649,
+													"head": { "rotate": -1.661, "scaleY": -1 }
+												},
+												{
+													"role": "poet",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.148, "y": 0.553 },
+													"size": 0.611,
+													"head": { "rotate": 8.03 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.849, "y": 0.141 },
+													"size": 0.239,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.837, "y": 0.297 },
+													"size": 0.47,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.342, "y": 0.114 },
+													"size": 0.553,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.465, "y": 0.244 },
+													"size": 0.638,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.806, "y": 0.74 },
+													"size": 0.886,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.327, "y": 0.503 },
+													"size": 0.461,
+													"nameTag": "none"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-interested",
+													"equipment": {},
+													"anchor": { "x": 0.602, "y": 0.638 },
+													"size": 0.649,
+													"head": { "rotate": -7.543, "scaleY": -1 }
+												},
+												{
+													"role": "poet",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.148, "y": 0.553 },
+													"size": 0.611,
+													"head": { "rotate": 4.706 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.849, "y": 0.141 },
+													"size": 0.239,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.837, "y": 0.297 },
+													"size": 0.47,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.342, "y": 0.114 },
+													"size": 0.553,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.465, "y": 0.244 },
+													"size": 0.638,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.806, "y": 0.74 },
+													"size": 0.886,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.327, "y": 0.503 },
+													"size": 0.461,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~05~player_chose_two.random_1~panel_007~1_poet",
+													"pointerOwner": "poet",
+													"padXFraction": 0.203,
+													"padYFraction": 0.098,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									}
+								]
+							},
+							{ "class": "ApplyTheme", "target": "leader", "theme": "hawk", "piece": "wings" },
+							{
+								"class": "Test",
+								"value": "leader.drauven",
+								"threshold": 1,
+								"onPass": {
+                  "class": "DoAll",
+                  "target": "leader",
+                  "outcomes": [
+                    {
+                      "class": "AddHistory",
+                      "inlineHistory": {
+                        "id": "drauvenSpecial_addWingbeat",
+                        "associatedAspects": [ "drauvenSpecial_wingbeat" ],
+                        "persistOverLegacy": "ability"
+                      }
+                    },
+                    {
+                      "class": "AddHistory",
+                      "inlineHistory": {
+                        "id": "drauvenSpecial_addFlight",
+                        "associatedAspects": [ "drauvenSpecial_flight" ],
+                        "persistOverLegacy": "ability"
+                      }
+                    }
+
+                  ]
+								}
+							}
+						]
+					}
+				},
+				{
+					"outcome": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Description",
+								"script": [
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-skeptical",
+													"equipment": {},
+													"anchor": { "x": 0.076, "y": 0.64 },
+													"size": 0.71,
+													"head": { "rotate": 4.52 },
+													"foot": { "rotate": -16.891 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleUnlit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.621, "y": 0.176 },
+													"size": 0.311,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.626, "y": 0.466 },
+													"size": 0.5,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.643, "y": 0.901 },
+													"nameTag": "none"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": -0.323, "y": 0.945 },
+													"size": 1.05,
+													"head": { "rotate": 4.52 },
+													"foot": { "rotate": -16.891 },
+													"colorFilter": { "filterName": "selected", "strength": 2 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.604, "y": 0.073 },
+													"size": 0.504,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:action_popL.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.458, "y": 0.904 },
+													"size": 0.453,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:action_popR.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.753, "y": 0.905 },
+													"size": 0.487,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:light_starburstSmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.612, "y": 0.561 },
+													"size": 0.254,
+													"nameTag": "none",
+													"color": { "r": "1", "g": "0.96927047", "b": "0.77543819", "a": "0.85263139" }
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.626, "y": 0.382 },
+													"size": 0.862,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.643, "y": 0.901 },
+													"size": 1.336,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~06~player_chose_two.random_2~panel_002~1_action",
+													"style": "action",
+													"padXFraction": 0.503,
+													"padYFraction": 0.011,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-hit",
+													"size": 0.985,
+													"head": { "rotate": -29.83 },
+													"color": { "r": "0.55076617", "g": "0.42015928", "b": "0.12291783", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:light_starburstSixth.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.841, "y": 0.439 },
+													"size": 0.506,
+													"nameTag": "none",
+													"foot": { "rotate": -46.176 }
+												},
+												{
+													"assetSpec": "comic:light_starburstSixth.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.15, "y": 0.584 },
+													"size": 0.506,
+													"nameTag": "none",
+													"foot": { "rotate": 28.124 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_rockDragon.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.224, "y": 0.523 },
+													"size": 0.303,
+													"nameTag": "none",
+													"color": { "r": "0.8002584", "g": "0.66460085", "b": "0.526057", "a": "1" },
+													"colorFilter": { "filterName": "selected", "strength": 4 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~06~player_chose_two.random_2~panel_003~1_narration",
+													"style": "narration"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-hit",
+													"anchor": { "x": 0.672, "y": 0.545 },
+													"size": 1.1,
+													"head": { "rotate": 22.28 },
+													"foot": { "rotate": 8.68 },
+													"color": { "r": "0.2811203", "g": "0.24663883", "b": "0.06273934", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:light_starburstLarge.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.43, "y": 0.092 },
+													"size": 0.17,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comicBg:comicBG_rockDragon.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.244, "y": 0.531 },
+													"size": 0.303,
+													"nameTag": "none",
+													"color": { "r": "0.98335469", "g": "0.97204989", "b": "0.96050453", "a": "1" },
+													"colorFilter": { "filterName": "selected", "strength": 4 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~06~player_chose_two.random_2~panel_004~1_narration",
+													"style": "narration"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.602, "y": 0.638 },
+													"size": 0.649,
+													"head": { "rotate": 4.769 }
+												},
+												{
+													"role": "poet",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.148, "y": 0.553 },
+													"size": 0.611
+												},
+												{
+													"assetSpec": "comic:smokeDirectional.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.492, "y": 0.279 },
+													"size": 0.34,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.849, "y": 0.141 },
+													"size": 0.239,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.837, "y": 0.297 },
+													"size": 0.47,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.342, "y": 0.114 },
+													"size": 0.553,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.465, "y": 0.244 },
+													"size": 0.638,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.806, "y": 0.74 },
+													"size": 0.886,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.327, "y": 0.503 },
+													"size": 0.461,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~06~player_chose_two.random_2~panel_005~1_narration",
+													"style": "narration",
+													"padXFraction": 0.744,
+													"padYFraction": 0.187,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-interested",
+													"equipment": {},
+													"anchor": { "x": 0.602, "y": 0.638 },
+													"size": 0.649,
+													"head": { "rotate": -1.661, "scaleY": -1 }
+												},
+												{
+													"role": "poet",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.148, "y": 0.553 },
+													"size": 0.611,
+													"head": { "rotate": 4.712 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.849, "y": 0.141 },
+													"size": 0.239,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.837, "y": 0.297 },
+													"size": 0.47,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.342, "y": 0.114 },
+													"size": 0.553,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.465, "y": 0.244 },
+													"size": 0.638,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.806, "y": 0.74 },
+													"size": 0.886,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.327, "y": 0.503 },
+													"size": 0.461,
+													"nameTag": "none"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-skeptical",
+													"equipment": {},
+													"anchor": { "x": 0.602, "y": 0.638 },
+													"size": 0.649,
+													"head": { "rotate": -7.543, "scaleY": -1 }
+												},
+												{
+													"role": "poet",
+													"form": "frame-joy",
+													"equipment": {},
+													"anchor": { "x": 0.148, "y": 0.553 },
+													"size": 0.611,
+													"head": { "rotate": 17.953 },
+													"foot": { "rotate": 8.504 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.849, "y": 0.141 },
+													"size": 0.239,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.837, "y": 0.297 },
+													"size": 0.47,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.342, "y": 0.114 },
+													"size": 0.553,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.465, "y": 0.244 },
+													"size": 0.638,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.806, "y": 0.74 },
+													"size": 0.886,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.327, "y": 0.503 },
+													"size": 0.461,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~06~player_chose_two.random_2~panel_007~1_poet",
+													"pointerOwner": "poet",
+													"padXFraction": 0.157,
+													"padYFraction": 0.11,
+													"widthFraction": 0.37677053,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-skeptical",
+													"equipment": {},
+													"anchor": { "x": 0.602, "y": 0.638 },
+													"size": 0.649,
+													"head": { "rotate": 2.056, "scaleY": -1 }
+												},
+												{
+													"role": "poet",
+													"form": "frame-joy",
+													"equipment": {},
+													"anchor": { "x": 0.148, "y": 0.553 },
+													"size": 0.611,
+													"head": { "rotate": -15.107 },
+													"foot": { "rotate": 8.504 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.849, "y": 0.141 },
+													"size": 0.239,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.837, "y": 0.297 },
+													"size": 0.47,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.342, "y": 0.114 },
+													"size": 0.553,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.465, "y": 0.244 },
+													"size": 0.638,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.806, "y": 0.74 },
+													"size": 0.886,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.327, "y": 0.503 },
+													"size": 0.461,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~06~player_chose_two.random_2~panel_008~1_poet",
+													"pointerOwner": "poet",
+													"padXFraction": 0.075,
+													"padYFraction": 0.044,
+													"widthFraction": 0.39518413,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~06~player_chose_two.random_2~panel_008~2_leader",
+													"pointerOwner": "leader",
+													"padXFraction": 0.69,
+													"padYFraction": 0.105,
+													"widthFraction": 0.26770526,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 21.699024, "dY": -1.1420612 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-dubious",
+													"equipment": {},
+													"anchor": { "x": 0.843, "y": 0.581 },
+													"size": 0.649,
+													"head": { "rotate": 2, "scaleY": 1 }
+												},
+												{
+													"role": "poet",
+													"form": "frame-joy",
+													"equipment": {},
+													"anchor": { "x": 0.476, "y": 0.481 },
+													"size": 0.373,
+													"head": { "rotate": 17.953 },
+													"foot": { "rotate": -0.653 }
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.056, "y": 0.167 },
+													"size": 0.25,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.029, "y": 0.259 },
+													"size": 0.463,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:stumpSwampLarge.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.341, "y": 0.511 },
+													"size": 0.498,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~06~player_chose_two.random_2~panel_009~1_poet",
+													"pointerOwner": "poet",
+													"padXFraction": 0.256,
+													"padYFraction": 0.094,
+													"widthFraction": 0.415014,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "pointerOrientH": "onLeft" }
+												}
+											]
+										}
+									}
+								]
+							},
+							{
+								"class": "ApplyTheme",
+								"target": "leader",
+								"theme": "tinyWings",
+								"piece": "wings"
+							}
+						]
+					}
+				},
+				{
+					"outcome": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Description",
+								"script": [
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-skeptical",
+													"equipment": {},
+													"anchor": { "x": 0.076, "y": 0.64 },
+													"size": 0.71,
+													"head": { "rotate": 4.52 },
+													"foot": { "rotate": -16.891 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleUnlit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.621, "y": 0.176 },
+													"size": 0.311,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.626, "y": 0.466 },
+													"size": 0.5,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.643, "y": 0.901 },
+													"nameTag": "none"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": -0.323, "y": 0.945 },
+													"size": 1.05,
+													"head": { "rotate": 4.52 },
+													"foot": { "rotate": -16.891 },
+													"colorFilter": { "filterName": "selected", "strength": 2 }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.604, "y": 0.073 },
+													"size": 0.504,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:action_popL.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.458, "y": 0.904 },
+													"size": 0.453,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:action_popR.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.753, "y": 0.905 },
+													"size": 0.487,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:light_starburstSmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.612, "y": 0.561 },
+													"size": 0.254,
+													"nameTag": "none",
+													"color": { "r": "1", "g": "0.96927047", "b": "0.77543819", "a": "0.85263139" }
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.626, "y": 0.382 },
+													"size": 0.862,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.643, "y": 0.901 },
+													"size": 1.336,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_002~1_action",
+													"style": "action",
+													"padXFraction": 0.503,
+													"padYFraction": 0.011,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-hit",
+													"size": 0.985,
+													"head": { "rotate": -29.83 },
+													"color": { "r": "0.55076617", "g": "0.42015928", "b": "0.12291783", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:light_starburstSixth.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.841, "y": 0.439 },
+													"size": 0.506,
+													"nameTag": "none",
+													"foot": { "rotate": -46.176 }
+												},
+												{
+													"assetSpec": "comic:light_starburstSixth.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.15, "y": 0.584 },
+													"size": 0.506,
+													"nameTag": "none",
+													"foot": { "rotate": 28.124 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_rockDragon.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.224, "y": 0.523 },
+													"size": 0.303,
+													"nameTag": "none",
+													"color": { "r": "0.8002584", "g": "0.66460085", "b": "0.526057", "a": "1" },
+													"colorFilter": { "filterName": "selected", "strength": 4 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_003~1_narration",
+													"style": "narration"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-hit",
+													"anchor": { "x": 0.672, "y": 0.545 },
+													"size": 1.1,
+													"head": { "rotate": 22.28 },
+													"foot": { "rotate": 8.68 },
+													"color": { "r": "0.2811203", "g": "0.24663883", "b": "0.06273934", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:light_starburstLarge.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.43, "y": 0.092 },
+													"size": 0.17,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comicBg:comicBG_rockDragon.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.244, "y": 0.531 },
+													"size": 0.303,
+													"nameTag": "none",
+													"color": { "r": "0.98335469", "g": "0.97204989", "b": "0.96050453", "a": "1" },
+													"colorFilter": { "filterName": "selected", "strength": 4 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_004~1_narration",
+													"style": "narration"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-hit",
+													"equipment": {},
+													"anchor": { "x": 0.167, "y": 0.367 },
+													"size": 0.363,
+													"head": { "rotate": -27.84 },
+													"foot": { "rotate": -23.768 },
+													"color": { "r": "0.55076617", "g": "0.42015928", "b": "0.12291783", "a": "1" }
+												},
+												{
+													"role": "poet",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.052, "y": 0.324 },
+													"size": 0.363,
+													"head": { "rotate": 4.481 }
+												},
+												{
+													"assetSpec": "comic:smokeDirectional.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.206, "y": 0.046 },
+													"size": 0.19,
+													"drawDepth": 4.5,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenCandleLit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.317, "y": 0.035 },
+													"size": 0.121,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.311, "y": 0.156 },
+													"size": 0.25,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.108, "y": 0.076 },
+													"size": 0.385,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.192, "y": 0.179 },
+													"size": 0.435,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenSpirit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.508, "y": 0.661 },
+													"size": 0.475,
+													"nameTag": "none",
+													"colorFilter": { "filterName": "selected" }
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.294, "y": 0.324 },
+													"size": 0.483,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOn.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.077, "y": 0.362 },
+													"size": 0.259,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_005~1_narration",
+													"style": "narration",
+													"padXFraction": 0.052,
+													"padYFraction": 0.09,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_005~2_narration",
+													"style": "narration",
+													"padXFraction": 0.432,
+													"padYFraction": 0.786,
+													"widthFraction": 0.53802806
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-hit",
+													"equipment": {},
+													"anchor": { "x": 0.165, "y": 0.282 },
+													"size": 0.363,
+													"head": { "rotate": -33.264 },
+													"foot": { "rotate": -8.675 },
+													"color": { "r": "0.9358815", "g": "0.949772", "b": "0.96587241", "a": "1" }
+												},
+												{
+													"role": "poet",
+													"form": "frame-surprised",
+													"equipment": {},
+													"anchor": { "x": 0.042, "y": 0.374 },
+													"size": 0.363,
+													"head": { "rotate": 9.1 },
+													"color": { "r": "0.92672181", "g": "0.94259667", "b": "0.9609971", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleUnlit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.301, "y": 0.069 },
+													"size": 0.121,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.311, "y": 0.156 },
+													"size": 0.25,
+													"nameTag": "none",
+													"color": { "r": "0.26238218", "g": "0.34076095", "b": "0.41130158", "a": "1" },
+													"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.099, "y": 0.076 },
+													"size": 0.385,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.131, "y": 0.168 },
+													"size": 0.435,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.294, "y": 0.324 },
+													"size": 0.483,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.075, "y": 0.328 },
+													"size": 0.259,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:smokeRising.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.303, "y": 0.336 },
+													"size": 0.065,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"foot": { "scaleX": 0.6 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_006~1_leader",
+													"style": "narration",
+													"pointerOwner": "leader",
+													"padXFraction": 0.696,
+													"padYFraction": 0.81,
+													"shrinkToFitText": true,
+													"pointerStyle": "none"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "poet",
+													"form": "frame-skeptical",
+													"size": 0.744,
+													"head": { "rotate": -24.538 }
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.6, "y": 0.5 },
+													"size": 0.668,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_007~1_poet",
+													"pointerOwner": "poet",
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "twoThirds",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-grim",
+													"equipment": {},
+													"anchor": { "x": 0.338, "y": 0.367 },
+													"size": 0.363,
+													"head": { "rotate": -33.926, "scaleY": 1 },
+													"foot": { "rotate": -7.772 },
+													"color": { "r": "0.9358815", "g": "0.949772", "b": "0.96587241", "a": "1" }
+												},
+												{
+													"role": "poet",
+													"form": "frame-interested",
+													"equipment": {},
+													"anchor": { "x": 0.102, "y": 0.404 },
+													"size": 0.363,
+													"head": { "rotate": -11.749 },
+													"color": { "r": "0.92672181", "g": "0.94259667", "b": "0.9609971", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleUnlit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.566, "y": 0.084 },
+													"size": 0.175,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.594, "y": 0.164 },
+													"size": 0.401,
+													"nameTag": "none",
+													"color": { "r": "0.26238218", "g": "0.34076095", "b": "0.41130158", "a": "1" },
+													"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.089, "y": 0.08 },
+													"size": 0.385,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.216, "y": 0.191 },
+													"size": 0.435,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.548, "y": 0.358 },
+													"size": 0.633,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.085, "y": 0.366 },
+													"size": 0.303,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:smokeRising.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.57, "y": 0.424 },
+													"size": 0.064,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"foot": { "rotate": 3.855, "scaleX": 0.6 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_008~1_poet",
+													"pointerOwner": "poet",
+													"padXFraction": 0.155,
+													"padYFraction": 0.242,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "leader",
+													"form": "frame-hit",
+													"equipment": {},
+													"anchor": { "x": 0.829, "y": 0.462 },
+													"size": 0.363,
+													"head": { "rotate": -16.798 },
+													"foot": { "rotate": -4.404 },
+													"color": { "r": "0.9358815", "g": "0.949772", "b": "0.96587241", "a": "1" }
+												},
+												{
+													"role": "poet",
+													"form": "frame-grim",
+													"equipment": {},
+													"anchor": { "x": 0.532, "y": 0.393 },
+													"size": 0.363,
+													"head": { "rotate": 4.481 },
+													"color": { "r": "0.92672181", "g": "0.94259667", "b": "0.9609971", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenCandleUnlit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.301, "y": 0.069 },
+													"size": 0.121,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:offeringsDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.311, "y": 0.156 },
+													"size": 0.25,
+													"nameTag": "none",
+													"color": { "r": "0.26238218", "g": "0.34076095", "b": "0.41130158", "a": "1" },
+													"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+												},
+												{
+													"assetSpec": "scenery:drauven_brazierOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.099, "y": 0.076 },
+													"size": 0.385,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_birdcage.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.131, "y": 0.168 },
+													"size": 0.435,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_scarecrow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.294, "y": 0.324 },
+													"size": 0.483,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.075, "y": 0.328 },
+													"size": 0.259,
+													"nameTag": "none",
+													"color": { "r": "0.58781165", "g": "0.67710751", "b": "0.78060943", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_009~1_leader",
+													"pointerOwner": "leader",
+													"padXFraction": 0.559,
+													"padYFraction": 0.09,
+													"shrinkToFitText": true,
+													"pointerStyle": "none"
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_dreamsOfIcarus",
+													"textKey": "~07~player_chose_two.random_3~panel_009~2_leader",
+													"pointerOwner": "leader",
+													"location": "topRight",
+													"padXFraction": 0.098,
+													"padYFraction": 0.225,
+													"widthFraction": 0.40084985,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": -30.835516, "dY": -2.2841225, "pointerOrientH": "onLeft" }
+												}
+											]
+										}
+									}
+								]
+							},
+							{
+								"class": "AddCalamities",
+								"calamitiesToAdd": [
+									{ "quantity": "1", "flavor": "drauven" }
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "inRelationTo": "leader", "cloneRelatedEntity": true }
+			}
+		}
+	]
+}
+}

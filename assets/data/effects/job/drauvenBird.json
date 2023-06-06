@@ -1,0 +1,95 @@
+{
+"id": "job_drauvenBird",
+"info": { "dataVersion": 1, "sourceFile": "job/drauvenBird", "author": "Anne Austin" },
+"type": "OVERLAND_ABILITY",
+"verb": "JOB",
+"ability": {
+	"icon": "utility",
+	"category": "crafting",
+	"priority": "1",
+	"labor": { "days": "14" }
+},
+"targets": [
+	{
+		"template": "SELF_SITE_THIS_JOB_NOT_ACTIVE",
+		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ]
+	},
+	{
+		"template": "JOB_PARTICIPANT",
+		"promptText": "",
+		"slots": { "max": 1 },
+		"aspects": [ "alive", "ACTIVE", "drauvenBird_healer" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "ApplyTheme",
+		"target": "participant",
+		"theme": "petBirdDrauven",
+		"piece": "birdDrauven"
+	},
+	{
+		"class": "Test",
+		"value": "participant.drauven",
+		"threshold": 1,
+		"onPass": {
+      "class": "DoAll",
+      "target": "participant",
+      "outcomes": [
+        {
+          "class": "AddHistory",
+          "inlineHistory": {
+            "id": "drauvenSpecial_addHarass",
+            "associatedAspects": [ "drauvenSpecial_harass" ],
+            "persistOverLegacy": "ability"
+          }
+        }
+      ]
+    }
+	},
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "com.worldwalkergames.legacy.game.model.comics.ComicNode$Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-happy",
+							"anchor": { "x": 0.439, "y": 0.607 },
+							"size": 0.523,
+							"head": { "rotate": -16.39, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.051, "y": 0.171 },
+							"size": 0.424,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/drauvenBird",
+							"textKey": "~01~~panel_001~1_participant",
+							"pointerOwner": "participant",
+							"padXFraction": 0.547,
+							"padYFraction": 0.171,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -11.633634, "dX": 45, "dY": -5 }
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "Aspects",
+		"target": "self",
+		"removeAspects": [ "_THIS_" ]
+	}
+]
+}

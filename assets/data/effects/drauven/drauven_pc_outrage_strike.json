@@ -1,0 +1,93 @@
+{
+"id": "drauven_pc_outrage_strike",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_outrage_strike",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Bipen",
+	"tags": [ "melee", "weapon" ]
+},
+"type": "ANY_UNIT_ABILITY_USED",
+"verb": "ATTACK",
+"ability": { "priority": "1", "showInCharacterSheet": false },
+"targets": [
+	{ "template": "SELF" },
+	{
+		"template": "MELEE_WEAPON",
+		"choose": "ANY",
+		"aspects": [ "weapon", "MAIN_HAND", "melee" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "MatchTarget",
+		"abilityTarget": {
+			"template": "ADJACENT_ENEMY",
+			"choose": "ONE_RANDOM_TRUE",
+			"showAnyway": true,
+			"alwaysSelect": true,
+			"aspects": [ "HOSTILE_TARGET", "alive" ],
+			"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
+			"lineOfSight": "LIVE_ENEMIES"
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "target" ],
+		"then": {
+			"class": "AttackRoll",
+			"stopBlockingTime": "afterHitAnimation",
+			"defenseRollTags": [ "melee" ],
+			"attackStrength": "self.MELEE_ACCURACY",
+			"wield": "fromWeapon",
+			"onHit": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "MatchTarget",
+						"abilityTarget": {
+							"role": "targetTile",
+							"template": "TILE",
+							"showAnyway": true,
+							"pathFrom": "self",
+							"pathTo": "target",
+							"matchSpecial": "knockBackDestination",
+							"relativeTo": "target",
+							"range": "weapon.weaponKnockback",
+							"lineOfSight": "ANY_COVER",
+							"tileFilter": "parentLocationOrValidMoveEnd",
+							"roleMustFit": "target"
+						}
+					},
+					{
+						"class": "Damage",
+						"amount": "max(1,((1d3-2)+floor((((max(weapon.weaponDamage,((self.themeAbility_melee*self.potency)+2),(self.themeAbility_ranged*self.potnecy))+self.PHYSICAL_DAMAGE_BONUS)/2)*(1+(0.5*self.drauvenDeck_warrior_outrage_upgrade))))))+target.distanceTo.targetTile",
+						"flankingBonusDamage": "weapon.weaponFlankingDamageBonus",
+						"shred": "weapon.weaponShred",
+						"overrideStuntDamage": "max((weapon.stuntDamage-1),1)",
+						"numDefenders": "3"
+					},
+					{
+						"class": "Test",
+						"value": "weapon.weaponKnockback",
+						"threshold": "1",
+						"onPass": {
+							"class": "DoAll",
+							"outcomes": [
+								{
+									"class": "MoveEntity",
+									"target": "target",
+									"directlyToTile": "targetTile",
+									"recordMoveDistanceAs": "knockbackDistance"
+								},
+								{ "class": "ClearRole", "role": "targetTile" }
+							]
+						}
+					}
+				]
+			}
+		}
+	},
+	{ "class": "ClearRole", "role": "target" }
+]
+}

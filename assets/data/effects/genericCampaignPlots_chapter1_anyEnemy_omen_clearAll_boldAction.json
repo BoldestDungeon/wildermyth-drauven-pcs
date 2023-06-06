@@ -1,0 +1,2274 @@
+{
+"id": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+	"author": "Douglas Austin",
+	"declaredEncounterResults": [ "victory", "defeat" ],
+	"genericCampaignInfo": {
+		"chapter": "first",
+		"plotId": "C_generic_clearSites",
+		"capstoneEventId": "genericCampaignPlots_chapter1_anyEnemy_capstone_clearAll_intotheFire"
+	}
+},
+"type": "PLOT_ENCOUNTER",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"encounterWeight": "0.5",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "warrior",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "0",
+		"injectedRole": "warrior",
+		"fromRoles": null
+	},
+	{
+		"role": "hunter",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "0",
+		"injectedRole": "hunter",
+		"fromRoles": null
+	},
+	{
+		"role": "mystic",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "0",
+		"injectedRole": "mystic",
+		"fromRoles": null
+	},
+	{
+		"role": "folk4",
+		"template": "INJECTED_HERO",
+		"choose": "ANY",
+		"injectedRole": "folk4"
+	},
+	{
+		"role": "folk5",
+		"template": "INJECTED_HERO",
+		"choose": "ANY",
+		"injectedRole": "folk5"
+	},
+	{
+		"role": "farmer",
+		"template": "PICK_BY_SCORE",
+		"STUB": "If warrior is NOT a legacy hero",
+		"choose": "ANY",
+		"scoreFunction": null,
+		"injectedRole": "warrior",
+		"fromRoles": null,
+		"aspectValues": [
+			{ "id": "legacyTier", "forbidden": true }
+		]
+	},
+	{
+		"role": "legend",
+		"template": "PICK_BY_SCORE",
+		"STUB": "If warrior IS a legacy hero",
+		"choose": "ANY",
+		"scoreFunction": null,
+		"injectedRole": "warrior",
+		"fromRoles": null,
+		"aspects": [ "legacyTier" ]
+	},
+	{
+		"role": "hero4",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "warrior", "hunter", "mystic" ]
+	},
+	{
+		"role": "hero5",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "warrior", "hunter", "mystic", "hero" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_villageBurn.jpg",
+					"actorSlots": [
+						{
+							"role": "hunter",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.821, "y": 0.482 },
+							"size": 0.6846,
+							"drawDepth": -1,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "warrior",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.237, "y": 0.467 },
+							"size": 0.424,
+							"head": { "rotate": -28.671, "scaleY": -1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.524, "y": 0.41 },
+							"size": 0.407,
+							"nameTag": "none",
+							"head": { "rotate": 14.53 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.632, "y": 0.391 },
+							"size": 0.3276,
+							"nameTag": "none",
+							"head": { "rotate": -7.789 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.323, "y": 0.382 },
+							"size": 0.3276,
+							"nameTag": "none",
+							"head": { "rotate": 27.884 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rubble2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.032, "y": 0.127 },
+							"size": 0.475,
+							"nameTag": "none",
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.638, "y": 0.727 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_001~1_hunter",
+							"pointerOwner": "hunter",
+							"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"location": "bottomRight",
+							"widthFraction": 0.5345783,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -5.9195404, "dY": -0.17241383, "scaleX": 0.9222724, "scaleY": 0.9222724 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_001~2_mystic",
+							"style": "narration",
+							"pointerOwner": "mystic",
+							"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+							"padXFraction": 0.075,
+							"padYFraction": 0.007,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_001~3_mystic",
+							"style": "narration",
+							"pointerOwner": "mystic",
+							"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+							"padXFraction": 0.232,
+							"padYFraction": 0.196,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_001~4_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_villageBurn.jpg",
+					"actorSlots": [
+						{
+							"role": "hunter",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 2.578, "y": 0.485 },
+							"size": 1.1468,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "warrior",
+							"form": "frame-angry",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.54, "y": 0.504 },
+							"size": 0.6763,
+							"head": { "rotate": -7.22, "scaleY": 1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 1.205, "y": 0.529 },
+							"size": 0.7218,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"head": { "rotate": -4.894, "scaleY": -1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rubble2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.417, "y": -0.069 },
+							"size": 0.7576,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.76, "y": 0.888 },
+							"size": 1.5949,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_villageBurn.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.545, "y": 0.516 },
+							"size": 0.295,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero5",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.237, "y": 0.388 },
+							"size": 0.3276,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"head": { "rotate": -19.574, "scaleY": -1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.323, "y": 0.382 },
+							"size": 0.3276,
+							"nameTag": "none",
+							"head": { "rotate": 27.884 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_002~1_hunter",
+							"pointerOwner": "hunter",
+							"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"location": "topRight",
+							"padXFraction": 0.035,
+							"padYFraction": 0.254,
+							"widthFraction": 0.32,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 22.356323, "dY": -12.425288 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_002~2_mystic",
+							"style": "narration",
+							"pointerOwner": "mystic",
+							"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+							"padXFraction": 0.062,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_002~3_mystic",
+							"style": "narration",
+							"pointerOwner": "mystic",
+							"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+							"padXFraction": 0.323,
+							"padYFraction": 0.721,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_002~4_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_002~5_warrior",
+							"pointerOwner": "warrior",
+							"location": "topRight",
+							"padXFraction": 0.071,
+							"padYFraction": 0.106,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 13.134022,
+								"dX": 6.5977015,
+								"dY": -5.655173,
+								"pointerOrientH": "onRight"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_villageBurn.jpg",
+					"actorSlots": [
+						{
+							"role": "hunter",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.722, "y": 0.533 },
+							"size": 0.9329,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.01, "scaleY": 1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "warrior",
+							"form": "frame-angry",
+							"equipment": {},
+							"anchor": { "x": -0.43899995, "y": 0.507 },
+							"size": 0.6763,
+							"head": { "rotate": -7.22, "scaleY": 1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.199, "y": 0.552 },
+							"size": 0.733,
+							"nameTag": "none",
+							"head": { "rotate": -4.894, "scaleY": -1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rubble2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -1.3959999, "y": -0.066 },
+							"size": 0.7576,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.781, "y": 0.891 },
+							"size": 1.5949,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_villageBurn.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.21289092, "y": 0.513 },
+							"size": 0.295,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.902, "y": 1.201 },
+							"size": 0.6032,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.381, "y": 0.423 },
+							"size": 0.3276,
+							"drawDepth": 5.5,
+							"nameTag": "none",
+							"head": { "rotate": 12.609 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_003~1_hunter",
+							"pointerOwner": "hunter",
+							"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"location": "topRight",
+							"padXFraction": 0.035,
+							"padYFraction": 0.254,
+							"widthFraction": 0.32,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 22.356323, "dY": -12.425288 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_003~2_mystic",
+							"style": "narration",
+							"pointerOwner": "mystic",
+							"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+							"padXFraction": 0.062,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_003~3_mystic",
+							"style": "narration",
+							"pointerOwner": "mystic",
+							"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+							"padXFraction": 0.323,
+							"padYFraction": 0.721,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_003~4_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_003~5_warrior",
+							"pointerOwner": "warrior",
+							"location": "topRight",
+							"padXFraction": 0.061,
+							"shrinkToFitText": true,
+							"pointerAdjust": {}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_003~6_hunter",
+							"pointerOwner": "hunter",
+							"location": "bottomRight",
+							"padXFraction": 0.04,
+							"padYFraction": 0.141,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -12.994656,
+								"dX": -45.241264,
+								"dY": -0.94252884,
+								"scaleX": 0.47519016,
+								"scaleY": 0.47519016,
+								"pointerOrientH": "onRight",
+								"forcePointerImage": "speechMedium"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "foes.cdgmt",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_villageBurn.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstQuarter.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.70877117, "y": 0.891 },
+										"size": 1.5949,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.505, "y": 0.689 },
+										"size": 0.4123,
+										"nameTag": "none",
+										"color": { "r": "0.32932043", "g": "0.2198118", "b": "0.21981184", "a": "1" },
+										"colorFilter": { "filterName": "sepia", "strength": -0.5 }
+									},
+									{
+										"assetSpec": "comic:cottageStone2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.5416268, "y": 1.201 },
+										"size": 0.6032,
+										"drawDepth": 5,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:tentWrecked2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.291, "y": 0.648 },
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rubblePile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.525, "y": 0.318 },
+										"size": 0.4151,
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.82704037", "g": "0.72280872", "b": "0.58336359", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:cultist/cultist_grunt.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.623, "y": 0.333 },
+										"size": 0.3397,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": -14.155 },
+										"color": { "r": "0.32932043", "g": "0.2198118", "b": "0.21981184", "a": "0.75433493" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_004.(foes_Deepists)~1_hunter",
+										"pointerOwner": "hunter",
+										"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"location": "topRight",
+										"padXFraction": 0.035,
+										"padYFraction": 0.254,
+										"widthFraction": 0.32,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 22.356323, "dY": -12.425288 }
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_004.(foes_Deepists)~2_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.062,
+										"padYFraction": 0.109,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_004.(foes_Deepists)~3_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.323,
+										"padYFraction": 0.721,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_004.(foes_Deepists)~4_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "0.79768753" },
+										"padXFraction": 0.037,
+										"padYFraction": 0.083,
+										"widthFraction": 0.93294287,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_004.(foes_Deepists)~5_warrior",
+										"pointerOwner": "warrior",
+										"location": "topRight",
+										"padXFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_004.(foes_Deepists)~6_hunter",
+										"pointerOwner": "hunter",
+										"location": "bottomRight",
+										"padXFraction": 0.04,
+										"padYFraction": 0.141,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -12.994656,
+											"dX": -32.04598,
+											"dY": 1.8850576,
+											"pointerOrientH": "onRight"
+										}
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_villageBurn.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstQuarter.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.70877117, "y": 0.891 },
+										"size": 1.5949,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.505, "y": 0.689 },
+										"size": 0.4123,
+										"nameTag": "none",
+										"color": { "r": "0.32932043", "g": "0.2198118", "b": "0.21981184", "a": "1" },
+										"colorFilter": { "filterName": "sepia", "strength": -0.5 }
+									},
+									{
+										"assetSpec": "comic:cottageStone2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.5416268, "y": 1.201 },
+										"size": 0.6032,
+										"drawDepth": 5,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:tentWrecked2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.291, "y": 0.648 },
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rubblePile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.525, "y": 0.318 },
+										"size": 0.4151,
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.82704037", "g": "0.72280872", "b": "0.58336359", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_dart1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.602, "y": 0.443 },
+										"size": 0.2171,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": -14.155 },
+										"color": { "r": "0.59277713", "g": "0.39566147", "b": "0.39566153", "a": "0.75433493" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_005.(foes_Drauven)~1_hunter",
+										"pointerOwner": "hunter",
+										"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"location": "topRight",
+										"padXFraction": 0.035,
+										"padYFraction": 0.254,
+										"widthFraction": 0.32,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 22.356323, "dY": -12.425288 }
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_005.(foes_Drauven)~2_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.062,
+										"padYFraction": 0.109,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_005.(foes_Drauven)~3_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.323,
+										"padYFraction": 0.721,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_005.(foes_Drauven)~4_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "0.79768753" },
+										"padXFraction": 0.037,
+										"padYFraction": 0.083,
+										"widthFraction": 0.93294287,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_005.(foes_Drauven)~5_warrior",
+										"pointerOwner": "warrior",
+										"location": "topRight",
+										"padXFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_005.(foes_Drauven)~6_hunter",
+										"pointerOwner": "hunter",
+										"location": "bottomRight",
+										"padXFraction": 0.04,
+										"padYFraction": 0.141,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -12.994656,
+											"dX": -32.04598,
+											"dY": 1.8850576,
+											"pointerOrientH": "onRight"
+										}
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_villageBurn.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstQuarter.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.70877117, "y": 0.891 },
+										"size": 1.5949,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.505, "y": 0.689 },
+										"size": 0.4123,
+										"nameTag": "none",
+										"color": { "r": "0.32932043", "g": "0.2198118", "b": "0.21981184", "a": "1" },
+										"colorFilter": { "filterName": "sepia", "strength": -0.5 }
+									},
+									{
+										"assetSpec": "comic:cottageStone2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.5416268, "y": 1.201 },
+										"size": 0.6032,
+										"drawDepth": 5,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:tentWrecked2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.291, "y": 0.648 },
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rubblePile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.525, "y": 0.318 },
+										"size": 0.4151,
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.82704037", "g": "0.72280872", "b": "0.58336359", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:gorgon/gorgon_deer.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.595, "y": 0.503 },
+										"size": 0.3397,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": 32.401 },
+										"color": { "r": "0.48184845", "g": "0.32161978", "b": "0.32161984", "a": "0.75433493" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_006.(foes_Gorgons)~1_hunter",
+										"pointerOwner": "hunter",
+										"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"location": "topRight",
+										"padXFraction": 0.035,
+										"padYFraction": 0.254,
+										"widthFraction": 0.32,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 22.356323, "dY": -12.425288 }
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_006.(foes_Gorgons)~2_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.062,
+										"padYFraction": 0.109,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_006.(foes_Gorgons)~3_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.323,
+										"padYFraction": 0.721,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_006.(foes_Gorgons)~4_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "0.79768753" },
+										"padXFraction": 0.037,
+										"padYFraction": 0.083,
+										"widthFraction": 0.93294287,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_006.(foes_Gorgons)~5_warrior",
+										"pointerOwner": "warrior",
+										"location": "topRight",
+										"padXFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_006.(foes_Gorgons)~6_hunter",
+										"pointerOwner": "hunter",
+										"location": "bottomRight",
+										"padXFraction": 0.04,
+										"padYFraction": 0.141,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -12.994656,
+											"dX": -32.04598,
+											"dY": 1.8850576,
+											"pointerOrientH": "onRight"
+										}
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_villageBurn.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstQuarter.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.70877117, "y": 0.891 },
+										"size": 1.5949,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.505, "y": 0.689 },
+										"size": 0.4123,
+										"nameTag": "none",
+										"color": { "r": "0.32932043", "g": "0.2198118", "b": "0.21981184", "a": "1" },
+										"colorFilter": { "filterName": "sepia", "strength": -0.5 }
+									},
+									{
+										"assetSpec": "comic:cottageStone2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.5416268, "y": 1.201 },
+										"size": 0.6032,
+										"drawDepth": 5,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:tentWrecked2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.291, "y": 0.648 },
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rubblePile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.525, "y": 0.318 },
+										"size": 0.4151,
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.82704037", "g": "0.72280872", "b": "0.58336359", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:morthagi/morthagi_spectik.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.656, "y": 0.541 },
+										"size": 0.2363,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": 6.884 },
+										"color": { "r": "0.62978989", "g": "0.44535393", "b": "0.44535398", "a": "0.75433493" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_007.(foes_Morthagi)~1_hunter",
+										"pointerOwner": "hunter",
+										"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"location": "topRight",
+										"padXFraction": 0.035,
+										"padYFraction": 0.254,
+										"widthFraction": 0.32,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 22.356323, "dY": -12.425288 }
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_007.(foes_Morthagi)~2_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.062,
+										"padYFraction": 0.109,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_007.(foes_Morthagi)~3_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.323,
+										"padYFraction": 0.721,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_007.(foes_Morthagi)~4_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "0.79768753" },
+										"padXFraction": 0.037,
+										"padYFraction": 0.083,
+										"widthFraction": 0.93294287,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_007.(foes_Morthagi)~5_warrior",
+										"pointerOwner": "warrior",
+										"location": "topRight",
+										"padXFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_007.(foes_Morthagi)~6_hunter",
+										"pointerOwner": "hunter",
+										"location": "bottomRight",
+										"padXFraction": 0.04,
+										"padYFraction": 0.141,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -12.994656,
+											"dX": -32.04598,
+											"dY": 1.8850576,
+											"pointerOrientH": "onRight"
+										}
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_villageBurn.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:light_starburstQuarter.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.70877117, "y": 0.891 },
+										"size": 1.5949,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.505, "y": 0.689 },
+										"size": 0.4123,
+										"nameTag": "none",
+										"color": { "r": "0.32932043", "g": "0.2198118", "b": "0.21981184", "a": "1" },
+										"colorFilter": { "filterName": "sepia", "strength": -0.5 }
+									},
+									{
+										"assetSpec": "comic:cottageStone2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.5416268, "y": 1.201 },
+										"size": 0.6032,
+										"drawDepth": 5,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:tentWrecked2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.291, "y": 0.648 },
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rubblePile.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.525, "y": 0.318 },
+										"size": 0.4151,
+										"drawDepth": 1,
+										"nameTag": "none",
+										"color": { "r": "0.82704037", "g": "0.72280872", "b": "0.58336359", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_twohead.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.609, "y": 0.478 },
+										"size": 0.3397,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": -6.351 },
+										"color": { "r": "0.32932043", "g": "0.2198118", "b": "0.21981184", "a": "0.75433493" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.647, "y": 0.182 },
+										"size": 2.1281,
+										"drawDepth": 1.25,
+										"nameTag": "none",
+										"color": { "r": "0.47385085", "g": "0.40381414", "b": "0.95456737", "a": "0.62716728" }
+									},
+									{
+										"assetSpec": "comic:gradientRoundWhite.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.81, "y": 0.254 },
+										"size": 1.6599,
+										"drawDepth": 1.25,
+										"nameTag": "none",
+										"color": { "r": "0.40381414", "g": "0.53434068", "b": "0.95456737", "a": "0.62716728" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_008.(foes_Thrixl)~1_hunter",
+										"pointerOwner": "hunter",
+										"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+										"location": "topRight",
+										"padXFraction": 0.035,
+										"padYFraction": 0.254,
+										"widthFraction": 0.32,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 22.356323, "dY": -12.425288 }
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_008.(foes_Thrixl)~2_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.062,
+										"padYFraction": 0.109,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_008.(foes_Thrixl)~3_mystic",
+										"style": "narration",
+										"pointerOwner": "mystic",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+										"padXFraction": 0.323,
+										"padYFraction": 0.721,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_008.(foes_Thrixl)~4_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "0.79768753" },
+										"padXFraction": 0.037,
+										"padYFraction": 0.083,
+										"widthFraction": 0.93294287,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_008.(foes_Thrixl)~5_warrior",
+										"pointerOwner": "warrior",
+										"location": "topRight",
+										"padXFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_008.(foes_Thrixl)~6_hunter",
+										"pointerOwner": "hunter",
+										"location": "bottomRight",
+										"padXFraction": 0.04,
+										"padYFraction": 0.141,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -12.994656,
+											"dX": -32.04598,
+											"dY": 1.8850576,
+											"pointerOrientH": "onRight"
+										}
+									}
+								]
+							}
+						}
+					]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_villageBurn.jpg",
+					"actorSlots": [
+						{
+							"role": "hunter",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.912, "y": 0.501 },
+							"size": 1.0144,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 12.693, "scaleY": 1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "warrior",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.216, "y": 0.491 },
+							"size": 0.6763,
+							"drawDepth": 3.5,
+							"head": { "rotate": 3.696, "scaleY": 1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.50490695, "y": 0.476 },
+							"size": 0.733,
+							"nameTag": "none",
+							"head": { "rotate": -5.353, "scaleY": 1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rubble2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.43036282, "y": -0.066 },
+							"size": 0.7576,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.63788605, "y": 0.891 },
+							"size": 1.5949,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_villageBurn.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.15018606, "y": 0.513 },
+							"size": 0.295,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.191, "y": 1.122 },
+							"size": 0.6032,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"color": { "r": "0.66171539", "g": "0.49617127", "b": "0.27470011", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.655, "y": 0.419 },
+							"size": 0.4175,
+							"drawDepth": 4.5,
+							"nameTag": "none",
+							"head": { "rotate": -14.502, "scaleY": -1 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.323, "y": 0.382 },
+							"size": 0.3843,
+							"drawDepth": 5.5,
+							"nameTag": "none",
+							"head": { "rotate": 11.132 },
+							"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_009~1_hunter",
+							"pointerOwner": "hunter",
+							"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"location": "topRight",
+							"padXFraction": 0.035,
+							"padYFraction": 0.254,
+							"widthFraction": 0.32,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 22.356323, "dY": -12.425288 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_009~2_mystic",
+							"style": "narration",
+							"pointerOwner": "mystic",
+							"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+							"padXFraction": 0.062,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_009~3_mystic",
+							"style": "narration",
+							"pointerOwner": "mystic",
+							"backgroundColor": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" },
+							"padXFraction": 0.323,
+							"padYFraction": 0.721,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_009~4_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_009~5_warrior",
+							"pointerOwner": "warrior",
+							"location": "topRight",
+							"padXFraction": 0.061,
+							"shrinkToFitText": true,
+							"pointerAdjust": {}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_009~6_hunter",
+							"pointerOwner": "hunter",
+							"location": "topRight",
+							"padXFraction": 0.157,
+							"widthFraction": 0.5637584,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+							"textKey": "~01~prompt~panel_009~7_mystic",
+							"pointerOwner": "mystic",
+							"padXFraction": 0.166,
+							"widthFraction": 0.7318354,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -16.02299,
+								"dY": -4.712644,
+								"scaleX": 0.8994958,
+								"scaleY": 0.8994958,
+								"forcePointerImage": "speechMedium"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "legend.exists",
+				"splitBranches": [
+					[],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "warrior",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.65, "y": 0.652 },
+										"size": 0.8876,
+										"head": { "rotate": -11.093, "scaleY": -1 },
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "item:item_fryingPan.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.38, "y": 0.192 },
+										"size": 0.2976,
+										"nameTag": "none",
+										"foot": { "rotate": -60.605 },
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "item:item_pick.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.185, "y": 0.107 },
+										"size": 0.3437,
+										"nameTag": "none",
+										"foot": { "rotate": 44.114 },
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rubble2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.26, "y": 0.277 },
+										"size": 0.4622,
+										"drawDepth": 5.5,
+										"nameTag": "bottomRight",
+										"foot": { "rotate": 11.288 },
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "item:item_pitchfork.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.422, "y": 0.308 },
+										"size": 0.3621,
+										"nameTag": "none",
+										"foot": { "rotate": 40.914 },
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "mystic",
+										"form": "frame-angry",
+										"anchor": { "x": 1.274, "y": 0.568 },
+										"size": 0.6229,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 7.875, "scaleY": 1 },
+										"foot": { "rotate": -7.615 },
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_shake1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.186, "y": 0.657 },
+										"size": 0.2937,
+										"foot": { "rotate": -25.548 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~01~prompt~panel_010.(legend_is_missing)~1_warrior",
+										"pointerOwner": "warrior",
+										"location": "topRight",
+										"padXFraction": 0.429,
+										"padYFraction": 0.002,
+										"widthFraction": 0.42518276,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -17.758566,
+											"dY": -14.988559,
+											"pointerOrientH": "onLeft",
+											"pointerOrientV": "up"
+										}
+									}
+								]
+							}
+						}
+					]
+				]
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "warrior",
+									"equipment": {
+										"mode": "removeWeapons",
+										"equipItemsById": [ "pitchfork" ]
+									},
+									"anchor": { "x": 0.389, "y": 0.545 },
+									"size": 0.622,
+									"head": { "rotate": -16.193 },
+									"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~02~choice_one~panel_001~1_warrior",
+									"pointerOwner": "warrior",
+									"widthFraction": 0.94225484,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": 14.170507, "dY": -6.6129036 }
+								},
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~02~choice_one~panel_001~2_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"padXFraction": 0.11,
+									"padYFraction": 0.087,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "farmer"
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "warrior",
+									"form": "frame-grim",
+									"equipment": {
+										"mode": "removeWeapons",
+										"equipItemsById": [ "pickAxe" ]
+									},
+									"anchor": { "x": 0.34, "y": 0.596 },
+									"size": 0.596,
+									"head": { "rotate": 2.387 },
+									"foot": { "rotate": -5.083 },
+									"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~03~choice_two~panel_001~1_warrior",
+									"pointerOwner": "warrior",
+									"location": "topRight",
+									"padXFraction": 0.07,
+									"padYFraction": 0.068,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "rotate": -4.1849284, "dX": 21.728111, "dY": -11.336407 }
+								},
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~03~choice_two~panel_001~2_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"padXFraction": 0.103,
+									"padYFraction": 0.244,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "farmer"
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "warrior",
+									"form": "frame-skeptical",
+									"equipment": {
+										"mode": "removeWeapons",
+										"equipItemsById": [ "fryingPan" ]
+									},
+									"anchor": { "x": 0.411, "y": 0.56 },
+									"size": 0.5401,
+									"head": { "rotate": -8.824, "scaleY": 1 },
+									"foot": { "rotate": 1.586 },
+									"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~04~choice_three~panel_001~1_warrior",
+									"pointerOwner": "warrior",
+									"location": "topRight",
+									"widthFraction": 0.868011,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": 13.225923, "dY": -14.170507 }
+								},
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~04~choice_three~panel_001~2_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"padXFraction": 0.095,
+									"padYFraction": 0.286,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "farmer"
+			},
+			{
+				"id": "four",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "warrior",
+									"form": "frame-angry",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.345, "y": 0.547 },
+									"size": 0.5401,
+									"head": { "rotate": -26.851, "scaleY": 1 },
+									"foot": { "rotate": 1.586 },
+									"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~05~choice_four~panel_001~1_warrior",
+									"pointerOwner": "warrior",
+									"location": "topRight",
+									"widthFraction": 0.868011,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": 13.225923, "dY": -14.170507 }
+								},
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~05~choice_four~panel_001~2_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"padXFraction": 0.095,
+									"padYFraction": 0.286,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "legend"
+			},
+			{
+				"id": "five",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "warrior",
+									"form": "frame-skeptical",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.411, "y": 0.56 },
+									"size": 0.5401,
+									"head": { "rotate": -21.169, "scaleY": -1 },
+									"foot": { "rotate": 1.586 },
+									"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~06~choice_five~panel_001~1_warrior",
+									"pointerOwner": "warrior",
+									"location": "topRight",
+									"widthFraction": 0.868011,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": 13.225923, "dY": -14.170507 }
+								},
+								{
+									"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+									"textKey": "~06~choice_five~panel_001~2_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"padXFraction": 0.095,
+									"padYFraction": 0.286,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "legend"
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "warrior",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{ "class": "AddGear", "itemById": "pitchfork" },
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"form": "frame-angry",
+										"anchor": { "x": 0.179, "y": 0.496 },
+										"size": 0.938,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero5",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.019, "y": 0.596 },
+										"size": 1.027,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "warrior",
+										"form": "frame-rage",
+										"equipment": {
+											"mode": "removeWeapons",
+											"equipItemsById": [ "pitchfork" ]
+										},
+										"anchor": { "x": 0.698, "y": 0.569 },
+										"size": 0.622,
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hunter",
+										"form": "frame-rage",
+										"anchor": { "x": 0.356, "y": 0.597 },
+										"size": 0.555,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"form": "frame-grim",
+										"anchor": { "x": 0.492, "y": 0.496 },
+										"size": 0.3644,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.188, "y": 0.853 },
+										"nameTag": "none",
+										"foot": { "rotate": 20.41 },
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~07~player_chose_one~panel_001~1_mystic",
+										"pointerOwner": "mystic"
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~07~player_chose_one~panel_001~2_hero5",
+										"pointerOwner": "hero5",
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~07~player_chose_one~panel_001~3_hero4",
+										"pointerOwner": "hero4",
+										"padXFraction": 0.39200002,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "defend",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "ENDURANCE" }
+					],
+					"missionPlanOverride": "townIntroduction",
+					"mutators": [ "randomFires", "forbidSpirits" ],
+					"victoryEventIds": [ "genericCampaignPlots_chapter1_anyEnemy_omenVictory_clearAll_boldAction" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "warrior",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{ "class": "AddGear", "itemById": "pickAxe" },
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"form": "frame-angry",
+										"anchor": { "x": 0.179, "y": 0.496 },
+										"size": 0.938,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero5",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.019, "y": 0.596 },
+										"size": 1.027,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "warrior",
+										"form": "frame-rage",
+										"equipment": {
+											"mode": "removeWeapons",
+											"equipItemsById": [ "pickAxe" ]
+										},
+										"anchor": { "x": 0.698, "y": 0.569 },
+										"size": 0.622,
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hunter",
+										"form": "frame-rage",
+										"anchor": { "x": 0.356, "y": 0.597 },
+										"size": 0.555,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"form": "frame-grim",
+										"anchor": { "x": 0.492, "y": 0.496 },
+										"size": 0.3644,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.188, "y": 0.853 },
+										"nameTag": "none",
+										"foot": { "rotate": 20.41 },
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~08~player_chose_two~panel_001~1_mystic",
+										"pointerOwner": "mystic"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "defend",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "ENDURANCE" }
+					],
+					"missionPlanOverride": "townIntroduction",
+					"mutators": [ "randomFires", "forbidSpirits" ],
+					"victoryEventIds": [ "genericCampaignPlots_chapter1_anyEnemy_omenVictory_clearAll_boldAction" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "warrior",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{ "class": "AddGear", "itemById": "fryingPan" },
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"form": "frame-angry",
+										"anchor": { "x": 0.179, "y": 0.496 },
+										"size": 0.938,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero5",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.019, "y": 0.596 },
+										"size": 1.027,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "warrior",
+										"form": "frame-rage",
+										"equipment": {
+											"mode": "removeWeapons",
+											"equipItemsById": [ "fryingPan" ]
+										},
+										"anchor": { "x": 0.698, "y": 0.569 },
+										"size": 0.622,
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hunter",
+										"form": "frame-rage",
+										"anchor": { "x": 0.356, "y": 0.597 },
+										"size": 0.555,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"form": "frame-grim",
+										"anchor": { "x": 0.492, "y": 0.496 },
+										"size": 0.3644,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.188, "y": 0.853 },
+										"nameTag": "none",
+										"foot": { "rotate": 20.41 },
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~09~player_chose_three~panel_001~1_mystic",
+										"pointerOwner": "mystic"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "defend",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "ENDURANCE" }
+					],
+					"missionPlanOverride": "townIntroduction",
+					"mutators": [ "randomFires", "forbidSpirits" ],
+					"victoryEventIds": [ "genericCampaignPlots_chapter1_anyEnemy_omenVictory_clearAll_boldAction" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "warrior",
+		"ifPlayerChose": "four",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"form": "frame-angry",
+										"anchor": { "x": 0.179, "y": 0.496 },
+										"size": 0.938,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero5",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.019, "y": 0.596 },
+										"size": 1.027,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "warrior",
+										"form": "frame-rage",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.698, "y": 0.569 },
+										"size": 0.622,
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hunter",
+										"form": "frame-rage",
+										"anchor": { "x": 0.356, "y": 0.597 },
+										"size": 0.555,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"form": "frame-grim",
+										"anchor": { "x": 0.492, "y": 0.496 },
+										"size": 0.3644,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.188, "y": 0.853 },
+										"nameTag": "none",
+										"foot": { "rotate": 20.41 },
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~10~player_chose_four~panel_001~1_mystic",
+										"pointerOwner": "mystic"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "defend",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "INSIGHT" }
+					],
+					"missionPlanOverride": "townIntroduction",
+					"mutators": [ "randomFires", "forbidSpirits" ],
+					"victoryEventIds": [ "genericCampaignPlots_chapter1_anyEnemy_omenVictory_clearAll_boldAction" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "warrior",
+		"ifPlayerChose": "five",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "mystic",
+										"form": "frame-angry",
+										"anchor": { "x": 0.179, "y": 0.496 },
+										"size": 0.938,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero5",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.019, "y": 0.596 },
+										"size": 1.027,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "warrior",
+										"form": "frame-rage",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.698, "y": 0.569 },
+										"size": 0.622,
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hunter",
+										"form": "frame-rage",
+										"anchor": { "x": 0.356, "y": 0.597 },
+										"size": 0.555,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"form": "frame-grim",
+										"anchor": { "x": 0.492, "y": 0.496 },
+										"size": 0.3644,
+										"nameTag": "bottomRight",
+										"color": { "r": "0.82455134", "g": "0.66099775", "b": "0.66099781", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:light_starburstHalf.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.188, "y": 0.853 },
+										"nameTag": "none",
+										"foot": { "rotate": 20.41 },
+										"color": { "r": "1", "g": "0.80000001", "b": "0.2", "a": "0.5" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_omen_clearAll_boldAction",
+										"textKey": "~11~player_chose_five~panel_001~1_mystic",
+										"pointerOwner": "mystic"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "defend",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "ENDURANCE" }
+					],
+					"missionPlanOverride": "townIntroduction",
+					"mutators": [ "randomFires", "forbidSpirits" ],
+					"victoryEventIds": [ "genericCampaignPlots_chapter1_anyEnemy_omenVictory_clearAll_boldAction" ]
+				}
+			]
+		}
+	}
+],
+"expressions": { "drauvParty": "(warrior.drauven+hunter.drauven)+mystic.drauven" }
+}

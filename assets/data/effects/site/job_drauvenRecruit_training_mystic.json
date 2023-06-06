@@ -52,6 +52,11 @@
 ],
 "outcomes": [
 	{
+		"class": "Special",
+		"target": "npc",
+		"specialAction": "PROMOTE_FARMER_TO_MYSTIC"
+	},
+	{
 		"class": "ChangeControl",
 		"target": "npc",
 		"becomeAllyOf": "party",

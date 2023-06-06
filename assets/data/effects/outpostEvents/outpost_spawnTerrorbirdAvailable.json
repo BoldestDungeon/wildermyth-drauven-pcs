@@ -1,0 +1,147 @@
+{
+"id": "outpost_spawnTerrorbirdAvailable",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "outpostEvents/outpost_spawnTerrorbirdAvailable",
+	"modId": "wildermyth-drauven-pcs",
+	"debug": true
+},
+"type": "MONTHLY",
+"targets": [
+	{
+		"template": "SELF_SITE",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "0.5",
+		"b": "[0,1]"
+	},
+	{ "role": "site", "template": "SELF_SITE" },
+	{
+		"role": "overlandTile",
+		"template": "OVERLAND_TILE",
+		"relativeTo": "site",
+		"range": "0"
+	},
+	{
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "(((100*drauven)+fluentInDruvwail)+LEADER)+CHARISMA",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "npc",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer3",
+		"aspects": [ "drauven" ],
+		"relativeTo": "overlandTile"
+	}
+],
+"outcomes": [
+	{
+		"class": "NewJob",
+		"target": "site",
+		"effectId": "job_hatchTerrorchick",
+		"post": "site"
+	},
+	{
+		"class": "Aspects",
+		"target": "self",
+		"removeAspects": [ "_THIS_" ]
+	},
+	{
+		"class": "Description",
+		"lightweight": true,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_abstractSky.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:birdVrsawl_flying.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.455, "y": 0.393 },
+							"size": 0.345,
+							"nameTag": "none",
+							"foot": { "rotate": -9.54 },
+							"color": { "r": "0.95165277", "g": "0.78820038", "b": "0.50799632", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdAvailable",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:treeLeverTrunk.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.236, "y": 0.469 },
+							"size": 0.136,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {
+								"equipItemsById": [ "item_bookPaperMap" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.563, "y": 0.126 },
+							"size": 0.35,
+							"head": { "rotate": -14.098 },
+							"foot": { "rotate": -4.764 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillGrassy.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.579, "y": 0.027 },
+							"size": 0.3358,
+							"nameTag": "none",
+							"foot": { "rotate": 0 }
+						},
+						{
+							"assetSpec": "comic:birdVrsawl_perch.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.793, "y": 0.477 },
+							"size": 0.212,
+							"nameTag": "none",
+							"color": { "r": "0.95165277", "g": "0.78820038", "b": "0.50799632", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeR.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.81, "y": 0.218 },
+							"size": 0.1439,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdAvailable",
+							"textKey": "~01~~panel_002~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.193,
+							"padYFraction": 0.006,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}

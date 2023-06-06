@@ -1946,10 +1946,39 @@
 					"value": "drauven",
 					"threshold": "1",
 					"onPass": {
-						"class": "ApplyTheme",
-						"theme": "wolf",
-						"piece": "head",
-						"historyTextKey": "encounter_wilderness_theWolfPrice.0.playerChose_one.1addTheme.wolf.head.replaceInjuries"
+						"class": "DoAll",
+						"target": "volunteer",
+						"outcomes": [
+							{
+								"class": "ApplyTheme",
+								"theme": "wolf",
+								"piece": "head",
+								"historyTextKey": "encounter_wilderness_theWolfPrice.0.playerChose_one.1addTheme.wolf.head.replaceInjuries"
+							},
+							{
+								"class": "Test",
+								"target": "volunteer",
+								"value": "drauven",
+								"threshold": "1",
+								"onPass": {
+									"class": "DoAll",
+									"target": "volunteer",
+									"outcomes": [
+										{
+											"class": "RemoveTheme",
+											"target": "volunteer",
+											"clearSlot": "tail"
+										},
+										{
+											"class": "ApplyTheme",
+											"target": "volunteer",
+											"theme": "wolf",
+											"piece": "tail"
+										}
+									]
+								}
+							}
+						]
 					},
 					"onFail": {
 						"class": "ApplyTheme",

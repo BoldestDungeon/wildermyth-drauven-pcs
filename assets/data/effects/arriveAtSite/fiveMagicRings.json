@@ -1,0 +1,2322 @@
+{
+"id": "encounter_heroesArriveAtSite_fiveMagicRings",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/fiveMagicRings",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Nate Austin"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "otherSite",
+		"template": "INJECTED_TILE",
+		"choose": "ONE_RANDOM",
+		"injectedRole": null,
+		"notAlreadyMatchedAs": [ "overlandTile" ]
+	},
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{
+		"template": "INJECTED_THREAT",
+		"aspects": [ "drauven" ]
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "AGE",
+		"scoreThreshold": "50",
+		"aspects": [ "slotFilled_AUGMENT_RING" ]
+	},
+	{
+		"role": "bookish",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "BOOKISH",
+		"notAlreadyMatchedAs": [ "leader" ]
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "200-AGE",
+		"scoreThreshold": "172",
+		"notAlreadyMatchedAs": [ "leader", "bookish" ]
+	},
+	{
+		"role": "coward",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "COWARD",
+		"notAlreadyMatchedAs": [ "leader", "bookish", "hero" ]
+	},
+	{
+		"role": "goofball",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "GOOFBALL",
+		"notAlreadyMatchedAs": [ "leader", "bookish", "hero" ]
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"STUB": "If there are Drauven in the party, block this event from happening.",
+		"type": "HERO",
+		"choose": "FORBID",
+		"scoreFunction": "1",
+		"aspects": [ "drauven" ]
+	},
+	{
+		"role": "hero3",
+		"template": "ANY",
+		"type": "HERO",
+		"choose": "ANY",
+		"scoreFunction": "(200*drauven)+BOOKISH",
+		"scoreThreshold": "200",
+		"aspects": [ "drauven" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"focus": "foot",
+							"anchor": { "x": 0.842, "y": -0.202 },
+							"size": 0.435,
+							"head": { "rotate": -31.827 }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"focus": "foot",
+							"anchor": { "x": 0.662, "y": -0.082 },
+							"size": 0.374,
+							"nameTag": "none",
+							"head": { "rotate": 1.909 }
+						},
+						{
+							"role": "bookish",
+							"focus": "foot",
+							"anchor": { "x": 0.071, "y": -0.218 },
+							"size": 0.4,
+							"nameTag": "none",
+							"head": { "rotate": -20.556, "scaleY": -1 }
+						},
+						{
+							"role": "coward",
+							"focus": "foot",
+							"anchor": { "x": 0.201, "y": -0.054 },
+							"size": 0.347,
+							"nameTag": "none",
+							"head": { "rotate": 29.055 }
+						},
+						{
+							"role": "goofball",
+							"form": "frame-talk",
+							"focus": "foot",
+							"anchor": { "x": 0.363, "y": -0.223 },
+							"size": 0.4,
+							"drawDepth": 3.5,
+							"nameTag": "none",
+							"head": { "rotate": -4.008, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_001~1_leader",
+							"pointerOwner": "leader",
+							"location": "bottomRight",
+							"padYFraction": 0.729,
+							"widthFraction": 0.41071162,
+							"pointerAdjust": { "dX": 16, "dY": -64.99997, "pointerOrientH": "onLeft", "pointerOrientV": "up" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_001~2_narration",
+							"style": "narration",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"focus": "middle",
+							"anchor": { "x": 0.474, "y": 0.17 },
+							"size": 0.399
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_002~1_darken",
+							"style": "darken",
+							"padXFraction": 0.032,
+							"padYFraction": 0.021
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-surprised",
+							"anchor": { "x": 0.506, "y": 0.52 },
+							"size": 1.212,
+							"head": { "rotate": -25.187 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_003~1_darken",
+							"style": "darken",
+							"padXFraction": 0.052,
+							"padYFraction": 0.009
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"size": 0.816
+						},
+						{
+							"role": "bookish",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"size": 0.859,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -17.021 }
+						},
+						{
+							"assetSpec": "scenery:drauven_spearSkull.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.354, "y": 0.178 },
+							"size": 0.581,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": -25.047 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_004~1_hero",
+							"pointerOwner": "hero"
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_004~2_bookish",
+							"pointerOwner": "bookish",
+							"location": "bottomRight",
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 46, "dY": -7 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_005~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.08,
+							"padYFraction": 0.077,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.904, "y": 0.507 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": -22.38 },
+							"foot": { "rotate": -6.71 }
+						},
+						{
+							"assetSpec": "scenery:drauven_spearSkull.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.191, "y": 0.21 },
+							"size": 0.581,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": -37.861 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_006~1_leader",
+							"pointerOwner": "leader",
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -29,
+								"dY": -13.9999695,
+								"scaleX": 1.2456529,
+								"scaleY": 1.2456529,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_006~2_speech",
+							"location": "topRight",
+							"padXFraction": 0.012,
+							"padYFraction": 0.094,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-joy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.662, "y": 0.493 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": 4.574 }
+						},
+						{
+							"assetSpec": "comic:light_starburstSixth.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.279, "y": 0.394 },
+							"size": 0.426,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": -10.698 },
+							"color": { "r": "1", "g": "1", "b": "0.8", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_007~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.143,
+							"padYFraction": 0.109,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"focus": "middle",
+							"anchor": { "x": 0.485, "y": 0.11 },
+							"size": 0.186,
+							"drawDepth": -2
+						},
+						{
+							"role": "leader",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.642, "y": 0.555 },
+							"drawDepth": -0.8,
+							"nameTag": "bottomRight"
+						},
+						{
+							"role": "bookish",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.307, "y": 0.529 },
+							"size": 0.5,
+							"nameTag": "none",
+							"head": { "rotate": 3.171 },
+							"foot": { "rotate": -8.366 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "hero",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.237, "y": 0.569 },
+							"drawDepth": -1,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_008~1_leader",
+							"pointerOwner": "leader",
+							"location": "topRight",
+							"padXFraction": 0.398,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 22, "dY": 4 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_008~2_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.369,
+							"padYFraction": 0.174,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_008~3_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.238,
+							"padYFraction": 0.256,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -44, "dY": -5 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_008~4_leader",
+							"pointerOwner": "leader",
+							"location": "bottomRight",
+							"padXFraction": 0.001,
+							"padYFraction": 0.038,
+							"widthFraction": 0.4650963,
+							"pointerAdjust": {
+								"dX": -53,
+								"dY": 4,
+								"pointerOrientH": "onRight",
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_008~5_bookish",
+							"pointerOwner": "bookish",
+							"format": "small",
+							"location": "bottomRight",
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 270,
+								"dX": 40,
+								"dY": -48,
+								"scaleX": 0.75,
+								"scaleY": -2,
+								"pointerOrientH": "onRight"
+							},
+							"allowOverlap": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.518, "y": 0.51 },
+							"head": { "rotate": -4.925 }
+						},
+						{
+							"assetSpec": "comic:pointerThought.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.739, "y": 0.781 },
+							"size": 0.342,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_009~1_hero",
+							"style": "thought",
+							"pointerOwner": "hero"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"head": { "rotate": -15.642 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_010~1_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"padXFraction": 0.687,
+							"padYFraction": 0.053,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-dubious",
+							"equipment": {},
+							"head": { "rotate": -10.408, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_011~1_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.726,
+							"padYFraction": 0.054,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -9, "dY": 1 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-talk",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_012~1_hero",
+							"pointerOwner": "hero"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "sixth",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-scared",
+							"equipment": {},
+							"anchor": { "x": 0.55, "y": 0.48 },
+							"size": 2.397,
+							"head": { "rotate": -16.312, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_013~1_bookish",
+							"pointerOwner": "bookish"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.844, "y": 0.533 },
+							"size": 0.832
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.185, "y": 0.533 },
+							"size": 0.841,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"focus": "middle",
+							"anchor": { "x": 0.485, "y": 0.11 },
+							"size": 0.186,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_014~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.538,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -17.96914, "dX": 14, "dY": -2 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_014~2_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.121,
+							"padYFraction": 0.065,
+							"widthFraction": 0.5727204
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.776, "y": 0.536 },
+							"size": 0.867
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.225, "y": 0.509 },
+							"size": 0.841,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"focus": "middle",
+							"anchor": { "x": 0.487, "y": 0.091 },
+							"size": 0.196,
+							"nameTag": "none"
+						},
+						{
+							"role": "bookish",
+							"form": "frame-scheming",
+							"equipment": {},
+							"anchor": { "x": 0.356, "y": 0.456 },
+							"size": 0.396,
+							"nameTag": "none",
+							"head": { "rotate": 14.465 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "coward",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.607, "y": 0.493 },
+							"size": 0.447,
+							"nameTag": "none",
+							"head": { "rotate": 3.171, "scaleY": -1 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "goofball",
+							"form": "frame-joke",
+							"equipment": {},
+							"anchor": { "x": 0.448, "y": 0.493 },
+							"size": 0.38,
+							"head": { "rotate": 14.625, "scaleY": 1 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_015~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.475,
+							"padYFraction": 0.003,
+							"widthFraction": 0.4587505,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -17.96914, "dX": -1, "dY": -2 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_015~2_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.327,
+							"padYFraction": 0.154,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 31.328634, "dX": -38, "dY": -2 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_015~3_coward",
+							"pointerOwner": "coward",
+							"padXFraction": 0.369,
+							"padYFraction": 0.174,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_015~4_goofball",
+							"pointerOwner": "goofball",
+							"padXFraction": 0.369,
+							"padYFraction": 0.174,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"head": { "rotate": -15.449 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_016~1_hero",
+							"pointerOwner": "hero"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 1.043, "y": 0.566 },
+							"size": 0.867,
+							"head": { "rotate": -11.381 },
+							"foot": { "rotate": -14.145 }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.047, "y": 0.489 },
+							"size": 0.841,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"focus": "middle",
+							"anchor": { "x": 0.48, "y": 0.061 },
+							"size": 0.25,
+							"nameTag": "none"
+						},
+						{
+							"role": "bookish",
+							"equipment": {},
+							"anchor": { "x": 0.276, "y": 0.433 },
+							"size": 0.44,
+							"nameTag": "none",
+							"head": { "rotate": 3.313 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "coward",
+							"equipment": {},
+							"anchor": { "x": 0.485, "y": 0.447 },
+							"size": 0.325,
+							"nameTag": "none",
+							"head": { "rotate": 3.171, "scaleY": 1 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "goofball",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.357, "y": 0.476 },
+							"size": 0.38,
+							"head": { "rotate": 2.749, "scaleY": 1 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_poppedBubbles.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.54, "y": 0.145 },
+							"drawDepth": -3,
+							"foot": { "rotate": -4.738 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_017~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.194,
+							"widthFraction": 0.4587505,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 21.456152,
+								"dX": -12.999985,
+								"dY": -64,
+								"scaleX": 1.0689173,
+								"scaleY": 1.0689173,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_017~2_narration",
+							"style": "narration",
+							"padXFraction": 0.278,
+							"padYFraction": 0.077,
+							"widthFraction": 0.9039527,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_017~3_speech",
+							"padXFraction": 0.364,
+							"padYFraction": 0.184,
+							"widthFraction": 0.82126236
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_017~4_darken",
+							"style": "darken",
+							"location": "bottomLeft",
+							"padXFraction": 0.255,
+							"padYFraction": 0.021,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_valleyBeautiful.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.19, "y": 0.503 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_018~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc",
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_018~2_narration",
+							"style": "narration",
+							"padXFraction": 0.353,
+							"padYFraction": 0.147,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_018~3_narration",
+							"style": "narration",
+							"padXFraction": 0.442,
+							"padYFraction": 0.289,
+							"widthFraction": 0.45032948,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_018~4_narration",
+							"style": "narration",
+							"padXFraction": 0.545,
+							"padYFraction": 0.866,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_library.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": {},
+							"head": { "rotate": 24.492 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_019~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_tavernDark.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.28, "y": 0.5 },
+							"size": 0.777,
+							"head": { "rotate": 13.41 }
+						},
+						{
+							"assetSpec": "comic:musicNoteDouble2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.638, "y": 0.726 },
+							"size": 0.404,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:musicNoteSingle2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.814, "y": 0.642 },
+							"size": 0.406,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_020~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc",
+							"padXFraction": 0.21,
+							"padYFraction": 0.094,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_treasureGold.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-joy",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"head": { "rotate": -6.499 }
+						},
+						{
+							"assetSpec": "comic:treasureChestGold_openFull.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.876, "y": 0.123 },
+							"size": 0.174,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_021~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc",
+							"padXFraction": 0.311,
+							"padYFraction": 0.14,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestLightBlueOrange.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.115, "y": -0.079 },
+							"size": 0.28,
+							"head": { "rotate": 10.384 }
+						},
+						{
+							"role": "monster",
+							"facing": "left",
+							"anchor": { "x": 0.754, "y": 0.263 },
+							"size": 0.216,
+							"drawDepth": 4,
+							"nameTag": "bottomRight",
+							"colorFilter": { "filterName": "noLongerVisible", "strength": 0.9 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_bushSwirly1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.846, "y": 0.344 },
+							"size": 0.35,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_022~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc",
+							"padXFraction": 0.021,
+							"padYFraction": 0.093,
+							"widthFraction": 0.6830985,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "sixth",
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-talk",
+							"facing": "left",
+							"anchor": { "x": 0.523, "y": 0.464 },
+							"size": 1.916,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 10.491 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_023~1_leader",
+							"style": "darken",
+							"pointerOwner": "leader",
+							"padXFraction": 0.084,
+							"padYFraction": 0.017
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_forestOrangeTop.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-joke",
+							"equipment": {},
+							"anchor": { "x": 0.434, "y": 0.497 },
+							"head": { "scaleY": 1 }
+						},
+						{
+							"role": "monster2",
+							"facing": "left",
+							"anchor": { "x": 1.276, "y": 0.566 },
+							"size": 0.513,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:pointerSpeechLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.016, "y": 0.541 },
+							"size": 0.267,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 46.854 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_024~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc"
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_024~2_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.367,
+							"padYFraction": 0.154,
+							"pointerStyle": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-sad",
+							"equipment": {},
+							"anchor": { "x": 0.268, "y": 0.473 },
+							"size": 0.832,
+							"head": { "rotate": -19.342 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.844, "y": 0.513 },
+							"size": 0.814,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:pointerSpeechLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.02, "y": 0.549 },
+							"size": 0.267,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 46.854 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_025~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.256,
+							"padYFraction": 0.017,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -7, "dY": -1, "forcePointerImage": "speechMedium" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_025~2_leader",
+							"pointerOwner": "leader",
+							"location": "bottomLeft",
+							"padXFraction": 0.272,
+							"pointerAdjust": { "dX": 22, "dY": 6, "forcePointerImage": "speechMedium" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_forestOrangeTop.jpg",
+					"allowDuplicates": true,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-joke",
+							"anchor": { "x": 0.185, "y": 0.662 },
+							"size": 0.903,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 21.801 }
+						},
+						{
+							"role": "monster2",
+							"facing": "left",
+							"anchor": { "x": 0.759, "y": 0.599 },
+							"size": 0.539,
+							"nameTag": "none"
+						},
+						{
+							"role": "monster2",
+							"facing": "left",
+							"anchor": { "x": 0.613, "y": 0.46 },
+							"size": 0.419,
+							"nameTag": "none"
+						},
+						{
+							"role": "monster2",
+							"facing": "left",
+							"anchor": { "x": 0.939, "y": 0.561 },
+							"size": 0.509,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:musicNoteDouble1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.326, "y": 0.755 },
+							"size": 0.542,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:musicNoteSingle2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.414, "y": 0.699 },
+							"size": 0.527,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_026~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.493, "y": 0.523 },
+							"size": 0.955,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -9.616 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_027~1_leader",
+							"style": "darken",
+							"pointerOwner": "leader",
+							"padXFraction": 0.034,
+							"padYFraction": 0.017
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "leader",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.768, "y": 0.556 },
+							"size": 0.867,
+							"head": { "rotate": -11.381 }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"anchor": { "x": 0.047, "y": 0.489 },
+							"size": 0.803,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -6.933 }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"focus": "middle",
+							"anchor": { "x": 0.482, "y": 0.068 },
+							"size": 0.25,
+							"nameTag": "none"
+						},
+						{
+							"role": "bookish",
+							"equipment": {},
+							"anchor": { "x": 0.276, "y": 0.433 },
+							"size": 0.44,
+							"nameTag": "none",
+							"head": { "rotate": -2.919 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "coward",
+							"equipment": {},
+							"anchor": { "x": 0.48, "y": 0.444 },
+							"size": 0.325,
+							"nameTag": "none",
+							"head": { "rotate": -4.303, "scaleY": 1 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "goofball",
+							"equipment": {},
+							"anchor": { "x": 0.357, "y": 0.476 },
+							"size": 0.38,
+							"head": { "rotate": -12.478, "scaleY": 1 },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_poppedBubbles.png",
+							"role": null,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_028~1_leader",
+							"pointerOwner": "leader",
+							"location": "bottomLeft",
+							"padXFraction": 0.589,
+							"padYFraction": 0.182,
+							"widthFraction": 0.4587505,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 34, "dY": -2 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_028~2_narration",
+							"style": "narration",
+							"padXFraction": 0.01,
+							"padYFraction": 0.006,
+							"widthFraction": 0.50868124,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_028~3_darken",
+							"style": "darken",
+							"padXFraction": 0.386,
+							"padYFraction": 0.802,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_stoneMagic.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-scheming",
+							"anchor": { "x": 0.151, "y": 0.513 },
+							"size": 0.895,
+							"nameTag": "none",
+							"head": { "rotate": 16.44 }
+						},
+						{
+							"role": "monster3",
+							"anchor": { "x": 0.841, "y": 0.556 },
+							"size": 0.86,
+							"nameTag": "bottomRight",
+							"overrideNameTag": "~01~~panel_029~nameTag_1",
+							"overrideNameTagTextSource": "arriveAtSite/fiveMagicRings"
+						},
+						{
+							"assetSpec": "comic:musicNoteDouble1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.29, "y": 0.781 },
+							"size": 0.542,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:musicNoteSingle2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.389, "y": 0.722 },
+							"size": 0.527,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:actionLines_dash.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.54, "y": 0.354 },
+							"size": 0.572,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:musicNoteSingle1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.483, "y": 0.778 },
+							"size": 0.444
+						},
+						{
+							"assetSpec": "comic:musicNoteDouble1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.585, "y": 0.709 },
+							"size": 0.468
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_029~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc",
+							"location": "bottomLeft",
+							"padXFraction": 0.5,
+							"padYFraction": 0.156,
+							"widthFraction": 0.43617278
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "sixth",
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.523, "y": 0.464 },
+							"size": 1.916,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -0.134 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_030~1_leader",
+							"style": "darken",
+							"pointerOwner": "leader",
+							"padXFraction": 0.042,
+							"padYFraction": 0.017
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"bg": "comicBG_treasureAntique.jpg",
+					"actorSlots": [
+						{ "role": "npc", "form": "frame-grim" }
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_031~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"anchor": { "x": 0.152, "y": 0.5 },
+							"size": 0.718,
+							"head": { "rotate": 15.94 }
+						},
+						{
+							"assetSpec": "scenery:altar1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.971, "y": 0.294 },
+							"size": 0.489,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_032~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.272, "y": 0.543 },
+							"size": 1.053,
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-joke",
+							"equipment": {},
+							"anchor": { "x": 0.783, "y": 0.503 },
+							"size": 0.803,
+							"nameTag": "none",
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_033~1_hero",
+							"pointerOwner": "hero"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fifth",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.506, "y": 0.55 },
+							"size": 1.665,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_034~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fifth",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.506, "y": 0.55 },
+							"size": 1.665,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 10.491 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_035~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fifth",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.506, "y": 0.55 },
+							"size": 1.665,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -11.08 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_036~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_treasureAntique.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"anchor": { "x": 0.182, "y": 0.919 },
+							"size": 0.965,
+							"head": { "rotate": -18.435 },
+							"foot": { "rotate": -9.348 }
+						},
+						{
+							"assetSpec": "scenery:altar1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.565, "y": 0.029 },
+							"size": 0.578,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_037~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc",
+							"location": "bottomLeft",
+							"padXFraction": 0.055,
+							"padYFraction": 0.07,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"anchor": { "x": 0.285, "y": 0.748 },
+							"size": 0.532
+						},
+						{
+							"assetSpec": "scenery:altar1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.549, "y": 0.191 },
+							"size": 0.404,
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_038~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc"
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_038~2_narration",
+							"style": "narration",
+							"location": "bottomRight",
+							"padXFraction": 0.055,
+							"padYFraction": 0.062,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-hit",
+							"equipment": {},
+							"anchor": { "x": 0.214, "y": 0.52 },
+							"size": 0.913,
+							"head": { "rotate": 13.331 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "goofball",
+							"form": "frame-sad",
+							"equipment": {},
+							"anchor": { "x": 0.46, "y": 0.487 },
+							"size": 0.847,
+							"nameTag": "none",
+							"head": { "rotate": -9.62 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-hit",
+							"equipment": {},
+							"anchor": { "x": 0.757, "y": 0.493 },
+							"size": 0.672,
+							"nameTag": "none",
+							"head": { "rotate": -19.037 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_injury.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.132, "y": 0.917 },
+							"size": 0.213,
+							"nameTag": "none",
+							"foot": { "rotate": -32.585 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.68771929" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_039~1_bookish",
+							"pointerOwner": "bookish"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_treasureAntique.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.735, "y": -0.002 },
+							"size": 0.262
+						},
+						{
+							"role": "monster",
+							"anchor": { "x": 0.07, "y": 0.228 },
+							"size": 0.183,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "scenery:altar1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.034, "y": 0.196 },
+							"size": 0.234,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:actionLines_arcShort.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.789, "y": 0.454 },
+							"size": 0.294,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_040~1_monster",
+							"style": "action",
+							"pointerOwner": "monster",
+							"padXFraction": 0.137,
+							"padYFraction": 0.428
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_040~2_narration",
+							"style": "narration",
+							"padXFraction": 0.047,
+							"padYFraction": 0.105,
+							"widthFraction": 0.67803836,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-joy",
+							"facing": "left",
+							"nameTag": "bottomRight",
+							"head": { "rotate": 15.35 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_041~1_npc",
+							"style": "narration",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.727, "y": 0.553 },
+							"size": 0.753,
+							"head": { "rotate": -11.381 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.191, "y": 0.573 },
+							"size": 0.733,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -6.933 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "bookish",
+							"anchor": { "x": 0.319, "y": 0.439 },
+							"size": 0.449,
+							"nameTag": "none",
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"equipment": {},
+							"anchor": { "x": 0.387, "y": 0.47 },
+							"size": 0.406,
+							"nameTag": "none",
+							"head": { "rotate": -2.919 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "goofball",
+							"equipment": {},
+							"anchor": { "x": 0.486, "y": 0.491 },
+							"size": 0.344,
+							"nameTag": "none",
+							"head": { "rotate": -4.303, "scaleY": 1 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"assetSpec": "scenery:campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.473, "y": 0.073 },
+							"size": 0.389,
+							"drawDepth": -1,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.487, "y": -0.126 },
+							"size": 0.479,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.97337002", "g": "0.51525652", "b": "0.3038221", "a": "0.68070132" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_042~1_leader",
+							"pointerOwner": "leader",
+							"location": "bottomLeft",
+							"padXFraction": 0.589,
+							"padYFraction": 0.182,
+							"widthFraction": 0.4587505,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 34, "dY": -2 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.727, "y": 0.553 },
+							"size": 0.753,
+							"head": { "rotate": -11.381 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.191, "y": 0.573 },
+							"size": 0.733,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -6.933 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "bookish",
+							"anchor": { "x": 0.319, "y": 0.439 },
+							"size": 0.449,
+							"nameTag": "none",
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"equipment": {},
+							"anchor": { "x": 0.387, "y": 0.47 },
+							"size": 0.396,
+							"nameTag": "none",
+							"head": { "rotate": -2.919 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"assetSpec": "scenery:campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.473, "y": 0.073 },
+							"size": 0.389,
+							"drawDepth": -1,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "goofball",
+							"equipment": {},
+							"anchor": { "x": 0.486, "y": 0.491 },
+							"size": 0.344,
+							"nameTag": "none",
+							"head": { "rotate": -4.303, "scaleY": 1 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.487, "y": -0.126 },
+							"size": 0.479,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.97337002", "g": "0.51525652", "b": "0.3038221", "a": "0.68070132" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_043~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.272,
+							"padYFraction": 0.017,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.727, "y": 0.553 },
+							"size": 0.753,
+							"head": { "rotate": -11.381 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-scared",
+							"equipment": {},
+							"anchor": { "x": 0.191, "y": 0.573 },
+							"size": 0.733,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 15.193 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-joke",
+							"anchor": { "x": 0.319, "y": 0.439 },
+							"size": 0.449,
+							"nameTag": "none",
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-hit",
+							"equipment": {},
+							"anchor": { "x": 0.387, "y": 0.47 },
+							"size": 0.423,
+							"nameTag": "none",
+							"head": { "rotate": -2.919 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "goofball",
+							"form": "frame-joke",
+							"equipment": {},
+							"anchor": { "x": 0.486, "y": 0.491 },
+							"size": 0.344,
+							"nameTag": "none",
+							"head": { "rotate": -4.303, "scaleY": 1 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"assetSpec": "scenery:campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.473, "y": 0.073 },
+							"size": 0.389,
+							"drawDepth": -1,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.487, "y": -0.126 },
+							"size": 0.479,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.97337002", "g": "0.51525652", "b": "0.3038221", "a": "0.68070132" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_044~1_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.39,
+							"widthFraction": 0.4587505,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -13, "dY": -4 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"role": "leader",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.727, "y": 0.553 },
+							"size": 0.753,
+							"head": { "rotate": -19.486 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-scared",
+							"equipment": {},
+							"anchor": { "x": 0.191, "y": 0.573 },
+							"size": 0.733,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -45.444 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "bookish",
+							"form": "frame-scheming",
+							"anchor": { "x": 0.319, "y": 0.439 },
+							"size": 0.449,
+							"nameTag": "none",
+							"head": { "scaleY": -1 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-hit",
+							"equipment": {},
+							"anchor": { "x": 0.387, "y": 0.47 },
+							"size": 0.405,
+							"nameTag": "none",
+							"head": { "rotate": -13.499 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"role": "goofball",
+							"equipment": {},
+							"anchor": { "x": 0.486, "y": 0.491 },
+							"size": 0.344,
+							"nameTag": "none",
+							"head": { "rotate": -4.303, "scaleY": -1 },
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" },
+							"colorFilter": { "filterName": "overlandFog", "strength": 0.2 }
+						},
+						{
+							"assetSpec": "scenery:campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.473, "y": 0.073 },
+							"size": 0.389,
+							"drawDepth": -1
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.487, "y": -0.126 },
+							"size": 0.479,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.97337002", "g": "0.51525652", "b": "0.3038221", "a": "0.68070132" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_045~1_leader",
+							"pointerOwner": "leader",
+							"location": "bottomLeft",
+							"padXFraction": 0.495,
+							"padYFraction": 0.242,
+							"widthFraction": 0.4587505,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 8, "dY": 2 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_045~2_bookish",
+							"pointerOwner": "bookish",
+							"padXFraction": 0.031,
+							"padYFraction": 0.013,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -20.9245, "dX": 37.00006, "dY": 6, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "leader",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight",
+							"color": { "r": "0.71789491", "g": "0.74900883", "b": "0.88210511", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/fiveMagicRings",
+							"textKey": "~01~~panel_046~1_leader",
+							"pointerOwner": "leader"
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "UpgradeGear",
+		"query": {
+			"allowArmor": false,
+			"allowWeapon": false,
+			"allowOffHand": false,
+			"specificAugment": "AUGMENT_RING"
+		}
+	},
+	{
+		"class": "Mission",
+		"goal": "liberate",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{ "role": "foes", "side": "enemy" }
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "nonFarmer", "setAge": "earlyMiddleAge" }
+			}
+		},
+		{
+			"role": "monster",
+			"createEntity": {
+				"query": { "baseTag": "drauven_haunt" }
+			}
+		},
+		{
+			"role": "monster2",
+			"createEntity": {
+				"query": { "baseTag": "thrixl_dweaver" }
+			}
+		},
+		{
+			"role": "monster3",
+			"createEntity": {
+				"query": { "baseTag": "gorgon_gorgon" }
+			}
+		}
+	]
+}
+}

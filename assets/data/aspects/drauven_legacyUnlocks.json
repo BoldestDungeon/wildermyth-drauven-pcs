@@ -1,15 +1,24 @@
 [
-  {
-    "id": "DrauvenAllies_FirstStepsComplete",
-    "importance": -1
-  },
-  {
-    "id": "DrauvenAllies_Built5Stations",
-    "importance": -1
-  },
-
-  {
-    "id": "legacy_sawLanguageLesson",
-    "importance": -1
-  }
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "DrauvenAllies_Built5Stations",
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "DrauvenAllies_FirstStepsComplete",
+	"effects": [ "drauven_pcs_enabled" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pcs_enabled",
+	"importance": -1,
+	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "legacy_sawLanguageLesson",
+	"importance": -1
+}
 ]

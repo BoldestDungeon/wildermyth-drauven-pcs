@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Douglas Austin"
 },
 "type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
@@ -1101,445 +1102,899 @@
 					"blockOtherChanges": true,
 					"script": [
 						{
-							"class": "comicNode_Panel",
-							"panel": {
-								"size": "full",
-								"bg": "comicBG_forestGreen.jpg",
-								"actorSlots": [
+							"class": "comicNode_Split",
+							"splitSpec": "hook.fluentInDruvwail",
+							"splitBranches": [
+								[
 									{
-										"role": "hook",
-										"form": "frame-talk",
-										"equipment": {},
-										"anchor": { "x": 0.838, "y": 0.397 },
-										"drawDepth": 0,
-										"nameTag": "bottomRight",
-										"head": { "rotate": 27.861, "scaleY": 1 },
-										"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
-									},
-									{
-										"role": "hook2",
-										"form": "frame-skeptical",
-										"equipment": { "mode": "leaveEquipment" },
-										"anchor": { "x": 0.269, "y": 0.399 },
-										"size": 0.424,
-										"head": { "rotate": 10.616, "scaleY": 1 },
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									},
-									{
-										"assetSpec": "scenery:drauven_skullString.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.002, "y": 0.068 },
-										"size": 0.407,
-										"nameTag": "none",
-										"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
-									},
-									{
-										"assetSpec": "comic:trunkForegroundRooty.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.349, "y": -0.528 },
-										"size": 0.478,
-										"drawDepth": 0,
-										"nameTag": "none",
-										"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
-									},
-									{
-										"assetSpec": "scenery:treeHollow.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.905, "y": 0.613 },
-										"size": 0.512,
-										"nameTag": "none",
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									}
-								],
-								"textSlots": [
-									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_001~1_hook",
-										"pointerOwner": "hook",
-										"padXFraction": 0.681,
-										"padYFraction": 0.105,
-										"widthFraction": 0.93858844,
-										"shrinkToFitText": true,
-										"pointerAdjust": { "rotate": 13.622036, "dX": -42.4138, "dY": 9.536743E-7 }
-									},
-									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_001~2_hook2",
-										"pointerOwner": "hook2",
-										"padXFraction": 0.304,
-										"padYFraction": 0.281,
-										"shrinkToFitText": true
-									}
-								]
-							}
-						},
-						{
-							"class": "comicNode_Panel",
-							"panel": {
-								"showNameTags": false,
-								"animation": { "overridePanelOrder": 2 },
-								"actorSlots": [
-									{
-										"role": "hook2",
-										"form": "frame-surprised",
-										"anchor": { "x": 0.918, "y": 0.481 },
-										"size": 0.53,
-										"drawDepth": -1,
-										"nameTag": "bottomRight",
-										"head": { "rotate": -5.492, "scaleY": -1 },
-										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
-									},
-									{
-										"assetSpec": "comic:drauvenBaked_stump2.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.06, "y": 0.113 },
-										"size": 0.247,
-										"nameTag": "none",
-										"color": { "r": "0.71676302", "g": "0.71676302", "b": "0.71676302", "a": "0.47109827" },
-										"colorFilter": { "filterName": "stealthy", "strength": 0 }
-									},
-									{
-										"assetSpec": "comic:trunkForegroundRooty.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": -0.109, "y": -0.447 },
-										"size": 0.478,
-										"drawDepth": 0,
-										"nameTag": "none",
-										"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
-									}
-								],
-								"textSlots": [
-									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_002~1_hook2",
-										"pointerOwner": "hook2"
-									}
-								]
-							}
-						},
-						{
-							"class": "comicNode_Panel",
-							"panel": {
-								"size": "twoThirds",
-								"animation": { "overridePanelOrder": 1 },
-								"actorSlots": [
-									{
-										"assetSpec": "figure:drauven/drauven_haunt.png",
-										"role": null,
-										"facing": "left",
-										"focus": "middle",
-										"anchor": { "x": 0.85, "y": 0.394 },
-										"size": 0.204,
-										"drawDepth": 4,
-										"nameTag": "none",
-										"foot": { "rotate": -0.258 },
-										"colorFilter": { "filterName": "stealthy" }
-									},
-									{
-										"role": "hook",
-										"equipment": {},
-										"anchor": { "x": 0.389, "y": 0.503 },
-										"drawDepth": -2,
-										"nameTag": "none",
-										"head": { "rotate": 330, "scaleY": -1 },
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									},
-									{
-										"assetSpec": "scenery:treeHollow.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.261, "y": 0.651 },
-										"size": 0.512,
-										"nameTag": "none",
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									},
-									{
-										"assetSpec": "comic:rocksWaterfallSmall.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 1.123, "y": 0.072 },
-										"size": 0.295,
-										"nameTag": "none",
-										"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
-									},
-									{
-										"assetSpec": "scenery:drauven_birdStatue.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.59, "y": 0.189 },
-										"size": 0.278,
-										"nameTag": "none",
-										"color": { "r": "0.57651412", "g": "0.66570884", "b": "0.4961409", "a": "1" }
-									},
-									{
-										"assetSpec": "scenery:drauven_basketSpears.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.968, "y": 0.292 },
-										"size": 0.229,
-										"nameTag": "none",
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									},
-									{
-										"role": "hook2",
-										"form": "frame-surprised",
-										"anchor": { "x": -0.047, "y": 0.481 },
-										"size": 0.472,
-										"drawDepth": -1,
-										"nameTag": "none",
-										"head": { "rotate": -5.492, "scaleY": -1 },
-										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
-									}
-								],
-								"textSlots": [
-									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_003~1_hook",
-										"pointerOwner": "hook",
-										"padXFraction": 0.066,
-										"padYFraction": 0.051,
-										"widthFraction": 0.8428508,
-										"shrinkToFitText": true,
-										"pointerAdjust": {
-											"rotate": -14.381394,
-											"dX": 12.252874,
-											"dY": -9.425288,
-											"pointerOrientH": "onLeft"
-										}
-									}
-								]
-							}
-						},
-						{
-							"class": "comicNode_Panel",
-							"panel": {
-								"size": "full",
-								"actorSlots": [
-									{
-										"assetSpec": "figure:drauven/drauven_haunt.png",
-										"role": null,
-										"focus": "middle",
-										"anchor": { "x": 0.45, "y": 0.53 },
-										"size": 0.204,
-										"drawDepth": 4,
-										"nameTag": "none",
-										"foot": { "rotate": -0.258 },
-										"colorFilter": { "filterName": "stealthy" }
-									},
-									{
-										"role": "hook",
-										"equipment": {},
-										"anchor": { "x": 0.894, "y": 0.459 },
-										"drawDepth": -2,
-										"nameTag": "none",
-										"head": { "rotate": 14.986, "scaleY": 1 },
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									},
-									{
-										"assetSpec": "scenery:treeHollow.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": -0.038, "y": 0.619 },
-										"size": 0.402,
-										"nameTag": "none",
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									},
-									{
-										"assetSpec": "comic:rocksWaterfallSmall.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.508, "y": 0.126 },
-										"size": 0.295,
-										"nameTag": "none",
-										"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
-									},
-									{
-										"assetSpec": "scenery:drauven_birdStatue.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.153, "y": 0.192 },
-										"size": 0.278,
-										"nameTag": "none",
-										"color": { "r": "0.57651412", "g": "0.66570884", "b": "0.4961409", "a": "1" }
-									},
-									{
-										"assetSpec": "scenery:drauven_basketSpears.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.366, "y": 0.292 },
-										"size": 0.229,
-										"nameTag": "none",
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									},
-									{
-										"role": "hook2",
-										"form": "frame-grim",
-										"anchor": { "x": 0.308, "y": 0.337 },
-										"size": 0.472,
-										"drawDepth": -1,
-										"nameTag": "none",
-										"head": { "rotate": -5.492, "scaleY": 1 },
-										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
-									}
-								],
-								"textSlots": [
-									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_004~1_hook",
-										"pointerOwner": "hook",
-										"padXFraction": 0.297,
-										"padYFraction": 0.061,
-										"widthFraction": 0.68748176,
-										"shrinkToFitText": true,
-										"pointerAdjust": {
-											"rotate": -14.381394,
-											"dX": 12.252874,
-											"dY": -9.425288,
-											"pointerOrientH": "onLeft"
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"bg": "comicBG_forestGreen.jpg",
+											"actorSlots": [
+												{
+													"role": "hook",
+													"form": "frame-talk",
+													"equipment": {},
+													"anchor": { "x": 0.838, "y": 0.397 },
+													"drawDepth": 0,
+													"nameTag": "bottomRight",
+													"head": { "rotate": 27.861, "scaleY": 1 },
+													"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-skeptical",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.269, "y": 0.399 },
+													"size": 0.424,
+													"head": { "rotate": 10.616, "scaleY": 1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_skullString.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.002, "y": 0.068 },
+													"size": 0.407,
+													"nameTag": "none",
+													"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:trunkForegroundRooty.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.349, "y": -0.528 },
+													"size": 0.478,
+													"drawDepth": 0,
+													"nameTag": "none",
+													"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:treeHollow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.905, "y": 0.613 },
+													"size": 0.512,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_001.(hook_is_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"backgroundColor": { "r": "0.44991714", "g": "0.54443789", "b": "0.27637064", "a": "1" },
+													"padXFraction": 0.681,
+													"padYFraction": 0.105,
+													"widthFraction": 0.93858844,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "rotate": 13.622036, "dX": -42.4138, "dY": 9.536743E-7 }
+												},
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_001.(hook_is_fluentInDruvwail)~2_hook2",
+													"pointerOwner": "hook2",
+													"padXFraction": 0.304,
+													"padYFraction": 0.281,
+													"shrinkToFitText": true
+												}
+											]
 										}
 									},
 									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_004~2_hook2",
-										"pointerOwner": "hook2",
-										"padXFraction": 0.37,
-										"padYFraction": 0.217,
-										"shrinkToFitText": true
-									}
-								]
-							}
-						},
-						{
-							"class": "comicNode_Panel",
-							"panel": {
-								"size": "half",
-								"actorSlots": [
-									{
-										"assetSpec": "figure:drauven/drauven_haunt.png",
-										"role": null,
-										"focus": "middle",
-										"anchor": { "x": 0.372, "y": 0.533 },
-										"size": 0.204,
-										"drawDepth": 4,
-										"nameTag": "none",
-										"foot": { "rotate": -0.258 },
-										"colorFilter": { "filterName": "stealthy" }
-									},
-									{
-										"role": "hook",
-										"anchor": { "x": 1.519, "y": 0.487 },
-										"drawDepth": -2,
-										"nameTag": "none",
-										"head": { "rotate": 14.986, "scaleY": 1 },
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									},
-									{
-										"assetSpec": "comic:rocksWaterfallSmall.png",
-										"role": null,
-										"focus": "foot",
-										"anchor": { "x": 0.23, "y": 0.117 },
-										"size": 0.295,
-										"nameTag": "none",
-										"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
-									},
-									{
-										"role": "hook2",
-										"form": "frame-interested",
-										"anchor": { "x": 0.822, "y": 0.34 },
-										"size": 0.472,
-										"drawDepth": -1,
-										"nameTag": "none",
-										"head": { "rotate": 2.161, "scaleY": 1 },
-										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
-									}
-								],
-								"textSlots": [
-									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_005~1_hook",
-										"pointerOwner": "hook",
-										"padXFraction": 0.297,
-										"padYFraction": 0.061,
-										"widthFraction": 0.68748176,
-										"shrinkToFitText": true,
-										"pointerAdjust": {
-											"rotate": -14.381394,
-											"dX": 12.252874,
-											"dY": -9.425288,
-											"pointerOrientH": "onLeft"
+										"class": "comicNode_Panel",
+										"panel": {
+											"showNameTags": false,
+											"animation": { "overridePanelOrder": 2 },
+											"actorSlots": [
+												{
+													"role": "hook2",
+													"form": "frame-surprised",
+													"anchor": { "x": 0.918, "y": 0.481 },
+													"size": 0.53,
+													"drawDepth": -1,
+													"nameTag": "bottomRight",
+													"head": { "rotate": -5.492, "scaleY": -1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_stump2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.06, "y": 0.113 },
+													"size": 0.247,
+													"nameTag": "none",
+													"color": { "r": "0.71676302", "g": "0.71676302", "b": "0.71676302", "a": "0.47109827" },
+													"colorFilter": { "filterName": "stealthy", "strength": 0 }
+												},
+												{
+													"assetSpec": "comic:trunkForegroundRooty.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.109, "y": -0.447 },
+													"size": 0.478,
+													"drawDepth": 0,
+													"nameTag": "none",
+													"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_002.(hook_is_fluentInDruvwail)~1_hook2",
+													"pointerOwner": "hook2"
+												}
+											]
 										}
 									},
 									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_005~2_hook2",
-										"pointerOwner": "hook2",
-										"padXFraction": 0.372,
-										"padYFraction": 0.07,
-										"widthFraction": 0.56358206,
-										"shrinkToFitText": true
-									}
-								]
-							}
-						},
-						{
-							"class": "comicNode_Panel",
-							"panel": {
-								"size": "half",
-								"actorSlots": [
-									{
-										"role": "hook",
-										"form": "frame-interested",
-										"equipment": {},
-										"anchor": { "x": 0.737, "y": 0.371 },
-										"drawDepth": -2,
-										"nameTag": "none",
-										"head": { "rotate": -14.439, "scaleY": -1 },
-										"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
-									},
-									{
-										"role": "hook2",
-										"form": "frame-interested",
-										"anchor": { "x": -0.19, "y": 0.336 },
-										"size": 0.472,
-										"drawDepth": -1,
-										"nameTag": "none",
-										"head": { "rotate": 2.161, "scaleY": 1 },
-										"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
-									}
-								],
-								"textSlots": [
-									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_006~1_hook",
-										"pointerOwner": "hook",
-										"padXFraction": 0.297,
-										"padYFraction": 0.061,
-										"widthFraction": 0.68748176,
-										"shrinkToFitText": true,
-										"pointerAdjust": {
-											"rotate": -14.381394,
-											"dX": 12.252874,
-											"dY": -9.425288,
-											"pointerOrientH": "onLeft"
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "twoThirds",
+											"animation": { "overridePanelOrder": 1 },
+											"actorSlots": [
+												{
+													"assetSpec": "figure:drauven/drauven_haunt.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.85, "y": 0.394 },
+													"size": 0.204,
+													"drawDepth": 4,
+													"nameTag": "none",
+													"foot": { "rotate": -0.258 },
+													"colorFilter": { "filterName": "stealthy" }
+												},
+												{
+													"role": "hook",
+													"equipment": {},
+													"anchor": { "x": 0.389, "y": 0.503 },
+													"drawDepth": -2,
+													"nameTag": "none",
+													"head": { "rotate": 330, "scaleY": -1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:treeHollow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.261, "y": 0.651 },
+													"size": 0.512,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rocksWaterfallSmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.123, "y": 0.072 },
+													"size": 0.295,
+													"nameTag": "none",
+													"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.59, "y": 0.189 },
+													"size": 0.278,
+													"nameTag": "none",
+													"color": { "r": "0.57651412", "g": "0.66570884", "b": "0.4961409", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_basketSpears.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.968, "y": 0.292 },
+													"size": 0.229,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-surprised",
+													"anchor": { "x": -0.047, "y": 0.481 },
+													"size": 0.472,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"head": { "rotate": -5.492, "scaleY": -1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_003.(hook_is_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"backgroundColor": { "r": "0.44991714", "g": "0.54443789", "b": "0.27637064", "a": "1" },
+													"padXFraction": 0.066,
+													"padYFraction": 0.051,
+													"widthFraction": 0.8428508,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -14.381394,
+														"dX": 12.252874,
+														"dY": -9.425288,
+														"pointerOrientH": "onLeft"
+													}
+												}
+											]
 										}
 									},
 									{
-										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_006~2_hook",
-										"pointerOwner": "hook",
-										"padXFraction": 0.14,
-										"padYFraction": 0.159,
-										"widthFraction": 0.8238806,
-										"shrinkToFitText": true,
-										"pointerAdjust": { "rotate": -5.856013, "pointerOrientH": "onLeft" }
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"actorSlots": [
+												{
+													"assetSpec": "figure:drauven/drauven_haunt.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.45, "y": 0.53 },
+													"size": 0.204,
+													"drawDepth": 4,
+													"nameTag": "none",
+													"foot": { "rotate": -0.258 },
+													"colorFilter": { "filterName": "stealthy" }
+												},
+												{
+													"role": "hook",
+													"equipment": {},
+													"anchor": { "x": 0.894, "y": 0.459 },
+													"drawDepth": -2,
+													"nameTag": "none",
+													"head": { "rotate": 14.986, "scaleY": 1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:treeHollow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.038, "y": 0.619 },
+													"size": 0.402,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rocksWaterfallSmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.508, "y": 0.126 },
+													"size": 0.295,
+													"nameTag": "none",
+													"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.153, "y": 0.192 },
+													"size": 0.278,
+													"nameTag": "none",
+													"color": { "r": "0.57651412", "g": "0.66570884", "b": "0.4961409", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_basketSpears.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.366, "y": 0.292 },
+													"size": 0.229,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-grim",
+													"anchor": { "x": 0.308, "y": 0.337 },
+													"size": 0.472,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"head": { "rotate": 2.462, "scaleY": 1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_004.(hook_is_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"backgroundColor": { "r": "0.44991714", "g": "0.54443789", "b": "0.27637064", "a": "1" },
+													"padXFraction": 0.297,
+													"padYFraction": 0.061,
+													"widthFraction": 0.68748176,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -14.381394,
+														"dX": 12.252874,
+														"dY": -9.425288,
+														"pointerOrientH": "onLeft"
+													}
+												},
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_004.(hook_is_fluentInDruvwail)~2_hook2",
+													"pointerOwner": "hook2",
+													"padXFraction": 0.37,
+													"padYFraction": 0.217,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"assetSpec": "figure:drauven/drauven_haunt.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.372, "y": 0.533 },
+													"size": 0.204,
+													"drawDepth": 4,
+													"nameTag": "none",
+													"foot": { "rotate": -0.258 },
+													"colorFilter": { "filterName": "stealthy" }
+												},
+												{
+													"role": "hook",
+													"anchor": { "x": 1.519, "y": 0.487 },
+													"drawDepth": -2,
+													"nameTag": "none",
+													"head": { "rotate": 14.986, "scaleY": 1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rocksWaterfallSmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.23, "y": 0.117 },
+													"size": 0.295,
+													"nameTag": "none",
+													"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-interested",
+													"anchor": { "x": 0.822, "y": 0.34 },
+													"size": 0.472,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"head": { "rotate": 2.161, "scaleY": 1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_005.(hook_is_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"padXFraction": 0.297,
+													"padYFraction": 0.061,
+													"widthFraction": 0.68748176,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -14.381394,
+														"dX": 12.252874,
+														"dY": -9.425288,
+														"pointerOrientH": "onLeft"
+													}
+												},
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_005.(hook_is_fluentInDruvwail)~2_hook2",
+													"pointerOwner": "hook2",
+													"padXFraction": 0.372,
+													"padYFraction": 0.07,
+													"widthFraction": 0.56358206,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "hook",
+													"form": "frame-interested",
+													"equipment": {},
+													"anchor": { "x": 0.737, "y": 0.371 },
+													"drawDepth": -2,
+													"nameTag": "none",
+													"head": { "rotate": -14.439, "scaleY": -1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-interested",
+													"anchor": { "x": -0.19, "y": 0.336 },
+													"size": 0.472,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"head": { "rotate": 2.161, "scaleY": 1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_006.(hook_is_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"padXFraction": 0.297,
+													"padYFraction": 0.061,
+													"widthFraction": 0.68748176,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -14.381394,
+														"dX": 12.252874,
+														"dY": -9.425288,
+														"pointerOrientH": "onLeft"
+													}
+												},
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_006.(hook_is_fluentInDruvwail)~2_hook",
+													"pointerOwner": "hook",
+													"padXFraction": 0.14,
+													"padYFraction": 0.159,
+													"widthFraction": 0.8238806,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "rotate": -5.856013, "pointerOrientH": "onLeft" }
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"bg": "comicBG_forestGreen.jpg",
+											"actorSlots": [
+												{
+													"role": "hook",
+													"form": "frame-talk",
+													"equipment": {},
+													"anchor": { "x": 0.838, "y": 0.397 },
+													"drawDepth": 0,
+													"nameTag": "bottomRight",
+													"head": { "rotate": 27.861, "scaleY": 1 },
+													"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-skeptical",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.269, "y": 0.399 },
+													"size": 0.424,
+													"head": { "rotate": 10.616, "scaleY": 1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_skullString.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.002, "y": 0.068 },
+													"size": 0.407,
+													"nameTag": "none",
+													"color": { "r": "0.83495629", "g": "0.91846532", "b": "0.83297974", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:trunkForegroundRooty.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.349, "y": -0.528 },
+													"size": 0.478,
+													"drawDepth": 0,
+													"nameTag": "none",
+													"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:treeHollow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.905, "y": 0.613 },
+													"size": 0.512,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_007.(hook_NOT_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"padXFraction": 0.681,
+													"padYFraction": 0.105,
+													"widthFraction": 0.93858844,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "rotate": 13.622036, "dX": -42.4138, "dY": 9.536743E-7 }
+												},
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_007.(hook_NOT_fluentInDruvwail)~2_hook2",
+													"pointerOwner": "hook2",
+													"padXFraction": 0.304,
+													"padYFraction": 0.281,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"showNameTags": false,
+											"animation": { "overridePanelOrder": 2 },
+											"actorSlots": [
+												{
+													"role": "hook2",
+													"form": "frame-surprised",
+													"anchor": { "x": 0.918, "y": 0.481 },
+													"size": 0.53,
+													"drawDepth": -1,
+													"nameTag": "bottomRight",
+													"head": { "rotate": -5.492, "scaleY": -1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_stump2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.06, "y": 0.113 },
+													"size": 0.247,
+													"nameTag": "none",
+													"color": { "r": "0.71676302", "g": "0.71676302", "b": "0.71676302", "a": "0.47109827" },
+													"colorFilter": { "filterName": "stealthy", "strength": 0 }
+												},
+												{
+													"assetSpec": "comic:trunkForegroundRooty.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.109, "y": -0.447 },
+													"size": 0.478,
+													"drawDepth": 0,
+													"nameTag": "none",
+													"color": { "r": "0.6261642", "g": "0.70490158", "b": "0.55521405", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_008.(hook_NOT_fluentInDruvwail)~1_hook2",
+													"pointerOwner": "hook2"
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "twoThirds",
+											"animation": { "overridePanelOrder": 1 },
+											"actorSlots": [
+												{
+													"assetSpec": "figure:drauven/drauven_haunt.png",
+													"role": null,
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.85, "y": 0.394 },
+													"size": 0.204,
+													"drawDepth": 4,
+													"nameTag": "none",
+													"foot": { "rotate": -0.258 },
+													"colorFilter": { "filterName": "stealthy" }
+												},
+												{
+													"role": "hook",
+													"equipment": {},
+													"anchor": { "x": 0.389, "y": 0.503 },
+													"drawDepth": -2,
+													"nameTag": "none",
+													"head": { "rotate": 330, "scaleY": -1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:treeHollow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.261, "y": 0.651 },
+													"size": 0.512,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rocksWaterfallSmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.123, "y": 0.072 },
+													"size": 0.295,
+													"nameTag": "none",
+													"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.59, "y": 0.189 },
+													"size": 0.278,
+													"nameTag": "none",
+													"color": { "r": "0.57651412", "g": "0.66570884", "b": "0.4961409", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_basketSpears.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.968, "y": 0.292 },
+													"size": 0.229,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-surprised",
+													"anchor": { "x": -0.047, "y": 0.481 },
+													"size": 0.472,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"head": { "rotate": -5.492, "scaleY": -1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_009.(hook_NOT_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"padXFraction": 0.066,
+													"padYFraction": 0.051,
+													"widthFraction": 0.8428508,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -14.381394,
+														"dX": 12.252874,
+														"dY": -9.425288,
+														"pointerOrientH": "onLeft"
+													}
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"actorSlots": [
+												{
+													"assetSpec": "figure:drauven/drauven_haunt.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.45, "y": 0.53 },
+													"size": 0.204,
+													"drawDepth": 4,
+													"nameTag": "none",
+													"foot": { "rotate": -0.258 },
+													"colorFilter": { "filterName": "stealthy" }
+												},
+												{
+													"role": "hook",
+													"equipment": {},
+													"anchor": { "x": 0.894, "y": 0.459 },
+													"drawDepth": -2,
+													"nameTag": "none",
+													"head": { "rotate": 14.986, "scaleY": 1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:treeHollow.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.038, "y": 0.619 },
+													"size": 0.402,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rocksWaterfallSmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.508, "y": 0.126 },
+													"size": 0.295,
+													"nameTag": "none",
+													"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.153, "y": 0.192 },
+													"size": 0.278,
+													"nameTag": "none",
+													"color": { "r": "0.57651412", "g": "0.66570884", "b": "0.4961409", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_basketSpears.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.366, "y": 0.292 },
+													"size": 0.229,
+													"nameTag": "none",
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-grim",
+													"anchor": { "x": 0.308, "y": 0.337 },
+													"size": 0.472,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"head": { "rotate": -5.492, "scaleY": 1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_010.(hook_NOT_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"padXFraction": 0.297,
+													"padYFraction": 0.061,
+													"widthFraction": 0.68748176,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -14.381394,
+														"dX": 12.252874,
+														"dY": -9.425288,
+														"pointerOrientH": "onLeft"
+													}
+												},
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_010.(hook_NOT_fluentInDruvwail)~2_hook2",
+													"pointerOwner": "hook2",
+													"padXFraction": 0.37,
+													"padYFraction": 0.217,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"assetSpec": "figure:drauven/drauven_haunt.png",
+													"role": null,
+													"focus": "middle",
+													"anchor": { "x": 0.372, "y": 0.533 },
+													"size": 0.204,
+													"drawDepth": 4,
+													"nameTag": "none",
+													"foot": { "rotate": -0.258 },
+													"colorFilter": { "filterName": "stealthy" }
+												},
+												{
+													"role": "hook",
+													"anchor": { "x": 1.519, "y": 0.487 },
+													"drawDepth": -2,
+													"nameTag": "none",
+													"head": { "rotate": 14.986, "scaleY": 1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:rocksWaterfallSmall.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.23, "y": 0.117 },
+													"size": 0.295,
+													"nameTag": "none",
+													"color": { "r": "0.60255218", "g": "0.74965751", "b": "0.46999562", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-interested",
+													"anchor": { "x": 0.822, "y": 0.34 },
+													"size": 0.472,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"head": { "rotate": 2.161, "scaleY": 1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_011.(hook_NOT_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"padXFraction": 0.297,
+													"padYFraction": 0.061,
+													"widthFraction": 0.68748176,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -14.381394,
+														"dX": 12.252874,
+														"dY": -9.425288,
+														"pointerOrientH": "onLeft"
+													}
+												},
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_011.(hook_NOT_fluentInDruvwail)~2_hook2",
+													"pointerOwner": "hook2",
+													"padXFraction": 0.372,
+													"padYFraction": 0.07,
+													"widthFraction": 0.56358206,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"actorSlots": [
+												{
+													"role": "hook",
+													"form": "frame-interested",
+													"equipment": {},
+													"anchor": { "x": 0.737, "y": 0.371 },
+													"drawDepth": -2,
+													"nameTag": "none",
+													"head": { "rotate": -14.439, "scaleY": -1 },
+													"color": { "r": "0.79361403", "g": "0.83748209", "b": "0.79257572", "a": "1" }
+												},
+												{
+													"role": "hook2",
+													"form": "frame-interested",
+													"anchor": { "x": -0.19, "y": 0.336 },
+													"size": 0.472,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"head": { "rotate": 2.161, "scaleY": 1 },
+													"color": { "r": "0.70009536", "g": "0.76384115", "b": "0.69858658", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_012.(hook_NOT_fluentInDruvwail)~1_hook",
+													"pointerOwner": "hook",
+													"padXFraction": 0.297,
+													"padYFraction": 0.061,
+													"widthFraction": 0.68748176,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -14.381394,
+														"dX": 12.252874,
+														"dY": -9.425288,
+														"pointerOrientH": "onLeft"
+													}
+												},
+												{
+													"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
+													"textKey": "~05~player_chose_no~panel_012.(hook_NOT_fluentInDruvwail)~2_hook",
+													"pointerOwner": "hook",
+													"padXFraction": 0.14,
+													"padYFraction": 0.159,
+													"widthFraction": 0.8238806,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "rotate": -5.856013, "pointerOrientH": "onLeft" }
+												}
+											]
+										}
 									}
 								]
-							}
+							]
 						},
 						{
 							"class": "comicNode_Panel",
@@ -1579,7 +2034,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_007~1_hook",
+										"textKey": "~05~player_chose_no~panel_013~1_hook",
 										"style": "narration",
 										"pointerOwner": "hook",
 										"shrinkToFitText": true
@@ -1639,7 +2094,7 @@
 								"textSlots": [
 									{
 										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_008~1_hook",
+										"textKey": "~05~player_chose_no~panel_014~1_hook",
 										"pointerOwner": "hook",
 										"padXFraction": 0.297,
 										"padYFraction": 0.061,
@@ -1654,7 +2109,7 @@
 									},
 									{
 										"textSourceFile": "hook/hook_Gritty_inSofterLight_arrive",
-										"textKey": "~05~player_chose_no~panel_008~2_hook",
+										"textKey": "~05~player_chose_no~panel_014~2_hook",
 										"pointerOwner": "hook",
 										"padXFraction": 0.14,
 										"padYFraction": 0.159,
@@ -1699,6 +2154,22 @@
 			"npcId": "hookGritty_inSofterLight",
 			"createEntity": {
 				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		},
+		{
+			"role": "monster",
+			"npcId": "drauven_hostile_faction",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"customHistory": [
+						{
+							"id": "hook_Gritty_inSofterLight_arrive.1",
+							"humanName": "drauvenHostileFaction"
+						}
+					]
+				},
 				"control": "none"
 			}
 		}

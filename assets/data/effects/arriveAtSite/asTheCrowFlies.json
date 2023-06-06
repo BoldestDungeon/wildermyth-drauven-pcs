@@ -708,11 +708,30 @@
 								"value": "drauven",
 								"threshold": "1",
 								"onPass": {
-									"class": "ApplyTheme",
+									"class": "DoAll",
 									"target": "hook",
-									"theme": "crow",
-									"piece": "head",
-									"historyTextKey": "encounter_heroesArriveAtSite_asTheCrowFlies.0.playerChose_two.1addTheme.crow.randomPiece"
+									"outcomes": [
+										{
+											"class": "ApplyTheme",
+											"target": "hook",
+											"theme": "crow",
+											"piece": "head",
+											"historyTextKey": "encounter_heroesArriveAtSite_asTheCrowFlies.0.playerChose_two.1addTheme.crow.randomPiece"
+										},
+										{
+											"class": "RemoveTheme",
+											"target": "hook",
+											"specificTheme": "drauven",
+											"specificPiece": "tail"
+										},
+										{
+											"class": "ApplyTheme",
+											"target": "hook",
+											"theme": "crow",
+											"piece": "tail",
+											"historyTextKey": "encounter_heroesArriveAtSite_asTheCrowFlies.0.playerChose_two.1addTheme.crow.randomPiece"
+										}
+									]
 								},
 								"onFail": {
 									"class": "ApplyTheme",
@@ -731,11 +750,30 @@
 								"value": "drauven",
 								"threshold": "1",
 								"onPass": {
-									"class": "ApplyTheme",
+									"class": "DoAll",
 									"target": "hook",
-									"theme": "crow",
-									"piece": "wings",
-									"historyTextKey": "encounter_heroesArriveAtSite_asTheCrowFlies.0.playerChose_two.1addTheme.crow.randomPiece"
+									"outcomes": [
+										{
+											"class": "ApplyTheme",
+											"target": "hook",
+											"theme": "crow",
+											"piece": "wings",
+											"historyTextKey": "encounter_heroesArriveAtSite_asTheCrowFlies.0.playerChose_two.1addTheme.crow.randomPiece"
+										},
+										{
+											"class": "RemoveTheme",
+											"target": "hook",
+											"specificTheme": "drauven",
+											"specificPiece": "tail"
+										},
+										{
+											"class": "ApplyTheme",
+											"target": "hook",
+											"theme": "crow",
+											"piece": "tail",
+											"historyTextKey": "encounter_heroesArriveAtSite_asTheCrowFlies.0.playerChose_two.1addTheme.crow.randomPiece"
+										}
+									]
 								},
 								"onFail": {
 									"class": "ApplyTheme",

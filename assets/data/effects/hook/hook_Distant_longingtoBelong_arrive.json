@@ -1,0 +1,2770 @@
+{
+"id": "hook_Distant_longingtoBelong_arrive",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Douglas Austin"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"encounterScore": 100000,
+	"suppressNotification": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_THREAT" },
+	{ "template": "INJECTED_PARTY" },
+	{ "role": "hook", "template": "INJECTED_HERO", "injectedRole": "hook" },
+	{ "role": "hook2", "template": "INJECTED_HERO", "injectedRole": "hook2" },
+	{
+		"role": "volunteer",
+		"template": "INJECTED_HERO",
+		"choose": "ANY",
+		"injectedRole": "volunteer"
+	},
+	{
+		"role": "lover",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LOVER_WITH.hook",
+		"scoreThreshold": "1",
+		"fromRoles": null,
+		"notAlreadyMatchedAs": [ "hook2" ]
+	},
+	{
+		"role": "ship",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LOVER_WITH.hook2",
+		"scoreThreshold": "1",
+		"fromRoles": null
+	},
+	{
+		"role": "friend",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "FRIEND_WITH.hook",
+		"scoreThreshold": "1",
+		"fromRoles": null,
+		"notAlreadyMatchedAs": [ "hook2" ]
+	},
+	{
+		"role": "ship2",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "FRIEND_WITH.hook2",
+		"scoreThreshold": "1",
+		"fromRoles": null
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.327,
+							"nameTag": "none",
+							"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.3, "y": 0.5 },
+							"size": 0.5714,
+							"color": { "r": "0.71549338", "g": "0.83031541", "b": "0.98392862", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.7, "y": 0.5 },
+							"size": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.71549338", "g": "0.83031541", "b": "0.98392862", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_002~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_forestBlue.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"equipment": {},
+							"anchor": { "x": 0.3, "y": 0.5 },
+							"size": 0.5714,
+							"color": { "r": "0.71549338", "g": "0.83031541", "b": "0.98392862", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.7, "y": 0.5 },
+							"size": 0.5,
+							"nameTag": "none",
+							"head": { "rotate": 345, "scaleY": -1 },
+							"color": { "r": "0.71549338", "g": "0.83031541", "b": "0.98392862", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_003~1_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.1, "y": 0.4 },
+							"size": 0.4,
+							"nameTag": "none",
+							"head": { "rotate": 22 },
+							"color": { "r": "0.71549338", "g": "0.83031541", "b": "0.98392862", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.7, "y": 0.491 },
+							"drawDepth": 0.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 340, "scaleY": -1 },
+							"color": { "r": "0.71549338", "g": "0.83031541", "b": "0.98392862", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_004~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"head": { "rotate": 335, "scaleY": -1 },
+							"color": { "r": "0.71549338", "g": "0.83031541", "b": "0.98392862", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight",
+							"color": { "r": "0.71549338", "g": "0.83031541", "b": "0.98392862", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_005~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.37,
+							"padYFraction": 0.006,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.58, "y": 0.393 },
+							"size": 0.391,
+							"nameTag": "none",
+							"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hook",
+							"equipment": {},
+							"anchor": { "x": 1.395, "y": 0.481 },
+							"size": 0.594,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.224, "y": 0.393 },
+							"size": 0.835,
+							"drawDepth": -1,
+							"head": { "rotate": 11.444 },
+							"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_006~1_narration",
+							"style": "narration",
+							"location": "topRight",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.308 },
+							"size": 0.409,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:glowGreen4.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.471, "y": 0.469 },
+							"size": 0.089,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": 89.668 },
+							"color": { "r": "0.6", "g": "0", "b": "1", "a": "0.6" },
+							"colorFilter": { "filterName": "hover", "strength": -5 }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.462, "y": 0.497 },
+							"size": 0.134,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.60000002", "g": "0", "b": "1", "a": "0.60000002" }
+						},
+						{
+							"role": "hook",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.181, "y": 0.481 },
+							"size": 0.52,
+							"head": { "rotate": 12.96 },
+							"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_007~1_narration",
+							"style": "narration",
+							"padXFraction": 0.004,
+							"padYFraction": 0.07,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_007~2_narration",
+							"style": "narration",
+							"padXFraction": 0.598,
+							"padYFraction": 0.223,
+							"widthFraction": 0.35841873,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_007~3_narration",
+							"style": "narration",
+							"padXFraction": 0.464,
+							"padYFraction": 0.811,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.308 },
+							"size": 0.409,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:glowGreen4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.476, "y": 0.469 },
+							"size": 0.258,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": 89.668 },
+							"color": { "r": "0.6", "g": "0", "b": "1", "a": "0.6" },
+							"colorFilter": { "filterName": "hover", "strength": -5 }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.462, "y": 0.497 },
+							"size": 0.262,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.60000002", "g": "0", "b": "1", "a": "0.60000002" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_008~1_narration",
+							"style": "narration",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-angry",
+							"equipment": {},
+							"anchor": { "x": 0.361, "y": 0.519 },
+							"head": { "rotate": 7.352 },
+							"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.096, "y": 0.314 },
+							"size": 0.409,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_009~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.442,
+							"padYFraction": 0.006,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": 0.326, "y": 0.336 },
+							"size": 0.318,
+							"head": { "rotate": 15.066 },
+							"color": { "r": "0.82759196", "g": "0.9238531", "b": "0.83371258", "a": "0.86127168" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.075, "y": 0.33 },
+							"size": 0.409,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:glowGreen3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.482, "y": 0.45 },
+							"size": 0.375,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": 89.668 },
+							"color": { "r": "0.6", "g": "0", "b": "1", "a": "0.6" },
+							"colorFilter": { "filterName": "hover", "strength": -5 }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.46, "y": 0.654 },
+							"size": 0.451,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.60000002", "g": "0", "b": "1", "a": "0.60000002" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_010~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_010~2_action",
+							"style": "action",
+							"padXFraction": 0.375,
+							"padYFraction": 0.097,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_010~3_narration",
+							"style": "narration",
+							"padXFraction": 0.092,
+							"padYFraction": 0.074,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_010~4_narration",
+							"style": "narration",
+							"padXFraction": 0.603,
+							"padYFraction": 0.443,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_010~5_narration",
+							"style": "narration",
+							"padXFraction": 0.655,
+							"padYFraction": 0.818,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_crowdNeutral.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-surprised",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.328, "y": 0.506 },
+							"nameTag": "none",
+							"head": { "rotate": 330, "scaleY": -1 },
+							"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.505, "y": 0.5 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_011~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_011~2_narration",
+							"style": "narration",
+							"padXFraction": 0.514,
+							"padYFraction": 0.714,
+							"widthFraction": 0.6934391,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.5, "y": 0.9 },
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.442, "y": 0.5 },
+							"size": 0.313,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_012~1_action",
+							"style": "action",
+							"fallbackSlotOwner": 0,
+							"padXFraction": 0.264,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.554, "y": 0.484 },
+							"head": { "rotate": 25 },
+							"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.505, "y": 0.525 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.473, "y": 0.478 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.50289023", "g": "0.85345328", "b": "1", "a": "0.36705202" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_013~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.634,
+							"padYFraction": 0.083,
+							"widthFraction": 0.46221185,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_013~2_narration",
+							"style": "narration",
+							"padXFraction": 0.005,
+							"padYFraction": 0.002,
+							"widthFraction": 0.5808012,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_013~3_narration",
+							"style": "narration",
+							"padXFraction": 0.014,
+							"padYFraction": 0.271,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.5, "y": 0.9 },
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.433, "y": 0.509 },
+							"size": 0.858,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_014~1_action",
+							"style": "action",
+							"fallbackSlotOwner": 0,
+							"padXFraction": 0.17,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"mustStartRow": true,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.717, "y": 0.462 },
+							"head": { "rotate": -28.962, "scaleY": -1 },
+							"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.488, "y": 0.525 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.473, "y": 0.478 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.50289023", "g": "0.85345328", "b": "1", "a": "0.36705202" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_015~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.105,
+							"padYFraction": 0.067,
+							"widthFraction": 0.46221185,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 5.4403315, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_015~2_narration",
+							"style": "narration",
+							"padXFraction": 0.005,
+							"padYFraction": 0.002,
+							"widthFraction": 0.5808012,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_015~3_narration",
+							"style": "narration",
+							"padXFraction": 0.014,
+							"padYFraction": 0.271,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.803, "y": 0.815 },
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.442, "y": 0.5 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_016~1_actionSmall",
+							"style": "actionSmall",
+							"fallbackSlotOwner": 0,
+							"padXFraction": 0.046,
+							"padYFraction": 0.022,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_016~2_action",
+							"style": "action",
+							"padXFraction": 0.646,
+							"padYFraction": 0.126
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_016~3_action",
+							"style": "action",
+							"padXFraction": 0.083,
+							"padYFraction": 0.248,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_016~4_narration",
+							"style": "narration",
+							"padYFraction": 0.833,
+							"widthFraction": 0.68570304
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.421, "y": 0.484 },
+							"size": 0.492,
+							"head": { "rotate": -53.702, "scaleY": 1 },
+							"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.488, "y": 0.525 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.473, "y": 0.478 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.50289023", "g": "0.85345328", "b": "1", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.504, "y": 0.544 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.99999994", "g": "0.50289029", "b": "0.50289047", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.166, "y": 1.177 },
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.803, "y": 0.815 },
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_017~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.364,
+							"padYFraction": 0.094,
+							"widthFraction": 0.40268457,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.483, "y": 0.9 },
+							"size": 1.1765,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.6 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.459, "y": 0.503 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" },
+							"colorFilter": { "filterName": "hover", "strength": -0.3 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_018~1_speech",
+							"fallbackSlotOwner": 0
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_018~2_action",
+							"style": "action",
+							"padXFraction": 0.029,
+							"padYFraction": 0.003
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_018~3_action",
+							"style": "action",
+							"padXFraction": 0.135,
+							"padYFraction": 0.343
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_018~4_action",
+							"style": "action",
+							"padXFraction": 0.636,
+							"padYFraction": 0.182
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-surprised",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.558, "y": 0.496 },
+							"head": { "rotate": -48.761, "scaleY": -1 },
+							"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.488, "y": 0.525 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.473, "y": 0.478 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.50289023", "g": "0.85345328", "b": "1", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.504, "y": 0.544 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.99999994", "g": "0.50289029", "b": "0.50289047", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.888, "y": 0.8 },
+							"size": 1.166,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.709, "y": 1.073 },
+							"size": 0.645,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.149, "y": 1.278 },
+							"size": 1.581,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_019~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.123,
+							"padYFraction": 0.016,
+							"widthFraction": 0.5450832,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -7.9071617,
+								"dX": 16.02299,
+								"dY": -18.850574,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-sad",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.624, "y": 0.505 },
+							"head": { "rotate": 40.111, "scaleY": 1 },
+							"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.418, "y": 0.465 },
+							"size": 0.36,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.26, "y": 0.447 },
+							"size": 0.37,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.50289023", "g": "0.85345328", "b": "1", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.249, "y": 0.459 },
+							"size": 0.473,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.99999994", "g": "0.50289029", "b": "0.50289047", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.888, "y": 0.8 },
+							"size": 1.166,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.709, "y": 1.073 },
+							"size": 0.645,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.149, "y": 1.278 },
+							"size": 1.581,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_020~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.061,
+							"padYFraction": 0.054,
+							"widthFraction": 0.8139322,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -7.9071617,
+								"dX": 16.02299,
+								"dY": -18.850574,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.596, "y": 0.496 },
+							"head": { "rotate": -25.397, "scaleY": -1 },
+							"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.488, "y": 0.525 },
+							"size": 0.496,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.438, "y": 0.519 },
+							"size": 0.366,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.50289023", "g": "0.85345328", "b": "1", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.424, "y": 0.481 },
+							"size": 0.333,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.99999994", "g": "0.50289029", "b": "0.50289047", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.898, "y": 1.287 },
+							"size": 1.166,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.709, "y": 1.073 },
+							"size": 0.645,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.149, "y": 1.278 },
+							"size": 1.581,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_021~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.057,
+							"padYFraction": 0.097,
+							"widthFraction": 0.8139322,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -7.9071617,
+								"dX": -14.137932,
+								"dY": -9.425286,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 3 },
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.558, "y": 0.496 },
+							"head": { "rotate": -40.275, "scaleY": 1 },
+							"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.488, "y": 0.525 },
+							"size": 0.325,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.33, "y": 0.513 },
+							"size": 0.342,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.50289023", "g": "0.85345328", "b": "1", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.273, "y": 0.5 },
+							"size": 0.358,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.99999994", "g": "0.50289029", "b": "0.50289047", "a": "0.36705202" }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.252, "y": 0.819 },
+							"size": 1.166,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.88, "y": 1.016 },
+							"size": 0.645,
+							"nameTag": "none",
+							"foot": {},
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.548, "y": 1.504 },
+							"size": 1.581,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_022~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.131,
+							"padYFraction": 0.183,
+							"widthFraction": 0.8139322,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -7.9071617,
+								"dX": 16.02299,
+								"dY": -18.850574,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:thrixl/thrixl_maylen.png",
+							"role": null,
+							"focus": "middle",
+							"anchor": { "x": 0.5, "y": 0.9 },
+							"size": 1.3333,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "stealthy", "strength": 0.3 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.459, "y": 0.503 },
+							"size": 0.295,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" },
+							"colorFilter": { "filterName": "hover", "strength": -0.3 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_023~1_speech",
+							"fallbackSlotOwner": 0
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_023~2_action",
+							"style": "action",
+							"padXFraction": 0.157,
+							"padYFraction": 0.044,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_023~3_action",
+							"style": "action",
+							"padXFraction": 0.276,
+							"padYFraction": 0.255,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_023~4_action",
+							"style": "action",
+							"padXFraction": 0.627,
+							"padYFraction": 0.1,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+							"textKey": "~01~prompt~panel_023~5_action",
+							"style": "action",
+							"padXFraction": 0.726,
+							"padYFraction": 0.346,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "yes",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"actorSlots": [
+								{
+									"role": "hook",
+									"form": "frame-happy",
+									"equipment": { "mode": "removeWeapons" },
+									"anchor": { "x": 0.602, "y": 0.367 },
+									"size": 0.885,
+									"overrideNameTag": "~02~choice_yes~panel_001~nameTag_0",
+									"head": { "rotate": -35.586, "scaleY": 1 },
+									"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" },
+									"overrideNameTagTextSource": "hook/hook_Distant_longingtoBelong_arrive"
+								},
+								{
+									"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.488, "y": 0.525 },
+									"size": 0.295,
+									"drawDepth": 2,
+									"nameTag": "none",
+									"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.473, "y": 0.478 },
+									"size": 0.295,
+									"drawDepth": 2,
+									"nameTag": "none",
+									"color": { "r": "0.50289023", "g": "0.85345328", "b": "1", "a": "0.36705202" }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.504, "y": 0.544 },
+									"size": 0.295,
+									"drawDepth": 2,
+									"nameTag": "none",
+									"color": { "r": "0.99999988", "g": "0.10404634", "b": "0.10404667", "a": "0.3034682" }
+								},
+								{
+									"assetSpec": "figure:thrixl/thrixl_maylen.png",
+									"role": null,
+									"facing": "left",
+									"focus": "middle",
+									"anchor": { "x": 0.888, "y": 0.8 },
+									"size": 1.166,
+									"nameTag": "none",
+									"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+								},
+								{
+									"assetSpec": "figure:thrixl/thrixl_maylen.png",
+									"role": null,
+									"focus": "middle",
+									"anchor": { "x": 0.709, "y": 1.073 },
+									"size": 0.645,
+									"nameTag": "none",
+									"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+								},
+								{
+									"assetSpec": "figure:thrixl/thrixl_maylen.png",
+									"role": null,
+									"focus": "middle",
+									"anchor": { "x": 0.149, "y": 1.278 },
+									"size": 1.581,
+									"nameTag": "none",
+									"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+									"textKey": "~02~choice_yes~panel_001~1_hook",
+									"style": "thought",
+									"pointerOwner": "hook",
+									"padXFraction": 0.263,
+									"widthFraction": 0.6519403,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "no",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"bg": "comicBG_abstractGray1.jpg",
+							"actorSlots": [
+								{
+									"role": "hook",
+									"form": "frame-dubious",
+									"equipment": { "mode": "removeWeapons" },
+									"anchor": { "x": 0.676, "y": 0.487 },
+									"nameTag": "bottomRight",
+									"head": { "rotate": -42.036, "scaleY": -1 },
+									"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+									"textKey": "~03~choice_no~panel_001~1_hook",
+									"pointerOwner": "hook",
+									"padXFraction": 0.205,
+									"padYFraction": 0.009,
+									"widthFraction": 0.8853731,
+									"shrinkToFitText": true,
+									"pointerAdjust": {
+										"dX": 0,
+										"dY": -6.6129036,
+										"scaleX": 1.1899803,
+										"scaleY": 1.1899803,
+										"pointerOrientH": "onLeft"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"STUB": "Hook removed from company; no combat; No longer fight Thrixl as a possible enemy; unlock something, potentially, like a Thrixl villain; company gets aspect: thrixlAlly; goTo resolve with noHook",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"blockOtherChanges": true,
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_abstractGloom.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-happy",
+										"equipment": { "mode": "removeWeapons" },
+										"head": { "rotate": 15.744 },
+										"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_abstractGloom.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.482, "y": 0.503 },
+										"size": 0.295,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"foot": {},
+										"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+									},
+									{},
+									{},
+									{
+										"assetSpec": "figure:thrixl/thrixl_maylen.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.463, "y": 1.671 },
+										"size": 1.714,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "stealthy", "strength": 0.3 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_001~1_hook",
+										"style": "thought",
+										"pointerOwner": "hook",
+										"padXFraction": 0.577,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_001~2_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_abstractDkGreen.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.375, "y": 0.541 },
+										"head": { "rotate": -32.677, "scaleY": -1 },
+										"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_kickoffThrixl.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.483, "y": 0.5 },
+										"size": 0.295,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"foot": { "rotate": -178.097 },
+										"color": { "r": "0.84508675", "g": "0.61271679", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_kickoffThrixl.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.47, "y": 0.569 },
+										"size": 0.295,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"foot": {},
+										"color": { "r": "0.73410416", "g": "0.33526015", "b": "1", "a": "0.56069362" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_002~1_hook",
+										"style": "action",
+										"pointerOwner": "hook",
+										"padXFraction": 0.513,
+										"padYFraction": 0.245,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -16.756947,
+											"dX": 29.218401,
+											"dY": 1.8850555,
+											"pointerOrientH": "onRight"
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_002~2_narration",
+										"style": "narration",
+										"padXFraction": 0.036,
+										"padYFraction": 0.013,
+										"widthFraction": 0.5794465,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_002~3_action",
+										"style": "action",
+										"padXFraction": 0.056,
+										"padYFraction": 0.211,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_002~4_action",
+										"style": "action",
+										"padXFraction": 0.7,
+										"padYFraction": 0.431,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-grim",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": -0.12, "y": 1.051 },
+										"foot": { "rotate": -29.876 },
+										"color": { "r": "0.69710994", "g": "0.24277467", "b": "0.99999994", "a": "1" },
+										"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-rage",
+										"anchor": { "x": 0.463, "y": 0.402 },
+										"size": 0.4,
+										"head": { "rotate": 10.837, "scaleY": 1 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_mantis.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 1, "y": 1.35 },
+										"size": 0.6667,
+										"nameTag": "none",
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.319, "y": 0.459 },
+										"size": 0.409,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-grim",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.269, "y": 0.378 },
+										"size": 0.334,
+										"nameTag": "none",
+										"head": { "rotate": 2.485 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_003~1_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.529,
+										"padYFraction": 0.025,
+										"widthFraction": 0.3571637,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -1.8851175, "dY": -9.425288 }
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_003~2_action",
+										"style": "action",
+										"padXFraction": 0.163,
+										"padYFraction": 0.013,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_003~3_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.58,
+										"padYFraction": 0.345,
+										"widthFraction": 0.27312517,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 45.97102,
+											"dX": 105.563225,
+											"dY": 112.16093,
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_003~4_narration",
+										"style": "narration",
+										"padXFraction": 0.229,
+										"padYFraction": 0.003,
+										"widthFraction": 0.26243466,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": -0.12, "y": 1.051 },
+										"foot": { "rotate": -29.876 },
+										"color": { "r": "0.69710994", "g": "0.24277467", "b": "0.99999994", "a": "1" },
+										"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-sad",
+										"anchor": { "x": 0.379, "y": 0.408 },
+										"size": 1.004,
+										"head": { "rotate": -36.056, "scaleY": -1 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_mantis.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 1.084, "y": 1.545 },
+										"size": 0.866,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "overlandFog", "strength": 0.4 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.319, "y": 0.459 },
+										"size": 0.515,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-rage",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.631, "y": 0.438 },
+										"size": 0.467,
+										"nameTag": "none",
+										"head": { "rotate": 2.485 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" },
+										"colorFilter": { "filterName": "overlandFog", "strength": 0.4 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_004~1_hook2",
+										"style": "thought",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.514,
+										"padYFraction": 0.175,
+										"widthFraction": 0.301138,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -15.255117, "dX": 39.586205, "dY": -6.5977015 }
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_004~2_action",
+										"style": "action",
+										"padXFraction": 0.163,
+										"padYFraction": 0.013,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_004~3_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.58,
+										"padYFraction": 0.345,
+										"widthFraction": 0.27312517,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 45.97102,
+											"dX": 105.563225,
+											"dY": 112.16093,
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_004~4_narration",
+										"style": "narration",
+										"padXFraction": 0.255,
+										"padYFraction": 0.003,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:thrixl/thrixl_maylen.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.624, "y": 0.85 },
+										"size": 0.753,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "stealthy", "strength": 0.3 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.505, "y": 0.484 },
+										"size": 0.295,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" },
+										"colorFilter": { "filterName": "hover", "strength": -0.3 }
+									},
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.048, "y": 0.613 },
+										"size": 0.535,
+										"head": { "rotate": 16.209 },
+										"foot": { "rotate": -16.94 },
+										"color": { "r": "0.69710994", "g": "0.24277467", "b": "0.99999994", "a": "1" },
+										"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_005~1_speech",
+										"fallbackSlotOwner": 0
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_005~2_action",
+										"style": "action",
+										"padXFraction": 0.456,
+										"padYFraction": 0.019,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_005~3_action",
+										"style": "action",
+										"padXFraction": 0.699,
+										"padYFraction": 0.151,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_005~4_action",
+										"style": "action",
+										"padXFraction": 0.338,
+										"padYFraction": 0.267,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.503, "y": 0.475 },
+										"size": 0.295,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" },
+										"colorFilter": { "filterName": "hover", "strength": -0.3 }
+									},
+									{
+										"role": "hook",
+										"form": "frame-grim",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.048, "y": 0.613 },
+										"size": 1.098,
+										"head": { "rotate": 16.209 },
+										"foot": { "rotate": -16.94 },
+										"color": { "r": "0.69710994", "g": "0.24277467", "b": "0.99999994", "a": "1" },
+										"colorFilter": { "filterName": "stealthy", "strength": 0.8 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_006~1_speech",
+										"fallbackSlotOwner": 0
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_006~2_action",
+										"style": "action",
+										"padXFraction": 0.456,
+										"padYFraction": 0.019,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_006~3_action",
+										"style": "action",
+										"padXFraction": 0.699,
+										"padYFraction": 0.151,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_006~4_action",
+										"style": "action",
+										"padXFraction": 0.338,
+										"padYFraction": 0.267,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:thrixl/thrixl_maylen.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 0.897, "y": 0.947 },
+										"size": 1.271,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "stealthy", "strength": 0.3 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -1.146, "y": 0.522 },
+										"size": 0.465,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" },
+										"colorFilter": { "filterName": "hover", "strength": -0.3 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -1.205, "y": 0.557 },
+										"size": 0.471,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "hover", "strength": -0.3 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_007~1_speech",
+										"fallbackSlotOwner": 0
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_007~2_action",
+										"style": "action",
+										"padXFraction": 0.197,
+										"padYFraction": 0.022,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_007~3_action",
+										"style": "action",
+										"padXFraction": 0.699,
+										"padYFraction": 0.151,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_007~4_action",
+										"style": "action",
+										"padXFraction": 0.348,
+										"padYFraction": 0.682,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"role": "hook2",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.178, "y": 0.371 },
+										"size": 0.4,
+										"head": { "rotate": 10.837, "scaleY": 1 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_mantis.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 1.037, "y": 1.862 },
+										"size": 0.854,
+										"nameTag": "none",
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.391, "y": 0.453 },
+										"size": 0.409,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.377, "y": 0.362 },
+										"size": 0.334,
+										"nameTag": "none",
+										"head": { "rotate": -17.163, "scaleY": -1 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_008~1_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.529,
+										"padYFraction": 0.025,
+										"widthFraction": 0.3571637,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -1.8851175, "dY": -9.425288 }
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_008~2_action",
+										"style": "action",
+										"padXFraction": 0.163,
+										"padYFraction": 0.013,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_008~3_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.238,
+										"padYFraction": 0.3,
+										"widthFraction": 0.27312517,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 4.3409667,
+											"dX": 16.965519,
+											"dY": 4.7126446,
+											"scaleX": 0.8517099,
+											"scaleY": 0.8517099
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_008~4_narration",
+										"style": "narration",
+										"padXFraction": 0.475,
+										"padYFraction": 0.112,
+										"widthFraction": 0.3518482,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_008~5_narration",
+										"style": "narration",
+										"padXFraction": 0.574,
+										"padYFraction": 0.3,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"role": "hook2",
+										"form": "frame-rage",
+										"anchor": { "x": 0.564, "y": 0.412 },
+										"size": 0.4,
+										"head": { "rotate": -40.282, "scaleY": -1 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.677, "y": 0.475 },
+										"size": 0.409,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-angry",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.062, "y": 0.365 },
+										"size": 0.334,
+										"nameTag": "none",
+										"head": { "rotate": -42.917, "scaleY": -1 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_009~1_hook2",
+										"pointerOwner": "hook2",
+										"location": "topRight",
+										"padXFraction": 0.291,
+										"padYFraction": 0.114,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 9.6087,
+											"dX": 0,
+											"dY": 2.8275857,
+											"scaleX": 0.7878063,
+											"scaleY": 0.7878063,
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_009~2_volunteer",
+										"pointerOwner": "volunteer",
+										"padXFraction": 0.113,
+										"padYFraction": 0.268,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_009~3_narration",
+										"style": "narration",
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_009~4_hook2",
+										"pointerOwner": "hook2",
+										"location": "topRight",
+										"padXFraction": 0.128,
+										"padYFraction": 0.301,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": 7.9071617, "dX": 13.195403, "dY": 21.678162 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"role": "hook2",
+										"form": "frame-sad",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.124, "y": 0.343 },
+										"size": 0.635,
+										"head": { "rotate": -34.097, "scaleY": 1 },
+										"colorFilter": { "filterName": "overlandFog", "strength": 0.6 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.471, "y": 0.466 },
+										"size": 0.312,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.4", "g": "0.4", "b": "0.6", "a": "1" }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-sad",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.377, "y": 0.393 },
+										"size": 0.488,
+										"nameTag": "none",
+										"head": { "rotate": 2.815, "scaleY": 1 },
+										"colorFilter": { "filterName": "overlandFog", "strength": 0.9 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_010~1_hook2",
+										"pointerOwner": "hook2",
+										"location": "topRight",
+										"padXFraction": 0.291,
+										"padYFraction": 0.114,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 9.6087,
+											"dX": 0,
+											"dY": 2.8275857,
+											"scaleX": 0.7878063,
+											"scaleY": 0.7878063,
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_010~2_volunteer",
+										"pointerOwner": "volunteer",
+										"padXFraction": 0.113,
+										"padYFraction": 0.268,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_010~3_narration",
+										"style": "narration",
+										"padXFraction": 0.206,
+										"padYFraction": 0.102,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~04~player_chose_yes~panel_010~4_hook2",
+										"pointerOwner": "hook2",
+										"location": "topRight",
+										"padXFraction": 0.128,
+										"padYFraction": 0.301,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": 7.9071617, "dX": 13.195403, "dY": 21.678162 }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ChangeControl",
+					"target": "hook",
+					"removeAllControl": true,
+					"removeHero": true
+				},
+				{
+					"class": "AssignToPlot",
+					"integers": { "skipToResolve": "1", "skipGear": "1" },
+					"strings": { "resolveEventId": "hook_Distant_longingtoBelong_resolve_noHook" }
+				},
+				{
+					"class": "SnapshotFollowup",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": -0.12, "y": 1.051 },
+										"foot": { "rotate": -29.876 },
+										"color": { "r": "0.69710994", "g": "0.24277467", "b": "0.99999994", "a": "0.96491283" },
+										"colorFilter": { "filterName": "sepia", "strength": 0.9 }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-sad",
+										"anchor": { "x": 0.39, "y": 0.413 },
+										"size": 0.739,
+										"head": { "rotate": -36.056, "scaleY": -1 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_mantis.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 1.084, "y": 1.545 },
+										"size": 0.866,
+										"nameTag": "none",
+										"foot": { "rotate": -6.252 },
+										"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.319, "y": 0.459 },
+										"size": 0.515,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" },
+										"colorFilter": { "filterName": "sepia", "strength": 0.8 }
+									},
+									{
+										"role": "volunteer",
+										"form": "frame-rage",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.631, "y": 0.438 },
+										"size": 0.467,
+										"nameTag": "none",
+										"head": { "rotate": 16.016 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.012, "y": 0.618 },
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": 34.919 },
+										"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" }
+									}
+								]
+							}
+						}
+					],
+					"score": "10"
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"STUB": "hook +1 warding, permanent",
+		"ifPlayerChose": "no",
+		"then": {
+			"class": "DoAll",
+			"target": "hook",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_abstractGray1.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-rage",
+										"equipment": { "mode": "removeWeapons" },
+										"head": { "rotate": 22 },
+										"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_001~1_hook",
+										"pointerOwner": "hook"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "removeWeapons" },
+										"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_002~1_hook",
+										"pointerOwner": "hook"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": { "mode": "removeWeapons" },
+										"head": { "rotate": 338 },
+										"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_003~1_hook",
+										"pointerOwner": "hook"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-happy",
+										"equipment": { "mode": "removeWeapons" },
+										"color": { "r": "0.80000001", "g": "0.80000001", "b": "1", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_004~1_hook",
+										"pointerOwner": "hook"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_crowdNeutral.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:thrixl/thrixl_maylen.png",
+										"role": null,
+										"focus": "middle",
+										"anchor": { "x": 0.5, "y": 0.9 },
+										"size": 1.3333,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "stealthy", "strength": 0.1 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_crowdNeutral.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.459, "y": 0.503 },
+										"size": 0.295,
+										"drawDepth": 2,
+										"nameTag": "none",
+										"color": { "r": "0.58334726", "g": "0.50289029", "b": "0.99999994", "a": "0.60000002" },
+										"colorFilter": { "filterName": "hover", "strength": -0.3 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_005~1_action",
+										"style": "action",
+										"padXFraction": 0.659,
+										"padYFraction": 0.176,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_005~2_action",
+										"style": "action",
+										"padXFraction": 0.3,
+										"padYFraction": 0.016,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_005~3_action",
+										"style": "action",
+										"padXFraction": 0.223,
+										"padYFraction": 0.004,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_005~4_action",
+										"style": "action",
+										"padXFraction": 0.157,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"bg": "comicBG_abstractGray1.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-surprised",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.487, "y": 0.277 },
+										"nameTag": "none",
+										"head": { "rotate": -49.711, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_006~1_narration",
+										"style": "narration",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"bg": "comicBG_waterPond.jpg",
+								"mustStartRow": true,
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-hit",
+										"equipment": {},
+										"anchor": { "x": 0.18, "y": 0.5 },
+										"size": 1.027,
+										"head": { "rotate": -44.356 }
+									},
+									{
+										"role": "hook2",
+										"form": "frame-surprised",
+										"anchor": { "x": 0.952, "y": 0.509 },
+										"size": 0.446,
+										"nameTag": "none",
+										"head": { "rotate": -27.421, "scaleY": -1 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.096, "y": 0.314 },
+										"size": 0.409,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"foot": {},
+										"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeRising.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.187, "y": 0.516 },
+										"size": 1.109,
+										"drawDepth": 1.75,
+										"nameTag": "none",
+										"color": { "r": "0.60000002", "g": "0", "b": "1", "a": "0.60000002" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"actorSlots": [
+									{
+										"role": "hook2",
+										"form": "frame-surprised",
+										"anchor": { "x": -0.05, "y": 0.512 },
+										"size": 0.4,
+										"head": { "rotate": -31.238, "scaleY": -1 },
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_mantis.png",
+										"role": null,
+										"facing": "left",
+										"focus": "middle",
+										"anchor": { "x": 1, "y": 1.35 },
+										"size": 0.6667,
+										"nameTag": "none",
+										"color": { "r": "0.82759202", "g": "0.92385304", "b": "0.83371264", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.075, "y": 0.33 },
+										"size": 0.409,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.8", "g": "0.8", "b": "1", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_008~1_hook2",
+										"pointerOwner": "hook2",
+										"fallbackSlotOwner": 2,
+										"widthFraction": 0.7,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "hook/hook_Distant_longingtoBelong_arrive",
+										"textKey": "~06~player_chose_no~panel_008~2_hook2",
+										"pointerOwner": "hook2",
+										"padXFraction": 0.182,
+										"padYFraction": 0.194,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 57.33909,
+											"dX": 89.54024,
+											"dY": 101.79311,
+											"scaleX": 0.80454105,
+											"scaleY": 0.80454105,
+											"forcePointerImage": "speechMedium"
+										}
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "story",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{
+							"role": "foes",
+							"side": "enemy",
+							"customThreat": {
+								"threatFlavor": "thrixl",
+								"threatStrength": "0",
+								"useExtraChapterCards": false
+							}
+						}
+					],
+					"missionPlanOverride": "genericHook_monsterScenery"
+				},
+				{
+					"class": "AssignToPlot",
+					"strings": { "resolveEventId": "hook_Distant_longingtoBelong_resolve" }
+				}
+			]
+		}
+	}
+]
+}

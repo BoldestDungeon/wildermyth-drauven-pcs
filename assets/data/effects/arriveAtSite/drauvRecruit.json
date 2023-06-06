@@ -1503,27 +1503,18 @@
 					"setAge": "ageless",
 					"exactAge": 21,
 					"setEquipment": "tierTwo",
-					"nameAlgorithm": "",
-					"customHistory": []
+					"nameAlgorithm": ""
 				},
 				"additionalOutcome": {
 					"class": "DoAll",
 					"outcomes": [
+						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" },
 						{
-							"class": "AddHistory",
+							"class": "CustomizeHero",
 							"target": "npc",
-							"addHistory": [
-								[ "drauvenBase" ],
-								[ "bornDrauven" ],
-								[ "drauvenCustomizationHead" ],
-								[ "drauvenCustomizationBody" ],
-								[ "drauvenCustomizationOther" ],
-								[ "origin" ],
-								[ "origin" ],
-								[ "origin" ]
-							]
-						},
-						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" }
+							"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers", "zzz_drauven05_Helmet", "zzz_drauven06_Armour" ],
+							"randomizeColors": [ "skin" ]
+						}
 					]
 				}
 			}

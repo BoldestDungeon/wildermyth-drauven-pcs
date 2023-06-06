@@ -52,6 +52,11 @@
 ],
 "outcomes": [
 	{
+		"class": "Special",
+		"target": "npc",
+		"specialAction": "PROMOTE_FARMER_TO_WARRIOR"
+	},
+	{
 		"class": "Aspects",
 		"target": "npc",
 		"removeAspects": [ "npcId*" ]

@@ -13,26 +13,29 @@
 			"canBeAwardedRandomly": false,
 			"slots": ["torso"],
 			"replaces": ["torso"],
-			"extraAspects": ["ATTACHMENTS_suppressArmor"],
+			"extraAspects": ["ATTACHMENTS_suppressArmor", "rigOverride|Drauven"],
+			"effects": ["migration_drauven_updateRig"],
+
 			"layers": [
 				{
-					"name": "Drauv_torso",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "Torso_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
 					"depth": 1200
 				},
 				{
-					"name": "Drauv_armor_base",
+					"name": "armor_base",
 					"tint": "primary", "tintAmount": 0.6,
-					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
+					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenGear_clothes" ],
 					"depth": 1350
 				},
 				{
-					"name": "Drauv_armor_base_over",
+					"name": "armor_base_over",
 					"tint": "primary", "tintAmount": 0.6,
-					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
+					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenGear_clothes" ],
 					"depth": 1399
 				}
+
 			]
 		},
 		{
@@ -44,8 +47,8 @@
 			"applyAutomaticallyIfHave": [["torso"]],
 			"layers": [
 				{
-					"name": "Drauv_tail",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "Tail_Skin",
+					"tint": "skin", "tintAmount": 0.5,
 					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
 					"depth": 101
 				}
@@ -70,73 +73,73 @@
 			"canBeAwardedRandomly": false,
 			"layers": [
 				{
-					"name": "Drauv_ArmR_upper",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ArmR_1hand_Upper_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 1350,
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_ArmR_lower",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ArmR_1hand_Lower_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 3000,
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_ArmR_2handed_upper",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ArmR_2hand_Upper_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 1350,
 					"rigMode": "twoHanded"
 				},
 				{
-					"name": "Drauv_ArmR_2handed_lower",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ArmR_2hand_Lower_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 8000,
 					"rigMode": "twoHanded"
 				},
 				{
-					"name": "Drauv_handR_open",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "HandR_Open",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 6000,
 					"ifRightHandGrasp": "open",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handR_closed",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "HandR_Closed_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 8001,
 					"ifRightHandGrasp": "weapon",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handR_closed_thumb",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ThumbR_Closed_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 6000,
 					"ifRightHandGrasp": "weapon",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handR_book",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "HandR_Book_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 6000,
 					"ifRightHandGrasp": "book",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handR_book_thumb",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ThumbR_Book_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 8001,
 					"ifRightHandGrasp": "book",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handR_2handed",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "HandR_2hand_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 8002,
 					"rigMode": "twoHanded"
 				},
 				{
-					"name": "Drauv_handR_2handed_thumb",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ThumbR_2hand_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 6000,
 					"rigMode": "twoHanded"
 				}
@@ -149,73 +152,73 @@
 			"canBeAwardedRandomly": false,
 			"layers": [
 				{
-					"name": "Drauv_ArmL_upper",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ArmL_1hand_Upper_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 1199,
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_ArmL_lower",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ArmL_1hand_Lower_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 1500,
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_ArmL_2handed_upper",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ArmL_2hand_Upper_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 1199,
 					"rigMode": "twoHanded"
 				},
 				{
-					"name": "Drauv_ArmL_2handed_lower",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ArmL_2hand_Lower_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 1500,
 					"rigMode": "twoHanded"
 				},
 				{
-					"name": "Drauv_handL_open",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "HandL_Open_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 6000,
 					"ifLeftHandGrasp": "open",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handL_closed",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "HandL_Closed_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 6000,
 					"ifLeftHandGrasp": "weapon",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handL_closed_thumb",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ThumbL_Closed_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 8000,
 					"ifLeftHandGrasp": "weapon",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handL_book",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "HandL_Book_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 6000,
 					"ifLeftHandGrasp": "book",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handL_book_thumb",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ThumbL_Book_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 8000,
 					"ifLeftHandGrasp": "book",
 					"rigMode": "oneHanded"
 				},
 				{
-					"name": "Drauv_handL_2handed",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "HandL_2hand_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 8002,
 					"rigMode": "twoHanded"
 				},
 				{
-					"name": "Drauv_handL_2handed_thumb",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "ThumbL_2hand_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 4000,
 					"rigMode": "twoHanded"
 				}
@@ -229,8 +232,8 @@
 			"canBeAwardedRandomly": false,
 			"layers": [
 				{
-					"name": "Drauv_legR",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "legR_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 1101
 				}
 			]
@@ -242,8 +245,8 @@
 			"canBeAwardedRandomly": false,
 			"layers": [
 				{
-					"name": "Drauv_LegL",
-					"tint": "skin", "tintAmount": 0.4,
+					"name": "LegL_Skin",
+					"tint": "skin", "tintAmount": 0.5, 
 					"depth": 1101
 				}
 			]

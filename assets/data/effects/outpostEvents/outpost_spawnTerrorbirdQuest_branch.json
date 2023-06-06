@@ -1,0 +1,1368 @@
+{
+"id": "outpost_spawnTerrorbirdQuest_branch",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"declaredEncounterResults": []
+},
+"type": "BRANCH",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "encounterEnabled": true },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "INJECTED_SITE" },
+	{
+		"role": "participant",
+		"template": "INJECTED_HERO",
+		"choose": "ONE_CLOSEST",
+		"injectedRole": "participant",
+		"relativeTo": "site"
+	},
+	{
+		"role": "overlandTile",
+		"template": "OVERLAND_TILE",
+		"relativeTo": "site",
+		"range": "0"
+	},
+	{
+		"role": "npc",
+		"template": "LEGEND",
+		"legendId": "tileFarmer3",
+		"aspects": [ "drauven" ],
+		"relativeTo": "overlandTile"
+	},
+	{
+		"role": "npc2",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer1",
+		"aspects": [ "drauven" ],
+		"relativeTo": "overlandTile"
+	},
+	{
+		"template": "IMMEDIATE_ENEMY",
+		"choose": "BY_SCORE",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-happy",
+							"anchor": { "x": 0.439, "y": 0.607 },
+							"size": 0.523,
+							"head": { "rotate": -16.39, "scaleY": -1 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.051, "y": 0.171 },
+							"size": 0.424,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.837, "y": -0.129 },
+							"size": 0.3771,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdhouses.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.199, "y": 0.871 },
+							"size": 0.0752,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cliffBrown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.212, "y": 0.485 },
+							"size": 0.4471,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_flatHillRockBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.411, "y": 0.053 },
+							"size": 0.2699,
+							"nameTag": "none",
+							"foot": { "rotate": -14.422 },
+							"color": { "r": "0.54392713", "g": "0.48164099", "b": "0.52782476", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_lanternPoleOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.254, "y": 0.944 },
+							"size": 0.0969,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_lanternPoleOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.031, "y": 0.714 },
+							"size": 0.0969,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/cottageWood_noDoor.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.145, "y": 0.928 },
+							"size": 0.0946,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:birdDrauven.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.093, "y": 0.912 },
+							"size": 0.0372,
+							"drawDepth": 4.5,
+							"nameTag": "none",
+							"color": { "r": "0.78267044", "g": "0.78267044", "b": "0.78267044", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.921, "y": 0.474 },
+							"size": 0.2222,
+							"nameTag": "none",
+							"foot": { "rotate": -4.054 }
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.97, "y": 0.409 },
+							"size": 0.0533,
+							"drawDepth": 12,
+							"nameTag": "none",
+							"foot": { "rotate": -11.166 }
+						},
+						{
+							"assetSpec": "comic:birds3.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.626, "y": 0.701 },
+							"size": 0.11,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_001~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.276,
+							"padYFraction": 0.016,
+							"widthFraction": 0.7368421,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -11.633634, "dX": -41.712646, "dY": -5 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "participant",
+							"equipment": {}
+						},
+						{
+							"assetSpec": "comic:cliffBrown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.249, "y": 0.321 },
+							"size": 0.9014,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_002~1_participant",
+							"pointerOwner": "participant",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:birdPerched.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.81, "y": 0.804 },
+							"size": 0.1417,
+							"nameTag": "none",
+							"color": { "r": "0.80255681", "g": "0.80255681", "b": "0.80255681", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.922, "y": 0.767 },
+							"size": 0.5958,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_003~1_npc",
+							"pointerOwner": "npc",
+							"location": "bottomLeft",
+							"padXFraction": -0.809,
+							"padYFraction": 0.006,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -43.356323, "dY": 0 },
+							"allowOverlap": true,
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-skeptical",
+							"equipment": {}
+						},
+						{
+							"assetSpec": "comic:cliffBrown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.555, "y": 0.67 },
+							"size": 0.7015,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_004~1_participant",
+							"pointerOwner": "participant",
+							"location": "topRight",
+							"padXFraction": 0.05,
+							"padYFraction": 0.038,
+							"widthFraction": 0.8522213,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:birdPerched.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.592, "y": 0.883 },
+							"size": 0.1032,
+							"nameTag": "none",
+							"foot": { "rotate": 0 }
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.579, "y": 0.739 },
+							"size": 0.4702,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_005~1_npc",
+							"pointerOwner": "npc",
+							"pointerAdjust": { "dX": -69.747185, "dY": -2.8275864 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-dubious",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_006~1_participant",
+							"pointerOwner": "participant"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"equipment": {},
+							"size": 0.8957655,
+							"nameTag": "bottomRight",
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_007~1_npc",
+							"pointerOwner": "npc"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "sixth",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "participant",
+							"equipment": {}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "sixth",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 2, "overridePanelDrawDepth": 2 },
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"equipment": {},
+							"head": { "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_009~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.447,
+							"padYFraction": -0.006,
+							"widthFraction": 2.6512525,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -12.252874, "dY": 6.5977015, "pointerOrientH": "onRight" },
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:nestEmpty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.686, "y": 0.481 },
+							"size": 0.1759,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.671, "y": 0.472 },
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.94849437", "g": "0.69071013", "b": "0.69071025", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.671, "y": 0.472 },
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.83665782", "g": "0.61228263", "b": "0.2684558", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockRound.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.645, "y": 0.224 },
+							"size": 0.2858,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.918, "y": 0.658 },
+							"size": 0.2653,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"equipment": {},
+							"anchor": { "x": 0.097, "y": 0.362 },
+							"size": 0.03,
+							"nameTag": "none",
+							"color": { "r": "0.53267044", "g": "0.53267044", "b": "0.53267044", "a": "1" }
+						},
+						{
+							"role": "participant",
+							"equipment": {},
+							"anchor": { "x": 0.083, "y": 0.384 },
+							"size": 0.03,
+							"nameTag": "none",
+							"color": { "r": "0.53267044", "g": "0.53267044", "b": "0.53267044", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.089, "y": 0.186 },
+							"size": 0.18560262,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": 0.418 },
+							"size": 0.021946253,
+							"drawDepth": 9,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cliffBrown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.037, "y": 0.403 },
+							"size": 0.048013028,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/cottageWood_noDoor.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.05, "y": 0.466 },
+							"size": 0.008957654,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.72585225", "g": "0.72585225", "b": "0.72585225", "a": "1" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comic:nestEmpty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.853, "y": 0.452 },
+							"size": 0.19636837,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.822, "y": 0.443 },
+							"size": 0.15015091,
+							"nameTag": "none",
+							"color": { "r": "0.94849437", "g": "0.69071013", "b": "0.69071025", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.822, "y": 0.443 },
+							"size": 0.15015091,
+							"nameTag": "none",
+							"color": { "r": "0.83665782", "g": "0.61228263", "b": "0.2684558", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockRound.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.768, "y": 0.195 },
+							"size": 0.31905675,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.331, "y": 0.629 },
+							"size": 0.29617128,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"equipment": {},
+							"anchor": { "x": 0.205, "y": 0.287 },
+							"size": 0.07,
+							"nameTag": "none",
+							"color": { "r": "0.53267044", "g": "0.53267044", "b": "0.53267044", "a": "1" }
+						},
+						{
+							"role": "participant",
+							"equipment": {},
+							"anchor": { "x": 0.173, "y": 0.328 },
+							"size": 0.07,
+							"nameTag": "none",
+							"color": { "r": "0.53267044", "g": "0.53267044", "b": "0.53267044", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.108, "y": 0.186 },
+							"size": 0.2072,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.175, "y": 0.412 },
+							"size": 0.0245,
+							"drawDepth": 9,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cliffBrown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.056, "y": 0.403 },
+							"size": 0.0536,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/cottageWood_noDoor.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.069, "y": 0.466 },
+							"size": 0.01,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.72585225", "g": "0.72585225", "b": "0.72585225", "a": "1" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.821, "y": -0.037 },
+							"size": 0.33,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:nestEmpty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.509 },
+							"size": 0.1759,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.94849437", "g": "0.69071013", "b": "0.69071025", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"focus": "foot",
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.83665782", "g": "0.61228263", "b": "0.2684558", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockRound.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.474, "y": 0.252 },
+							"size": 0.2858,
+							"nameTag": "none"
+						},
+						{
+							"role": "participant",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.189, "y": -0.047 },
+							"size": 0.33
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.747, "y": 0.686 },
+							"size": 0.2653,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.108, "y": 0.186 },
+							"size": 0.18560262,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_012~1_participant",
+							"pointerOwner": "participant",
+							"padXFraction": 0.097,
+							"padYFraction": 0.067,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": -0.5185381, "y": -0.056 },
+							"size": 0.3684
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.78453094, "y": -0.046 },
+							"size": 0.3684,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:nestEmpty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.15361452, "y": 0.5 },
+							"size": 0.19636837,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.12268728, "y": 0.491 },
+							"size": 0.15015091,
+							"nameTag": "none",
+							"color": { "r": "0.94849437", "g": "0.69071013", "b": "0.69071025", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.12268728, "y": 0.491 },
+							"size": 0.15015091,
+							"nameTag": "none",
+							"color": { "r": "0.83665782", "g": "0.61228263", "b": "0.2684558", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockRound.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.069080025, "y": 0.243 },
+							"size": 0.31905675,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.6319564, "y": 0.677 },
+							"size": 0.29617128,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_013~1_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.02,
+							"padYFraction": 0.041,
+							"widthFraction": 0.84496826,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.189, "y": -0.047 },
+							"size": 0.33
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.821, "y": -0.037 },
+							"size": 0.33,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:nestEmpty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.509 },
+							"size": 0.1759,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.94849437", "g": "0.69071013", "b": "0.69071025", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"focus": "foot",
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.83665782", "g": "0.61228263", "b": "0.2684558", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockRound.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.474, "y": 0.252 },
+							"size": 0.2858,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.747, "y": 0.686 },
+							"size": 0.2653,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.054, "y": 0.183 },
+							"size": 0.18560262,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_014~1_participant",
+							"pointerOwner": "participant",
+							"padXFraction": 0.3,
+							"padYFraction": 0.06,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_014~2_npc",
+							"pointerOwner": "npc",
+							"location": "bottomRight",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.284, "y": -0.044 },
+							"size": 0.33
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.702, "y": -0.034 },
+							"size": 0.33,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:nestEmpty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.5, "y": 0.512 },
+							"size": 0.1759,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.49, "y": 0.503 },
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.94849437", "g": "0.69071013", "b": "0.69071025", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.49, "y": 0.503 },
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.83665782", "g": "0.61228263", "b": "0.2684558", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockRound.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.472, "y": 0.255 },
+							"size": 0.2858,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.653, "y": 0.689 },
+							"size": 0.2653,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.104, "y": 0.17 },
+							"size": 0.18560262,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.084, "y": 0.396 },
+							"size": 0.021946253,
+							"drawDepth": 9,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cliffBrown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.03, "y": 0.353 },
+							"size": 0.068,
+							"drawDepth": 12,
+							"nameTag": "none",
+							"foot": { "rotate": -2.247 }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/cottageWood_noDoor.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.03, "y": 0.442 },
+							"size": 0.008957654,
+							"drawDepth": 13,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.72585225", "g": "0.72585225", "b": "0.72585225", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+							"textKey": "~01~prompt~panel_015~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.4,
+							"padYFraction": 0.057,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "yes",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "participant",
+									"form": "frame-happy",
+									"equipment": {}
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+									"textKey": "~02~choice_yes~panel_001~1_narration",
+									"style": "narration"
+								},
+								{
+									"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+									"textKey": "~02~choice_yes~panel_001~2_darken",
+									"style": "darken",
+									"padXFraction": 0.544,
+									"padYFraction": 0.671
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "no",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{
+									"role": "npc",
+									"form": "frame-sad",
+									"facing": "left",
+									"equipment": {},
+									"nameTag": "bottomRight",
+									"head": { "rotate": -12.804 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+									"textKey": "~03~choice_no~panel_001~1_narration",
+									"style": "narration"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:nestEmpty.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.5, "y": 0.512 },
+										"size": 0.1759,
+										"nameTag": "none"
+									},
+									{
+										"role": "participant",
+										"form": "frame-joy",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.284, "y": -0.044 },
+										"size": 0.33,
+										"nameTag": "none"
+									},
+									{
+										"role": "npc",
+										"form": "frame-happy",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.702, "y": -0.034 },
+										"size": 0.33,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:eggNest.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.49, "y": 0.503 },
+										"size": 0.1345,
+										"nameTag": "none",
+										"color": { "r": "0.94849437", "g": "0.69071013", "b": "0.69071025", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:eggNest.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.49, "y": 0.503 },
+										"size": 0.1345,
+										"nameTag": "none",
+										"color": { "r": "0.83665782", "g": "0.61228263", "b": "0.2684558", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.472, "y": 0.255 },
+										"size": 0.2858,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf3.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.653, "y": 0.689 },
+										"size": 0.2653,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landHillGrass.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.104, "y": 0.17 },
+										"size": 0.18560262,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.084, "y": 0.396 },
+										"size": 0.021946253,
+										"drawDepth": 9,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:cliffBrown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.03, "y": 0.353 },
+										"size": 0.068,
+										"drawDepth": 12,
+										"nameTag": "none",
+										"foot": { "rotate": -2.247 }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood_noDoor.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.03, "y": 0.442 },
+										"size": 0.008957654,
+										"drawDepth": 13,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.72585225", "g": "0.72585225", "b": "0.72585225", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+										"textKey": "~04~player_chose_yes~panel_001~1_participant",
+										"pointerOwner": "participant",
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "NewJob",
+					"target": "site",
+					"effectId": "job_buildTerrorbirdPen",
+					"post": "site",
+					"choices": [ "participant" ],
+					"promptSlotsImmediately": true
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "no",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:nestEmpty.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.5, "y": 0.512 },
+										"size": 0.1759,
+										"nameTag": "none"
+									},
+									{
+										"role": "participant",
+										"form": "frame-sad",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.284, "y": -0.044 },
+										"size": 0.33,
+										"nameTag": "none"
+									},
+									{
+										"role": "npc",
+										"form": "frame-sad",
+										"facing": "left",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.702, "y": -0.034 },
+										"size": 0.33,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:eggNest.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.49, "y": 0.503 },
+										"size": 0.1345,
+										"nameTag": "none",
+										"color": { "r": "0.94849437", "g": "0.69071013", "b": "0.69071025", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:eggNest.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.49, "y": 0.503 },
+										"size": 0.1345,
+										"nameTag": "none",
+										"color": { "r": "0.83665782", "g": "0.61228263", "b": "0.2684558", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rockRound.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.472, "y": 0.255 },
+										"size": 0.2858,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf3.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.653, "y": 0.689 },
+										"size": 0.2653,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landHillGrass.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.104, "y": 0.17 },
+										"size": 0.18560262,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.084, "y": 0.396 },
+										"size": 0.021946253,
+										"drawDepth": 9,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:cliffBrown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.03, "y": 0.353 },
+										"size": 0.068,
+										"drawDepth": 12,
+										"nameTag": "none",
+										"foot": { "rotate": -2.247 }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood_noDoor.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.03, "y": 0.442 },
+										"size": 0.008957654,
+										"drawDepth": 13,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.72585225", "g": "0.72585225", "b": "0.72585225", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+										"textKey": "~05~player_chose_no~panel_001~1_participant",
+										"pointerOwner": "participant",
+										"widthFraction": 0.6507705,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "outpostEvents/outpost_spawnTerrorbirdQuest_branch",
+										"textKey": "~05~player_chose_no~panel_001~2_npc",
+										"pointerOwner": "npc",
+										"location": "bottomRight",
+										"widthFraction": 0.68508285,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"role": "monster",
+			"npcId": "drauven_hostile_faction",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"customHistory": [
+						{
+							"id": "outpost_spawnTerrorbirdQuest_branch.0",
+							"humanName": "drauvenHostileFaction"
+						}
+					]
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}

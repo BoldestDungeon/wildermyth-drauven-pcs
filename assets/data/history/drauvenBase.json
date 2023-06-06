@@ -3,8 +3,14 @@
 	"id": "default",
 	"weight": 0.95,
 	"category": "bornDrauven",
-	"humanName": "drauvenName",
 	"showInSummary": false
+},
+{
+	"id": "drauvenNPCName",
+	"weight": 1,
+	"category": "drauvenNPCName",
+	"humanName": "drauvenName",
+	"persistOverLegacy": "never"
 },
 {
 	"id": "language.fluentInYandric",
@@ -49,9 +55,14 @@
 		"drauvenSkin_naturalRightLeg",
 		"drauvenSkin_naturalHead",
 		"drauvenSkin_naturalTorso",
-		"drauvenSkin_naturalTail"
+		"drauvenSkin_naturalTail",
+		"drauvenGear_clothes",
+		
+		"nameFormulaOverride|drauvenName",
+		"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C",
+		"rigOverride|Drauven"
 	],
-	"removeAspects":[
+	"removeAspects": [
 		"young",
 		"earlyMiddleAge",
 		"middleAge",

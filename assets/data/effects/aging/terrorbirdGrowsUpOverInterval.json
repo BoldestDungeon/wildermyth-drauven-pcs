@@ -1,0 +1,27 @@
+{
+  "id": "terrorbirdGrowsUpOverInterval",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "aging/terrorbirdGrowsUpOverInterval",
+    "modId": "wildermyth-drauven-pcs",
+    "author": "Ironskink",
+    "STUB": "Forces the Terrorchick to grow up during the next interval."
+  },
+  "type": "END_OF_CHAPTER",
+  "targets": [
+    { "template": "SELF" }
+  ],
+  "outcomes": [
+    {
+        "class": "DoAll",
+        "outcomes": [
+          {
+            "class": "RemoveTheme",
+            "specificTheme": "petTerrorbirdChick",
+            "specificPiece": "terrorchick"
+          },
+          { "class": "Aspects", "target": "self", "addAspects": [{"id": "eligibleForTerrorbirdTiding"}] }
+        ]
+    }
+  ]
+  }

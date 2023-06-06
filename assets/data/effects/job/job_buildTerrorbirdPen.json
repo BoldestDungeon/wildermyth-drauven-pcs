@@ -1,0 +1,182 @@
+{
+"id": "job_buildTerrorbirdPen",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "job/job_buildTerrorbirdPen",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "David Bilsky"
+},
+"type": "OVERLAND_ABILITY",
+"verb": "JOB",
+"ability": {
+	"icon": "utility",
+	"category": "crafting",
+	"priority": "1",
+	"labor": { "days": "30" },
+	"resourceCosts": [
+		{ "type": "loreDrauven", "amount": 3 },
+		{ "type": "heartwoods", "amount": 5 },
+		{ "type": "hides", "amount": 2 }
+	],
+	"jobCanBeCancelled": false,
+	"musicOverride": "Music/Comics - Silly and Cute"
+},
+"targets": [
+	{
+		"template": "SELF_SITE_THIS_JOB_NOT_ACTIVE",
+		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ]
+	},
+	{
+		"template": "JOB_PARTICIPANT",
+		"promptText": "Who will build the pen?",
+		"slots": {}
+	},
+	{ "role": "overlandTile", "template": "OVERLAND_TILE", "range": "0" },
+	{
+		"role": "npc",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer3",
+		"aspects": [ "drauven" ],
+		"relativeTo": "overlandTile"
+	},
+	{
+		"role": "npc2",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer2",
+		"aspects": [ "drauven" ],
+		"relativeTo": "overlandTile"
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "self",
+		"addAspects": [
+			{ "id": "terrorbirdPen", "value": "1" }
+		],
+		"removeAspects": [ "_THIS_" ]
+	},
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "participant",
+							"form": "frame-happy",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.2, "y": -0.022 },
+							"size": 0.3714379,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"form": "frame-joy",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.757, "y": -0.031 },
+							"size": 0.3714379,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:nestEmpty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.614, "y": 0.327 },
+							"size": 0.1759,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.6, "y": 0.157 },
+							"size": 0.1214,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.608, "y": 0.321 },
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.94849437", "g": "0.69071013", "b": "0.69071025", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:eggNest.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.603, "y": 0.321 },
+							"size": 0.1345,
+							"nameTag": "none",
+							"color": { "r": "0.83665782", "g": "0.61228263", "b": "0.2684558", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_baskets1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.047, "y": 0.176 },
+							"size": 0.2937,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdStatue.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.912, "y": 0.472 },
+							"size": 0.3914,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_lanternPoleOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.452, "y": 0.456 },
+							"size": 0.3808,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:fencePlankShortBanners.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.511, "y": 0.315 },
+							"size": 0.553,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_buildTerrorbirdPen",
+							"textKey": "~01~~panel_001~1_npc",
+							"pointerOwner": "npc",
+							"pointerAdjust": { "dX": -32.988506, "dY": 2.8275864 }
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "AddRememberedPlace",
+		"target": "overlandTile",
+		"icon": "houseFence1"
+	},
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "terrorbirdPen", "value": "1" },
+			{ "id": "terrorbirdGenerating", "value": "1" }
+		]
+	}
+]
+}

@@ -1,7 +1,29 @@
 [
+
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenHeadCustom_helmet1",
+    "id": "drauvenGear_clothes",
+    "invalidatesSkin": true,
+    "importance": -1,
+    "skinLayers": [
+      {
+        "name": "armor_base",
+        "tint": "primary", "tintAmount": 0.6,
+        "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+        "depth": 1350
+      }
+    ]
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenSkin_suppressClothes",
+    "STUB": "All clothing layers should be turned off if this aspect is set.",
+    "importance": -1,
+    "invalidatesSkin": true
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenGear_helmet1",
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
@@ -11,14 +33,14 @@
         "depth": 4500,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
-        "ifNoOwnerAspect": "farmer",
+        "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "drauvenSkin_suppressClothes"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
   },
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenHeadCustom_helmet2",
+    "id": "drauvenGear_helmet2",
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
@@ -28,14 +50,14 @@
         "depth": 4500,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
-        "ifNoOwnerAspect": "farmer",
+        "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "drauvenSkin_suppressClothes"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
   },
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenHeadCustom_helmet3",
+    "id": "drauvenGear_helmet3",
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
@@ -45,14 +67,14 @@
         "depth": 4500,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
-        "ifNoOwnerAspect": "farmer",
+        "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "drauvenSkin_suppressClothes"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
   },
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenHeadCustom_helmet4",
+    "id": "drauvenGear_helmet4",
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
@@ -62,14 +84,14 @@
         "depth": 4500,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
-        "ifNoOwnerAspect": "farmer",
+        "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "drauvenSkin_suppressClothes"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
   },
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenHeadCustom_helmet5",
+    "id": "drauvenGear_helmet5",
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
@@ -79,14 +101,14 @@
         "depth": 4500,
         "headOffset": true,
         "ifOwnerAspect": "drauvenSkin_naturalHead",
-        "ifNoOwnerAspect": "farmer",
+        "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "drauvenSkin_suppressClothes"],
         "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
       }
     ]
   },
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenHeadCustom_helmet6",
+    "id": "drauvenGear_helmet6",
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
@@ -94,51 +116,72 @@
     ]
   },
 
-
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenBodyCustomization1",
+    "id": "drauvenGear_clothes",
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
       {
-          "name": "Drauv_armor_detail_torso_1_behind",
+        "name": "armor_base",
+        "tint": "primary", "tintAmount": 0.6,
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "hunter", "drauvenSkin_suppressClothes"],
+        "depth": 1350
+      },
+      {
+        "name": "armor_base_over",
+        "tint": "primary", "tintAmount": 0.6,
+        "ifOwnerAspect": "hunter",
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
+        "depth": 1399
+      }
+    ]
+  },
+
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "drauvenGear_customization1",
+    "importance": -1,
+    "invalidatesSkin": true,
+    "skinLayers": [
+      {
+          "name": "armor_detail_torso_1_behind",
           "tint": "secondary", "tintAmount": 0.6,
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "depth": 100
       },
       {
-          "name": "Drauv_armor_detail_torso_1",
+          "name": "armor_detail_torso_1",
           "tint": "secondary", "tintAmount": 0.6,
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "depth": 1351
       }
     ]
   },
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenBodyCustomization2",
+    "id": "drauvenGear_customization2",
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
       {
-          "name": "Drauv_armor_detail_torso_2",
+          "name": "armor_detail_torso_2",
           "tint": "secondary", "tintAmount": 0.6,
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "depth": 1352
       }
     ]
   },
   {
     "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenBodyCustomization3",
+    "id": "drauvenGear_customization3",
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
       {
-          "name": "Drauv_armor_detail_3",
+          "name": "armor_detail_3",
           "tint": "secondary", "tintAmount": 0.6,
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "depth": 1353
       }
     ]
@@ -150,32 +193,35 @@
     "invalidatesSkin": true,
     "skinLayers": [
       {
-          "name": "Drauv_armor_detail_armL_1",
+          "name": "armor_detail_armL_1",
           "tint": "secondary", "tintAmount": 0.6,
           "ifOwnerAspect": "drauvenSkin_naturalLeftArm",
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate"
-      },
-      {
-          "name": "Drauv_armor_detail_armL_1_2handed",
-          "tint": "secondary", "tintAmount": 0.6,
-          "ifOwnerAspect": "drauvenSkin_naturalLeftArm",
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
-          "rigMode": "twoHanded"
-      },
-      {
-          "name": "Drauv_armor_detail_armR_1",
-          "tint": "secondary", "tintAmount": 0.6,
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "depth": 4501,
-          "ifOwnerAspect": "drauvenSkin_naturalRightArm",
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
           "rigMode": "oneHanded"
       },
       {
-          "name": "Drauv_armor_detail_armR_1_2handed",
+          "name": "armor_detail_armL_1_2handed",
           "tint": "secondary", "tintAmount": 0.6,
+          "ifOwnerAspect": "drauvenSkin_naturalLeftArm",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "depth": 4501,
+          "rigMode": "twoHanded"
+      },
+      {
+          "name": "armor_detail_armR_1",
+          "tint": "secondary", "tintAmount": 0.6,
           "ifOwnerAspect": "drauvenSkin_naturalRightArm",
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
+          "depth": 4501,
+          "rigMode": "oneHanded"
+      },
+      {
+          "name": "armor_detail_armR_1_2handed",
+          "tint": "secondary", "tintAmount": 0.6,
+          "ifOwnerAspect": "drauvenSkin_naturalRightArm",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
+          "depth": 4501,
           "rigMode": "twoHanded"
       }
 
@@ -189,19 +235,19 @@
     "invalidatesSkin": true,
     "skinLayers": [
       {
-          "name": "Drauv_armor_detail_armR_2",
+          "name": "armor_detail_armR_2",
           "tint": "secondary", "tintAmount": 0.6,
           "depth": 4502,
           "ifOwnerAspect": "drauvenSkin_naturalRightArm",
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "rigMode": "oneHanded"
       },
       {
-          "name": "Drauv_armor_detail_armR_2_2handed",
+          "name": "armor_detail_armR_2_2handed",
           "tint": "secondary", "tintAmount": 0.6,
           "depth": 4502,
           "ifOwnerAspect": "drauvenSkin_naturalRightArm",
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "rigMode": "twoHanded"
       }
 
@@ -214,19 +260,19 @@
     "invalidatesSkin": true,
     "skinLayers": [
       {
-          "name": "Drauv_armor_detail_armR_3",
+          "name": "armor_detail_armR_3",
           "tint": "secondary", "tintAmount": 0.6,
           "depth": 4503,
           "ifOwnerAspect": "drauvenSkin_naturalRightArm",
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "rigMode": "oneHanded"
       },
       {
-          "name": "Drauv_armor_detail_armR_3_2handed",
+          "name": "armor_detail_armR_3_2handed",
           "tint": "secondary", "tintAmount": 0.6,
           "depth": 4503,
           "ifOwnerAspect": "drauvenSkin_naturalRightArm",
-          "ifNoOwnerAspect": "themeSkin_drauven_alternate",
+          "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenSkin_suppressClothes"],
           "rigMode": "twoHanded"
       }
 

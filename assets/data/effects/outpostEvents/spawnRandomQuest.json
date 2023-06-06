@@ -1,0 +1,62 @@
+{
+"id": "spawnRandomQuest",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "outpostEvents/spawnRandomQuest",
+	"modId": "wildermyth-drauven-pcs",
+	"debug": true
+},
+"type": "MONTHLY",
+"targets": [
+	{ "template": "SELF_SITE", "a": "0.5", "b": "[0,1]" },
+	{
+		"role": "site",
+		"template": "OVERLAND_TILE",
+		"type": "SITE",
+		"aspects": [ "drauvenOutpost" ],
+		"range": "0",
+		"sameTileAs": "self"
+	},
+	{ "template": "COMPANY" },
+	{
+		"role": "volunteer",
+		"template": "COMPANY",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "RESOURCE.loreDrauven",
+		"b": "3"
+	}
+],
+"outcomes": [
+	{
+		"class": "DoOneRandom",
+		"weightedOutcomes": [
+			{ "weight": 10 },
+			{
+				"outcome": {
+					"class": "Test",
+					"value": "(1-self.terrorbirdPen)-company.terrorbirdOpportunity",
+					"threshold": "1",
+					"onPass": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "NewJob",
+								"target": "site",
+								"effectId": "outpost_spawnTerrorbirdQuest",
+								"post": "site"
+							},
+							{
+								"class": "Aspects",
+								"target": "company",
+								"addAspects": [
+									{ "id": "terrorbirdOpportunity", "value": "1" }
+								]
+							}
+						]
+					}
+				}
+			}
+		]
+	}
+]
+}

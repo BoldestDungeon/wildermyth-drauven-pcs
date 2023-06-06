@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "wilderness/theAbandoned",
-	"modId": "wildermyth-drauven-pcs-main",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Jeremy Bernstein"
 },
 "type": "ENCOUNTER_WILDERNESS_SCOUTING",
@@ -12,14 +12,13 @@
 	"icon": "melee",
 	"priority": "1",
 	"cooldown": "oncePerGame",
-	"encounterScore": 11,
+	"encounterWeight": "1+(max(0,(1-company.DrauvenAllies_FirstStepsComplete))*1000)",
 	"encounterEnabled": true
 },
 "targets": [
 	{ "template": "EVENT" },
 	{
 		"template": "COMPANY",
-		"aspects": null,
 		"aspectValues": [
 			{ "id": "chapterNumber", "maxValue": "4" }
 		],
@@ -31,13 +30,13 @@
 	{
 		"role": "healer",
 		"template": "PICK_BY_SCORE",
-		"scoreFunction": "HEALER",
+		"scoreFunction": "HEALER + (max(0,(1-company.DrauvenAllies_FirstStepsComplete))*60)",
 		"scoreThreshold": "60"
 	},
 	{
 		"role": "hothead",
 		"template": "PICK_BY_SCORE",
-		"scoreFunction": "HOTHEAD+COWARD",
+		"scoreFunction": "HOTHEAD+COWARD + (max(0,(1-company.DrauvenAllies_FirstStepsComplete))*60)",
 		"scoreThreshold": "60",
 		"aspectValues": [
 			{ "id": "drauven", "forbidden": true },
@@ -846,7 +845,7 @@
 		"ifPlayerChose": "one",
 		"then": {
 			"class": "Test",
-			"value": "EVENT_ROLL+roll_one",
+			"value": "EVENT_ROLL+roll_one + (max(0,(1-company.DrauvenAllies_FirstStepsComplete))*50)",
 			"threshold": "difficulty_one",
 			"onPass": {
 				"class": "DoAll",
@@ -1384,6 +1383,13 @@
 						"target": "healer",
 						"addHistory": [
 							[ "drauvenHealer" ]
+						]
+					},
+					{
+						"class": "Aspects",
+						"target": "healer",
+						"addAspects": [
+							{ "id": "abandonedDrauvenMaturationYear", "value": "healer.AGE_IN_YEARS + 8" }
 						]
 					},
 					{
@@ -3589,9 +3595,9 @@
 ],
 "expressions": {
 	"difficulty_one": "70",
-	"difficulty_three": "70",
 	"roll_one": "TENACITY",
-	"roll_three": "CHARISMA"
+	"roll_three": "CHARISMA",
+	"difficulty_three": "70"
 },
 "implications": {
 	"generatedTargets": [
@@ -3600,12 +3606,12 @@
 			"createEntity": {
 				"query": {
 					"baseTag": "human",
-					"localizableName": "",
 					"setClass": "nonFarmer",
 					"exactAge": 8
 				},
 				"addAspects": [
-					{ "id": "drauven_pc_init", "value": "1" }
+					{ "id": "drauven_pc_init", "value": "1" },
+					{ "id": "nameFormulaOverride|drauvenName", "value": "1" }
 				],
 				"control": "none",
 				"additionalOutcome": {

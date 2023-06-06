@@ -1,0 +1,169 @@
+{
+"id": "job_hatchTerrorchick",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "job/job_hatchTerrorchick",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Anne Austin"
+},
+"type": "OVERLAND_ABILITY",
+"verb": "JOB",
+"ability": {
+	"icon": "utility",
+	"category": "crafting",
+	"priority": "1",
+	"labor": { "days": "10" }
+},
+"targets": [
+	{
+		"template": "SELF_SITE_THIS_JOB_NOT_ACTIVE",
+		"aspects": [ "THIS_JOB_NOT_ACTIVE", "SELF" ]
+	},
+	{ "role": "site", "template": "SELF_SITE" },
+	{
+		"role": "overlandTile",
+		"template": "OVERLAND_TILE",
+		"relativeTo": "site",
+		"range": "0"
+	},
+	{
+		"template": "JOB_PARTICIPANT",
+		"promptText": "Who will train the little terror?",
+		"slots": { "max": 1 },
+		"themes": { "eligibleForTheme": "petTerrorbirdChick", "eligibleForPiece": "terrorchick" }
+	},
+	{
+		"role": "npc",
+		"template": "LEGEND",
+		"choose": "ANY",
+		"legendId": "tileFarmer3",
+		"aspects": [ "drauven" ],
+		"relativeTo": "overlandTile"
+	}
+],
+"outcomes": [
+	{
+		"class": "ApplyTheme",
+		"target": "participant",
+		"theme": "petTerrorbirdChick",
+		"piece": "terrorchick"
+	},
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "asset:figures/source/terrorbirdChick.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.855, "y": 0.201 },
+							"size": 0.1919,
+							"nameTag": "none",
+							"foot": { "rotate": -0.292 }
+						},
+						{
+							"assetSpec": "asset:figures/source/terrorbirdChick.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.343, "y": 0.204 },
+							"size": 0.1919,
+							"nameTag": "none",
+							"foot": { "rotate": 6.172 }
+						},
+						{
+							"role": "participant",
+							"form": "frame-happy",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.2, "y": -0.022 },
+							"size": 0.3714379
+						},
+						{
+							"role": "npc",
+							"form": "frame-joy",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"focus": "foot",
+							"anchor": { "x": 0.757, "y": -0.031 },
+							"size": 0.3714379,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "comic:nestEmpty.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.614, "y": 0.327 },
+							"size": 0.1759,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:rockDragon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.6, "y": 0.157 },
+							"size": 0.1214,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_baskets1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.047, "y": 0.176 },
+							"size": 0.2937,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdStatue.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.912, "y": 0.472 },
+							"size": 0.3914,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_lanternPoleOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.452, "y": 0.456 },
+							"size": 0.3808,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:fencePlankShortBanners.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.511, "y": 0.315 },
+							"size": 0.553,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "job/job_hatchTerrorchick",
+							"textKey": "~01~~panel_001~1_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.33,
+							"padYFraction": 0.022,
+							"widthFraction": 0.19540565,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -32.988506, "dY": 2.8275864 }
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "Aspects",
+		"target": "self",
+		"removeAspects": [ "_THIS_" ]
+	}
+]
+}

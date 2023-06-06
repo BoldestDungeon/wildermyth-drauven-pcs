@@ -1,0 +1,20 @@
+{
+	"id": "petTerrorbirdChick",
+	"name": "Pet Terrorchick",
+	"blurb": "<self> is raising a baby <self.drauven:Knight Hawk/Terrorbird>.",
+
+
+	"pieces": [
+		{
+			"id": "terrorchick",
+			"name": "Terrorchick",
+			"blurb": "A young bird with an impressive set of lungs. Hopefully you'll be able to train it to be your loyal sidekick before it decides to nibble your fingers off.",
+			"slots": ["pet"],
+			"stats": {},
+			"effects": ["terrorbirdGrowsUp", "terrorbirdGrowsUpOverInterval", "terrorchickMakesNoise"],
+			"layers": [
+				{"name": "pet_terrorchick", "depth": 9000}
+			]
+		}
+	]
+}

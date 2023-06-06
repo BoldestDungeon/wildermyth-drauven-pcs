@@ -13,16 +13,23 @@
 ],
 "outcomes": [
 	{
+		"class": "Aspects",
+		"removeAspects": [ "drauven_pc_init" ]
+	},
+	{
 		"class": "AddHistory",
 		"target": "self",
 		"addHistory": [
 			[ "drauvenBase" ],
-			[ "bornDrauven" ],
-			[ "drauvenCustomizationBody" ],
-			[ "drauvenCustomizationOther" ]
+			[ "drauvenNPCName" ]
 		]
 	},
 	{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
+	{
+		"class": "CustomizeHero",
+		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers", "zzz_drauven05_Helmet", "zzz_drauven06_Armour" ],
+		"randomizeColors": [ "skin" ]
+	},
 	{
 		"class": "Test",
 		"value": "KNOWS_YANDRIC",
@@ -33,10 +40,6 @@
 				[ "fluentInYandric" ]
 			]
 		}
-	},
-	{
-		"class": "Aspects",
-		"removeAspects": [ "drauven_pc_init" ]
 	}
 ]
 }

@@ -67,9 +67,12 @@
 	"generatedTargets": [
 		{
 			"createEntity": {
-				"query": { "baseTag": "human", "setClass": "nonFarmer" },
+				"query": { 
+					"baseTag": "human", "setClass": "nonFarmer"
+				},
 				"addAspects": [
-					{ "id": "drauven_pc_init", "value": "1" }
+					{ "id": "drauven_pc_init", "value": "1" },
+					{ "id": "nameFormulaOverride|drauvenName", "value": "1" }
 				],
 				"control": "none"
 			}

@@ -5,43 +5,43 @@
     "category": "drauvenCustomizationBody",
     "id": "drauvenCustom.Body.1__",
     "weight": 0.35,
-    "impliedAspects": ["drauvenBodyCustomization1"]
+    "impliedAspects": ["drauvenGear_customization1"]
   },
   {
     "category": "drauvenCustomizationBody",
     "id": "drauvenCustom.Body._2_",
     "weight": 0.35,
-    "impliedAspects": ["drauvenBodyCustomization2"]
+    "impliedAspects": ["drauvenGear_customization2"]
   },
   {
     "category": "drauvenCustomizationBody",
     "id": "drauvenCustom.Body.__3",
     "weight": 0.35,
-    "impliedAspects": ["drauvenBodyCustomization3"]
+    "impliedAspects": ["drauvenGear_customization3"]
   },
   {
     "category": "drauvenCustomizationBody",
     "id": "drauvenCustom.Body.12_",
     "weight": 0.35,
-    "impliedAspects": ["drauvenBodyCustomization1", "drauvenBodyCustomization2"]
+    "impliedAspects": ["drauvenGear_customization1", "drauvenGear_customization2"]
   },
   {
     "category": "drauvenCustomizationBody",
     "id": "drauvenCustom.Body._23",
     "weight": 0.35,
-    "impliedAspects": ["drauvenBodyCustomization2", "drauvenBodyCustomization3"]
+    "impliedAspects": ["drauvenGear_customization2", "drauvenGear_customization3"]
   },
   {
     "category": "drauvenCustomizationBody",
     "id": "drauvenCustom.Body.1_3",
     "weight": 0.35,
-    "impliedAspects": ["drauvenBodyCustomization1", "drauvenBodyCustomization3"]
+    "impliedAspects": ["drauvenGear_customization1", "drauvenGear_customization3"]
   },
   {
     "category": "drauvenCustomizationBody",
     "id": "drauvenCustom.Body.123",
     "weight": 0.35,
-    "impliedAspects": ["drauvenBodyCustomization1", "drauvenBodyCustomization2", "drauvenBodyCustomization3"]
+    "impliedAspects": ["drauvenGear_customization1", "drauvenGear_customization2", "drauvenGear_customization3"]
   },
   {
     "category": "drauvenCustomizationBody",
@@ -471,7 +471,7 @@
   {
     "category": "drauvenHead_Helmet_haunt",
     "id": "drauvenHead.Helmet.Haunt.1",
-    "impliedAspects": [ "drauvenHeadCustom_helmet2" ],
+    "impliedAspects": [ "drauvenGear_helmet2" ],
     "weight": 0.25
   },
   {
@@ -483,7 +483,7 @@
   {
     "category": "drauvenHead_Helmet_deeven",
     "id": "drauvenHead.Helmet.Deeven.1",
-    "impliedAspects": [ "drauvenHeadCustom_helmet3" ],
+    "impliedAspects": [ "drauvenGear_helmet3" ],
     "weight": 0.25
   },
   {
@@ -495,7 +495,7 @@
   {
     "category": "drauvenHead_Helmet_stump",
     "id": "drauvenHead.Helmet.Stump.1",
-    "impliedAspects": [ "drauvenHeadCustom_helmet1" ],
+    "impliedAspects": [ "drauvenGear_helmet1" ],
     "weight": 0.25
   },
   {
@@ -507,7 +507,7 @@
   {
     "category": "drauvenHead_Helmet_pilot",
     "id": "drauvenHead.Helmet.Pilot.1",
-    "impliedAspects": [ "drauvenHeadCustom_helmet4" ],
+    "impliedAspects": [ "drauvenGear_helmet4" ],
     "weight": 0.25
   },
   {
@@ -519,7 +519,7 @@
   {
     "category": "drauvenHead_Helmet_stormthroat",
     "id": "drauvenHead.Helmet.Stormthroat.1",
-    "impliedAspects": [ "drauvenHeadCustom_helmet5" ],
+    "impliedAspects": [ "drauvenGear_helmet5" ],
     "weight": 0.25
   },
   {
