@@ -1,0 +1,57 @@
+{
+"id": "setupInterfusedFire",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "mystic/setupInterfusedFire",
+	"modId": "wildermyth-drauven-pcs"
+},
+"type": "ASPECT_ADDED",
+"targets": [
+	{ "template": "SELF_HAZARD" },
+	{ "template": "ANY", "relationship": "interfusedWithMystic" }
+],
+"outcomes": [
+	{ "class": "ChangeControl", "becomeAllyOf": "target" },
+	{
+		"class": "Test",
+		"value": "self.uncontainedFire",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "interfusedFire", "value": "1" },
+						{ "id": "sensor", "value": "1" }
+					]
+				},
+				{
+					"class": "Test",
+					"value": "target.mysticDeck_warmth",
+					"threshold": "1",
+					"onPass": {
+						"class": "Aspects",
+						"target": "self",
+						"addAspects": [
+							{ "id": "blaze_mysticWarmth", "value": "1", "merge": "max" }
+						]
+					}
+				},
+				{
+					"class": "Test",
+					"value": "target.mysticDeck_elementalist+target.drauvenDeck_mystic_skysong",
+					"threshold": "1",
+					"onPass": {
+						"class": "Aspects",
+						"target": "self",
+						"addAspects": [
+							{ "id": "interfusedFire_elementalist", "value": "1" }
+						]
+					}
+				}
+			]
+		}
+	}
+]
+}

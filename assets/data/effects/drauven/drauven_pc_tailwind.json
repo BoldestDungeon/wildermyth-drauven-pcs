@@ -1,0 +1,71 @@
+{
+"id": "drauven_pc_tailwind",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_tailwind",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "okToMarkDone" ]
+},
+"type": "ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "flyFriend",
+	"category": "research",
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "6.6+self.BONUS_RANGE" }
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "free" },
+		"missionFeedback": { "orientTo": "hero" }
+	},
+	{
+		"role": "hero",
+		"template": "ANY",
+		"type": "UNIT",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"orientTo": "self",
+			"hoverScript": "figures.directionalHelpfulHover",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+			"feedbackSource": "self"
+		},
+		"aspects": [ "alive", "ALLY" ],
+		"range": "6.6+self.BONUS_RANGE"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"showAbilityName": "ifEnemy",
+		"particles": [
+			{ "script": "scaldingSteam", "setPosition": "hero" }
+		],
+		"audioOverride": { "attackStartCue": "Characters/Default/Ability_WindWalk" },
+		"attackerAnimationOverride": "figures.swapWeapon",
+		"markForFlanking": "never",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"target": "hero",
+					"addAspects": [
+						{
+							"id": "drauven_pc_tailwind_speedBuff",
+							"value": "1+(self.POTENCY/2)",
+							"inRelationTo": "self"
+						}
+					]
+				}
+			]
+		}
+	}
+]
+}

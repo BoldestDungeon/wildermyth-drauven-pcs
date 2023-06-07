@@ -1,0 +1,152 @@
+{
+"id": "revertToStatueIfNotInterfused",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "monster/revertToStatueIfNotInterfused",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"aiPriority": "2050",
+	"tags": [ "melee", "weapon" ]
+},
+"type": "EVERY_TURN_2",
+"verb": "ATTACK",
+"ability": { "icon": "arches", "priority": "100" },
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "interfusedWithHuman", "forbidden": true }
+		]
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "1",
+		"scoreThreshold": "0",
+		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
+		"range": "0.9"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": "self",
+		"wield": "fromWeapon",
+		"applyCover": true,
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "DoFirstValid",
+					"outcomes": [
+						{
+							"class": "Test",
+							"value": "self.animatedStatue_stone",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "targetTile",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"ignoreBlockingEntities": [ "self" ],
+								"forceSpawn": true,
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "animatedStatue_stump_stone" ],
+										"coordinates": "targetTile"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Test",
+							"value": "self.animatedStatue_bone",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "targetTile",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"ignoreBlockingEntities": [ "self" ],
+								"forceSpawn": true,
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "animatedStatue_stump_bone" ],
+										"coordinates": "targetTile"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Test",
+							"value": "self.animatedStatue_metal",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "targetTile",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"ignoreBlockingEntities": [ "self" ],
+								"forceSpawn": true,
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "animatedStatue_stump_metal" ],
+										"coordinates": "targetTile"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Spawn",
+							"target": "targetTile",
+							"addRole": "scenery",
+							"modifyTerrain": "setToBlocked",
+							"ignoreBlockingEntities": [ "self" ],
+							"forceSpawn": true,
+							"createEntity": {
+								"query": {
+									"type": "SCENERY",
+									"tags": [ "animatedStatue_stump_stone" ],
+									"coordinates": "targetTile"
+								},
+								"setLocation": true
+							}
+						}
+					]
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"value": "(((self.HEALTH-2)-self.animatedStatue_healthMod)*2)-HEALTH"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "ARMOR",
+					"value": "(self.ARMOR-self.SHRED)-ARMOR"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "WARDING",
+					"value": "self.WARDING-WARDING"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "INJURY",
+					"value": "floor((self.INJURY*(scenery.HEALTH/self.HEALTH)))"
+				},
+				{ "class": "Delete" }
+			]
+		}
+	}
+]
+}

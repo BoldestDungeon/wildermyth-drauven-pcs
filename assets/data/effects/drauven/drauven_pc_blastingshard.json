@@ -13,8 +13,9 @@
 "ability": {
 	"icon": "shardnado",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticWithdraw", "mysticRecipeSplinterblast" ],
-	"priority": "3",
+	"strictlyBetterThan": [ "mysticRecipeSplinterblast" ],
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "4.6+self.BONUS_RANGE" },
 	"showDescriptionInTooltip": true,
 	"usesElementFromEquippedWeapon": true
 },
@@ -28,7 +29,6 @@
 	{
 		"role": "source",
 		"template": "ANY",
-		"type": "SCENERY",
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
 			"hoverScript": "figures.abilitySelectHover",
@@ -45,7 +45,7 @@
 		"missionFeedback": {
 			"hoverScript": "figures.directionalTileHover",
 			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
-			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION_SHINE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
 			"hoverFeedback": "ATTACK_SUGGESTION",
 			"feedbackSource": "source"
 		},
@@ -65,6 +65,7 @@
 			"feedbackSource": "source"
 		},
 		"relativeTo": "focus",
+		"notAlreadyMatchedAs": [ "source" ],
 		"range": "(0.5*source.SIZE)+0.6",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
@@ -151,7 +152,15 @@
 					"class": "Spawn",
 					"target": "targetTile",
 					"modifyTerrain": "spreadDebrisAndFire"
-				}
+				},
+				{
+					"class": "Damage",
+					"target": "source",
+					"amount": "source.HEALTH",
+					"type": "TRUE",
+					"showInTooltip": false
+				},
+				{ "class": "Delete", "target": "source" }
 			]
 		},
 		"onHit": {

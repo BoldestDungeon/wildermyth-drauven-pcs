@@ -1,0 +1,118 @@
+{
+"id": "drauven_pc_cordAndVines_upgrade",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_cordAndVines_upgrade",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"aiPriority": "2050",
+	"tags": [ "interfusionRecipe", "drauven_pc_cordAndVines_upgrade", "okToMarkDone" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "thornlash",
+	"category": "attackAbility",
+	"strictlyBetterThan": [ "mysticRecipeWildGrasp", "mysticRecipeEngulf", "drauven_pc_cordAndVines" ],
+	"priority": "1",
+	"onlyShowIfPossibleInCharacterSheet": true,
+	"showDescriptionInTooltip": true,
+	"usesElementFromEquippedWeapon": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints" },
+		"missionFeedback": { "orientTo": "target" }
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"type": "SCENERY",
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspectsOneOf": [ "plant", "textile" ]
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"relativeTo": "source",
+		"range": "(4.6+self.BONUS_RANGE)+self.mysticDeck_naturalist",
+		"lineOfSight": "LIVE_FIGURES"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION_SHINE",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+			"applyRoleFootprint": "target",
+			"showMovementFeedback": true
+		},
+		"relativeTo": "target",
+		"range": "(3.1+self.BONUS_RANGE)+self.mysticDeck_naturalist",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "validMoveEnd",
+		"roleMustFit": "target",
+		"footprintWithinRange": "target",
+		"footprintWithinRangeCompletely": true
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"intermediateRole": "source",
+		"attackAnimationType": "magic",
+		"particles": [
+			{ "script": "cordAndVines", "setPosition": "source", "setPosition2": "target" }
+		],
+		"audioOverride": { "attackHitCue": "Characters/Default/Ability_InterfusePlant" },
+		"flankMarkOrigin": "source",
+		"defenseRollTags": [ "range" ],
+		"attackStrength": "self.RANGE_ACCURACY+10",
+		"wield": "light",
+		"always": {
+			"class": "Damage",
+			"target": "source",
+			"amount": "1",
+			"type": "TRUE",
+			"showInTooltip": false
+		},
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Test",
+					"STUB": "If the target isn't immuneToKnockback, move them!",
+					"value": "target.immuneToKnockback",
+					"threshold": "1",
+					"onFail": { "class": "MoveEntity", "directlyToTile": "targetTile" }
+				},
+				{
+					"class": "Damage",
+					"amount": "(1d2+1)+(self.POTENCY+self.SPELL_DAMAGE)",
+					"useEquippedWeaponForStunt": true
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "hobbled", "value": "2+self.mysticDeck_mythweaver_upgrade" }
+					]
+				}
+			]
+		}
+	}
+]
+}

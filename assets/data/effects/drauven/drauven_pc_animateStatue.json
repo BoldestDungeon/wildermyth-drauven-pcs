@@ -1,0 +1,196 @@
+{
+"id": "drauven_pc_animateStatue",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_animateStatue",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "sneaky", "drauven_pc_animateStatue", "interfusionRecipe" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "riposte",
+	"category": "neutralAbility",
+	"priority": "3",
+	"overrideOverlayType": "interfuse"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"missionFeedback": { "orientTo": "focus" }
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"STUB": "statue",
+		"type": "SCENERY",
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspectsOneOf": [ "statue" ]
+	},
+	{
+		"template": "TILE",
+		"choose": "ONE_RANDOM_TRUE",
+		"relativeTo": "source",
+		"range": "0.5",
+		"spawnEntityIgnore": [ "source" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"intermediateRole": "focus",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"particles": [
+			{ "script": "StatueExplosion", "setPosition": "focus" }
+		],
+		"audioOverride": { "attackStartCue": "" },
+		"flankMarkOrigin": "focus",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Spawn",
+					"target": "source",
+					"modifyTerrain": "makeWalkableAndCreateDebris"
+				},
+				{
+					"class": "DoFirstValid",
+					"outcomes": [
+						{
+							"class": "Test",
+							"value": "source.rock",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"createEntity": {
+									"query": { "baseTag": "animatedStatue_stone", "coordinates": "focus" },
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Test",
+							"value": "source.bone",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"createEntity": {
+									"query": { "baseTag": "animatedStatue_bone", "coordinates": "focus" },
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Test",
+							"value": "source.metal",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"createEntity": {
+									"query": { "baseTag": "animatedStatue_metal", "coordinates": "focus" },
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Spawn",
+							"target": "focus",
+							"addRole": "scenery",
+							"createEntity": {
+								"query": { "baseTag": "animatedStatue_stone", "coordinates": "focus" },
+								"setLocation": true
+							}
+						}
+					]
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"value": "((2+floor(((self.POTENCY+self.SPELL_DAMAGE)/2)))+ceil(((source.HEALTH-source.INJURY)/2)))-HEALTH"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "ARMOR",
+					"value": "(source.ARMOR-source.SHRED)-ARMOR"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "WARDING",
+					"value": "source.WARDING-WARDING"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "MELEE_ACCURACY",
+					"value": "self.RANGE_ACCURACY-MELEE_ACCURACY"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "PHYSICAL_DAMAGE_BONUS",
+					"value": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))"
+				},
+				{ "class": "ModifyStats", "target": "scenery", "stat": "ACTIONS", "value": "2" },
+				{ "class": "Delete", "target": "source" },
+				{
+					"class": "Animate",
+					"audioAtPosition": {
+						"audioId": "Characters/Default/Ability_Arches",
+						"setPosition": "focus",
+						"delay": "-500"
+					}
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{
+							"id": "interfusedWithEntity",
+							"value": "1",
+							"merge": "max",
+							"inRelationTo": "scenery"
+						}
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "scenery",
+					"addAspects": [
+						{
+							"id": "interfusedWithMystic",
+							"value": "1",
+							"merge": "max",
+							"inRelationTo": "self"
+						},
+						{ "id": "interfusedWithHuman", "value": "1", "merge": "max" },
+						{
+							"id": "animatedStatue_healthMod",
+							"value": "floor(((self.POTENCY+self.SPELL_DAMAGE)/2))",
+							"merge": "max"
+						}
+					]
+				}
+			]
+		}
+	}
+]
+}

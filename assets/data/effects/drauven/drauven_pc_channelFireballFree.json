@@ -1,0 +1,229 @@
+{
+"id": "drauven_pc_channelFireballFree",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_channelFireballFree",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"aiPriority": "2000+min(0,target.AI_ATTACK_PRIORITY)",
+	"tags": [ "ranged", "sneaky" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "ignite",
+	"priority": "1",
+	"extraUI": {
+		"overrideDamageShown": "1d3+((self.SPELL_DAMAGE+self.POTENCY)/4)",
+		"overrideDamageType": "MAGIC",
+		"overrideRangeShown": "(4.6+self.BONUS_RANGE)+(self.POTENCY/3)"
+	},
+	"cooldown": "oncePerTurn"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"choose": "BY_SCORE",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "ACTIONS", "0" ]
+		},
+		"scoreThreshold": "1",
+		"missionFeedback": { "orientTo": "focus" },
+		"aspectValues": [
+			{ "id": "drauven_pc_fireballPrepared|*", "forbidden": true }
+		]
+	},
+	{
+		"template": "TILE",
+		"missionFeedback": { "suggestionFeedback": "ATTACK_RANGE" },
+		"aiHints": { "scoreNearbyFoe": "100", "foeRange": "0.6+sqrt(self.POTENCY)" },
+		"range": "(4.6+self.BONUS_RANGE)+(self.POTENCY/3)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "ANY",
+		"missionFeedback": { "hoverFeedback": "ATTACK_SUGGESTION" },
+		"relativeTo": "focus",
+		"range": "0.6+sqrt(self.POTENCY)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor"
+	},
+	{
+		"template": "ADJACENT_UNIT",
+		"choose": "ANY",
+		"missionFeedback": {
+			"orientTo": "self",
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"range": "0.6+sqrt(self.POTENCY)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"relativeToLocation": "focus",
+		"rangeIgnoreFootprint": true
+	},
+	{
+		"role": "hero",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "self.ACTIONS", "1" ]
+		},
+		"scoreThreshold": "1"
+	},
+	{
+		"role": "hero2",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "self.ACTIONS", "2" ]
+		},
+		"scoreThreshold": "1"
+	},
+	{
+		"role": "hero3",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "self.ACTIONS", "3" ]
+		},
+		"scoreThreshold": "1"
+	},
+	{
+		"role": "hero4",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "self.ACTIONS", "4" ]
+		},
+		"scoreThreshold": "1"
+	},
+	{
+		"role": "hero5",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "self.ACTIONS",
+		"scoreThreshold": "5"
+	}
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"value": "self.hidden",
+		"threshold": "1",
+		"onPass": {
+			"class": "Spawn",
+			"addRole": "item",
+			"forceSpawn": true,
+			"createEntity": {
+				"query": { "type": "TRAP" },
+				"addAspects": [
+					{
+						"id": "drauven_pc_fireballPreparedRegionHidden",
+						"value": "1",
+						"atTiles": "targetTile"
+					}
+				],
+				"setLocation": true
+			}
+		},
+		"onFail": {
+			"class": "Spawn",
+			"addRole": "item",
+			"forceSpawn": true,
+			"createEntity": {
+				"query": { "type": "TRAP" },
+				"addAspects": [
+					{
+						"id": "drauven_pc_fireballPreparedRegion",
+						"value": "1",
+						"atTiles": "targetTile"
+					}
+				],
+				"setLocation": true
+			}
+		}
+	},
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"intermediateRole": "targetTile",
+		"attackAnimationType": "none",
+		"showAbilityName": "ifEnemy",
+		"minimumBlockTime": "1000"
+	},
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{
+				"id": "drauven_pc_fireballPrepared",
+				"value": "1",
+				"atTiles": "focus",
+				"atTilesAbsolute": true,
+				"inRelationTo": "item"
+			}
+		]
+	},
+	{ "class": "ActionPoints", "target": "self", "actionPoints": "all" },
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "1" }
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero2" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "2" }
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero3" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "3" }
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero4" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "4" }
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero5" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "5" }
+			]
+		}
+	}
+]
+}

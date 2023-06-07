@@ -4,8 +4,7 @@
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_dragonBreath",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "Bipen",
-	"tags": [ "ranged" ]
+	"author": "Bipen"
 },
 "type": "ABILITY",
 "verb": "ATTACK",
@@ -134,7 +133,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "1d3+((((self.SPELL_DAMAGE+self.POTENCY)*0.5))*(1+self.drauvenDeck_mystic_dragonBreath_upgrade))+(2*COUNT.fire)",
+					"amount": "((1d3+(((self.SPELL_DAMAGE+self.POTENCY)*0.5)*(1+self.drauvenDeck_mystic_dragonBreath_upgrade)))+(2*COUNT.fire))+self.commonDeck_bowmaster",
 					"type": "MAGIC",
 					"overrideStuntDamage": "3",
 					"onStunt": {

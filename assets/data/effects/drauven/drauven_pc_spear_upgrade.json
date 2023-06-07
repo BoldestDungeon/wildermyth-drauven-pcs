@@ -1,0 +1,134 @@
+{
+"id": "drauven_pc_spear_upgrade",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_spear_upgrade",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "interfusionRecipe" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "bonespear",
+	"category": "attackAbility",
+	"strictlyBetterThan": [ "mysticRecipeBarrage", "drauven_pc_spear" ],
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "5.6+self.BONUS_RANGE" },
+	"usesElementFromEquippedWeapon": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"missionFeedback": { "orientTo": "focus" }
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"type": "SCENERY",
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "tools" ],
+		"test": "LESS_THAN",
+		"a": "HEALTH-INJURY",
+		"b": "20"
+	},
+	{
+		"template": "TILE",
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"hoverScript": "figures.directionalTileHover",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
+			"hoverFeedback": "ATTACK_HOVER",
+			"feedbackSource": "source"
+		},
+		"relativeTo": "source",
+		"minRange": "0.9",
+		"range": "5.6+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floorForbidAlly"
+	},
+	{
+		"role": "target2",
+		"template": "UNIT_AT_TILE",
+		"choose": "ANY",
+		"missionFeedback": {
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"relativeTo": "focus",
+		"range": "0"
+	},
+	{
+		"template": "UNIT_AT_TILE",
+		"choose": "ANY",
+		"missionFeedback": {
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_SUGGESTION_FILL",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"line": [ "source", "focus" ],
+		"relativeTo": "source",
+		"range": null
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"intermediateRole": "source",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"particles": [
+			{ "script": "Spear", "setPosition": "source", "setPosition2": "focus" },
+			{ "script": "BonespearBlast", "setPosition": "source", "setPosition2": "focus" }
+		],
+		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_InterfuseBone" },
+		"flankMarkOrigin": "source",
+		"defenseRollTags": [ "range" ],
+		"attackStrength": "self.RANGE_ACCURACY",
+		"separateRolls": true,
+		"always": {
+			"class": "Damage",
+			"target": "source",
+			"amount": "1",
+			"type": "TRUE",
+			"showInTooltip": false
+		},
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "(1d2+1)+(self.POTENCY+self.SPELL_DAMAGE)",
+					"type": "TRUE",
+					"useEquippedWeaponForStunt": true,
+					"numDefenders": "COUNT.target"
+				},
+				{
+					"class": "Test",
+					"value": "isDefender.target2+self.drauvenDeck_mystic_battlecrafting_upgrade",
+					"threshold": "1",
+					"onPass": {
+						"class": "Aspects",
+						"addAspects": [
+							{ "id": "pinned", "value": "1" }
+						]
+					}
+				}
+			]
+		}
+	}
+]
+}

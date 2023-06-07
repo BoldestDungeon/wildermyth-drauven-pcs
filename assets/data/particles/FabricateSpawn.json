@@ -1,0 +1,42 @@
+{
+"budget": "64",
+"emitterLifetime": "1",
+"loopLimit": "1",
+"loopBehavior": "reset",
+"rules": [
+	{
+		"class": "Once",
+		"when": "0",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "64",
+				"image": [ "particle_shardGraySmall2" ],
+				"light": "gain",
+				"size": "[0.1,0.5]",
+				"killTime": "[0.41,2.2]",
+				"initializeWith": [
+					{ "class": "SetPosition", "x": "[2|-1.1,1.1]", "y": "[2|-1.1,1.1]", "z": "0" },
+					{
+						"class": "SetVelocity",
+						"vx": "[-0.3,0.3]",
+						"vz": "[-0.1,-2]",
+						"vTheta": "[-20,20]"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "[0.9,1]", "g": "[0.9,1]", "b": "[0.9,1]", "a": "[0.6,1]" }
+					},
+					{ "class": "Drag", "vSquaredComponent": "0.2" }
+				]
+			}
+		]
+	},
+	{ "class": "Lifetime" },
+	{ "class": "BasicPhysics" },
+	{
+		"class": "SetColor",
+		"color": { "r": null, "g": null, "b": null, "a": "life~{0|1|1|0.5|0}" }
+	}
+]
+}

@@ -1,0 +1,45 @@
+{
+"budget": "100",
+"emitterLifetime": "2",
+"loopLimit": "1",
+"loopBehavior": "reset",
+"rules": [
+	{
+		"class": "Once",
+		"when": "0",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"image": [ "particle_arrow" ],
+				"light": "gain",
+				"size": "1",
+				"killTime": "0.3",
+				"initializeWith": [
+					{ "class": "SetSize", "size": "0.75" },
+					{
+						"class": "SetVelocity",
+						"vx": "4*e.dx",
+						"vy": "4*e.dy",
+						"vz": "-0.5",
+						"vTheta": "0"
+					},
+					{ "class": "SetPosition", "x": "0", "y": "0", "z": "-0.6", "theta": "360" },
+					{
+						"class": "SetColor",
+						"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+					}
+				]
+			}
+		]
+	},
+	{ "class": "BasicPhysics" },
+	{ "class": "Lifetime" },
+	{ "class": "Accelerate", "ax": "0", "ay": "0", "az": "3", "aTheta": "0" },
+	{ "class": "OrientToVelocity", "offsetDegrees": "180" },
+	{
+		"class": "SetColor",
+		"color": { "r": "0.49139231", "g": "0.44788313", "b": "0.42622131", "a": "1" }
+	}
+]
+}

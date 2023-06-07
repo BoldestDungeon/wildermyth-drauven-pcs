@@ -1,0 +1,60 @@
+{
+"budget": "64",
+"emitterLifetime": "0.5",
+"loopLimit": "1",
+"bucketStrategy": "inFrontOfFigure",
+"rules": [
+	{
+		"class": "Rate",
+		"rate": "e.life~{8|inOutSine:30|inOutSine:5}",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"image": [
+					"particle_shardWoodLarge1",
+					"particle_shardWoodLarge2",
+					"particle_shardWoodSmall1",
+					"particle_shardWoodSmall2",
+					"particle_shardWoodSmall3",
+					"particle_shardWoodSmall4"
+				],
+				"size": "[0.2,0.3]*e.life~{0.5|inOutSine:2|inOutSine:0.5}",
+				"killTime": "[1,2]",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "(([-1,1]*e.radius)*0.2)+(([-1,1]*e.footprintWidth)/2)",
+						"y": "(([-1,1]*e.radius)*0.2)+(([-1,1]*e.footprintHeight)/2)",
+						"z": "[0,-0.5]"
+					},
+					{
+						"class": "SetVelocity",
+						"vx": "[-1,1]",
+						"vy": "[-1,1]",
+						"vz": "[-1,1]",
+						"vTheta": "[-200,200]"
+					}
+				]
+			}
+		]
+	},
+	{ "class": "BasicPhysics" },
+	{ "class": "Lifetime" },
+	{
+		"class": "SetColor",
+		"color": { "r": null, "g": null, "b": null, "a": "life~{0|outSine:1|inOutSine:0}" }
+	},
+	{
+		"class": "DynamicPull",
+		"x": "e.dx",
+		"y": "e.dy",
+		"z": "-0.6",
+		"kx": "life~{10|inSine:50|100}",
+		"ky": "life~{10|inSine:50|100}",
+		"kz": "20"
+	},
+	{ "class": "Drag", "vSquaredComponent": "0.1" },
+	{ "class": "Bounce", "heightDecayOnBounce": "1" }
+]
+}

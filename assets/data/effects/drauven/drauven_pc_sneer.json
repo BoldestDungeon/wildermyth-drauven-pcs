@@ -1,0 +1,140 @@
+{
+"id": "drauven_pc_sneer",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_sneer",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"aiPriority": "2000"
+},
+"type": "WAS_ATTACKED",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "ignite",
+	"priority": "1",
+	"showDescriptionInTooltip": true,
+	"cooldown": "oncePerTurn"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "senseless", "forbidden": true },
+			{ "id": "senselessPermanent", "forbidden": true },
+			{ "id": "stasis", "forbidden": true },
+			{ "id": "crystalChrysalis", "forbidden": true }
+		]
+	},
+	{
+		"template": "ABILITY",
+		"abilityDoesNotHaveTags": [ "poison" ]
+	},
+	{ "template": "ATTACKER" },
+	{
+		"role": "hook3",
+		"template": "TILE",
+		"STUB": "All footprint tiles",
+		"choose": "ALL",
+		"relativeTo": "attacker",
+		"range": "0"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"STUB": "Closest within LOS footprint tile (to be sure it's actually in-range and targetable by the branched ability)",
+		"choose": "ONE_CLOSEST",
+		"fromRoles": [ "hook3" ],
+		"range": null,
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"role": "volunteer",
+		"template": "TILE",
+		"choose": "ALL",
+		"range": "2.6",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "validMoveEnd",
+		"roleMustFit": "self"
+	},
+	{
+		"template": "TILE",
+		"choose": "ONE_FURTHEST",
+		"scoreFunction": "volunteer.distanceTo.attacker",
+		"fromRoles": [ "volunteer" ],
+		"relativeTo": "attacker",
+		"range": null
+	}
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"value": "(1-self.drauven_pc_sneer_defenseSuccess)+self.drauvenDeck_mystic_sneer_upgrade",
+		"threshold": "1",
+		"onPass": {
+			"class": "Test",
+			"value": "self.drauvenDeck_mystic_fireshot",
+			"threshold": "1",
+			"onPass": {
+				"class": "BranchAbility",
+				"targetRole": "attacker",
+				"tileRole": "targetTile",
+				"branchAbility": "drauven_pc_fireshot",
+				"targetingAspects": [
+					{ "id": "noFriendlyFire", "value": "1" }
+				]
+			},
+			"onFail": {
+				"class": "Test",
+				"value": "self.RANGE_EQUIPPED*greaterThan(self.distanceTo.targetTile,self.MIN_RANGED_ATTACK_RANGE)",
+				"threshold": "1",
+				"onPass": {
+					"class": "BranchAbility",
+					"target": "self",
+					"branchType": "standardRanged",
+					"targetRole": "attacker",
+					"tileRole": "targetTile",
+					"targetingAspects": [
+						{ "id": "noFriendlyFire", "value": "1" }
+					]
+				},
+				"onFail": {
+					"class": "BranchAbility",
+					"target": "self",
+					"branchType": "standardMelee",
+					"targetRole": "attacker",
+					"tileRole": "targetTile",
+					"targetingAspects": [
+						{ "id": "noFriendlyFire", "value": "1" }
+					]
+				}
+			}
+		}
+	},
+	{
+		"class": "Test",
+		"value": "1-self.pinned",
+		"threshold": "1",
+		"onPass": {
+			"class": "AttackRoll",
+			"defender": null,
+			"attackAnimationType": "interaction",
+			"showAbilityName": "always",
+			"timingOverride": { "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+			"attackerAnimationOverride": "",
+			"defenderAnimationOverride": "",
+			"markForFlanking": "never",
+			"always": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "MoveEntity",
+						"directlyToTile": "focus",
+						"ignoreEntitiesOnTile": true,
+						"animationType": "leap"
+					}
+				]
+			}
+		}
+	}
+]
+}
