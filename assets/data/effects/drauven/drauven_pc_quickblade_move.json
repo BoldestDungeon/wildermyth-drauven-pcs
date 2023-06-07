@@ -20,6 +20,12 @@
 		"choose": "BY_SCORE",
 		"scoreFunction": "1-min(1,pinned)",
 		"scoreThreshold": "1",
+		"aspectValues": [
+			{ "id": "senseless", "forbidden": true },
+			{ "id": "senselessPermanent", "forbidden": true },
+			{ "id": "stasis", "forbidden": true },
+			{ "id": "crystalChrysalis", "forbidden": true }
+		]
 	},
 	{
 		"template": "PATH",
