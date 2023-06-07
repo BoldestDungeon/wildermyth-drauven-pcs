@@ -1,0 +1,224 @@
+{
+"id": "drauven_pc_fabricate",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_fabricate",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "sneaky", "drauven_pc_fabricate" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "forge",
+	"category": "neutralAbility",
+	"priority": "3",
+	"extraUI": { "overrideRangeShown": "(4.6+self.BONUS_RANGE)+(self.POTENCY/2)" },
+	"overrideOverlayType": "interfuse"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints" },
+		"missionFeedback": { "orientTo": "focus" }
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "ANY",
+		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
+		"range": "(4.6+self.BONUS_RANGE)+(self.POTENCY/2)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "flammableDebris"
+	},
+	{
+		"template": "TILE",
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"hoverScript": "figures.directionalTileHoverHelpful",
+			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+			"feedbackSource": "self"
+		},
+		"fromRoles": [ "targetTile" ],
+		"range": null,
+		"tileFilter": "validScenerySpawnLocation"
+	},
+	{
+		"role": "volunteer",
+		"template": "SELF",
+		"choose": "ANY",
+		"fromRoles": [ "self" ],
+		"aspectValues": [
+			{
+				"id": "interfused",
+				"maxValue": "(((mystic*2)+numExtraInterfusions)+(mysticDeck_openmind*(1+floor((POTENCY/3)))))-1"
+			}
+		]
+	},
+	{ "role": "source", "template": "DEBRIS", "relativeTo": "focus", "range": "0.1" }
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"intermediateRole": "focus",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"particles": [
+			{ "script": "FabricateSpawn", "setPosition": "focus" }
+		],
+		"audioOverride": { "attackStartCue": "" },
+		"flankMarkOrigin": "focus",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "DoOneRandom",
+					"weightedOutcomes": [
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateMT" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateMTS" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateMTB" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateMTB_ST" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateMTT" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateWMT" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						}
+					]
+				},
+				{
+					"class": "Animate",
+					"audioAtPosition": {
+						"audioId": "Characters/Default/SceneryHitMetal",
+						"setPosition": "focus",
+						"delay": "-500"
+					}
+				},
+				{
+					"class": "IfRolesArePresent",
+					"rolesArePresent": [ "scenery", "volunteer" ],
+					"then": {
+						"class": "DoAll",
+						"target": "volunteer",
+						"outcomes": [
+							{
+								"class": "Aspects",
+								"addAspects": [
+									{
+										"id": "interfusedWithEntity",
+										"value": "1",
+										"merge": "max",
+										"inRelationTo": "scenery"
+									}
+								]
+							},
+							{
+								"class": "Aspects",
+								"target": "scenery",
+								"addAspects": [
+									{
+										"id": "interfusedWithMystic",
+										"value": "1",
+										"merge": "max",
+										"inRelationTo": "volunteer"
+									},
+									{ "id": "interfusedWithHuman", "value": "1", "merge": "max" }
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	},
+	{ "class": "Delete", "target": "source" }
+]
+}

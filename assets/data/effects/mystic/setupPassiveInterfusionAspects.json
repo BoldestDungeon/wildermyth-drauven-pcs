@@ -1,0 +1,102 @@
+{
+"id": "setUpPassiveInterfusionAspects|_ENTITY_",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "mystic/setupPassiveInterfusionAspects",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Nate Austin"
+},
+"type": "ASPECT_ADDED_IMMEDIATE",
+"targets": [
+	{ "template": "SELF" },
+	{ "template": "ANY", "matchSpecial": "parameter1" }
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"value": "self.mysticDeck_soulDefense+target.rock",
+		"threshold": "2",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"target": "self",
+					"addAspects": [
+						{ "id": "interfusedWithRock", "value": "1", "inRelationTo": "target" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.drauvenDeck_mystic_earthsong+target.rock",
+		"threshold": "2",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"target": "self",
+					"addAspects": [
+						{ "id": "drauven_pc_interfusedWithRock", "value": "1", "inRelationTo": "target" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.mysticDeck_soulsplitting+target.scenery",
+		"threshold": "2",
+		"onPass": {
+			"class": "Aspects",
+			"target": "self",
+			"addAspects": [
+				{ "id": "soulsplittingConnection", "value": "1", "inRelationTo": "target" }
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.mysticDeck_mythweaver+target.protective",
+		"threshold": "2",
+		"onPass": {
+			"class": "Aspects",
+			"target": "self",
+			"addAspects": [
+				{
+					"id": "protectiveSometimesReflectsDamage",
+					"value": "1",
+					"inRelationTo": "target"
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.mysticDeck_mythweaver+max(target.statue,target.ruins)",
+		"threshold": "2",
+		"onPass": {
+			"class": "Aspects",
+			"target": "self",
+			"addAspects": [
+				{ "id": "mythmeld_interfusedWithStatue", "value": "1", "inRelationTo": "target" }
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.mysticDeck_vigorflow_upgrade",
+		"threshold": "1",
+		"onPass": {
+			"class": "Aspects",
+			"target": "self",
+			"addAspects": [
+				{ "id": "vigorflowUpgradeBuff", "value": "1" }
+			]
+		}
+	}
+]
+}

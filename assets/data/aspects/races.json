@@ -1,14 +1,4 @@
 [
-
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "fluentInYandric"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "fluentInDruvwail"
-},
-
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc",
@@ -34,13 +24,14 @@
 		"friend_teamwork_meleeBlock",
 		"defaultMoveFeedback",
 		"turnEndAchievementChecks",
-
 		"drauven_aging",
-        
 		"drauven_pc_cordAndVines",
 		"drauven_pc_cordAndVines_oneAction",
 		"drauven_pc_flamewings",
-		"drauven_pc_fissureBell"
+		"drauven_pc_fissureBell",
+		"drauven_pc_lightningRod",
+		"drauven_pc_freezingRain",
+		"drauven_pc_spear"
 	],
 	"stats": {
 		"ARMOR": 0,
@@ -62,6 +53,8 @@
 	},
 	"voice": "defaultDrauven"
 },
+{ "modId": "wildermyth-drauven-pcs", "id": "fluentInDruvwail" },
+{ "modId": "wildermyth-drauven-pcs", "id": "fluentInYandric" },
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "nonhuman",

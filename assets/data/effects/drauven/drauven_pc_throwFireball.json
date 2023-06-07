@@ -53,7 +53,7 @@
 		"choose": "ANY",
 		"missionFeedback": { "hoverFeedback": "FRIENDLY_EFFECT_HOVER" },
 		"relativeTo": "focus",
-		"range": "1.6+(self.raw.POTENCY/3)",
+		"range": "0.6+sqrt(self.POTENCY)",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
 	{
@@ -67,7 +67,7 @@
 			"suggestionFeedback": "ATTACK_SUGGESTION",
 			"hoverFeedback": "ATTACK_HOVER"
 		},
-		"range": "1.6+(self.raw.POTENCY/3)",
+		"range": "0.6+sqrt(self.POTENCY)",
 		"lineOfSight": "TERRAIN_ONLY",
 		"relativeToLocation": "focus",
 		"rangeIgnoreFootprint": true
@@ -110,7 +110,12 @@
 				"outcomes": [
 					{
 						"class": "Aspects",
-						"removeAspects": [ "drauven_fireballPrepared|*", "drauven_fireballPreparedRegion|*" ]
+						"removeAspects": [
+							"drauven_pc_fireballPrepared|*",
+							"drauven_pc_fireballPreparedRegion|*",
+							"drauven_pc_fireballActionPointsSpent",
+							"hidden"
+						]
 					},
 					{ "class": "Delete", "STUB": "Delete tile feedback", "target": "volunteer" },
 					{
@@ -125,11 +130,10 @@
 			"onHit": {
 				"class": "DoAll",
 				"outcomes": [
-					{ "class": "Damage", "amount": "(2+1d4)+self.SPELL_DAMAGE", "type": "MAGIC" },
 					{
-						"class": "Aspects",
-						"target": "self",
-						"removeAspects": [ "hidden" ]
+						"class": "Damage",
+						"amount": "(1d3+((self.SPELL_DAMAGE+self.POTENCY)/4))+(((1+self.SPELL_DAMAGE)+(self.POTENCY/4))*self.drauven_pc_fireballActionPointsSpent)",
+						"type": "MAGIC"
 					}
 				]
 			}
@@ -139,7 +143,11 @@
 			"outcomes": [
 				{
 					"class": "Aspects",
-					"removeAspects": [ "drauven_fireballPrepared|*", "drauven_fireballPreparedRegion|*" ]
+					"removeAspects": [
+						"drauven_pc_fireballPrepared|*",
+						"drauven_pc_fireballPreparedRegion|*",
+						"drauven_pc_fireballActionPointsSpent"
+					]
 				},
 				{ "class": "Delete", "STUB": "Delete tile feedback", "target": "volunteer" }
 			]
