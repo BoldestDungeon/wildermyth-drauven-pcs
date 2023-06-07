@@ -439,7 +439,7 @@
         "name": "ArmR_1hand_Lower_Skin",
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
-        "depth": 3000,
+        "depth": 2500,
         "rigMode": "oneHanded"
       },
       {
@@ -453,7 +453,7 @@
         "name": "ArmR_2hand_Lower_Skin",
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
-        "depth": 8000,
+        "depth": 3900,
         "rigMode": "twoHanded"
       },
 
