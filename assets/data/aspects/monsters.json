@@ -16,5 +16,14 @@
 	"script": "figures.bloodedFerocity",
 	"importance": 1,
 	"showInTooltip": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_sneer_move|_ATTACKER_",
+	"parameters": [
+		{ "replace": "_ATTACKER_", "isEntity": true }
+	],
+	"effects": [ "drauven_pc_sneer_move|_ATTACKER_", "removeEveryTurn" ],
+	"importance": -1
 }
 ]
