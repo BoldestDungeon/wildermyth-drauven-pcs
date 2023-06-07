@@ -30,28 +30,28 @@
 			"name": "outfitVariation1_armL_1hand",
 			"tint": "secondary", "tintAmount": 0.6,
 			"depth": 1501,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_leftArm"],
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_leftArm", "slotFilled_AUGMENT_BRACELET"],
 			"rigMode": "oneHanded"
 		},
 		{
 			"name": "outfitVariation1_armL_2hand",
 			"tint": "secondary", "tintAmount": 0.6,
 			"depth": 1501,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_leftArm"],
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_leftArm", "slotFilled_AUGMENT_BRACELET"],
 			"rigMode": "twoHanded"
 		},
 		{
 			"name": "outfitVariation1_armR_1hand",
 			"tint": "secondary", "tintAmount": 0.6,
 			"depth": 3001,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm"],
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm", "slotFilled_AUGMENT_BRACELET"],
 			"rigMode": "oneHanded"
 		},
 		{
 			"name": "outfitVariation1_armR_2hand",
 			"tint": "secondary", "tintAmount": 0.6,
 			"depth": 8001,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm"],
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm", "slotFilled_AUGMENT_BRACELET"],
 			"rigMode": "twoHanded"
 		},
 		{
