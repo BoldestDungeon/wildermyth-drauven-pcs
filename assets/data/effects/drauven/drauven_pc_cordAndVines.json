@@ -13,15 +13,9 @@
 "ability": {
 	"icon": "thornlash",
 	"category": "attackAbility",
-	"strictlyBetterThan": [
-		"mysticRecipeWildGrasp",
-		"mysticRecipeEngulf",
-		"advancedRecipe_vinewrench",
-		"humanistRecipe_sturdyEngulf"
-	],
+	"strictlyBetterThan": [ "mysticRecipeWildGrasp", "mysticRecipeEngulf" ],
 	"priority": "1",
-	"onlyShowIfPossibleInCharacterSheet": true,
-	"showDescriptionInTooltip": true
+	"usesElementFromEquippedWeapon": true
 },
 "targets": [
 	{
@@ -87,7 +81,13 @@
 		"defenseRollTags": [ "range" ],
 		"attackStrength": "self.RANGE_ACCURACY+10",
 		"wield": "light",
-		"always": { "class": "Damage", "target": "source", "amount": "1", "showInTooltip": false },
+		"always": {
+			"class": "Damage",
+			"target": "source",
+			"amount": "1",
+			"type": "TRUE",
+			"showInTooltip": false
+		},
 		"onHit": {
 			"class": "DoAll",
 			"outcomes": [
@@ -100,39 +100,17 @@
 				},
 				{
 					"class": "Damage",
-					"amount": "(1d3+self.POTENCY)+self.SPELL_DAMAGE",
+					"amount": "1d2+(self.POTENCY+self.SPELL_DAMAGE)",
 					"useEquippedWeaponForStunt": true
 				},
 				{
-					"class": "Test",
-					"value": "self.mysticDeck_naturalist",
-					"threshold": "1",
-					"onPass": {
-						"class": "DoAll",
-						"outcomes": [
-							{
-								"class": "Aspects",
-								"addAspects": [
-									{ "id": "pinned", "value": "2+self.mysticDeck_mythweaver_upgrade" }
-								]
-							}
-						]
-					},
-					"onFail": {
-						"class": "DoAll",
-						"outcomes": [
-							{
-								"class": "Aspects",
-								"addAspects": [
-									{ "id": "hobbled", "value": "2+self.mysticDeck_mythweaver_upgrade" }
-								]
-							}
-						]
-					}
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "hobbled", "value": "2" }
+					]
 				}
 			]
-		},
-		"onMiss": { "class": "DoAll" }
+		}
 	}
 ]
 }
