@@ -5,7 +5,8 @@
 	"sourceFile": "drauven/drauven_pc_sneer_move",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "psionusoid",
-	"aiPriority": "2000"
+	"aiPriority": "2000",
+	"debug": true
 },
 "type": "ANY_UNIT_ABILITY_USED",
 "verb": "MANEUVER",
@@ -54,10 +55,21 @@
 		"defenderAnimationOverride": "",
 		"markForFlanking": "never",
 		"always": {
-			"class": "MoveEntity",
-			"directlyToTile": "focus",
-			"ignoreEntitiesOnTile": true,
-			"animationType": "leap"
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MoveEntity",
+					"directlyToTile": "focus",
+					"ignoreEntitiesOnTile": true,
+					"animationType": "leap"
+				},
+				{
+					"class": "BranchAbility",
+					"target": "self",
+					"branchType": "standardRanged",
+					"targetRole": "attacker"
+				}
+			]
 		}
 	}
 ]
