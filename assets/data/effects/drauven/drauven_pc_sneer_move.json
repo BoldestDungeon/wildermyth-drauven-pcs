@@ -24,6 +24,23 @@
 		"matchSpecial": "parameter1"
 	},
 	{
+		"role": "hook3",
+		"template": "TILE",
+		"STUB": "All footprint tiles",
+		"choose": "ALL",
+		"relativeTo": "attacker",
+		"range": "0"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"STUB": "Closest within LOS footprint tile (to be sure it's actually in-range and targetable by the branched ability)",
+		"choose": "ONE_CLOSEST",
+		"fromRoles": [ "hook3" ],
+		"range": null,
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
 		"role": "volunteer",
 		"template": "TILE",
 		"choose": "ALL",
@@ -64,10 +81,23 @@
 					"animationType": "leap"
 				},
 				{
-					"class": "BranchAbility",
-					"target": "self",
-					"branchType": "standardRanged",
-					"targetRole": "attacker"
+					"class": "Test",
+					"value": "self.RANGE_EQUIPPED*greaterThan(self.distanceTo.targetTile,self.MIN_RANGED_ATTACK_RANGE)",
+					"threshold": "1",
+					"onPass": {
+						"class": "BranchAbility",
+						"target": "self",
+						"branchType": "standardRanged",
+						"targetRole": "attacker",
+						"tileRole": "targetTile"
+					},
+					"onFail": {
+						"class": "BranchAbility",
+						"target": "self",
+						"branchType": "standardMelee",
+						"targetRole": "attacker",
+						"tileRole": "targetTile"
+					}
 				}
 			]
 		}
