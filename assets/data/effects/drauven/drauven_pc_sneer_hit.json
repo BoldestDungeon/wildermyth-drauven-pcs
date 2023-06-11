@@ -1,0 +1,37 @@
+{
+"id": "drauven_pc_sneer_hit",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_sneer_hit",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"aiPriority": "2000"
+},
+"type": "DAMAGED",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "ignite",
+	"priority": "1",
+	"showDescriptionInTooltip": true,
+	"cooldown": "oncePerTurn"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "pinned", "forbidden": true },
+			{ "id": "drauvenDeck_mystic_sneer_upgrade", "forbidden": true }
+		]
+	},
+	{ "template": "ATTACKER" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"STUB": "Add the sneer_counter aspect. The move doesn't happen here specifically to deal with things like knockback",
+		"addAspects": [
+			{ "id": "drauven_pc_sneer_counter", "value": "1", "inRelationTo": "attacker" }
+		]
+	}
+]
+}

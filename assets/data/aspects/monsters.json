@@ -19,6 +19,15 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_sneer_counter|_ATTACKER_",
+	"parameters": [
+		{ "replace": "_ATTACKER_", "isEntity": true }
+	],
+	"effects": [ "drauven_pc_sneer_counter|_ATTACKER_", "removeEveryTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_sneer_move|_ATTACKER_",
 	"parameters": [
 		{ "replace": "_ATTACKER_", "isEntity": true }
