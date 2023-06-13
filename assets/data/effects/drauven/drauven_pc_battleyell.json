@@ -7,7 +7,7 @@
 	"author": "Bipen",
 	"STUB": "Priority: if we can't get further than 3.6 tiles away from all heroes, we'd prefer to use our melee attack",
 	"aiPriority": "2100-(min(1,COUNT.volunteer)*100)",
-	"tags": [ "drauven_pc_battleyell" ]
+	"tags": [ "drauven_pc_battleyell", "okToMarkDone" ]
 },
 "type": "ABILITY",
 "verb": "ATTACK",
