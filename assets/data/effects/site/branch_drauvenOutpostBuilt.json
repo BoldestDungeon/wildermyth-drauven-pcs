@@ -15,6 +15,7 @@
     { "template": "INJECTED_TILE" },
     { "template": "COMPANY", "choose": "BY_SCORE" },
     { "template": "INJECTED_HERO", "choose": "ANY", "injectedRole": "participant", "role": "participant" },
+    { "template": "INJECTED_SITE" },
     {
       "template": "HERO_BY_SCORE",
       "choose": "ANY",
