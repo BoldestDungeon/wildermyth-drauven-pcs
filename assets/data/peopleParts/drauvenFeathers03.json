@@ -71,13 +71,13 @@
 
 
     {
-      "name": "replaceHead_drauvDetail_gorelord_feathers3",
+      "name": "replaceHead_Gorelord_DrauvDetail_Feathers3",
       "tint": "hair", "tintAmount": 0.6,
       "depth": 4300,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     }
   ]

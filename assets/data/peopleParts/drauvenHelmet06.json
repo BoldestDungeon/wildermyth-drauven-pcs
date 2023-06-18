@@ -1,0 +1,30 @@
+{
+	"type": "extra",
+	"extraSlot": "zzz_drauven05_Helmet",
+	"requireAspects": ["drauvenSkin_naturalHead","humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+
+	"groups": [
+		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 1, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 2, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 3, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1}
+	],
+  "layers": [
+		{
+			"name": "replaceHead_Gorelord_DrauvDetail_Helmet6_Back_Untinted",
+			"depth": 3500,
+			"headOffset": true,
+			"ifOwnerAspect": "humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord",
+			"ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "drauvenSkin_suppressClothes"],
+			"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+		},
+		{
+			"name": "replaceHead_Gorelord_DrauvDetail_Helmet6_Front_Untinted",
+			"depth": 4500,
+			"headOffset": true,
+			"ifOwnerAspect": "humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord",
+			"ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "drauvenSkin_suppressClothes"],
+			"facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+		}
+	]
+}

@@ -233,24 +233,194 @@
 
 
     {
-      "name": "replaceHead_drauvDetail_whiskers6",
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_Skin",
       "tint": "skin", "tintAmount": 0.6,
-      "depth": 4300,
+      "depth": 4050,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
-      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["skeptical", "open", "scared", "angry", "hit", "dead", "happy", "joke"]
     },
     {
-      "name": "replaceHead_drauvDetail_whiskers6_back",
-      "tint": "skin", "tintAmount": 0.6,
-      "depth": 3999,
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_Texture_Skin",
+      "tint": "skin", "tintAmount": 0.5,
+      "depth": 4051,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
-      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["skeptical", "open", "scared", "angry", "hit", "dead", "happy", "joke"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_Untinted",
+      "depth": 4054,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["skeptical", "open", "scared", "angry", "hit", "dead", "happy", "joke"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_Rings_Untinted",
+      "depth": 4055,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["skeptical", "open", "scared", "angry", "hit", "dead", "happy", "joke"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_open_Skin",
+      "tint": "skin", "tintAmount": 0.6,
+      "depth": 4050,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["surprised", "rage", "joy"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_open_Texture_Skin",
+      "tint": "skin", "tintAmount": 0.5,
+      "depth": 4051,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["surprised", "rage", "joy"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_open_Untinted",
+      "depth": 4054,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["surprised", "rage", "joy"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_open_Rings_Untinted",
+      "depth": 4055,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["surprised", "rage", "joy"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Back_open_Skin",
+      "tint": "skin", "tintAmount": 0.6,
+      "depth": 3990,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["surprised", "rage", "joy"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Back_open_Texture_Skin",
+      "tint": "skin", "tintAmount": 0.5,
+      "depth": 3991,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["surprised", "rage", "joy"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Back_open_Untinted",
+      "depth": 3994,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["surprised", "rage", "joy"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Back_open_Rings_Untinted",
+      "depth": 3995,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["surprised", "rage", "joy"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_Closed_Skin",
+      "tint": "skin", "tintAmount": 0.6,
+      "depth": 4050,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "dubious", "scheming"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_Closed_Texture_Skin",
+      "tint": "skin", "tintAmount": 0.5,
+      "depth": 4051,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "dubious", "scheming"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_Closed_Untinted",
+      "depth": 4054,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "dubious", "scheming"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Front_Closed_Rings_Untinted",
+      "depth": 4055,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "dubious", "scheming"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Back_Closed_Skin",
+      "tint": "skin", "tintAmount": 0.6,
+      "depth": 3990,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "dubious", "scheming", "skeptical", "open", "scared", "angry", "hit", "dead", "happy", "joke"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Back_Closed_Texture_Skin",
+      "tint": "skin", "tintAmount": 0.5,
+      "depth": 3991,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "dubious", "scheming", "skeptical", "open", "scared", "angry", "hit", "dead", "happy", "joke"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Back_Closed_Untinted",
+      "depth": 3994,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "dubious", "scheming", "skeptical", "open", "scared", "angry", "hit", "dead", "happy", "joke"]
+    },
+    {
+      "name": "replaceHead_Gorelord_DrauvDetail_Whiskers6_Back_Closed_Rings_Untinted",
+      "depth": 3995,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_gorelord"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "dubious", "scheming", "skeptical", "open", "scared", "angry", "hit", "dead", "happy", "joke"]
     }
   ]
 }
