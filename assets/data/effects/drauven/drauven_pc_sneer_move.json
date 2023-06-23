@@ -82,21 +82,32 @@
 				},
 				{
 					"class": "Test",
-					"value": "(self.RANGE_EQUIPPED*greaterThan(self.distanceTo.targetTile,self.MIN_RANGED_ATTACK_RANGE))*self.drauvenDeck_mystic_sneer_upgrade",
+					"value": "self.drauvenDeck_mystic_fireshot*self.drauvenDeck_mystic_sneer_upgrade",
 					"threshold": "1",
 					"onPass": {
 						"class": "BranchAbility",
-						"target": "self",
-						"branchType": "standardRanged",
 						"targetRole": "attacker",
-						"tileRole": "targetTile"
+						"tileRole": "targetTile",
+						"branchAbility": "drauven_pc_fireshot"
 					},
 					"onFail": {
-						"class": "BranchAbility",
-						"target": "self",
-						"branchType": "standardMelee",
-						"targetRole": "attacker",
-						"tileRole": "targetTile"
+						"class": "Test",
+						"value": "(self.RANGE_EQUIPPED*greaterThan(self.distanceTo.targetTile,self.MIN_RANGED_ATTACK_RANGE))*self.drauvenDeck_mystic_sneer_upgrade",
+						"threshold": "1",
+						"onPass": {
+							"class": "BranchAbility",
+							"target": "self",
+							"branchType": "standardRanged",
+							"targetRole": "attacker",
+							"tileRole": "targetTile"
+						},
+						"onFail": {
+							"class": "BranchAbility",
+							"target": "self",
+							"branchType": "standardMelee",
+							"targetRole": "attacker",
+							"tileRole": "targetTile"
+						}
 					}
 				}
 			]
