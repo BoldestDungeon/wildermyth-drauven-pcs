@@ -50,8 +50,21 @@
 		"roleMustFit": "self"
 	},
 	{
+		"role": "monster",
+		"template": "ADJACENT_ENEMY",
+		"choose": "ANY",
+		"range": "8"
+	},
+	{
+		"role": "volunteer2",
+		"template": "ADJACENT_ALLY",
+		"choose": "ANY",
+		"range": "4"
+	},
+	{
 		"template": "TILE",
-		"choose": "ONE_FURTHEST",
+		"choose": "BY_SCORE",
+		"scoreFunction": "volunteer.distanceTo.attacker",
 		"fromRoles": [ "volunteer" ],
 		"relativeTo": "attacker",
 		"range": null
