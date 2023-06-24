@@ -46,6 +46,7 @@
 "outcomes": [
 	{
 		"class": "AttackRoll",
+		"stopBlockingTime": "onHit",
 		"particles": [
 			{
 				"script": "projectileTrailFireball|projectileTrail",
@@ -60,12 +61,11 @@
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
-				{ "class": "Spawn", "target": "targetTile", "addRole": "fire", "addFire": "2" },
 				{
 					"class": "Animate",
 					"audioAtPosition": {
 						"audioId": "Characters/DefaultHuman/Magic_FireMiss",
-						"setPosition": "focus",
+						"setPosition": "targetTile",
 						"delay": "-500"
 					}
 				}
@@ -93,6 +93,7 @@
 			"amount": "max(1,((attacker.PHYSICAL_DAMAGE_BONUS+DAMAGE_EXPRESSION)-2))",
 			"shred": "1"
 		}
-	}
+	},
+	{ "class": "Spawn", "target": "targetTile", "addRole": "fire", "addFire": "2" }
 ]
 }
