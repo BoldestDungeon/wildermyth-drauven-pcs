@@ -19,7 +19,7 @@
 "targets": [
 	{
 		"template": "SELF",
-		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"cost": { "class": "ActionPoints" },
 		"showAnyway": true
 	},
 	{
@@ -57,9 +57,8 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "((self.SPELL_DAMAGE+self.POTENCY)+1d2)+(self.POTENCY*self.drauvenDeck_mystic_fireshot_upgrade)",
+					"amount": "1d2+ceil((((self.POTENCY+self.SPELL_DAMAGE)/2)*(1+self.drauvenDeck_mystic_fireshot_upgrade)))",
 					"type": "MAGIC",
-					"pierce": "1",
 					"overrideStuntDamage": "3+(3*(1+self.drauvenDeck_mystic_fireshot_upgrade))",
 					"onStunt": {
 						"class": "BranchAbility",
