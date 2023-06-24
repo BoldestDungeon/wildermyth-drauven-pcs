@@ -36,6 +36,17 @@
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"range": "(((4.1+(self.POTENCY/2))+self.BONUS_RANGE)+self.commonDeck_bowmaster)+self.commonDeck_bowmaster_upgrade",
 		"lineOfSight": "LIVE_ENEMIES"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "1",
+		"scoreThreshold": "0",
+		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
+		"relativeTo": "target",
+		"range": "0.9",
+		"tileFilter": "floor"
 	}
 ],
 "outcomes": [
@@ -52,6 +63,20 @@
 		"attackStrength": "actionRoll(self.RANGE_ACCURACY)",
 		"wield": "fromWeapon",
 		"applyCover": true,
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{ "class": "Spawn", "target": "targetTile", "addRole": "fire", "addFire": "2" },
+				{
+					"class": "Animate",
+					"audioAtPosition": {
+						"audioId": "Characters/DefaultHuman/Magic_FireMiss",
+						"setPosition": "focus",
+						"delay": "-500"
+					}
+				}
+			]
+		},
 		"onHit": {
 			"class": "DoAll",
 			"outcomes": [
