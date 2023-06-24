@@ -17,12 +17,13 @@
 		"overrideDamageShown": "(2+1d4)+self.SPELL_DAMAGE",
 		"overrideDamageType": "MAGIC"
 	},
-	"showDescriptionInTooltip": true
+	"showDescriptionInTooltip": true,
+	"cooldown": "oncePerTurn"
 },
 "targets": [
 	{
 		"template": "SELF",
-		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"cost": { "class": "ActionPoints", "actionPoints": "all" },
 		"showAnyway": true,
 		"missionFeedback": { "orientTo": "focus" },
 		"aspectValues": [
@@ -62,6 +63,16 @@
 		"lineOfSight": "TERRAIN_ONLY",
 		"relativeToLocation": "focus",
 		"rangeIgnoreFootprint": true
+	},
+	{
+		"role": "hero",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "self.ACTIONS", "2" ]
+		},
+		"scoreThreshold": "1"
 	}
 ],
 "outcomes": [
@@ -100,6 +111,17 @@
 				"inRelationTo": "item"
 			}
 		]
+	},
+	{ "class": "ActionPoints", "target": "self", "actionPoints": "all" },
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "100" }
+			]
+		}
 	}
 ]
 }
