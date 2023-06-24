@@ -110,7 +110,7 @@
 				"outcomes": [
 					{
 						"class": "Aspects",
-						"removeAspects": [ "drauven_fireballPrepared|*", "drauven_fireballPreparedRegion|*" ]
+						"removeAspects": [ "drauven_pc_fireballPrepared|*", "drauven_pc_fireballPreparedRegion|*" ]
 					},
 					{ "class": "Delete", "STUB": "Delete tile feedback", "target": "volunteer" },
 					{
@@ -139,7 +139,7 @@
 			"outcomes": [
 				{
 					"class": "Aspects",
-					"removeAspects": [ "drauven_fireballPrepared|*", "drauven_fireballPreparedRegion|*" ]
+					"removeAspects": [ "drauven_pc_fireballPrepared|*", "drauven_pc_fireballPreparedRegion|*" ]
 				},
 				{ "class": "Delete", "STUB": "Delete tile feedback", "target": "volunteer" }
 			]
