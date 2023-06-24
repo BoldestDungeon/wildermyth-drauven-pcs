@@ -78,7 +78,7 @@
 					"class": "Damage",
 					"amount": "1d2+ceil((((self.POTENCY+self.SPELL_DAMAGE)/2)*(1+self.drauvenDeck_mystic_fireshot_upgrade)))",
 					"type": "MAGIC",
-					"overrideStuntDamage": "3+(3*(1+self.drauvenDeck_mystic_fireshot_upgrade))",
+					"overrideStuntDamage": "3",
 					"onStunt": {
 						"class": "BranchAbility",
 						"target": "self",
