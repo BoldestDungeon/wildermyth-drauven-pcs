@@ -20,19 +20,13 @@
 	{
 		"template": "SELF",
 		"cost": { "class": "ActionPoints" },
-		"showAnyway": true
+		"showAnyway": true,
+		"missionFeedback": { "orientTo": "target" }
 	},
 	{
 		"template": "ADJACENT_ENEMY",
 		"showAnyway": true,
 		"alwaysSelect": true,
-		"missionFeedback": {
-			"orientTo": "self",
-			"suggestionScript": "figures.attackSuggestion",
-			"rangeFeedback": "ATTACK_RANGE",
-			"suggestionFeedback": "ATTACK_SUGGESTION",
-			"hoverFeedback": "ATTACK_HOVER"
-		},
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"range": "(((4.1+(self.POTENCY/2))+self.BONUS_RANGE)+self.commonDeck_bowmaster)+self.commonDeck_bowmaster_upgrade",
 		"lineOfSight": "LIVE_ENEMIES"
