@@ -1,99 +1,105 @@
 {
-  "id": "drauven_pc_channelFireball",
-  "info": {
-    "dataVersion": 1,
-    "sourceFile": "drauven/drauven_pc_channelFireball",
-    "author": "Ironskink",
-    "aiPriority": "2000+min(0,target.AI_ATTACK_PRIORITY)",
-    "tags": [ "ranged", "sneaky" ]
-  },
-  "type": "ABILITY",
-  "verb": "ATTACK",
-  "ability": {
-    "icon": "ignite",
-    "priority": "1",
-    "extraUI": {
-      "overrideDamageShown": "((2+1d4)+self.SPELL_DAMAGE)", 
-      "overrideDamageType": "MAGIC" },
-    "showDescriptionInTooltip": true
-  },
-  "targets": [
-    {
-      "template": "SELF",
-      "cost": { "class": "ActionPoints", "actionPoints": "attack" },
-      "showAnyway": true,
-      "missionFeedback": { "orientTo": "focus" },
-      "aspectValues": [
-        { "id": "drauven_pc_fireballPrepared", "forbidden": true }
-      ]
-    },
-    {
-      "template": "TILE",
-      "missionFeedback": { "suggestionFeedback": "ATTACK_RANGE" },
-      "aiHints": { "scoreNearbyFoe": "100", "foeRange": "1.6+(self.raw.POTENCY/3)" },
-      "range": "4.6+self.BONUS_RANGE+(self.raw.POTENCY/3)",
-      "lineOfSight": "TERRAIN_ONLY",
-      "tileFilter": "floor"
-    },
-    {
-      "role": "targetTile",
-      "template": "TILE",
-      "choose": "ANY",
-      "missionFeedback": { "hoverFeedback": "ATTACK_SUGGESTION" },
-      "relativeTo": "focus",
-      "range": "1.6+(self.raw.POTENCY/3)",
-      "lineOfSight": "TERRAIN_ONLY",
-      "tileFilter": "floor"
-    },
-    {
-      "template": "ADJACENT_UNIT",
-      "choose": "ANY",
-      "missionFeedback": {
-        "orientTo": "self",
-        "suggestionScript": "figures.attackSuggestion",
-        "hoverScript": "figures.attackHovered",
-        "rangeFeedback": "ATTACK_RANGE",
-        "suggestionFeedback": "ATTACK_SUGGESTION",
-        "hoverFeedback": "ATTACK_HOVER"
-      },
-      "range": "1.6+(self.raw.POTENCY/3)",
-      "lineOfSight": "TERRAIN_ONLY",
-      "relativeToLocation": "focus",
-      "rangeIgnoreFootprint": true
-    }
-  ],
-  "outcomes": [
-    {
-      "class": "Spawn",
-      "addRole": "item",
-      "forceSpawn": true,
-      "createEntity": {
-        "query": { "type": "TRAP" },
-        "addAspects": [
-          { "id": "drauven_pc_fireballPreparedRegion", "value": "1", "atTiles": "targetTile" }
-        ],
-        "setLocation": true
-      }
-    },
-    {
-      "class": "AttackRoll",
-      "defender": null,
-      "intermediateRole": "targetTile",
-      "attackAnimationType": "none",
-      "showAbilityName": "ifEnemy",
-      "minimumBlockTime": "1000"
-    },
-    {
-      "class": "Aspects",
-      "addAspects": [
-        {
-          "id": "drauven_pc_fireballPrepared",
-          "value": "1",
-          "atTiles": "focus",
-          "atTilesAbsolute": true,
-          "inRelationTo": "item"
-        }
-      ]
-    }
-  ]
-  }
+"id": "drauven_pc_channelFireball",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_channelFireball",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"aiPriority": "2000+min(0,target.AI_ATTACK_PRIORITY)",
+	"tags": [ "ranged", "sneaky" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "ignite",
+	"priority": "1",
+	"extraUI": {
+		"overrideDamageShown": "(2+1d4)+self.SPELL_DAMAGE",
+		"overrideDamageType": "MAGIC"
+	},
+	"showDescriptionInTooltip": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"showAnyway": true,
+		"missionFeedback": { "orientTo": "focus" },
+		"aspectValues": [
+			{ "id": "drauven_pc_fireballPrepared", "forbidden": true }
+		]
+	},
+	{
+		"template": "TILE",
+		"missionFeedback": { "suggestionFeedback": "ATTACK_RANGE" },
+		"aiHints": { "scoreNearbyFoe": "100", "foeRange": "0.6+sqrt(self.POTENCY)" },
+		"range": "(4.6+self.BONUS_RANGE)+(self.raw.POTENCY/3)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "ANY",
+		"missionFeedback": { "hoverFeedback": "ATTACK_SUGGESTION" },
+		"relativeTo": "focus",
+		"range": "0.6+sqrt(self.POTENCY)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor"
+	},
+	{
+		"template": "ADJACENT_UNIT",
+		"choose": "ANY",
+		"missionFeedback": {
+			"orientTo": "self",
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"range": "0.6+sqrt(self.POTENCY)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"relativeToLocation": "focus",
+		"rangeIgnoreFootprint": true
+	}
+],
+"outcomes": [
+	{
+		"class": "Spawn",
+		"addRole": "item",
+		"forceSpawn": true,
+		"createEntity": {
+			"query": { "type": "TRAP" },
+			"addAspects": [
+				{
+					"id": "drauven_pc_fireballPreparedRegion",
+					"value": "1",
+					"atTiles": "targetTile"
+				}
+			],
+			"setLocation": true
+		}
+	},
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"intermediateRole": "targetTile",
+		"attackAnimationType": "none",
+		"showAbilityName": "ifEnemy",
+		"minimumBlockTime": "1000"
+	},
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{
+				"id": "drauven_pc_fireballPrepared",
+				"value": "1",
+				"atTiles": "focus",
+				"atTilesAbsolute": true,
+				"inRelationTo": "item"
+			}
+		]
+	}
+]
+}
