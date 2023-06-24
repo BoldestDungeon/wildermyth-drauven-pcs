@@ -53,7 +53,7 @@
 		"choose": "ANY",
 		"missionFeedback": { "hoverFeedback": "FRIENDLY_EFFECT_HOVER" },
 		"relativeTo": "focus",
-		"range": "1.6+(self.raw.POTENCY/3)",
+		"range": "0.6+sqrt(self.POTENCY)",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
 	{
@@ -67,7 +67,7 @@
 			"suggestionFeedback": "ATTACK_SUGGESTION",
 			"hoverFeedback": "ATTACK_HOVER"
 		},
-		"range": "1.6+(self.raw.POTENCY/3)",
+		"range": "0.6+sqrt(self.POTENCY)",
 		"lineOfSight": "TERRAIN_ONLY",
 		"relativeToLocation": "focus",
 		"rangeIgnoreFootprint": true
