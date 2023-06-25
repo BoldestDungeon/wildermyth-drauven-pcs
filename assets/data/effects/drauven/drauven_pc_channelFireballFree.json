@@ -38,7 +38,7 @@
 		"template": "TILE",
 		"missionFeedback": { "suggestionFeedback": "ATTACK_RANGE" },
 		"aiHints": { "scoreNearbyFoe": "100", "foeRange": "0.6+sqrt(self.POTENCY)" },
-		"range": "(4.6+self.BONUS_RANGE)+(self.raw.POTENCY/3)",
+		"range": "(4.6+self.BONUS_RANGE)+(self.POTENCY/3)",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	},
