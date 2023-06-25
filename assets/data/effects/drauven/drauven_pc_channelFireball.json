@@ -14,7 +14,7 @@
 	"icon": "ignite",
 	"priority": "1",
 	"extraUI": {
-		"overrideDamageShown": "(2+1d4)+self.SPELL_DAMAGE",
+		"overrideDamageShown": "(1d3+((self.SPELL_DAMAGE+self.POTENCY)/4))+(((1+self.SPELL_DAMAGE)+(self.POTENCY/4))*self.ACTIONS)",
 		"overrideDamageType": "MAGIC"
 	},
 	"showDescriptionInTooltip": true,
@@ -70,9 +70,46 @@
 		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": {
 			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "self.ACTIONS", "1" ]
+		},
+		"scoreThreshold": "1"
+	},
+	{
+		"role": "hero2",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
 			"parameters": [ "self.ACTIONS", "2" ]
 		},
 		"scoreThreshold": "1"
+	},
+	{
+		"role": "hero3",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "self.ACTIONS", "3" ]
+		},
+		"scoreThreshold": "1"
+	},
+	{
+		"role": "hero4",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "self.ACTIONS", "4" ]
+		},
+		"scoreThreshold": "1"
+	},
+	{
+		"role": "hero5",
+		"template": "SELF",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "self.ACTIONS",
+		"scoreThreshold": "5"
 	}
 ],
 "outcomes": [
@@ -119,7 +156,47 @@
 		"then": {
 			"class": "Aspects",
 			"addAspects": [
-				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "100" }
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "1" }
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero2" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "2" }
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero3" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "3" }
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero4" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "4" }
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "hero5" ],
+		"then": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "drauven_pc_fireballActionPointsSpent", "value": "5" }
 			]
 		}
 	}
