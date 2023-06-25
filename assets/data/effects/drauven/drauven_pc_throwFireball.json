@@ -131,7 +131,7 @@
 				"outcomes": [
 					{
 						"class": "Damage",
-						"amount": "(1d3+((self.SPELL_DAMAGE+self.POTENCY)/4))+(((1+self.SPELL_DAMAGE)+(self.POTENCY/4))*self.ACTIONS)",
+						"amount": "(1d3+((self.SPELL_DAMAGE+self.POTENCY)/4))+(((1+self.SPELL_DAMAGE)+(self.POTENCY/4))*self.drauven_pc_fireballActionPointsSpent)",
 						"type": "MAGIC"
 					},
 					{
