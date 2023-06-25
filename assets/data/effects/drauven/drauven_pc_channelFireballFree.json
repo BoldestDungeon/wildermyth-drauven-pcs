@@ -1,10 +1,10 @@
 {
-"id": "drauven_pc_channelFireball",
+"id": "drauven_pc_channelFireballFree",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_channelFireball",
+	"sourceFile": "drauven/drauven_pc_channelFireballFree",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "Ironskink",
+	"author": "psionusoid",
 	"aiPriority": "2000+min(0,target.AI_ATTACK_PRIORITY)",
 	"tags": [ "ranged", "sneaky" ]
 },
@@ -24,9 +24,11 @@
 	{
 		"template": "SELF",
 		"choose": "BY_SCORE",
-		"scoreFunction": "ACTIONS",
+		"scoreFunction": {
+			"class": "com.worldwalkergames.expressions.functions.IsMatchExpression",
+			"parameters": [ "ACTIONS", "0" ]
+		},
 		"scoreThreshold": "1",
-		"cost": { "class": "ActionPoints", "actionPoints": "all" },
 		"missionFeedback": { "orientTo": "focus" },
 		"aspectValues": [
 			{ "id": "drauven_pc_fireballPrepared", "forbidden": true }
