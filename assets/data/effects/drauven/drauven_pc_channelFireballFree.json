@@ -14,7 +14,7 @@
 	"icon": "ignite",
 	"priority": "1",
 	"extraUI": {
-		"overrideDamageShown": "(1d3+((self.SPELL_DAMAGE+self.POTENCY)/4))+(((1+self.SPELL_DAMAGE)+(self.POTENCY/4))*self.ACTIONS)",
+		"overrideDamageShown": "1d3+((self.SPELL_DAMAGE+self.POTENCY)/4)",
 		"overrideDamageType": "MAGIC"
 	},
 	"showDescriptionInTooltip": true,
