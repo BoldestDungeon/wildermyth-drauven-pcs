@@ -211,7 +211,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_fireshot_upgrade",
-	"effects": [ "drauven_pc_channelFireball" ],
+	"effects": [ "drauven_pc_channelFireball", "drauven_pc_channelFireballFree" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
