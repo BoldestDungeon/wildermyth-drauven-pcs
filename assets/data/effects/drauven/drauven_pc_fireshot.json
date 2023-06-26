@@ -13,8 +13,7 @@
 "ability": {
 	"icon": "fireleash",
 	"priority": "10",
-	"branchableAbilityType": "standardRanged",
-	"abilityElementType": "fire"
+	"branchableAbilityType": "standardRanged"
 },
 "targets": [
 	{
@@ -78,13 +77,7 @@
 					"class": "Damage",
 					"amount": "1d2+ceil((((self.POTENCY+self.SPELL_DAMAGE)/2)*(1+self.drauvenDeck_mystic_fireshot_upgrade)))",
 					"type": "MAGIC",
-					"overrideStuntDamage": "3",
-					"onStunt": {
-						"class": "BranchAbility",
-						"target": "self",
-						"targetRole": "defender",
-						"branchAbility": "stuntEffect_fire|3"
-					}
+					"useEquippedWeaponForStunt": true
 				}
 			]
 		},
