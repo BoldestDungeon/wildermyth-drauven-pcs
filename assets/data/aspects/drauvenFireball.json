@@ -9,6 +9,17 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_fireballPreparedRegionHidden|COORDS",
+	"parameters": [
+		{ "replace": "COORDS" }
+	],
+	"effects": [ "drauven_pc_fireballPreparedRegionHidden|COORDS" ],
+	"boostType": "ABILITY_MISC",
+	"importance": -1,
+	"showInTooltip": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_fireballPreparedRegion|COORDS",
 	"parameters": [
 		{ "replace": "COORDS" }
