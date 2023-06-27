@@ -1,10 +1,10 @@
 {
-"id": "drauven_pc_fireballPreparedRegion|COORDS",
+"id": "drauven_pc_fireballPreparedRegionHidden|COORDS",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_fireballPreparedRegion",
+	"sourceFile": "drauven/drauven_pc_fireballPreparedRegionHidden",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "Ironskink"
+	"author": "psionusoid"
 },
 "type": "REGION",
 "targets": [],
@@ -15,8 +15,6 @@
 		"region": {
 			"id": "drauven_pc_fireballPreparedRegion",
 			"physicallyPresent": true,
-			"destinationCostDangerous": 1,
-			"destinationCostDangerousOtherFaction": 1,
 			"feedbackType": "DRAUVEN_FIREBALL_PREPARED",
 			"tileFilter": "floorOrScenery",
 			"spatialRelationship": { "otherAspect": "nextTurnWarning|drauvenDeck_mystic_fireshot_upgrade" }
