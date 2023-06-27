@@ -113,7 +113,8 @@
 						"removeAspects": [
 							"drauven_pc_fireballPrepared|*",
 							"drauven_pc_fireballPreparedRegion|*",
-							"drauven_pc_fireballActionPointsSpent"
+							"drauven_pc_fireballActionPointsSpent",
+							"hidden"
 						]
 					},
 					{ "class": "Delete", "STUB": "Delete tile feedback", "target": "volunteer" },
@@ -133,11 +134,6 @@
 						"class": "Damage",
 						"amount": "(1d3+((self.SPELL_DAMAGE+self.POTENCY)/4))+(((1+self.SPELL_DAMAGE)+(self.POTENCY/4))*self.drauven_pc_fireballActionPointsSpent)",
 						"type": "MAGIC"
-					},
-					{
-						"class": "Aspects",
-						"target": "self",
-						"removeAspects": [ "hidden" ]
 					}
 				]
 			}
