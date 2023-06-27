@@ -116,19 +116,40 @@
 ],
 "outcomes": [
 	{
-		"class": "Spawn",
-		"addRole": "item",
-		"forceSpawn": true,
-		"createEntity": {
-			"query": { "type": "TRAP" },
-			"addAspects": [
-				{
-					"id": "drauven_pc_fireballPreparedRegion",
-					"value": "1",
-					"atTiles": "targetTile"
-				}
-			],
-			"setLocation": true
+		"class": "Test",
+		"value": "self.hidden",
+		"threshold": "1",
+		"onPass": {
+			"class": "Spawn",
+			"addRole": "item",
+			"forceSpawn": true,
+			"createEntity": {
+				"query": { "type": "TRAP" },
+				"addAspects": [
+					{
+						"id": "drauven_pc_fireballPreparedRegionHidden",
+						"value": "1",
+						"atTiles": "targetTile"
+					}
+				],
+				"setLocation": true
+			}
+		},
+		"onFail": {
+			"class": "Spawn",
+			"addRole": "item",
+			"forceSpawn": true,
+			"createEntity": {
+				"query": { "type": "TRAP" },
+				"addAspects": [
+					{
+						"id": "drauven_pc_fireballPreparedRegion",
+						"value": "1",
+						"atTiles": "targetTile"
+					}
+				],
+				"setLocation": true
+			}
 		}
 	},
 	{
