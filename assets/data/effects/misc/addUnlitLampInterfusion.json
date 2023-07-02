@@ -7,7 +7,7 @@
 	"author": "psionusoid",
 	"STUB": "Adds aspect to allow unlit lamps to be used for Blastingshard"
 },
-"type": "SCENERY_STATE_CHANGED",
+"type": "LEVEL_START",
 "targets": [
 	{ "template": "SELF" }
 ],
