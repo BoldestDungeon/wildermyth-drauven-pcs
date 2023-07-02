@@ -38,18 +38,19 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspects": [
-			"wood",
+		"aspects": null,
+		"aspectsOneOf": [
 			"rock",
-			"bone",
+			"shards",
+			"interfusableLampOff",
 			"plant",
 			"metal",
 			"textile",
-			"shards",
-			"tools",
 			"lampIsFireSource",
+			"wood",
+			"bone",
 			"lampCanFlare",
-			"interactiveLampOff"
+			"tools"
 		]
 	},
 	{

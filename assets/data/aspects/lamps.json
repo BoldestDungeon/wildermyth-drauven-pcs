@@ -2,6 +2,15 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "interactiveLampOff",
+	"effects": [ "addUnlitLampInterfustion" ],
+	"boostType": "ABILITY_MISC",
+	"importance": 1,
+	"addedImportance": 0,
+	"removedImportance": 0
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "interfusableLampOff",
 	"boostType": "INTERFUSION_ASPECT",
 	"importance": 1,
 	"addedImportance": 0,
