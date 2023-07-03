@@ -21,6 +21,7 @@
 	}
 },
 {
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_common_tailslap",
 	"effects": [ "drauven_pc_tailslap" ],
 	"boostType": "ABILITY_CLASS",
@@ -57,6 +58,26 @@
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_hunter_cower",
 		"abilityDeckIcon": "silkstepCloak"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_hunter_drauven_teamwork",
+	"effects": [ "drauven_pc_drauven_teamwork" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_hunter_drauven_teamwork_upgrade",
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_hunter_drauven_teamwork",
+		"abilityDeckIcon": "thornfang"
 	}
 },
 {
@@ -118,26 +139,6 @@
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_hunter_specterstep",
 		"abilityDeckIcon": "silkstepCloak"
-	}
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_hunter_drauven_teamwork",
-	"effects": [ "drauven_pc_drauven_teamwork" ],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_hunter_drauven_teamwork_upgrade",
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"info": {
-		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_hunter_drauven_teamwork",
-		"abilityDeckIcon": "thornfang"
 	}
 },
 {
@@ -218,6 +219,24 @@
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_mystic_fireshot",
 		"abilityDeckIcon": "fireleash"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_skysong",
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_skysong_upgrade",
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_skysong",
+		"abilityDeckIcon": "elementalist"
 	}
 },
 {
