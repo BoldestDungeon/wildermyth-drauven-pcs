@@ -1,0 +1,1736 @@
+{
+"id": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Douglas Austin"
+},
+"type": "PLOT",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerGame" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "(genericPlots_imperialPalaceQuestioner*500)+max(ROMANTIC,POET)",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"role": "hero4",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "hero5",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "hero4" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.775, "y": 0.516 },
+							"size": 0.2878,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.609, "y": 0.428 },
+							"size": 1.62,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 8.039 },
+							"color": { "r": "0.96471655", "g": "1", "b": "0.61849713", "a": "0.11271606" }
+						},
+						{
+							"assetSpec": "scenery:campfireOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.486, "y": 0.129 },
+							"size": 0.2112,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.436, "y": 1.079 },
+							"size": 0.5768,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.48843929", "g": "0.48843929", "b": "0.48843929", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.116, "y": 0.091 },
+							"size": 0.3916,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.228, "y": 0.122 },
+							"size": 0.3916,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_bunk.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.908, "y": 0.321 },
+							"size": 0.2205,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.697, "y": 0.38 },
+							"size": 0.3292,
+							"drawDepth": 0.90625,
+							"head": { "rotate": -16.812, "scaleY": -1 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-talk",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.069, "y": 0.481 },
+							"size": 0.4975,
+							"drawDepth": -0.5,
+							"head": { "rotate": 32.846, "scaleY": 1 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.71689671", "g": "0.42761201", "b": "0.4276121", "a": "0.83525974" },
+							"padXFraction": 0.06,
+							"padYFraction": 0.051,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_001~2_hero3",
+							"pointerOwner": "hero3",
+							"padXFraction": 0.161,
+							"padYFraction": 0.271,
+							"widthFraction": 0.430279,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -8.220797,
+								"dX": 5.722046E-5,
+								"dY": 2.8275867,
+								"scaleX": 0.548589,
+								"scaleY": 0.548589
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.48, "y": 0.5 },
+							"size": 0.32116812,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.821, "y": 0.412 },
+							"size": 1.807826,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 8.039 },
+							"color": { "r": "0.96471655", "g": "1", "b": "0.61849713", "a": "0.11271606" }
+						},
+						{
+							"assetSpec": "scenery:campfireOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.074, "y": 0.113 },
+							"size": 0.23568694,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.177, "y": 1.063 },
+							"size": 0.6436753,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.48843929", "g": "0.48843929", "b": "0.48843929", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.836, "y": 0.075 },
+							"size": 0.4370029,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.605, "y": 0.106 },
+							"size": 0.4370029,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_bunk.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.206, "y": 0.305 },
+							"size": 0.24606521,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_shrineSmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.626, "y": 0.087 },
+							"size": 0.3386,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.849, "y": 0.401 },
+							"size": 0.4478,
+							"drawDepth": 0.96875,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": -0.64, "y": 0.364 },
+							"size": 0.3673681,
+							"drawDepth": 0.90625,
+							"head": { "rotate": -16.812, "scaleY": -1 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": -1.932, "y": 0.465 },
+							"size": 0.55518115,
+							"drawDepth": -0.5,
+							"head": { "rotate": 32.846, "scaleY": 1 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.71689677", "g": "0.42761195", "b": "0.42761204", "a": "1" },
+							"location": "bottomRight",
+							"padXFraction": 0.566,
+							"padYFraction": 0.067,
+							"widthFraction": 2.9404688,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_002~2_hero3",
+							"pointerOwner": "hero3",
+							"padXFraction": 0.161,
+							"padYFraction": 0.271,
+							"widthFraction": 0.430279,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -8.220797,
+								"dX": 5.722046E-5,
+								"dY": 2.8275867,
+								"scaleX": 0.548589,
+								"scaleY": 0.548589
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.482, "y": 0.5 },
+							"size": 0.2878,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.373, "y": 0.412 },
+							"size": 1.62,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 8.039 },
+							"color": { "r": "0.96471655", "g": "1", "b": "0.61849713", "a": "0.11271606" }
+						},
+						{
+							"assetSpec": "scenery:campfireOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.291, "y": 0.113 },
+							"size": 0.2112,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.258, "y": 1.063 },
+							"size": 0.5768,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.48843929", "g": "0.48843929", "b": "0.48843929", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.047, "y": 0.075 },
+							"size": 0.3916,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.121, "y": 0.106 },
+							"size": 0.3916,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_bunk.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.57, "y": 0.305 },
+							"size": 0.2205,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_shrineSmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.837, "y": 0.087 },
+							"size": 0.30342078,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.909, "y": 0.401 },
+							"size": 0.40127534,
+							"drawDepth": 0.96875,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.288, "y": 0.361 },
+							"size": 0.3292,
+							"drawDepth": 0.90625,
+							"head": { "rotate": -11, "scaleY": 1 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.465, "y": 0.377 },
+							"size": 0.3565,
+							"drawDepth": -0.5,
+							"head": { "rotate": 6.568, "scaleY": 1 },
+							"foot": { "rotate": -2.572 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.736, "y": 0.369 },
+							"size": 0.2992,
+							"drawDepth": 0.25,
+							"head": { "rotate": -2.771, "scaleY": 1 },
+							"foot": { "rotate": -2.572 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_003~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.71689677", "g": "0.42761195", "b": "0.42761204", "a": "1" },
+							"location": "bottomRight",
+							"padXFraction": 0.566,
+							"padYFraction": 0.067,
+							"widthFraction": 2.9404688,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_003~2_hero3",
+							"pointerOwner": "hero3",
+							"padXFraction": 0.161,
+							"padYFraction": 0.271,
+							"widthFraction": 0.430279,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -8.220797,
+								"dX": 5.722046E-5,
+								"dY": 2.8275867,
+								"scaleX": 0.548589,
+								"scaleY": 0.548589
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_003~3_hero3",
+							"pointerOwner": "hero3",
+							"location": "bottomLeft",
+							"padXFraction": 0.491,
+							"padYFraction": 0.079,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -6.3401914,
+								"dX": -9.42523,
+								"dY": 1.8850576,
+								"scaleX": 0.6732905,
+								"scaleY": 0.6732905
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_003~4_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.085,
+							"padYFraction": 0.006,
+							"widthFraction": 0.86956507,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -11.151395,
+								"dX": -4.7125864,
+								"dY": -7.5402303,
+								"scaleX": 0.8733971,
+								"scaleY": 0.8733971
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_003~5_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.233,
+							"padYFraction": 0.268,
+							"widthFraction": 0.43536612,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -12.88391, "scaleX": 0.60843295, "scaleY": 0.60843295 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.498, "y": 0.63 },
+							"size": 0.3824,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.87, "y": 0.621 },
+							"size": 0.3824,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.725, "y": 0.504 },
+							"size": 2.1523,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 8.039 },
+							"color": { "r": "0.96471655", "g": "1", "b": "0.61849713", "a": "0.11271606" }
+						},
+						{
+							"assetSpec": "scenery:campfireOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.616, "y": 0.107 },
+							"size": 0.2806,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.572, "y": 1.369 },
+							"size": 0.7663,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.48843929", "g": "0.48843929", "b": "0.48843929", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.292, "y": 0.056 },
+							"size": 0.5203,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.39, "y": 0.097 },
+							"size": 0.5203,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_bunk.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.987, "y": 0.362 },
+							"size": 0.293,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_shrineSmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.341, "y": 0.072 },
+							"size": 0.4031,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.437, "y": 0.489 },
+							"size": 0.5331,
+							"drawDepth": 0.96875,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.341, "y": 0.423 },
+							"size": 0.4374,
+							"drawDepth": 0.625,
+							"head": { "rotate": -6.549, "scaleY": 1 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.973, "y": 0.485 },
+							"size": 0.4736,
+							"drawDepth": -2,
+							"head": { "rotate": -14.394, "scaleY": -1 },
+							"foot": { "rotate": -2.572 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": -0.028, "y": 0.514 },
+							"size": 0.6764,
+							"drawDepth": -2,
+							"head": { "rotate": 8.563, "scaleY": 1 },
+							"foot": { "rotate": -2.572 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.599, "y": 0.419 },
+							"size": 0.3975,
+							"drawDepth": 0.25,
+							"head": { "rotate": -2.771, "scaleY": -1 },
+							"foot": { "rotate": -2.572 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.794, "y": 0.381 },
+							"size": 0.3449,
+							"drawDepth": 0.953125,
+							"head": { "rotate": -14.508, "scaleY": -1 },
+							"foot": { "rotate": -14.31 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenCandleUnlit.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.163, "y": 0.193 },
+							"size": 0.1118,
+							"drawDepth": 0.6875,
+							"nameTag": "none",
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:stool.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.161, "y": 0.148 },
+							"size": 0.4087,
+							"drawDepth": 0.71875,
+							"nameTag": "none",
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_004~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.71689677", "g": "0.42761195", "b": "0.42761204", "a": "1" },
+							"location": "bottomRight",
+							"padXFraction": 0.566,
+							"padYFraction": 0.067,
+							"widthFraction": 2.9404688,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_004~2_hero3",
+							"pointerOwner": "hero3",
+							"padXFraction": 0.161,
+							"padYFraction": 0.271,
+							"widthFraction": 0.430279,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -8.220797,
+								"dX": 5.722046E-5,
+								"dY": 2.8275867,
+								"scaleX": 0.548589,
+								"scaleY": 0.548589
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_004~3_hero3",
+							"pointerOwner": "hero3",
+							"location": "bottomLeft",
+							"padXFraction": 0.491,
+							"padYFraction": 0.079,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -6.3401914,
+								"dX": -9.42523,
+								"dY": 1.8850576,
+								"scaleX": 0.6732905,
+								"scaleY": 0.6732905
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_004~4_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.085,
+							"padYFraction": 0.006,
+							"widthFraction": 0.86956507,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -11.151395,
+								"dX": -4.7125864,
+								"dY": -7.5402303,
+								"scaleX": 0.8733971,
+								"scaleY": 0.8733971
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_004~5_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.233,
+							"padYFraction": 0.268,
+							"widthFraction": 0.43536612,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -5.1944284, "scaleX": 0.60843295, "scaleY": 0.60843295 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_004~6_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.751,
+							"padYFraction": 0.179,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 0,
+								"dX": -13.19546,
+								"dY": -2.8275862,
+								"scaleX": 0.7733293,
+								"scaleY": 0.7733293,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_004~7_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"padXFraction": 0.364,
+							"padYFraction": 0.102,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -6.5977015,
+								"dY": 0,
+								"scaleX": 0.7260774,
+								"scaleY": 0.7260774,
+								"pointerOrientH": "onRight"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.699, "y": 0.848 },
+							"size": 0.4933,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.065, "y": 0.836 },
+							"size": 0.4933,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.878, "y": 0.686 },
+							"size": 2.7766,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 8.039 },
+							"color": { "r": "0.96471655", "g": "1", "b": "0.61849713", "a": "0.11271606" }
+						},
+						{
+							"assetSpec": "scenery:campfireOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.737, "y": 0.173 },
+							"size": 0.362,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.682, "y": 1.801 },
+							"size": 0.9885,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.48843929", "g": "0.48843929", "b": "0.48843929", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.319, "y": 0.107 },
+							"size": 0.6712,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_birdcage.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.446, "y": 0.16 },
+							"size": 0.6712,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_bunk.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.217, "y": 0.503 },
+							"size": 0.378,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_shrineSmall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.674, "y": 0.128 },
+							"size": 0.5201,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.797, "y": 0.666 },
+							"size": 0.6877,
+							"drawDepth": 0.96875,
+							"nameTag": "none",
+							"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.383, "y": 0.581 },
+							"size": 0.5642,
+							"drawDepth": 0.734375,
+							"head": { "rotate": -6.549, "scaleY": 1 },
+							"foot": { "rotate": -8.531 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 1.199, "y": 0.661 },
+							"size": 0.611,
+							"drawDepth": -2,
+							"head": { "rotate": -14.394, "scaleY": -1 },
+							"foot": { "rotate": -2.572 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": -0.364, "y": 0.739 },
+							"size": 0.8726,
+							"drawDepth": -2,
+							"head": { "rotate": 8.563, "scaleY": 1 },
+							"foot": { "rotate": -2.572 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.716, "y": 0.576 },
+							"size": 0.5128,
+							"drawDepth": 0.25,
+							"head": { "rotate": 1.537, "scaleY": 1 },
+							"foot": { "rotate": -2.572 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.967, "y": 0.527 },
+							"size": 0.4449,
+							"drawDepth": 0.953125,
+							"head": { "rotate": 0.057, "scaleY": 1 },
+							"foot": { "rotate": -1.561 },
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenCandleUnlit.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.154, "y": 0.285 },
+							"size": 0.1442,
+							"drawDepth": 0.6875,
+							"nameTag": "none",
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:stool.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.151, "y": 0.227 },
+							"size": 0.5273,
+							"drawDepth": 0.71875,
+							"nameTag": "none",
+							"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_005~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.71689677", "g": "0.42761195", "b": "0.42761204", "a": "1" },
+							"location": "bottomRight",
+							"padXFraction": 0.566,
+							"padYFraction": 0.067,
+							"widthFraction": 2.9404688,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_005~2_hero3",
+							"pointerOwner": "hero3",
+							"padXFraction": 0.161,
+							"padYFraction": 0.271,
+							"widthFraction": 0.430279,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -8.220797,
+								"dX": 5.722046E-5,
+								"dY": 2.8275867,
+								"scaleX": 0.548589,
+								"scaleY": 0.548589
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_005~3_hero3",
+							"pointerOwner": "hero3",
+							"location": "bottomLeft",
+							"padXFraction": 0.491,
+							"padYFraction": 0.079,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -6.3401914,
+								"dX": -9.42523,
+								"dY": 1.8850576,
+								"scaleX": 0.6732905,
+								"scaleY": 0.6732905
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_005~4_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.085,
+							"padYFraction": 0.006,
+							"widthFraction": 0.86956507,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -11.151395,
+								"dX": -4.7125864,
+								"dY": -7.5402303,
+								"scaleX": 0.8733971,
+								"scaleY": 0.8733971
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_005~5_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.233,
+							"padYFraction": 0.268,
+							"widthFraction": 0.43536612,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -5.1944284, "scaleX": 0.60843295, "scaleY": 0.60843295 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_005~6_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.25,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 35.753887,
+								"dX": 65.034424,
+								"dY": 2.8275867,
+								"scaleX": 0.6505324,
+								"scaleY": 0.6505324,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_005~7_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"padXFraction": 0.364,
+							"padYFraction": 0.102,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -6.5977015,
+								"dY": 0,
+								"scaleX": 0.7260774,
+								"scaleY": 0.7260774,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_005~8_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.334,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -12.994576,
+								"dX": -2.8277016,
+								"dY": -0.9425287,
+								"scaleX": 0.72867334,
+								"scaleY": 0.72867334,
+								"forcePointerImage": "speechMedium"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "hero2.exists",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.498, "y": 0.63 },
+										"size": 0.3824,
+										"nameTag": "none",
+										"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_rocksBrownTeal.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.87, "y": 0.621 },
+										"size": 0.3824,
+										"nameTag": "none",
+										"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.725, "y": 0.504 },
+										"size": 2.1523,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 8.039 },
+										"color": { "r": "0.96471655", "g": "1", "b": "0.61849713", "a": "0.11271606" }
+									},
+									{
+										"assetSpec": "scenery:campfireOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.616, "y": 0.107 },
+										"size": 0.2806,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.572, "y": 1.369 },
+										"size": 0.7663,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"color": { "r": "0.48843929", "g": "0.48843929", "b": "0.48843929", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_BoxGearSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.292, "y": 0.056 },
+										"size": 0.5203,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_birdcage.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.39, "y": 0.097 },
+										"size": 0.5203,
+										"drawDepth": 0.875,
+										"nameTag": "none",
+										"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_bunk.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.987, "y": 0.362 },
+										"size": 0.293,
+										"drawDepth": 0.9375,
+										"nameTag": "none",
+										"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_shrineSmall1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.341, "y": 0.072 },
+										"size": 0.4031,
+										"drawDepth": 0.9375,
+										"nameTag": "none",
+										"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_tapestry.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.437, "y": 0.489 },
+										"size": 0.5331,
+										"drawDepth": 0.96875,
+										"nameTag": "none",
+										"color": { "r": "0.57703185", "g": "0.48867238", "b": "0.33048189", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"anchor": { "x": 0.268, "y": 0.464 },
+										"size": 0.4374,
+										"drawDepth": 0.734375,
+										"head": { "rotate": -4.223, "scaleY": 1 },
+										"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+									},
+									{
+										"role": "hero3",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.904, "y": 0.466 },
+										"size": 0.4736,
+										"drawDepth": -2,
+										"head": { "rotate": 1.316, "scaleY": 1 },
+										"foot": { "rotate": -2.572 },
+										"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+									},
+									{
+										"role": "hero5",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": -0.028, "y": 0.514 },
+										"size": 0.6764,
+										"drawDepth": -2,
+										"head": { "rotate": -9.335, "scaleY": 1 },
+										"foot": { "rotate": -2.572 },
+										"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+									},
+									{
+										"role": "hero2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.533, "y": 0.41 },
+										"size": 0.3975,
+										"drawDepth": 0.25,
+										"head": { "rotate": -2.771, "scaleY": 1 },
+										"foot": { "rotate": -2.572 },
+										"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.694, "y": 0.394 },
+										"size": 0.3449,
+										"drawDepth": 0.953125,
+										"head": { "rotate": -14.508, "scaleY": -1 },
+										"foot": { "rotate": 0.174 },
+										"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:drauvenCandleUnlit.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.163, "y": 0.193 },
+										"size": 0.1118,
+										"drawDepth": 0.6875,
+										"nameTag": "none",
+										"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:stool.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.161, "y": 0.148 },
+										"size": 0.4087,
+										"drawDepth": 0.71875,
+										"nameTag": "none",
+										"color": { "r": "0.74950713", "g": "0.68253398", "b": "0.56263155", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+										"textKey": "~01~~panel_006.(hero2_exists)~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.71689677", "g": "0.42761195", "b": "0.42761204", "a": "1" },
+										"location": "bottomRight",
+										"padXFraction": 0.566,
+										"padYFraction": 0.067,
+										"widthFraction": 2.9404688,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+										"textKey": "~01~~panel_006.(hero2_exists)~2_hero3",
+										"pointerOwner": "hero3",
+										"padXFraction": 0.161,
+										"padYFraction": 0.271,
+										"widthFraction": 0.430279,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -8.220797,
+											"dX": 5.722046E-5,
+											"dY": 2.8275867,
+											"scaleX": 0.548589,
+											"scaleY": 0.548589
+										}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+										"textKey": "~01~~panel_006.(hero2_exists)~3_hero3",
+										"pointerOwner": "hero3",
+										"location": "bottomLeft",
+										"padXFraction": 0.491,
+										"padYFraction": 0.079,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -6.3401914,
+											"dX": -9.42523,
+											"dY": 1.8850576,
+											"scaleX": 0.6732905,
+											"scaleY": 0.6732905
+										}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+										"textKey": "~01~~panel_006.(hero2_exists)~4_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.085,
+										"padYFraction": 0.006,
+										"widthFraction": 0.86956507,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -11.151395,
+											"dX": -4.7125864,
+											"dY": -7.5402303,
+											"scaleX": 0.8733971,
+											"scaleY": 0.8733971
+										}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+										"textKey": "~01~~panel_006.(hero2_exists)~5_hero2",
+										"pointerOwner": "hero2",
+										"padXFraction": 0.417,
+										"padYFraction": 0.156,
+										"widthFraction": 0.3256494,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -5.1944284, "scaleX": 0.60843295, "scaleY": 0.60843295 }
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+										"textKey": "~01~~panel_006.(hero2_exists)~6_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.751,
+										"padYFraction": 0.179,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 0,
+											"dX": -13.19546,
+											"dY": -2.8275862,
+											"scaleX": 0.7733293,
+											"scaleY": 0.7733293,
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+										"textKey": "~01~~panel_006.(hero2_exists)~7_hero",
+										"style": "thought",
+										"pointerOwner": "hero",
+										"padXFraction": 0.364,
+										"padYFraction": 0.102,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -6.5977015,
+											"dY": 0,
+											"scaleX": 0.7260774,
+											"scaleY": 0.7260774,
+											"pointerOrientH": "onRight"
+										}
+									},
+									{
+										"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+										"textKey": "~01~~panel_006.(hero2_exists)~8_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.16800001,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 26.127657,
+											"dX": -13.195346,
+											"dY": -4.712644,
+											"scaleX": 0.81316864,
+											"scaleY": 0.81316864
+										}
+									}
+								]
+							}
+						}
+					],
+					[]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.753, "y": 0.652 },
+							"size": 0.9975,
+							"drawDepth": -5,
+							"head": { "rotate": -4.464, "scaleY": 1 },
+							"foot": { "rotate": -13.652 },
+							"color": { "r": "0.89662176", "g": "0.87078536", "b": "0.57736593", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.474, "y": 0.403 },
+							"size": 0.169,
+							"drawDepth": 5.09375,
+							"head": { "rotate": -8.865, "scaleY": 1 },
+							"color": { "r": "0.72735435", "g": "0.71160656", "b": "0.53276056", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.699, "y": 0.447 },
+							"size": 0.3736,
+							"drawDepth": 5.09375,
+							"head": { "rotate": -8.865, "scaleY": 1 },
+							"color": { "r": "0.72735435", "g": "0.71160656", "b": "0.53276056", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.267, "y": 0.337 },
+							"size": 0.1549,
+							"drawDepth": 5.09375,
+							"head": { "rotate": 26.57, "scaleY": 1 },
+							"color": { "r": "0.72735435", "g": "0.71160656", "b": "0.53276056", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.137, "y": 0.542 },
+							"size": 0.5554,
+							"drawDepth": 2.25,
+							"head": { "rotate": -31.197, "scaleY": -1 },
+							"foot": { "rotate": 5.162 },
+							"color": { "r": "0.89662176", "g": "0.87078536", "b": "0.57736593", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 2.184, "y": 0.35 },
+							"size": 0.4379,
+							"nameTag": "none",
+							"color": { "r": "0.89662176", "g": "0.87078536", "b": "0.57736593", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 2.162, "y": -0.097 },
+							"size": 0.546,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.89662176", "g": "0.87078536", "b": "0.57736593", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_birdStatue.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.196, "y": 0.727 },
+							"size": 0.0456,
+							"nameTag": "none",
+							"color": { "r": "0.8966217", "g": "0.8707853", "b": "0.57736599", "a": "0.30924857" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_hillsYellow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.265, "y": 0.458 },
+							"size": 0.3763,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_hillsYellow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.732, "y": 0.424 },
+							"size": 0.3763,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.371, "y": 0.606 },
+							"size": 4.3391,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"foot": { "rotate": -44.435 },
+							"color": { "r": "0.99695945", "g": "0.95488298", "b": "0.47702825", "a": "0.11560693" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": -0.469 },
+							"size": 4.3391,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "rotate": -44.435 },
+							"color": { "r": "0.99695945", "g": "0.95488298", "b": "0.47702825", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "scenery:trunk4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.778, "y": -0.482 },
+							"size": 0.4273,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"foot": { "rotate": -4.786 },
+							"color": { "r": "0.82959664", "g": "0.81975424", "b": "0.70797563", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsDarkField_arch1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.901, "y": 0.757 },
+							"size": 0.9234,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": -4.786 },
+							"color": { "r": "0.47818995", "g": "0.46207297", "b": "0.27903551", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.379, "y": 0.254 },
+							"size": 0.0522,
+							"drawDepth": 5.125,
+							"nameTag": "none",
+							"color": { "r": "0.89662176", "g": "0.87078536", "b": "0.57736593", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.319, "y": 0.143 },
+							"size": 0.2957,
+							"drawDepth": 5.75,
+							"nameTag": "none",
+							"color": { "r": "0.78489065", "g": "0.73690879", "b": "0.19198793", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.441, "y": 0.316 },
+							"size": 0.0757,
+							"drawDepth": 5.1875,
+							"nameTag": "none",
+							"color": { "r": "0.82959664", "g": "0.81975424", "b": "0.70797563", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:item_entranceCave.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.377, "y": 0.333 },
+							"size": 0.067,
+							"drawDepth": 5.25,
+							"nameTag": "none",
+							"color": { "r": "0.82959664", "g": "0.81975424", "b": "0.70797563", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.095, "y": 0.147 },
+							"size": 0.4146,
+							"drawDepth": 5.0625,
+							"nameTag": "none",
+							"foot": { "rotate": 1.257 },
+							"color": { "r": "0.82959664", "g": "0.81975424", "b": "0.70797563", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_007~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.71689671", "g": "0.42761201", "b": "0.4276121", "a": "0.83525974" },
+							"padXFraction": 0.026,
+							"padYFraction": 0.067,
+							"widthFraction": 0.63518465,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_007~2_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.206,
+							"widthFraction": 0.770353,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -15.080461, "dY": -7.5402303 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_007~3_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomRight",
+							"padXFraction": 0.524,
+							"padYFraction": 0.006,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_007~4_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.025,
+							"padYFraction": 0.068,
+							"widthFraction": 0.95360357,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_imperialPalace_keystone_victory",
+							"textKey": "~01~~panel_007~5_hero",
+							"pointerOwner": "hero",
+							"location": "bottomRight",
+							"padXFraction": 0.014,
+							"padYFraction": 0.118,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -22.306242,
+								"dX": -87.65507,
+								"dY": -8.482731,
+								"scaleX": 0.52719885,
+								"scaleY": 0.52719885,
+								"pointerOrientH": "onRight",
+								"forcePointerImage": "speechMedium"
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}
