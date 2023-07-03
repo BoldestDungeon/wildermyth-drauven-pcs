@@ -243,6 +243,24 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_skysong",
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_skysong_upgrade",
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_skysong",
+		"abilityDeckIcon": "elementalist"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_warrior_battleyell",
 	"effects": [ "drauven_pc_battleyell" ],
 	"boostType": "ABILITY_CLASS",
