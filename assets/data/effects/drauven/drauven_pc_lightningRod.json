@@ -57,7 +57,7 @@
 		"choose": "ANY",
 		"showAnyway": true,
 		"missionFeedback": null,
-		"aspects": [ "metal" ],
+		"aspects": [ "metal", "scenery" ],
 		"relativeTo": "source",
 		"range": "4.6+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY"
@@ -160,7 +160,12 @@
 				"setPosition2": "target"
 			}
 		],
-		"audioOverride": { "attackHitCue": "Characters/Weapons/Default/weaponHit" },
+		"audioOverride": {
+			"attackStartCue": "",
+			"attackHitCue": "Characters/Theme/Lightning/lightningShoot",
+			"attackDodgedCue": "Characters/Theme/Lightning/lightningShoot",
+			"attackBlockedCue": "Characters/Theme/Lightning/lightningShoot"
+		},
 		"flankMarkOrigin": "source",
 		"defenseRollTags": [ "range" ],
 		"attackStrength": "self.RANGE_ACCURACY",
@@ -170,7 +175,7 @@
 				{
 					"class": "Damage",
 					"target": "source",
-					"amount": "3",
+					"amount": "1",
 					"type": "TRUE",
 					"showInTooltip": false
 				}
@@ -204,7 +209,12 @@
 								"setPosition2": "subject"
 							}
 						],
-						"audioOverride": { "attackHitCue": "Characters/Weapons/Default/weaponHit" },
+						"audioOverride": {
+							"attackStartCue": "",
+							"attackHitCue": "Characters/Theme/Lightning/lightningShoot",
+							"attackDodgedCue": "Characters/Theme/Lightning/lightningShoot",
+							"attackBlockedCue": "Characters/Theme/Lightning/lightningShoot"
+						},
 						"attackerAnimationOverride": "",
 						"flankMarkOrigin": "target",
 						"defenseRollTags": [ "range" ],
@@ -233,7 +243,12 @@
 												"setPosition2": "volunteer3"
 											}
 										],
-										"audioOverride": { "attackHitCue": "Characters/Weapons/Default/weaponHit" },
+										"audioOverride": {
+											"attackStartCue": "",
+											"attackHitCue": "Characters/Theme/Lightning/lightningShoot",
+											"attackDodgedCue": "Characters/Theme/Lightning/lightningShoot",
+											"attackBlockedCue": "Characters/Theme/Lightning/lightningShoot"
+										},
 										"attackerAnimationOverride": "",
 										"flankMarkOrigin": "subject",
 										"defenseRollTags": [ "range" ],
@@ -243,7 +258,8 @@
 											"outcomes": [
 												{
 													"class": "Damage",
-													"amount": "ceil((((2+self.POTENCY)+self.SPELL_DAMAGE)/2))",
+													"amount": "ceil((((self.POTENCY+self.SPELL_DAMAGE)*3)/4))",
+													"type": "MAGIC",
 													"useEquippedWeaponForStunt": true,
 													"numDefenders": "3"
 												}
@@ -253,7 +269,8 @@
 								},
 								{
 									"class": "Damage",
-									"amount": "ceil((((2+self.POTENCY)+self.SPELL_DAMAGE)/2))",
+									"amount": "ceil((((self.POTENCY+self.SPELL_DAMAGE)*3)/4))",
+									"type": "MAGIC",
 									"useEquippedWeaponForStunt": true,
 									"numDefenders": "2+COUNT.volunteer3"
 								}
@@ -269,7 +286,8 @@
 				},
 				{
 					"class": "Damage",
-					"amount": "(2+self.POTENCY)+self.SPELL_DAMAGE",
+					"amount": "self.POTENCY+self.SPELL_DAMAGE",
+					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
 				}
