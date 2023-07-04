@@ -78,6 +78,12 @@
 		"fromRoles": [ "target2", "target3" ],
 		"relativeTo": "source",
 		"notAlreadyMatchedAs": [ "source" ]
+	},
+	{
+		"template": "TILE",
+		"choose": "ONE_RANDOM_TRUE",
+		"relativeTo": "source",
+		"range": "30"
 	}
 ],
 "outcomes": [
@@ -139,6 +145,8 @@
 		"stopBlockingTime": "onHit",
 		"minimumBlockTimeOnMiss": "2000",
 		"particles": [
+			{ "script": "lightning", "setPosition": "focus", "setPosition2": "source" },
+			{ "script": "lightningHit", "setPosition": "source" },
 			{ "script": "lightning", "setPosition": "source", "setPosition2": "target" },
 			{ "script": "lightningHit", "setPosition": "target" }
 		],
