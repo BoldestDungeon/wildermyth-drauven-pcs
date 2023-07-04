@@ -227,7 +227,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "lightning" }
 },
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -236,7 +236,7 @@
 	"info": {
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_mystic_skysong",
-		"abilityDeckIcon": "elementalist"
+		"abilityDeckIcon": "lightning"
 	}
 },
 {
