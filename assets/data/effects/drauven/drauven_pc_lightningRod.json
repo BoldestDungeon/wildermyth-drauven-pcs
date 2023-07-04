@@ -139,26 +139,8 @@
 		"stopBlockingTime": "onHit",
 		"minimumBlockTimeOnMiss": "2000",
 		"particles": [
-			{
-				"script": "RockGroundExplosion",
-				"setPosition": "source",
-				"setPosition2": "target"
-			},
-			{
-				"script": "RockGroundExplosion2",
-				"setPosition": "source",
-				"setPosition2": "target"
-			},
-			{
-				"script": "discusProjectile",
-				"setPosition": "source",
-				"setPosition2": "target"
-			},
-			{
-				"script": "projectileTrail",
-				"setPosition": "source",
-				"setPosition2": "target"
-			}
+			{ "script": "lightning", "setPosition": "source", "setPosition2": "target" },
+			{ "script": "lightningHit", "setPosition": "target" }
 		],
 		"audioOverride": {
 			"attackStartCue": "",
@@ -198,16 +180,8 @@
 						"minimumBlockTime": "(1-COUNT.volunteer3)*2000",
 						"minimumBlockTimeOnMiss": "2000",
 						"particles": [
-							{
-								"script": "discusProjectile",
-								"setPosition": "target",
-								"setPosition2": "subject"
-							},
-							{
-								"script": "projectileTrail",
-								"setPosition": "target",
-								"setPosition2": "subject"
-							}
+							{ "script": "lightning", "setPosition": "target", "setPosition2": "subject" },
+							{ "script": "lightningHit", "setPosition": "subject" }
 						],
 						"audioOverride": {
 							"attackStartCue": "",
@@ -232,16 +206,8 @@
 										"intermediateRole": "subject",
 										"attackAnimationType": "magic",
 										"particles": [
-											{
-												"script": "discusProjectile",
-												"setPosition": "subject",
-												"setPosition2": "volunteer3"
-											},
-											{
-												"script": "projectileTrail",
-												"setPosition": "subject",
-												"setPosition2": "volunteer3"
-											}
+											{ "script": "lightning", "setPosition": "subject", "setPosition2": "volunteer3" },
+											{ "script": "lightningHit", "setPosition": "volunteer3" }
 										],
 										"audioOverride": {
 											"attackStartCue": "",
