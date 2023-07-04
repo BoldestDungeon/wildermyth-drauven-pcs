@@ -39,15 +39,45 @@
 		"aspects": [ "metal" ]
 	},
 	{
+		"role": "target2",
 		"template": "ADJACENT_ENEMY",
 		"STUB": "Targetable Enemies",
+		"choose": "ANY",
 		"showAnyway": true,
-		"alwaysSelect": true,
 		"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
 		"range": "4.6+self.BONUS_RANGE",
-		"lineOfSight": "ANY_SCENERY"
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"role": "target3",
+		"template": "ADJACENT_SCENERY",
+		"STUB": "Targetable Scenery",
+		"choose": "ANY",
+		"showAnyway": true,
+		"missionFeedback": null,
+		"aspects": [ "metal" ],
+		"relativeTo": "source",
+		"range": "4.6+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"template": "ANY",
+		"STUB": "Targetable Enemies AND Scenery",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"orientTo": "source",
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"fromRoles": [ "target2", "target3" ],
+		"relativeTo": "source",
+		"notAlreadyMatchedAs": [ "source" ]
 	}
 ],
 "outcomes": [
