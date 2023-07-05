@@ -1,0 +1,72 @@
+{
+"budget": "64",
+"emitterLifetime": "1",
+"bucketStrategy": "inFrontOfFigure",
+"loopLimit": "1",
+"blendStyle": "addPremultiplied",
+"faceUp": true,
+"rules": [
+	{
+		"class": "Once",
+		"when": "0",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.2*length((e.dx-e.x),(e.dy-e.y))",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-0.4",
+						"theta": "90+(toDegrees(atan2(e.dy,e.dx)))"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "3", "g": "3", "b": "3", "a": "1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "Once",
+		"when": "0.1",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.2*length((e.dx-e.x),(e.dy-e.y))",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-0.4",
+						"theta": "90+(toDegrees(atan2(e.dy,e.dx)))"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "2", "g": "2", "b": "2", "a": "0.1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "AnimateFrame",
+		"light": "gain",
+		"image": [
+			"particle_lightning1",
+			"particle_lightning2",
+			"particle_lightning3",
+			"particle_lightning4",
+			"particle_lightning5"
+		]
+	},
+	{ "class": "Lifetime" }
+]
+}
