@@ -145,7 +145,7 @@
 		"stopBlockingTime": "onHit",
 		"minimumBlockTimeOnMiss": "2000",
 		"particles": [
-			{ "script": "lightning", "setPosition": "focus", "setPosition2": "source" },
+			{ "script": "lightningRodHit", "setPosition": "source" },
 			{ "script": "lightningHit", "setPosition": "source" },
 			{ "script": "lightning", "setPosition": "source", "setPosition2": "target" },
 			{ "script": "lightningHit", "setPosition": "target" }
