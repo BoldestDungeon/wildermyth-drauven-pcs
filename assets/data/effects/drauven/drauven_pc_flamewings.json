@@ -110,7 +110,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "((2*(source.lampIsFireSource+source.uncontainedFire))+1d2)+((self.SPELL_DAMAGE+self.POTENCY)*0.5)",
+					"amount": "((2*(source.lampIsFireSource+(source.uncontainedFire/2)))+1d2)+((self.SPELL_DAMAGE+self.POTENCY)*0.5)",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
