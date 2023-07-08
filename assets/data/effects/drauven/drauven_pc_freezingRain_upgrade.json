@@ -98,7 +98,7 @@
 				},
 				{
 					"class": "Damage",
-					"amount": "1+((self.POTENCY+self.SPELL_DAMAGE)/2)",
+					"amount": "3+((self.POTENCY+self.SPELL_DAMAGE)/2)",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
