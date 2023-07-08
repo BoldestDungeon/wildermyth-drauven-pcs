@@ -66,9 +66,7 @@
 		],
 		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_InterfuseLiquid" },
 		"flankMarkOrigin": "source",
-		"defenseRollTags": [ "range" ],
-		"attackStrength": "self.RANGE_ACCURACY",
-		"separateRolls": true,
+		"attackStrength": "100",
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
@@ -85,9 +83,14 @@
 			"class": "DoAll",
 			"outcomes": [
 				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "senseless", "value": "1" }
+					]
+				},
+				{
 					"class": "Damage",
-					"amount": "(1d2+self.POTENCY)+self.SPELL_DAMAGE",
-					"shred": "2",
+					"amount": "ceil((self.POTENCY+self.SPELL_DAMAGE))/4",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
