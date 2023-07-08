@@ -58,13 +58,13 @@
 		"particles": [
 			{ "script": "scaldingRain", "setPosition": "source", "setPosition2": "target" },
 			{
-				"script": "scaldingSteam",
+				"script": "glacier",
 				"setPosition": "target",
 				"setPosition2": "target",
-				"delay": 0.7
+				"delay": 0.3
 			}
 		],
-		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_InterfuseLiquid" },
+		"audioOverride": { "attackHitCue": "Characters/Theme/Ice/shieldIce" },
 		"flankMarkOrigin": "source",
 		"attackStrength": "100",
 		"always": {
