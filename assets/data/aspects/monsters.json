@@ -34,5 +34,16 @@
 	],
 	"effects": [ "drauven_pc_sneer_move|_ATTACKER_", "removeEveryTurn" ],
 	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_tailwind_speedBuff|ENTITY",
+	"parameters": [
+		{ "replace": "ENTITY", "isEntity": true }
+	],
+	"effects": [ "alsoAddRemoveAspectAfterTurnStartsParameter|drauven_pc_speedBuff|ENTITY|1" ],
+	"stats": { "SPEED": 1 },
+	"boostType": "ADVANTAGE",
+	"showValue": true
 }
 ]
