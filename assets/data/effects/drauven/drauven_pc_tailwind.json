@@ -9,7 +9,7 @@
 },
 "type": "ABILITY",
 "verb": "MANEUVER",
-"ability": { "icon": "move", "category": "research", "priority": "1" },
+"ability": { "icon": "flyFriend", "category": "research", "priority": "1" },
 "targets": [
 	{
 		"template": "SELF",
@@ -42,7 +42,7 @@
 		"particles": [
 			{ "script": "wolfHowl", "setPosition": "self" }
 		],
-		"audioOverride": { "attackStartCue": "Characters/Default/Ability_WolfCalled" },
+		"audioOverride": { "attackStartCue": "Characters/Default/Ability_WindWalk" },
 		"attackerAnimationOverride": "figures.swapWeapon",
 		"markForFlanking": "never",
 		"always": {
