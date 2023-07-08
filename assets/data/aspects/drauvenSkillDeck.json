@@ -244,6 +244,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_skysong",
+	"effects": [ "drauven_pc_tailwind" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
