@@ -232,6 +232,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_skysong_upgrade",
+	"effects": [ "drauven_pc_freezingRain_upgrade" ],
 	"legacyAbilityChoice": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",
