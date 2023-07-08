@@ -40,7 +40,7 @@
 		"attackAnimationType": "none",
 		"stopBlockingTime": "noBlocking",
 		"particles": [
-			{ "script": "wolfHowl", "setPosition": "self" }
+			{ "script": "scaldingSteam", "setPosition": "hero" }
 		],
 		"audioOverride": { "attackStartCue": "Characters/Default/Ability_WindWalk" },
 		"attackerAnimationOverride": "figures.swapWeapon",
