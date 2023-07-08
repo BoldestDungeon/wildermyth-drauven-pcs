@@ -12,6 +12,7 @@
 "ability": {
 	"icon": "scaldingRain",
 	"category": "attackAbility",
+	"strictlyBetterThan": [ "mysticRecipeScaldingRain" ],
 	"priority": "1",
 	"usesElementFromEquippedWeapon": true
 },
@@ -19,10 +20,7 @@
 	{
 		"template": "SELF",
 		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
-		"missionFeedback": { "orientTo": "source" },
-		"aspectValues": [
-			{ "id": "mysticDeck_elementalist", "forbidden": true }
-		]
+		"missionFeedback": { "orientTo": "source" }
 	},
 	{
 		"role": "source",
@@ -90,7 +88,7 @@
 				},
 				{
 					"class": "Damage",
-					"amount": "ceil((self.POTENCY+self.SPELL_DAMAGE))/4",
+					"amount": "(1+((self.POTENCY+self.SPELL_DAMAGE)/2))+(self.drauvenDeck_mystic_skysong*2)",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
