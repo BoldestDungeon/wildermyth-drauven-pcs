@@ -52,7 +52,11 @@
 					"class": "Aspects",
 					"target": "hero",
 					"addAspects": [
-						{ "id": "drauven_pc_tailwind_speedBuff", "value": "2", "inRelationTo": "self" }
+						{
+							"id": "drauven_pc_tailwind_speedBuff",
+							"value": "1+(self.POTENCY/2)",
+							"inRelationTo": "self"
+						}
 					]
 				}
 			]
