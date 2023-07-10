@@ -50,7 +50,7 @@
 		},
 		"relativeTo": "source",
 		"minRange": "0.9",
-		"range": "3.1+self.BONUS_RANGE",
+		"range": "(3.1+self.BONUS_RANGE)+self.drauvenDeck_mystic_skysong_upgrade",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floorForbidAlly"
 	},
@@ -65,7 +65,7 @@
 			"to": "focus",
 			"thickness": [ "1", "1" ],
 			"excludeSource": true,
-			"distanceInDirection": "3.1+self.BONUS_RANGE"
+			"distanceInDirection": "(3.1+self.BONUS_RANGE)+self.drauvenDeck_mystic_skysong_upgrade"
 		},
 		"relativeTo": "source",
 		"range": null,
@@ -85,7 +85,7 @@
 			"from": "source",
 			"to": "focus",
 			"thickness": [ "1", "5" ],
-			"distanceInDirection": "3.1+self.BONUS_RANGE"
+			"distanceInDirection": "(3.1+self.BONUS_RANGE)+self.drauvenDeck_mystic_skysong_upgrade"
 		},
 		"relativeTo": "source",
 		"range": null,
