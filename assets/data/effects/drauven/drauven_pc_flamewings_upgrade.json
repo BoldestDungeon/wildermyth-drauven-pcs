@@ -119,18 +119,14 @@
 					"numDefenders": "COUNT.target"
 				},
 				{
-					"class": "ForEach",
-					"toRole": "monster",
-					"outcome": {
-						"class": "Test",
-						"value": "1d100",
-						"threshold": "33",
-						"onPass": {
-							"class": "Aspects",
-							"addAspects": [
-								{ "id": "blinded", "value": "1", "merge": "max" }
-							]
-						}
+					"class": "Test",
+					"value": "1d100",
+					"threshold": "68",
+					"onPass": {
+						"class": "Aspects",
+						"addAspects": [
+							{ "id": "blinded", "value": "1", "merge": "max" }
+						]
 					}
 				}
 			]
