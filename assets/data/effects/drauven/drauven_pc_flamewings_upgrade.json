@@ -12,7 +12,12 @@
 "ability": {
 	"icon": "fireleash",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeFireleash", "mysticRecipeFlareLamp", "mysticRecipeStealFire" ],
+	"strictlyBetterThan": [
+		"mysticRecipeFireleash",
+		"mysticRecipeFlareLamp",
+		"mysticRecipeStealFire",
+		"drauven_pc_flamewings"
+	],
 	"priority": "3",
 	"showDescriptionInTooltip": true
 },
@@ -112,6 +117,21 @@
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
+				},
+				{
+					"class": "ForEach",
+					"toRole": "monster",
+					"outcome": {
+						"class": "Test",
+						"value": "1d100",
+						"threshold": "33",
+						"onPass": {
+							"class": "Aspects",
+							"addAspects": [
+								{ "id": "blinded", "value": "1", "merge": "max" }
+							]
+						}
+					}
 				}
 			]
 		}
