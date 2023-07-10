@@ -117,18 +117,6 @@
 				}
 			]
 		}
-	},
-	{
-		"class": "Test",
-		"value": "self.mysticDeck_elementalist",
-		"threshold": "1",
-		"onFail": {
-			"class": "DoAll",
-			"outcomes": [
-				null,
-				{ "class": "Damage", "target": "source", "amount": "1" }
-			]
-		}
 	}
 ]
 }
