@@ -81,7 +81,6 @@
 			"from": "source",
 			"to": "focus",
 			"thickness": [ "1", "5" ],
-			"excludeSource": true,
 			"distanceInDirection": "3.1+self.BONUS_RANGE"
 		},
 		"relativeTo": "source",
@@ -110,7 +109,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(2+1d2)+((self.SPELL_DAMAGE+self.POTENCY)/2)",
+					"amount": "(1+1d3)+((self.SPELL_DAMAGE+self.POTENCY)/2)",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
