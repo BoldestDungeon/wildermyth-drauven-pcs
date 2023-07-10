@@ -110,16 +110,10 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "((2*(source.lampIsFireSource+(source.uncontainedFire/2)))+1d2)+((self.SPELL_DAMAGE+self.POTENCY)*0.5)",
+					"amount": "(2+1d2)+((self.SPELL_DAMAGE+self.POTENCY)/2)",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
-				},
-				{
-					"class": "Aspects",
-					"addAspects": [
-						{ "id": "blinded", "value": "source.lampCanFlare" }
-					]
 				}
 			]
 		}
