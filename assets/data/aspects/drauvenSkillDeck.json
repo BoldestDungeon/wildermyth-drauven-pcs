@@ -224,7 +224,11 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_skysong",
-	"effects": [ "drauven_pc_tailwind", "drauven_pc_flamewings_upgrade" ],
+	"effects": [
+		"drauven_pc_tailwind",
+		"drauven_pc_flamewings_upgrade",
+		"drauven_pc_lightningRod_upgrade"
+	],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
