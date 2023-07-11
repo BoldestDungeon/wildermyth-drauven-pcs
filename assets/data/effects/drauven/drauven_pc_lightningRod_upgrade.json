@@ -1,0 +1,272 @@
+{
+"id": "drauven_pc_lightningRod_upgrade",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_lightningRod_upgrade",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "interfusionRecipe" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "lightning",
+	"category": "attackAbility",
+	"strictlyBetterThan": [ "mysticRecipeShackle" ],
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "4.6+self.BONUS_RANGE" },
+	"usesElementFromEquippedWeapon": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"missionFeedback": { "orientTo": "source" }
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"type": "SCENERY",
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "metal" ]
+	},
+	{
+		"role": "target2",
+		"template": "ADJACENT_ENEMY",
+		"STUB": "Targetable Enemies",
+		"choose": "ANY",
+		"showAnyway": true,
+		"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"relativeTo": "source",
+		"range": "4.6+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"role": "target3",
+		"template": "ADJACENT_SCENERY",
+		"STUB": "Targetable Scenery",
+		"choose": "ANY",
+		"showAnyway": true,
+		"missionFeedback": null,
+		"aspects": [ "metal", "scenery" ],
+		"relativeTo": "source",
+		"range": "4.6+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"template": "ANY",
+		"STUB": "Targetable Enemies AND Scenery",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"orientTo": "source",
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"fromRoles": [ "target2", "target3" ],
+		"relativeTo": "source",
+		"notAlreadyMatchedAs": [ "source" ]
+	},
+	{
+		"template": "TILE",
+		"choose": "ONE_RANDOM_TRUE",
+		"relativeTo": "source",
+		"range": "30"
+	}
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"value": "self.drauvenDeck_mystic_skysong",
+		"threshold": "1",
+		"onPass": {
+			"class": "MatchTarget",
+			"abilityTarget": {
+				"role": "subject",
+				"template": "ADJACENT_UNIT",
+				"choose": "ONE_RANDOM_TRUE",
+				"showAnyway": true,
+				"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+				"relativeTo": "target",
+				"notAlreadyMatchedAs": [ "target" ],
+				"range": "3",
+				"lineOfSight": "TERRAIN_ONLY",
+				"test": "GREATER_THAN_OR_EQUAL_TO",
+				"a": "ENEMY.self",
+				"b": "1"
+			}
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"STUB": "Third target (skysong+)",
+		"rolesArePresent": [ "subject" ],
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "volunteer3",
+						"template": "ADJACENT_UNIT",
+						"STUB": "A third target, matched if lightning rod is set to hit another enemy (via the skysong+ ability)",
+						"choose": "ONE_RANDOM_TRUE",
+						"showAnyway": true,
+						"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+						"relativeTo": "subject",
+						"notAlreadyMatchedAs": [ "target", "subject" ],
+						"range": "3",
+						"lineOfSight": "TERRAIN_ONLY",
+						"test": "GREATER_THAN_OR_EQUAL_TO",
+						"a": "ENEMY.self*self.drauvenDeck_mystic_skysong_upgrade",
+						"b": "1"
+					}
+				}
+			]
+		}
+	},
+	{
+		"class": "AttackRoll",
+		"intermediateRole": "source",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"stopBlockingTime": "onHit",
+		"minimumBlockTimeOnMiss": "2000",
+		"particles": [
+			{ "script": "lightningRodHit", "setPosition": "source" },
+			{ "script": "lightningHit", "setPosition": "source" },
+			{ "script": "lightning", "setPosition": "source", "setPosition2": "target" },
+			{ "script": "lightningHit", "setPosition": "target" }
+		],
+		"audioOverride": {
+			"attackStartCue": "",
+			"attackHitCue": "Characters/Theme/Lightning/lightningShoot",
+			"attackDodgedCue": "Characters/Theme/Lightning/lightningShoot",
+			"attackBlockedCue": "Characters/Theme/Lightning/lightningShoot"
+		},
+		"flankMarkOrigin": "source",
+		"defenseRollTags": [ "range" ],
+		"attackStrength": "self.RANGE_ACCURACY",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"target": "source",
+					"amount": "1",
+					"type": "TRUE",
+					"showInTooltip": false
+				}
+			]
+		},
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "IfRolesArePresent",
+					"rolesArePresent": [ "subject" ],
+					"then": {
+						"class": "AttackRoll",
+						"STUB": "A bit of weird stuff with minimumBlockTime, to make sure both the 2 and 3 bounce versions look good and don't cut off too early",
+						"target": "self",
+						"defender": "subject",
+						"intermediateRole": "target",
+						"attackAnimationType": "magic",
+						"stopBlockingTime": "onHit",
+						"minimumBlockTime": "(1-COUNT.volunteer3)*2000",
+						"minimumBlockTimeOnMiss": "2000",
+						"particles": [
+							{ "script": "lightning", "setPosition": "target", "setPosition2": "subject" },
+							{ "script": "lightningHit", "setPosition": "subject" }
+						],
+						"audioOverride": {
+							"attackStartCue": "",
+							"attackHitCue": "Characters/Theme/Lightning/lightningShoot",
+							"attackDodgedCue": "Characters/Theme/Lightning/lightningShoot",
+							"attackBlockedCue": "Characters/Theme/Lightning/lightningShoot"
+						},
+						"attackerAnimationOverride": "",
+						"flankMarkOrigin": "target",
+						"defenseRollTags": [ "range" ],
+						"attackStrength": "self.RANGE_ACCURACY",
+						"onHit": {
+							"class": "DoAll",
+							"outcomes": [
+								{
+									"class": "IfRolesArePresent",
+									"rolesArePresent": [ "volunteer3" ],
+									"then": {
+										"class": "AttackRoll",
+										"target": "self",
+										"defender": "volunteer3",
+										"intermediateRole": "subject",
+										"attackAnimationType": "magic",
+										"particles": [
+											{ "script": "lightning", "setPosition": "subject", "setPosition2": "volunteer3" },
+											{ "script": "lightningHit", "setPosition": "volunteer3" }
+										],
+										"audioOverride": {
+											"attackStartCue": "",
+											"attackHitCue": "Characters/Theme/Lightning/lightningShoot",
+											"attackDodgedCue": "Characters/Theme/Lightning/lightningShoot",
+											"attackBlockedCue": "Characters/Theme/Lightning/lightningShoot"
+										},
+										"attackerAnimationOverride": "",
+										"flankMarkOrigin": "subject",
+										"defenseRollTags": [ "range" ],
+										"attackStrength": "self.RANGE_ACCURACY",
+										"onHit": {
+											"class": "DoAll",
+											"outcomes": [
+												{
+													"class": "Damage",
+													"amount": "ceil((((self.POTENCY+self.SPELL_DAMAGE)*3)/4))",
+													"type": "MAGIC",
+													"useEquippedWeaponForStunt": true,
+													"numDefenders": "3"
+												}
+											]
+										}
+									}
+								},
+								{
+									"class": "Damage",
+									"amount": "ceil((((self.POTENCY+self.SPELL_DAMAGE)*3)/4))",
+									"type": "MAGIC",
+									"useEquippedWeaponForStunt": true,
+									"numDefenders": "2+COUNT.volunteer3"
+								}
+							]
+						}
+					},
+					"otherwise": {
+						"class": "AttackRoll",
+						"target": "self",
+						"defender": null,
+						"attackAnimationType": "none"
+					}
+				},
+				{
+					"class": "Damage",
+					"amount": "self.POTENCY+self.SPELL_DAMAGE",
+					"type": "MAGIC",
+					"useEquippedWeaponForStunt": true,
+					"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
+				}
+			]
+		}
+	}
+]
+}
