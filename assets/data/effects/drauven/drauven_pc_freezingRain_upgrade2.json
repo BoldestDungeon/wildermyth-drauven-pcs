@@ -1,0 +1,110 @@
+{
+"id": "drauven_pc_freezingRain_upgrade2",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_freezingRain_upgrade2",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "interfusionRecipe" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "scaldingRain",
+	"category": "attackAbility",
+	"strictlyBetterThan": [ "drauven_pc_freezingRain", "mysticRecipeScaldingRain" ],
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "5+self.BONUS_RANGE" },
+	"usesElementFromEquippedWeapon": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"missionFeedback": { "orientTo": "source" }
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"type": "SCENERY",
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "liquid" ]
+	},
+	{
+		"template": "TILE",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"relativeTo": "source",
+		"range": "4.6+self.BONUS_RANGE"
+	},
+	{
+		"template": "ADJACENT_UNIT",
+		"choose": "ANY",
+		"showAnyway": true,
+		"missionFeedback": {
+			"orientTo": "self",
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_SUGGESTION",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"relativeTo": "focus",
+		"range": "1.6",
+		"lineOfSight": "TERRAIN_ONLY"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"intermediateRole": "source",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"particles": [
+			{ "script": "scaldingRain", "setPosition": "source", "setPosition2": "target" },
+			{
+				"script": "glacier",
+				"setPosition": "target",
+				"setPosition2": "target",
+				"delay": 0.3
+			}
+		],
+		"audioOverride": { "attackHitCue": "Characters/Theme/Ice/shieldIce" },
+		"flankMarkOrigin": "source",
+		"attackStrength": "100",
+		"always": {
+			"class": "Damage",
+			"target": "source",
+			"amount": "1",
+			"type": "TRUE",
+			"showInTooltip": false
+		},
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "senseless", "value": "1" }
+					]
+				},
+				{
+					"class": "Damage",
+					"amount": "3+((self.POTENCY+self.SPELL_DAMAGE)/2)",
+					"type": "MAGIC",
+					"useEquippedWeaponForStunt": true,
+					"numDefenders": "COUNT.target"
+				}
+			]
+		}
+	}
+]
+}
