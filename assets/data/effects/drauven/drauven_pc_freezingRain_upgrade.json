@@ -12,7 +12,7 @@
 "ability": {
 	"icon": "scaldingRain",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeScaldingRain" ],
+	"strictlyBetterThan": [ "mysticRecipeScaldingRain", "drauven_pc_freezingRain" ],
 	"priority": "1",
 	"usesElementFromEquippedWeapon": true
 },
