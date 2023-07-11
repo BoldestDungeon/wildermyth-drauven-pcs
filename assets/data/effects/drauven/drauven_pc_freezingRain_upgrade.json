@@ -12,9 +12,8 @@
 "ability": {
 	"icon": "scaldingRain",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "drauven_pc_freezingRain", "mysticRecipeScaldingRain" ],
+	"strictlyBetterThan": [ "mysticRecipeScaldingRain" ],
 	"priority": "1",
-	"extraUI": { "overrideRangeShown": "5+self.BONUS_RANGE" },
 	"usesElementFromEquippedWeapon": true
 },
 "targets": [
@@ -39,26 +38,12 @@
 		"aspects": [ "liquid" ]
 	},
 	{
-		"template": "TILE",
+		"template": "ADJACENT_ENEMY",
 		"showAnyway": true,
 		"alwaysSelect": true,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
-		"range": "4.6+self.BONUS_RANGE"
-	},
-	{
-		"template": "ADJACENT_UNIT",
-		"choose": "ANY",
-		"showAnyway": true,
-		"missionFeedback": {
-			"orientTo": "self",
-			"suggestionScript": "figures.attackSuggestion",
-			"hoverScript": "figures.attackHovered",
-			"rangeFeedback": "ATTACK_SUGGESTION",
-			"suggestionFeedback": "ATTACK_SUGGESTION",
-			"hoverFeedback": "ATTACK_HOVER"
-		},
-		"relativeTo": "focus",
-		"range": "1.6",
+		"range": "4.6+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],
@@ -81,11 +66,16 @@
 		"flankMarkOrigin": "source",
 		"attackStrength": "100",
 		"always": {
-			"class": "Damage",
-			"target": "source",
-			"amount": "1",
-			"type": "TRUE",
-			"showInTooltip": false
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"target": "source",
+					"amount": "1",
+					"type": "TRUE",
+					"showInTooltip": false
+				}
+			]
 		},
 		"onHit": {
 			"class": "DoAll",
@@ -98,7 +88,7 @@
 				},
 				{
 					"class": "Damage",
-					"amount": "3+((self.POTENCY+self.SPELL_DAMAGE)/2)",
+					"amount": "(1+((self.POTENCY+self.SPELL_DAMAGE)/2))+(self.drauvenDeck_mystic_skysong*2)",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
