@@ -88,7 +88,7 @@
 				},
 				{
 					"class": "Damage",
-					"amount": "(1+((self.POTENCY+self.SPELL_DAMAGE)/2))+(self.drauvenDeck_mystic_skysong*2)",
+					"amount": "1+((self.POTENCY+self.SPELL_DAMAGE)/2)",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
