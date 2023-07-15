@@ -143,6 +143,25 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_battlecrafting",
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "humanist" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_battlecrafting_upgrade",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_battlecrafting",
+		"abilityDeckIcon": "humanist"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_blastingshard",
 	"effects": [ "drauven_pc_blastingshard" ],
 	"boostType": "ABILITY_CLASS",
