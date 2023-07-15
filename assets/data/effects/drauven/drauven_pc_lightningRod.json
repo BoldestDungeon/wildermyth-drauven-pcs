@@ -126,7 +126,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "self.POTENCY+self.SPELL_DAMAGE",
+					"amount": "(1+self.POTENCY)+self.SPELL_DAMAGE",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
