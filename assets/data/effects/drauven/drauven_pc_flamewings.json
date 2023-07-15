@@ -107,7 +107,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1+1d3)+((self.POTENCY+self.SPELL_DAMAGE)/2)",
+					"amount": "1d3+ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
 					"type": "MAGIC",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
