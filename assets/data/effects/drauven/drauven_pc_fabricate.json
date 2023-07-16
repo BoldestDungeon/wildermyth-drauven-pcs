@@ -72,8 +72,6 @@
 		],
 		"audioOverride": { "attackStartCue": "" },
 		"flankMarkOrigin": "focus",
-		"defenseRollTags": [ "range" ],
-		"attackStrength": "self.RANGE_ACCURACY",
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
@@ -105,7 +103,7 @@
 								"createEntity": {
 									"query": {
 										"type": "SCENERY",
-										"tags": [ "fabricateWMT" ],
+										"tags": [ "fabricateMTS" ],
 										"coordinates": "focus"
 									},
 									"setLocation": true
@@ -121,7 +119,56 @@
 								"createEntity": {
 									"query": {
 										"type": "SCENERY",
-										"tags": [ "fabricateMTS" ],
+										"tags": [ "fabricateMTB" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateMTB_ST" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateMTT" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"weight": 1000,
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateWMT" ],
 										"coordinates": "focus"
 									},
 									"setLocation": true
@@ -129,20 +176,6 @@
 							}
 						}
 					]
-				},
-				{
-					"class": "Spawn",
-					"target": "focus",
-					"addRole": "scenery",
-					"modifyTerrain": "setToBlocked",
-					"createEntity": {
-						"query": {
-							"type": "SCENERY",
-							"tags": [ "fabricateMTS" ],
-							"coordinates": "focus"
-						},
-						"setLocation": true
-					}
 				},
 				{
 					"class": "Animate",
