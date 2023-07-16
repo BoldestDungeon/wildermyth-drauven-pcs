@@ -13,7 +13,7 @@
 	"icon": "forge",
 	"category": "neutralAbility",
 	"priority": "3",
-	"extraUI": { "overrideRangeShown": "4.6+self.BONUS_RANGE" },
+	"extraUI": { "overrideRangeShown": "(4.6+self.BONUS_RANGE)+(self.POTENCY/2)" },
 	"overrideOverlayType": "interfuse"
 },
 "targets": [
@@ -27,10 +27,9 @@
 		"template": "TILE",
 		"choose": "ANY",
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
-		"range": "4.6+self.BONUS_RANGE",
-		"lineOfSight": "LIVE_ENEMIES",
-		"tileFilter": "forbidSceneryAllowPits",
-		"tileFilterRange": "1"
+		"range": "(4.6+self.BONUS_RANGE)+(self.POTENCY/2)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "flammableDebris"
 	},
 	{
 		"template": "TILE",
@@ -57,26 +56,12 @@
 			}
 		]
 	},
-	{
-		"template": "UNIT_AT_TILE",
-		"choose": "ANY",
-		"missionFeedback": {
-			"hoverScript": "figures.attackHovered",
-			"rangeFeedback": "ATTACK_RANGE",
-			"suggestionFeedback": "ATTACK_SUGGESTION",
-			"hoverFeedback": "ATTACK_HOVER",
-			"canFlank": false
-		},
-		"aspectValues": [
-			{ "id": "ENEMY", "relativeTo": "self" }
-		],
-		"relativeTo": "focus",
-		"range": "1.6+(self.POTENCY/3)"
-	}
+	{ "role": "source", "template": "DEBRIS", "relativeTo": "focus", "range": "0.1" }
 ],
 "outcomes": [
 	{
 		"class": "AttackRoll",
+		"defender": null,
 		"intermediateRole": "focus",
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
@@ -149,18 +134,8 @@
 					}
 				}
 			]
-		},
-		"onHit": {
-			"class": "DoAll",
-			"outcomes": [
-				{
-					"class": "Aspects",
-					"addAspects": [
-						{ "id": "pinned", "value": "1" }
-					]
-				}
-			]
 		}
-	}
+	},
+	{ "class": "Delete", "target": "source" }
 ]
 }
