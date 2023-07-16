@@ -144,6 +144,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_battlecrafting",
+	"effects": [ "drauven_pc_fabricate" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
