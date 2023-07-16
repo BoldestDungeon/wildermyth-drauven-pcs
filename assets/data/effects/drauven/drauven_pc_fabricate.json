@@ -78,6 +78,59 @@
 			"class": "DoAll",
 			"outcomes": [
 				{
+					"class": "DoOneRandom",
+					"weightedOutcomes": [
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateMT" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateWMT" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "fabricateMTS" ],
+										"coordinates": "focus"
+									},
+									"setLocation": true
+								}
+							}
+						}
+					]
+				},
+				{
 					"class": "Spawn",
 					"target": "focus",
 					"addRole": "scenery",
@@ -85,7 +138,7 @@
 					"createEntity": {
 						"query": {
 							"type": "SCENERY",
-							"tags": [ "fabricate" ],
+							"tags": [ "fabricateMTS" ],
 							"coordinates": "focus"
 						},
 						"setLocation": true
