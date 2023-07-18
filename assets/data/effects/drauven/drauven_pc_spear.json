@@ -1,0 +1,174 @@
+{
+"id": "drauven_pc_spear",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_spear",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "interfusionRecipe" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "fireleash",
+	"category": "attackAbility",
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "3.6+self.BONUS_RANGE" },
+	"usesElementFromEquippedWeapon": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"missionFeedback": { "orientTo": "focus" }
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"type": "HAZARD",
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "tools" ]
+	},
+	{ "role": "otherSite", "template": "TILE", "relativeTo": "source", "range": "0" },
+	{
+		"role": "sourceTile",
+		"template": "TILE",
+		"choose": "ALL",
+		"range": "10+self.BONUS_RANGE"
+	},
+	{
+		"template": "TILE",
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"hoverScript": "figures.directionalTileHover",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+			"feedbackSource": "source"
+		},
+		"fromRoles": [ "sourceTile" ],
+		"relativeTo": "source",
+		"minRange": "0.9",
+		"range": "3.6+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floorForbidAlly"
+	},
+	{
+		"role": "target2",
+		"template": "UNIT_AT_TILE",
+		"choose": "ANY",
+		"missionFeedback": {
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_RANGE",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"relativeTo": "focus",
+		"range": "0"
+	},
+	{
+		"template": "UNIT_AT_TILE",
+		"choose": "ANY",
+		"missionFeedback": {
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_SUGGESTION_FILL",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"line": [ "source", "focus" ],
+		"relativeTo": "source",
+		"range": null
+	},
+	{
+		"role": "scenery",
+		"template": "ADJACENT_SCENERY",
+		"choose": "ANY",
+		"aspects": [ "scenery", "lampIsFireSink" ],
+		"relativeTo": "focus",
+		"range": "0.5"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"intermediateRole": "source",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"audioOverride": {
+			"attackHitCue": "Characters/DefaultHuman/Magic_FireHit",
+			"attackDodgedCue": "Characters/DefaultHuman/Magic_FireMiss"
+		},
+		"flankMarkOrigin": "otherSite",
+		"defenseRollTags": [ "range" ],
+		"attackStrength": "self.RANGE_ACCURACY",
+		"separateRolls": true,
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Test",
+					"value": "isDefender.target2",
+					"threshold": "1",
+					"onPass": {
+						"class": "Damage",
+						"amount": "ceil(((2+self.POTENCY)+self.SPELL_DAMAGE))",
+						"pierce": "0",
+						"useEquippedWeaponForStunt": true,
+						"numDefenders": "COUNT.target"
+					},
+					"onFail": {
+						"class": "Damage",
+						"amount": "ceil((((2+self.POTENCY)+self.SPELL_DAMAGE)/2))",
+						"pierce": "0",
+						"useEquippedWeaponForStunt": true,
+						"numDefenders": "COUNT.target",
+						"showInTooltip": false
+					}
+				}
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "scenery" ],
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{ "class": "Delete", "target": "source" },
+				{ "class": "ChangeSceneryState", "target": "scenery", "newState": "default" },
+				{
+					"class": "Aspects",
+					"target": "scenery",
+					"addAspects": [
+						{
+							"id": "interfusedWithMystic",
+							"value": "1",
+							"merge": "max",
+							"inRelationTo": "self"
+						}
+					]
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{
+							"id": "interfusedWithEntity",
+							"value": "1",
+							"merge": "max",
+							"inRelationTo": "scenery"
+						}
+					]
+				}
+			]
+		}
+	}
+]
+}
