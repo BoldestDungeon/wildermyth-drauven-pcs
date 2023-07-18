@@ -143,6 +143,7 @@
 							}
 						},
 						{
+							"weight": 1000,
 							"outcome": {
 								"class": "Spawn",
 								"target": "focus",
@@ -159,7 +160,6 @@
 							}
 						},
 						{
-							"weight": 1000,
 							"outcome": {
 								"class": "Spawn",
 								"target": "focus",
