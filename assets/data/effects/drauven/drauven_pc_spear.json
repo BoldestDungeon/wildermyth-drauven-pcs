@@ -41,13 +41,6 @@
 		"a": "HEALTH-INJURY",
 		"b": "20"
 	},
-	{ "role": "otherSite", "template": "TILE", "relativeTo": "source", "range": "0" },
-	{
-		"role": "sourceTile",
-		"template": "TILE",
-		"choose": "ALL",
-		"range": "10+self.BONUS_RANGE"
-	},
 	{
 		"template": "TILE",
 		"alwaysSelect": true,
@@ -58,7 +51,6 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
 			"feedbackSource": "source"
 		},
-		"fromRoles": [ "sourceTile" ],
 		"relativeTo": "source",
 		"minRange": "0.9",
 		"range": "4.6+self.BONUS_RANGE",
@@ -110,7 +102,7 @@
 			"attackHitCue": "Characters/DefaultHuman/Magic_FireHit",
 			"attackDodgedCue": "Characters/DefaultHuman/Magic_FireMiss"
 		},
-		"flankMarkOrigin": "otherSite",
+		"flankMarkOrigin": "source",
 		"defenseRollTags": [ "range" ],
 		"attackStrength": "self.RANGE_ACCURACY",
 		"separateRolls": true,
