@@ -144,7 +144,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_battlecrafting",
-	"effects": [ "drauven_pc_fabricate" ],
+	"effects": [ "drauven_pc_fabricate", "drauven_pc_spear_upgrade" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
