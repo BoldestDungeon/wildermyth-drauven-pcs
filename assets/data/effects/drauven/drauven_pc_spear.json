@@ -119,8 +119,8 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "ceil(((2+self.POTENCY)+self.SPELL_DAMAGE))",
-					"pierce": "0",
+					"amount": "(1d2+1)+(self.POTENCY+self.SPELL_DAMAGE)",
+					"pierce": "1",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
 				},
