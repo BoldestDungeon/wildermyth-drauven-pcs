@@ -82,14 +82,6 @@
 		"line": [ "source", "focus" ],
 		"relativeTo": "source",
 		"range": null
-	},
-	{
-		"role": "scenery",
-		"template": "ADJACENT_SCENERY",
-		"choose": "ANY",
-		"aspects": [ "scenery", "lampIsFireSink" ],
-		"relativeTo": "focus",
-		"range": "0.5"
 	}
 ],
 "outcomes": [
@@ -126,40 +118,6 @@
 							{ "id": "pinned", "value": "1" }
 						]
 					}
-				}
-			]
-		}
-	},
-	{
-		"class": "IfRolesArePresent",
-		"rolesArePresent": [ "scenery" ],
-		"then": {
-			"class": "DoAll",
-			"outcomes": [
-				{ "class": "Delete", "target": "source" },
-				{ "class": "ChangeSceneryState", "target": "scenery", "newState": "default" },
-				{
-					"class": "Aspects",
-					"target": "scenery",
-					"addAspects": [
-						{
-							"id": "interfusedWithMystic",
-							"value": "1",
-							"merge": "max",
-							"inRelationTo": "self"
-						}
-					]
-				},
-				{
-					"class": "Aspects",
-					"addAspects": [
-						{
-							"id": "interfusedWithEntity",
-							"value": "1",
-							"merge": "max",
-							"inRelationTo": "scenery"
-						}
-					]
 				}
 			]
 		}
