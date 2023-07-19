@@ -91,7 +91,7 @@
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "Bonespear", "setPosition": "source", "setPosition2": "focus" },
+			{ "script": "Spear", "setPosition": "source", "setPosition2": "focus" },
 			{ "script": "BonespearBlast", "setPosition": "source", "setPosition2": "focus" }
 		],
 		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_InterfuseBone" },
