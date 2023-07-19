@@ -118,23 +118,21 @@
 			"class": "DoAll",
 			"outcomes": [
 				{
+					"class": "Damage",
+					"amount": "ceil(((2+self.POTENCY)+self.SPELL_DAMAGE))",
+					"pierce": "0",
+					"useEquippedWeaponForStunt": true,
+					"numDefenders": "COUNT.target"
+				},
+				{
 					"class": "Test",
 					"value": "isDefender.target2",
 					"threshold": "1",
 					"onPass": {
-						"class": "Damage",
-						"amount": "ceil(((2+self.POTENCY)+self.SPELL_DAMAGE))",
-						"pierce": "0",
-						"useEquippedWeaponForStunt": true,
-						"numDefenders": "COUNT.target"
-					},
-					"onFail": {
-						"class": "Damage",
-						"amount": "ceil((((2+self.POTENCY)+self.SPELL_DAMAGE)/2))",
-						"pierce": "0",
-						"useEquippedWeaponForStunt": true,
-						"numDefenders": "COUNT.target",
-						"showInTooltip": false
+						"class": "Aspects",
+						"addAspects": [
+							{ "id": "pinned", "value": "1" }
+						]
 					}
 				}
 			]
