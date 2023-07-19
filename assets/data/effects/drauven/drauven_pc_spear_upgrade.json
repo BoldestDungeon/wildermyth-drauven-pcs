@@ -90,10 +90,11 @@
 		"intermediateRole": "source",
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
-		"audioOverride": {
-			"attackHitCue": "Characters/DefaultHuman/Magic_FireHit",
-			"attackDodgedCue": "Characters/DefaultHuman/Magic_FireMiss"
-		},
+		"particles": [
+			{ "script": "Bonespear", "setPosition": "source", "setPosition2": "focus" },
+			{ "script": "BonespearBlast", "setPosition": "source", "setPosition2": "focus" }
+		],
+		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_InterfuseBone" },
 		"flankMarkOrigin": "source",
 		"defenseRollTags": [ "range" ],
 		"attackStrength": "self.RANGE_ACCURACY",
