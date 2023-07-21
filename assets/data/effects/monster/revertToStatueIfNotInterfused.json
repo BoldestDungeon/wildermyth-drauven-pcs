@@ -10,7 +10,7 @@
 },
 "type": "EVERY_TURN_2",
 "verb": "ATTACK",
-"ability": { "icon": "arches", "priority": "100", "branchableAbilityType": "standardMelee" },
+"ability": { "icon": "arches", "priority": "100" },
 "targets": [
 	{
 		"template": "SELF",
@@ -25,8 +25,7 @@
 		"scoreFunction": "1",
 		"scoreThreshold": "0",
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
-		"range": "0.9",
-		"tileFilter": "validMoveEnd"
+		"range": "0.9"
 	}
 ],
 "outcomes": [
