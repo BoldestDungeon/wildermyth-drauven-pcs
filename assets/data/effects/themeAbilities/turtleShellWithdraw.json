@@ -1,0 +1,57 @@
+{
+"id": "turtleShellWithdraw",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "themeAbilities/turtleShellWithdraw",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "David Bilsky",
+	"aiPriority": "2040+1d20"
+},
+"type": "ABILITY",
+"verb": "DEFEND",
+"ability": {
+	"icon": "armor",
+	"priority": "1",
+	"showDescriptionInTooltip": true,
+	"cooldown": "everyThreeTurns"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "all" },
+		"showAnyway": true
+	},
+	{
+		"role": "volunteer",
+		"template": "ADJACENT_ALLY",
+		"choose": "ANY",
+		"range": "50"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"attackAnimationType": "interaction",
+		"attackerAnimationOverride": "figures.miscAction",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "turtleShellWithdrawn", "value": "1" },
+						{ "id": "doneWithTurn", "value": "1" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "volunteer",
+					"addAspects": [
+						{ "id": "turtleShell_canKickAlly", "value": "1" }
+					]
+				}
+			]
+		}
+	}
+]
+}

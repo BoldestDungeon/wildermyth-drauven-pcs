@@ -1,0 +1,70 @@
+{
+"id": "turtleClawMelee",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "themeAbilities/turtleClawMelee",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "David Bilsky (Copied from Nate Austin)",
+	"aiPriority": "1900",
+	"tags": [ "melee", "themeUsageOverride" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "claw",
+	"priority": "20",
+	"onlyShowIfPossibleInCharacterSheet": true,
+	"branchableAbilityType": "standardMelee",
+	"abilityElementType": "stone"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"missionFeedback": { "orientTo": "target" }
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"range": "1.6+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"audioOverride": {
+			"attackHitCue": "Characters/Theme/attackClaw",
+			"attackDodgedCue": "Characters/Weapons/Dagger/weaponDodge",
+			"attackBlockedCue": "Characters/Weapons/Dagger/weaponBlock"
+		},
+		"defenseRollTags": [ "melee" ],
+		"attackStrength": "self.MELEE_ACCURACY",
+		"applyCover": true,
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "((1d4+3)+(((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)*(1+self.theme_turtle_upgrade)))+self.theme_turtle_upgrade",
+					"shred": "((self.themePiece_turtle_leftArm+self.themePiece_turtle_rightArm)+self.theme_turtle_upgrade)+1",
+					"pierce": "1+self.theme_turtle_upgrade",
+					"overrideStuntDamage": "3",
+					"onStunt": {
+						"class": "BranchAbility",
+						"target": "self",
+						"targetRole": "defender",
+						"branchAbility": "stuntEffect_stone"
+					}
+				}
+			]
+		},
+		"onHitCover": {
+			"class": "Damage",
+			"amount": "((1d4+3)+(((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)*(1+self.theme_turtle_upgrade)))+self.theme_turtle_upgrade"
+		}
+	}
+]
+}

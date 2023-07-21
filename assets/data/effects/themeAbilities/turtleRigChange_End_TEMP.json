@@ -1,0 +1,18 @@
+{
+  "id": "turtleRigChange_End_TEMP",
+  "info": { "dataVersion": 1, "sourceFile": "themeAbilities/turtleRigChange_End_TEMP" },
+  "type": "ASPECT_REMOVED",
+  "targets": [
+    { "template": "ANY_SELF" }
+  ],
+  "outcomes": [
+    {
+      "class": "Aspects",
+      "target": "self",
+      "addAspects": [
+        { "id": "rigOverride|Drauven", "value": "1" }
+      ],
+      "removeAspects": [ "rigOverride|TurtleWithdrawn" ]
+    }
+  ]
+  }
