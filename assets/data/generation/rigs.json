@@ -124,5 +124,23 @@
 		"midBackRotate": -160,
 		"lowBackPosition": {"x": 265, "y": 285},
 		"lowBackRotate": 150
+	},
+	{
+		"rig":"TurtleWithdrawn",
+		"skeleton": "Bobblehead TurtleWithdrawn",
+		"headPosition":{"x": 243,"y":184},
+		"facePosition":{"x": 341,"y":314},
+		"mainHandPosition":{"x": 146,"y":139},
+		"mainHandRotate":-75,
+		"twoHandedGripPosition":{"x": 283,"y":205},
+		"twoHandedGripRotate":-65,
+		"offHandPosition":{"x": 355,"y":150},
+		"offHandRotate":-30,
+		"highBackPosition":{"x": 185,"y":360},
+		"highBackRotate":-155,
+		"midBackPosition":{"x": 220,"y":300},
+		"midBackRotate":-175,
+		"lowBackPosition":{"x": 260,"y":300},
+		"lowBackRotate":168
 	}
 ]

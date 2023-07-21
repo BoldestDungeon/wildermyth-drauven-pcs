@@ -1,16 +1,48 @@
 [
-{
-	"id": "figures.animatedStone",
-	"loop": true,
-	"sequences": [
-		{
-			"duration": 5000,
-			"events": [
-				{
-					"useColorFilter": { "filter": "turnedToStone", "strength": "1" }
-				}
-			]
-		}
-	]
+  {
+    "id": "figures.animatedStone",
+    "loop": true,
+    "sequences": [
+      {
+        "duration": 5000,
+        "events": [
+          {
+            "useColorFilter": { "filter": "turnedToStone", "strength": "1" }
+          }
+        ]
+      }
+    ]
+  },
+  {
+  "id": "figures.directionalHelpfulHoverIdle",
+      "channel": { "id": "form", "priority": 1.3 },
+  "loop": true,
+  "tags": [ "abilityFeedback" ],
+  "sequences": [
+    {
+      "form": "idle active",
+      "events": [
+        {
+          "emitParticles": {
+            "script": "directionalHelpfulHover",
+            "alignment": "none",
+            "setPosition": "feedbackSource",
+            "setPosition2": "figurePosition"
+          },
+          "setEmitterVar": {"script": "directionalHelpfulHover", "var": "colorMult", "value": "4"},
+          "setOrientToCamera": "focus",
+          "setCanonicalPosition": true,
+          "useColorFilter": { "filter": "helpfulAbilityHover", "strength": "1" },
+          "setShowHealthBar": true,
+          "glow": {
+            "color": { "r": "0.2", "g": "0.3", "b": "0.9", "a": "1" },
+            "size": "0.6",
+            "hardness": "0.5",
+            "outline": "0"
+          }
+        }
+      ]
+    }
+  ]
 }
 ]

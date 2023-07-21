@@ -1,0 +1,194 @@
+{
+"id": "turtleShellKicked_move",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "themeAbilities/turtleShellKicked_move",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "David Bilsky",
+	"aiPriority": "2000"
+},
+"type": "BRANCH",
+"verb": "MANEUVER",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "pinned", "forbidden": true }
+		]
+	},
+	{ "role": "attacker", "template": "INJECTED_ENTITY", "type": "UNIT" },
+	{
+		"role": "volunteer",
+		"template": "TILE",
+		"choose": "ANY",
+		"range": "self.turtleShellKicked_strength",
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "ONE_FURTHEST",
+		"fromRoles": [ "volunteer" ],
+		"relativeTo": "attacker",
+		"range": "max(1.9,self.turtleShellKicked_strength)",
+		"lineOfSight": "ANY_COVER",
+		"tileFilter": "validMoveEnd",
+		"roleMustFit": "self"
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"choose": "ONE_CLOSEST_OPTIONAL",
+		"aspects": [ "HOSTILE_TARGET", "alive", "ENEMY" ],
+		"aspectValues": [
+			{ "id": "turtleShellKicked_wasHit", "forbidden": true }
+		],
+		"notAlreadyMatchedAs": [ "attacker" ],
+		"range": "self.turtleShellKicked_strength",
+		"lineOfSight": "LIVE_ENEMIES",
+		"tileFilter": "floor"
+	},
+	{
+		"role": "scenery",
+		"template": "ADJACENT_SCENERY",
+		"choose": "ONE_CLOSEST_OPTIONAL",
+		"aspectValues": [
+			{ "id": "turtleShellKicked_wasHit", "forbidden": true }
+		],
+		"range": "self.turtleShellKicked_strength",
+		"lineOfSight": "LIVE_ENEMIES",
+		"tileFilter": "floor"
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"removeAspects": [ "turtleShellKicked_move|*" ]
+	},
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "EXISTS.target",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"target": "self",
+					"consumeAspects": [
+						{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.target+1" }
+					]
+				},
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "target2",
+						"template": "TILE",
+						"choose": "ONE_RANDOM",
+						"relativeTo": "target",
+						"range": "0"
+					}
+				},
+				{
+					"class": "AttackRoll",
+					"attackAnimationType": "interaction",
+					"stopBlockingTime": "afterHitAnimation",
+					"minimumBlockTime": "20",
+					"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
+					"attackerAnimationOverride": "",
+					"defenderAnimationOverride": "",
+					"always": {
+						"class": "MoveEntity",
+						"target": "self",
+						"directlyToTile": "target2",
+						"ignoreEntitiesOnTile": true,
+						"animationType": "leap"
+					}
+				},
+				{
+					"class": "BranchAbility",
+					"target": "self",
+					"targetRole": "target",
+					"tileRole": "target2",
+					"branchAbility": "turtleShellKicked_dealDamage"
+				}
+			]
+		},
+		"onFail": {
+			"class": "Test",
+			"target": "self",
+			"value": "EXISTS.scenery",
+			"threshold": "1",
+			"onPass": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Aspects",
+						"target": "self",
+						"consumeAspects": [
+							{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.scenery+1" }
+						]
+					},
+					{
+						"class": "Aspects",
+						"target": "scenery",
+						"addAspects": [
+							{ "id": "turtleShellKicked_wasHit", "value": "1" }
+						]
+					},
+					{
+						"class": "MatchTarget",
+						"abilityTarget": {
+							"role": "target2",
+							"template": "TILE",
+							"choose": "ONE_RANDOM",
+							"relativeTo": "scenery",
+							"range": "0"
+						}
+					},
+					{
+						"class": "AttackRoll",
+						"attackAnimationType": "interaction",
+						"stopBlockingTime": "afterHitAnimation",
+						"minimumBlockTime": "20",
+						"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
+						"attackerAnimationOverride": "",
+						"defenderAnimationOverride": "",
+						"always": {
+							"class": "MoveEntity",
+							"target": "self",
+							"directlyToTile": "target2",
+							"ignoreEntitiesOnTile": true,
+							"animationType": "leap"
+						}
+					},
+					{
+						"class": "BranchAbility",
+						"target": "self",
+						"targetRole": "scenery",
+						"tileRole": "target2",
+						"branchAbility": "turtleShellKicked_dealDamage"
+					}
+				]
+			},
+			"onFail": {
+				"class": "AttackRoll",
+				"defender": null,
+				"attackAnimationType": "interaction",
+				"showAbilityName": "always",
+				"timingOverride": { "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+				"attackerAnimationOverride": "",
+				"defenderAnimationOverride": "",
+				"markForFlanking": "never",
+				"always": {
+					"class": "MoveEntity",
+					"target": "self",
+					"directlyToTile": "targetTile",
+					"ignoreEntitiesOnTile": true,
+					"animationType": "leap"
+				}
+			}
+		}
+	}
+]
+}
