@@ -75,7 +75,10 @@
 						"additionalOutcome": {
 							"class": "DoAll",
 							"outcomes": [
-								{ "class": "ModifyStats", "value": "source.HEALTH-HEALTH" }
+								{ "class": "ModifyStats", "value": "source.HEALTH-HEALTH" },
+								{ "class": "ModifyStats", "stat": "ARMOR", "value": "source.ARMOR-ARMOR" },
+								{ "class": "ModifyStats", "stat": "WARDING", "value": "source.WARDING-WARDING" },
+								{ "class": "ModifyStats", "stat": "ACTIONS", "value": "2" }
 							]
 						},
 						"setLocation": true
