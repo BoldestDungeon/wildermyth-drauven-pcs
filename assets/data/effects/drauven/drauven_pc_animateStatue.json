@@ -83,6 +83,11 @@
 									"stat": "MELEE_ACCURACY",
 									"value": "self.RANGE_ACCURACY-MELEE_ACCURACY"
 								},
+								{
+									"class": "ModifyStats",
+									"stat": "PHYSICAL_DAMAGE_BONUS",
+									"value": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))"
+								},
 								{ "class": "ModifyStats", "stat": "ACTIONS", "value": "2" }
 							]
 						},
