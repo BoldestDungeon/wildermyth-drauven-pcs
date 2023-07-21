@@ -155,6 +155,9 @@
 	"id": "drauvenDeck_mystic_battlecrafting_upgrade",
 	"effects": [ "drauven_pc_animateStatue" ],
 	"legacyAbilityChoice": true,
+	"interactionFeedback": [
+		{ "otherAspect": "statue", "replaceBlurb": true }
+	],
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
