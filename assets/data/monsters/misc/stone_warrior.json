@@ -1,0 +1,81 @@
+{
+"id": "stone_warrior",
+"modId": "wildermyth-drauven-pcs",
+"notes": "Needs weapon definition for attacks ; needs stealthy aspect?",
+"aspects": [
+	"drauven_stump",
+	"monstrous",
+	"mobileMonster",
+	"monsterCanSearch",
+	"canOpenDoors",
+	"activeDefender",
+	"alive",
+	"drauven",
+	"monsterMelee|weapon|balanced|1.6|3+1d2",
+	"overrideFacePosition|310|310"
+],
+"stats": {
+	"DODGE": "30",
+	"ARMOR": "1",
+	"MELEE_ACCURACY": "95",
+	"HEALTH": "6+1d2",
+	"PHYSICAL_DAMAGE_BONUS": "0",
+	"WARDING": "0",
+	"SPEED": "5",
+	"BLOCK": "70",
+	"RANGE_ACCURACY": "100",
+	"POTENCY": "0",
+	"MONSTER_THREAT": "8",
+	"PERCEPTION": "10"
+},
+"scale": [ "((2+(HEALTH/5))*[0.95,1])/3", "((2+(HEALTH/5))*[0.95,1])/3" ],
+"baseColor": [ "[0.8,1.08]", "[0.8,1.08]", "[0.8,1.08]" ],
+"skin": [
+	{
+		"image": [ "drauven2/drauvenStump_outfitBack", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenStump_body" ]
+	},
+	{
+		"image": [ "drauven2/drauvenStump_outfit" ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [
+			"drauven2/drauvenStump_outfitVariation1",
+			"drauven2/drauvenStump_outfitVariation2",
+			"drauven2/drauvenStump_outfitVariation3"
+		],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [
+			"drauven2/drauvenStump_handMace",
+			"drauven2/drauvenStump_handSpear",
+			"drauven2/drauvenStump_handSword"
+		],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenStump_head" ]
+	},
+	{
+		"image": [ "drauven2/drauvenStump_headFeathers", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenStump_headHorns", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenStump_headWhiskers", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	},
+	{
+		"image": [ "drauven2/drauvenStump_headMask", null ],
+		"colorVariation": [ "[-0.1,0.1]", "[-0.1,0.1]", "[-0.1,0.1]" ]
+	}
+]
+}
