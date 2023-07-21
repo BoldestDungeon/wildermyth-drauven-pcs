@@ -1,0 +1,44 @@
+[
+{
+	"id": "drauven_pc_animatedStatue_stump_bone",
+	"image": "scenery/animatedStatue_stump_bone.png",
+	"tags": [ "animatedStatue_stump_bone" ],
+	"lengthRange": [ 0.9, 1.1 ],
+	"stretchAspectRatio": "[0.9,1.1]",
+	"submerge": "0",
+	"scale": "1",
+	"thickness": "0.025",
+	"r": "[0.9,1.05]",
+	"g": "[0.9,1.05]",
+	"b": "[0.9,1.05]",
+	"aspects": [ "bone", "statue"]
+},
+{
+	"id": "drauven_pc_animatedStatue_stump_metal",
+	"image": "scenery/animatedStatue_stump_metal.png",
+	"tags": [ "animatedStatue_stump_metal" ],
+	"lengthRange": [ 0.9, 1.1 ],
+	"stretchAspectRatio": "[0.9,1.1]",
+	"submerge": "0",
+	"scale": "1",
+	"thickness": "0.025",
+	"r": "[0.9,1.05]",
+	"g": "[0.9,1.05]",
+	"b": "[0.9,1.05]",
+	"aspects": [ "metal", "statue"]
+},
+{
+	"id": "drauven_pc_animatedStatue_stump_stone",
+	"image": "scenery/animatedStatue_stump_stone.png",
+	"tags": [ "animatedStatue_stump_stone" ],
+	"lengthRange": [ 0.9, 1.1 ],
+	"stretchAspectRatio": "[0.9,1.1]",
+	"submerge": "0",
+	"scale": "1",
+	"thickness": "0.025",
+	"r": "[0.9,1.05]",
+	"g": "[0.9,1.05]",
+	"b": "[0.9,1.05]",
+	"aspects": [ "stone", "statue"]
+}
+]
