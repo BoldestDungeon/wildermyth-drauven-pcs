@@ -13,7 +13,6 @@
 	"icon": "arches",
 	"category": "neutralAbility",
 	"priority": "3",
-	"extraUI": { "overrideRangeShown": "4.6+self.BONUS_RANGE" },
 	"overrideOverlayType": "interfuse"
 },
 "targets": [
@@ -25,7 +24,7 @@
 	{
 		"role": "source",
 		"template": "ANY",
-		"STUB": "book or statue",
+		"STUB": "statue",
 		"type": "SCENERY",
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
@@ -36,30 +35,14 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspectsOneOf": [ "statue" ]
-	},
-	{
-		"role": "targetTile",
-		"template": "TILE",
-		"choose": "ANY",
-		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
-		"range": "4.6+self.BONUS_RANGE",
-		"lineOfSight": "LIVE_ENEMIES",
-		"tileFilter": "forbidSceneryAllowPits",
-		"tileFilterRange": "1"
+		"aspectsOneOf": [ "statue", "rock" ]
 	},
 	{
 		"template": "TILE",
-		"alwaysSelect": true,
-		"missionFeedback": {
-			"hoverScript": "figures.directionalTileHoverHelpful",
-			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
-			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
-			"feedbackSource": "self"
-		},
-		"fromRoles": [ "targetTile" ],
-		"range": null,
-		"tileFilter": "validScenerySpawnLocation"
+		"choose": "ONE_RANDOM_TRUE",
+		"relativeTo": "source",
+		"range": "0.5",
+		"spawnEntityIgnore": [ "source" ]
 	},
 	{
 		"role": "volunteer",
@@ -72,56 +55,45 @@
 				"maxValue": "(((mystic*2)+numExtraInterfusions)+(mysticDeck_openmind*(1+floor((POTENCY/3)))))-1"
 			}
 		]
-	},
-	{
-		"template": "UNIT_AT_TILE",
-		"choose": "ANY",
-		"missionFeedback": {
-			"hoverScript": "figures.attackHovered",
-			"rangeFeedback": "ATTACK_RANGE",
-			"suggestionFeedback": "ATTACK_SUGGESTION",
-			"hoverFeedback": "ATTACK_HOVER",
-			"canFlank": false
-		},
-		"aspectValues": [
-			{ "id": "ENEMY", "relativeTo": "self" }
-		],
-		"relativeTo": "focus",
-		"range": "1.6+(self.POTENCY/3)"
 	}
 ],
 "outcomes": [
 	{
 		"class": "AttackRoll",
+		"defender": null,
 		"intermediateRole": "focus",
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "Vines1", "setPosition": "target" },
 			{ "script": "TreeSpawn", "setPosition": "focus" },
 			{ "script": "LeafExplosion", "setPosition": "focus" }
 		],
 		"audioOverride": { "attackStartCue": "" },
 		"flankMarkOrigin": "focus",
-		"defenseRollTags": [ "range" ],
-		"attackStrength": "self.RANGE_ACCURACY",
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
 				{
 					"class": "Spawn",
+					"target": "source",
+					"modifyTerrain": "makeWalkableAndCreateDebris"
+				},
+				{
+					"class": "Spawn",
 					"target": "focus",
 					"addRole": "scenery",
-					"modifyTerrain": "setToBlocked",
 					"createEntity": {
-						"query": {
-							"type": "SCENERY",
-							"tags": [ "arches" ],
-							"coordinates": "focus"
+						"query": { "baseTag": "drauven_stump", "coordinates": "focus" },
+						"additionalOutcome": {
+							"class": "DoAll",
+							"outcomes": [
+								{ "class": "ModifyStats", "value": "source.HEALTH-HEALTH" }
+							]
 						},
 						"setLocation": true
 					}
 				},
+				{ "class": "Delete", "target": "source" },
 				{
 					"class": "Animate",
 					"audioAtPosition": {
@@ -163,17 +135,6 @@
 							}
 						]
 					}
-				}
-			]
-		},
-		"onHit": {
-			"class": "DoAll",
-			"outcomes": [
-				{
-					"class": "Aspects",
-					"addAspects": [
-						{ "id": "pinned", "value": "1" }
-					]
 				}
 			]
 		}
