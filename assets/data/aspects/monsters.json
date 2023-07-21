@@ -1,16 +1,13 @@
 [
+{ "modId": "wildermyth-drauven-pcs", "id": "animatedStatue_bone" },
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "animatedStatue_debrisOnDeath",
 	"effects": [ "animatedStatue_debrisOnDeath" ],
 	"boostType": "ABILITY_MISC"
 },
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "animatedStatue_stone",
-	"script": "figures.animatedStone",
-	"invalidatesSkin": true
-},
+{ "modId": "wildermyth-drauven-pcs", "id": "animatedStatue_metal" },
+{ "modId": "wildermyth-drauven-pcs", "id": "animatedStatue_stone" },
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_guerilla",

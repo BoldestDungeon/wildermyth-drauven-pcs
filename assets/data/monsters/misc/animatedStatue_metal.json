@@ -1,9 +1,9 @@
 {
-"id": "animatedStatue_stone",
+"id": "animatedStatue_metal",
 "modId": "wildermyth-drauven-pcs",
 "notes": "Needs weapon definition for attacks ; needs stealthy aspect?",
 "aspects": [
-	"animatedStatue_stone",
+	"animatedStatue_metal",
 	"monstrous",
 	"mobileMonster",
 	"monsterCanSearch",
@@ -16,7 +16,7 @@
 	"revertToStatue",
 	"animatedStatue_debrisOnDeath",
 	"scenery",
-	"rock"
+	"metal"
 ],
 "stats": {
 	"DODGE": "30",
@@ -33,10 +33,10 @@
 	"PERCEPTION": "10"
 },
 "scale": [ "((2+(HEALTH/5))*[0.95,1])/3", "((2+(HEALTH/5))*[0.95,1])/3" ],
-"baseColor": [ "[0.9,1.1]", "[0.9,1.1]", "[0.9,1.1]" ],
+"baseColor": [ "[1.1,1.3]", "[1.1,1.3]", "[0.8,1]" ],
 "skin": [
 	{
-		"image": [ "misc/animatedStatue_stump_stone" ]
+		"image": [ "misc/animatedStatue_stump_metal" ]
 	}
 ]
 }
