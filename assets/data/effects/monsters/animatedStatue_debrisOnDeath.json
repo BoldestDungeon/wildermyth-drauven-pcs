@@ -1,0 +1,46 @@
+{
+"id": "animatedStatue_debrisOnDeath",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "monsters/animatedStatue_debrisOnDeath",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "ENTITY_REMOVED",
+"targets": [
+	{
+		"template": "ANY_SELF",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "INJURY",
+		"b": "HEALTH"
+	},
+	{
+		"role": "target",
+		"template": "TILE",
+		"choose": "RANDOM_HALF",
+		"range": "1.6",
+		"tileFilter": "floor"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"attackAnimationType": "none",
+		"particles": [
+			{
+				"script": "animatedStatueDebrisTrail",
+				"setPosition": "self",
+				"setPosition2": "target"
+			},
+			{ "script": "animatedStatueDebrisBurst", "setPosition": "target", "delay": 0.4 }
+		],
+		"audioOverride": { "attackStartCue": "Characters/Gorgons/corruptedGroundLand" },
+		"always": {
+			"class": "Spawn",
+			"target": "target",
+			"modifyTerrain": "makeWalkableAndCreateDebris"
+		}
+	}
+]
+}
