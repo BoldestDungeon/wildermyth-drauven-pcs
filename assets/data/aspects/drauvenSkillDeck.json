@@ -153,6 +153,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_battlecrafting_upgrade",
+	"effects": [ "drauven_pc_animateStatue" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
