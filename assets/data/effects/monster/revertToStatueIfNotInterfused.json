@@ -14,20 +14,9 @@
 "targets": [
 	{
 		"template": "SELF",
-		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
-		"missionFeedback": { "orientTo": "target" }
-	},
-	{
-		"template": "MELEE_WEAPON",
-		"aspects": [ "weapon", "MAIN_HAND", "melee" ]
-	},
-	{
-		"template": "ADJACENT_ENEMY",
-		"showAnyway": true,
-		"alwaysSelect": true,
-		"aspects": [ "HOSTILE_TARGET", "alive" ],
-		"range": "weapon.weaponMaxRange+self.BONUS_RANGE",
-		"lineOfSight": "LIVE_ENEMIES"
+		"aspectValues": [
+			{ "id": "interfusedWithHuman", "forbidden": true }
+		]
 	},
 	{
 		"role": "targetTile",
@@ -36,7 +25,6 @@
 		"scoreFunction": "1",
 		"scoreThreshold": "0",
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
-		"relativeTo": "target",
 		"range": "0.9",
 		"tileFilter": "forbidSceneryAllowPits",
 		"tileFilterRange": "1"
@@ -45,72 +33,30 @@
 "outcomes": [
 	{
 		"class": "AttackRoll",
-		"defenseRollTags": [ "melee" ],
-		"attackStrength": "self.MELEE_ACCURACY",
+		"defender": "self",
 		"wield": "fromWeapon",
 		"applyCover": true,
-		"onHit": {
+		"always": {
 			"class": "DoAll",
 			"outcomes": [
 				{
-					"class": "Damage",
-					"amount": "attacker.PHYSICAL_DAMAGE_BONUS+weapon.weaponDamage",
-					"flankingBonusDamage": "weapon.weaponFlankingDamageBonus",
-					"shred": "weapon.weaponShred",
-					"pierce": "0"
-				},
-				{
-					"class": "Test",
-					"value": "target.INJURY",
-					"threshold": "target.HEALTH",
-					"onPass": {
-						"class": "DoAll",
-						"outcomes": [
-							{
-								"class": "IfRolesArePresent",
-								"rolesArePresent": [ "targetTile" ],
-								"then": {
-									"class": "DoAll",
-									"outcomes": [
-										{
-											"class": "Animate",
-											"target": "self",
-											"particles": { "script": "TreeSpawn", "setPosition": "targetTile" }
-										},
-										{
-											"class": "Animate",
-											"target": "self",
-											"particles": { "script": "LeafExplosion", "setPosition": "targetTile" }
-										},
-										{
-											"class": "Spawn",
-											"target": "targetTile",
-											"addRole": "scenery",
-											"modifyTerrain": "setToBlocked",
-											"ignoreBlockingEntities": [ "target" ],
-											"forceSpawn": true,
-											"createEntity": {
-												"query": {
-													"type": "SCENERY",
-													"tags": [ "arches" ],
-													"coordinates": "targetTile"
-												},
-												"setLocation": true
-											}
-										}
-									]
-								}
-							}
-						]
+					"class": "Spawn",
+					"target": "targetTile",
+					"addRole": "scenery",
+					"modifyTerrain": "setToBlocked",
+					"ignoreBlockingEntities": [ "self" ],
+					"forceSpawn": true,
+					"createEntity": {
+						"query": {
+							"type": "SCENERY",
+							"tags": [ "arches" ],
+							"coordinates": "targetTile"
+						},
+						"setLocation": true
 					}
-				}
+				},
+				{ "class": "Delete" }
 			]
-		},
-		"onHitCover": {
-			"class": "Damage",
-			"amount": "max(1,((attacker.PHYSICAL_DAMAGE_BONUS+weapon.weaponDamage)-2))",
-			"shred": "weapon.weaponShred+1",
-			"weapon": null
 		}
 	}
 ]

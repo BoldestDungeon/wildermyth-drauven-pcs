@@ -74,7 +74,12 @@
 	"effects": [
 		"alsoAddParameter|drauven_pc_calcify|_ENTITY_",
 		"alsoRemoveParameter|drauven_pc_calcify|_ENTITY_"
-	],
+	]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "revertToStatue",
+	"effects": [ "revertToStatueIfNotInterfused" ],
 	"importance": -1
 }
 ]
