@@ -26,8 +26,7 @@
 		"scoreThreshold": "0",
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
 		"range": "0.9",
-		"tileFilter": "forbidSceneryAllowPits",
-		"tileFilterRange": "1"
+		"tileFilter": "validMoveEnd"
 	}
 ],
 "outcomes": [

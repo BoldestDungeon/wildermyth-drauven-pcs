@@ -1,0 +1,16 @@
+[
+{
+	"id": "figures.animatedStone",
+	"loop": true,
+	"sequences": [
+		{
+			"duration": 5000,
+			"events": [
+				{
+					"useColorFilter": { "filter": "turnedToStone", "strength": "1" }
+				}
+			]
+		}
+	]
+}
+]

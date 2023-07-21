@@ -1,6 +1,12 @@
 [
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "animatedStatue_stone",
+	"script": "figures.animatedStone",
+	"invalidatesSkin": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_guerilla",
 	"effects": [ "monsterDrauvenShred", "hunterSilkstep" ],
 	"boostType": "ABILITY_MISC"
