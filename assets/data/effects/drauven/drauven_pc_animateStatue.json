@@ -53,8 +53,7 @@
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "TreeSpawn", "setPosition": "focus" },
-			{ "script": "LeafExplosion", "setPosition": "focus" }
+			{ "script": "StatueExplosion", "setPosition": "focus" }
 		],
 		"audioOverride": { "attackStartCue": "" },
 		"flankMarkOrigin": "focus",
