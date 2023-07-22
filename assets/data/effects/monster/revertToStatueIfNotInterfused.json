@@ -38,20 +38,88 @@
 			"class": "DoAll",
 			"outcomes": [
 				{
-					"class": "Spawn",
-					"target": "targetTile",
-					"addRole": "scenery",
-					"modifyTerrain": "setToBlocked",
-					"ignoreBlockingEntities": [ "self" ],
-					"forceSpawn": true,
-					"createEntity": {
-						"query": {
-							"type": "SCENERY",
-							"tags": [ "animatedStatue_stump_stone" ],
-							"coordinates": "targetTile"
+					"class": "DoFirstValid",
+					"outcomes": [
+						{
+							"class": "Test",
+							"value": "self.animatedStatue_stone",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "targetTile",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"ignoreBlockingEntities": [ "self" ],
+								"forceSpawn": true,
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "animatedStatue_stump_stone" ],
+										"coordinates": "targetTile"
+									},
+									"setLocation": true
+								}
+							}
 						},
-						"setLocation": true
-					}
+						{
+							"class": "Test",
+							"value": "self.animatedStatue_bone",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "targetTile",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"ignoreBlockingEntities": [ "self" ],
+								"forceSpawn": true,
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "animatedStatue_stump_bone" ],
+										"coordinates": "targetTile"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Test",
+							"value": "self.animatedStatue_metal",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "targetTile",
+								"addRole": "scenery",
+								"modifyTerrain": "setToBlocked",
+								"ignoreBlockingEntities": [ "self" ],
+								"forceSpawn": true,
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "animatedStatue_stump_metal" ],
+										"coordinates": "targetTile"
+									},
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Spawn",
+							"target": "targetTile",
+							"addRole": "scenery",
+							"modifyTerrain": "setToBlocked",
+							"ignoreBlockingEntities": [ "self" ],
+							"forceSpawn": true,
+							"createEntity": {
+								"query": {
+									"type": "SCENERY",
+									"tags": [ "animatedStatue_stump_stone" ],
+									"coordinates": "targetTile"
+								},
+								"setLocation": true
+							}
+						}
+					]
 				},
 				{ "class": "Delete" }
 			]
