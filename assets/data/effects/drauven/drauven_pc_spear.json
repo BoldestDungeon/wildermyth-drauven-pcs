@@ -99,6 +99,13 @@
 		"defenseRollTags": [ "range" ],
 		"attackStrength": "self.RANGE_ACCURACY",
 		"separateRolls": true,
+		"always": {
+			"class": "Damage",
+			"target": "source",
+			"amount": "1",
+			"type": "TRUE",
+			"showInTooltip": false
+		},
 		"onHit": {
 			"class": "DoAll",
 			"outcomes": [
