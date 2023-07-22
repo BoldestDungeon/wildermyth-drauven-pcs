@@ -83,7 +83,14 @@
 	"effects": [
 		"alsoAddParameter|drauven_pc_calcify|_ENTITY_",
 		"alsoRemoveParameter|drauven_pc_calcify|_ENTITY_"
-	]
+	],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "minion",
+	"effects": [ "defaultMoveFeedback" ],
+	"voice": "default"
 },
 {
 	"modId": "wildermyth-drauven-pcs",
