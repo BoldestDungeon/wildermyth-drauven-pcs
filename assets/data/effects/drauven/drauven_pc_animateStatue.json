@@ -67,13 +67,60 @@
 					"modifyTerrain": "makeWalkableAndCreateDebris"
 				},
 				{
-					"class": "Spawn",
-					"target": "focus",
-					"addRole": "scenery",
-					"createEntity": {
-						"query": { "baseTag": "animatedStatue_stone", "coordinates": "focus" },
-						"setLocation": true
-					}
+					"class": "DoFirstValid",
+					"outcomes": [
+						{
+							"class": "Test",
+							"value": "source.rock",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"createEntity": {
+									"query": { "baseTag": "animatedStatue_stone", "coordinates": "focus" },
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Test",
+							"value": "source.bone",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"createEntity": {
+									"query": { "baseTag": "animatedStatue_bone", "coordinates": "focus" },
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Test",
+							"value": "source.metal",
+							"threshold": "1",
+							"onPass": {
+								"class": "Spawn",
+								"target": "focus",
+								"addRole": "scenery",
+								"createEntity": {
+									"query": { "baseTag": "animatedStatue_metal", "coordinates": "focus" },
+									"setLocation": true
+								}
+							}
+						},
+						{
+							"class": "Spawn",
+							"target": "focus",
+							"addRole": "scenery",
+							"createEntity": {
+								"query": { "baseTag": "animatedStatue_stone", "coordinates": "focus" },
+								"setLocation": true
+							}
+						}
+					]
 				},
 				{ "class": "ModifyStats", "target": "scenery", "value": "source.HEALTH-HEALTH" },
 				{
