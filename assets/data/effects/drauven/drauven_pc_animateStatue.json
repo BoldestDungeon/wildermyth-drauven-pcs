@@ -72,28 +72,35 @@
 					"addRole": "scenery",
 					"createEntity": {
 						"query": { "baseTag": "animatedStatue_stone", "coordinates": "focus" },
-						"additionalOutcome": {
-							"class": "DoAll",
-							"outcomes": [
-								{ "class": "ModifyStats", "value": "source.HEALTH-HEALTH" },
-								{ "class": "ModifyStats", "stat": "ARMOR", "value": "source.ARMOR-ARMOR" },
-								{ "class": "ModifyStats", "stat": "WARDING", "value": "source.WARDING-WARDING" },
-								{
-									"class": "ModifyStats",
-									"stat": "MELEE_ACCURACY",
-									"value": "self.RANGE_ACCURACY-MELEE_ACCURACY"
-								},
-								{
-									"class": "ModifyStats",
-									"stat": "PHYSICAL_DAMAGE_BONUS",
-									"value": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))"
-								},
-								{ "class": "ModifyStats", "stat": "ACTIONS", "value": "2" }
-							]
-						},
 						"setLocation": true
 					}
 				},
+				{ "class": "ModifyStats", "target": "scenery", "value": "source.HEALTH-HEALTH" },
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "ARMOR",
+					"value": "source.ARMOR-ARMOR"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "WARDING",
+					"value": "source.WARDING-WARDING"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "MELEE_ACCURACY",
+					"value": "self.RANGE_ACCURACY-MELEE_ACCURACY"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "PHYSICAL_DAMAGE_BONUS",
+					"value": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))"
+				},
+				{ "class": "ModifyStats", "target": "scenery", "stat": "ACTIONS", "value": "2" },
 				{ "class": "Delete", "target": "source" },
 				{
 					"class": "Animate",
