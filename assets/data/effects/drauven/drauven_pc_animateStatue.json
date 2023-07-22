@@ -121,7 +121,11 @@
 						}
 					]
 				},
-				{ "class": "ModifyStats", "target": "scenery", "value": "source.HEALTH-HEALTH" },
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"value": "(2+(ceil(((self.POTENCY+self.SPELL_DAMAGE)+source.HEALTH))/2))-HEALTH"
+				},
 				{
 					"class": "ModifyStats",
 					"target": "scenery",
