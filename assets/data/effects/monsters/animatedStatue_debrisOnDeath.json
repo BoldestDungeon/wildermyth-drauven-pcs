@@ -35,7 +35,7 @@
 			},
 			{ "script": "animatedStatueDebrisBurst", "setPosition": "target", "delay": 0.4 }
 		],
-		"audioOverride": { "attackStartCue": "Characters/Gorgons/corruptedGroundLand" },
+		"audioOverride": { "attackStartCue": "Characters/Default/Ability_InterfuseRock" },
 		"always": {
 			"class": "Spawn",
 			"target": "target",
