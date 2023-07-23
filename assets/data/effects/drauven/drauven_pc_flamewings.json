@@ -45,7 +45,7 @@
 		},
 		"relativeTo": "source",
 		"minRange": "0.9",
-		"range": "3.1+self.BONUS_RANGE",
+		"range": "3.7+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floorForbidAlly"
 	},
@@ -58,9 +58,8 @@
 		"manifold": {
 			"from": "source",
 			"to": "focus",
-			"thickness": [ "1", "1" ],
-			"excludeSource": true,
-			"distanceInDirection": "3.1+self.BONUS_RANGE"
+			"thickness": [ "1", "5.1+(self.BONUS_RANGE/2)" ],
+			"distanceInDirection": "3.7+self.BONUS_RANGE"
 		},
 		"relativeTo": "source",
 		"range": null,
@@ -79,8 +78,8 @@
 		"manifold": {
 			"from": "source",
 			"to": "focus",
-			"thickness": [ "1", "5" ],
-			"distanceInDirection": "3.1+self.BONUS_RANGE"
+			"thickness": [ "1", "5.1+(self.BONUS_RANGE/2)" ],
+			"distanceInDirection": "3.7+self.BONUS_RANGE"
 		},
 		"relativeTo": "source",
 		"range": null,
