@@ -215,6 +215,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_earthsong_upgrade",
+	"effects": [ "drauven_pc_unearth" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {

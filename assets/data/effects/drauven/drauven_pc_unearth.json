@@ -1,0 +1,102 @@
+{
+"id": "drauven_pc_unearth",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_unearth",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "sneaky", "drauven_pc_unearth" ]
+},
+"type": "ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "wrendingVines",
+	"category": "neutralAbility",
+	"priority": "3",
+	"extraUI": { "overrideRangeShown": "5+self.BONUS_RANGE" },
+	"overrideOverlayType": "interfuse"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints" },
+		"missionFeedback": { "orientTo": "focus" }
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"hoverScript": "figures.directionalTileHoverHelpful",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
+			"feedbackSource": "self"
+		},
+		"range": "4.6+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES",
+		"tileFilter": "validScenerySpawnLocation"
+	},
+	{
+		"template": "TILE",
+		"choose": "ONE_RANDOM_TRUE",
+		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_HOVER" },
+		"relativeTo": "targetTile",
+		"range": "1.6",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "validScenerySpawnLocation"
+	},
+	{
+		"role": "site",
+		"template": "TILE",
+		"choose": "ANY",
+		"fromRoles": [ "targetTile", "focus" ],
+		"range": null
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"intermediateRole": "targetTile",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"particles": [
+			{ "script": "TreeSpawn", "setPosition": "site" },
+			{ "script": "LeafExplosion", "setPosition": "site" }
+		],
+		"audioOverride": { "attackStartCue": "Characters/Default/Ability_Arches" },
+		"markForFlanking": "never",
+		"flankingBoostsAttackRoll": false,
+		"separateRolls": true,
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "ForEach",
+					"fromRoles": [ "site" ],
+					"toRole": "target",
+					"outcome": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Spawn",
+								"target": "target",
+								"modifyTerrain": "setToBlocked",
+								"createEntity": {
+									"query": {
+										"type": "SCENERY",
+										"tags": [ "rootsAndShoots" ],
+										"coordinates": "target"
+									},
+									"setLocation": true
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+]
+}
