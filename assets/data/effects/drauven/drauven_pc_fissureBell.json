@@ -27,6 +27,7 @@
 		"template": "ANY",
 		"type": "SCENERY",
 		"choose": "ANY",
+		"showAnyway": true,
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
 			"hoverScript": "figures.abilitySelectHover",
@@ -43,6 +44,7 @@
 		"template": "ANY",
 		"type": "UNIT",
 		"choose": "ANY",
+		"showAnyway": true,
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
 			"hoverScript": "figures.abilitySelectHover",
@@ -57,6 +59,15 @@
 	{
 		"role": "source",
 		"template": "ANY",
+		"showAnyway": true,
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
 		"fromRoles": [ "site", "site2" ],
 		"relationship": "interfusedWithEntity"
 	},
