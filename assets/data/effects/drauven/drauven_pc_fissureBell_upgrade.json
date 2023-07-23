@@ -100,7 +100,10 @@
 		"manifold": {
 			"from": "source",
 			"to": "focus",
-			"thickness": [ "1", "1" ],
+			"thickness": [
+				"1+(self.drauvenDeck_mystic_earthsong_upgrade/2)",
+				"1+(self.drauvenDeck_mystic_earthsong_upgrade*2)"
+			],
 			"excludeSource": true
 		},
 		"relativeTo": "source",
@@ -115,7 +118,10 @@
 		"manifold": {
 			"from": "source",
 			"to": "focus",
-			"thickness": [ "1", "1" ],
+			"thickness": [
+				"1+(self.drauvenDeck_mystic_earthsong_upgrade/2)",
+				"1+(self.drauvenDeck_mystic_earthsong_upgrade*2)"
+			],
 			"excludeSource": true
 		},
 		"relativeTo": "source",
@@ -133,7 +139,10 @@
 		"manifold": {
 			"from": "source",
 			"to": "focus",
-			"thickness": [ "1", "1" ],
+			"thickness": [
+				"1+(self.drauvenDeck_mystic_earthsong_upgrade/2)",
+				"1+(self.drauvenDeck_mystic_earthsong_upgrade*2)"
+			],
 			"excludeSource": true
 		},
 		"relativeTo": "source",
