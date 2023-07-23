@@ -124,13 +124,13 @@
 				{
 					"class": "ModifyStats",
 					"target": "scenery",
-					"value": "(2+(ceil(((self.POTENCY+self.SPELL_DAMAGE)+source.HEALTH))/2))-HEALTH"
+					"value": "(2+(ceil((((self.POTENCY+self.SPELL_DAMAGE)+source.HEALTH)-source.INJURY))/2))-HEALTH"
 				},
 				{
 					"class": "ModifyStats",
 					"target": "scenery",
 					"stat": "ARMOR",
-					"value": "source.ARMOR-ARMOR"
+					"value": "(source.ARMOR-source.SHRED)-ARMOR"
 				},
 				{
 					"class": "ModifyStats",
@@ -148,6 +148,12 @@
 					"class": "ModifyStats",
 					"target": "scenery",
 					"stat": "PHYSICAL_DAMAGE_BONUS",
+					"value": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "POTENCY",
 					"value": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))"
 				},
 				{ "class": "ModifyStats", "target": "scenery", "stat": "ACTIONS", "value": "2" },

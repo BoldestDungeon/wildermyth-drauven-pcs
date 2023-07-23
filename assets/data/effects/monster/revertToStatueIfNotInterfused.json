@@ -121,6 +121,11 @@
 						}
 					]
 				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"value": "(((self.HEALTH-2)-self.POTENCY)*2)-HEALTH"
+				},
 				{ "class": "Delete" }
 			]
 		}
