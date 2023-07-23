@@ -65,7 +65,7 @@
 			{ "script": "TreeSpawn", "setPosition": "site" },
 			{ "script": "LeafExplosion", "setPosition": "site" }
 		],
-		"audioOverride": { "attackStartCue": "Characters/Default/Ability_Arches" },
+		"audioOverride": { "attackStartCue": "Characters/DefaultHuman/Ability_Rock" },
 		"markForFlanking": "never",
 		"flankingBoostsAttackRoll": false,
 		"separateRolls": true,
@@ -86,7 +86,7 @@
 								"createEntity": {
 									"query": {
 										"type": "SCENERY",
-										"tags": [ "rootsAndShoots" ],
+										"tags": [ "rockAbilitySpawn" ],
 										"coordinates": "target"
 									},
 									"setLocation": true
