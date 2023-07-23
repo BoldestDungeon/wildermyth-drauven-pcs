@@ -36,7 +36,7 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspectsOneOf": [ "bone", "rock", "stoneScenery" ]
+		"aspectsOneOf": [ "bone", "rock" ]
 	},
 	{
 		"role": "site2",
@@ -52,7 +52,7 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspectsOneOf": [ "bone", "rock", "stoneScenery" ]
+		"aspectsOneOf": [ "bone", "rock" ]
 	},
 	{
 		"role": "source",
