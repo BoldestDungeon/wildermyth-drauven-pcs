@@ -62,8 +62,8 @@
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "TreeSpawn", "setPosition": "site" },
-			{ "script": "LeafExplosion", "setPosition": "site" }
+			{ "script": "FabricateSpawn", "setPosition": "site" },
+			{ "script": "StatueExplosion", "setPosition": "site" }
 		],
 		"audioOverride": { "attackStartCue": "Characters/DefaultHuman/Ability_Rock" },
 		"markForFlanking": "never",
