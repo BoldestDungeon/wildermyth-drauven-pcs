@@ -126,6 +126,18 @@
 					"target": "scenery",
 					"value": "(((self.HEALTH-2)-self.POTENCY)*2)-HEALTH"
 				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "ARMOR",
+					"value": "(self.ARMOR-self.SHRED)-ARMOR"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "WARDING",
+					"value": "self.WARDING-WARDING"
+				},
 				{ "class": "Delete" }
 			]
 		}
