@@ -23,9 +23,10 @@
 		"missionFeedback": { "orientTo": "source" }
 	},
 	{
-		"role": "source",
+		"role": "site",
 		"template": "ANY",
 		"type": "SCENERY",
+		"choose": "ANY",
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
 			"hoverScript": "figures.abilitySelectHover",
@@ -35,7 +36,29 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspectsOneOf": [ "bone", "rock", "statue", "stoneScenery" ]
+		"aspectsOneOf": [ "bone", "rock", "stoneScenery" ]
+	},
+	{
+		"role": "site2",
+		"template": "ANY",
+		"type": "UNIT",
+		"choose": "ANY",
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspectsOneOf": [ "bone", "rock", "stoneScenery" ]
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"fromRoles": [ "site", "site2" ],
+		"relationship": "interfusedWithEntity"
 	},
 	{
 		"template": "TILE",
