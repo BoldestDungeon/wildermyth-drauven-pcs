@@ -138,6 +138,12 @@
 					"stat": "WARDING",
 					"value": "self.WARDING-WARDING"
 				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "INJURY",
+					"value": "floor((self.INJURY*(scenery.HEALTH/self.HEALTH)))"
+				},
 				{ "class": "Delete" }
 			]
 		}
