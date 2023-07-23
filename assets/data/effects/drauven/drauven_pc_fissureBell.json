@@ -155,15 +155,15 @@
 				{
 					"class": "Damage",
 					"target": "source",
-					"amount": "2",
+					"amount": "3",
 					"type": "TRUE",
 					"showInTooltip": false
 				},
 				{
 					"class": "Damage",
 					"target": "scenery",
-					"amount": "(1d2+self.SPELL_DAMAGE)+self.POTENCY",
-					"shred": "2",
+					"amount": "(1d2-1)+(self.POTENCY+self.SPELL_DAMAGE)",
+					"shred": "1",
 					"pierce": "0",
 					"showInTooltip": false
 				}
