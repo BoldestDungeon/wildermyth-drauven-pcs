@@ -174,8 +174,8 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1d2+self.SPELL_DAMAGE)+self.POTENCY",
-					"shred": "2",
+					"amount": "(1d2-1)+(self.POTENCY+self.SPELL_DAMAGE)",
+					"shred": "1",
 					"type": "MAGIC"
 				}
 			]
