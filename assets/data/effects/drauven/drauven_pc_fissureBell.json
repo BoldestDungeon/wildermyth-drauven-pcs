@@ -59,7 +59,6 @@
 	{
 		"role": "source",
 		"template": "ANY",
-		"showAnyway": true,
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
 			"hoverScript": "figures.abilitySelectHover",
@@ -69,7 +68,8 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"fromRoles": [ "site", "site2" ],
-		"relationship": "interfusedWithEntity"
+		"relationship": "interfusedWithEntity",
+		"aspectsOneOf": [ "bone", "rock" ]
 	},
 	{
 		"template": "TILE",
@@ -102,8 +102,7 @@
 			"from": "source",
 			"to": "focus",
 			"thickness": [ "1", "1" ],
-			"excludeSource": true,
-			"distanceInDirection": "4.6+self.BONUS_RANGE"
+			"excludeSource": true
 		},
 		"relativeTo": "source",
 		"range": "4.6+self.BONUS_RANGE",
@@ -118,8 +117,7 @@
 			"from": "source",
 			"to": "focus",
 			"thickness": [ "1", "1" ],
-			"excludeSource": true,
-			"distanceInDirection": "4.6+self.BONUS_RANGE"
+			"excludeSource": true
 		},
 		"relativeTo": "source",
 		"notAlreadyMatchedAs": [ "source" ],
@@ -137,8 +135,7 @@
 			"from": "source",
 			"to": "focus",
 			"thickness": [ "1", "1" ],
-			"excludeSource": true,
-			"distanceInDirection": "4.6+self.BONUS_RANGE"
+			"excludeSource": true
 		},
 		"relativeTo": "source",
 		"range": "4.6+self.BONUS_RANGE",
