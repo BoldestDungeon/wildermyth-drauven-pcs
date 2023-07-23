@@ -202,7 +202,11 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_earthsong",
-	"effects": [ "advancedRecipe_treecall", "drauven_pc_rockShield" ],
+	"effects": [
+		"advancedRecipe_treecall",
+		"drauven_pc_rockShield",
+		"drauven_pc_fissureBell_upgrade"
+	],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],

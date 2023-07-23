@@ -1,10 +1,10 @@
 {
-"id": "drauven_pc_fissureBell",
+"id": "drauven_pc_fissureBell_upgrade",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_fissureBell",
+	"sourceFile": "drauven/drauven_pc_fissureBell_upgrade",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "Hero Of Wind",
+	"author": "psionusoid",
 	"tags": [ "interfusionRecipe" ]
 },
 "type": "ABILITY",
@@ -12,7 +12,7 @@
 "ability": {
 	"icon": "lightning",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeDiscus", "mysticRecipeBoneSpear" ],
+	"strictlyBetterThan": [ "mysticRecipeDiscus", "mysticRecipeBoneSpear", "drauven_pc_fissureBell" ],
 	"priority": "1"
 },
 "targets": [
@@ -169,8 +169,8 @@
 				{
 					"class": "Damage",
 					"target": "scenery",
-					"amount": "(1d2-1)+(self.POTENCY+self.SPELL_DAMAGE)",
-					"shred": "1",
+					"amount": "1d2+(self.POTENCY+self.SPELL_DAMAGE)",
+					"shred": "2",
 					"pierce": "0",
 					"showInTooltip": false
 				}
@@ -181,8 +181,8 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1d2-1)+(self.POTENCY+self.SPELL_DAMAGE)",
-					"shred": "1",
+					"amount": "1d2+(self.POTENCY+self.SPELL_DAMAGE)",
+					"shred": "2",
 					"type": "MAGIC"
 				}
 			]
