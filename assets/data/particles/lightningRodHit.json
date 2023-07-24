@@ -94,6 +94,31 @@
 						"class": "SetPosition",
 						"x": "lerp(e.x,e.dx,0.5)",
 						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-2",
+						"theta": "0"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "3", "g": "3", "b": "3", "a": "1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "Once",
+		"when": "0",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.3",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
 						"z": "-3",
 						"theta": "0"
 					},
@@ -119,7 +144,32 @@
 						"class": "SetPosition",
 						"x": "lerp(e.x,e.dx,0.5)",
 						"y": "lerp(e.y,e.dy,0.5)",
-						"z": "-2",
+						"z": "-4",
+						"theta": "0"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "3", "g": "3", "b": "3", "a": "1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "Once",
+		"when": "0",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.3",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-5",
 						"theta": "0"
 					},
 					{
@@ -144,7 +194,157 @@
 						"class": "SetPosition",
 						"x": "lerp(e.x,e.dx,0.5)",
 						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-0.3",
+						"theta": "0"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "2", "g": "2", "b": "2", "a": "0.1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "Once",
+		"when": "0.1",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.2",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-1",
+						"theta": "0"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "2", "g": "2", "b": "2", "a": "0.1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "Once",
+		"when": "0.1",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.2",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-1.5",
+						"theta": "0"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "2", "g": "2", "b": "2", "a": "0.1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "Once",
+		"when": "0.1",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.3",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
 						"z": "-2",
+						"theta": "0"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "2", "g": "2", "b": "2", "a": "0.1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "Once",
+		"when": "0.1",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.3",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-3",
+						"theta": "0"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "2", "g": "2", "b": "2", "a": "0.1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "Once",
+		"when": "0.1",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.3",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-4",
+						"theta": "0"
+					},
+					{
+						"class": "SetColor",
+						"color": { "r": "2", "g": "2", "b": "2", "a": "0.1" }
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "Once",
+		"when": "0.1",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"size": "0.3",
+				"killTime": "0.25",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "lerp(e.x,e.dx,0.5)",
+						"y": "lerp(e.y,e.dy,0.5)",
+						"z": "-5",
 						"theta": "0"
 					},
 					{
