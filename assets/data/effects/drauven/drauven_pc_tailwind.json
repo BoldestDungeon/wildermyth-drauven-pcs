@@ -13,7 +13,8 @@
 "targets": [
 	{
 		"template": "SELF",
-		"cost": { "class": "ActionPoints", "actionPoints": "free" }
+		"cost": { "class": "ActionPoints", "actionPoints": "free" },
+		"missionFeedback": { "orientTo": "hero" }
 	},
 	{
 		"role": "hero",
@@ -37,8 +38,7 @@
 	{
 		"class": "AttackRoll",
 		"defender": null,
-		"attackAnimationType": "none",
-		"stopBlockingTime": "noBlocking",
+		"showAbilityName": "ifEnemy",
 		"particles": [
 			{ "script": "scaldingSteam", "setPosition": "hero" }
 		],
