@@ -82,7 +82,7 @@
 			"distanceInDirection": "3.7+self.BONUS_RANGE"
 		},
 		"relativeTo": "source",
-		"range": null,
+		"range": "3.7+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	}
