@@ -10,8 +10,8 @@
 "type": "ABILITY",
 "verb": "MANEUVER",
 "ability": {
-	"icon": "rockShield",
-	"category": "movement",
+	"icon": "bard",
+	"category": "research",
 	"priority": "1",
 	"overrideOverlayType": "ability"
 },
@@ -34,7 +34,8 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspects": [ "rock" ]
+		"aspects": null,
+		"aspectsOneOf": [ "book", "ruins" ]
 	},
 	{
 		"template": "ANY",
