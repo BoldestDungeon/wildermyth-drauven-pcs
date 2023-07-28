@@ -1,0 +1,92 @@
+{
+"id": "drauven_pc_songsOfThePast",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_songsOfThePast",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "interfusionRecipe", "sneaky" ]
+},
+"type": "ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "rockShield",
+	"category": "movement",
+	"priority": "1",
+	"overrideOverlayType": "ability"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints" },
+		"missionFeedback": { "orientTo": "source" }
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"type": "SCENERY",
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "rock" ]
+	},
+	{
+		"template": "ANY",
+		"type": "UNIT",
+		"alwaysSelect": true,
+		"missionFeedback": {
+			"orientTo": "source",
+			"hoverScript": "figures.directionalHelpfulHover",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+			"feedbackSource": "source"
+		},
+		"aspects": [ "alive", "ALLY" ],
+		"range": "self.PERCEPTION"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"intermediateRole": "target",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"particles": [
+			{ "script": "RockGroundExplosion2", "setPosition": "target" },
+			{ "script": "PopupDefense", "setPosition": "target" },
+			{ "script": "smokeBlast", "setPosition": "target" }
+		],
+		"audioOverride": { "attackInterfusionStartCue": "Characters/DefaultHuman/Ability_Rock" },
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"target": "target",
+					"addAspects": [
+						{
+							"id": "tempShield_rockShield",
+							"value": "3+(2*self.mysticDeck_soulDefense_upgrade)"
+						}
+					]
+				},
+				{
+					"class": "Damage",
+					"target": "source",
+					"amount": "2",
+					"type": "TRUE",
+					"showInTooltip": false
+				}
+			]
+		}
+	}
+]
+}
