@@ -1,0 +1,93 @@
+{
+"id": "setupInterfusedScenery",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "mystic/setupInterfusedScenery",
+	"modId": "wildermyth-drauven-pcs"
+},
+"type": "ASPECT_ADDED",
+"targets": [
+	{ "template": "SELF_SCENERY", "range": "0.1" },
+	{ "template": "ANY", "relationship": "interfusedWithMystic" }
+],
+"outcomes": [
+	{ "class": "ChangeControl", "becomeAllyOf": "target" },
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "interfusedScenery", "value": "1" },
+			{ "id": "sensor", "value": "1" }
+		]
+	},
+	{
+		"class": "Test",
+		"STUB": "This logic really belongs to the Briar ability, but there's no ON_INTERFUSE hook to hook it to. Maybe there should be? Hm.",
+		"value": "(target.mysticDeck_briar+self.plant)+(2*target.mysticDeck_soulDefense)",
+		"threshold": "2",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"target": "self",
+					"addAspects": [
+						{ "id": "canWallWithAllies", "value": "1", "merge": "max" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "target.mysticDeck_unitedFury",
+		"threshold": "1",
+		"onPass": {
+			"class": "Test",
+			"value": "target.mysticDeck_unitedFury_upgrade",
+			"threshold": "1",
+			"onPass": {
+				"class": "Aspects",
+				"target": "self",
+				"addAspects": [
+					{ "id": "unitedFurySceneryUpgrade", "value": "1", "merge": "max" }
+				]
+			},
+			"onFail": {
+				"class": "Aspects",
+				"target": "self",
+				"addAspects": [
+					{ "id": "unitedFuryScenery", "value": "1", "merge": "max" }
+				]
+			}
+		}
+	},
+	{
+		"class": "Test",
+		"value": "target.mysticDeck_humanist+self.mechanism",
+		"threshold": "2",
+		"onPass": {
+			"class": "Aspects",
+			"target": "self",
+			"addAspects": [
+				{ "id": "insidiousFilamentScenery", "value": "1", "merge": "max" }
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "target.interfusionPerceptionBonus",
+		"threshold": "1",
+		"onPass": {
+			"class": "Aspects",
+			"target": "self",
+			"addAspects": [
+				{
+					"id": "interfusedSceneryPerceptionBonus",
+					"value": "target.interfusionPerceptionBonus",
+					"merge": "replace"
+				}
+			]
+		}
+	}
+]
+}
