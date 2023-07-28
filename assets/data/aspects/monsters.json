@@ -16,5 +16,12 @@
 	"script": "figures.bloodedFerocity",
 	"importance": 1,
 	"showInTooltip": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_songInspirationScenery",
+	"effects": [ "drauven_pc_songInspirationRegion" ],
+	"boostType": "ADVANTAGE",
+	"importance": 1
 }
 ]

@@ -1,0 +1,79 @@
+{
+"id": "teardownPassiveInterfusionAspects|_ENTITY_",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "mystic/teardownPassiveInterfusionAspects",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Nate Austin"
+},
+"type": "ASPECT_REMOVED",
+"targets": [
+	{ "template": "SELF" },
+	{ "template": "ANY", "matchSpecial": "parameter1" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "self",
+		"addAspects": [
+			{
+				"id": "interfusedWithRock",
+				"value": "0",
+				"merge": "replace",
+				"inRelationTo": "target"
+			},
+			{
+				"id": "drauven_pc_interfusedWithRock",
+				"value": "0",
+				"merge": "replace",
+				"inRelationTo": "target"
+			},
+			{
+				"id": "soulsplittingConnection",
+				"value": "0",
+				"merge": "replace",
+				"inRelationTo": "target"
+			},
+			{
+				"id": "protectiveSometimesReflectsDamage",
+				"value": "0",
+				"merge": "replace",
+				"inRelationTo": "target"
+			},
+			{
+				"id": "mythmeld_interfusedWithStatue",
+				"value": "0",
+				"merge": "replace",
+				"inRelationTo": "target"
+			},
+			{
+				"id": "interfusedWithRock",
+				"value": "0",
+				"merge": "replace",
+				"inRelationTo": "target"
+			}
+		]
+	},
+	{
+		"class": "Aspects",
+		"target": "target",
+		"removeAspects": [
+			"unitedFuryScenery",
+			"unitedFurySceneryUpgrade",
+			"drauven_pc_songInspirationScenery"
+		]
+	},
+	{
+		"class": "Test",
+		"value": "self.mysticDeck_vigorflow_upgrade",
+		"threshold": "1",
+		"onPass": {
+			"class": "Aspects",
+			"target": "self",
+			"consumeAspects": [
+				{ "id": "vigorflowUpgradeBuff", "value": "1" }
+			]
+		}
+	}
+]
+}

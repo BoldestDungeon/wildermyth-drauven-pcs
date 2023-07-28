@@ -88,6 +88,18 @@
 				}
 			]
 		}
+	},
+	{
+		"class": "Test",
+		"value": "target.drauvenDeck_mystic_loremaster",
+		"threshold": "1",
+		"onPass": {
+			"class": "Aspects",
+			"target": "self",
+			"addAspects": [
+				{ "id": "drauven_pc_songInspirationScenery", "value": "1", "merge": "max" }
+			]
+		}
 	}
 ]
 }
