@@ -34,6 +34,7 @@
 	"effects": [
 		"drauven_pc_songInspirationRegion",
 		"alsoAddParameter|drauven_pc_songInspirationBuff|ALLY",
+		"alsoAddRemoveAspectAfterTurnStarts|drauven_pc_songInspirationSource|3",
 		"alsoAddRemoveAspectAfterTurnStartsParameter|drauven_pc_songInspirationBuff|ALLY|3"
 	],
 	"boostType": "ADVANTAGE",
