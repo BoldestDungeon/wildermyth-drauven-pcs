@@ -21,7 +21,8 @@
 	],
 	"priority": "1",
 	"onlyShowIfPossibleInCharacterSheet": true,
-	"showDescriptionInTooltip": true
+	"showDescriptionInTooltip": true,
+	"usesElementFromEquippedWeapon": true
 },
 "targets": [
 	{
@@ -100,7 +101,7 @@
 				},
 				{
 					"class": "Damage",
-					"amount": "(1d3+self.POTENCY)+self.SPELL_DAMAGE",
+					"amount": "1d2+(self.POTENCY+self.SPELL_DAMAGE)",
 					"useEquippedWeaponForStunt": true
 				},
 				{
