@@ -59,12 +59,7 @@
 		"intermediateRole": "target",
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
-		"particles": [
-			{ "script": "RockGroundExplosion2", "setPosition": "target" },
-			{ "script": "PopupDefense", "setPosition": "target" },
-			{ "script": "smokeBlast", "setPosition": "target" }
-		],
-		"audioOverride": { "attackInterfusionStartCue": "Characters/DefaultHuman/Ability_Rock" },
+		"audioOverride": { "attackInterfusionStartCue": "UI/statusEffectPositive" },
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
