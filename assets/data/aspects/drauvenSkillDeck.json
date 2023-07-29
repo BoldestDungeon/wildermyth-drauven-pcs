@@ -228,6 +228,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"interactionFeedback": [
+		{ "otherAspect": "book", "replaceBlurb": true },
 		{ "otherAspect": "statue", "replaceBlurb": true },
 		{ "otherAspect": "ruins", "replaceBlurb": true }
 	],
@@ -238,11 +239,6 @@
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_loremaster_upgrade",
 	"legacyAbilityChoice": true,
-	"interactionFeedback": [
-		{ "otherAspect": "book", "replaceBlurb": true },
-		{ "otherAspect": "statue", "replaceBlurb": true },
-		{ "otherAspect": "ruins", "replaceBlurb": true }
-	],
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
