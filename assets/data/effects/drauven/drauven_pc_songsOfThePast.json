@@ -62,6 +62,7 @@
 		"intermediateRole": "target",
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
+		"stopBlockingTime": "onHit",
 		"audioOverride": { "attackInterfusionStartCue": "UI/statusEffectPositive" },
 		"always": {
 			"class": "DoAll",
