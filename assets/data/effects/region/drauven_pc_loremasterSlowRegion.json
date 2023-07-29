@@ -1,0 +1,24 @@
+{
+"id": "drauven_pc_loremasterSlowRegion",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "region/drauven_pc_loremasterSlowRegion",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "REGION",
+"targets": [],
+"outcomes": [
+	{
+		"class": "MapRegion",
+		"region": {
+			"id": "drauven_pc_loremasterSlowRegion",
+			"exitCostOtherFaction": 1,
+			"feedbackType": "TRAPPED_TILE",
+			"tileFilter": "floorOrScenery"
+		},
+		"aura": "1.6+drauvenDeck_mystic_loremaster_upgrade",
+		"presence": true
+	}
+]
+}

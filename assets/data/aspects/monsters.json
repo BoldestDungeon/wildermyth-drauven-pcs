@@ -19,6 +19,13 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_loremasterSlowScenery",
+	"effects": [ "drauven_pc_loremasterSlowRegion" ],
+	"boostType": "ADVANTAGE",
+	"importance": 1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_songInspirationBuff|ALLY",
 	"stats": {
 		"MELEE_ACCURACY": 5,
