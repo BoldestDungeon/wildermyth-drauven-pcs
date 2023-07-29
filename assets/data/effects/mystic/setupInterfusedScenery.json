@@ -103,7 +103,7 @@
 	},
 	{
 		"class": "Test",
-		"value": "target.drauvenDeck_mystic_loremaster+(self.plant+self.textile)",
+		"value": "target.drauvenDeck_mystic_loremaster+max(self.plant,self.textile)",
 		"threshold": "2",
 		"onPass": {
 			"class": "Aspects",
