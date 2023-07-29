@@ -238,6 +238,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_loremaster_upgrade",
+	"effects": [ "singleActionWithTagToSwiftAction|drauven_pc_cordAndVines_upgrade" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
