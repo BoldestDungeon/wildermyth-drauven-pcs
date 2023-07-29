@@ -34,6 +34,9 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
+		"aspectValues": [
+			{ "id": "drauven_pc_songInspirationUsed", "forbidden": true }
+		],
 		"aspectsOneOf": [ "book", "ruins" ]
 	},
 	{
@@ -73,14 +76,10 @@
 				{
 					"class": "Aspects",
 					"target": "source",
+					"addAspects": [
+						{ "id": "drauven_pc_songInspirationUsed", "value": "1" }
+					],
 					"removeAspects": [ "drauven_pc_songInspirationSource" ]
-				},
-				{
-					"class": "Damage",
-					"target": "source",
-					"amount": "2",
-					"type": "TRUE",
-					"showInTooltip": false
 				}
 			]
 		}
