@@ -40,5 +40,10 @@
 	"boostType": "ADVANTAGE",
 	"importance": -1
 },
-{ "modId": "wildermyth-drauven-pcs", "id": "drauven_pc_songInspirationUsed" }
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_songInspirationUsed",
+	"boostType": "INTERFUSION_ASPECT",
+	"importance": 1
+}
 ]
