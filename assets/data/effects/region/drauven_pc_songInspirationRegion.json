@@ -20,10 +20,10 @@
 					{ "id": "ALLY" },
 					{ "id": "alive" }
 				],
-				"otherAspect": "inspirationDamageBuff"
+				"otherAspect": "drauven_pc_songInspirationBuff"
 			}
 		},
-		"aura": "1.6+(commonDeck_inspiration_upgrade*1.3)",
+		"aura": "1.6+drauvenDeck_mystic_loremaster_upgrade",
 		"presence": true
 	}
 ]
