@@ -34,7 +34,6 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspects": null,
 		"aspectsOneOf": [ "book", "ruins" ]
 	},
 	{
@@ -73,11 +72,13 @@
 					"class": "Aspects",
 					"target": "target",
 					"addAspects": [
-						{
-							"id": "tempShield_rockShield",
-							"value": "3+(2*self.mysticDeck_soulDefense_upgrade)"
-						}
+						{ "id": "drauven_pc_songInspirationSource", "value": "1", "merge": "max" }
 					]
+				},
+				{
+					"class": "Aspects",
+					"target": "source",
+					"removeAspects": [ "drauven_pc_songInspirationSource" ]
 				},
 				{
 					"class": "Damage",
