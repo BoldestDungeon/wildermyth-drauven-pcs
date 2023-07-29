@@ -31,7 +31,11 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_songInspirationSource",
-	"effects": [ "drauven_pc_songInspirationRegion" ],
+	"effects": [
+		"drauven_pc_songInspirationRegion",
+		"alsoAddParameter|drauven_pc_songInspirationBuff|ALLY",
+		"alsoAddRemoveAspectAfterTurnStartsParameter|drauven_pc_songInspirationBuff|ALLY|3"
+	],
 	"boostType": "ADVANTAGE",
 	"importance": 1
 }
