@@ -50,6 +50,7 @@
 		"intermediateRole": "source",
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
+		"stopBlockingTime": "onHit",
 		"particles": [
 			{ "script": "Engulf", "setPosition": "target" },
 			{ "script": "SparklesOut", "setPosition": "target", "delay": 0.7 }
