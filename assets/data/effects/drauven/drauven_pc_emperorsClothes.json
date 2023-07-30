@@ -1,0 +1,92 @@
+{
+"id": "drauven_pc_emperorsClothes",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_emperorsClothes",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "interfusionRecipe" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "engulf",
+	"category": "attackAbility",
+	"priority": "1",
+	"usesElementFromEquippedWeapon": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "free" },
+		"missionFeedback": { "orientTo": "source" },
+		"aspectValues": [
+			{ "id": "mysticDeck_mythweaver", "forbidden": true }
+		]
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"type": "SCENERY",
+		"missionFeedback": {
+			"suggestionScript": "figures.abilitySelectOption",
+			"hoverScript": "figures.abilitySelectHover",
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "textile" ]
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"relativeTo": "source",
+		"range": "6.6+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"intermediateRole": "source",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"particles": [
+			{ "script": "Engulf", "setPosition": "target" },
+			{ "script": "SparklesOut", "setPosition": "target", "delay": 0.7 }
+		],
+		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_InterfuseTextile" },
+		"flankMarkOrigin": "source",
+		"attackStrength": "100",
+		"separateRolls": true,
+		"wield": "light",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"target": "source",
+					"amount": "1",
+					"type": "TRUE",
+					"showInTooltip": false
+				}
+			]
+		},
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "drauven_pc_armorWardingSuppressed", "value": "1" }
+					]
+				}
+			]
+		}
+	}
+]
+}

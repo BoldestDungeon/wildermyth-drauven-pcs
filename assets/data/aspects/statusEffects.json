@@ -1,0 +1,17 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_armorWardingSuppressed",
+	"effects": [
+		"decayAtEndOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"otherAspectPreventsThisAspectShowText|immuneToStatusEffects"
+	],
+	"stats": { "ARMOR": -100, "WARDING": -100 },
+	"boostType": "DISADVANTAGE",
+	"script": "figures.hobbled",
+	"friendlyFireWarning": true,
+	"showValue": true
+}
+]
