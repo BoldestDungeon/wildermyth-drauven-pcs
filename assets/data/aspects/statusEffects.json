@@ -8,9 +8,8 @@
 		"otherAspectPreventsThisAspect|dead",
 		"otherAspectPreventsThisAspectShowText|immuneToStatusEffects"
 	],
-	"stats": { "ARMOR": -100, "WARDING": -100 },
+	"stats": { "ARMOR": -20, "WARDING": -20 },
 	"boostType": "DISADVANTAGE",
-	"script": "figures.hobbled",
 	"friendlyFireWarning": true,
 	"showValue": true
 }
