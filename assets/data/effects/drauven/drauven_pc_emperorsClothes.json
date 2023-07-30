@@ -9,12 +9,7 @@
 },
 "type": "ABILITY",
 "verb": "ATTACK",
-"ability": {
-	"icon": "engulf",
-	"category": "attackAbility",
-	"priority": "1",
-	"usesElementFromEquippedWeapon": true
-},
+"ability": { "icon": "engulf", "category": "attackAbility", "priority": "1" },
 "targets": [
 	{
 		"template": "SELF",
