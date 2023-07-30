@@ -40,12 +40,26 @@
 		"aspects": [ "textile" ]
 	},
 	{
-		"template": "ADJACENT_ENEMY",
+		"template": "TILE",
 		"showAnyway": true,
 		"alwaysSelect": true,
-		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
-		"range": "6.6+self.BONUS_RANGE",
+		"range": "6.6+self.BONUS_RANGE"
+	},
+	{
+		"template": "ADJACENT_UNIT",
+		"choose": "ANY",
+		"showAnyway": true,
+		"missionFeedback": {
+			"orientTo": "self",
+			"suggestionScript": "figures.attackSuggestion",
+			"hoverScript": "figures.attackHovered",
+			"rangeFeedback": "ATTACK_SUGGESTION",
+			"suggestionFeedback": "ATTACK_SUGGESTION",
+			"hoverFeedback": "ATTACK_HOVER"
+		},
+		"relativeTo": "focus",
+		"range": "1.1",
 		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],
