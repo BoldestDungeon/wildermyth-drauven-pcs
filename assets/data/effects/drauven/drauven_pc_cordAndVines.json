@@ -106,35 +106,13 @@
 					"useEquippedWeaponForStunt": true
 				},
 				{
-					"class": "Test",
-					"value": "self.mysticDeck_naturalist",
-					"threshold": "1",
-					"onPass": {
-						"class": "DoAll",
-						"outcomes": [
-							{
-								"class": "Aspects",
-								"addAspects": [
-									{ "id": "pinned", "value": "2+self.mysticDeck_mythweaver_upgrade" }
-								]
-							}
-						]
-					},
-					"onFail": {
-						"class": "DoAll",
-						"outcomes": [
-							{
-								"class": "Aspects",
-								"addAspects": [
-									{ "id": "hobbled", "value": "2+self.mysticDeck_mythweaver_upgrade" }
-								]
-							}
-						]
-					}
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "hobbled", "value": "2" }
+					]
 				}
 			]
-		},
-		"onMiss": { "class": "DoAll" }
+		}
 	}
 ]
 }
