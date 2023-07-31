@@ -773,6 +773,14 @@
 				"depth": "103"
 			}
 		]
+	},
+	{
+		"id": "drauvenTest",
+		"name": "Drauven Base",
+		"blurb": "TESTING: Make character Drauven",
+		"replaces": [ "head" ],
+		"extraAspects": [ "rigOverride|Drauven", "humanSkin_overrideSkinColor|84771B|A19015|606B5C|1.0", "drauvenSkin_naturalTorso", "drauvenSkin_naturalHead", "drauvenSkin_naturalLeftArm", "drauvenSkin_naturalRightArm", "drauvenSkin_naturalLeftHand", "drauvenSkin_naturalRightHand", "drauvenSkin_naturalLeftLeg", "drauvenSkin_naturalRightLeg", "drauvenSkin_naturalTail" ],
+		"canBeAwardedRandomly": false
 	}
 ]
 }
