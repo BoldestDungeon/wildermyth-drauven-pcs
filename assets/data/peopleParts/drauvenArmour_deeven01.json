@@ -16,7 +16,7 @@
 			"tintAmount": 0.1,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 500
+			"depth": 5
 		},
 		{
 			"name": "OutfitVariation_Cape_Front_Primary",
@@ -24,7 +24,7 @@
 			"tintAmount": 0.2,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 3665
+			"depth": 3564
 		},
 		{
 			"name": "OutfitVariation_Cape_Front_Texture_Primary",
@@ -32,14 +32,14 @@
 			"tintAmount": 0.5,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 3666
+			"depth": 3565
 		},
 		{
 			"name": "OutfitVariation_Cape_Front_Detail_Secondary",
 			"tint": "secondary",
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 3667
+			"depth": 3566
 		},
 		{
 			"name": "OutfitVariation_Cape_Front_Texture_Secondary",
@@ -47,14 +47,14 @@
 			"tintAmount": 0.5,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 3668
+			"depth": 3567
 		},
 		{
 			"name": "OutfitVariation_Cape_Front_Detail_Primary",
 			"tint": "primary",
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 3669
+			"depth": 3568
 		},
 		{
 			"name": "OutfitVariation_Cape_Front_Untinted",
@@ -62,7 +62,7 @@
 			"tintAmount": 0.5,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-			"depth": 3670
+			"depth": 3569
 		}
 	]
 }
