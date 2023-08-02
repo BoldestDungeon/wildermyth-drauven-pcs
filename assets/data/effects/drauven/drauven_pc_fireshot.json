@@ -87,8 +87,8 @@
 		},
 		"onHitCover": {
 			"class": "Damage",
-			"amount": "max(1,((attacker.PHYSICAL_DAMAGE_BONUS+DAMAGE_EXPRESSION)-2))",
-			"shred": "1"
+			"amount": "1d2+ceil((((self.POTENCY+self.SPELL_DAMAGE)/2)*(1+self.drauvenDeck_mystic_fireshot_upgrade)))",
+			"type": "MAGIC"
 		}
 	},
 	{ "class": "Spawn", "target": "targetTile", "addRole": "fire", "addFire": "2" }
