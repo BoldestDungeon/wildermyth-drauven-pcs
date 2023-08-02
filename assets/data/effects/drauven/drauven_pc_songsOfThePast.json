@@ -71,7 +71,11 @@
 					"class": "Aspects",
 					"target": "target",
 					"addAspects": [
-						{ "id": "drauven_pc_songInspirationSource", "value": "1", "merge": "max" }
+						{
+							"id": "drauven_pc_songInspirationSource",
+							"value": "1+self.drauvenDeck_mystic_loremaster_upgrade",
+							"merge": "max"
+						}
 					]
 				},
 				{

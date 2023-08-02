@@ -91,13 +91,17 @@
 	},
 	{
 		"class": "Test",
-		"value": "(target.drauvenDeck_mystic_loremaster+max((self.book+self.ruins)))-drauven_pc_songInspirationUsed",
+		"value": "(target.drauvenDeck_mystic_loremaster+max((self.book+self.ruins)))-self.drauven_pc_songInspirationUsed",
 		"threshold": "2",
 		"onPass": {
 			"class": "Aspects",
 			"target": "self",
 			"addAspects": [
-				{ "id": "drauven_pc_songInspirationSource", "value": "1", "merge": "max" }
+				{
+					"id": "drauven_pc_songInspirationSource",
+					"value": "1+target.drauvenDeck_mystic_loremaster_upgrade",
+					"merge": "max"
+				}
 			]
 		}
 	},
