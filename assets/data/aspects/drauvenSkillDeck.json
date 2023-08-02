@@ -209,6 +209,9 @@
 	],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
+	"interactionFeedback": [
+		{ "otherAspect": "tree", "replaceBlurb": true }
+	],
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "rockShield" }
 },
