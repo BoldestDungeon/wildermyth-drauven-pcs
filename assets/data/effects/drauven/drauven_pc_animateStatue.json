@@ -124,7 +124,7 @@
 				{
 					"class": "ModifyStats",
 					"target": "scenery",
-					"value": "(2+(ceil((((self.POTENCY+self.SPELL_DAMAGE)+source.HEALTH)-source.INJURY))/2))-HEALTH"
+					"value": "((2+floor(((self.POTENCY+self.SPELL_DAMAGE)/2)))+ceil(((source.HEALTH-source.INJURY)/2)))-HEALTH"
 				},
 				{
 					"class": "ModifyStats",
@@ -148,12 +148,6 @@
 					"class": "ModifyStats",
 					"target": "scenery",
 					"stat": "PHYSICAL_DAMAGE_BONUS",
-					"value": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))"
-				},
-				{
-					"class": "ModifyStats",
-					"target": "scenery",
-					"stat": "POTENCY",
 					"value": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))"
 				},
 				{ "class": "ModifyStats", "target": "scenery", "stat": "ACTIONS", "value": "2" },
@@ -187,7 +181,12 @@
 							"merge": "max",
 							"inRelationTo": "self"
 						},
-						{ "id": "interfusedWithHuman", "value": "1", "merge": "max" }
+						{ "id": "interfusedWithHuman", "value": "1", "merge": "max" },
+						{
+							"id": "animatedStatue_healthMod",
+							"value": "floor(((self.POTENCY+self.SPELL_DAMAGE)/2))",
+							"merge": "max"
+						}
 					]
 				}
 			]
