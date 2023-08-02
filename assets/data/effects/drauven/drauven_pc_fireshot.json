@@ -53,6 +53,10 @@
 				"setPosition2": "target"
 			}
 		],
+		"audioOverride": {
+			"attackStartCue": "Characters/DefaultHuman/Magic_FireMiss",
+			"attackHitCue": "Characters/DefaultHuman/Magic_FireHit"
+		},
 		"defenseRollTags": [ "range" ],
 		"attackStrength": "actionRoll(self.RANGE_ACCURACY)",
 		"wield": "fromWeapon",
