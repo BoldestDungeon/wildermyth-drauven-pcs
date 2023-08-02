@@ -64,7 +64,7 @@
 	},
 	{
 		"template": "TILE",
-		"choose": "BY_SCORE",
+		"choose": "ONE_FURTHEST",
 		"scoreFunction": "volunteer.distanceTo.attacker",
 		"fromRoles": [ "volunteer" ],
 		"relativeTo": "attacker",
