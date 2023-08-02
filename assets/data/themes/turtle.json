@@ -13,7 +13,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Neutral_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "neutral", "happy" ]
@@ -22,14 +22,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Neutral",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "neutral", "happy" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Neutral_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "neutral", "happy" ]
@@ -61,7 +61,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Open_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "open" ]
@@ -70,14 +70,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Open",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "open" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Open_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "open" ]
@@ -109,7 +109,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Interested_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "interested" ]
@@ -118,14 +118,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Interested",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "interested" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Interested_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "interested" ]
@@ -157,7 +157,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Surprised_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "surprised", "scared" ]
@@ -166,14 +166,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Surprised",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "surprised", "scared" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Surprised_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "surprised", "scared" ]
@@ -205,7 +205,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Skeptical_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "skeptical" ]
@@ -214,14 +214,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Skeptical",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "skeptical" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Skeptical_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "skeptical" ]
@@ -253,7 +253,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Dubious_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "dubious" ]
@@ -262,14 +262,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Dubious",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "dubious" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Dubious_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "dubious" ]
@@ -301,7 +301,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Angry_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "angry", "scheming" ]
@@ -310,14 +310,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Angry",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "angry", "scheming" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Angry_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "angry", "scheming" ]
@@ -349,7 +349,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Rage_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "rage" ]
@@ -358,14 +358,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Rage",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "rage" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Rage_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "rage" ]
@@ -397,7 +397,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Joy_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "joke", "joy" ]
@@ -406,14 +406,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Joy",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "joke", "joy" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Joy_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "joke", "joy" ]
@@ -445,7 +445,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Grim_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "grim", "sad" ]
@@ -454,14 +454,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Grim",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "grim", "sad" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Grim_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "grim", "sad" ]
@@ -493,7 +493,7 @@
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Hit_Skin",
 				"tint": "skin",
-				"depth": 4000,
+				"depth": 3900,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "hit", "dead" ]
@@ -502,14 +502,14 @@
 				"name": "replaceHead_turtleSnapper_Neck_texture_Hit",
 				"tint": "skin",
 				"tintAmount": 0.5,
-				"depth": 4001,
+				"depth": 3901,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "hit", "dead" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Neck_Base_Hit_Untinted",
-				"depth": 4002,
+				"depth": 3902,
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "hit", "dead" ]
@@ -540,18 +540,18 @@
 			},
 			{
 				"name": "replaceNeck_turtleSnapper_Skin",
-				"depth": "3991",
+				"depth": 3991,
 				"tint": "skin"
 			},
 			{
 				"name": "replaceNeck_turtleSnapper_texture",
-				"depth": "3992",
+				"depth": 3992,
 				"tint": "skin",
 				"tintAmount": 0.5
 			},
 			{
 				"name": "replaceNeck_turtleSnapper_Untinted",
-				"depth": "3993"
+				"depth": 3993
 			}
 		],
 		"effects": [ "turtleBiteMelee" ]
