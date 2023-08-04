@@ -191,6 +191,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"abilityForbidAspects": [ "alive" ],
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
 },
 {
@@ -211,6 +212,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"abilityForbidAspects": [ "alive" ],
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "fireleash" }
 },
 {
@@ -274,27 +276,6 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_mystic_sneer",
-	"effects": [ "drauven_pc_sneer", "drauven_pc_sneer_hit" ],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "zealousLeap" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_mystic_sneer_upgrade",
-	"effects": [],
-	"legacyAbilityChoice": true,
-	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": {
-		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_mystic_sneer",
-		"abilityDeckIcon": "zealousLeap"
-	}
-},
-{
-	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_skysong",
 	"effects": [
 		"drauven_pc_tailwind",
@@ -317,6 +298,27 @@
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_mystic_skysong",
 		"abilityDeckIcon": "lightning"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_sneer",
+	"effects": [ "drauven_pc_sneer", "drauven_pc_sneer_hit" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "zealousLeap" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_sneer_upgrade",
+	"effects": [],
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_sneer",
+		"abilityDeckIcon": "zealousLeap"
 	}
 },
 {
