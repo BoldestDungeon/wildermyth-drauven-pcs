@@ -397,6 +397,8 @@
 		"name": "Turtle Shell",
 		"blurb": "<self> carries a home on their back.",
 		"slots": [ "wings" ],
+		"extraAspects": [ "drauvenSkin_suppressClothes", "humanSkin_suppressClothes" ],
+		"effects": ["turtleShellKicked"],
 		"layers": [
 			{ "name": "shell_turtleSnapper_Skin", "tint": "skin", "depth": 61 },
 			{

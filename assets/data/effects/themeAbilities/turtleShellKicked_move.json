@@ -1,0 +1,164 @@
+{
+"id": "turtleShellKicked_move|_ATTACKER_",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "themeAbilities/turtleShellKicked_move",
+	"author": "Patrick Belanger",
+	"aiPriority": "2000",
+	"debug": true
+},
+"type": "ANY_UNIT_ABILITY_USED",
+"verb": "MANEUVER",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "pinned", "forbidden": true }
+		]
+	},
+	{
+		"role": "attacker",
+		"template": "ANY",
+		"type": "UNIT",
+		"matchSpecial": "parameter1"
+	},
+	{
+		"role": "volunteer",
+		"template": "TILE",
+		"choose": "ALL",
+		"range": "2.6",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "validScenerySpawnLocation",
+		"roleMustFit": "self"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "ONE_FURTHEST",
+		"fromRoles": [ "volunteer" ],
+		"relativeTo": "attacker",
+		"range": null
+	},
+	{
+		"role": "target",
+		"template": "UNIT_AT_TILE",
+		"choose": "ONE_CLOSEST_OPTIONAL",
+		"manifold": {
+			"from": "self",
+			"to": "targetTile",
+			"thickness": [ "1.3", "3.6" ],
+			"excludeSource": true,
+			"distanceInDirection":  "(((2.6+self.BONUS_RANGE)))+(attacker.SIZE)"
+		},
+		"range": "(((2.6+self.BONUS_RANGE)))+(attacker.SIZE)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor"
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"removeAspects": [ "turtleShellKicked_move|*" ]
+	},
+	{
+		"class": "Test",
+		"value": "EXISTS.target",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "target2",
+						"template": "TILE",
+						"choose": "ONE_CLOSEST",
+						"fromRoles": ["target"],
+						"range": 1
+					}
+				},
+				{
+					"class": "AttackRoll",
+					"stopBlockingTime": "afterHitAnimation",
+					"defender": "target",
+					"attackAnimationType": "interaction",
+					"showAbilityName": "always",
+					"attackStrength": "self.MELEE_ACCURACY",
+					"attackerAnimationOverride": "",
+					"defenderAnimationOverride": "figures.projectileHit",
+					"onHit": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "MoveEntity",
+								"target": "self",
+								"directlyToTile": "target2",
+								"ignoreEntitiesOnTile": true,
+								"animationType": "leap"
+							},
+							{
+								"class": "Damage",
+								"amount": "(1d3)+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)+((self.themePiece_turtle_head + self.themePiece_turtle_leftArm + self.themePiece_turtle_rightArm + self.themePiece_turtle_leftLeg + self.themePiece_turtle_rightLeg + self.themePiece_turtle_tail)*0.75)",
+								"overrideStuntDamage": "3"
+							}
+						]
+					},
+					"onMiss": {
+						"class": "MoveEntity",
+						"target": "self",
+						"directlyToTile": "target2",
+						"ignoreEntitiesOnTile": true,
+						"animationType": "leap"
+					}
+				},
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "target3",
+						"template": "TILE",
+						"choose": "ONE_RANDOM_TRUE",
+						"roleMustFit": "self",
+						"range": "2.2",
+						"relativeTo": "target"
+					}
+				},
+				{
+					"class": "AttackRoll",
+					"defender": null,
+					"attackAnimationType": "interaction",
+					"showAbilityName": "always",
+					"timingOverride": { "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+					"attackerAnimationOverride": "",
+					"defenderAnimationOverride": "",
+					"markForFlanking": "never",
+					"always": {
+						"class": "MoveEntity",
+						"target": "self",
+						"directlyToTile": "target3",
+						"ignoreEntitiesOnTile": true,
+						"animationType": "leap"
+					}
+				}
+			]
+
+		},
+		"onFail": {
+			"class": "AttackRoll",
+			"defender": null,
+			"attackAnimationType": "interaction",
+			"showAbilityName": "always",
+			"timingOverride": { "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+			"attackerAnimationOverride": "",
+			"defenderAnimationOverride": "",
+			"markForFlanking": "never",
+			"always": {
+				"class": "MoveEntity",
+				"target": "self",
+				"directlyToTile": "targetTile",
+				"ignoreEntitiesOnTile": true,
+				"animationType": "leap"
+			}
+		}
+	}
+]
+}

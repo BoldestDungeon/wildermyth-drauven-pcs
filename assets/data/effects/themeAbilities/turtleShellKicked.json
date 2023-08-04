@@ -1,0 +1,34 @@
+{
+"id": "turtleShellKicked",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "themeAbilities/turtleShellKicked",
+	"author": "Patrick Belanger",
+	"aiPriority": "2000"
+},
+"type": "DAMAGED",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "ignite",
+	"priority": "1",
+	"showDescriptionInTooltip": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "pinned", "forbidden": true }
+		]
+	},
+	{ "template": "ATTACKER" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"STUB": "Add the turtleShellKicked_move aspect. The move doesn't happen here specifically to deal with things like knockback",
+		"addAspects": [
+			{ "id": "turtleShellKicked_move", "value": "1", "inRelationTo": "attacker" }
+		]
+	}
+]
+}

@@ -3,5 +3,13 @@
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_bloodedFerocityOnCooldown",
 	"effects": []
+},
+{
+	"id": "turtleShellKicked_move|_ATTACKER_",
+	"parameters": [
+		{ "replace": "_ATTACKER_", "isEntity": true }
+	],
+	"effects": [ "turtleShellKicked_move|_ATTACKER_", "removeEveryTurn", "removeEveryAction" ],
+	"importance": -1
 }
 ]
