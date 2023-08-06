@@ -111,19 +111,6 @@
 ],
 "outcomes": [
 	{
-		"class": "Aspects",
-		"consumeAspects": [
-			{ "id": "interfusedWithEntity", "value": "1", "inRelationTo": "target" }
-		]
-	},
-	{
-		"class": "Aspects",
-		"target": "target",
-		"consumeAspects": [
-			{ "id": "interfusedWithMystic", "value": "1", "inRelationTo": "self" }
-		]
-	},
-	{
 		"class": "AttackRoll",
 		"intermediateRole": "source",
 		"attackAnimationType": "magic",
