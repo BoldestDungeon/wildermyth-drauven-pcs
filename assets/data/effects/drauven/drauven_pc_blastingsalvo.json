@@ -19,7 +19,7 @@
 	{
 		"template": "SELF",
 		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
-		"missionFeedback": { "orientTo": "scenery" }
+		"missionFeedback": { "orientTo": "source" }
 	},
 	{
 		"role": "child",
@@ -34,7 +34,7 @@
 		"b": "20"
 	},
 	{
-		"role": "scenery",
+		"role": "source",
 		"template": "ANY",
 		"type": "SCENERY",
 		"choose": "ALL",
@@ -67,7 +67,7 @@
 		"role": "fire",
 		"template": "ADJACENT_FIRE",
 		"choose": "ANY",
-		"relativeTo": "scenery",
+		"relativeTo": "source",
 		"range": "0.4"
 	},
 	{
@@ -76,8 +76,8 @@
 		"choose": "ANY",
 		"showAnyway": true,
 		"manifold": {
-			"from": "scenery",
-			"to": "scenery",
+			"from": "source",
+			"to": "source",
 			"thickness": [ "0", "1", "4", "1", "0" ],
 			"excludeSource": true,
 			"excludeDestination": true
@@ -136,27 +136,27 @@
 	},
 	{
 		"class": "ForEach",
-		"fromRoles": [ "scenery" ],
-		"toRole": "source",
+		"fromRoles": [ "source" ],
+		"toRole": "scenery",
 		"outcome": {
 			"class": "AttackRoll",
-			"intermediateRole": "source",
+			"intermediateRole": "scenery",
 			"attackAnimationType": "magic",
 			"showAbilityName": "ifEnemy",
 			"stopBlockingTime": "onHit",
 			"particles": [
 				{ "script": "StunningBarrage", "setPosition": "target", "setPosition2": "focus" },
 				{ "script": "smokeBlast", "setPosition": "target" },
-				{ "script": "smokeBlast", "setPosition": "source", "setPosition2": "focus" }
+				{ "script": "smokeBlast", "setPosition": "scenery", "setPosition2": "focus" }
 			],
 			"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_Barrage" },
-			"flankMarkOrigin": "source",
+			"flankMarkOrigin": "scenery",
 			"defenseRollTags": [ "range" ],
-			"attackStrength": "self.RANGE_ACCURACY+source.HEALTH",
+			"attackStrength": "self.RANGE_ACCURACY+scenery.HEALTH",
 			"separateRolls": true,
 			"always": {
 				"class": "DoAll",
-				"target": "source",
+				"target": "scenery",
 				"outcomes": [
 					{ "class": "Spawn", "modifyTerrain": "makeWalkableAndCreateDebris" },
 					{
@@ -176,7 +176,7 @@
 				"outcomes": [
 					{
 						"class": "Damage",
-						"amount": "(((1d3-1)+self.drauvenDeck_mystic_blastingshard_upgrade)+(self.SPELL_DAMAGE*0.66))+(source.HEALTH*(0.25+(self.drauvenDeck_mystic_blastingshard_upgrade*0.5)))",
+						"amount": "(((1d3-1)+self.drauvenDeck_mystic_blastingshard_upgrade)+(self.SPELL_DAMAGE*0.66))+(scenery.HEALTH*(0.25+(self.drauvenDeck_mystic_blastingshard_upgrade*0.5)))",
 						"shred": "self.POTENCY*(1+self.drauvenDeck_mystic_blastingshard_upgrade)",
 						"pierce": "self.POTENCY*self.drauvenDeck_mystic_blastingshard_upgrade",
 						"useEquippedWeaponForStunt": true,
