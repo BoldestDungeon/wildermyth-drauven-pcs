@@ -19,7 +19,7 @@
 	{
 		"template": "SELF",
 		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
-		"missionFeedback": { "orientTo": "source" }
+		"missionFeedback": { "orientTo": "scenery" }
 	},
 	{
 		"role": "child",
@@ -34,7 +34,7 @@
 		"b": "20"
 	},
 	{
-		"role": "source",
+		"role": "scenery",
 		"template": "ANY",
 		"type": "SCENERY",
 		"choose": "ALL",
@@ -67,7 +67,7 @@
 		"role": "fire",
 		"template": "ADJACENT_FIRE",
 		"choose": "ANY",
-		"relativeTo": "source",
+		"relativeTo": "scenery",
 		"range": "0.4"
 	},
 	{
@@ -76,8 +76,8 @@
 		"choose": "ANY",
 		"showAnyway": true,
 		"manifold": {
-			"from": "source",
-			"to": "source",
+			"from": "scenery",
+			"to": "scenery",
 			"thickness": [ "0", "1", "4", "1", "0" ],
 			"excludeSource": true,
 			"excludeDestination": true
@@ -130,75 +130,61 @@
 ],
 "outcomes": [
 	{
-		"class": "AttackRoll",
-		"intermediateRole": "source",
-		"attackAnimationType": "magic",
-		"showAbilityName": "ifEnemy",
-		"particles": [
-			{
-				"script": "Splinterblast",
-				"setPosition": "source",
-				"setPosition2": "targetTile"
-			}
-		],
-		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_InterfuseTree" },
-		"flankMarkOrigin": "source",
-		"defenseRollTags": [ "range" ],
-		"attackStrength": "self.RANGE_ACCURACY+source.HEALTH",
-		"separateRolls": true,
-		"always": {
-			"class": "DoAll",
-			"target": "source",
-			"outcomes": [
-				{
-					"class": "Test",
-					"value": "self.splinterblastDoesNotDestroyScenery",
-					"threshold": "1",
-					"onPass": {
-						"class": "Damage",
-						"amount": "4",
-						"type": "TRUE",
-						"weapon": null,
-						"showInTooltip": false
-					},
-					"onFail": {
-						"class": "DoAll",
-						"outcomes": [
-							{ "class": "Spawn", "modifyTerrain": "makeWalkableAndCreateDebris" },
-							{
-								"class": "Aspects",
-								"removeAspects": [ "scenery" ]
-							},
-							{ "class": "Delete" }
-						]
-					}
-				}
-			]
-		},
-		"onHit": {
-			"class": "DoAll",
-			"outcomes": [
-				{
-					"class": "Damage",
-					"amount": "((2d3+self.POTENCY)+self.SPELL_DAMAGE)+self.mysticDeck_elementalist_upgrade",
-					"shred": "1+ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
-					"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
-					"useEquippedWeaponForStunt": true,
-					"numDefenders": "COUNT.target"
-				},
-				{
-					"class": "Aspects",
-					"addAspects": [
-						{ "id": "hobbled", "value": "self.mysticDeck_elementalist_upgrade" }
-					]
-				}
-			]
-		}
-	},
-	{
 		"class": "Spawn",
 		"target": "targetTile",
 		"modifyTerrain": "spreadDebrisAndFire"
+	},
+	{
+		"class": "ForEach",
+		"fromRoles": [ "scenery" ],
+		"toRole": "source",
+		"outcome": {
+			"class": "AttackRoll",
+			"intermediateRole": "source",
+			"attackAnimationType": "magic",
+			"showAbilityName": "ifEnemy",
+			"stopBlockingTime": "onHit",
+			"particles": [
+				{ "script": "StunningBarrage", "setPosition": "target", "setPosition2": "focus" },
+				{ "script": "smokeBlast", "setPosition": "target" },
+				{ "script": "smokeBlast", "setPosition": "source", "setPosition2": "focus" }
+			],
+			"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_Barrage" },
+			"flankMarkOrigin": "source",
+			"defenseRollTags": [ "range" ],
+			"attackStrength": "self.RANGE_ACCURACY+source.HEALTH",
+			"separateRolls": true,
+			"always": {
+				"class": "DoAll",
+				"target": "source",
+				"outcomes": [
+					{ "class": "Spawn", "modifyTerrain": "makeWalkableAndCreateDebris" },
+					{
+						"class": "Aspects",
+						"removeAspects": [ "scenery" ]
+					},
+					{ "class": "Delete" },
+					{
+						"class": "Spawn",
+						"target": "targetTile",
+						"modifyTerrain": "spreadDebrisAndFire"
+					}
+				]
+			},
+			"onHit": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "Damage",
+						"amount": "(((1d3-1)+self.drauvenDeck_mystic_blastingshard_upgrade)+(self.SPELL_DAMAGE*0.66))+(source.HEALTH*(0.25+(self.drauvenDeck_mystic_blastingshard_upgrade*0.5)))",
+						"shred": "self.POTENCY*(1+self.drauvenDeck_mystic_blastingshard_upgrade)",
+						"pierce": "self.POTENCY*self.drauvenDeck_mystic_blastingshard_upgrade",
+						"useEquippedWeaponForStunt": true,
+						"numDefenders": "COUNT.target"
+					}
+				]
+			}
+		}
 	}
 ]
 }
