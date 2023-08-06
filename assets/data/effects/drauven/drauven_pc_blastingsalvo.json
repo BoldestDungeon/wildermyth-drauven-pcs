@@ -28,7 +28,7 @@
 		"type": "SCENERY",
 		"choose": "ALL",
 		"relationship": "interfusedWithEntity",
-		"aspects": [ "wood" ],
+		"aspects": [ "scenery" ],
 		"test": "LESS_THAN",
 		"a": "HEALTH-INJURY",
 		"b": "20"
@@ -41,7 +41,7 @@
 		"chooseAllMinimum": 2,
 		"showAnyway": true,
 		"relationship": "interfusedWithEntity",
-		"aspects": [ "wood" ],
+		"aspects": [ "scenery" ],
 		"test": "LESS_THAN",
 		"a": "HEALTH-INJURY",
 		"b": "20"
