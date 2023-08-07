@@ -11,5 +11,15 @@
 	],
 	"effects": [ "turtleShellKicked_move|_ATTACKER_", "removeEveryTurn", "removeEveryAction" ],
 	"importance": -1
+},
+{
+	"id": "turtleShellKicked_strength",
+	"effects": ["removeEveryTurn"],
+	"importance": -1
+},
+{
+	"id": "turtleShellKicked_wasHit",
+	"effects": ["removeEveryAction"],
+	"importance": -1
 }
 ]
