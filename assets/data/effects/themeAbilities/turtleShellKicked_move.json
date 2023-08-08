@@ -36,7 +36,7 @@
 		"choose": "ONE_FURTHEST",
 		"fromRoles": [ "volunteer" ],
 		"relativeTo": "attacker",
-		"range": "min(1.9,self.turtleShellKicked_strength)",
+		"range": "max(1.9,self.turtleShellKicked_strength)",
 		"tileFilter": "validMoveEnd",
 		"roleMustFit": "self"
 	},
@@ -55,6 +55,7 @@
 		"role": "scenery",
 		"template": "ADJACENT_SCENERY",
 		"choose": "ONE_CLOSEST_OPTIONAL",
+		"aspectValues": [{"id": "turtleShellKicked_wasHit", "forbidden": true}],
 		"manifold": {
 			"from": "self",
 			"to": "targetTile",
@@ -117,8 +118,8 @@
 				{
 					"class": "AttackRoll",
 					"stopBlockingTime": "afterHitAnimation",
-					"minimumBlockTime": "800",
-					"timingOverride": { "swingTime": "800" },
+					"minimumBlockTime": "20",
+					"timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
 					"attackAnimationType": "interaction",
 					"attackerAnimationOverride": "",
 					"defenderAnimationOverride": "",
@@ -169,8 +170,8 @@
 					{
 						"class": "AttackRoll",
 						"stopBlockingTime": "afterHitAnimation",
-						"minimumBlockTime": "800",
-						"timingOverride": { "swingTime": "800" },
+						"minimumBlockTime": "20",
+						"timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
 						"attackAnimationType": "interaction",
 						"attackerAnimationOverride": "",
 						"defenderAnimationOverride": "",

@@ -19,7 +19,8 @@
 		"class": "AttackRoll",
 		"attackAnimationType": "interaction",
 		"showAbilityName": "always",
-		"stopBlockingTime": "afterHitAnimation",
+		"stopBlockingTime": "noBlocking",
+    "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
 		"attackerAnimationOverride": "",
 		"defenderAnimationOverride": "figures.slashedQuick",
 		"attackStrength": "self.MELEE_ACCURACY",
@@ -39,8 +40,9 @@
 						"role": "target3",
 						"template": "TILE",
 						"choose": "ONE_FURTHEST",
-						"range": "min(1.9,self.turtleShellKicked_strength)",
+						"range": "max(1.9,self.turtleShellKicked_strength)",
 						"tileFilter": "validMoveEnd",
+            "relativeTo": "self",
 						"roleMustFit": "self"
 					}
 				},
@@ -77,17 +79,6 @@
 					]
 				},
 				{
-					"class": "AttackRoll",
-					"defender": null,
-					"attackAnimationType": "interaction",
-					"showAbilityName": "always",
-					"minimumBlockTime": "800",
-					"timingOverride": { "beforeAnimationTime": "0", "swingTime": "800", "afterAnimationTime": "0" },
-					"attackerAnimationOverride": "",
-					"defenderAnimationOverride": "",
-					"markForFlanking": "never"
-				},
-				{
 					"class": "Test",
 					"value": "EXISTS.volunteer",
 					"threshold": "1",
@@ -121,8 +112,8 @@
 							{
 								"class": "AttackRoll",
 								"stopBlockingTime": "afterHitAnimation",
-								"minimumBlockTime": "800",
-								"timingOverride": { "swingTime": "800" },
+                "minimumBlockTime": "20",
+                "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
 								"attackerAnimationOverride": "",
 								"defenderAnimationOverride": "",
 								"always": {
@@ -176,8 +167,8 @@
 								{
 									"class": "AttackRoll",
 									"stopBlockingTime": "afterHitAnimation",
-									"minimumBlockTime": "800",
-									"timingOverride": { "swingTime": "800" },
+                  "minimumBlockTime": "20",
+                  "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
 									"attackerAnimationOverride": "",
 									"defenderAnimationOverride": "",
 									"always": {
@@ -203,29 +194,18 @@
 								{
 									"class": "AttackRoll",
 									"stopBlockingTime": "afterHitAnimation",
-									"minimumBlockTime": "800",
-									"timingOverride": { "swingTime": "800" },
+                  "minimumBlockTime": "20",
+                  "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
 									"attackerAnimationOverride": "",
 									"defenderAnimationOverride": "",
 									"always": {
 										"class": "MoveEntity",
 										"target": "self",
-										"directlyToTile": "target2",
+										"directlyToTile": "target3",
 										"ignoreEntitiesOnTile": true,
 										"animationType": "leap"
 									}
-								},
-                {
-                  "class": "Spawn",
-                  "forceSpawn": true,
-                  "createEntity": {
-                    "query": { "type": "TRAP" },
-                    "addAspects": [
-                      { "id": "celestialRegion", "value": "1", "atTiles": "target2" }
-                    ],
-                    "setLocation": true
-                  }
-                }
+								}
 							]
 						}
 					}
