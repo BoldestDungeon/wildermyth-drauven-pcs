@@ -2,6 +2,7 @@
 "id": "turtle",
 "name": "Turtletouched",
 "blurb": "<self> took on part of the turtle's curse.",
+"modId": "wildermyth-drauven-pcs",
 "pieces": [
 	{
 		"id": "head",
@@ -10,30 +11,6 @@
 		"slots": [ "head" ],
 		"replaces": [ "head" ],
 		"layers": [
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Neutral_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "neutral", "happy" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Neutral",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "neutral", "happy" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Neutral_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "neutral", "happy" ]
-			},
 			{
 				"name": "replaceHead_turtleSnapper_Base_Neutral_Skin",
 				"tint": "skin",
@@ -57,30 +34,6 @@
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "neutral", "happy" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Open_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "open" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Open",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "open" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Open_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "open" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Base_Open_Skin",
@@ -107,30 +60,6 @@
 				"facialExpression": [ "open" ]
 			},
 			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Interested_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "interested" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Interested",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "interested" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Interested_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "interested" ]
-			},
-			{
 				"name": "replaceHead_turtleSnapper_Base_Interested_Skin",
 				"tint": "skin",
 				"depth": 4000,
@@ -153,30 +82,6 @@
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "interested" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Surprised_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "surprised", "scared" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Surprised",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "surprised", "scared" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Surprised_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "surprised", "scared" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Base_Surprised_Skin",
@@ -203,30 +108,6 @@
 				"facialExpression": [ "surprised", "scared" ]
 			},
 			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Skeptical_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "skeptical" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Skeptical",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "skeptical" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Skeptical_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "skeptical" ]
-			},
-			{
 				"name": "replaceHead_turtleSnapper_Base_Skeptical_Skin",
 				"tint": "skin",
 				"depth": 4000,
@@ -249,30 +130,6 @@
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "skeptical" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Dubious_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "dubious" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Dubious",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "dubious" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Dubious_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "dubious" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Base_Dubious_Skin",
@@ -299,30 +156,6 @@
 				"facialExpression": [ "dubious" ]
 			},
 			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Angry_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "angry", "scheming" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Angry",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "angry", "scheming" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Angry_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "angry", "scheming" ]
-			},
-			{
 				"name": "replaceHead_turtleSnapper_Base_Angry_Skin",
 				"tint": "skin",
 				"depth": 4000,
@@ -345,30 +178,6 @@
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "angry", "scheming" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Rage_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "rage" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Rage",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "rage" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Rage_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "rage" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Base_Rage_Skin",
@@ -395,30 +204,6 @@
 				"facialExpression": [ "rage" ]
 			},
 			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Joy_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "joke", "joy" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Joy",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "joke", "joy" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Joy_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "joke", "joy" ]
-			},
-			{
 				"name": "replaceHead_turtleSnapper_Base_Joy_Skin",
 				"tint": "skin",
 				"depth": 4000,
@@ -441,30 +226,6 @@
 				"headOffset": true,
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "joke", "joy" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Grim_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "grim", "sad" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Grim",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "grim", "sad" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Grim_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "grim", "sad" ]
 			},
 			{
 				"name": "replaceHead_turtleSnapper_Base_Grim_Skin",
@@ -491,30 +252,6 @@
 				"facialExpression": [ "grim", "sad" ]
 			},
 			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Hit_Skin",
-				"tint": "skin",
-				"depth": 3900,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "hit", "dead" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_texture_Hit",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 3901,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "hit", "dead" ]
-			},
-			{
-				"name": "replaceHead_turtleSnapper_Neck_Base_Hit_Untinted",
-				"depth": 3902,
-				"headOffset": true,
-				"ifNoOwnerAspect": "themeSkin_turtle*",
-				"facialExpression": [ "hit", "dead" ]
-			},
-			{
 				"name": "replaceHead_turtleSnapper_Base_Hit_Skin",
 				"tint": "skin",
 				"depth": 4000,
@@ -538,21 +275,14 @@
 				"ifNoOwnerAspect": "themeSkin_turtle*",
 				"facialExpression": [ "hit", "dead" ]
 			},
-			{
-				"name": "replaceNeck_turtleSnapper_Skin",
-				"depth": 3991,
-				"tint": "skin"
-			},
+			{ "name": "replaceNeck_turtleSnapper_Skin", "tint": "skin", "depth": 3991 },
 			{
 				"name": "replaceNeck_turtleSnapper_texture",
-				"depth": 3992,
 				"tint": "skin",
-				"tintAmount": 0.5
+				"tintAmount": 0.8,
+				"depth": 3992
 			},
-			{
-				"name": "replaceNeck_turtleSnapper_Untinted",
-				"depth": 3993
-			}
+			{ "name": "replaceNeck_turtleSnapper_Untinted", "depth": 3993 }
 		],
 		"effects": [ "turtleBiteMelee" ]
 	},
@@ -565,49 +295,33 @@
 		"layers": [
 			{
 				"name": "replaceArmL_turtleSnapper_1hand_Upper_Skin",
-				"depth": "1201",
-				"tint": "skin"
+				"tint": "skin",
+				"depth": 1201
 			},
 			{
 				"name": "replaceArmL_turtleSnapper_1hand_Upper_texture",
-				"depth": "1202",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"depth": 1202
 			},
-			{
-				"name": "replaceArmL_turtleSnapper_1hand_Upper_Untinted",
-				"depth": "1203"
-			},
+			{ "name": "replaceArmL_turtleSnapper_1hand_Upper_Untinted", "depth": 1203 },
 			{
 				"name": "replaceArmL_turtleSnapper_1hand_Lower_Skin",
-				"depth": "1301",
-				"tint": "skin"
+				"tint": "skin",
+				"depth": 1301
 			},
 			{
 				"name": "replaceArmL_turtleSnapper_1hand_Lower_texture",
-				"depth": "1302",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"depth": 1302
 			},
-			{
-				"name": "replaceArmL_turtleSnapper_1hand_Lower_Untinted",
-				"depth": "1303"
-			},
-			{
-				"name": "replaceHandL_turtleSnapper_Open_Skin",
-				"depth": "3001",
-				"tint": "skin"
-			},
+			{ "name": "replaceArmL_turtleSnapper_1hand_Lower_Untinted", "depth": 1303 },
+			{ "name": "replaceHandL_turtleSnapper_Open_Skin", "tint": "skin", "depth": 3001 },
 			{
 				"name": "replaceHandL_turtleSnapper_Open_texture",
-				"depth": "3002",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"depth": 3002
 			},
-			{
-				"name": "replaceHandL_turtleSnapper_Open_Untinted",
-				"depth": "3003"
-			}
+			{ "name": "replaceHandL_turtleSnapper_Open_Untinted", "depth": 3003 }
 		]
 	},
 	{
@@ -619,49 +333,34 @@
 		"layers": [
 			{
 				"name": "replaceArmR_turtleSnapper_1hand_Upper_Skin",
-				"depth": "1201",
-				"tint": "skin"
+				"tint": "skin",
+				"depth": 1201
 			},
 			{
 				"name": "replaceArmR_turtleSnapper_1hand_Upper_texture",
-				"depth": "1202",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"depth": 1202
 			},
-			{
-				"name": "replaceArmR_turtleSnapper_1hand_Upper_Untinted",
-				"depth": "1203"
-			},
+			{ "name": "replaceArmR_turtleSnapper_1hand_Upper_Untinted", "depth": 1203 },
 			{
 				"name": "replaceArmR_turtleSnapper_1hand_Lower_Skin",
-				"depth": "1501",
-				"tint": "skin"
+				"tint": "skin",
+				"depth": 1501
 			},
 			{
 				"name": "replaceArmR_turtleSnapper_1hand_Lower_texture",
-				"depth": "1502",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"depth": 1502
 			},
-			{
-				"name": "replaceArmR_turtleSnapper_1hand_Lower_Untinted",
-				"depth": "1503"
-			},
-			{
-				"name": "replaceHandR_turtleSnapper_Open_Skin",
-				"depth": "3001",
-				"tint": "skin"
-			},
+			{ "name": "replaceArmR_turtleSnapper_1hand_Lower_Untinted", "depth": 1503 },
+			{ "name": "replaceHandR_turtleSnapper_Open_Skin", "tint": "skin", "depth": 3001 },
 			{
 				"name": "replaceHandR_turtleSnapper_Open_texture",
-				"depth": "3002",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"tintAmount": 0.8,
+				"depth": 3002
 			},
-			{
-				"name": "replaceHandR_turtleSnapper_Open_Untinted",
-				"depth": "3003"
-			}
+			{ "name": "replaceHandR_turtleSnapper_Open_Untinted", "depth": 3003 }
 		]
 	},
 	{
@@ -671,21 +370,14 @@
 		"slots": [ "leftLeg" ],
 		"replaces": [ "leftLeg" ],
 		"layers": [
-			{
-				"name": "replaceLegL_turtleSnapper_Skin",
-				"depth": "1111",
-				"tint": "skin"
-			},
+			{ "name": "replaceLegL_turtleSnapper_Skin", "tint": "skin", "depth": 1111 },
 			{
 				"name": "replaceLegL_turtleSnapper_texture",
-				"depth": "1112",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"tintAmount": 0.5,
+				"depth": 1112
 			},
-			{
-				"name": "replaceLegL_turtleSnapper_Untinted",
-				"depth": "1103"
-			}
+			{ "name": "replaceLegL_turtleSnapper_Untinted", "depth": 1113 }
 		]
 	},
 	{
@@ -695,21 +387,9 @@
 		"slots": [ "rightLeg" ],
 		"replaces": [ "rightLeg" ],
 		"layers": [
-			{
-				"name": "replaceLegR_turtleSnapper_Skin",
-				"depth": "1111",
-				"tint": "skin"
-			},
-			{
-				"name": "replaceLegR_turtleSnapper_texture",
-				"depth": "1112",
-				"tint": "skin",
-				"tintAmount": 0.5
-			},
-			{
-				"name": "replaceLegR_turtleSnapper_Untinted",
-				"depth": "1103"
-			}
+			{ "name": "replaceLegR_turtleSnapper_Skin", "tint": "skin", "depth": 1111 },
+			{ "name": "replaceLegR_turtleSnapper_texture", "tint": "skin", "depth": 1113 },
+			{ "name": "replaceLegR_turtleSnapper_Untinted", "depth": 1112 }
 		]
 	},
 	{
@@ -717,39 +397,25 @@
 		"name": "Turtle Shell",
 		"blurb": "<self> carries a home on their back.",
 		"slots": [ "wings" ],
-		"extraAspects": [ "drauvenSkin_suppressClothes", "humanSkin_suppressClothes" ],
 		"layers": [
-			{
-				"name": "shell_turtleSnapper_Skin",
-				"depth": "61",
-				"tint": "skin"
-			},
+			{ "name": "shell_turtleSnapper_Skin", "tint": "skin", "depth": 61 },
 			{
 				"name": "shell_turtleSnapper_texture",
-				"depth": "62",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"tintAmount": 0.5,
+				"depth": 62
 			},
-			{
-				"name": "shell_turtleSnapper_Untinted",
-				"depth": "63"
-			},
-			{
-				"name": "shellFront_turtleSnapper_Skin",
-				"depth": "1601",
-				"tint": "skin"
-			},
+			{ "name": "shell_turtleSnapper_Untinted", "depth": 63 },
+			{ "name": "shellFront_turtleSnapper_Skin", "tint": "skin", "depth": 1601 },
 			{
 				"name": "shellFront_turtleSnapper_texture",
-				"depth": "1602",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"tintAmount": 0.5,
+				"depth": 1602
 			},
-			{
-				"name": "shellFront_turtleSnapper_Untinted",
-				"depth": "1603"
-			}
-		]
+			{ "name": "shellFront_turtleSnapper_Untinted", "depth": 1603 }
+		],
+		"extraAspects": [ "drauvenSkin_suppressClothes", "humanSkin_suppressClothes" ]
 	},
 	{
 		"id": "tail",
@@ -757,21 +423,14 @@
 		"blurb": "<self>'s tail is turtlish.",
 		"slots": [ "tail" ],
 		"layers": [
-			{
-				"name": "tail_turtleSnapper_Skin",
-				"depth": "101",
-				"tint": "skin"
-			},
+			{ "name": "tail_turtleSnapper_Skin", "tint": "skin", "depth": 101 },
 			{
 				"name": "tail_turtleSnapper_texture",
-				"depth": "102",
 				"tint": "skin",
-				"tintAmount": 0.5
+				"tintAmount": 0.5,
+				"depth": 102
 			},
-			{
-				"name": "tail_turtleSnapper_Untinted",
-				"depth": "103"
-			}
+			{ "name": "tail_turtleSnapper_Untinted", "depth": 103 }
 		]
 	},
 	{
@@ -779,7 +438,19 @@
 		"name": "Drauven Base",
 		"blurb": "TESTING: Make character Drauven",
 		"replaces": [ "head" ],
-		"extraAspects": [ "rigOverride|Drauven", "humanSkin_overrideSkinColor|84771B|A19015|606B5C|1.0", "drauvenSkin_naturalTorso", "drauvenSkin_naturalHead", "drauvenSkin_naturalLeftArm", "drauvenSkin_naturalRightArm", "drauvenSkin_naturalLeftHand", "drauvenSkin_naturalRightHand", "drauvenSkin_naturalLeftLeg", "drauvenSkin_naturalRightLeg", "drauvenSkin_naturalTail" ],
+		"extraAspects": [
+			"rigOverride|Drauven",
+			"humanSkin_overrideSkinColor|84771B|A19015|606B5C|1.0",
+			"drauvenSkin_naturalTorso",
+			"drauvenSkin_naturalHead",
+			"drauvenSkin_naturalLeftArm",
+			"drauvenSkin_naturalRightArm",
+			"drauvenSkin_naturalLeftHand",
+			"drauvenSkin_naturalRightHand",
+			"drauvenSkin_naturalLeftLeg",
+			"drauvenSkin_naturalRightLeg",
+			"drauvenSkin_naturalTail"
+		],
 		"canBeAwardedRandomly": false
 	}
 ]
