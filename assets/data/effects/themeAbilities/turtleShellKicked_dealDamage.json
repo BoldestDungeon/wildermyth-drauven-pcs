@@ -205,7 +205,11 @@
 										"ignoreEntitiesOnTile": true,
 										"animationType": "leap"
 									}
-								}
+								},
+                {
+                  "class": "Aspects",
+                  "removeAspects": ["turtleShellKicked_strength"]
+                }
 							]
 						}
 					}
