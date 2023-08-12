@@ -21,5 +21,20 @@
 	"id": "turtleShellKicked_wasHit",
 	"effects": ["removeEveryAction"],
 	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_turtleShellWithdraw",
+	"effects": [
+		"removeAtStartOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"onAddedRemoveAllActionPoints",
+		"alsoAddParameter|forbidWallWithAllies|turtleShell",
+		"alsoRemoveParameter|forbidWallWithAllies|turtleShell",
+		"alsoAddParameter|forbidReactions|turtleShell",
+		"alsoRemoveParameter|forbidReactions|turtleShell"
+	]
 }
 ]
+
