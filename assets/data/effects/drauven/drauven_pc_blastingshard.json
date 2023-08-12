@@ -73,12 +73,7 @@
 		"role": "target2",
 		"template": "UNIT_AT_TILE",
 		"choose": "ANY",
-		"missionFeedback": {
-			"hoverScript": "figures.attackHovered",
-			"rangeFeedback": "ATTACK_SUGGESTION",
-			"suggestionFeedback": "ATTACK_SUGGESTION",
-			"hoverFeedback": "ATTACK_HOVER"
-		},
+		"missionFeedback": null,
 		"fromRoles": [ "target" ],
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"range": null
@@ -87,12 +82,7 @@
 		"role": "target3",
 		"template": "UNIT_AT_TILE",
 		"choose": "ANY",
-		"missionFeedback": {
-			"hoverScript": "figures.attackHovered",
-			"rangeFeedback": "ATTACK_SUGGESTION",
-			"suggestionFeedback": "ATTACK_SUGGESTION",
-			"hoverFeedback": "ATTACK_HOVER"
-		},
+		"missionFeedback": null,
 		"fromRoles": [ "target" ],
 		"aspects": [ "alive", "ALLY" ],
 		"range": null
