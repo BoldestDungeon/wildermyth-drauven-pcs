@@ -166,7 +166,7 @@
 					"defender": "target2",
 					"intermediateRole": "scenery",
 					"attackAnimationType": "none",
-					"stopBlockingTime": "onHit",
+					"stopBlockingTime": "afterHitAnimation",
 					"particles": [
 						{
 							"script": "StunningBarrage",
