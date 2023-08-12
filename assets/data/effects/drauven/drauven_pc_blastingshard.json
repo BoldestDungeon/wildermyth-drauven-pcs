@@ -130,14 +130,16 @@
 			"outcomes": [
 				{ "class": "Spawn", "modifyTerrain": "makeWalkableAndCreateDebris" },
 				{
-					"class": "Aspects",
-					"removeAspects": [ "scenery" ]
-				},
-				{ "class": "Delete" },
-				{
 					"class": "Spawn",
 					"target": "targetTile",
 					"modifyTerrain": "spreadDebrisAndFire"
+				},
+				{
+					"class": "Damage",
+					"target": "source",
+					"amount": "source.HEALTH",
+					"type": "TRUE",
+					"showInTooltip": false
 				}
 			]
 		},
