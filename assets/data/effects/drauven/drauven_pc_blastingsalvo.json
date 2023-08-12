@@ -170,7 +170,7 @@
 					"particles": [
 						{
 							"script": "StunningBarrage",
-							"setPosition": "target2",
+							"setPosition": "scenery",
 							"setPosition2": "focus"
 						},
 						{ "script": "smokeBlast", "setPosition": "target2" },

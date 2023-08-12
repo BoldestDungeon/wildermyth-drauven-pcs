@@ -115,7 +115,7 @@
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "StunningBarrage", "setPosition": "target", "setPosition2": "focus" },
+			{ "script": "StunningBarrage", "setPosition": "source", "setPosition2": "focus" },
 			{ "script": "smokeBlast", "setPosition": "target" },
 			{ "script": "smokeBlast", "setPosition": "source", "setPosition2": "focus" }
 		],
