@@ -146,7 +146,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1d2-1)+ceil(((((self.POTENCY+self.SPELL_DAMAGE)+source.HEALTH)-source.INJURY)/3))",
+					"amount": "(1d2-1)+(ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))+sqrt((source.HEALTH-source.INJURY)))",
 					"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))+self.drauvenDeck_mystic_blastingshard_upgrade",
 					"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))*self.drauvenDeck_mystic_blastingshard_upgrade",
 					"useEquippedWeaponForStunt": true,
