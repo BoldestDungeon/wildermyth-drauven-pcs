@@ -205,9 +205,9 @@
 						"outcomes": [
 							{
 								"class": "Damage",
-								"amount": "(((1d3-1)+self.drauvenDeck_mystic_blastingshard_upgrade)+(self.SPELL_DAMAGE*0.66))+(scenery.HEALTH*(0.25+(self.drauvenDeck_mystic_blastingshard_upgrade*0.5)))",
-								"shred": "self.POTENCY*(1+self.drauvenDeck_mystic_blastingshard_upgrade)",
-								"pierce": "self.POTENCY*self.drauvenDeck_mystic_blastingshard_upgrade",
+								"amount": "(1d2-1)+ceil(((((self.POTENCY+self.SPELL_DAMAGE)+source.HEALTH)-source.INJURY)/3))",
+								"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))+self.drauvenDeck_mystic_blastingshard_upgrade",
+								"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))*self.drauvenDeck_mystic_blastingshard_upgrade",
 								"useEquippedWeaponForStunt": true,
 								"numDefenders": "COUNT.target"
 							}
