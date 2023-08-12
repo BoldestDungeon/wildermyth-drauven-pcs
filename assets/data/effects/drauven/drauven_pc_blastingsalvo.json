@@ -130,6 +130,15 @@
 ],
 "outcomes": [
 	{
+		"class": "AttackRoll",
+		"defender": null,
+		"intermediateRole": "source",
+		"attackAnimationType": "magic",
+		"showAbilityName": "ifEnemy",
+		"stopBlockingTime": "onHit",
+		"flankMarkOrigin": "source"
+	},
+	{
 		"class": "Spawn",
 		"target": "targetTile",
 		"modifyTerrain": "spreadDebrisAndFire"
@@ -141,8 +150,7 @@
 		"outcome": {
 			"class": "AttackRoll",
 			"intermediateRole": "scenery",
-			"attackAnimationType": "magic",
-			"showAbilityName": "ifEnemy",
+			"attackAnimationType": "none",
 			"stopBlockingTime": "onHit",
 			"particles": [
 				{ "script": "StunningBarrage", "setPosition": "target", "setPosition2": "focus" },
