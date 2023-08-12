@@ -22,24 +22,6 @@
 		"missionFeedback": { "orientTo": "source" }
 	},
 	{
-		"role": "site",
-		"template": "ANY",
-		"STUB": "Scenery sources",
-		"type": "SCENERY",
-		"choose": "ALL",
-		"relationship": "interfusedWithEntity",
-		"aspects": [ "scenery" ]
-	},
-	{
-		"role": "site2",
-		"template": "ANY",
-		"STUB": "Animated warrior sources",
-		"type": "UNIT",
-		"choose": "ALL",
-		"relationship": "interfusedWithEntity",
-		"aspects": [ "scenery" ]
-	},
-	{
 		"role": "child",
 		"template": "ANY",
 		"STUB": "If we match one scenery piece, we still want to show the ability on the bar",
