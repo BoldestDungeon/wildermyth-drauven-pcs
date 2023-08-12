@@ -140,6 +140,7 @@
 					"abilityTarget": {
 						"role": "target2",
 						"template": "UNIT_AT_TILE",
+						"STUB": "This is supposed to prevent already dead enemies from being targeted, but it doesn't seem to work",
 						"choose": "ANY",
 						"missionFeedback": {
 							"hoverScript": "figures.attackHovered",
