@@ -9,11 +9,11 @@
 	"tags": [ "sneaky", "okToMarkDone", "interfusionRecipe" ]
 },
 "type": "ABILITY",
-"verb": "MANEUVER",
+"verb": "ATTACK",
 "ability": {
 	"icon": "shardnado",
 	"category": "attackAbility",
-	"priority": "3",
+	"priority": "1",
 	"showDescriptionInTooltip": true,
 	"usesElementFromEquippedWeapon": true
 },
