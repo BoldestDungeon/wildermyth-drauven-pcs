@@ -24,14 +24,11 @@
 	{
 		"role": "child",
 		"template": "ANY",
-		"STUB": "If we match one piece of wood, we still want to show the ability on the bar",
+		"STUB": "If we match one scenery piece, we still want to show the ability on the bar",
 		"type": "SCENERY",
 		"choose": "ALL",
 		"relationship": "interfusedWithEntity",
-		"aspects": [ "scenery" ],
-		"test": "LESS_THAN",
-		"a": "HEALTH-INJURY",
-		"b": "20"
+		"aspects": [ "scenery" ]
 	},
 	{
 		"role": "source",
@@ -41,10 +38,7 @@
 		"chooseAllMinimum": 2,
 		"showAnyway": true,
 		"relationship": "interfusedWithEntity",
-		"aspects": [ "scenery" ],
-		"test": "LESS_THAN",
-		"a": "HEALTH-INJURY",
-		"b": "20"
+		"aspects": [ "scenery" ]
 	},
 	{
 		"role": "volunteer",
@@ -58,10 +52,7 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspects": [ "wood" ],
-		"test": "LESS_THAN",
-		"a": "HEALTH-INJURY",
-		"b": "20"
+		"aspects": [ "wood" ]
 	},
 	{
 		"role": "fire",
@@ -135,7 +126,8 @@
 		"intermediateRole": "source",
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
-		"stopBlockingTime": "onHit",
+		"stopBlockingTime": "noBlocking",
+		"minimumBlockTime": "500",
 		"flankMarkOrigin": "source"
 	},
 	{
@@ -165,8 +157,8 @@
 					"class": "AttackRoll",
 					"defender": "target2",
 					"intermediateRole": "scenery",
-					"attackAnimationType": "none",
-					"stopBlockingTime": "afterHitAnimation",
+					"attackAnimationType": "magic",
+					"stopBlockingTime": "onHit",
 					"particles": [
 						{
 							"script": "StunningBarrage",
@@ -177,6 +169,7 @@
 						{ "script": "smokeBlast", "setPosition": "scenery", "setPosition2": "focus" }
 					],
 					"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_Barrage" },
+					"attackerAnimationOverride": "",
 					"flankMarkOrigin": "scenery",
 					"defenseRollTags": [ "range" ],
 					"attackStrength": "self.RANGE_ACCURACY+scenery.HEALTH",
@@ -205,7 +198,7 @@
 						"outcomes": [
 							{
 								"class": "Damage",
-								"amount": "(1d2-1)+ceil(((((self.POTENCY+self.SPELL_DAMAGE)+source.HEALTH)-source.INJURY)/3))",
+								"amount": "(1d2-1)+ceil(((((self.POTENCY+self.SPELL_DAMAGE)+scenery.HEALTH)-scenery.INJURY)/3))",
 								"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))+self.drauvenDeck_mystic_blastingshard_upgrade",
 								"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))*self.drauvenDeck_mystic_blastingshard_upgrade",
 								"useEquippedWeaponForStunt": true,
