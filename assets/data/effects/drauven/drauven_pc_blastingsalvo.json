@@ -39,6 +39,27 @@
 		"aspects": [ "scenery" ]
 	},
 	{
+		"role": "site",
+		"template": "ANY",
+		"STUB": "Source for the first attack",
+		"choose": "ONE_RANDOM",
+		"showAnyway": true,
+		"fromRoles": [ "source" ],
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "scenery" ]
+	},
+	{
+		"role": "site2",
+		"template": "ANY",
+		"STUB": "Sources for the other attacks",
+		"choose": "ALL",
+		"showAnyway": true,
+		"fromRoles": [ "source" ],
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "scenery" ],
+		"notAlreadyMatchedAs": [ "site" ]
+	},
+	{
 		"role": "volunteer",
 		"template": "ANY",
 		"type": "SCENERY",
@@ -50,7 +71,7 @@
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
 		"relationship": "interfusedWithEntity",
-		"aspects": [ "wood" ]
+		"aspects": [ "scenery" ]
 	},
 	{
 		"role": "fire",
@@ -120,17 +141,55 @@
 "outcomes": [
 	{
 		"class": "AttackRoll",
-		"defender": null,
-		"intermediateRole": "source",
+		"intermediateRole": "site",
 		"attackAnimationType": "magic",
-		"showAbilityName": "ifEnemy",
-		"stopBlockingTime": "noBlocking",
-		"minimumBlockTime": "500",
-		"flankMarkOrigin": "source"
+		"stopBlockingTime": "onHit",
+		"particles": [
+			{ "script": "StunningBarrage", "setPosition": "site", "setPosition2": "focus" },
+			{ "script": "smokeBlast", "setPosition": "target" },
+			{ "script": "smokeBlast", "setPosition": "site", "setPosition2": "focus" }
+		],
+		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_Barrage" },
+		"flankMarkOrigin": "site",
+		"defenseRollTags": [ "range" ],
+		"attackStrength": "self.RANGE_ACCURACY+site.HEALTH",
+		"separateRolls": true,
+		"always": {
+			"class": "DoAll",
+			"target": "site",
+			"outcomes": [
+				{ "class": "Spawn", "modifyTerrain": "makeWalkableAndCreateDebris" },
+				{
+					"class": "Spawn",
+					"target": "targetTile",
+					"modifyTerrain": "spreadDebrisAndFire"
+				},
+				{
+					"class": "Damage",
+					"target": "site",
+					"amount": "site.HEALTH",
+					"type": "TRUE",
+					"showInTooltip": false
+				}
+			]
+		},
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "(1d2-1)+(ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))+sqrt((site.HEALTH-site.INJURY)))",
+					"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))",
+					"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
+					"useEquippedWeaponForStunt": true,
+					"numDefenders": "COUNT.target"
+				}
+			]
+		}
 	},
 	{
 		"class": "ForEach",
-		"fromRoles": [ "source" ],
+		"fromRoles": [ "site2" ],
 		"toRole": "scenery",
 		"outcome": {
 			"class": "DoAll",
