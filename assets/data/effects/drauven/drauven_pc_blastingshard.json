@@ -13,6 +13,7 @@
 "ability": {
 	"icon": "shardnado",
 	"category": "attackAbility",
+	"strictlyBetterThan": [ "mysticRecipeSplinterblast" ],
 	"priority": "1",
 	"showDescriptionInTooltip": true,
 	"usesElementFromEquippedWeapon": true
