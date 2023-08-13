@@ -143,7 +143,7 @@
 		"class": "AttackRoll",
 		"intermediateRole": "site",
 		"attackAnimationType": "magic",
-		"stopBlockingTime": "onHit",
+		"stopBlockingTime": "afterHitAnimation",
 		"particles": [
 			{ "script": "StunningBarrage", "setPosition": "site", "setPosition2": "focus" },
 			{ "script": "smokeBlast", "setPosition": "target" },
@@ -216,7 +216,7 @@
 					"defender": "target2",
 					"intermediateRole": "scenery",
 					"attackAnimationType": "magic",
-					"stopBlockingTime": "onHit",
+					"stopBlockingTime": "afterHitAnimation",
 					"particles": [
 						{
 							"script": "StunningBarrage",
