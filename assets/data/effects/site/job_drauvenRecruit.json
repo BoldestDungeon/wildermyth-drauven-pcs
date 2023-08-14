@@ -58,6 +58,9 @@
 			},
 			{
 				"outcome": { "class": "Branch", "branchEvent": "job_inspiredDrauvenHero_branch" }
+			},
+			{
+				"outcome": { "class": "Branch", "branchEvent": "job_drauvenRecruit_trainingBranch" }
 			}
 		]
 	}

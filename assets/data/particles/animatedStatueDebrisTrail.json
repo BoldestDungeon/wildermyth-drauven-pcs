@@ -1,0 +1,83 @@
+{
+"budget": "700",
+"emitterLifetime": "1",
+"loopLimit": "1",
+"blendStyle": "addPremultiplied",
+"bucketStrategy": "spatialPlanes",
+"rules": [
+	{
+		"class": "Once",
+		"when": "0",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "30",
+				"image": [ "particle_dot1", "particle_dot2", "particle_dot3", "particle_dot4" ],
+				"size": "[0.3,1]",
+				"killTime": "[1.5,2.8]",
+				"initializeWith": [
+					{
+						"class": "SetColor",
+						"color": { "r": "[0.43,0.47]", "g": "[0.38,0.42]", "b": "[0.35,0.39]", "a": "1" }
+					},
+					{
+						"class": "SetVelocity",
+						"vx": "((3*e.dx)*[0.5,1])+[-0.2,0.2]",
+						"vy": "((3*e.dy)*[0.5,1])+[-0.2,0.2]",
+						"vz": "[-4,1]"
+					},
+					{ "class": "SetPosition", "x": "[-0.3,0.3]", "y": "[-0.3,0.3]", "z": "-0.5" }
+				]
+			},
+			{
+				"class": "Emit",
+				"numberOfParticles": "10",
+				"image": [ "particle_dot1", "particle_dot2", "particle_dot3", "particle_dot4" ],
+				"size": "[0.1,0.5]",
+				"killTime": "[0.8,1]",
+				"initializeWith": [
+					{
+						"class": "SetColor",
+						"color": { "r": "[0.43,0.47]", "g": "[0.38,0.42]", "b": "[0.35,0.39]", "a": "1" }
+					},
+					{
+						"class": "SetVelocity",
+						"vx": "((1*e.dx)*[0.3,1])+[-1.2,1.2]",
+						"vy": "((1*e.dy)*[0.3,1])+[-1.2,1.2]",
+						"vz": "[-5,1]"
+					},
+					{
+						"class": "SetPosition",
+						"x": "0.5+[-0.3,0.3]",
+						"y": "0.5+[-0.3,0.3]",
+						"z": "-0.5"
+					}
+				]
+			}
+		]
+	},
+	{ "class": "Lifetime" },
+	{ "class": "Accelerate", "az": "12" },
+	{
+		"class": "SetColor",
+		"color": { "r": null, "g": null, "b": null, "a": "life~{0.69999999|0.5:1|0}" }
+	},
+	{ "class": "BasicPhysics" },
+	{ "class": "Bounce", "heightDecayOnBounce": "0.2", "speedDecayOnBounce": "0.8" },
+	{ "class": "Drag", "vSquaredComponent": "0.02*pow(1.5,size)" },
+	{
+		"class": "AnimateFrame",
+		"light": "gain",
+		"image": [
+			"particle_dot1",
+			"particle_dot2",
+			"particle_dot3",
+			"particle_dot4",
+			"particle_dot3",
+			"particle_dot2"
+		],
+		"customTiming": "(particleNumber+time)*0.72",
+		"timeBehavior": "loop"
+	}
+]
+}

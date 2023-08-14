@@ -1,0 +1,72 @@
+{
+"budget": "400",
+"emitterLifetime": "0.8",
+"loopLimit": "1",
+"rules": [
+	{ "class": "Lifetime" },
+	{ "class": "Accelerate", "az": "3" },
+	{
+		"class": "SetColor",
+		"color": {
+			"r": null,
+			"g": null,
+			"b": null,
+			"a": "life~{1|0.80000001|0.60000002|0.30000001|0.2|0.1|0.05|0}"
+		}
+	},
+	{ "class": "BasicPhysics" },
+	{
+		"class": "Once",
+		"when": "0",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "80",
+				"image": [ "particle_dot1", "particle_dot2", "particle_dot3", "particle_dot4" ],
+				"light": "gain",
+				"size": "[0.1,1.3]",
+				"killTime": "[1.2,2.7]",
+				"initializeWith": [
+					{
+						"class": "SetColor",
+						"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+					},
+					{ "class": "ParticleVar", "name": "adjust", "value": "e.life-[0,0.08]" },
+					{
+						"class": "ParticleVar",
+						"name": "sz",
+						"value": "e.life~{0.5|0.30000001|0.2}+[0,0.1]"
+					},
+					{ "class": "SetPosition", "x": "0", "y": "0", "z": "0.1", "theta": "[0,360]" },
+					{
+						"class": "SetVelocity",
+						"vx": "[-0.7,0.7]",
+						"vy": "[-0.7,0.7]",
+						"vz": "0-((pow(30,[0.5,1])/20)/pow(size,0.5))",
+						"vTheta": "0"
+					}
+				]
+			},
+			{
+				"class": "SetColor",
+				"color": { "r": "[0.43,0.47]", "g": "[0.38,0.42]", "b": "[0.35,0.39]", "a": "1" }
+			}
+		]
+	},
+	{ "class": "Bounce", "heightDecayOnBounce": "0.2", "speedDecayOnBounce": "0.95" },
+	{
+		"class": "AnimateFrame",
+		"light": "gain",
+		"image": [
+			"particle_dot1",
+			"particle_dot2",
+			"particle_dot3",
+			"particle_dot4",
+			"particle_dot3",
+			"particle_dot2"
+		],
+		"customTiming": "(particleNumber+time)*0.72",
+		"timeBehavior": "loop"
+	}
+]
+}

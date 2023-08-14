@@ -143,6 +143,30 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_battlecrafting",
+	"effects": [ "drauven_pc_fabricate", "drauven_pc_spear_upgrade" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "humanist" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_battlecrafting_upgrade",
+	"effects": [ "drauven_pc_animateStatue" ],
+	"legacyAbilityChoice": true,
+	"interactionFeedback": [
+		{ "otherAspect": "statue", "replaceBlurb": true }
+	],
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_battlecrafting",
+		"abilityDeckIcon": "humanist"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_blastingshard",
 	"effects": [ "drauven_pc_blastingshard" ],
 	"boostType": "ABILITY_CLASS",
@@ -163,30 +187,12 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_mystic_dragonBlood",
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauvenDeck_mystic_dragonBlood_upgrade",
-	"effects": [ "drauven_pc_dragonBlood" ],
-	"legacyAbilityChoice": true,
-	"info": {
-		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_mystic_dragonBlood",
-		"abilityDeckIcon": "elementalist"
-	}
-},
-{
-	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_dragonBreath",
 	"effects": [ "drauven_pc_dragonBreath" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"abilityForbidAspects": [ "alive" ],
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "fireleash" }
 },
 {
@@ -201,6 +207,34 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_earthsong",
+	"effects": [
+		"advancedRecipe_treecall",
+		"drauven_pc_rockShield",
+		"drauven_pc_fissureBell_upgrade"
+	],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"interactionFeedback": [
+		{ "otherAspect": "tree", "replaceBlurb": true }
+	],
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "rockShield" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_earthsong_upgrade",
+	"effects": [ "drauven_pc_unearth" ],
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_earthsong",
+		"abilityDeckIcon": "rockShield"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_fireshot",
 	"effects": [ "drauven_pc_fireshot" ],
 	"boostType": "ABILITY_CLASS",
@@ -211,14 +245,60 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_fireshot_upgrade",
-	"effects": [ "drauven_pc_channelFireball" ],
-	"boostType": "ABILITY_CLASS",
+	"effects": [ "drauven_pc_channelFireball", "drauven_pc_channelFireballFree" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_mystic_fireshot",
 		"abilityDeckIcon": "fireleash"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_skysong",
+	"effects": [
+		"drauven_pc_tailwind",
+		"drauven_pc_flamewings_upgrade",
+		"drauven_pc_lightningRod_upgrade",
+		"drauven_pc_freezingRain_upgrade",
+		"elementalist_interfusedFireSustainsItself"
+	],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "lightning" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_skysong_upgrade",
+	"effects": [ "drauven_pc_freezingRain_upgrade2" ],
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_skysong",
+		"abilityDeckIcon": "lightning"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_sneer",
+	"effects": [ "drauven_pc_sneer", "drauven_pc_sneer_hit" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "zealousLeap" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_sneer_upgrade",
+	"effects": [],
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_mystic_sneer",
+		"abilityDeckIcon": "zealousLeap"
 	}
 },
 {
