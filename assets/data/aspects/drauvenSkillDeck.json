@@ -234,7 +234,8 @@
 	"interactionFeedback": [
 		{ "otherAspect": "book", "replaceBlurb": true },
 		{ "otherAspect": "statue", "replaceBlurb": true },
-		{ "otherAspect": "ruins", "replaceBlurb": true }
+		{ "otherAspect": "ruins", "replaceBlurb": true },
+		{ "otherAspect": "protective", "replaceBlurb": true }
 	],
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "wisdom" }
