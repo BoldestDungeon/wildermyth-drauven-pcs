@@ -1,0 +1,68 @@
+{
+"budget": "500",
+"emitterLifetime": "1",
+"bucketStrategy": "spatialPlanes",
+"rules": [
+	{
+		"class": "Rate",
+		"rate": "20",
+		"doAll": [
+			{
+				"class": "Emit",
+				"numberOfParticles": "1",
+				"image": [
+					"particle_leafBright1",
+					"particle_leafBright2",
+					"particle_leafBright3",
+					"particle_paper1",
+					"particle_paper2",
+					"particle_shardGraySmall1",
+					"particle_shardGrayLarge1"
+				],
+				"light": "gain",
+				"size": "(pow(2,[0.9,2])*pow(2,[0.9,2]))/80",
+				"killTime": "2",
+				"initializeWith": [
+					{
+						"class": "SetPosition",
+						"x": "([0,1]+[0,1])/2",
+						"y": "([0,1]+[0,1])/2",
+						"z": "0",
+						"theta": "[-180,180]"
+					},
+					{ "class": "ParticleVar", "name": "colorMult", "value": "[0.4,1.2]" },
+					{
+						"class": "SetVelocity",
+						"vx": "[-0.3,0.3]",
+						"vy": "[-0.3,0.3]",
+						"vz": "0-((pow(10,[0.5,1])/80)/pow(size,0.5))",
+						"vTheta": "[-100,100]"
+					}
+				]
+			}
+		]
+	},
+	{ "class": "Lifetime" },
+	{ "class": "Drag", "linearComponent": "0", "vSquaredComponent": "0.1" },
+	{ "class": "BasicPhysics" },
+	{
+		"class": "SetColor",
+		"color": {
+			"r": null,
+			"g": null,
+			"b": null,
+			"a": "life~{0|0.40000001|0.30000001|0.2|0.40000001|0}"
+		}
+	},
+	{ "class": "Accelerate", "az": "0.6" },
+	{
+		"class": "DynamicPull",
+		"x": "0.5",
+		"y": "0.5",
+		"z": "-0.5",
+		"kx": "0.5",
+		"ky": "0.5",
+		"kz": "1"
+	}
+]
+}
