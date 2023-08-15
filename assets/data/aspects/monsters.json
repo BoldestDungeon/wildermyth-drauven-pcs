@@ -33,6 +33,41 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_loremasterSlowScenery",
+	"effects": [ "drauven_pc_loremasterSlowRegion" ],
+	"boostType": "ADVANTAGE",
+	"importance": 1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_songInspirationBuff|ALLY",
+	"stats": {
+		"MELEE_ACCURACY": 5,
+		"PHYSICAL_DAMAGE_BONUS": 1,
+		"SPELL_DAMAGE": 1,
+		"STUNT_CHANCE": 5
+	},
+	"boostType": "ADVANTAGE"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_songInspirationSource",
+	"effects": [
+		"drauven_pc_songInspirationRegion",
+		"alsoAddParameter|drauven_pc_songInspirationBuff|ALLY",
+		"alsoAddRemoveAspectAfterTurnStarts|drauven_pc_songInspirationSource|3",
+		"alsoAddRemoveAspectAfterTurnStartsParameter|drauven_pc_songInspirationBuff|ALLY|3"
+	],
+	"boostType": "ADVANTAGE",
+	"importance": 1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_songInspirationUsed",
+	"boostType": "DISADVANTAGE",
+	"importance": 1
+},
+{
 	"id": "drauven_pc_sneer_counter|_ATTACKER_",
 	"parameters": [
 		{ "replace": "_ATTACKER_", "isEntity": true }

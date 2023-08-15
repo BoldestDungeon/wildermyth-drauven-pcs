@@ -1,0 +1,30 @@
+{
+"id": "drauven_pc_songInspirationRegion",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "region/drauven_pc_songInspirationRegion",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "REGION",
+"targets": [],
+"outcomes": [
+	{
+		"class": "MapRegion",
+		"region": {
+			"id": "drauven_pc_songInspirationRegion",
+			"feedbackType": "SPIRITBLADE",
+			"tileFilter": "floorOrScenery",
+			"spatialRelationship": {
+				"testAspects": [
+					{ "id": "ALLY" },
+					{ "id": "alive" }
+				],
+				"otherAspect": "drauven_pc_songInspirationBuff"
+			}
+		},
+		"aura": "0.6+drauven_pc_songInspirationSource",
+		"presence": true
+	}
+]
+}

@@ -1,19 +1,19 @@
 {
-"id": "drauven_pc_cordAndVines",
+"id": "drauven_pc_cordAndVines_upgrade",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_cordAndVines",
+	"sourceFile": "drauven/drauven_pc_cordAndVines_upgrade",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "HeroOfWind",
+	"author": "psionusoid",
 	"aiPriority": "2050",
-	"tags": [ "interfusionRecipe" ]
+	"tags": [ "interfusionRecipe", "drauven_pc_cordAndVines_upgrade" ]
 },
 "type": "ABILITY",
 "verb": "ATTACK",
 "ability": {
 	"icon": "thornlash",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeWildGrasp", "mysticRecipeEngulf" ],
+	"strictlyBetterThan": [ "mysticRecipeWildGrasp", "mysticRecipeEngulf", "drauven_pc_cordAndVines" ],
 	"priority": "1",
 	"onlyShowIfPossibleInCharacterSheet": true,
 	"showDescriptionInTooltip": true,
@@ -22,7 +22,7 @@
 "targets": [
 	{
 		"template": "SELF",
-		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"cost": { "class": "ActionPoints" },
 		"missionFeedback": { "orientTo": "target" }
 	},
 	{
@@ -102,13 +102,13 @@
 				},
 				{
 					"class": "Damage",
-					"amount": "1d2+(self.POTENCY+self.SPELL_DAMAGE)",
+					"amount": "(1d2+1)+(self.POTENCY+self.SPELL_DAMAGE)",
 					"useEquippedWeaponForStunt": true
 				},
 				{
 					"class": "Aspects",
 					"addAspects": [
-						{ "id": "hobbled", "value": "2" }
+						{ "id": "hobbled", "value": "2+self.mysticDeck_mythweaver_upgrade" }
 					]
 				}
 			]

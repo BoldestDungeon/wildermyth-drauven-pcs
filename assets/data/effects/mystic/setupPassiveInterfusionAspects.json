@@ -97,6 +97,18 @@
 				{ "id": "vigorflowUpgradeBuff", "value": "1" }
 			]
 		}
+	},
+	{
+		"class": "Test",
+		"value": "self.drauvenDeck_mystic_loremaster+max(target.statue,target.ruins)",
+		"threshold": "2",
+		"onPass": {
+			"class": "Aspects",
+			"target": "self",
+			"addAspects": [
+				{ "id": "mythmeld_interfusedWithStatue", "value": "1", "inRelationTo": "target" }
+			]
+		}
 	}
 ]
 }
