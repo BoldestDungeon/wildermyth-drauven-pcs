@@ -13,35 +13,39 @@
 "ability": {
 	"icon": "fireleash",
 	"priority": "10",
-	"branchableAbilityType": "standardRanged",
-	"abilityElementType": "fire"
+	"branchableAbilityType": "standardRanged"
 },
 "targets": [
 	{
 		"template": "SELF",
-		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
-		"showAnyway": true
+		"cost": { "class": "ActionPoints" },
+		"showAnyway": true,
+		"missionFeedback": { "orientTo": "target" }
 	},
 	{
 		"template": "ADJACENT_ENEMY",
 		"showAnyway": true,
 		"alwaysSelect": true,
-		"missionFeedback": {
-			"orientTo": "self",
-			"suggestionScript": "figures.attackSuggestion",
-			"rangeFeedback": "ATTACK_RANGE",
-			"suggestionFeedback": "ATTACK_SUGGESTION",
-			"hoverFeedback": "ATTACK_HOVER"
-	},
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
-		"minRange": "1.9-(self.commonDeck_bowmaster*2)",
-		"range": "5+self.BONUS_RANGE",
+		"range": "(((4.1+(self.POTENCY/2))+self.BONUS_RANGE)+self.commonDeck_bowmaster)+self.commonDeck_bowmaster_upgrade",
 		"lineOfSight": "LIVE_ENEMIES"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "1",
+		"scoreThreshold": "0",
+		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
+		"relativeTo": "target",
+		"range": "0.9",
+		"tileFilter": "floor"
 	}
 ],
 "outcomes": [
 	{
 		"class": "AttackRoll",
+		"stopBlockingTime": "onHit",
 		"particles": [
 			{
 				"script": "projectileTrailFireball|projectileTrail",
@@ -49,33 +53,44 @@
 				"setPosition2": "target"
 			}
 		],
+		"audioOverride": {
+			"attackStartCue": "Characters/DefaultHuman/Magic_FireMiss",
+			"attackHitCue": "Characters/DefaultHuman/Magic_FireHit"
+		},
 		"defenseRollTags": [ "range" ],
 		"attackStrength": "actionRoll(self.RANGE_ACCURACY)",
 		"wield": "fromWeapon",
 		"applyCover": true,
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Animate",
+					"audioAtPosition": {
+						"audioId": "Characters/DefaultHuman/Magic_FireMiss",
+						"setPosition": "targetTile",
+						"delay": "-500"
+					}
+				}
+			]
+		},
 		"onHit": {
 			"class": "DoAll",
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "((self.SPELL_DAMAGE+self.POTENCY)+1d2)+(self.POTENCY*self.drauvenDeck_mystic_fireshot_upgrade)",
+					"amount": "1d2+ceil((((self.POTENCY+self.SPELL_DAMAGE)/2)*(1+self.drauvenDeck_mystic_fireshot_upgrade)))",
 					"type": "MAGIC",
-					"pierce": "1",
-					"overrideStuntDamage": "3+(3*(1+self.drauvenDeck_mystic_fireshot_upgrade))",
-					"onStunt": {
-						"class": "BranchAbility",
-						"target": "self",
-						"targetRole": "defender",
-						"branchAbility": "stuntEffect_fire|3"
-					}
+					"useEquippedWeaponForStunt": true
 				}
 			]
 		},
 		"onHitCover": {
 			"class": "Damage",
-			"amount": "max(1,((attacker.PHYSICAL_DAMAGE_BONUS+DAMAGE_EXPRESSION)-2))",
-			"shred": "1"
+			"amount": "1d2+ceil((((self.POTENCY+self.SPELL_DAMAGE)/2)*(1+self.drauvenDeck_mystic_fireshot_upgrade)))",
+			"type": "MAGIC"
 		}
-	}
+	},
+	{ "class": "Spawn", "target": "targetTile", "addRole": "fire", "addFire": "2" }
 ]
 }

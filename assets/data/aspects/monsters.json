@@ -1,4 +1,18 @@
 [
+{ "modId": "wildermyth-drauven-pcs", "id": "animatedStatue_bone" },
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "animatedStatue_debrisOnDeath",
+	"effects": [ "animatedStatue_debrisOnDeath" ],
+	"boostType": "ABILITY_MISC"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "animatedStatue_healthMod",
+	"importance": -1
+},
+{ "modId": "wildermyth-drauven-pcs", "id": "animatedStatue_metal" },
+{ "modId": "wildermyth-drauven-pcs", "id": "animatedStatue_stone" },
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_guerilla",
@@ -52,5 +66,76 @@
 	"id": "drauven_pc_songInspirationUsed",
 	"boostType": "DISADVANTAGE",
 	"importance": 1
+},
+{
+	"id": "drauven_pc_sneer_counter|_ATTACKER_",
+	"parameters": [
+		{ "replace": "_ATTACKER_", "isEntity": true }
+	],
+	"effects": [ "drauven_pc_sneer_counter|_ATTACKER_", "removeEveryTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_sneer_move|_ATTACKER_",
+	"parameters": [
+		{ "replace": "_ATTACKER_", "isEntity": true }
+	],
+	"effects": [ "drauven_pc_sneer_move|_ATTACKER_", "removeEveryTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_tailwind_speedBuff|ENTITY",
+	"parameters": [
+		{ "replace": "ENTITY", "isEntity": true }
+	],
+	"effects": [
+		"alsoAddRemoveAspectAfterTurnStartsParameter|drauven_pc_tailwind_speedBuff|ENTITY|1"
+	],
+	"stats": { "SPEED": 1 },
+	"boostType": "ADVANTAGE",
+	"showValue": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_calcify|STONE_ID",
+	"parameters": [
+		{ "replace": "STONE_ID", "isEntity": true }
+	],
+	"effects": [
+		"alsoAddParameter2Value|tempHP|5|STONE_ID|1+self.drauvenDeck_mystic_earthsong_upgrade",
+		"alsoAddParameter2Value|tempArmor|5|STONE_ID|1+self.drauvenDeck_mystic_earthsong_upgrade",
+		"alsoAddParameterValue|persistentWarding|STONE_ID|1+self.drauvenDeck_mystic_earthsong_upgrade",
+		"alsoRemoveParameter2|tempHP|5|STONE_ID",
+		"alsoRemoveParameter2|tempArmor|5|STONE_ID",
+		"alsoRemoveParameter|persistentWarding|STONE_ID"
+	],
+	"boostType": "ADVANTAGE",
+	"showValue": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_interfusedWithRock|_ENTITY_",
+	"parameters": [
+		{ "replace": "_ENTITY_", "isEntity": true }
+	],
+	"effects": [
+		"alsoAddParameter|drauven_pc_calcify|_ENTITY_",
+		"alsoRemoveParameter|drauven_pc_calcify|_ENTITY_"
+	],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "minion",
+	"effects": [ "defaultMoveFeedback" ],
+	"voice": "default"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "revertToStatue",
+	"effects": [ "revertToStatueIfNotInterfused" ],
+	"importance": -1
 }
 ]

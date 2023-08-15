@@ -31,6 +31,23 @@
 	},
 	{
 		"class": "Test",
+		"value": "self.drauvenDeck_mystic_earthsong+target.rock",
+		"threshold": "2",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"target": "self",
+					"addAspects": [
+						{ "id": "drauven_pc_interfusedWithRock", "value": "1", "inRelationTo": "target" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
 		"value": "self.mysticDeck_soulsplitting+target.scenery",
 		"threshold": "2",
 		"onPass": {
