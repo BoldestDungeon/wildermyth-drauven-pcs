@@ -24,7 +24,6 @@
 	{
 		"role": "source",
 		"template": "ANY",
-		"type": "SCENERY",
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",
 			"hoverScript": "figures.abilitySelectHover",
@@ -69,6 +68,13 @@
 			"class": "DoAll",
 			"outcomes": [
 				{
+					"class": "Damage",
+					"target": "source",
+					"amount": "2",
+					"type": "TRUE",
+					"showInTooltip": false
+				},
+				{
 					"class": "Aspects",
 					"target": "target",
 					"addAspects": [
@@ -77,13 +83,6 @@
 							"value": "3+(2*self.drauvenDeck_mystic_earthsong_upgrade)"
 						}
 					]
-				},
-				{
-					"class": "Damage",
-					"target": "source",
-					"amount": "2",
-					"type": "TRUE",
-					"showInTooltip": false
 				}
 			]
 		}
