@@ -11,9 +11,9 @@
 	],
 	"layers": [
     {
-      "name": "replaceHead_drauvDetail_stump_whiskers3",
-      "tint": "skin", "tintAmount": 0.6,
-      "depth": 4300,
+      "name": "replaceHead_Stump_DrauvDetail_Whiskers3_Skin",
+      "tint": "skin",
+      "depth": 3990,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"],
@@ -21,13 +21,31 @@
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
     {
-      "name": "replaceHead_drauvDetail_stump_whiskers3_back",
+      "name": "replaceHead_Stump_DrauvDetail_Whiskers3_Texture_Skin",
       "tint": "skin", "tintAmount": 0.6,
-      "depth": 3999,
+      "depth": 3991,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"],
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+    },
+    {
+      "name": "replaceHead_Stump_DrauvDetail_Whiskers3_Untinted",
+      "depth": 3992,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+    },
+    {
+      "name": "replaceHead_Stump_DrauvDetail_Whiskers3_Rings_Untinted",
+      "depth": 3993,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"],
+      "ifNoOwnerAspects": ["farmer", "themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
 
