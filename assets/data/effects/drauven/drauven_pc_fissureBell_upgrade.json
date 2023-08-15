@@ -93,26 +93,6 @@
 		"notAlreadyMatchedAs": [ "source" ],
 		"range": "4.6+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY"
-	},
-	{
-		"role": "targetTile",
-		"template": "ADJACENT_UNIT",
-		"STUB": "Gets the furthest tile. Used for particle effects.",
-		"type": "TILE",
-		"choose": "ONE_FURTHEST",
-		"missionFeedback": null,
-		"manifold": {
-			"from": "source",
-			"to": "focus",
-			"thickness": [
-				"1+(self.drauvenDeck_mystic_earthsong_upgrade/2)",
-				"1+(self.drauvenDeck_mystic_earthsong_upgrade*2)"
-			],
-			"excludeSource": true
-		},
-		"relativeTo": "source",
-		"range": "4.6+self.BONUS_RANGE",
-		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],
 "outcomes": [
@@ -122,8 +102,8 @@
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "shriek", "setPosition": "source", "setPosition2": "targetTile" },
-			{ "script": "battleyell", "setPosition": "source", "setPosition2": "targetTile" }
+			{ "script": "shriek", "setPosition": "source", "setPosition2": "focus" },
+			{ "script": "battleyell", "setPosition": "source", "setPosition2": "focus" }
 		],
 		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/SceneryDestroyMetal" },
 		"flankMarkOrigin": "source",
