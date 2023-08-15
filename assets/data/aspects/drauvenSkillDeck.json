@@ -177,7 +177,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_blastingshard_upgrade",
-	"boostType": "ABILITY_CLASS",
+	"effects": [ "drauven_pc_blastingsalvo" ],
 	"legacyAbilityChoice": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",
