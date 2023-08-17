@@ -24,8 +24,9 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_turtleShellWithdraw",
+	"id": "turtleShellWithdrawn",
 	"effects": [
+		"turtleShellKicked",
 		"removeAtStartOfTurn",
 		"removeOnDeath",
 		"otherAspectPreventsThisAspect|dead",
@@ -33,8 +34,23 @@
 		"alsoAddParameter|forbidWallWithAllies|turtleShell",
 		"alsoRemoveParameter|forbidWallWithAllies|turtleShell",
 		"alsoAddParameter|forbidReactions|turtleShell",
-		"alsoRemoveParameter|forbidReactions|turtleShell"
+		"alsoRemoveParameter|forbidReactions|turtleShell",
+		"alsoAddParameter2|rigOverridePriority|10|TurtleWithdrawn",
+		"alsoRemoveParameter2|rigOverridePriority|10|TurtleWithdrawn"
 	]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "turtleGuarding",
+	"effects": [
+		"removeAtStartOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"onAddedRemoveAllActionPoints",
+		"alsoAdd|hidden",
+		"alsoRemove|hidden"
+	],
+	"importance": -1
 }
 ]
 

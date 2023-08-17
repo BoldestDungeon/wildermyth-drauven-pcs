@@ -2,8 +2,8 @@
 "id": "turtleBiteMelee",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "attack/turtleBiteMelee",
-	"modId": "drauvenTurtle",
+	"sourceFile": "themeAbilities/turtleBiteMelee",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "",
 	"aiPriority": "3000",
 	"tags": [ "okToMarkDone", "melee", "specialAbilityButton", "themeUsageOverride" ]
@@ -37,9 +37,9 @@
 		"class": "AttackRoll",
 		"audioOverride": {
 			"attackStartCue": "Characters/Default/SceneryHitPlant",
-			"attackHitCue": "",
-			"attackDodgedCue": "",
-			"attackBlockedCue": ""
+			"attackHitCue": "Characters/Theme/attackClaw",
+			"attackDodgedCue": "Characters/Weapons/Dagger/weaponDodge",
+			"attackBlockedCue": "Characters/Weapons/Dagger/weaponBlock"
 		},
 		"defenseRollTags": [ "melee" ],
 		"attackStrength": "self.MELEE_ACCURACY",
@@ -50,20 +50,17 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1+1d3)+floor(((attacker.PHYSICAL_DAMAGE_BONUS+attacker.POTENCY)/2))",
+					"amount": "(1+1d3)+floor(((attacker.PHYSICAL_DAMAGE_BONUS+attacker.POTENCY)/(2-attacker.theme_turtle_upgrade)))",
 					"flankingBonusDamage": "0",
-					"shred": "0",
-					"pierce": "1",
-					"overrideStuntDamage": "1"
+					"shred": "0+attacker.theme_turtle_upgrade",
+					"pierce": "1+attacker.theme_turtle_upgrade",
+					"overrideStuntDamage": "2"
 				}
 			]
 		},
 		"onHitCover": {
 			"class": "Damage",
-			"amount": "(1+1d3)+floor(((attacker.PHYSICAL_DAMAGE_BONUS+attacker.POTENCY)/2))",
-			"flankingBonusDamage": "0",
-			"shred": "0",
-			"pierce": "1",
+			"amount": "(1+1d3)+floor(((attacker.PHYSICAL_DAMAGE_BONUS+attacker.POTENCY)/(2-attacker.theme_turtle_upgrade)))",
 			"weapon": null
 		}
 	}

@@ -1,0 +1,19 @@
+[
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "theme_turtle_upgrade",
+    "boostType": "ABILITY_MISC",
+    "legacyAbilityChoice": true,
+    "abilityRequiresOneAspectOf": [ "themePiece_turtle_rightArm", "themePiece_turtle_leftArm" ],
+    "info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "claw" }
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "theme_turtle_upgrade_turtleShellWithdraw",
+    "boostType": "ABILITY_MISC",
+    "legacyAbilityChoice": true,
+		"effects": ["turtleShellWithdraw"],
+    "abilityRequiresOneAspectOf": [ "themePiece_turtle_shell" ],
+    "info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "armor" }
+  }
+]

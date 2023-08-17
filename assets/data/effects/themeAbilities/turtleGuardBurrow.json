@@ -1,0 +1,48 @@
+{
+"id": "turtleGuardBurrow",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "themeAbilities/turtleGuardBurrow",
+	"modId": "wildermyth-drauven-pcs",
+	"aiPriority": "-1",
+	"tags": [ "sneaky" ]
+},
+"type": "ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "silkstepCloak",
+	"priority": "90",
+	"onlyShowIfPossibleInCharacterSheet": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "all" },
+		"aspects": [ "alive", "themePiece_turtle_rightArm", "SELF", "themePiece_turtle_leftArm" ]
+	},
+  {
+    "template": "TILE",
+    "role": "focus",
+    "relativeTo": "self",
+    "range": 0,
+    "choose": "ONE_CLOSEST"
+  }
+],
+"outcomes": [
+  {
+    "class": "MoveEntity",
+    "target": "self",
+    "directlyToTile": "focus",
+    "ignoreEntitiesOnTile": true,
+    "animationType": "burrow"
+  },
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "turtleGuarding", "value": "1" }
+		]
+	},
+	{ "class": "Animate", "target": "self", "script": "figures.enterGrayplane" },
+	{ "class": "BranchAbility", "target": "self", "branchAbility": "guard" }
+]
+}

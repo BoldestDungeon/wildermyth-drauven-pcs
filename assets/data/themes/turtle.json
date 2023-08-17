@@ -292,6 +292,8 @@
 		"blurb": "<self> has some wicked claws for digging and slashing.",
 		"slots": [ "leftArm" ],
 		"replaces": [ "leftArm", "leftGrip" ],
+		"effects": [ "turtleClawMelee", "turtleGuardBurrow" ],
+		"extraAspects": [ "themeAbility_melee" ],
 		"layers": [
 			{
 				"name": "replaceArmL_turtleSnapper_1hand_Upper_Skin",
@@ -329,6 +331,8 @@
 		"name": "Turtle Arm (R)",
 		"blurb": "<self> has some wicked claws for digging and slashing.",
 		"slots": [ "rightArm" ],
+		"effects": [ "turtleClawMelee", "turtleGuardBurrow" ],
+		"extraAspects": [ "themeAbility_melee" ],
 		"replaces": [ "rightArm", "rightGrip" ],
 		"layers": [
 			{
@@ -369,6 +373,7 @@
 		"blurb": "<self>'s left leg is turtlish.",
 		"slots": [ "leftLeg" ],
 		"replaces": [ "leftLeg" ],
+		"stats": { "ARMOR": 0.8, "SPEED": 1.2, "WARDING": 0.5 },
 		"layers": [
 			{ "name": "replaceLegL_turtleSnapper_Skin", "tint": "skin", "depth": 1111 },
 			{
@@ -386,6 +391,7 @@
 		"blurb": "<self>'s right leg is turtlish.",
 		"slots": [ "rightLeg" ],
 		"replaces": [ "rightLeg" ],
+		"stats": { "ARMOR": 0.8, "SPEED": 1.2, "WARDING": 0.5 },
 		"layers": [
 			{ "name": "replaceLegR_turtleSnapper_Skin", "tint": "skin", "depth": 1111 },
 			{ "name": "replaceLegR_turtleSnapper_texture", "tint": "skin", "depth": 1113 },
@@ -397,8 +403,8 @@
 		"name": "Turtle Shell",
 		"blurb": "<self> carries a home on their back.",
 		"slots": [ "wings" ],
+		"stats": { "ARMOR": 2, "SPEED": -0.2, "BLOCK": 10 },
 		"extraAspects": [ "drauvenSkin_suppressClothes", "humanSkin_suppressClothes" ],
-		"effects": ["turtleShellKicked"],
 		"layers": [
 			{ "name": "shell_turtleSnapper_Skin", "tint": "skin", "depth": 61 },
 			{
