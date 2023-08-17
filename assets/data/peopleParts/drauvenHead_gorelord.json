@@ -27,6 +27,7 @@
       "expandFaceToExpressions": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+<<<<<<< Updated upstream
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     },
     {
@@ -65,6 +66,8 @@
       "expandFaceToExpressions": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head"],
+=======
+>>>>>>> Stashed changes
       "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
     }
   ]

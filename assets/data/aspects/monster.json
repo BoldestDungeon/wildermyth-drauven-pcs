@@ -3,5 +3,55 @@
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_bloodedFerocityOnCooldown",
 	"effects": []
+},
+{
+<<<<<<< HEAD
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_turtleShellWithdraw",
+	"effects": [
+	"removeAtStartOfTurn",
+	"removeOnDeath",
+	"otherAspectPreventsThisAspect|dead",
+	"onAddedRemoveAllActionPoints",
+	"alsoAddParameter|forbidWallWithAllies|turtleShell",
+	"alsoRemoveParameter|forbidWallWithAllies|turtleShell",
+	"alsoAddParameter|forbidReactions|turtleShell",
+	"alsoRemoveParameter|forbidReactions|turtleShell",
 }
 ]
+]
+=======
+	"id": "turtleShellKicked_move|_ATTACKER_",
+	"parameters": [
+		{ "replace": "_ATTACKER_", "isEntity": true }
+	],
+	"effects": [ "turtleShellKicked_move|_ATTACKER_", "removeEveryTurn", "removeEveryAction" ],
+	"importance": -1
+},
+{
+	"id": "turtleShellKicked_strength",
+	"effects": ["removeEveryTurn"],
+	"importance": -1
+},
+{
+	"id": "turtleShellKicked_wasHit",
+	"effects": ["removeEveryAction"],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_turtleShellWithdraw",
+	"effects": [
+		"removeAtStartOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"onAddedRemoveAllActionPoints",
+		"alsoAddParameter|forbidWallWithAllies|turtleShell",
+		"alsoRemoveParameter|forbidWallWithAllies|turtleShell",
+		"alsoAddParameter|forbidReactions|turtleShell",
+		"alsoRemoveParameter|forbidReactions|turtleShell"
+	]
+}
+]
+
+>>>>>>> a4fad37f79b4a2925e3a997e59118be7b7eb79d4

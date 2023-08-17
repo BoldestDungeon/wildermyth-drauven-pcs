@@ -1,0 +1,54 @@
+{
+"id": "theme_turtle_turtleShellWithdraw",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "theme_gem_upgrade_applyChrysalis", "theme_turtle.json", "themeAbilities/turtleShellWithdraw"
+	"author": "Jackson Wagner", "David Bilsky"
+	"aiPriority": "2040+1d20"
+},
+"type": "ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "turtleShellWithdraw",
+	"priority": "1",
+	"extraUI": {
+		"overrideDamageShown": "(1d4+1)+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)",
+		"overrideShredShown": "2",
+		"overrideRangeShown": "1.6+(self.POTENCY/3)"
+	},
+	"showDescriptionInTooltip": true,
+	"cooldown": "everyThreeTurns"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "all" },
+		"showAnyway": true
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"STUB": "for tile feedback",
+		"choose": "ANY",
+		"showAnyway": true,
+		"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"range": "1.6+(self.POTENCY/3)",
+		"lineOfSight": "TERRAIN_ONLY",
+		"relativeToLocation": "targetTile"
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{
+				"id": "turtleShellWithdrawn",
+				"value": "1",
+				]
+			},
+			{ "id": "doneWithTurn", "value": "1" }
+		]
+	},
+	{ "class": "Animate", "audio": "Characters/Theme/turtleShellWithdrawn" }
+]
+}

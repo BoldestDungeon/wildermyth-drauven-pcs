@@ -1,0 +1,231 @@
+{
+"id": "turtleShellKicked_dealDamage",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "themeAbilities/turtleShellKicked_dealDamage",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Patrick Belanger",
+	"aiPriority": "2000",
+	"debug": true
+},
+"type": "BRANCH",
+"verb": "MANEUVER",
+"targets": [
+	{ "template": "SELF" },
+	{ "template": "INJECTED_ENTITY" }
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"attackAnimationType": "interaction",
+		"showAbilityName": "always",
+		"stopBlockingTime": "noBlocking",
+    "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+		"attackerAnimationOverride": "",
+		"defenderAnimationOverride": "figures.slashedQuick",
+		"attackStrength": "self.MELEE_ACCURACY",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"target": "target",
+					"addAspects": [
+						{ "id": "turtleShellKicked_wasHit", "value": "1" }
+					]
+				},
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "target3",
+						"template": "TILE",
+						"choose": "ONE_FURTHEST",
+						"range": "max(1.9,self.turtleShellKicked_strength)",
+						"tileFilter": "validMoveEnd",
+            "relativeTo": "self",
+						"roleMustFit": "self"
+					}
+				},
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "volunteer",
+						"template": "ADJACENT_ENEMY",
+						"choose": "ANY",
+						"aspects": [ "HOSTILE_TARGET", "alive" ],
+						"aspectValues": [
+							{ "id": "turtleShellKicked_wasHit", "forbidden": true }
+						],
+						"range": "self.turtleShellKicked_strength"
+					}
+				},
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "scenery",
+						"template": "ADJACENT_SCENERY",
+						"choose": "ANY",
+						"aspectValues": [
+							{ "id": "turtleShellKicked_wasHit", "forbidden": true }
+						],
+						"range": "self.turtleShellKicked_strength"
+					}
+				},
+				{
+					"class": "Aspects",
+					"target": "self",
+					"consumeAspects": [
+						{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.target+1" }
+					]
+				},
+				{
+					"class": "Test",
+					"value": "EXISTS.volunteer",
+					"threshold": "1",
+					"onPass": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Aspects",
+								"target": "self",
+								"consumeAspects": [
+									{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.volunteer+1" }
+								]
+							},
+							{
+								"class": "Aspects",
+								"target": "volunteer",
+								"addAspects": [
+									{ "id": "turtleShellKicked_wasHit", "value": "1" }
+								]
+							},
+							{
+								"class": "MatchTarget",
+								"abilityTarget": {
+									"role": "target2",
+									"template": "TILE",
+									"choose": "ANY",
+									"relativeTo": "volunteer",
+									"range": "0"
+								}
+							},
+							{
+								"class": "AttackRoll",
+								"stopBlockingTime": "afterHitAnimation",
+                "minimumBlockTime": "20",
+                "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+								"attackerAnimationOverride": "",
+								"defenderAnimationOverride": "",
+								"always": {
+									"class": "MoveEntity",
+									"target": "self",
+									"directlyToTile": "target2",
+									"ignoreEntitiesOnTile": true,
+									"animationType": "leap"
+								}
+							},
+							{
+								"class": "BranchAbility",
+								"target": "self",
+								"targetRole": "volunteer",
+								"tileRole": "target2",
+								"branchAbility": "turtleShellKicked_dealDamage"
+							}
+						]
+					},
+					"onFail": {
+						"class": "Test",
+						"value": "EXISTS.scenery",
+						"threshold": "1",
+						"onPass": {
+							"class": "DoAll",
+							"outcomes": [
+								{
+									"class": "Aspects",
+									"target": "self",
+									"consumeAspects": [
+										{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.scenery+1" }
+									]
+								},
+								{
+									"class": "Aspects",
+									"target": "scenery",
+									"addAspects": [
+										{ "id": "turtleShellKicked_wasHit", "value": "1" }
+									]
+								},
+								{
+									"class": "MatchTarget",
+									"abilityTarget": {
+										"role": "target2",
+										"template": "TILE",
+										"choose": "ONE_RANDOM",
+										"relativeTo": "scenery",
+										"range": "0"
+									}
+								},
+								{
+									"class": "AttackRoll",
+									"stopBlockingTime": "afterHitAnimation",
+                  "minimumBlockTime": "20",
+                  "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+									"attackerAnimationOverride": "",
+									"defenderAnimationOverride": "",
+									"always": {
+										"class": "MoveEntity",
+										"target": "self",
+										"directlyToTile": "target2",
+										"ignoreEntitiesOnTile": true,
+										"animationType": "leap"
+									}
+								},
+								{
+									"class": "BranchAbility",
+									"target": "self",
+									"targetRole": "scenery",
+									"tileRole": "target2",
+									"branchAbility": "turtleShellKicked_dealDamage"
+								}
+							]
+						},
+						"onFail": {
+							"class": "DoAll",
+							"outcomes": [
+								{
+									"class": "AttackRoll",
+									"stopBlockingTime": "afterHitAnimation",
+                  "minimumBlockTime": "20",
+                  "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+									"attackerAnimationOverride": "",
+									"defenderAnimationOverride": "",
+									"always": {
+										"class": "MoveEntity",
+										"target": "self",
+										"directlyToTile": "target3",
+										"ignoreEntitiesOnTile": true,
+										"animationType": "leap"
+									}
+								},
+                {
+                  "class": "Aspects",
+                  "removeAspects": ["turtleShellKicked_strength"]
+                }
+							]
+						}
+					}
+				}
+			]
+		},
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "(1d3+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5))+((((((self.themePiece_turtle_head+self.themePiece_turtle_leftArm)+self.themePiece_turtle_rightArm)+self.themePiece_turtle_leftLeg)+self.themePiece_turtle_rightLeg)+self.themePiece_turtle_tail)*0.75)",
+					"overrideStuntDamage": "3"
+				}
+			]
+		}
+	}
+]
+}
