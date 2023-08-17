@@ -26,7 +26,16 @@
     "relativeTo": "self",
     "range": 0,
     "choose": "ONE_CLOSEST"
-  }
+  },
+	{
+		"template": "TILE",
+    "role": "volunteer",
+		"choose": "ANY",
+		"showAnyway": true,
+		"missionFeedback": { "rangeFeedback": "ATTACK_RANGE", "suggestionFeedback": "ATTACK_RANGE" },
+		"range": "self.MAX_MELEE_ATTACK_RANGE+self.BONUS_RANGE",
+		"tileFilter": "floor"
+	}
 ],
 "outcomes": [
   {

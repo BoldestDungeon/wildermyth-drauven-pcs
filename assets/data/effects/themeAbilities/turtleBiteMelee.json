@@ -12,7 +12,8 @@
 "verb": "ATTACK",
 "ability": {
 	"icon": "jumpjaw",
-	"priority": "19",
+	"priority": "19+(100*self.turtleGuarding)",
+	"aiPriority": "19+(100*self.turtleGuarding)",
 	"extraUI": { "overrideRangeShown": "2+self.BONUS_RANGE" },
 	"cooldown": "oncePerTurn",
 	"branchableAbilityType": "standardMelee"
@@ -28,7 +29,7 @@
 		"showAnyway": true,
 		"alwaysSelect": true,
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
-		"range": "2+self.BONUS_RANGE",
+		"range": "1.9+self.BONUS_RANGE",
 		"lineOfSight": "LIVE_ENEMIES"
 	}
 ],
@@ -50,7 +51,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1+1d3)+floor(((attacker.PHYSICAL_DAMAGE_BONUS+attacker.POTENCY)/(2-attacker.theme_turtle_upgrade)))",
+					"amount": "(1+1d3+attacker.theme_turtle_upgrade)+floor(((attacker.PHYSICAL_DAMAGE_BONUS+attacker.POTENCY)/(2-attacker.theme_turtle_upgrade)))+(4*attacker.turtleGuarding)",
 					"flankingBonusDamage": "0",
 					"shred": "0+attacker.theme_turtle_upgrade",
 					"pierce": "1+attacker.theme_turtle_upgrade",
