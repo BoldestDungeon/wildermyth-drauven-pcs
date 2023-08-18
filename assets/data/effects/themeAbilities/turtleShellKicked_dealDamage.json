@@ -20,7 +20,7 @@
 		"attackAnimationType": "interaction",
 		"showAbilityName": "always",
 		"stopBlockingTime": "noBlocking",
-    "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+		"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 		"attackerAnimationOverride": "",
 		"defenderAnimationOverride": "figures.slashedQuick",
 		"attackStrength": "self.MELEE_ACCURACY",
@@ -42,7 +42,6 @@
 						"choose": "ONE_FURTHEST",
 						"range": "max(1.9,self.turtleShellKicked_strength)",
 						"tileFilter": "validMoveEnd",
-            "relativeTo": "self",
 						"roleMustFit": "self"
 					}
 				},
@@ -112,8 +111,8 @@
 							{
 								"class": "AttackRoll",
 								"stopBlockingTime": "afterHitAnimation",
-                "minimumBlockTime": "20",
-                "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+								"minimumBlockTime": "20",
+								"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 								"attackerAnimationOverride": "",
 								"defenderAnimationOverride": "",
 								"always": {
@@ -167,8 +166,8 @@
 								{
 									"class": "AttackRoll",
 									"stopBlockingTime": "afterHitAnimation",
-                  "minimumBlockTime": "20",
-                  "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+									"minimumBlockTime": "20",
+									"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 									"attackerAnimationOverride": "",
 									"defenderAnimationOverride": "",
 									"always": {
@@ -194,8 +193,8 @@
 								{
 									"class": "AttackRoll",
 									"stopBlockingTime": "afterHitAnimation",
-                  "minimumBlockTime": "20",
-                  "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+									"minimumBlockTime": "20",
+									"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 									"attackerAnimationOverride": "",
 									"defenderAnimationOverride": "",
 									"always": {
@@ -206,10 +205,10 @@
 										"animationType": "leap"
 									}
 								},
-                {
-                  "class": "Aspects",
-                  "removeAspects": ["turtleShellKicked_strength"]
-                }
+								{
+									"class": "Aspects",
+									"removeAspects": [ "turtleShellKicked_strength" ]
+								}
 							]
 						}
 					}
@@ -221,7 +220,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1d3+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5))+((((((self.themePiece_turtle_head+self.themePiece_turtle_leftArm)+self.themePiece_turtle_rightArm)+self.themePiece_turtle_leftLeg)+self.themePiece_turtle_rightLeg)+self.themePiece_turtle_tail)*0.75)",
+					"amount": "(1d3+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5))+(((((((self.themePiece_turtle_head+self.themePiece_turtle_leftArm)+self.themePiece_turtle_rightArm)+self.themePiece_turtle_leftLeg)+self.themePiece_turtle_rightLeg)+self.themePiece_turtle_tail)+1)*0.75)",
 					"overrideStuntDamage": "3"
 				}
 			]

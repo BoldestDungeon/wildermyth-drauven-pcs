@@ -8,28 +8,18 @@
 	"tags": [ "sneaky" ]
 },
 "type": "ABILITY",
-"verb": "MANEUVER",
-"ability": {
-	"icon": "silkstepCloak",
-	"priority": "90",
-	"onlyShowIfPossibleInCharacterSheet": true
-},
+"verb": "END_TURN",
+"ability": { "icon": "silkstepCloak", "priority": "90" },
 "targets": [
 	{
 		"template": "SELF",
 		"cost": { "class": "ActionPoints", "actionPoints": "all" },
 		"aspects": [ "alive", "themePiece_turtle_rightArm", "SELF", "themePiece_turtle_leftArm" ]
 	},
-  {
-    "template": "TILE",
-    "role": "focus",
-    "relativeTo": "self",
-    "range": 0,
-    "choose": "ONE_CLOSEST"
-  },
+	{ "template": "TILE", "choose": "ONE_CLOSEST", "range": "0" },
 	{
+		"role": "volunteer",
 		"template": "TILE",
-    "role": "volunteer",
 		"choose": "ANY",
 		"showAnyway": true,
 		"missionFeedback": { "rangeFeedback": "ATTACK_RANGE", "suggestionFeedback": "ATTACK_RANGE" },
@@ -38,13 +28,13 @@
 	}
 ],
 "outcomes": [
-  {
-    "class": "MoveEntity",
-    "target": "self",
-    "directlyToTile": "focus",
-    "ignoreEntitiesOnTile": true,
-    "animationType": "burrow"
-  },
+	{
+		"class": "MoveEntity",
+		"target": "self",
+		"directlyToTile": "focus",
+		"ignoreEntitiesOnTile": true,
+		"animationType": "burrow"
+	},
 	{
 		"class": "Aspects",
 		"addAspects": [
