@@ -23,6 +23,7 @@
 		"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 		"attackerAnimationOverride": "",
 		"defenderAnimationOverride": "figures.slashedQuick",
+		"defenseRollTags": [ "melee" ],
 		"attackStrength": "self.MELEE_ACCURACY",
 		"always": {
 			"class": "DoAll",
