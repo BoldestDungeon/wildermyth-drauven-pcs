@@ -10,7 +10,7 @@
 "type": "ABILITY",
 "verb": "MANEUVER",
 "ability": {
-	"icon": "turtleShellWithdraw",
+	"icon": "armor",
 	"priority": "1",
 	"showDescriptionInTooltip": true,
 	"cooldown": "everyThreeTurns"
@@ -20,6 +20,12 @@
 		"template": "SELF",
 		"cost": { "class": "ActionPoints", "actionPoints": "all" },
 		"showAnyway": true
+	},
+	{
+		"role": "volunteer",
+		"template": "ADJACENT_ALLY",
+		"choose": "ANY",
+		"range": "50"
 	}
 ],
 "outcomes": [
@@ -28,6 +34,13 @@
 		"addAspects": [
 			{ "id": "turtleShellWithdrawn", "value": "1" },
 			{ "id": "doneWithTurn", "value": "1" }
+		]
+	},
+	{
+		"class": "Aspects",
+		"target": "volunteer",
+		"addAspects": [
+			{ "id": "turtleShell_canKickAlly", "value": "1" }
 		]
 	}
 ]

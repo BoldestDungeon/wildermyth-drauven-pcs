@@ -1,0 +1,46 @@
+{
+  "id": "turtleShell_allyKick",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "themeAbilities/turtleShell_allyKick",
+    "modId": "wildermyth-drauven-pcs",
+    "author": "David Bilsky",
+    "aiPriority": "10",
+    "tags": [ "melee"]
+  },
+  "type": "ABILITY",
+  "verb": "ATTACK",
+  "ability": {
+    "icon": "backslam",
+    "priority": "20",
+    "onlyShowIfPossibleInCharacterSheet": true
+  },
+  "targets": [
+    {
+      "template": "SELF",
+      "cost": { "class": "ActionPoints", "actionPoints": "attack" },
+      "missionFeedback": { "orientTo": "target" }
+    },
+    {
+      "template": "ADJACENT_ALLY",
+      "aspects": [ "alive", "ALLY", "NOT_SELF", "turtleShellWithdrawn" ],
+      "role": "target"
+    }
+  ],
+  "outcomes": [
+    
+    {
+      "class": "AttackRoll",
+      "attackAnimationType": "melee",
+      "markForFlanking": "never",
+      "attackStrength": "100",
+      "always": {
+        "class": "Damage",
+        "target": "target",
+        "amount": "max((self.PHYSICAL_DAMAGE_BONUS+weapon.weaponDamage),(4+floor((0.5*(self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)))))",
+        "pierce": "0",
+        "weapon": null  
+      }
+    }
+  ]
+  }

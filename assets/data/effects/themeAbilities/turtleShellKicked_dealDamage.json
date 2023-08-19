@@ -4,7 +4,7 @@
 	"dataVersion": 1,
 	"sourceFile": "themeAbilities/turtleShellKicked_dealDamage",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "Patrick Belanger",
+	"author": "David Bilsky",
 	"aiPriority": "2000",
 	"debug": true
 },
@@ -23,6 +23,7 @@
     "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
 		"attackerAnimationOverride": "",
 		"defenderAnimationOverride": "figures.slashedQuick",
+		"defenseRollTags": [ "melee" ],
 		"attackStrength": "self.MELEE_ACCURACY",
 		"always": {
 			"class": "DoAll",
@@ -194,7 +195,7 @@
 								{
 									"class": "AttackRoll",
 									"stopBlockingTime": "afterHitAnimation",
-                  "minimumBlockTime": "20",
+                  "minimumBlockTime": "0",
                   "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
 									"attackerAnimationOverride": "",
 									"defenderAnimationOverride": "",
@@ -209,7 +210,22 @@
                 {
                   "class": "Aspects",
                   "removeAspects": ["turtleShellKicked_strength"]
-                }
+                },
+								{
+									"class": "MatchTarget",
+									"abilityTarget": {
+										"template": "ANY",
+										"choose": "ANY",
+										"aspects": ["turtleShellKicked_wasHit"],
+										"role": "volunteer2"
+									}
+								},
+								{
+									"class": "Aspects",
+									"target": "volunteer2",
+									"STUB": "Clearing the 'wasHit' aspect from all targets to prepare for the next attack.",
+									"removeAspects": ["turtleShellKicked_wasHit"]
+								}
 							]
 						}
 					}
@@ -221,7 +237,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1d3+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5))+((((((self.themePiece_turtle_head+self.themePiece_turtle_leftArm)+self.themePiece_turtle_rightArm)+self.themePiece_turtle_leftLeg)+self.themePiece_turtle_rightLeg)+self.themePiece_turtle_tail)*0.75)",
+					"amount": "(1d3+1+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5))+((((((self.themePiece_turtle_head+self.themePiece_turtle_leftArm)+self.themePiece_turtle_rightArm)+self.themePiece_turtle_leftLeg)+self.themePiece_turtle_rightLeg)+self.themePiece_turtle_tail)*0.75)",
 					"overrideStuntDamage": "3"
 				}
 			]

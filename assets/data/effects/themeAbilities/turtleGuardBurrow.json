@@ -4,11 +4,12 @@
 	"dataVersion": 1,
 	"sourceFile": "themeAbilities/turtleGuardBurrow",
 	"modId": "wildermyth-drauven-pcs",
+  "author": "David Bilsky",
 	"aiPriority": "-1",
 	"tags": [ "sneaky" ]
 },
 "type": "ABILITY",
-"verb": "MANEUVER",
+"verb": "END_TURN",
 "ability": {
 	"icon": "silkstepCloak",
 	"priority": "90",

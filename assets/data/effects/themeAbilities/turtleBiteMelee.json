@@ -4,7 +4,7 @@
 	"dataVersion": 1,
 	"sourceFile": "themeAbilities/turtleBiteMelee",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "",
+	"author": "justEthaniguess",
 	"aiPriority": "3000",
 	"tags": [ "okToMarkDone", "melee", "specialAbilityButton", "themeUsageOverride" ]
 },
@@ -14,7 +14,7 @@
 	"icon": "jumpjaw",
 	"priority": "19+(100*self.turtleGuarding)",
 	"aiPriority": "19+(100*self.turtleGuarding)",
-	"extraUI": { "overrideRangeShown": "2+self.BONUS_RANGE" },
+	"extraUI": { "overrideRangeShown": "1.9+self.BONUS_RANGE" },
 	"cooldown": "oncePerTurn",
 	"branchableAbilityType": "standardMelee"
 },

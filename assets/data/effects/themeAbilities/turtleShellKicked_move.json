@@ -3,7 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "themeAbilities/turtleShellKicked_move",
-	"author": "Patrick Belanger",
+	"author": "David Bilsky",
 	"aiPriority": "2000",
 	"debug": true
 },
@@ -74,17 +74,6 @@
 		"removeAspects": [ "turtleShellKicked_move|*" ]
 	},
 	{
-		"class": "Spawn",
-		"forceSpawn": true,
-		"createEntity": {
-			"query": { "type": "TRAP" },
-			"addAspects": [
-				{ "id": "celestialRegion", "value": "1", "atTiles": "targetTile" }
-			],
-			"setLocation": true
-		}
-	},
-	{
 		"class": "Test",
 		"target": "self",
 		"value": "EXISTS.target",
@@ -96,14 +85,6 @@
 					"class": "Aspects",
 					"target": "self",
 					"consumeAspects": [{"id": "turtleShellKicked_strength", "value": "self.distanceTo.target + 1"}]
-				},
-				{
-					"class": "Aspects",
-					"target": "target",
-					"addAspects": [
-						{"id": "turtleShellKicked_wasHit", "value": "1"},
-						{"id": "pinned", "value": "1" }
-					]
 				},
 				{
 					"class": "MatchTarget",

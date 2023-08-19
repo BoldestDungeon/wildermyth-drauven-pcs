@@ -38,7 +38,13 @@
 		"alsoAddParameter2|rigOverridePriority|10|TurtleWithdrawn",
 		"alsoRemoveParameter2|rigOverridePriority|10|TurtleWithdrawn"
 	],
-	"stats": {"DODGE": -200}
+	"stats": {"DODGE": -200, "BLOCK": -200}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "turtleShell_canKickAlly",
+	"effects": [ "turtleShell_allyKick" ],
+	"importance": -1
 },
 {
 	"modId": "wildermyth-drauven-pcs",
