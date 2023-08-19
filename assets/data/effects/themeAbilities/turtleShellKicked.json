@@ -8,7 +8,7 @@
 	"aiPriority": "2000"
 },
 "type": "DAMAGE_ROLL_INCOMING",
-"verb": "MANEUVER",
+"verb": "END_TURN",
 "ability": { "icon": "ignite", "priority": "1", "showDescriptionInTooltip": true },
 "targets": [
 	{
@@ -27,10 +27,15 @@
 			{
 				"id": "turtleShellKicked_strength",
 				"value": "max(1.9,((DAMAGE+attacker.SIZE)-1))"
-			},
-			{ "id": "turtleShellKicked_move", "value": "1", "inRelationTo": "attacker" }
+			}
 		]
 	},
-	{ "class": "Impact", "impact": "-1000" }
+	{ "class": "Impact", "impact": "-1000" },
+	{
+		"class": "BranchAbility",
+		"branchAbility": "turtleShellKicked_move",
+		"target": "self",
+		"targetRole": "attacker"
+	}
 ]
 }

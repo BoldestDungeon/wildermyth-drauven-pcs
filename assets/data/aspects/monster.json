@@ -36,7 +36,9 @@
 		"alsoAddParameter|forbidReactions|turtleShell",
 		"alsoRemoveParameter|forbidReactions|turtleShell",
 		"alsoAddParameter2|rigOverridePriority|10|TurtleWithdrawn",
-		"alsoRemoveParameter2|rigOverridePriority|10|TurtleWithdrawn"
+		"alsoRemoveParameter2|rigOverridePriority|10|TurtleWithdrawn",
+		"alsoAdd|immuneToKnockback",
+		"alsoRemove|immuneToKnockback"
 	],
 	"stats": {"DODGE": -200, "BLOCK": -200}
 },

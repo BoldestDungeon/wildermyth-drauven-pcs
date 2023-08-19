@@ -13,7 +13,6 @@
 "ability": {
 	"icon": "jumpjaw",
 	"priority": "19+(100*self.turtleGuarding)",
-	"aiPriority": "19+(100*self.turtleGuarding)",
 	"extraUI": { "overrideRangeShown": "1.9+self.BONUS_RANGE" },
 	"cooldown": "oncePerTurn",
 	"branchableAbilityType": "standardMelee"

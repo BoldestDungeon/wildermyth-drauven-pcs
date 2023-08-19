@@ -44,7 +44,8 @@
 						"range": "max(1.9,self.turtleShellKicked_strength)",
 						"tileFilter": "validMoveEnd",
             "relativeTo": "self",
-						"roleMustFit": "self"
+						"roleMustFit": "self",
+						"lineOfSight": "ANY_SCENERY"
 					}
 				},
 				{
@@ -52,12 +53,13 @@
 					"abilityTarget": {
 						"role": "volunteer",
 						"template": "ADJACENT_ENEMY",
-						"choose": "ANY",
+						"choose": "ONE_CLOSEST_OPTIONAL",
 						"aspects": [ "HOSTILE_TARGET", "alive" ],
 						"aspectValues": [
 							{ "id": "turtleShellKicked_wasHit", "forbidden": true }
 						],
-						"range": "self.turtleShellKicked_strength"
+						"range": "self.turtleShellKicked_strength",
+						"lineOfSight": "ANY_SCENERY"
 					}
 				},
 				{
@@ -65,18 +67,19 @@
 					"abilityTarget": {
 						"role": "scenery",
 						"template": "ADJACENT_SCENERY",
-						"choose": "ANY",
+						"choose": "ONE_CLOSEST_OPTIONAL",
 						"aspectValues": [
 							{ "id": "turtleShellKicked_wasHit", "forbidden": true }
 						],
-						"range": "self.turtleShellKicked_strength"
+						"range": "self.turtleShellKicked_strength",
+						"lineOfSight": "ANY_SCENERY"
 					}
 				},
 				{
 					"class": "Aspects",
 					"target": "self",
 					"consumeAspects": [
-						{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.target+1" }
+						{ "id": "turtleShellKicked_strength", "value": "1" }
 					]
 				},
 				{
@@ -90,7 +93,7 @@
 								"class": "Aspects",
 								"target": "self",
 								"consumeAspects": [
-									{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.volunteer+1" }
+									{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.volunteer" }
 								]
 							},
 							{
@@ -145,7 +148,7 @@
 									"class": "Aspects",
 									"target": "self",
 									"consumeAspects": [
-										{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.scenery+1" }
+										{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.scenery" }
 									]
 								},
 								{

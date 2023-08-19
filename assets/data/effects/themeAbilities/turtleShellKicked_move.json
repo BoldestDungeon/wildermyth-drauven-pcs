@@ -1,13 +1,12 @@
 {
-"id": "turtleShellKicked_move|_ATTACKER_",
+"id": "turtleShellKicked_move",
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "themeAbilities/turtleShellKicked_move",
 	"author": "David Bilsky",
-	"aiPriority": "2000",
-	"debug": true
+	"aiPriority": "2000"
 },
-"type": "ANY_UNIT_ABILITY_USED",
+"type": "BRANCH",
 "verb": "MANEUVER",
 "targets": [
 	{
@@ -18,15 +17,14 @@
 	},
 	{
 		"role": "attacker",
-		"template": "ANY",
-		"type": "UNIT",
-		"matchSpecial": "parameter1"
+		"template": "INJECTED_ENTITY",
+		"type": "UNIT"
 	},
 	{
 		"role": "volunteer",
 		"template": "TILE",
 		"choose": "ANY",
-		"relativeTo": "volunteer",
+		"relativeTo": "self",
 		"range": "self.turtleShellKicked_strength",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
@@ -38,6 +36,7 @@
 		"relativeTo": "attacker",
 		"range": "max(1.9,self.turtleShellKicked_strength)",
 		"tileFilter": "validMoveEnd",
+		"lineOfSight": "ANY_COVER",
 		"roleMustFit": "self"
 	},
 	{
@@ -48,7 +47,7 @@
 		"aspectValues": [{"id": "turtleShellKicked_wasHit", "forbidden": true}],
 		"notAlreadyMatchedAs": ["attacker"],
 		"range": "(self.turtleShellKicked_strength)",
-		"lineOfSight": "TERRAIN_ONLY",
+		"lineOfSight": "LIVE_ENEMIES",
 		"tileFilter": "floor"
 	},
 	{
@@ -56,15 +55,8 @@
 		"template": "ADJACENT_SCENERY",
 		"choose": "ONE_CLOSEST_OPTIONAL",
 		"aspectValues": [{"id": "turtleShellKicked_wasHit", "forbidden": true}],
-		"manifold": {
-			"from": "self",
-			"to": "targetTile",
-			"thickness": [ "1.3", "3.6" ],
-			"excludeSource": true,
-			"distanceInDirection":  "(self.turtleShellKicked_strength)"
-		},
 		"range": "(self.turtleShellKicked_strength)",
-		"lineOfSight": "TERRAIN_ONLY",
+		"lineOfSight": "LIVE_ENEMIES",
 		"tileFilter": "floor"
 	}
 ],

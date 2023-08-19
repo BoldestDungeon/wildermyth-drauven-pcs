@@ -24,7 +24,8 @@
     {
       "template": "ADJACENT_ALLY",
       "aspects": [ "alive", "ALLY", "NOT_SELF", "turtleShellWithdrawn" ],
-      "role": "target"
+      "role": "target",
+      "alwaysSelect": true
     }
   ],
   "outcomes": [
