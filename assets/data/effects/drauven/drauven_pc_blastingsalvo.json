@@ -1,0 +1,272 @@
+{
+"id": "drauven_pc_blastingsalvo",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_blastingsalvo",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "interfusionRecipe" ]
+},
+"type": "ABILITY",
+"verb": "ATTACK",
+"ability": {
+	"icon": "splintersalvo",
+	"category": "attackAbility",
+	"priority": "1",
+	"usesElementFromEquippedWeapon": true
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
+		"missionFeedback": { "orientTo": "source" }
+	},
+	{
+		"role": "child",
+		"template": "ANY",
+		"STUB": "If we match one scenery piece, we still want to show the ability on the bar",
+		"choose": "ALL",
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "scenery" ]
+	},
+	{
+		"role": "source",
+		"template": "ANY",
+		"choose": "ALL",
+		"chooseAllMinimum": 2,
+		"showAnyway": true,
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "scenery" ]
+	},
+	{
+		"role": "site",
+		"template": "ANY",
+		"STUB": "Source for the first attack",
+		"choose": "ONE_RANDOM",
+		"showAnyway": true,
+		"fromRoles": [ "source" ],
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "scenery" ]
+	},
+	{
+		"role": "site2",
+		"template": "ANY",
+		"STUB": "Sources for the other attacks",
+		"choose": "ALL",
+		"showAnyway": true,
+		"fromRoles": [ "source" ],
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "scenery" ],
+		"notAlreadyMatchedAs": [ "site" ]
+	},
+	{
+		"role": "volunteer",
+		"template": "ANY",
+		"type": "SCENERY",
+		"choose": "ANY",
+		"missionFeedback": {
+			"selectedScript": "figures.abilitySelectSelected",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
+		},
+		"relationship": "interfusedWithEntity",
+		"aspects": [ "scenery" ]
+	},
+	{
+		"role": "fire",
+		"template": "ADJACENT_FIRE",
+		"choose": "ANY",
+		"relativeTo": "source",
+		"range": "0.4"
+	},
+	{
+		"role": "hook",
+		"template": "TILE",
+		"choose": "ANY",
+		"showAnyway": true,
+		"manifold": {
+			"from": "source",
+			"to": "source",
+			"thickness": [ "0", "1", "4", "1", "0" ],
+			"excludeSource": true,
+			"excludeDestination": true
+		},
+		"range": null,
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor"
+	},
+	{
+		"role": "hook2",
+		"template": "TILE",
+		"STUB": "Also include the tiles the scenery pieces are on",
+		"choose": "ANY",
+		"showAnyway": true,
+		"range": "1000",
+		"lineOfSight": "TERRAIN_ONLY",
+		"sameTileAs": "source",
+		"tileFilter": "floor"
+	},
+	{
+		"template": "TILE",
+		"showAnyway": true,
+		"alwaysSelect": true,
+		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER" },
+		"fromRoles": [ "hook", "hook2" ],
+		"range": null
+	},
+	{
+		"template": "UNIT_AT_TILE",
+		"choose": "ANY",
+		"missionFeedback": {
+			"hoverScript": "figures.attackHovered",
+			"hoverFeedback": "ATTACK_HOVER",
+			"feedbackSource": "source"
+		},
+		"relativeTo": "focus",
+		"range": "2.1",
+		"lineOfSight": "TERRAIN_ONLY"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "ALL",
+		"missionFeedback": { "suggestionFeedback": "ATTACK_SUGGESTION" },
+		"relativeTo": "focus",
+		"range": "2.1",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"intermediateRole": "site",
+		"attackAnimationType": "magic",
+		"stopBlockingTime": "afterHitAnimation",
+		"particles": [
+			{ "script": "StunningBarrage", "setPosition": "site", "setPosition2": "focus" },
+			{ "script": "smokeBlast", "setPosition": "target" },
+			{ "script": "smokeBlast", "setPosition": "site", "setPosition2": "focus" }
+		],
+		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_Barrage" },
+		"flankMarkOrigin": "site",
+		"defenseRollTags": [ "range" ],
+		"attackStrength": "self.RANGE_ACCURACY+site.HEALTH",
+		"separateRolls": true,
+		"always": {
+			"class": "DoAll",
+			"target": "site",
+			"outcomes": [
+				{ "class": "Spawn", "modifyTerrain": "makeWalkableAndCreateDebris" },
+				{
+					"class": "Spawn",
+					"target": "targetTile",
+					"modifyTerrain": "spreadDebrisAndFire"
+				},
+				{
+					"class": "Damage",
+					"target": "site",
+					"amount": "site.HEALTH",
+					"type": "TRUE",
+					"showInTooltip": false
+				}
+			]
+		},
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Damage",
+					"amount": "(1d2-1)+(ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))+sqrt((site.HEALTH-site.INJURY)))",
+					"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))",
+					"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
+					"useEquippedWeaponForStunt": true,
+					"numDefenders": "COUNT.target"
+				}
+			]
+		}
+	},
+	{
+		"class": "ForEach",
+		"fromRoles": [ "site2" ],
+		"toRole": "scenery",
+		"outcome": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "target2",
+						"template": "UNIT_AT_TILE",
+						"STUB": "This is supposed to prevent already dead enemies from being targeted, but it doesn't seem to work",
+						"choose": "ANY",
+						"missionFeedback": {
+							"hoverScript": "figures.attackHovered",
+							"hoverFeedback": "ATTACK_HOVER",
+							"feedbackSource": "source"
+						},
+						"relativeTo": "focus",
+						"range": "2.1",
+						"lineOfSight": "TERRAIN_ONLY"
+					}
+				},
+				{
+					"class": "AttackRoll",
+					"defender": "target2",
+					"intermediateRole": "scenery",
+					"attackAnimationType": "magic",
+					"stopBlockingTime": "afterHitAnimation",
+					"particles": [
+						{
+							"script": "StunningBarrage",
+							"setPosition": "scenery",
+							"setPosition2": "focus"
+						},
+						{ "script": "smokeBlast", "setPosition": "target2" },
+						{ "script": "smokeBlast", "setPosition": "scenery", "setPosition2": "focus" }
+					],
+					"audioOverride": { "attackInterfusionStartCue": "Characters/Default/Ability_Barrage" },
+					"attackerAnimationOverride": "",
+					"flankMarkOrigin": "scenery",
+					"defenseRollTags": [ "range" ],
+					"attackStrength": "self.RANGE_ACCURACY+scenery.HEALTH",
+					"separateRolls": true,
+					"always": {
+						"class": "DoAll",
+						"target": "scenery",
+						"outcomes": [
+							{ "class": "Spawn", "modifyTerrain": "makeWalkableAndCreateDebris" },
+							{
+								"class": "Spawn",
+								"target": "targetTile",
+								"modifyTerrain": "spreadDebrisAndFire"
+							},
+							{
+								"class": "Damage",
+								"target": "scenery",
+								"amount": "scenery.HEALTH",
+								"type": "TRUE",
+								"showInTooltip": false
+							}
+						]
+					},
+					"onHit": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Damage",
+								"amount": "(1d2-1)+(ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))+sqrt((scenery.HEALTH-scenery.INJURY)))",
+								"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))",
+								"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
+								"useEquippedWeaponForStunt": true,
+								"numDefenders": "COUNT.target2"
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+]
+}

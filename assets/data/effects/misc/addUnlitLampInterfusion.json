@@ -1,0 +1,22 @@
+{
+"id": "addUnlitLampInterfusion",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "misc/addUnlitLampInterfusion",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Adds aspect to allow unlit lamps to be used for Blastingshard"
+},
+"type": "LEVEL_START",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "interfusableLampOff", "value": "1", "merge": "replace" }
+		]
+	}
+]
+}
