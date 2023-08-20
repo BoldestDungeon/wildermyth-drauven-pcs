@@ -40,7 +40,8 @@
 		"alsoAdd|immuneToKnockback",
 		"alsoRemove|immuneToKnockback"
 	],
-	"stats": {"DODGE": -200, "BLOCK": -200}
+	"stats": {"DODGE": -200, "BLOCK": -200}, 
+	"showInTooltip": true
 },
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -58,8 +59,7 @@
 		"onAddedRemoveAllActionPoints",
 		"alsoAdd|hidden",
 		"alsoRemove|hidden"
-	],
-	"importance": -1
+	]
 }
 ]
 

@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "themeAbilities/turtleShellKicked_move",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "David Bilsky",
 	"aiPriority": "2000"
 },
@@ -15,16 +16,11 @@
 			{ "id": "pinned", "forbidden": true }
 		]
 	},
-	{
-		"role": "attacker",
-		"template": "INJECTED_ENTITY",
-		"type": "UNIT"
-	},
+	{ "role": "attacker", "template": "INJECTED_ENTITY", "type": "UNIT" },
 	{
 		"role": "volunteer",
 		"template": "TILE",
 		"choose": "ANY",
-		"relativeTo": "self",
 		"range": "self.turtleShellKicked_strength",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
@@ -35,18 +31,19 @@
 		"fromRoles": [ "volunteer" ],
 		"relativeTo": "attacker",
 		"range": "max(1.9,self.turtleShellKicked_strength)",
-		"tileFilter": "validMoveEnd",
 		"lineOfSight": "ANY_COVER",
+		"tileFilter": "validMoveEnd",
 		"roleMustFit": "self"
 	},
 	{
-		"role": "target",
 		"template": "ADJACENT_ENEMY",
 		"choose": "ONE_CLOSEST_OPTIONAL",
-		"aspects": ["ENEMY"],
-		"aspectValues": [{"id": "turtleShellKicked_wasHit", "forbidden": true}],
-		"notAlreadyMatchedAs": ["attacker"],
-		"range": "(self.turtleShellKicked_strength)",
+		"aspects": [ "HOSTILE_TARGET", "alive", "ENEMY" ],
+		"aspectValues": [
+			{ "id": "turtleShellKicked_wasHit", "forbidden": true }
+		],
+		"notAlreadyMatchedAs": [ "attacker" ],
+		"range": "self.turtleShellKicked_strength",
 		"lineOfSight": "LIVE_ENEMIES",
 		"tileFilter": "floor"
 	},
@@ -54,8 +51,10 @@
 		"role": "scenery",
 		"template": "ADJACENT_SCENERY",
 		"choose": "ONE_CLOSEST_OPTIONAL",
-		"aspectValues": [{"id": "turtleShellKicked_wasHit", "forbidden": true}],
-		"range": "(self.turtleShellKicked_strength)",
+		"aspectValues": [
+			{ "id": "turtleShellKicked_wasHit", "forbidden": true }
+		],
+		"range": "self.turtleShellKicked_strength",
 		"lineOfSight": "LIVE_ENEMIES",
 		"tileFilter": "floor"
 	}
@@ -76,7 +75,9 @@
 				{
 					"class": "Aspects",
 					"target": "self",
-					"consumeAspects": [{"id": "turtleShellKicked_strength", "value": "self.distanceTo.target + 1"}]
+					"consumeAspects": [
+						{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.target+1" }
+					]
 				},
 				{
 					"class": "MatchTarget",
@@ -90,10 +91,10 @@
 				},
 				{
 					"class": "AttackRoll",
+					"attackAnimationType": "interaction",
 					"stopBlockingTime": "afterHitAnimation",
 					"minimumBlockTime": "20",
-					"timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
-					"attackAnimationType": "interaction",
+					"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 					"attackerAnimationOverride": "",
 					"defenderAnimationOverride": "",
 					"always": {
@@ -106,10 +107,10 @@
 				},
 				{
 					"class": "BranchAbility",
-					"branchAbility": "turtleShellKicked_dealDamage",
 					"target": "self",
 					"targetRole": "target",
-					"tileRole": "target2"
+					"tileRole": "target2",
+					"branchAbility": "turtleShellKicked_dealDamage"
 				}
 			]
 		},
@@ -117,18 +118,23 @@
 			"class": "Test",
 			"target": "self",
 			"value": "EXISTS.scenery",
+			"threshold": "1",
 			"onPass": {
 				"class": "DoAll",
 				"outcomes": [
 					{
 						"class": "Aspects",
 						"target": "self",
-						"consumeAspects": [{"id": "turtleShellKicked_strength", "value": "self.distanceTo.scenery + 1"}]
+						"consumeAspects": [
+							{ "id": "turtleShellKicked_strength", "value": "self.distanceTo.scenery+1" }
+						]
 					},
 					{
 						"class": "Aspects",
 						"target": "scenery",
-						"addAspects": [{"id": "turtleShellKicked_wasHit"}]
+						"addAspects": [
+							{ "id": "turtleShellKicked_wasHit", "value": "1" }
+						]
 					},
 					{
 						"class": "MatchTarget",
@@ -142,10 +148,10 @@
 					},
 					{
 						"class": "AttackRoll",
+						"attackAnimationType": "interaction",
 						"stopBlockingTime": "afterHitAnimation",
 						"minimumBlockTime": "20",
-						"timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
-						"attackAnimationType": "interaction",
+						"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 						"attackerAnimationOverride": "",
 						"defenderAnimationOverride": "",
 						"always": {
@@ -158,10 +164,10 @@
 					},
 					{
 						"class": "BranchAbility",
-						"branchAbility": "turtleShellKicked_dealDamage",
 						"target": "self",
 						"targetRole": "scenery",
-						"tileRole": "target2"
+						"tileRole": "target2",
+						"branchAbility": "turtleShellKicked_dealDamage"
 					}
 				]
 			},

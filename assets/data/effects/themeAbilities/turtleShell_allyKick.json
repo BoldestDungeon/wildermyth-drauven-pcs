@@ -24,6 +24,7 @@
     {
       "template": "ADJACENT_ALLY",
       "aspects": [ "alive", "ALLY", "NOT_SELF", "turtleShellWithdrawn" ],
+      "missionFeedback": {"hoverScript": "figures.directionalHelpfulHoverIdle"},
       "role": "target",
       "alwaysSelect": true
     }
