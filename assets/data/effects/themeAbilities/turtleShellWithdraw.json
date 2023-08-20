@@ -30,18 +30,28 @@
 ],
 "outcomes": [
 	{
-		"class": "Aspects",
-		"addAspects": [
-			{ "id": "turtleShellWithdrawn", "value": "1" },
-			{ "id": "doneWithTurn", "value": "1" }
-		]
-	},
-	{
-		"class": "Aspects",
-		"target": "volunteer",
-		"addAspects": [
-			{ "id": "turtleShell_canKickAlly", "value": "1" }
-		]
+		"class": "AttackRoll",
+		"attackAnimationType": "interaction",
+		"attackerAnimationOverride": "figures.miscAction",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "turtleShellWithdrawn", "value": "1" },
+						{ "id": "doneWithTurn", "value": "1" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "volunteer",
+					"addAspects": [
+						{ "id": "turtleShell_canKickAlly", "value": "1" }
+					]
+				}
+			]
+		}
 	}
 ]
 }

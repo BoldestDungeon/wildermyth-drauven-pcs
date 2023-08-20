@@ -224,9 +224,25 @@
 									}
 								},
 								{
+									"class": "MatchTarget",
+									"abilityTarget": {
+										"template": "ADJACENT_SCENERY",
+										"range": "50",
+										"choose": "ANY",
+										"aspects": ["turtleShellKicked_wasHit"],
+										"role": "volunteer3"
+									}
+								},
+								{
 									"class": "Aspects",
 									"target": "volunteer2",
-									"STUB": "Clearing the 'wasHit' aspect from all targets to prepare for the next attack.",
+									"STUB": "Clearing the 'wasHit' aspect from all units to prepare for the next attack.",
+									"removeAspects": ["turtleShellKicked_wasHit"]
+								},
+								{
+									"class": "Aspects",
+									"target": "volunteer3",
+									"STUB": "Clearing the 'wasHit' aspect from all scenery pieces to prepare for the next attack (Apparently scenery doesn't get scooped up with the 'ANY' role).",
 									"removeAspects": ["turtleShellKicked_wasHit"]
 								}
 							]

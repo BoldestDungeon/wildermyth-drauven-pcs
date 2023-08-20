@@ -5,6 +5,20 @@
 	"effects": []
 },
 {
+	"modId": "wildermyth-drauven-pcs",
+	"id": "turtleGuarding",
+	"effects": [
+		"removeAtStartOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"onAddedRemoveAllActionPoints",
+		"alsoAdd|hidden",
+		"alsoRemove|hidden"
+	],
+	"boostType": "THEME"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "turtleShellKicked_move|_ATTACKER_",
 	"parameters": [
 		{ "replace": "_ATTACKER_", "isEntity": true }
@@ -13,13 +27,15 @@
 	"importance": -1
 },
 {
+	"modId": "wildermyth-drauven-pcs",
 	"id": "turtleShellKicked_strength",
-	"effects": ["removeEveryTurn"],
+	"effects": [ "removeEveryTurn" ],
 	"importance": -1
 },
 {
+	"modId": "wildermyth-drauven-pcs",
 	"id": "turtleShellKicked_wasHit",
-	"effects": ["removeEveryAction"],
+	"effects": [ "removeEveryAction", "removeAtStartOfTurn" ],
 	"importance": -1
 },
 {
@@ -38,28 +54,19 @@
 		"alsoAddParameter2|rigOverridePriority|10|TurtleWithdrawn",
 		"alsoRemoveParameter2|rigOverridePriority|10|TurtleWithdrawn",
 		"alsoAdd|immuneToKnockback",
-		"alsoRemove|immuneToKnockback"
+		"alsoRemove|immuneToKnockback",
+		"turtleRigChange_Start_TEMP",
+		"turtleRigChange_End_TEMP"
 	],
-	"stats": {"DODGE": -200, "BLOCK": -200}, 
-	"showInTooltip": true
+	"stats": { "BLOCK": -200, "DODGE": -200 },
+	"boostType": "THEME",
+	"showInTooltip": true,
+	"importance": 10
 },
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "turtleShell_canKickAlly",
 	"effects": [ "turtleShell_allyKick" ],
 	"importance": -1
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "turtleGuarding",
-	"effects": [
-		"removeAtStartOfTurn",
-		"removeOnDeath",
-		"otherAspectPreventsThisAspect|dead",
-		"onAddedRemoveAllActionPoints",
-		"alsoAdd|hidden",
-		"alsoRemove|hidden"
-	]
 }
 ]
-
