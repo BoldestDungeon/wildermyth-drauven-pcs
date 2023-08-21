@@ -1,0 +1,25 @@
+{
+"id": "drauven_pc_loremasterSlowRegion",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "region/drauven_pc_loremasterSlowRegion",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "REGION",
+"targets": [],
+"outcomes": [
+	{
+		"class": "MapRegion",
+		"region": {
+			"id": "drauven_pc_loremasterSlowRegion",
+			"exitCostOtherFaction": 1,
+			"feedbackType": "BATTLEWEAVE_TANGLES",
+			"tileFilter": "floorOrScenery"
+		},
+		"aura": "1.6",
+		"presence": true,
+		"associateWithFaction": true
+	}
+]
+}

@@ -22,40 +22,6 @@
 		"missionFeedback": { "orientTo": "source" }
 	},
 	{
-		"role": "site",
-		"template": "ANY",
-		"type": "SCENERY",
-		"choose": "ANY",
-		"showAnyway": true,
-		"missionFeedback": {
-			"suggestionScript": "figures.abilitySelectOption",
-			"hoverScript": "figures.abilitySelectHover",
-			"selectedScript": "figures.abilitySelectSelected",
-			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
-			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
-			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
-		},
-		"relationship": "interfusedWithEntity",
-		"aspectsOneOf": [ "bone", "rock" ]
-	},
-	{
-		"role": "site2",
-		"template": "ANY",
-		"type": "UNIT",
-		"choose": "ANY",
-		"showAnyway": true,
-		"missionFeedback": {
-			"suggestionScript": "figures.abilitySelectOption",
-			"hoverScript": "figures.abilitySelectHover",
-			"selectedScript": "figures.abilitySelectSelected",
-			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
-			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
-			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
-		},
-		"relationship": "interfusedWithEntity",
-		"aspectsOneOf": [ "bone", "rock" ]
-	},
-	{
 		"role": "source",
 		"template": "ANY",
 		"missionFeedback": {
@@ -66,7 +32,6 @@
 			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
 			"hoverFeedback": "FRIENDLY_EFFECT_HOVER"
 		},
-		"fromRoles": [ "site", "site2" ],
 		"relationship": "interfusedWithEntity",
 		"aspectsOneOf": [ "bone", "rock" ]
 	},
@@ -128,26 +93,6 @@
 		"notAlreadyMatchedAs": [ "source" ],
 		"range": "4.6+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY"
-	},
-	{
-		"role": "targetTile",
-		"template": "ADJACENT_UNIT",
-		"STUB": "Gets the furthest tile. Used for particle effects.",
-		"type": "TILE",
-		"choose": "ONE_FURTHEST",
-		"missionFeedback": null,
-		"manifold": {
-			"from": "source",
-			"to": "focus",
-			"thickness": [
-				"1+(self.drauvenDeck_mystic_earthsong_upgrade/2)",
-				"1+(self.drauvenDeck_mystic_earthsong_upgrade*2)"
-			],
-			"excludeSource": true
-		},
-		"relativeTo": "source",
-		"range": "4.6+self.BONUS_RANGE",
-		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],
 "outcomes": [
@@ -157,8 +102,8 @@
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "shriek", "setPosition": "source", "setPosition2": "targetTile" },
-			{ "script": "battleyell", "setPosition": "source", "setPosition2": "targetTile" }
+			{ "script": "shriek", "setPosition": "source", "setPosition2": "focus" },
+			{ "script": "battleyell", "setPosition": "source", "setPosition2": "focus" }
 		],
 		"audioOverride": { "attackInterfusionStartCue": "Characters/Default/SceneryDestroyMetal" },
 		"flankMarkOrigin": "source",

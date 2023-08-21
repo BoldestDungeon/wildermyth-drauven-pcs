@@ -177,7 +177,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_blastingshard_upgrade",
-	"boostType": "ABILITY_CLASS",
+	"effects": [ "drauven_pc_blastingsalvo" ],
 	"legacyAbilityChoice": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",
@@ -256,6 +256,42 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_loremaster",
+	"effects": [
+		"drauven_pc_songsOfThePast",
+		"drauven_pc_cordAndVines_upgrade",
+		"drauven_pc_emperorsClothes"
+	],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"interactionFeedback": [
+		{ "otherAspect": "book", "replaceBlurb": true },
+		{ "otherAspect": "statue", "replaceBlurb": true },
+		{ "otherAspect": "ruins", "replaceBlurb": true },
+		{ "otherAspect": "protective", "replaceBlurb": true },
+		{ "otherAspect": "textile", "replaceBlurb": true },
+		{ "otherAspect": "plant", "replaceBlurb": true }
+	],
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "wisdom" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_mystic_loremaster_upgrade",
+	"effects": [
+		"singleActionWithTagToSwiftAction|drauven_pc_cordAndVines_upgrade",
+		"drauven_pc_emperorsClothes_upgrade",
+		"mysticRecipeLightningLearning"
+	],
+  "legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": {
+		"abilityDeckUsage": "upgrade",
+    "upgradeForAbility": "drauvenDeck_mystic_loremaster",
+		"abilityDeckIcon": "wisdom"
+   }
+},
+{
 	"id": "drauvenDeck_mystic_skysong",
 	"effects": [
 		"drauven_pc_tailwind",

@@ -57,7 +57,12 @@
 	{
 		"class": "Aspects",
 		"target": "target",
-		"removeAspects": [ "unitedFuryScenery", "unitedFurySceneryUpgrade" ]
+		"removeAspects": [
+			"unitedFuryScenery",
+			"unitedFurySceneryUpgrade",
+			"drauven_pc_songInspirationSource",
+			"drauven_pc_loremasterSlowScenery"
+		]
 	},
 	{
 		"class": "Test",
