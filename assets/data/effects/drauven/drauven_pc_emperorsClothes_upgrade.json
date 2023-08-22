@@ -43,6 +43,12 @@
 		"template": "TILE",
 		"showAnyway": true,
 		"alwaysSelect": true,
+		"missionFeedback": {
+			"hoverScript": "figures.directionalTileHover",
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
+			"feedbackSource": "source"
+		},
 		"relativeTo": "source",
 		"range": "6.6+self.BONUS_RANGE"
 	},
@@ -56,7 +62,8 @@
 			"hoverScript": "figures.attackHovered",
 			"rangeFeedback": "ATTACK_SUGGESTION",
 			"suggestionFeedback": "ATTACK_SUGGESTION",
-			"hoverFeedback": "ATTACK_HOVER"
+			"hoverFeedback": "ATTACK_HOVER",
+			"feedbackSource": "source"
 		},
 		"relativeTo": "focus",
 		"range": "1.1",

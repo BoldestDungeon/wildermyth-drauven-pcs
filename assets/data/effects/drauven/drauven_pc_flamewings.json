@@ -40,7 +40,7 @@
 		"template": "TILE",
 		"missionFeedback": {
 			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
-			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
 			"hoverFeedback": "ATTACK_HOVER"
 		},
 		"relativeTo": "source",
@@ -71,7 +71,7 @@
 		"choose": "ALL",
 		"missionFeedback": {
 			"hoverScript": "figures.attackHovered",
-			"rangeFeedback": "ATTACK_SUGGESTION",
+			"rangeFeedback": "ATTACK_SUGGESTION_FILL",
 			"suggestionFeedback": "ATTACK_SUGGESTION",
 			"hoverFeedback": "ATTACK_HOVER"
 		},
