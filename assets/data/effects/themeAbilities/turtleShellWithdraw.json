@@ -33,6 +33,8 @@
 		"class": "AttackRoll",
 		"attackAnimationType": "interaction",
 		"attackerAnimationOverride": "figures.miscAction",
+		"stopBlockingTime": "noBlocking",
+    "timingOverride": { "swingTime": "3", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
