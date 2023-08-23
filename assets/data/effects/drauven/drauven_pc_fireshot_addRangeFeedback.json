@@ -17,7 +17,11 @@
 		"addAspects": [
 			{ "id": "themeAbility_ranged", "value": "1", "merge": "max" },
 			{ "id": "themeAbility_rangedSingleTarget", "value": "1", "merge": "max" },
-			{ "id": "attackRange|0|4.1+POTENCY/2|rangedNonWeapon", "value": "1" }
+			{
+				"id": "attackRange|0|4.1+POTENCY/2|rangedNonWeapon",
+				"value": "1",
+				"merge": "max"
+			}
 		]
 	}
 ]
