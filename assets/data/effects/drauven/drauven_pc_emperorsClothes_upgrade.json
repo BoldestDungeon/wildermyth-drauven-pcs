@@ -13,7 +13,8 @@
 	"icon": "engulf",
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "drauven_pc_emperorsClothes" ],
-	"priority": "1"
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "6.6+self.BONUS_RANGE" }
 },
 "targets": [
 	{

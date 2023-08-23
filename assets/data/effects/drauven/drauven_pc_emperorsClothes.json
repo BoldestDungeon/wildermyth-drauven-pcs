@@ -9,7 +9,12 @@
 },
 "type": "ABILITY",
 "verb": "ATTACK",
-"ability": { "icon": "engulf", "category": "attackAbility", "priority": "1" },
+"ability": {
+	"icon": "engulf",
+	"category": "attackAbility",
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "6.6+self.BONUS_RANGE" }
+},
 "targets": [
 	{
 		"template": "SELF",
