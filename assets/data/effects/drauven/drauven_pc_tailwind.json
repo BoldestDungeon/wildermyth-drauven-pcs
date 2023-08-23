@@ -9,7 +9,12 @@
 },
 "type": "ABILITY",
 "verb": "MANEUVER",
-"ability": { "icon": "flyFriend", "category": "research", "priority": "1" },
+"ability": {
+	"icon": "flyFriend",
+	"category": "research",
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "6.6+self.BONUS_RANGE" }
+},
 "targets": [
 	{
 		"template": "SELF",

@@ -1,0 +1,28 @@
+{
+"id": "drauven_pc_fireshot_addRangeFeedback",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_fireshot_addRangeFeedback",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "TURN_START_2",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "self",
+		"addAspects": [
+			{ "id": "themeAbility_ranged", "value": "1", "merge": "max" },
+			{ "id": "themeAbility_rangedSingleTarget", "value": "1", "merge": "max" },
+			{
+				"id": "attackRange|0|4.1+POTENCY/2|rangedNonWeapon",
+				"value": "1",
+				"merge": "max"
+			}
+		]
+	}
+]
+}

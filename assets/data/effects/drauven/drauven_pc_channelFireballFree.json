@@ -15,7 +15,8 @@
 	"priority": "1",
 	"extraUI": {
 		"overrideDamageShown": "1d3+((self.SPELL_DAMAGE+self.POTENCY)/4)",
-		"overrideDamageType": "MAGIC"
+		"overrideDamageType": "MAGIC",
+		"overrideRangeShown": "(4.6+self.BONUS_RANGE)+(self.POTENCY/3)"
 	},
 	"showDescriptionInTooltip": true,
 	"cooldown": "oncePerTurn"

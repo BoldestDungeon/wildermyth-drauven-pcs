@@ -15,6 +15,7 @@
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "mysticRecipeSplinterblast" ],
 	"priority": "1",
+	"extraUI": { "overrideRangeShown": "4.6+self.BONUS_RANGE" },
 	"showDescriptionInTooltip": true,
 	"usesElementFromEquippedWeapon": true
 },
