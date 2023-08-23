@@ -236,7 +236,11 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_fireshot",
-	"effects": [ "drauven_pc_fireshot" ],
+	"effects": [
+		"drauven_pc_fireshot",
+		"drauven_pc_fireshot_addRangeFeedback",
+		"defaultSecondaryMoveFeedback|4.1+self.POTENCY/2+self.commonDeck_bowmaster+self.commonDeck_bowmaster_upgrade|fireshot"
+	],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
@@ -283,15 +287,16 @@
 		"drauven_pc_emperorsClothes_upgrade",
 		"mysticRecipeLightningLearning"
 	],
-  "legacyAbilityChoice": true,
+	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
 		"abilityDeckUsage": "upgrade",
-    "upgradeForAbility": "drauvenDeck_mystic_loremaster",
+		"upgradeForAbility": "drauvenDeck_mystic_loremaster",
 		"abilityDeckIcon": "wisdom"
-   }
+	}
 },
 {
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_skysong",
 	"effects": [
 		"drauven_pc_tailwind",
