@@ -14,7 +14,7 @@
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "mysticRecipeBarrage", "drauven_pc_spear" ],
 	"priority": "1",
-	"extraUI": { "overrideRangeShown": "4.6+self.BONUS_RANGE" },
+	"extraUI": { "overrideRangeShown": "5.6+self.BONUS_RANGE" },
 	"usesElementFromEquippedWeapon": true
 },
 "targets": [
@@ -53,7 +53,7 @@
 		},
 		"relativeTo": "source",
 		"minRange": "0.9",
-		"range": "4.6+self.BONUS_RANGE",
+		"range": "5.6+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floorForbidAlly"
 	},
