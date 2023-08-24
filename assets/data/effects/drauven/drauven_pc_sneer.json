@@ -95,7 +95,7 @@
 		"threshold": "1",
 		"onPass": {
 			"class": "Test",
-			"value": "attacker.thrixlDoubleMelee",
+			"value": "attacker.thrixl_thrusk+attacker.thrixl_thruskBig",
 			"threshold": "1",
 			"onPass": {
 				"class": "AttackRoll",
