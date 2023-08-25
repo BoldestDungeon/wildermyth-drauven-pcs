@@ -56,7 +56,7 @@
 "outcomes": [
 	{
 		"class": "Test",
-		"value": "self.drauvenDeck_mystic_sneer_upgrade",
+		"value": "self.drauvenDeck_mystic_sneer_upgrade+DAMAGE",
 		"threshold": "1",
 		"onPass": {
 			"class": "Test",
