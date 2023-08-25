@@ -17,6 +17,10 @@
 },
 "targets": [
 	{ "template": "SELF" },
+	{
+		"template": "ABILITY",
+		"abilityDoesNotHaveTags": [ "poison" ]
+	},
 	{ "template": "ATTACKER" },
 	{
 		"role": "hook3",
