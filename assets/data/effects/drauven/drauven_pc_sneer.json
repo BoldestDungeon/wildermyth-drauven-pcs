@@ -98,35 +98,23 @@
 		"value": "1-self.pinned",
 		"threshold": "1",
 		"onPass": {
-			"class": "Test",
-			"value": "attacker.thrixl_thrusk+attacker.thrixl_thruskBig",
-			"threshold": "1",
-			"onPass": {
-				"class": "AttackRoll",
-				"defender": null,
-				"attackAnimationType": "interaction",
-				"showAbilityName": "always",
-				"timingOverride": { "beforeAnimationTime": "0", "afterAnimationTime": "0" },
-				"attackerAnimationOverride": "",
-				"defenderAnimationOverride": "",
-				"markForFlanking": "never",
-				"always": {
-					"class": "DoAll",
-					"outcomes": [
-						{
-							"class": "MoveEntity",
-							"directlyToTile": "focus",
-							"ignoreEntitiesOnTile": true,
-							"animationType": "leap"
-						}
-					]
-				}
-			},
-			"onFail": {
-				"class": "Aspects",
-				"STUB": "Add the sneer_move aspect. The move doesn't happen here specifically to deal with things like knockback",
-				"addAspects": [
-					{ "id": "drauven_pc_sneer_move", "value": "1", "inRelationTo": "attacker" }
+			"class": "AttackRoll",
+			"defender": null,
+			"attackAnimationType": "interaction",
+			"showAbilityName": "always",
+			"timingOverride": { "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+			"attackerAnimationOverride": "",
+			"defenderAnimationOverride": "",
+			"markForFlanking": "never",
+			"always": {
+				"class": "DoAll",
+				"outcomes": [
+					{
+						"class": "MoveEntity",
+						"directlyToTile": "focus",
+						"ignoreEntitiesOnTile": true,
+						"animationType": "leap"
+					}
 				]
 			}
 		}
