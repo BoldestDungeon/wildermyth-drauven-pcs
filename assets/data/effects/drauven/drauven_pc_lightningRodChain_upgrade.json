@@ -1,0 +1,98 @@
+{
+"id": "drauven_pc_lightningRodChain_upgrade",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_lightningRodChain_upgrade",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Currently deprecated",
+	"sort": 2,
+	"aiPriority": "2000",
+	"debug": true
+},
+"type": "BRANCH",
+"verb": "MANEUVER",
+"targets": [
+	{ "template": "SELF" },
+	{
+		"role": "focus",
+		"template": "INJECTED_TILE",
+		"type": "TILE",
+		"injectedRole": null,
+		"range": "100"
+	},
+	{
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"injectedRole": null,
+		"range": "100"
+	},
+	{ "role": "source", "template": "ANY", "relativeTo": "focus", "range": "0.9" },
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"relativeTo": "target",
+		"range": null,
+		"roleMustFit": "target"
+	}
+],
+"outcomes": [
+	{
+		"class": "MatchTarget",
+		"abilityTarget": {
+			"role": "subject",
+			"template": "ADJACENT_UNIT",
+			"choose": "ONE_RANDOM_TRUE",
+			"showAnyway": true,
+			"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+			"relativeTo": "target",
+			"notAlreadyMatchedAs": [ "target" ],
+			"range": "3",
+			"lineOfSight": "LIVE_ENEMIES",
+			"test": "GREATER_THAN_OR_EQUAL_TO",
+			"a": "ENEMY.self",
+			"b": "1"
+		}
+	},
+	{
+		"class": "MatchTarget",
+		"abilityTarget": {
+			"role": "scenery",
+			"template": "ANY",
+			"choose": "ONE_RANDOM_TRUE",
+			"showAnyway": true,
+			"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+			"aspects": [ "metal", "scenery" ],
+			"relativeTo": "target",
+			"notAlreadyMatchedAs": [ "target" ],
+			"range": "3",
+			"lineOfSight": "LIVE_ENEMIES"
+		}
+	},
+	{
+		"class": "AttackRoll",
+		"intermediateRole": "source",
+		"attackAnimationType": "magic",
+		"stopBlockingTime": "onHit",
+		"particles": [
+			{ "script": "lightning", "setPosition": "source", "setPosition2": "target" },
+			{ "script": "lightningHit", "setPosition": "target" }
+		],
+		"attackerAnimationOverride": "",
+		"defenseRollTags": [ "ranged" ],
+		"attackStrength": "self.RANGE_ACCURACY",
+		"onHit": {
+			"class": "Test",
+			"value": "1-scenery",
+			"threshold": "1",
+			"onPass": {
+				"class": "Damage",
+				"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
+				"type": "MAGIC",
+				"useEquippedWeaponForStunt": true,
+				"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
+			}
+		}
+	}
+]
+}
