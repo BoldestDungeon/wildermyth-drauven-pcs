@@ -27,7 +27,6 @@
 		"injectedRole": null,
 		"range": "100"
 	},
-	{ "role": "source", "template": "ANY", "relativeTo": "focus", "range": "0.9" },
 	{
 		"role": "targetTile",
 		"template": "TILE",
@@ -71,11 +70,11 @@
 	},
 	{
 		"class": "AttackRoll",
-		"intermediateRole": "source",
+		"intermediateRole": "focus",
 		"attackAnimationType": "magic",
 		"stopBlockingTime": "onHit",
 		"particles": [
-			{ "script": "lightning", "setPosition": "source", "setPosition2": "target" },
+			{ "script": "lightning", "setPosition": "focus", "setPosition2": "target" },
 			{ "script": "lightningHit", "setPosition": "target" }
 		],
 		"attackerAnimationOverride": "",
