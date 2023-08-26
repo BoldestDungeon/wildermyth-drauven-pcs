@@ -188,11 +188,16 @@
 					}
 				},
 				{
-					"class": "Damage",
-					"amount": "1+(self.POTENCY+self.SPELL_DAMAGE)",
-					"type": "MAGIC",
-					"useEquippedWeaponForStunt": true,
-					"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
+					"class": "Test",
+					"value": "1-scenery",
+					"threshold": "1",
+					"onPass": {
+						"class": "Damage",
+						"amount": "1+(self.POTENCY+self.SPELL_DAMAGE)",
+						"type": "MAGIC",
+						"useEquippedWeaponForStunt": true,
+						"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
+					}
 				}
 			]
 		}
