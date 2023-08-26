@@ -91,6 +91,13 @@
 			"type": "MAGIC"
 		}
 	},
-	{ "class": "Spawn", "target": "targetTile", "addRole": "fire", "addFire": "2" }
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"attackAnimationType": "interaction",
+		"attackerAnimationOverride": "",
+		"defenderAnimationOverride": "",
+		"always": { "class": "Spawn", "target": "targetTile", "addRole": "fire", "addFire": "2" }
+	}
 ]
 }
