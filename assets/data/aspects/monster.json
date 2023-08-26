@@ -6,6 +6,12 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_sneer_defenseSuccess",
+	"effects": [ "removeEveryAction", "removeAtStartOfTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "turtleGuarding",
 	"effects": [
 		"removeAtStartOfTurn",
@@ -60,8 +66,8 @@
 	],
 	"stats": { "BLOCK": -200, "DODGE": -200 },
 	"boostType": "THEME",
-	"showInTooltip": true,
-	"importance": 10
+	"importance": 10,
+	"showInTooltip": true
 },
 {
 	"modId": "wildermyth-drauven-pcs",

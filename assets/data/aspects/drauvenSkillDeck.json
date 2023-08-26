@@ -324,7 +324,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_sneer",
-	"effects": [ "drauven_pc_sneer" ],
+	"effects": [ "drauven_pc_sneer", "drauven_pc_sneer_defenseSuccess" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
