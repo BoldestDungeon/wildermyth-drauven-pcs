@@ -226,7 +226,7 @@
 											"outcomes": [
 												{
 													"class": "Damage",
-													"amount": "ceil((((1+(self.POTENCY+self.SPELL_DAMAGE))*3)/4))",
+													"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
 													"type": "MAGIC",
 													"useEquippedWeaponForStunt": true,
 													"numDefenders": "3"
@@ -237,7 +237,7 @@
 								},
 								{
 									"class": "Damage",
-									"amount": "ceil((((1+(self.POTENCY+self.SPELL_DAMAGE))*3)/4))",
+									"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
 									"type": "MAGIC",
 									"useEquippedWeaponForStunt": true,
 									"numDefenders": "2+COUNT.volunteer3"
@@ -253,11 +253,16 @@
 					}
 				},
 				{
-					"class": "Damage",
-					"amount": "1+(self.POTENCY+self.SPELL_DAMAGE)",
-					"type": "MAGIC",
-					"useEquippedWeaponForStunt": true,
-					"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
+					"class": "Test",
+					"value": "1-scenery",
+					"threshold": "1",
+					"onPass": {
+						"class": "Damage",
+						"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
+						"type": "MAGIC",
+						"useEquippedWeaponForStunt": true,
+						"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
+					}
 				}
 			]
 		}
