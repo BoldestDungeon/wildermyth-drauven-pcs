@@ -24,6 +24,7 @@
 	{
 		"template": "INJECTED_ENTITY",
 		"type": "ANY_STATUS",
+		"missionFeedback": { "orientTo": "focus" },
 		"injectedRole": null,
 		"range": "100"
 	},
@@ -80,6 +81,7 @@
 		"intermediateRole": "focus",
 		"attackAnimationType": "magic",
 		"stopBlockingTime": "onHit",
+		"minimumBlockTimeOnMiss": "2000",
 		"particles": [
 			{ "script": "lightning", "setPosition": "focus", "setPosition2": "target" },
 			{ "script": "lightningHit", "setPosition": "target" }
