@@ -121,11 +121,23 @@
 								]
 							},
 							{
-								"class": "Damage",
-								"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
-								"type": "MAGIC",
-								"useEquippedWeaponForStunt": true,
-								"numDefenders": "min((2+self.drauvenDeck_mystic_skysong_upgrade),(self.drauven_pc_lightningRod_enemyHits+COUNT.subject))"
+								"class": "Test",
+								"value": "self.drauven_pc_lightningRod_enemyHits",
+								"threshold": "2",
+								"onPass": {
+									"class": "Damage",
+									"amount": "ceil(((1+(self.POTENCY+self.SPELL_DAMAGE))/2))",
+									"type": "MAGIC",
+									"useEquippedWeaponForStunt": true,
+									"numDefenders": "2"
+								},
+								"onFail": {
+									"class": "Damage",
+									"amount": "1+(self.POTENCY+self.SPELL_DAMAGE)",
+									"type": "MAGIC",
+									"useEquippedWeaponForStunt": true,
+									"numDefenders": "min(2,(self.drauven_pc_lightningRod_enemyHits+COUNT.subject))"
+								}
 							}
 						]
 					}
@@ -138,7 +150,7 @@
 				},
 				{
 					"class": "Test",
-					"value": "(2+self.drauvenDeck_mystic_skysong_upgrade)-self.drauven_pc_lightningRod_enemyHits",
+					"value": "2-self.drauven_pc_lightningRod_enemyHits",
 					"threshold": "1",
 					"onPass": {
 						"class": "IfRolesArePresent",
