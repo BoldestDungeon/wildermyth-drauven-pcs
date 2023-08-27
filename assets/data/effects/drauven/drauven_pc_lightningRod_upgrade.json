@@ -58,11 +58,10 @@
 	},
 	{
 		"role": "target3",
-		"template": "ADJACENT_SCENERY",
+		"template": "ANY",
 		"STUB": "Targetable Scenery",
 		"choose": "ANY",
 		"showAnyway": true,
-		"missionFeedback": null,
 		"aspects": [ "metal", "scenery" ],
 		"relativeTo": "source",
 		"range": "4.6+self.BONUS_RANGE",
@@ -98,6 +97,13 @@
 		"class": "Aspects",
 		"target": "hook",
 		"removeAspects": [ "drauven_pc_lightningRod_wasHit" ]
+	},
+	{
+		"class": "Aspects",
+		"target": "source",
+		"addAspects": [
+			{ "id": "drauven_pc_lightningRod_wasHit", "value": "1" }
+		]
 	},
 	{
 		"class": "MatchTarget",
@@ -158,7 +164,7 @@
 		},
 		"flankMarkOrigin": "source",
 		"defenseRollTags": [ "range" ],
-		"attackStrength": "self.RANGE_ACCURACY",
+		"attackStrength": "self.RANGE_ACCURACY+(1000*target.scenery)",
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
@@ -168,13 +174,6 @@
 					"amount": "1",
 					"type": "TRUE",
 					"showInTooltip": false
-				},
-				{
-					"class": "Aspects",
-					"target": "source",
-					"addAspects": [
-						{ "id": "drauven_pc_lightningRod_wasHit", "value": "1" }
-					]
 				}
 			]
 		},
@@ -189,18 +188,18 @@
 						"class": "DoAll",
 						"outcomes": [
 							{
-								"class": "Damage",
-								"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
-								"type": "MAGIC",
-								"useEquippedWeaponForStunt": true,
-								"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
-							},
-							{
 								"class": "Aspects",
 								"target": "self",
 								"addAspects": [
 									{ "id": "drauven_pc_lightningRod_enemyHits", "value": "1" }
 								]
+							},
+							{
+								"class": "Damage",
+								"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
+								"type": "MAGIC",
+								"useEquippedWeaponForStunt": true,
+								"numDefenders": "1+COUNT.subject"
 							}
 						]
 					}

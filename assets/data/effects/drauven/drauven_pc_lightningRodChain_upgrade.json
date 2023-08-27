@@ -93,7 +93,8 @@
 		"attackerAnimationOverride": "",
 		"flankMarkOrigin": "focus",
 		"defenseRollTags": [ "range" ],
-		"attackStrength": "self.RANGE_ACCURACY",
+		"attackStrength": "self.RANGE_ACCURACY+(1000*target.scenery)",
+		"suppressAttackRollEffects": true,
 		"onHit": {
 			"class": "DoAll",
 			"outcomes": [
@@ -111,18 +112,18 @@
 								]
 							},
 							{
-								"class": "Damage",
-								"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
-								"type": "MAGIC",
-								"useEquippedWeaponForStunt": true,
-								"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
-							},
-							{
 								"class": "Aspects",
 								"target": "self",
 								"addAspects": [
 									{ "id": "drauven_pc_lightningRod_enemyHits", "value": "1" }
 								]
+							},
+							{
+								"class": "Damage",
+								"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
+								"type": "MAGIC",
+								"useEquippedWeaponForStunt": true,
+								"numDefenders": "min((2+self.drauvenDeck_mystic_skysong_upgrade),(self.drauven_pc_lightningRod_enemyHits+COUNT.subject))"
 							}
 						]
 					}
