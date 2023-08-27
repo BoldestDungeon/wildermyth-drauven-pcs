@@ -24,6 +24,13 @@
 		"missionFeedback": { "orientTo": "source" }
 	},
 	{
+		"role": "hook",
+		"template": "ANY",
+		"choose": "ANY",
+		"aspects": [ "metal", "scenery" ],
+		"range": "100"
+	},
+	{
 		"role": "source",
 		"template": "ANY",
 		"missionFeedback": {
@@ -47,7 +54,7 @@
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
 		"range": "4.6+self.BONUS_RANGE",
-		"lineOfSight": "TERRAIN_ONLY"
+		"lineOfSight": "LIVE_ENEMIES"
 	},
 	{
 		"role": "target3",
@@ -59,7 +66,7 @@
 		"aspects": [ "metal", "scenery" ],
 		"relativeTo": "source",
 		"range": "4.6+self.BONUS_RANGE",
-		"lineOfSight": "TERRAIN_ONLY"
+		"lineOfSight": "LIVE_ENEMIES"
 	},
 	{
 		"template": "ANY",
@@ -88,6 +95,11 @@
 ],
 "outcomes": [
 	{
+		"class": "Aspects",
+		"target": "hook",
+		"removeAspects": [ "drauven_pc_lightningRod_wasHit" ]
+	},
+	{
 		"class": "MatchTarget",
 		"abilityTarget": {
 			"role": "subject",
@@ -95,8 +107,11 @@
 			"choose": "ONE_RANDOM_TRUE",
 			"showAnyway": true,
 			"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+			"aspectValues": [
+				{ "id": "drauven_pc_lightningRod_wasHit", "forbidden": true }
+			],
 			"relativeTo": "target",
-			"notAlreadyMatchedAs": [ "target" ],
+			"notAlreadyMatchedAs": [ "target", "source" ],
 			"range": "3",
 			"lineOfSight": "LIVE_ENEMIES",
 			"test": "GREATER_THAN_OR_EQUAL_TO",
@@ -113,8 +128,11 @@
 			"showAnyway": true,
 			"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
 			"aspects": [ "metal", "scenery" ],
+			"aspectValues": [
+				{ "id": "drauven_pc_lightningRod_wasHit", "forbidden": true }
+			],
 			"relativeTo": "target",
-			"notAlreadyMatchedAs": [ "target" ],
+			"notAlreadyMatchedAs": [ "target", "source" ],
 			"range": "3",
 			"lineOfSight": "LIVE_ENEMIES"
 		}
@@ -150,6 +168,13 @@
 					"amount": "1",
 					"type": "TRUE",
 					"showInTooltip": false
+				},
+				{
+					"class": "Aspects",
+					"target": "source",
+					"addAspects": [
+						{ "id": "drauven_pc_lightningRod_wasHit", "value": "1" }
+					]
 				}
 			]
 		},
@@ -161,12 +186,30 @@
 					"value": "1-scenery",
 					"threshold": "1",
 					"onPass": {
-						"class": "Damage",
-						"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
-						"type": "MAGIC",
-						"useEquippedWeaponForStunt": true,
-						"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Damage",
+								"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
+								"type": "MAGIC",
+								"useEquippedWeaponForStunt": true,
+								"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
+							},
+							{
+								"class": "Aspects",
+								"target": "self",
+								"addAspects": [
+									{ "id": "drauven_pc_lightningRod_enemyHits", "value": "1" }
+								]
+							}
+						]
 					}
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "drauven_pc_lightningRod_wasHit", "value": "1" }
+					]
 				},
 				{
 					"class": "IfRolesArePresent",
