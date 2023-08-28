@@ -77,6 +77,27 @@
 		}
 	},
 	{
+		"class": "Test",
+		"value": "target.scenery",
+		"threshold": "1",
+		"onPass": {
+			"class": "MatchTarget",
+			"abilityTarget": {
+				"role": "volunteer",
+				"template": "ADJACENT_UNIT",
+				"choose": "ANY",
+				"showAnyway": true,
+				"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+				"relativeTo": "target",
+				"range": "1.6",
+				"lineOfSight": "LIVE_ENEMIES",
+				"test": "GREATER_THAN_OR_EQUAL_TO",
+				"a": "ENEMY.self",
+				"b": "1"
+			}
+		}
+	},
+	{
 		"class": "AttackRoll",
 		"intermediateRole": "focus",
 		"attackAnimationType": "magic",
@@ -84,7 +105,8 @@
 		"minimumBlockTimeOnMiss": "2000",
 		"particles": [
 			{ "script": "lightning", "setPosition": "focus", "setPosition2": "target" },
-			{ "script": "lightningHit", "setPosition": "target" }
+			{ "script": "lightningHit", "setPosition": "target" },
+			{ "script": "lightningHit", "setPosition": "volunteer" }
 		],
 		"audioOverride": {
 			"attackStartCue": "",
@@ -128,6 +150,23 @@
 								"numDefenders": "min((2+self.drauvenDeck_mystic_skysong_upgrade),(self.drauven_pc_lightningRod_enemyHits+COUNT.subject))"
 							}
 						]
+					},
+					"onFail": {
+						"class": "ForEach",
+						"fromRoles": [ "volunteer" ],
+						"toRole": "volunteer3",
+						"outcome": {
+							"class": "Test",
+							"value": "1d20",
+							"threshold": "20",
+							"onPass": {
+								"class": "Aspects",
+								"target": "volunteer3",
+								"addAspects": [
+									{ "id": "senseless", "value": "1" }
+								]
+							}
+						}
 					}
 				},
 				{
