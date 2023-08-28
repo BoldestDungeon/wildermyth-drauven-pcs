@@ -1,0 +1,184 @@
+{
+"id": "drauven_pc_lightningRodChain",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_lightningRodChain",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Currently deprecated",
+	"sort": 2,
+	"aiPriority": "2000",
+	"debug": true
+},
+"type": "BRANCH",
+"verb": "MANEUVER",
+"targets": [
+	{ "template": "SELF" },
+	{
+		"role": "focus",
+		"template": "INJECTED_TILE",
+		"type": "TILE",
+		"injectedRole": null,
+		"range": "100"
+	},
+	{
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"missionFeedback": { "orientTo": "focus" },
+		"injectedRole": null,
+		"range": "100"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"STUB": "Gets the tile under the target to use as the intermediate role for the next hit.",
+		"relativeTo": "target",
+		"range": null,
+		"roleMustFit": "target"
+	}
+],
+"outcomes": [
+	{
+		"class": "MatchTarget",
+		"abilityTarget": {
+			"role": "subject",
+			"template": "ADJACENT_UNIT",
+			"choose": "ONE_RANDOM_TRUE",
+			"showAnyway": true,
+			"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+			"aspectValues": [
+				{ "id": "drauven_pc_lightningRod_wasHit", "forbidden": true }
+			],
+			"relativeTo": "target",
+			"notAlreadyMatchedAs": [ "target" ],
+			"range": "3",
+			"lineOfSight": "LIVE_ENEMIES",
+			"test": "GREATER_THAN_OR_EQUAL_TO",
+			"a": "ENEMY.self",
+			"b": "1"
+		}
+	},
+	{
+		"class": "MatchTarget",
+		"abilityTarget": {
+			"role": "scenery",
+			"template": "ANY",
+			"choose": "ONE_RANDOM_TRUE",
+			"showAnyway": true,
+			"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+			"aspects": [ "metal", "scenery" ],
+			"aspectValues": [
+				{ "id": "drauven_pc_lightningRod_wasHit", "forbidden": true }
+			],
+			"relativeTo": "target",
+			"notAlreadyMatchedAs": [ "target" ],
+			"range": "3",
+			"lineOfSight": "LIVE_ENEMIES"
+		}
+	},
+	{
+		"class": "AttackRoll",
+		"intermediateRole": "focus",
+		"attackAnimationType": "magic",
+		"stopBlockingTime": "onHit",
+		"minimumBlockTimeOnMiss": "2000",
+		"particles": [
+			{ "script": "lightning", "setPosition": "focus", "setPosition2": "target" },
+			{ "script": "lightningHit", "setPosition": "target" }
+		],
+		"audioOverride": {
+			"attackStartCue": "",
+			"attackHitCue": "Characters/Theme/Lightning/lightningShoot",
+			"attackDodgedCue": "Characters/Theme/Lightning/lightningShoot",
+			"attackBlockedCue": "Characters/Theme/Lightning/lightningShoot"
+		},
+		"attackerAnimationOverride": "",
+		"flankMarkOrigin": "focus",
+		"defenseRollTags": [ "range" ],
+		"attackStrength": "self.RANGE_ACCURACY+(1000*target.scenery)",
+		"suppressAttackRollEffects": true,
+		"onHit": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Test",
+					"value": "1-target.scenery",
+					"threshold": "1",
+					"onPass": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Aspects",
+								"addAspects": [
+									{ "id": "drauven_pc_lightningRod_wasHit", "value": "1" }
+								]
+							},
+							{
+								"class": "Aspects",
+								"target": "self",
+								"addAspects": [
+									{ "id": "drauven_pc_lightningRod_enemyHits", "value": "1" }
+								]
+							},
+							{
+								"class": "Test",
+								"value": "self.drauven_pc_lightningRod_enemyHits",
+								"threshold": "2",
+								"onPass": {
+									"class": "Damage",
+									"amount": "ceil(((1+(self.POTENCY+self.SPELL_DAMAGE))/2))",
+									"type": "MAGIC",
+									"useEquippedWeaponForStunt": true,
+									"numDefenders": "2"
+								},
+								"onFail": {
+									"class": "Damage",
+									"amount": "1+(self.POTENCY+self.SPELL_DAMAGE)",
+									"type": "MAGIC",
+									"useEquippedWeaponForStunt": true,
+									"numDefenders": "min(2,(self.drauven_pc_lightningRod_enemyHits+COUNT.subject))"
+								}
+							}
+						]
+					}
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "drauven_pc_lightningRod_wasHit", "value": "1" }
+					]
+				},
+				{
+					"class": "Test",
+					"value": "2-self.drauven_pc_lightningRod_enemyHits",
+					"threshold": "1",
+					"onPass": {
+						"class": "IfRolesArePresent",
+						"target": "self",
+						"rolesArePresent": [ "subject" ],
+						"then": {
+							"class": "BranchAbility",
+							"target": "self",
+							"targetRole": "subject",
+							"tileRole": "targetTile",
+							"branchAbility": "drauven_pc_lightningRodChain"
+						},
+						"otherwise": {
+							"class": "IfRolesArePresent",
+							"target": "self",
+							"rolesArePresent": [ "scenery" ],
+							"then": {
+								"class": "BranchAbility",
+								"target": "self",
+								"targetRole": "scenery",
+								"tileRole": "targetTile",
+								"branchAbility": "drauven_pc_lightningRodChain"
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+]
+}

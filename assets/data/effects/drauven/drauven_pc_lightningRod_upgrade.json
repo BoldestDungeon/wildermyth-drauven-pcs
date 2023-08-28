@@ -24,6 +24,13 @@
 		"missionFeedback": { "orientTo": "source" }
 	},
 	{
+		"role": "hook",
+		"template": "ANY",
+		"choose": "ANY",
+		"aspects": [ "metal", "scenery" ],
+		"range": "100"
+	},
+	{
 		"role": "source",
 		"template": "ANY",
 		"missionFeedback": {
@@ -47,19 +54,18 @@
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
 		"range": "4.6+self.BONUS_RANGE",
-		"lineOfSight": "TERRAIN_ONLY"
+		"lineOfSight": "LIVE_ENEMIES"
 	},
 	{
 		"role": "target3",
-		"template": "ADJACENT_SCENERY",
+		"template": "ANY",
 		"STUB": "Targetable Scenery",
 		"choose": "ANY",
 		"showAnyway": true,
-		"missionFeedback": null,
 		"aspects": [ "metal", "scenery" ],
 		"relativeTo": "source",
 		"range": "4.6+self.BONUS_RANGE",
-		"lineOfSight": "TERRAIN_ONLY"
+		"lineOfSight": "LIVE_ENEMIES"
 	},
 	{
 		"template": "ANY",
@@ -79,13 +85,39 @@
 		"notAlreadyMatchedAs": [ "source" ]
 	},
 	{
-		"template": "TILE",
-		"choose": "ONE_RANDOM_TRUE",
+		"role": "volunteer2",
+		"template": "ADJACENT_UNIT",
+		"choose": "ANY",
+		"showAnyway": true,
+		"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
 		"relativeTo": "source",
-		"range": "30"
+		"range": "1.6",
+		"lineOfSight": "LIVE_ENEMIES",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "ENEMY.self",
+		"b": "1"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"relativeTo": "target",
+		"range": null,
+		"roleMustFit": "target"
 	}
 ],
 "outcomes": [
+	{
+		"class": "Aspects",
+		"target": "hook",
+		"removeAspects": [ "drauven_pc_lightningRod_wasHit" ]
+	},
+	{
+		"class": "Aspects",
+		"target": "source",
+		"addAspects": [
+			{ "id": "drauven_pc_lightningRod_wasHit", "value": "1" }
+		]
+	},
 	{
 		"class": "MatchTarget",
 		"abilityTarget": {
@@ -94,41 +126,55 @@
 			"choose": "ONE_RANDOM_TRUE",
 			"showAnyway": true,
 			"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+			"aspectValues": [
+				{ "id": "drauven_pc_lightningRod_wasHit", "forbidden": true }
+			],
 			"relativeTo": "target",
-			"notAlreadyMatchedAs": [ "target" ],
+			"notAlreadyMatchedAs": [ "target", "source" ],
 			"range": "3",
-			"lineOfSight": "TERRAIN_ONLY",
+			"lineOfSight": "LIVE_ENEMIES",
 			"test": "GREATER_THAN_OR_EQUAL_TO",
 			"a": "ENEMY.self",
 			"b": "1"
 		}
 	},
 	{
-		"class": "IfRolesArePresent",
-		"STUB": "Third target (skysong+)",
-		"rolesArePresent": [ "subject" ],
-		"then": {
-			"class": "DoAll",
-			"outcomes": [
-				{
-					"class": "MatchTarget",
-					"abilityTarget": {
-						"role": "volunteer3",
-						"template": "ADJACENT_UNIT",
-						"STUB": "A third target, matched if lightning rod is set to hit another enemy (via the skysong+ ability)",
-						"choose": "ONE_RANDOM_TRUE",
-						"showAnyway": true,
-						"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
-						"relativeTo": "subject",
-						"notAlreadyMatchedAs": [ "target", "subject" ],
-						"range": "3",
-						"lineOfSight": "TERRAIN_ONLY",
-						"test": "GREATER_THAN_OR_EQUAL_TO",
-						"a": "ENEMY.self*self.drauvenDeck_mystic_skysong_upgrade",
-						"b": "1"
-					}
-				}
-			]
+		"class": "MatchTarget",
+		"abilityTarget": {
+			"role": "scenery",
+			"template": "ANY",
+			"choose": "ONE_RANDOM_TRUE",
+			"showAnyway": true,
+			"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+			"aspects": [ "metal", "scenery" ],
+			"aspectValues": [
+				{ "id": "drauven_pc_lightningRod_wasHit", "forbidden": true }
+			],
+			"relativeTo": "target",
+			"notAlreadyMatchedAs": [ "target", "source" ],
+			"range": "3",
+			"lineOfSight": "LIVE_ENEMIES"
+		}
+	},
+	{
+		"class": "Test",
+		"value": "target.scenery",
+		"threshold": "1",
+		"onPass": {
+			"class": "MatchTarget",
+			"abilityTarget": {
+				"role": "volunteer",
+				"template": "ADJACENT_UNIT",
+				"choose": "ANY",
+				"showAnyway": true,
+				"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
+				"relativeTo": "target",
+				"range": "1.6",
+				"lineOfSight": "LIVE_ENEMIES",
+				"test": "GREATER_THAN_OR_EQUAL_TO",
+				"a": "ENEMY.self",
+				"b": "1"
+			}
 		}
 	},
 	{
@@ -142,7 +188,9 @@
 			{ "script": "lightningRodHit", "setPosition": "source" },
 			{ "script": "lightningHit", "setPosition": "source" },
 			{ "script": "lightning", "setPosition": "source", "setPosition2": "target" },
-			{ "script": "lightningHit", "setPosition": "target" }
+			{ "script": "lightningHit", "setPosition": "target" },
+			{ "script": "lightningHit", "setPosition": "volunteer2" },
+			{ "script": "lightningHit", "setPosition": "volunteer" }
 		],
 		"audioOverride": {
 			"attackStartCue": "",
@@ -152,7 +200,7 @@
 		},
 		"flankMarkOrigin": "source",
 		"defenseRollTags": [ "range" ],
-		"attackStrength": "self.RANGE_ACCURACY",
+		"attackStrength": "self.RANGE_ACCURACY+(1000*target.scenery)",
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
@@ -162,6 +210,23 @@
 					"amount": "1",
 					"type": "TRUE",
 					"showInTooltip": false
+				},
+				{
+					"class": "ForEach",
+					"fromRoles": [ "volunteer2" ],
+					"toRole": "volunteer3",
+					"outcome": {
+						"class": "Test",
+						"value": "1d20",
+						"threshold": "20",
+						"onPass": {
+							"class": "Aspects",
+							"target": "volunteer3",
+							"addAspects": [
+								{ "id": "senseless", "value": "1" }
+							]
+						}
+					}
 				}
 			]
 		},
@@ -169,99 +234,74 @@
 			"class": "DoAll",
 			"outcomes": [
 				{
-					"class": "IfRolesArePresent",
-					"rolesArePresent": [ "subject" ],
-					"then": {
-						"class": "AttackRoll",
-						"STUB": "A bit of weird stuff with minimumBlockTime, to make sure both the 2 and 3 bounce versions look good and don't cut off too early",
-						"target": "self",
-						"defender": "subject",
-						"intermediateRole": "target",
-						"attackAnimationType": "magic",
-						"stopBlockingTime": "onHit",
-						"minimumBlockTime": "(1-COUNT.volunteer3)*2000",
-						"minimumBlockTimeOnMiss": "2000",
-						"particles": [
-							{ "script": "lightning", "setPosition": "target", "setPosition2": "subject" },
-							{ "script": "lightningHit", "setPosition": "subject" }
-						],
-						"audioOverride": {
-							"attackStartCue": "",
-							"attackHitCue": "Characters/Theme/Lightning/lightningShoot",
-							"attackDodgedCue": "Characters/Theme/Lightning/lightningShoot",
-							"attackBlockedCue": "Characters/Theme/Lightning/lightningShoot"
-						},
-						"attackerAnimationOverride": "",
-						"flankMarkOrigin": "target",
-						"defenseRollTags": [ "range" ],
-						"attackStrength": "self.RANGE_ACCURACY",
-						"onHit": {
-							"class": "DoAll",
-							"outcomes": [
-								{
-									"class": "IfRolesArePresent",
-									"rolesArePresent": [ "volunteer3" ],
-									"then": {
-										"class": "AttackRoll",
-										"target": "self",
-										"defender": "volunteer3",
-										"intermediateRole": "subject",
-										"attackAnimationType": "magic",
-										"particles": [
-											{ "script": "lightning", "setPosition": "subject", "setPosition2": "volunteer3" },
-											{ "script": "lightningHit", "setPosition": "volunteer3" }
-										],
-										"audioOverride": {
-											"attackStartCue": "",
-											"attackHitCue": "Characters/Theme/Lightning/lightningShoot",
-											"attackDodgedCue": "Characters/Theme/Lightning/lightningShoot",
-											"attackBlockedCue": "Characters/Theme/Lightning/lightningShoot"
-										},
-										"attackerAnimationOverride": "",
-										"flankMarkOrigin": "subject",
-										"defenseRollTags": [ "range" ],
-										"attackStrength": "self.RANGE_ACCURACY",
-										"onHit": {
-											"class": "DoAll",
-											"outcomes": [
-												{
-													"class": "Damage",
-													"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
-													"type": "MAGIC",
-													"useEquippedWeaponForStunt": true,
-													"numDefenders": "3"
-												}
-											]
-										}
-									}
-								},
-								{
-									"class": "Damage",
-									"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
-									"type": "MAGIC",
-									"useEquippedWeaponForStunt": true,
-									"numDefenders": "2+COUNT.volunteer3"
-								}
-							]
-						}
-					},
-					"otherwise": {
-						"class": "AttackRoll",
-						"target": "self",
-						"defender": null,
-						"attackAnimationType": "none"
-					}
-				},
-				{
 					"class": "Test",
 					"value": "1-scenery",
 					"threshold": "1",
 					"onPass": {
-						"class": "Damage",
-						"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
-						"type": "MAGIC",
-						"useEquippedWeaponForStunt": true,
-						"numDefenders": "(1+COUNT.subject)+COUNT.volunteer3"
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Aspects",
+								"target": "self",
+								"addAspects": [
+									{ "id": "drauven_pc_lightningRod_enemyHits", "value": "1" }
+								]
+							},
+							{
+								"class": "Damage",
+								"amount": "2+(self.POTENCY+self.SPELL_DAMAGE)",
+								"type": "MAGIC",
+								"useEquippedWeaponForStunt": true,
+								"numDefenders": "1+COUNT.subject"
+							}
+						]
+					},
+					"onFail": {
+						"class": "ForEach",
+						"fromRoles": [ "volunteer" ],
+						"toRole": "volunteer3",
+						"outcome": {
+							"class": "Test",
+							"value": "1d20",
+							"threshold": "20",
+							"onPass": {
+								"class": "Aspects",
+								"target": "volunteer3",
+								"addAspects": [
+									{ "id": "senseless", "value": "1" }
+								]
+							}
+						}
+					}
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "drauven_pc_lightningRod_wasHit", "value": "1" }
+					]
+				},
+				{
+					"class": "IfRolesArePresent",
+					"target": "self",
+					"rolesArePresent": [ "subject" ],
+					"then": {
+						"class": "BranchAbility",
+						"target": "self",
+						"targetRole": "subject",
+						"tileRole": "targetTile",
+						"branchAbility": "drauven_pc_lightningRodChain_upgrade"
+					},
+					"otherwise": {
+						"class": "IfRolesArePresent",
+						"target": "self",
+						"rolesArePresent": [ "scenery" ],
+						"then": {
+							"class": "BranchAbility",
+							"target": "self",
+							"targetRole": "scenery",
+							"tileRole": "targetTile",
+							"branchAbility": "drauven_pc_lightningRodChain_upgrade"
+						}
 					}
 				}
 			]
