@@ -1,0 +1,386 @@
+{
+"id": "ohSnap_romance_followup",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "tiding/ohSnap_romance_followup",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"followupIds": [ "encounter_wilderness_ohSnap.0.playerChose_one.2.onPass.11" ]
+},
+"type": "FOLLOWUP_EVENT_OUTCOME",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "heroism",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterScore": 11,
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{
+		"role": "company",
+		"template": "INJECTED_ENTITY",
+		"type": "COMPANY",
+		"choose": "ALL",
+		"injectedRole": "company",
+		"aspects": null
+	},
+	{
+		"role": "overlandTile",
+		"template": "INJECTED_ENTITY",
+		"type": "OVERLAND_TILE",
+		"choose": "ALL",
+		"injectedRole": "overlandTile",
+		"aspects": null
+	},
+	{
+		"role": "party",
+		"template": "INJECTED_ENTITY",
+		"type": "UNIT",
+		"choose": "ALL",
+		"injectedRole": "party",
+		"aspects": null
+	},
+	{
+		"role": "foes",
+		"template": "INJECTED_ENTITY",
+		"type": "LEGEND",
+		"choose": "ALL",
+		"injectedRole": "foes",
+		"aspects": null
+	},
+	{
+		"role": "snark",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ALL",
+		"injectedRole": "snark",
+		"aspects": null
+	},
+	{
+		"role": "leader",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ALL",
+		"injectedRole": "leader",
+		"aspects": null
+	},
+	{
+		"role": "romantic",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ALL",
+		"injectedRole": "romantic",
+		"aspects": null
+	},
+	{
+		"role": "bookish",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ALL",
+		"injectedRole": "bookish",
+		"aspects": null
+	},
+	{
+		"role": "volunteer",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": "volunteer",
+		"aspects": null
+	},
+	{
+		"role": "ship",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": "ship",
+		"aspects": null
+	},
+	{
+		"role": "ship2",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": "ship2",
+		"aspects": null
+	},
+	{
+		"role": "npc",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ANY",
+		"injectedRole": "npc",
+		"aspects": null
+	},
+	{
+		"role": "rival",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ANY",
+		"injectedRole": "rival",
+		"aspects": null
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_forestField2_yellow.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:pointerSpeech.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.437, "y": 0.652 },
+							"size": 0.3111,
+							"nameTag": "none",
+							"foot": { "rotate": -97.378 },
+							"color": { "r": "0.81676137", "g": "0.81676137", "b": "0.81676137", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.554, "y": 0.478 },
+							"size": 0.5167,
+							"head": { "scaleY": 1 }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-joke",
+							"equipment": {},
+							"anchor": { "x": 0.72, "y": 0.531 },
+							"size": 0.3831
+						},
+						{
+							"role": "rival",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.175, "y": 0.629 },
+							"size": 0.157,
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.66051137" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestField2_yellow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.025, "y": 0.487 },
+							"size": 0.3179,
+							"drawDepth": 20,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:bubble.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.183, "y": 0.579 },
+							"size": 2.1714,
+							"nameTag": "none",
+							"color": { "r": "0.74829507", "g": "0.60516381", "b": "0.54431856", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comic:bubble.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.183, "y": 0.579 },
+							"size": 2.1714,
+							"nameTag": "none",
+							"color": { "r": "0.74829507", "g": "0.60516381", "b": "0.54431856", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comic:bubble.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.183, "y": 0.579 },
+							"size": 2.1714,
+							"nameTag": "none",
+							"color": { "r": "0.74829507", "g": "0.60516381", "b": "0.54431856", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comic:treePine2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.113, "y": 0.442 },
+							"size": 0.1998,
+							"nameTag": "none",
+							"foot": { "rotate": 0 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "tiding/ohSnap_romance_followup",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestField2_yellow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.002, "y": 0.484 },
+							"size": 0.3179,
+							"drawDepth": 50,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicEmotion_heart.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.387, "y": 0.606 },
+							"size": 0.2671,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.456, "y": 0.534 },
+							"size": 0.1629,
+							"nameTag": "none",
+							"foot": { "rotate": -22.457 }
+						},
+						{
+							"assetSpec": "comic:treePine2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.093, "y": 0.44 },
+							"size": 0.1998,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:bush5b.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.197, "y": 0.39 },
+							"size": 0.1418,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:flower3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.612, "y": 0.292 },
+							"size": 0.1201,
+							"nameTag": "none",
+							"foot": { "rotate": 28.387 }
+						},
+						{
+							"assetSpec": "comic:edgeHider_dirtShort.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.387, "y": 0.321 },
+							"size": 0.5028,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStoneOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.407, "y": 0.594 },
+							"size": 0.1555,
+							"nameTag": "none"
+						},
+						{
+							"role": "npc",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.514, "y": 0.494 },
+							"size": 0.109,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.56392044", "g": "0.56392044", "b": "0.56392044", "a": "1" }
+						},
+						{
+							"role": "romantic",
+							"equipment": {},
+							"anchor": { "x": 0.468, "y": 0.491 },
+							"size": 0.109,
+							"color": { "r": "0.56392044", "g": "0.56392044", "b": "0.56392044", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_abstractRadialYellow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.455, "y": 0.43 },
+							"size": 0.0505,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:birdPerched.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.934, "y": 0.271 },
+							"size": 0.1337,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.72, "y": 0.173 },
+							"size": 0.3248,
+							"nameTag": "none",
+							"foot": { "rotate": 0 }
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.046, "y": 0.186 },
+							"size": 1.7117,
+							"nameTag": "none",
+							"foot": { "rotate": 15.817 },
+							"color": { "r": "0.90086079", "g": "0.83003002", "b": "0.65879834", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:birds3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.301, "y": 0.77 },
+							"size": 0.1086,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:figures/images/misc/animal_snappingTurtle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.723, "y": 0.201 },
+							"size": 0.0465,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "tiding/ohSnap_romance_followup",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}

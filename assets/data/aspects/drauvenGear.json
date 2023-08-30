@@ -112,7 +112,6 @@
       {
         "name": "armor_base_Primary",
         "tint": "primary",
-        "tintAmount": 0.1,
         "ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
         "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
         "depth": 1350
@@ -124,28 +123,6 @@
         "ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
         "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
         "depth": 1351
-      },
-      {
-        "name": "armor_base_Detail_Secondary",
-        "tint": "secondary",
-        "ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
-        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-        "depth": 1352
-      },
-      {
-        "name": "armor_base_Texture_Secondary",
-        "tint": "secondary",
-        "tintAmount": 0.5,
-        "ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
-        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-        "depth": 1353
-      },
-      {
-        "name": "armor_base_Detail_Primary",
-        "tint": "primary",
-        "ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
-        "ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
-        "depth": 1355
       },
       {
         "name": "armor_base_Untinted",
