@@ -16,7 +16,15 @@
 	"cooldown": "oncePerTurn"
 },
 "targets": [
-	{ "template": "SELF" },
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "senseless", "forbidden": true },
+			{ "id": "senselessPermanent", "forbidden": true },
+			{ "id": "stasis", "forbidden": true },
+			{ "id": "crystalChrysalis", "forbidden": true }
+		]
+	},
 	{
 		"template": "ABILITY",
 		"abilityDoesNotHaveTags": [ "poison" ]
