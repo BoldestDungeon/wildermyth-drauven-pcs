@@ -56,7 +56,13 @@
 			}
 		]
 	},
-	{ "role": "source", "template": "DEBRIS", "relativeTo": "focus", "range": "0.1" }
+	{
+		"role": "source",
+		"template": "DEBRIS",
+		"choose": "ANY",
+		"relativeTo": "focus",
+		"range": "1.6"
+	}
 ],
 "outcomes": [
 	{
@@ -66,7 +72,7 @@
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "FabricateSpawn", "setPosition": "focus" }
+			{ "script": "FabricateSpawn", "setPosition": "source" }
 		],
 		"audioOverride": { "attackStartCue": "" },
 		"flankMarkOrigin": "focus",
