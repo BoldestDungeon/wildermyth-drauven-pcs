@@ -26,6 +26,7 @@
 		"role": "targetTile",
 		"template": "TILE",
 		"choose": "ANY",
+		"showAnyway": true,
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
 		"range": "(4.6+self.BONUS_RANGE)+(self.POTENCY/2)",
 		"lineOfSight": "TERRAIN_ONLY",
@@ -33,6 +34,7 @@
 	},
 	{
 		"template": "TILE",
+		"showAnyway": true,
 		"alwaysSelect": true,
 		"missionFeedback": {
 			"hoverScript": "figures.directionalTileHoverHelpful",
@@ -56,7 +58,21 @@
 			}
 		]
 	},
-	{ "role": "source", "template": "DEBRIS", "relativeTo": "focus", "range": "0.1" }
+	{
+		"role": "source",
+		"template": "TILE",
+		"choose": "ANY",
+		"missionFeedback": {
+			"hoverScript": "figures.directionalTileHoverHelpful",
+			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
+			"hoverFeedback": "FABRICATE_DEBRIS",
+			"feedbackSource": "self"
+		},
+		"relativeTo": "focus",
+		"range": "2.1",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "flammableDebris"
+	}
 ],
 "outcomes": [
 	{
@@ -66,7 +82,13 @@
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "FabricateSpawn", "setPosition": "focus" }
+			{ "script": "FabricateSpawn", "setPosition": "focus" },
+			{
+				"script": "fabricateAbsorbDebris",
+				"setPosition": "source",
+				"setPosition2": "focus",
+				"delay": -300
+			}
 		],
 		"audioOverride": { "attackStartCue": "" },
 		"flankMarkOrigin": "focus",
@@ -175,50 +197,86 @@
 					]
 				},
 				{
+					"class": "Test",
+					"value": "drauvenDeck_mystic_battlecrafting_upgrade",
+					"threshold": "1",
+					"onPass": {
+						"class": "ModifyStats",
+						"target": "scenery",
+						"value": "(2+floor((COUNT.source/2)))-HEALTH"
+					},
+					"onFail": {
+						"class": "ModifyStats",
+						"target": "scenery",
+						"value": "(2+floor((COUNT.source/3)))-HEALTH"
+					}
+				},
+				{
 					"class": "Animate",
 					"audioAtPosition": {
 						"audioId": "Characters/Default/SceneryHitMetal",
 						"setPosition": "focus",
 						"delay": "-500"
 					}
-				},
-				{
-					"class": "IfRolesArePresent",
-					"rolesArePresent": [ "scenery", "volunteer" ],
-					"then": {
-						"class": "DoAll",
-						"target": "volunteer",
-						"outcomes": [
-							{
-								"class": "Aspects",
-								"addAspects": [
-									{
-										"id": "interfusedWithEntity",
-										"value": "1",
-										"merge": "max",
-										"inRelationTo": "scenery"
-									}
-								]
-							},
-							{
-								"class": "Aspects",
-								"target": "scenery",
-								"addAspects": [
-									{
-										"id": "interfusedWithMystic",
-										"value": "1",
-										"merge": "max",
-										"inRelationTo": "volunteer"
-									},
-									{ "id": "interfusedWithHuman", "value": "1", "merge": "max" }
-								]
-							}
-						]
-					}
 				}
 			]
 		}
 	},
-	{ "class": "Delete", "target": "source" }
+	{
+		"class": "ForEach",
+		"fromRoles": [ "source" ],
+		"toRole": "volunteer2",
+		"outcome": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "volunteer3",
+						"template": "DEBRIS",
+						"choose": "ANY",
+						"relativeTo": "volunteer2",
+						"range": "0.1"
+					}
+				},
+				{ "class": "Delete", "target": "volunteer3" },
+				{ "class": "ClearRole", "role": "volunteer3" }
+			]
+		}
+	},
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "scenery", "volunteer" ],
+		"then": {
+			"class": "DoAll",
+			"target": "volunteer",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{
+							"id": "interfusedWithEntity",
+							"value": "1",
+							"merge": "max",
+							"inRelationTo": "scenery"
+						}
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "scenery",
+					"addAspects": [
+						{
+							"id": "interfusedWithMystic",
+							"value": "1",
+							"merge": "max",
+							"inRelationTo": "volunteer"
+						},
+						{ "id": "interfusedWithHuman", "value": "1", "merge": "max" }
+					]
+				}
+			]
+		}
+	}
 ]
 }
