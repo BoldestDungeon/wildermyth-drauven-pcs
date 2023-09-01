@@ -248,7 +248,8 @@
 								"amount": "scenery.HEALTH",
 								"type": "TRUE",
 								"showInTooltip": false
-							}
+							},
+							{ "class": "Delete", "target": "scenery" }
 						]
 					},
 					"onHit": {
