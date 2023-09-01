@@ -216,44 +216,44 @@
 						"setPosition": "focus",
 						"delay": "-500"
 					}
-				},
-				{
-					"class": "IfRolesArePresent",
-					"rolesArePresent": [ "scenery", "volunteer" ],
-					"then": {
-						"class": "DoAll",
-						"target": "volunteer",
-						"outcomes": [
-							{
-								"class": "Aspects",
-								"addAspects": [
-									{
-										"id": "interfusedWithEntity",
-										"value": "1",
-										"merge": "max",
-										"inRelationTo": "scenery"
-									}
-								]
-							},
-							{
-								"class": "Aspects",
-								"target": "scenery",
-								"addAspects": [
-									{
-										"id": "interfusedWithMystic",
-										"value": "1",
-										"merge": "max",
-										"inRelationTo": "volunteer"
-									},
-									{ "id": "interfusedWithHuman", "value": "1", "merge": "max" }
-								]
-							}
-						]
-					}
 				}
 			]
 		}
 	},
-	{ "class": "Delete", "target": "source" }
+	{ "class": "Delete", "target": "source" },
+	{
+		"class": "IfRolesArePresent",
+		"rolesArePresent": [ "scenery", "volunteer" ],
+		"then": {
+			"class": "DoAll",
+			"target": "volunteer",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{
+							"id": "interfusedWithEntity",
+							"value": "1",
+							"merge": "max",
+							"inRelationTo": "scenery"
+						}
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "scenery",
+					"addAspects": [
+						{
+							"id": "interfusedWithMystic",
+							"value": "1",
+							"merge": "max",
+							"inRelationTo": "volunteer"
+						},
+						{ "id": "interfusedWithHuman", "value": "1", "merge": "max" }
+					]
+				}
+			]
+		}
+	}
 ]
 }
