@@ -12,7 +12,6 @@
 "ability": {
 	"icon": "bonespear",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeBarrage" ],
 	"priority": "1",
 	"extraUI": {
 		"overrideRangeShown": "(5.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"

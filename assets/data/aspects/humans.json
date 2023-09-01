@@ -1,0 +1,79 @@
+[
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "humanBaseStats",
+    "stats": {
+      "ARMOR": 0,
+      "BLOCK": 45,
+      "CHARISMA": 15,
+      "DODGE": 45,
+      "HEALTH": 5,
+      "MELEE_ACCURACY": 100,
+      "PERCEPTION": 10,
+      "PHYSICAL_DAMAGE_BONUS": 0,
+      "POTENCY": 0,
+      "RANGE_ACCURACY": 100,
+      "RECOVERY_RATE": 25,
+      "RETIREMENT_AGE": 45,
+      "SPEED": 1,
+      "STUNT_CHANCE": 15,
+      "TENACITY": 15,
+      "WARDING": 0
+    }
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "humanVoice",
+    "voice": "defaultHuman",
+    "importance": -1
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "heroicActions",
+    "effects": [
+      "run",
+      "openDoor",
+      "extinguishFire",
+      "waitEndTurn",
+      "clearBrush",
+      "destroyFurniture",
+      "attackFurniture",
+      "lightBeacon",
+      "lightLamp",
+      "extinguishLamp",
+      "equipInactiveWeapon",
+      "overlandMove",
+      "overlandMoveAllOnTile",
+      "basicBranchableMelee",
+      "removeStasis",
+      "removeDominated",
+      "removeDrauvenBird",
+      "friend_teamwork_meleeBlock",
+      "defaultMoveFeedback",
+      "turnEndAchievementChecks",
+      "heroKillCounter"
+    ],
+    "importance": -1
+  },
+	{
+		"modId": "wildermyth-drauven-pcs",
+		"id": "basicInterfusionRecipes",
+		"effects": [
+			"mysticRecipeFireleash",
+			"mysticRecipeSplinterblast",
+			"mysticRecipeDiscus",
+			"mysticRecipeWildGrasp",
+			"mysticRecipeLightLamp",
+			"mysticRecipeStealFire",
+			"mysticRecipeFlareLamp",
+			"mysticRecipeBoneSpear",
+			"mysticRecipeCaltrops",
+			"mysticRecipeShackle",
+			"mysticRecipeBarrage",
+			"mysticRecipeScaldingRain",
+			"mysticRecipeEngulf",
+			"mysticRecipeLassoShardnado"
+		],
+    "importance": -1
+	}
+]

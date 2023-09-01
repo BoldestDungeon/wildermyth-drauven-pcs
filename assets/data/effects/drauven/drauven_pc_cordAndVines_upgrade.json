@@ -13,7 +13,7 @@
 "ability": {
 	"icon": "thornlash",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeWildGrasp", "mysticRecipeEngulf", "drauven_pc_cordAndVines" ],
+	"strictlyBetterThan": [ "drauven_pc_cordAndVines" ],
 	"priority": "1",
 	"usesElementFromEquippedWeapon": true
 },

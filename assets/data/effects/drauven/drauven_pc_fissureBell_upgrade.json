@@ -12,7 +12,7 @@
 "ability": {
 	"icon": "lightning",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeDiscus", "mysticRecipeBoneSpear", "drauven_pc_fissureBell" ],
+	"strictlyBetterThan": [ "drauven_pc_fissureBell" ],
 	"priority": "1",
 	"extraUI": {
 		"overrideRangeShown": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"

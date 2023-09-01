@@ -1,0 +1,105 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "human/effects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"remove": [
+			"run",
+			"openDoor",
+			"extinguishFire",
+			"waitEndTurn",
+			"clearBrush",
+			"destroyFurniture",
+			"attackFurniture",
+			"lightBeacon",
+			"lightLamp",
+			"extinguishLamp",
+			"equipInactiveWeapon",
+			"overlandMove",
+			"overlandMoveAllOnTile",
+			"basicBranchableMelee",
+			"removeStasis",
+			"removeDominated",
+			"removeDrauvenBird",
+			"friend_teamwork_meleeBlock",
+			"defaultMoveFeedback",
+			"turnEndAchievementChecks"
+		]
+	},
+	{ "jsonPath": "human/voice", "type": "string" },
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "HEALTH",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "SPEED",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "MELEE_ACCURACY",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "RANGE_ACCURACY",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "STUNT_CHANCE",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "DODGE",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "BLOCK",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "PERCEPTION",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "RECOVERY_RATE",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "RETIREMENT_AGE",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "CHARISMA",
+		"expression": "0"
+	},
+	{
+		"jsonPath": "human/stats",
+		"type": "expressionMap",
+		"mapKey": "TENACITY",
+		"expression": "0"
+	}
+]
+}

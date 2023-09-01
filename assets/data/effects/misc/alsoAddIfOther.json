@@ -1,0 +1,28 @@
+{
+"id": "alsoAddIfOther|_ANOTHER_|_REQUIRED_",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "misc/alsoAddIfOther",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"STUB": "When this aspect is added, add ANOTHER aspect only if the REQUIRED aspect is on this entity"
+},
+"type": "ASPECT_ADDED",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "_REQUIRED_" }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "self",
+		"addAspects": [
+			{ "id": "_ANOTHER_", "value": "1" }
+		]
+	}
+]
+}

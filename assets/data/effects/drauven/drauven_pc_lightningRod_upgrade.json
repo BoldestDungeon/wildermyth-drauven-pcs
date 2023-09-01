@@ -12,7 +12,7 @@
 "ability": {
 	"icon": "lightning",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeShackle", "drauven_pc_lightningRod" ],
+	"strictlyBetterThan": [ "drauven_pc_lightningRod" ],
 	"priority": "1",
 	"extraUI": {
 		"overrideRangeShown": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"

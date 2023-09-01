@@ -3,35 +3,8 @@
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc",
 	"effects": [
-		"run",
-		"openDoor",
-		"extinguishFire",
-		"waitEndTurn",
-		"injuryDistracts",
-		"clearBrush",
-		"destroyFurniture",
-		"attackFurniture",
-		"lightBeacon",
-		"lightLamp",
-		"extinguishLamp",
-		"equipInactiveWeapon",
-		"overlandMove",
-		"overlandMoveAllOnTile",
-		"basicBranchableMelee",
-		"removeStasis",
-		"removeDominated",
-		"removeDrauvenBird",
-		"friend_teamwork_meleeBlock",
-		"defaultMoveFeedback",
-		"turnEndAchievementChecks",
-		"drauven_agingInit",
 		"drauven_aging",
-		"drauven_pc_cordAndVines",
-		"drauven_pc_flamewings",
-		"drauven_pc_fissureBell",
-		"drauven_pc_lightningRod",
-		"drauven_pc_freezingRain",
-		"drauven_pc_spear"
+		"migrateDrauvenAspects"
 	],
 	"stats": {
 		"ARMOR": 0,
@@ -58,24 +31,6 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "nonhuman",
-	"stats": {
-		"ARMOR": 0,
-		"BLOCK": -45,
-		"CHARISMA": -15,
-		"DODGE": -45,
-		"HEALTH": -5,
-		"MELEE_ACCURACY": -100,
-		"PERCEPTION": -10,
-		"PHYSICAL_DAMAGE_BONUS": 0,
-		"POTENCY": 0,
-		"RANGE_ACCURACY": -100,
-		"RECOVERY_RATE": -25,
-		"RETIREMENT_AGE": -45,
-		"SPEED": -1,
-		"STUNT_CHANCE": -15,
-		"TENACITY": -15,
-		"WARDING": 0
-	},
 	"importance": -1
 }
 ]

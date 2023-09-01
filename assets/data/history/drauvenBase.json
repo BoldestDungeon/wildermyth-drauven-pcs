@@ -28,21 +28,22 @@
 	"id": "drauvenBase.001",
 	"category": "drauvenBase",
 	"impliedAspects": [
-		"alive",
 		"human",
-		"nonhuman",
 		"humanRig",
+		"heroicActions",
 		"activeDefender",
+		"alive",
 		"eligibleForDeathChoice",
 		"canWallWithAllies",
-
+		"simplePresence",
+		
+		"nonhuman",
 		"drauven",
 		"drauven_pc",
+		"drauvenInterfusionRecipes",
 		"drauvenBlood",
 		"fluentInDruvwail",
 		"cannotAge",
-		
-		"simplePresence",
 
 		"ATTACHMENTS_workingRightArm",
 		"ATTACHMENTS_workingLeftArm",
@@ -62,6 +63,9 @@
 		"rigOverride|Drauven"
 	],
 	"removeAspects": [
+		"humanBaseStats",
+		"humanVoice",
+		"basicInterfusionRecipes",
 		"young",
 		"earlyMiddleAge",
 		"middleAge",
