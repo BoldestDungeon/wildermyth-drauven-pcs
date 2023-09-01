@@ -30,6 +30,7 @@
 	"impliedAspects": [
 		"alive",
 		"human",
+		"heroicActions",
 		"nonhuman",
 		"humanRig",
 		"activeDefender",
@@ -38,6 +39,7 @@
 
 		"drauven",
 		"drauven_pc",
+		"drauvenInterfusionRecipes",
 		"drauvenBlood",
 		"fluentInDruvwail",
 		"cannotAge",
@@ -63,6 +65,9 @@
 		"rigOverride|Drauven"
 	],
 	"removeAspects": [
+		"humanBaseStats",
+		"humanVoice",
+		"basicInterfusionRecipes",
 		"young",
 		"earlyMiddleAge",
 		"middleAge",

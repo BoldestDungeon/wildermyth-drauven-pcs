@@ -12,7 +12,6 @@
 "ability": {
 	"icon": "lightning",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeDiscus", "mysticRecipeBoneSpear" ],
 	"priority": "1",
 	"usesElementFromEquippedWeapon": true
 },

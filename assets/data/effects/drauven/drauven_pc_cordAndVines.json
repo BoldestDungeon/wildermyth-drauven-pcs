@@ -13,7 +13,6 @@
 "ability": {
 	"icon": "thornlash",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeWildGrasp", "mysticRecipeEngulf" ],
 	"priority": "1",
 	"usesElementFromEquippedWeapon": true
 },
