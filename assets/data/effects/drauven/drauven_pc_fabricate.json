@@ -72,7 +72,13 @@
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"particles": [
-			{ "script": "FabricateSpawn", "setPosition": "source" }
+			{ "script": "FabricateSpawn", "setPosition": "focus" },
+			{
+				"script": "fabricateAbsorbDebris",
+				"setPosition": "source",
+				"setPosition2": "focus",
+				"delay": -300
+			}
 		],
 		"audioOverride": { "attackStartCue": "" },
 		"flankMarkOrigin": "focus",
