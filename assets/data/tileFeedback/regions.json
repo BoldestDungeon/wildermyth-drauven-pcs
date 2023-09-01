@@ -15,13 +15,13 @@
 	},
 	{
 		"id": "FABRICATE_DEBRIS",
-		"renderPriority": 151,
+		"renderPriority": 365,
 		"baseColor": {
 			"hex": "503d1cff"
 		},
 		"sprite": "squareBorder",
 		"scale": 1.080,
-		"textureAlpha": 1,
+		"textureAlpha": 0.6,
 		"outlineAlpha": 0,
 		"fillAlpha": 0.0,
 		"fillAlphaAmplitude": 0
