@@ -14,7 +14,8 @@
       "aspectValues": [
         { "id": "drauven_pc" },
         { "id": "humanSkin_naturalRightLeg", "forbidden": true },
-        { "id": "themeSlotFilled_rightLeg", "forbidden": true }
+        { "id": "themeSlotFilled_rightLeg", "forbidden": true },
+        { "id": "drauvenPC_rightLegMigrationComplete", "forbidden": true}
       ]
     }
   ],
@@ -25,7 +26,8 @@
       "inlineHistory": {
         "id": "Right_Leg_Stats_Migration",
         "associatedAspects": [
-          "humanSkin_naturalRightLeg"
+          "humanSkin_naturalRightLeg",
+          "drauvenPC_leftLegMigrationComplete"
         ]
       }
     }
