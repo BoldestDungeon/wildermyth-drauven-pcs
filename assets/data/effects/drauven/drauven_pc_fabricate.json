@@ -26,6 +26,7 @@
 		"role": "targetTile",
 		"template": "TILE",
 		"choose": "ANY",
+		"showAnyway": true,
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
 		"range": "(4.6+self.BONUS_RANGE)+(self.POTENCY/2)",
 		"lineOfSight": "TERRAIN_ONLY",
@@ -33,6 +34,7 @@
 	},
 	{
 		"template": "TILE",
+		"showAnyway": true,
 		"alwaysSelect": true,
 		"missionFeedback": {
 			"hoverScript": "figures.directionalTileHoverHelpful",
@@ -192,6 +194,21 @@
 							}
 						}
 					]
+				},
+				{
+					"class": "Test",
+					"value": "drauvenDeck_mystic_battlecrafting_upgrade",
+					"threshold": "1",
+					"onPass": {
+						"class": "ModifyStats",
+						"target": "scenery",
+						"value": "(2+floor((COUNT.source/2)))-HEALTH"
+					},
+					"onFail": {
+						"class": "ModifyStats",
+						"target": "scenery",
+						"value": "(2+floor((COUNT.source/3)))-HEALTH"
+					}
 				},
 				{
 					"class": "Animate",
