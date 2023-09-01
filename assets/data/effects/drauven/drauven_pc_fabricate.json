@@ -60,8 +60,8 @@
 	},
 	{
 		"role": "source",
-		"template": "DEBRIS",
-		"choose": "ALL",
+		"template": "TILE",
+		"choose": "ANY",
 		"missionFeedback": {
 			"hoverScript": "figures.directionalTileHoverHelpful",
 			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
@@ -69,7 +69,9 @@
 			"feedbackSource": "self"
 		},
 		"relativeTo": "focus",
-		"range": "1.6"
+		"range": "2.6",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "flammableDebris"
 	}
 ],
 "outcomes": [
@@ -220,7 +222,28 @@
 			]
 		}
 	},
-	{ "class": "Delete", "target": "source" },
+	{
+		"class": "ForEach",
+		"fromRoles": [ "source" ],
+		"toRole": "volunteer2",
+		"outcome": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MatchTarget",
+					"abilityTarget": {
+						"role": "volunteer3",
+						"template": "DEBRIS",
+						"choose": "ANY",
+						"relativeTo": "volunteer2",
+						"range": "0.1"
+					}
+				},
+				{ "class": "Delete", "target": "volunteer3" },
+				{ "class": "ClearRole", "role": "volunteer3" }
+			]
+		}
+	},
 	{
 		"class": "IfRolesArePresent",
 		"rolesArePresent": [ "scenery", "volunteer" ],
