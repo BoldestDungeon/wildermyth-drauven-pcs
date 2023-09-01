@@ -61,7 +61,7 @@
 	{
 		"role": "source",
 		"template": "DEBRIS",
-		"choose": "ANY",
+		"choose": "ALL",
 		"missionFeedback": {
 			"hoverScript": "figures.directionalTileHoverHelpful",
 			"suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER",
@@ -93,7 +93,6 @@
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
-				{ "class": "Delete", "target": "source" },
 				{
 					"class": "DoOneRandom",
 					"weightedOutcomes": [
@@ -254,6 +253,7 @@
 				}
 			]
 		}
-	}
+	},
+	{ "class": "Delete", "target": "source" }
 ]
 }
