@@ -1931,25 +1931,12 @@
 					]
 				},
 				{
-					"class": "Test",
+					"class": "ApplyTheme",
 					"target": "healer",
-					"value": "drauven",
-					"threshold": "1",
-					"onPass": {
-						"class": "ApplyTheme",
-						"target": "healer",
-						"theme": "foothill",
-						"piece": "head",
-						"historyTextKey": "encounter_wilderness_theOffering.0.playerChose_one.1addTheme.foothill.head.replaceInjuries"
-					},
-					"onFail": {
-						"class": "ApplyTheme",
-						"target": "healer",
-						"theme": "foothill",
-						"piece": "head",
-						"historyTextKey": "encounter_wilderness_theOffering.0.playerChose_one.1addTheme.foothill.head.replaceInjuries",
-						"replaceInjuredLimbs": true
-					}
+					"theme": "foothill",
+					"piece": "head",
+					"historyTextKey": "encounter_wilderness_theOffering.0.playerChose_one.1addTheme.foothill.head.replaceInjuries",
+					"replaceInjuredLimbs": true
 				},
 				{
 					"class": "AllowFollowup",
