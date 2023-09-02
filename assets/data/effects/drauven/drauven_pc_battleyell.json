@@ -133,7 +133,7 @@
 "outcomes": [
 	{
 		"class": "AttackRoll",
-		"defender": "subject",
+		"defender": null,
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"stopBlockingTime": "onHit",
@@ -148,32 +148,32 @@
 			{ "script": "surprised", "setPosition": "subject", "delay": 0.2 }
 		],
 		"audioOverride": { "attackStartCue": "Characters/Drauven/stormThroat" },
-		"defenderAnimationOverride": "figures.swapWeapon",
 		"markForFlanking": "never",
 		"flankingBoostsAttackRoll": false,
 		"always": {
 			"class": "DoAll",
 			"outcomes": [
-				{
-					"class": "Test",
-					"value": "subject.RANGE_EQUIPPED*greaterThan(subject.distanceTo.focus,subject.MIN_RANGED_ATTACK_RANGE)",
-					"threshold": "1",
-					"onPass": {
-						"class": "BranchAbility",
-						"target": "subject",
-						"branchType": "standardRanged",
-						"targetRole": "target",
-						"tileRole": "focus"
-					},
-					"onFail": {
-						"class": "BranchAbility",
-						"target": "subject",
-						"branchType": "standardMelee",
-						"targetRole": "target",
-						"tileRole": "focus"
-					}
-				}
+				{ "class": "Animate", "target": "subject", "script": "figures.swapWeapon" }
 			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "subject.RANGE_EQUIPPED*greaterThan(subject.distanceTo.focus,subject.MIN_RANGED_ATTACK_RANGE)",
+		"threshold": "1",
+		"onPass": {
+			"class": "BranchAbility",
+			"target": "subject",
+			"branchType": "standardRanged",
+			"targetRole": "target",
+			"tileRole": "focus"
+		},
+		"onFail": {
+			"class": "BranchAbility",
+			"target": "subject",
+			"branchType": "standardMelee",
+			"targetRole": "target",
+			"tileRole": "focus"
 		}
 	}
 ]
