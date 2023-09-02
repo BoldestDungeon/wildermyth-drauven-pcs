@@ -159,7 +159,7 @@
 	},
 	{
 		"class": "Test",
-		"value": "subject.RANGE_EQUIPPED*greaterThan(subject.distanceTo.focus,subject.MIN_RANGED_ATTACK_RANGE)",
+		"value": "max(subject.RANGE_EQUIPPED,subject.drauvenDeck_mystic_fireshot)*greaterThan(subject.distanceTo.focus,subject.MIN_RANGED_ATTACK_RANGE)",
 		"threshold": "1",
 		"onPass": {
 			"class": "BranchAbility",
