@@ -124,6 +124,7 @@
 			"feedbackSource": "source"
 		},
 		"relativeTo": "focus",
+		"notAlreadyMatchedAs": [ "source" ],
 		"range": "2.1",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
@@ -170,7 +171,8 @@
 					"amount": "site.HEALTH",
 					"type": "TRUE",
 					"showInTooltip": false
-				}
+				},
+				{ "class": "Delete", "target": "site" }
 			]
 		},
 		"onHit": {

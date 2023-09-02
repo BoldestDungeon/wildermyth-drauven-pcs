@@ -66,6 +66,7 @@
 			"feedbackSource": "source"
 		},
 		"relativeTo": "focus",
+		"notAlreadyMatchedAs": [ "source" ],
 		"range": "(0.5*source.SIZE)+0.6",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
