@@ -78,7 +78,10 @@
 				"class": "BranchAbility",
 				"targetRole": "attacker",
 				"tileRole": "targetTile",
-				"branchAbility": "drauven_pc_fireshot"
+				"branchAbility": "drauven_pc_fireshot",
+				"targetingAspects": [
+					{ "id": "noFriendlyFire", "value": "1", "merge": "replace" }
+				]
 			},
 			"onFail": {
 				"class": "Test",
@@ -89,14 +92,20 @@
 					"target": "self",
 					"branchType": "standardRanged",
 					"targetRole": "attacker",
-					"tileRole": "targetTile"
+					"tileRole": "targetTile",
+					"targetingAspects": [
+						{ "id": "noFriendlyFire", "value": "1", "merge": "replace" }
+					]
 				},
 				"onFail": {
 					"class": "BranchAbility",
 					"target": "self",
 					"branchType": "standardMelee",
 					"targetRole": "attacker",
-					"tileRole": "targetTile"
+					"tileRole": "targetTile",
+					"targetingAspects": [
+						{ "id": "noFriendlyFire", "value": "1", "merge": "replace" }
+					]
 				}
 			}
 		}
