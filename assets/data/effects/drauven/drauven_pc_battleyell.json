@@ -133,7 +133,7 @@
 "outcomes": [
 	{
 		"class": "AttackRoll",
-		"defender": null,
+		"defender": "subject",
 		"attackAnimationType": "magic",
 		"showAbilityName": "ifEnemy",
 		"stopBlockingTime": "onHit",
@@ -148,14 +148,9 @@
 			{ "script": "surprised", "setPosition": "subject", "delay": 0.2 }
 		],
 		"audioOverride": { "attackStartCue": "Characters/Drauven/stormThroat" },
+		"defenderAnimationOverride": "figures.swapWeapon",
 		"markForFlanking": "never",
-		"flankingBoostsAttackRoll": false,
-		"always": {
-			"class": "DoAll",
-			"outcomes": [
-				{ "class": "Animate", "target": "subject", "script": "figures.swapWeapon" }
-			]
-		}
+		"flankingBoostsAttackRoll": false
 	},
 	{
 		"class": "Test",
