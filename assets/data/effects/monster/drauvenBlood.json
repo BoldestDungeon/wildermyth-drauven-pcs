@@ -43,7 +43,7 @@
 				{
 					"class": "ModifyStats",
 					"stat": "INJURY",
-					"value": "(0-((1-self.drauvenDeck_mystic_dragonBlood)*min(self.INJURY,max(1,floor((self.HEALTH*(0.25+(self.dragonBloodUpgradeTarget*0.15))))))))-(self.drauvenDeck_mystic_dragonBlood*min(self.INJURY,max(1,ceil((self.HEALTH*(0.25+(self.dragonBloodUpgradeTarget*0.15)))))))"
+					"value": "(0-max(1,((1-self.drauvenDeck_mystic_dragonBlood)*min(self.INJURY,max(1,floor((self.HEALTH*(0.25+(self.dragonBloodUpgradeTarget*0.15))))))))-(self.drauvenDeck_mystic_dragonBlood*min(self.INJURY,max(1,ceil((self.HEALTH*(0.25+(self.dragonBloodUpgradeTarget*0.15))))))))"
 				},
 				{
 					"class": "Aspects",
