@@ -184,7 +184,7 @@
 					"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))",
 					"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
 					"useEquippedWeaponForStunt": true,
-					"numDefenders": "COUNT.target"
+					"numDefenders": "COUNT.target*COUNT.source"
 				}
 			]
 		}
@@ -263,7 +263,7 @@
 								"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))",
 								"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
 								"useEquippedWeaponForStunt": true,
-								"numDefenders": "COUNT.target2"
+								"numDefenders": "COUNT.target2*COUNT.source"
 							}
 						]
 					}
