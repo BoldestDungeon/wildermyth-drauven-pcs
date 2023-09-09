@@ -124,6 +124,7 @@
 			"feedbackSource": "source"
 		},
 		"relativeTo": "focus",
+		"notAlreadyMatchedAs": [ "source" ],
 		"range": "2.1",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
@@ -170,7 +171,8 @@
 					"amount": "site.HEALTH",
 					"type": "TRUE",
 					"showInTooltip": false
-				}
+				},
+				{ "class": "Delete", "target": "site" }
 			]
 		},
 		"onHit": {
@@ -182,7 +184,7 @@
 					"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))",
 					"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
 					"useEquippedWeaponForStunt": true,
-					"numDefenders": "COUNT.target"
+					"numDefenders": "COUNT.target*COUNT.source"
 				}
 			]
 		}
@@ -261,11 +263,12 @@
 								"shred": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/3))",
 								"pierce": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))",
 								"useEquippedWeaponForStunt": true,
-								"numDefenders": "COUNT.target2"
+								"numDefenders": "COUNT.target2*COUNT.source"
 							}
 						]
 					}
-				}
+				},
+				{ "class": "ClearRole", "role": "target2" }
 			]
 		}
 	}
