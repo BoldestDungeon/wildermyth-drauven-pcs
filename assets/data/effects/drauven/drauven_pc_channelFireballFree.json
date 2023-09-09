@@ -18,7 +18,6 @@
 		"overrideDamageType": "MAGIC",
 		"overrideRangeShown": "(4.6+self.BONUS_RANGE)+(self.POTENCY/3)"
 	},
-	"showDescriptionInTooltip": true,
 	"cooldown": "oncePerTurn"
 },
 "targets": [
