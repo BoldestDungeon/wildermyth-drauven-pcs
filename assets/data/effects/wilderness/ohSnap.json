@@ -1601,6 +1601,17 @@
 									"location": "topRight",
 									"shrinkToFitText": true,
 									"pointerAdjust": { "rotate": 0.12001562, "dX": 12.280992, "dY": -5.668204 }
+								},
+								{
+									"textSourceFile": "wilderness/ohSnap",
+									"textKey": "~02~choice_one~panel_001~2_self",
+									"style": "darken",
+									"pointerOwner": "self",
+									"location": "bottomRight",
+									"padXFraction": 0.052,
+									"padYFraction": 0.206,
+									"widthFraction": 0.6,
+									"shrinkToFitText": true
 								}
 							]
 						}
@@ -1683,6 +1694,17 @@
 												"location": "topRight",
 												"shrinkToFitText": true,
 												"pointerAdjust": { "dX": 24.56222, "dY": -8.502304 }
+											},
+											{
+												"textSourceFile": "wilderness/ohSnap",
+												"textKey": "~03~choice_two~panel_001.(leader_is_hook_Curious_>_1)~2_self",
+												"style": "darken",
+												"pointerOwner": "self",
+												"location": "bottomRight",
+												"padXFraction": 0.337,
+												"padYFraction": 0.042,
+												"widthFraction": 0.6,
+												"shrinkToFitText": true
 											}
 										]
 									}
@@ -1744,6 +1766,7 @@
 												"focus": "foot",
 												"anchor": { "x": 0.675, "y": 0.462 },
 												"size": 0.401,
+												"drawDepth": 5,
 												"nameTag": "none",
 												"color": { "r": "0.86416149", "g": "0.91559172", "b": "0.81273127", "a": "1" },
 												"colorFilter": { "filterName": "sepia", "strength": 0.4 }
@@ -1758,6 +1781,17 @@
 												"widthFraction": 0.7259395,
 												"shrinkToFitText": true,
 												"pointerAdjust": { "dX": 12.281049, "dY": -6.6129036 }
+											},
+											{
+												"textSourceFile": "wilderness/ohSnap",
+												"textKey": "~03~choice_two~panel_002.(leader_NOT_hook_Curious)~2_self",
+												"style": "darken",
+												"pointerOwner": "self",
+												"location": "bottomRight",
+												"padXFraction": 0.475,
+												"padYFraction": 0.019,
+												"widthFraction": 0.6,
+												"shrinkToFitText": true
 											}
 										]
 									}
@@ -1917,7 +1951,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_001.(romantic_is_drauven)~1_romantic",
+													"textKey": "~05~player_chose_one~panel_001.(ship_exists)~1_romantic",
 													"pointerOwner": "romantic"
 												}
 											]
@@ -1976,7 +2010,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_002.(romantic_is_drauven)~1_romantic",
+													"textKey": "~05~player_chose_one~panel_002.(ship_exists)~1_romantic",
 													"pointerOwner": "romantic"
 												}
 											]
@@ -2041,7 +2075,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_003.(romantic_is_drauven)~1_bookish",
+													"textKey": "~05~player_chose_one~panel_003.(ship_exists)~1_bookish",
 													"style": "actionLarge",
 													"pointerOwner": "bookish",
 													"padXFraction": 0.219,
@@ -2136,7 +2170,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_004.(romantic_is_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_004.(ship_exists)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -2235,7 +2269,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_005.(romantic_is_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_005.(ship_exists)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -2334,7 +2368,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_006.(romantic_is_drauven)~1_speech",
+													"textKey": "~05~player_chose_one~panel_006.(ship_exists)~1_speech",
 													"fallbackSlotOwner": 4,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
 													"padXFraction": 0.293,
@@ -2402,7 +2436,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_007.(romantic_is_drauven)~1_speech",
+													"textKey": "~05~player_chose_one~panel_007.(ship_exists)~1_speech",
 													"fallbackSlotOwner": 1,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
 													"location": "topRight",
@@ -2411,7 +2445,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_007.(romantic_is_drauven)~2_speech",
+													"textKey": "~05~player_chose_one~panel_007.(ship_exists)~2_speech",
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" }
 												}
 											]
@@ -2529,7 +2563,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_008.(romantic_is_drauven)~1_npc",
+													"textKey": "~05~player_chose_one~panel_008.(ship_exists)~1_npc",
 													"pointerOwner": "npc",
 													"fallbackSlotOwner": 0,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
@@ -2617,7 +2651,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_009.(romantic_is_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_009.(ship_exists)~1_snark",
 													"pointerOwner": "snark",
 													"location": "topRight",
 													"shrinkToFitText": true,
@@ -2693,7 +2727,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_010.(romantic_is_drauven)~1_romantic",
+													"textKey": "~05~player_chose_one~panel_010.(ship_exists)~1_romantic",
 													"pointerOwner": "romantic"
 												}
 											]
@@ -2759,7 +2793,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_011.(romantic_is_drauven)~1_leader",
+													"textKey": "~05~player_chose_one~panel_011.(ship_exists)~1_leader",
 													"pointerOwner": "leader",
 													"padXFraction": 0.39,
 													"padYFraction": 0.092,
@@ -2768,7 +2802,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_011.(romantic_is_drauven)~2_snark",
+													"textKey": "~05~player_chose_one~panel_011.(ship_exists)~2_snark",
 													"pointerOwner": "snark",
 													"location": "topRight",
 													"shrinkToFitText": true,
@@ -2841,7 +2875,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_012.(romantic_is_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_012.(ship_exists)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -2901,7 +2935,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_013.(romantic_is_drauven)~1_bookish",
+													"textKey": "~05~player_chose_one~panel_013.(ship_exists)~1_bookish",
 													"pointerOwner": "bookish",
 													"location": "bottomRight",
 													"padXFraction": 0.227,
@@ -2919,7 +2953,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_013.(romantic_is_drauven)~2_bookish",
+													"textKey": "~05~player_chose_one~panel_013.(ship_exists)~2_bookish",
 													"pointerOwner": "bookish",
 													"location": "topRight",
 													"padXFraction": 0.038,
@@ -3019,7 +3053,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_014.(romantic_is_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_014.(ship_exists)~1_snark",
 													"pointerOwner": "snark",
 													"padXFraction": 0.394,
 													"padYFraction": 0.162,
@@ -3078,7 +3112,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_015.(romantic_NOT_drauven)~1_romantic",
+													"textKey": "~05~player_chose_one~panel_015.(ship_is_missing)~1_romantic",
 													"pointerOwner": "romantic"
 												}
 											]
@@ -3136,7 +3170,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_016.(romantic_NOT_drauven)~1_romantic",
+													"textKey": "~05~player_chose_one~panel_016.(ship_is_missing)~1_romantic",
 													"pointerOwner": "romantic"
 												}
 											]
@@ -3201,7 +3235,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_017.(romantic_NOT_drauven)~1_bookish",
+													"textKey": "~05~player_chose_one~panel_017.(ship_is_missing)~1_bookish",
 													"style": "actionLarge",
 													"pointerOwner": "bookish",
 													"padXFraction": 0.219,
@@ -3307,7 +3341,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_018.(romantic_NOT_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_018.(ship_is_missing)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -3405,7 +3439,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_019.(romantic_NOT_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_019.(ship_is_missing)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -3504,7 +3538,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_020.(romantic_NOT_drauven)~1_speech",
+													"textKey": "~05~player_chose_one~panel_020.(ship_is_missing)~1_speech",
 													"fallbackSlotOwner": 4,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
 													"padXFraction": 0.293,
@@ -3520,7 +3554,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_020.(romantic_NOT_drauven)~2_bookish",
+													"textKey": "~05~player_chose_one~panel_020.(ship_is_missing)~2_bookish",
 													"pointerOwner": "bookish",
 													"padXFraction": 0.431,
 													"padYFraction": 0.057,
@@ -3581,7 +3615,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_021.(romantic_NOT_drauven)~1_speech",
+													"textKey": "~05~player_chose_one~panel_021.(ship_is_missing)~1_speech",
 													"fallbackSlotOwner": 1,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
 													"location": "topRight",
@@ -3590,7 +3624,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_021.(romantic_NOT_drauven)~2_speech"
+													"textKey": "~05~player_chose_one~panel_021.(ship_is_missing)~2_speech"
 												}
 											]
 										}
@@ -3694,7 +3728,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_022.(romantic_NOT_drauven)~1_speech",
+													"textKey": "~05~player_chose_one~panel_022.(ship_is_missing)~1_speech",
 													"fallbackSlotOwner": 0,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
 													"location": "topRight",
@@ -3780,7 +3814,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_023.(romantic_NOT_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_023.(ship_is_missing)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -3830,7 +3864,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_024.(romantic_NOT_drauven)~1_bookish",
+													"textKey": "~05~player_chose_one~panel_024.(ship_is_missing)~1_bookish",
 													"pointerOwner": "bookish",
 													"location": "bottomRight",
 													"padXFraction": 0.227,
@@ -3934,7 +3968,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_025.(romantic_NOT_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_025.(ship_is_missing)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -3990,7 +4024,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_026.(romantic_NOT_drauven)~1_romantic",
+													"textKey": "~05~player_chose_one~panel_026.(ship_is_missing)~1_romantic",
 													"pointerOwner": "romantic"
 												}
 											]
@@ -4046,7 +4080,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_027.(romantic_NOT_drauven)~1_romantic",
+													"textKey": "~05~player_chose_one~panel_027.(ship_is_missing)~1_romantic",
 													"pointerOwner": "romantic",
 													"padXFraction": 0.39,
 													"padYFraction": 0.092,
@@ -4136,7 +4170,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~05~player_chose_one~panel_028.(romantic_NOT_drauven)~1_snark",
+													"textKey": "~05~player_chose_one~panel_028.(ship_is_missing)~1_snark",
 													"pointerOwner": "snark",
 													"padXFraction": 0.394,
 													"padYFraction": 0.162,
@@ -4167,7 +4201,12 @@
 					"onPass": {
 						"class": "DoAll",
 						"outcomes": [
-							{ "class": "RemoveTheme", "target": "romantic", "specificTheme": "drauven", "specificPiece": "tail" },
+							{
+								"class": "RemoveTheme",
+								"target": "romantic",
+								"specificTheme": "drauven",
+								"specificPiece": "tail"
+							},
 							{
 								"class": "ApplyTheme",
 								"target": "romantic",
@@ -4191,7 +4230,12 @@
 								"target": "romantic",
 								"value": "romantic.theme_turtle",
 								"threshold": "1",
-								"onFail": { "class": "ApplyTheme", "target": "romantic", "theme": "turtle", "piece": "head" }
+								"onFail": {
+									"class": "ApplyTheme",
+									"target": "romantic",
+									"theme": "turtle",
+									"piece": "head"
+								}
 							},
 							{
 								"class": "Test",
@@ -4329,7 +4373,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_001.(leader_is_drauven)~1_leader",
+													"textKey": "~06~player_chose_two~panel_001.(ship2_exists)~1_leader",
 													"pointerOwner": "leader"
 												}
 											]
@@ -4388,7 +4432,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_002.(leader_is_drauven)~1_leader",
+													"textKey": "~06~player_chose_two~panel_002.(ship2_exists)~1_leader",
 													"pointerOwner": "leader"
 												}
 											]
@@ -4441,7 +4485,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_003.(leader_is_drauven)~1_bookish",
+													"textKey": "~06~player_chose_two~panel_003.(ship2_exists)~1_bookish",
 													"style": "actionLarge",
 													"pointerOwner": "bookish",
 													"padXFraction": 0.219,
@@ -4538,7 +4582,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_004.(leader_is_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_004.(ship2_exists)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -4640,7 +4684,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_005.(leader_is_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_005.(ship2_exists)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -4740,7 +4784,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_006.(leader_is_drauven)~1_speech",
+													"textKey": "~06~player_chose_two~panel_006.(ship2_exists)~1_speech",
 													"fallbackSlotOwner": 4,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
 													"padXFraction": 0.293,
@@ -4756,7 +4800,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_006.(leader_is_drauven)~2_bookish",
+													"textKey": "~06~player_chose_two~panel_006.(ship2_exists)~2_bookish",
 													"pointerOwner": "bookish",
 													"padXFraction": 0.431,
 													"padYFraction": 0.057,
@@ -4818,7 +4862,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_007.(leader_is_drauven)~1_npc",
+													"textKey": "~06~player_chose_two~panel_007.(ship2_exists)~1_npc",
 													"pointerOwner": "npc",
 													"fallbackSlotOwner": 1,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
@@ -4828,7 +4872,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_007.(leader_is_drauven)~2_speech"
+													"textKey": "~06~player_chose_two~panel_007.(ship2_exists)~2_speech"
 												}
 											]
 										}
@@ -4935,7 +4979,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_008.(leader_is_drauven)~1_npc",
+													"textKey": "~06~player_chose_two~panel_008.(ship2_exists)~1_npc",
 													"pointerOwner": "npc",
 													"fallbackSlotOwner": 0,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
@@ -5021,7 +5065,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_009.(leader_is_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_009.(ship2_exists)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -5079,7 +5123,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_010.(leader_is_drauven)~1_bookish",
+													"textKey": "~06~player_chose_two~panel_010.(ship2_exists)~1_bookish",
 													"pointerOwner": "bookish",
 													"location": "bottomRight",
 													"padXFraction": 0.084,
@@ -5198,12 +5242,12 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_011.(leader_is_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_011.(ship2_exists)~1_snark",
 													"pointerOwner": "snark"
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_011.(leader_is_drauven)~2_action",
+													"textKey": "~06~player_chose_two~panel_011.(ship2_exists)~2_action",
 													"style": "action",
 													"padXFraction": 0.419,
 													"padYFraction": 0.588,
@@ -5286,12 +5330,12 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_012.(leader_is_drauven)~1_romantic",
+													"textKey": "~06~player_chose_two~panel_012.(ship2_exists)~1_romantic",
 													"pointerOwner": "romantic"
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_012.(leader_is_drauven)~2_action",
+													"textKey": "~06~player_chose_two~panel_012.(ship2_exists)~2_action",
 													"style": "action",
 													"location": "topRight",
 													"padXFraction": 0.079,
@@ -5363,7 +5407,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_013.(leader_is_drauven)~1_leader",
+													"textKey": "~06~player_chose_two~panel_013.(ship2_exists)~1_leader",
 													"pointerOwner": "leader",
 													"shrinkToFitText": true,
 													"pointerAdjust": { "rotate": -9.171062, "dX": 8.953907, "dY": -4.0000305 }
@@ -5451,7 +5495,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_014.(leader_is_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_014.(ship2_exists)~1_snark",
 													"pointerOwner": "snark",
 													"location": "bottomLeft",
 													"padXFraction": 0.376,
@@ -5468,7 +5512,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_014.(leader_is_drauven)~2_darken",
+													"textKey": "~06~player_chose_two~panel_014.(ship2_exists)~2_darken",
 													"style": "darken",
 													"padXFraction": 0.019,
 													"padYFraction": 0.029,
@@ -5520,7 +5564,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_015.(leader_NOT_drauven)~1_leader",
+													"textKey": "~06~player_chose_two~panel_015.(ship2_is_missing)~1_leader",
 													"pointerOwner": "leader"
 												}
 											]
@@ -5578,7 +5622,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_016.(leader_NOT_drauven)~1_leader",
+													"textKey": "~06~player_chose_two~panel_016.(ship2_is_missing)~1_leader",
 													"pointerOwner": "leader"
 												}
 											]
@@ -5631,7 +5675,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_017.(leader_NOT_drauven)~1_bookish",
+													"textKey": "~06~player_chose_two~panel_017.(ship2_is_missing)~1_bookish",
 													"style": "actionLarge",
 													"pointerOwner": "bookish",
 													"padXFraction": 0.219,
@@ -5737,7 +5781,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_018.(leader_NOT_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_018.(ship2_is_missing)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -5836,7 +5880,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_019.(leader_NOT_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_019.(ship2_is_missing)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -5936,7 +5980,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_020.(leader_NOT_drauven)~1_speech",
+													"textKey": "~06~player_chose_two~panel_020.(ship2_is_missing)~1_speech",
 													"fallbackSlotOwner": 4,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
 													"padXFraction": 0.293,
@@ -5952,7 +5996,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_020.(leader_NOT_drauven)~2_bookish",
+													"textKey": "~06~player_chose_two~panel_020.(ship2_is_missing)~2_bookish",
 													"pointerOwner": "bookish",
 													"padXFraction": 0.431,
 													"padYFraction": 0.057,
@@ -6013,7 +6057,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_021.(leader_NOT_drauven)~1_speech",
+													"textKey": "~06~player_chose_two~panel_021.(ship2_is_missing)~1_speech",
 													"fallbackSlotOwner": 1,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
 													"location": "topRight",
@@ -6022,7 +6066,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_021.(leader_NOT_drauven)~2_speech"
+													"textKey": "~06~player_chose_two~panel_021.(ship2_is_missing)~2_speech"
 												}
 											]
 										}
@@ -6126,7 +6170,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_022.(leader_NOT_drauven)~1_speech",
+													"textKey": "~06~player_chose_two~panel_022.(ship2_is_missing)~1_speech",
 													"fallbackSlotOwner": 0,
 													"backgroundColor": { "r": "0.84838206", "g": "0.84904236", "b": "0.73477203", "a": "1" },
 													"location": "topRight",
@@ -6211,7 +6255,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_023.(leader_NOT_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_023.(ship2_is_missing)~1_snark",
 													"pointerOwner": "snark"
 												}
 											]
@@ -6269,7 +6313,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_024.(leader_NOT_drauven)~1_bookish",
+													"textKey": "~06~player_chose_two~panel_024.(ship2_is_missing)~1_bookish",
 													"pointerOwner": "bookish",
 													"location": "bottomRight",
 													"padXFraction": 0.084,
@@ -6388,12 +6432,12 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_025.(leader_NOT_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_025.(ship2_is_missing)~1_snark",
 													"pointerOwner": "snark"
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_025.(leader_NOT_drauven)~2_action",
+													"textKey": "~06~player_chose_two~panel_025.(ship2_is_missing)~2_action",
 													"style": "action",
 													"padXFraction": 0.419,
 													"padYFraction": 0.588,
@@ -6476,12 +6520,12 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_026.(leader_NOT_drauven)~1_romantic",
+													"textKey": "~06~player_chose_two~panel_026.(ship2_is_missing)~1_romantic",
 													"pointerOwner": "romantic"
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_026.(leader_NOT_drauven)~2_action",
+													"textKey": "~06~player_chose_two~panel_026.(ship2_is_missing)~2_action",
 													"style": "action",
 													"location": "topRight",
 													"padXFraction": 0.079,
@@ -6553,7 +6597,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_027.(leader_NOT_drauven)~1_leader",
+													"textKey": "~06~player_chose_two~panel_027.(ship2_is_missing)~1_leader",
 													"pointerOwner": "leader",
 													"shrinkToFitText": true,
 													"pointerAdjust": { "rotate": -9.171062, "dX": 8.953907, "dY": -4.0000305 }
@@ -6641,7 +6685,7 @@
 											"textSlots": [
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_028.(leader_NOT_drauven)~1_snark",
+													"textKey": "~06~player_chose_two~panel_028.(ship2_is_missing)~1_snark",
 													"pointerOwner": "snark",
 													"location": "bottomLeft",
 													"padXFraction": 0.376,
@@ -6658,7 +6702,7 @@
 												},
 												{
 													"textSourceFile": "wilderness/ohSnap",
-													"textKey": "~06~player_chose_two~panel_028.(leader_NOT_drauven)~2_darken",
+													"textKey": "~06~player_chose_two~panel_028.(ship2_is_missing)~2_darken",
 													"style": "darken",
 													"padXFraction": 0.019,
 													"padYFraction": 0.029,
@@ -6681,7 +6725,12 @@
 					"onPass": {
 						"class": "DoAll",
 						"outcomes": [
-							{ "class": "RemoveTheme", "target": "leader", "specificTheme": "drauven", "specificPiece": "tail" },
+							{
+								"class": "RemoveTheme",
+								"target": "leader",
+								"specificTheme": "drauven",
+								"specificPiece": "tail"
+							},
 							{
 								"class": "ApplyTheme",
 								"target": "leader",
@@ -7307,9 +7356,9 @@
 							"colorFilter": { "filterName": "sepia" }
 						},
 						{
+							"preTransformation": true,
 							"role": "leader",
 							"form": "frame-interested",
-							"preTransformation": true,
 							"equipment": {},
 							"anchor": { "x": 0.328, "y": 0.685 },
 							"size": 0.5953,
@@ -7330,9 +7379,9 @@
 							"colorFilter": { "filterName": "sepia" }
 						},
 						{
+							"preTransformation": true,
 							"role": "romantic",
 							"form": "frame-skeptical",
-							"preTransformation": true,
 							"equipment": {},
 							"anchor": { "x": 0.518, "y": 0.554 },
 							"size": 0.4298,
