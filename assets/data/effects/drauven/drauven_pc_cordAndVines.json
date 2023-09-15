@@ -15,8 +15,6 @@
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "mysticRecipeWildGrasp", "mysticRecipeEngulf" ],
 	"priority": "1",
-	"onlyShowIfPossibleInCharacterSheet": true,
-	"showDescriptionInTooltip": true,
 	"usesElementFromEquippedWeapon": true
 },
 "targets": [

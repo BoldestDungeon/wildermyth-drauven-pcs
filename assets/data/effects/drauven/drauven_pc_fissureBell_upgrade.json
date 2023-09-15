@@ -13,7 +13,8 @@
 	"icon": "lightning",
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "mysticRecipeDiscus", "mysticRecipeBoneSpear", "drauven_pc_fissureBell" ],
-	"priority": "1"
+	"priority": "1",
+	"usesElementFromEquippedWeapon": true
 },
 "targets": [
 	{

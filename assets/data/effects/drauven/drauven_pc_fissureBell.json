@@ -13,7 +13,8 @@
 	"icon": "lightning",
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "mysticRecipeDiscus", "mysticRecipeBoneSpear" ],
-	"priority": "1"
+	"priority": "1",
+	"usesElementFromEquippedWeapon": true
 },
 "targets": [
 	{
@@ -22,7 +23,7 @@
 		"missionFeedback": { "orientTo": "source" }
 	},
 	{
-		"role": "site",
+		"role": "source",
 		"template": "ANY",
 		"missionFeedback": {
 			"suggestionScript": "figures.abilitySelectOption",

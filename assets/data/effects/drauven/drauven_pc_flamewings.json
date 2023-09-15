@@ -14,7 +14,7 @@
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "mysticRecipeFireleash", "mysticRecipeFlareLamp", "mysticRecipeStealFire" ],
 	"priority": "3",
-	"showDescriptionInTooltip": true
+	"usesElementFromEquippedWeapon": true
 },
 "targets": [
 	{
