@@ -1,0 +1,36 @@
+{
+	"type": "extra",
+	"extraSlot": "zzz_drauven06_Armour",
+	"requireAspects": ["themePiece_drauven_torso", "mystic"],
+
+	"groups": [
+		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 1, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 2, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
+		{"groupIndex": 3, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1}
+	],
+  "layers": [
+		{
+			"name": "armor_base_Detail_Secondary",
+			"tint": "secondary",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 1352
+		},
+		{
+			"name": "armor_base_Texture_Secondary",
+			"tint": "secondary",
+			"tintAmount": 0.5,
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 1353
+		},
+		{
+			"name": "armor_base_Detail_Primary",
+			"tint": "primary",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 1355
+		}
+	]
+}

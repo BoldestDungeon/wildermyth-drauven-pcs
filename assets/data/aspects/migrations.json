@@ -8,5 +8,13 @@
     "id": "migration_drauven_updateHeadAspects",
     "effects": [ "migration_drauven_updateHeadAspects" ],
     "importance": -1
+  },
+  {
+    "id": "drauvenPC_leftLegMigrationComplete",
+    "importance": -1
+  },
+  {
+    "id": "drauvenPC_rightLegMigrationComplete",
+    "importance": -1
   }
 ]

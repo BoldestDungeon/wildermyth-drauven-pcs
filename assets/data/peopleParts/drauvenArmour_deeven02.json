@@ -67,6 +67,19 @@
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
 			"depth": 3568
+		},
+		{
+			"name": "deeven_talisman",
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_BELT", "slotFilled_AUGMENT_SASH", "slotFilled_AUGMENT_TALISMAN"],
+			"depth": 2950
+		},
+		{
+			"name": "armor_base_Detail_Primary",
+			"tint": "primary", "tintAmount": 0.80,
+			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"depth": 1355
 		}
 	]
 }
