@@ -357,7 +357,7 @@
         "name": "HandL_Closed_Skin",
         "tint": "skin", "tintAmount": 0.5, 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
-        "depth": 2000,
+        "depth": 6000,
         "ifLeftHandGrasp": "weapon",
         "rigMode": "oneHanded"
       },
