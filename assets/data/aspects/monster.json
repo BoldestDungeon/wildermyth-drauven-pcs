@@ -6,13 +6,11 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_lightningRod_enemyHits",
-	"effects": [ "removeEveryAction", "removeAtStartOfTurn" ],
 	"importance": -1
 },
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_lightningRod_wasHit",
-	"effects": [ "removeEveryAction", "removeAtStartOfTurn" ],
 	"importance": -1
 },
 {

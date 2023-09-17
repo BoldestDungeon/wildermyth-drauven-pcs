@@ -27,7 +27,7 @@
 		"role": "hook",
 		"template": "ANY",
 		"choose": "ANY",
-		"aspects": [ "metal", "scenery" ],
+		"aspects": null,
 		"range": "100"
 	},
 	{
@@ -106,11 +106,6 @@
 	}
 ],
 "outcomes": [
-	{
-		"class": "Aspects",
-		"target": "hook",
-		"removeAspects": [ "drauven_pc_lightningRod_wasHit" ]
-	},
 	{
 		"class": "Aspects",
 		"target": "source",
@@ -306,6 +301,15 @@
 				}
 			]
 		}
+	},
+	{
+		"class": "Aspects",
+		"target": "hook",
+		"removeAspects": [ "drauven_pc_lightningRod_wasHit" ]
+	},
+	{
+		"class": "Aspects",
+		"removeAspects": [ "drauven_pc_lightningRod_enemyHits" ]
 	}
 ]
 }
