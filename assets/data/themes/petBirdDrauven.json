@@ -1,0 +1,17 @@
+{
+"id": "petBirdDrauven",
+"name": "Pet <self.drauven:Razorbeak/Drauven-Bird>",
+"blurb": "<self> healed the bird's injury and apparently earned some loyalty.",
+"pieces": [
+	{
+		"id": "birdDrauven",
+		"name": "<self.drauven:Razorbeak/Drauven Bird>",
+		"blurb": "It's a little mean-looking, but it seems to like you.",
+		"slots": [ "shoulderPet" ],
+		"layers": [
+			{ "name": "pet_birdDrauven", "depth": 70 }
+		],
+		"stats": { "MELEE_ACCURACY": 5 }
+	}
+]
+}
