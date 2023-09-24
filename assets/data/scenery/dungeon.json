@@ -1,0 +1,26 @@
+[
+{
+	"id": "shrineTransform_drauvenOn",
+	"image": "scenery/shrineTransform_drauvenOn.png",
+	"tags": [],
+	"lengthRange": [ 2, 2.25 ],
+	"aspectRatio": 1.2632332,
+	"stretchAspectRatio": "[0.9,1.1]",
+	"submerge": "0",
+	"scale": "1",
+	"thickness": "0.025",
+	"r": "[0.9,1.05]",
+	"g": "[0.9,1.05]",
+	"b": "[0.9,1.05]",
+	"aspects": [
+		"rewardRegion|reward_theme|drauven",
+		"healthBarHeightOverride|1.4",
+		"nonInteractiveShowTooltip",
+		"extraReward",
+		"extraAspectTooltip|themePiece_drauven_torso"
+	],
+	"states": [
+		{ "name": "empty", "image": "scenery/shrineTransform_drauvenOff.png" }
+	]
+}
+]

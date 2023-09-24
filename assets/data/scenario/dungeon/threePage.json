@@ -1,0 +1,1573 @@
+{
+"scenarioInfo": {
+	"id": "threePage",
+	"type": "DUNGEON",
+	"nameKey": "threePage.name",
+	"blurbKey": "threePage.blurb",
+	"extraDungeonModeTextKey": "threePage.extraDungeonModeText",
+	"extraDungeonModeTextTooltipKey": "threePage.extraDungeonModeTextTooltip",
+	"perilAndOdesEnabled": true,
+	"rosterSlots": [
+		{
+			"type": "greenhorn",
+			"archetype": "warrior",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "warrior" ]
+		},
+		{
+			"type": "greenhorn",
+			"archetype": "hunter",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "hunter" ]
+		},
+		{
+			"type": "greenhorn",
+			"archetype": "mystic",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "mystic" ]
+		},
+		{
+			"type": "greenhorn",
+			"archetype": "warrior",
+			"archetypeCustomizable": true,
+			"plotRoles": [ "party", "hero4" ]
+		}
+	]
+},
+"nodeTemplates": {
+	"upgradeGear_extra": {
+		"STUB": "Upgrade Gear",
+		"icon": "dungeonNodeD_iconUpgradeGear",
+		"specifyNodeVisuals": { "isHardFight": true },
+		"specifyFoes": { "modifyStrength": "2" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"missionPlanForbidTags": [ "twoRewardsOnly" ],
+			"rewardTemplates": [ "upgradeGear" ],
+			"numExtraRewards": "EXTRA_REWARD_BETTER",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|upgradeGear", "value": "1" }
+			]
+		},
+		"chooseExtraRewardFromTemplate": [ "standard" ]
+	},
+	"boss": {
+		"STUB": "Boss",
+		"specifyNodeVisuals": { "isBossFight": true },
+		"specifyFoes": { "strategy": "mainGroup", "modifyStrength": "3" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "boss" ],
+			"numRewards": "2",
+			"rewardTemplates": [ "gear", "resources", "ability" ],
+			"numExtraRewards": "1+EXTRA_REWARD_BETTER",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AccumulateHealing",
+					"value": "(RECOVERY_RATE/40)+company.dungeon_progression_all_healingBetweenFights"
+				},
+				{ "class": "AddResources", "amount": "1" },
+				{
+					"class": "Aspects",
+					"target": "company",
+					"addAspects": [
+						{ "id": "bonusXPMaxEnemies", "value": "1.3" },
+						{ "id": "dungeonStats_bossMissionsCompleted", "value": "1" }
+					]
+				}
+			]
+		},
+		"includeDefaultFinalOutcomes": false
+	},
+	"ability_extra": {
+		"STUB": "Ability",
+		"icon": "dungeonNodeD_iconAbility",
+		"specifyNodeVisuals": { "isHardFight": true },
+		"specifyFoes": { "modifyStrength": "2" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"missionPlanForbidTags": [ "twoRewardsOnly" ],
+			"rewardTemplates": [ "ability" ],
+			"numExtraRewards": "EXTRA_REWARD_BETTER",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|ability", "value": "1" }
+			]
+		},
+		"chooseExtraRewardFromTemplate": [ "standard" ]
+	},
+	"resources_extra": {
+		"STUB": "Resources",
+		"icon": "dungeonNodeD_iconResources",
+		"specifyNodeVisuals": { "isHardFight": true },
+		"specifyFoes": { "modifyStrength": "2" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"missionPlanForbidTags": [ "twoRewardsOnly" ],
+			"rewardTemplates": [ "resources" ],
+			"numExtraRewards": "EXTRA_REWARD_BETTER",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|resources", "value": "1" }
+			]
+		},
+		"chooseExtraRewardFromTemplate": [ "standard" ]
+	},
+	"craft": {
+		"STUB": "Craft",
+		"icon": "dungeonNode_craft",
+		"otherOutcomes": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AccumulateHealing",
+					"value": "(RECOVERY_RATE/20)+company.dungeon_progression_all_healingBetweenFights"
+				},
+				{
+					"class": "Aspects",
+					"target": "company",
+					"addAspects": [
+						{ "id": "dungeonStats_nodeEncountered|craft", "value": "1" }
+					]
+				}
+			]
+		},
+		"includeDefaultFinalOutcomes": false,
+		"repeatableOutcomes": { "class": "OpenCraftDialog" },
+		"tagsPreventAdjacentNode": [ "nonCombat" ]
+	},
+	"gear_extra": {
+		"STUB": "Gear",
+		"icon": "dungeonNodeD_iconChest",
+		"specifyNodeVisuals": { "isHardFight": true },
+		"specifyFoes": { "modifyStrength": "2" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"missionPlanForbidTags": [ "twoRewardsOnly" ],
+			"rewardTemplates": [ "gear" ],
+			"numExtraRewards": "EXTRA_REWARD_BETTER",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|chest", "value": "1" }
+			]
+		},
+		"chooseExtraRewardFromTemplate": [ "standard" ]
+	},
+	"resources": {
+		"STUB": "Resources",
+		"icon": "dungeonNodeD_iconResources",
+		"specifyFoes": { "modifyStrength": "0" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"rewardTemplates": [ "resources" ],
+			"numExtraRewards": "EXTRA_REWARD_DEFAULT",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|resources", "value": "1" }
+			]
+		}
+	},
+	"upgradeGear": {
+		"STUB": "Upgrade Gear",
+		"icon": "dungeonNodeD_iconUpgradeGear",
+		"specifyFoes": { "modifyStrength": "0" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"rewardTemplates": [ "upgradeGear" ],
+			"numExtraRewards": "EXTRA_REWARD_DEFAULT",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|upgradeGear", "value": "1" }
+			]
+		}
+	},
+	"calamityRemoval": {
+		"STUB": "Remove Calamities",
+		"icon": "dungeonNode_calamity",
+		"otherOutcomes": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AddCalamities",
+					"calamitiesToAdd": [
+						{ "quantity": "-6" }
+					]
+				},
+				{
+					"class": "AccumulateHealing",
+					"value": "(RECOVERY_RATE/20)+company.dungeon_progression_all_healingBetweenFights"
+				},
+				{
+					"class": "Aspects",
+					"target": "company",
+					"addAspects": [
+						{ "id": "dungeonStats_nodeEncountered|calamity", "value": "1" }
+					]
+				}
+			]
+		},
+		"includeDefaultFinalOutcomes": false,
+		"tagsPreventAdjacentNode": [ "nonCombat" ]
+	},
+	"gearBetter": {
+		"STUB": "Better Gear",
+		"icon": "dungeonNodeD_iconChestBig",
+		"specifyNodeVisuals": { "isHardFight": true },
+		"specifyFoes": { "modifyStrength": "2" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"rewardTemplates": [ "gearBetter" ],
+			"numExtraRewards": "EXTRA_REWARD_BETTER",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|chestBig", "value": "1" }
+			]
+		}
+	},
+	"recruit": {
+		"STUB": "Recruit",
+		"icon": "dungeonNode_recruit",
+		"otherOutcomes": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AccumulateHealing",
+					"value": "(RECOVERY_RATE/20)+company.dungeon_progression_all_healingBetweenFights"
+				},
+				{
+					"class": "Aspects",
+					"target": "company",
+					"addAspects": [
+						{ "id": "dungeonStats_nodeEncountered|recruit", "value": "1" }
+					]
+				}
+			]
+		},
+		"includeDefaultFinalOutcomes": false,
+		"repeatableOutcomes": {
+			"class": "RecruitHero",
+			"startWithClass": true,
+			"allowLegacyHeroes": false,
+			"setEquipment": "chapterMinusOne"
+		},
+		"repeatableOutcomeTest": "lessThan(COUNT.party,5)"
+	},
+	"heal": {
+		"STUB": "Heal",
+		"icon": "dungeonNode_heal",
+		"otherOutcomes": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AccumulateHealing",
+					"value": "(4+(RECOVERY_RATE/20))+company.dungeon_progression_all_healingBetweenFights"
+				},
+				{
+					"class": "Aspects",
+					"target": "company",
+					"addAspects": [
+						{ "id": "dungeonStats_nodeEncountered|heal", "value": "1" }
+					]
+				}
+			]
+		},
+		"includeDefaultFinalOutcomes": false,
+		"tagsPreventAdjacentNode": [ "nonCombat" ]
+	},
+	"combatBuff": {
+		"STUB": "Combat Buff",
+		"icon": "dungeonNodeD_iconModifier",
+		"specifyFoes": { "modifyStrength": "0" },
+		"arriveOutcomes": {
+			"class": "DoOneRandom",
+			"weightedOutcomes": [
+				{
+					"weightExp": "1-company.addCombatModifier|INTIMIDATION",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|INTIMIDATION", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|FORTITUDE",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|FORTITUDE", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|COURAGE",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|COURAGE", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|CUNNING",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|CUNNING", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|INSIGHT",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|INSIGHT", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|ENDURANCE",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|ENDURANCE", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|STEALTH",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|STEALTH", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|HASTE",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|HASTE", "value": "1" }
+						]
+					}
+				}
+			]
+		},
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"numExtraRewards": "EXTRA_REWARD_DEFAULT",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|modifier", "value": "1" }
+			]
+		}
+	},
+	"combatBuff_extra": {
+		"STUB": "Combat Buff",
+		"icon": "dungeonNodeD_iconModifier",
+		"specifyNodeVisuals": { "isHardFight": true },
+		"specifyFoes": { "modifyStrength": "2" },
+		"arriveOutcomes": {
+			"class": "DoOneRandom",
+			"weightedOutcomes": [
+				{
+					"weightExp": "1-company.addCombatModifier|INTIMIDATION",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|INTIMIDATION", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|FORTITUDE",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|FORTITUDE", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|COURAGE",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|COURAGE", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|CUNNING",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|CUNNING", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|INSIGHT",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|INSIGHT", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|ENDURANCE",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|ENDURANCE", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|STEALTH",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|STEALTH", "value": "1" }
+						]
+					}
+				},
+				{
+					"weightExp": "1-company.addCombatModifier|HASTE",
+					"outcome": {
+						"class": "Aspects",
+						"target": "company",
+						"addAspects": [
+							{ "id": "addCombatModifier|HASTE", "value": "1" }
+						]
+					}
+				}
+			]
+		},
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"missionPlanForbidTags": [ "twoRewardsOnly" ],
+			"numExtraRewards": "EXTRA_REWARD_BETTER",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|modifier", "value": "1" }
+			]
+		},
+		"chooseExtraRewardFromTemplate": [ "standard" ]
+	},
+	"ability": {
+		"STUB": "Ability",
+		"icon": "dungeonNodeD_iconAbility",
+		"specifyFoes": { "modifyStrength": "0" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"rewardTemplates": [ "ability" ],
+			"numExtraRewards": "EXTRA_REWARD_DEFAULT",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|ability", "value": "1" }
+			]
+		}
+	},
+	"gear": {
+		"STUB": "Gear",
+		"icon": "dungeonNodeD_iconChest",
+		"specifyFoes": { "modifyStrength": "0" },
+		"fight": {
+			"combatants": [
+				{ "role": "party", "side": "player" },
+				{ "role": "foes", "side": "enemy" }
+			],
+			"missionPlanRequireTags": [ "dungeon" ],
+			"rewardTemplates": [ "gear" ],
+			"numExtraRewards": "EXTRA_REWARD_DEFAULT",
+			"extraRewardTemplates": [ "standard" ]
+		},
+		"otherOutcomes": {
+			"class": "Aspects",
+			"target": "company",
+			"addAspects": [
+				{ "id": "dungeonStats_nodeEncountered|chest", "value": "1" }
+			]
+		}
+	}
+},
+"rewardTemplates": {
+	"gearBetter": [
+		{
+			"class": "com.worldwalkergames.legacy.game.campaign.model.mission.MapDetail_Reward$Reward",
+			"sceneryId": "treasureChestGearBigOn",
+			"revealAtStart": true,
+			"grantGear": [
+				{
+					"chapterModifier": 1,
+					"allowArmor": false,
+					"allowAugment": false,
+					"allowOffHand": false,
+					"artifact": true
+				},
+				{ "allowWeapon": false, "allowAugment": false, "allowOffHand": false },
+				{ "allowArmor": false, "allowWeapon": false, "allowOffHand": false },
+				{ "allowArmor": false, "allowWeapon": false, "allowOffHand": false }
+			]
+		}
+	],
+	"resources": [
+		{
+			"class": "com.worldwalkergames.legacy.game.campaign.model.mission.MapDetail_Reward$Reward",
+			"sceneryId": "treasureChestResourcesOn",
+			"revealAtStart": true,
+			"addResources": [
+				{
+					"resourceType": null,
+					"randomTypes": true,
+					"amount": "10+(company.chapterNumber*3)"
+				}
+			]
+		}
+	],
+	"ability": [
+		{
+			"class": "com.worldwalkergames.legacy.game.campaign.model.mission.MapDetail_Reward$Reward",
+			"sceneryId": "shrineAbilityOn",
+			"radius": 2,
+			"revealAtStart": true
+		}
+	],
+	"upgradeGear": [
+		{
+			"class": "com.worldwalkergames.legacy.game.campaign.model.mission.MapDetail_Reward$Reward",
+			"sceneryId": "shrineGearUpgradeOn",
+			"revealAtStart": true
+		}
+	],
+	"gear": [
+		{
+			"class": "com.worldwalkergames.legacy.game.campaign.model.mission.MapDetail_Reward$Reward",
+			"sceneryId": "treasureChestGearMediumOn",
+			"revealAtStart": true,
+			"grantGear": [
+				{ "allowAugment": false },
+				{ "allowArmor": false, "allowWeapon": false, "allowOffHand": false },
+				{ "allowArmor": false, "allowWeapon": false, "allowOffHand": false }
+			]
+		}
+	]
+},
+"extraRewardTemplates": {
+	"standard": [
+		{
+			"class": "com.worldwalkergames.legacy.game.model.effect.Outcome$Mission$ExtraReward",
+			"rewards": [ 
+				{"sceneryId": "shrineTransform_drauvenOn", "revealAtStart": true }
+			],
+			"weight": 100
+		},
+		{
+			"class": "com.worldwalkergames.legacy.game.model.effect.Outcome$Mission$ExtraReward",
+			"rewards": [
+				{ "sceneryId": "shrineTransform_crowOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_treeOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_bearOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_fireOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_foothillOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_frogOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_gemOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_greenOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_morthagiOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_shadowOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_skeletalOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_starOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_stormOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_tailsOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_vineOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_wingsOn", "revealAtStart": true },
+				{ "sceneryId": "shrineTransform_wolfOn", "revealAtStart": true }
+			]
+		},
+		{
+			"class": "com.worldwalkergames.legacy.game.model.effect.Outcome$Mission$ExtraReward",
+			"weight": "0.6",
+			"rewards": [
+				{ "sceneryId": "cagePet_critter", "revealAtStart": true },
+				{ "sceneryId": "cagePet_birdDrauven", "revealAtStart": true },
+				{ "sceneryId": "cagePet_catBlack", "revealAtStart": true },
+				{ "sceneryId": "cagePet_catShadow", "revealAtStart": true },
+				{ "sceneryId": "cagePet_cub", "revealAtStart": true },
+				{ "sceneryId": "cagePet_duck", "revealAtStart": true },
+				{ "sceneryId": "cagePet_fireChicken", "revealAtStart": true },
+				{ "sceneryId": "cagePet_meteor", "revealAtStart": true },
+				{ "sceneryId": "cagePet_pinecone", "revealAtStart": true },
+				{ "sceneryId": "cagePet_rabbit", "revealAtStart": true },
+				{ "sceneryId": "cagePet_rat", "revealAtStart": true }
+			]
+		},
+		{
+			"class": "com.worldwalkergames.legacy.game.model.effect.Outcome$Mission$ExtraReward",
+			"weight": "0.7",
+			"rewards": [
+				{ "sceneryId": "shrineRelationshipOn", "revealAtStart": true }
+			]
+		},
+		{
+			"class": "com.worldwalkergames.legacy.game.model.effect.Outcome$Mission$ExtraReward",
+			"rewards": [
+				{
+					"sceneryId": "treasureChestResourcesSmallOn",
+					"revealAtStart": true,
+					"addResources": [
+						{
+							"resourceType": null,
+							"randomTypes": true,
+							"amount": "5+(company.chapterNumber*1)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"class": "com.worldwalkergames.legacy.game.model.effect.Outcome$Mission$ExtraReward",
+			"rewards": [
+				{
+					"sceneryId": "treasureChestGearSmallOn",
+					"revealAtStart": true,
+					"grantGear": [
+						{ "allowArmor": false, "allowWeapon": false },
+						{ "allowArmor": false, "allowWeapon": false, "allowOffHand": false }
+					]
+				}
+			]
+		},
+		{
+			"class": "com.worldwalkergames.legacy.game.model.effect.Outcome$Mission$ExtraReward",
+			"rewards": [
+				{ "sceneryId": "shrineHealingOn", "revealAtStart": true }
+			]
+		}
+	]
+},
+"rewardNumExpressions": {
+	"EXTRA_REWARD_BETTER": "lessThan(1d100,(41+(company.dungeon_progression_all_treasureHunter*10)))",
+	"EXTRA_REWARD_DEFAULT": "lessThan(1d100,(21+(company.dungeon_progression_all_treasureHunter*10)))"
+},
+"pages": [
+	{
+		"elements": [
+			{
+				"elementId": 1677931609,
+				"node": {
+					"STUB": "bleh",
+					"icon": "dungeonButtonNext",
+					"specifyNodeVisuals": { "noTooltip": true },
+					"otherOutcomes": {
+						"class": "DoAll",
+						"outcomes": [
+							{ "class": "SetGlobal", "globalId": "extraMissionCardDraw", "value": "0" },
+							{
+								"class": "SetGlobal",
+								"globalId": "extraMissionCardPerChapter.2",
+								"value": "2"
+							},
+							{
+								"class": "SetGlobal",
+								"globalId": "extraMissionCardPerChapter.3",
+								"value": "2"
+							},
+							{ "class": "SetGlobal", "globalId": "doomCardsPerFight", "value": "0" }
+						]
+					},
+					"includeDefaultFinalOutcomes": false
+				},
+				"nextElements": [
+					{ "targetElementId": -2068329833 }
+				]
+			},
+			{
+				"elementId": -2068329833,
+				"x": 1,
+				"block": {
+					"STUB": "bleh",
+					"pathLength": "4",
+					"numberOfStartNodes": "2",
+					"numberOfEndNodes": "4",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "resources" },
+								{ "template": "gear" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2+1",
+							"nodes": [
+								{ "template": "ability" },
+								{ "template": "upgradeGear" },
+								{ "template": "combatBuff" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d3-1",
+							"nodes": [
+								{
+									"template": "gearBetter",
+									"doNotSpawnAtPosition": [ 1 ]
+								}
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2+1",
+							"nodes": [
+								{
+									"template": "resources_extra",
+									"doNotSpawnAtPosition": [ 1 ]
+								},
+								{
+									"template": "gear_extra",
+									"doNotSpawnAtPosition": [ 1 ]
+								},
+								{
+									"template": "ability_extra",
+									"doNotSpawnAtPosition": [ 1 ]
+								},
+								{
+									"template": "upgradeGear_extra",
+									"doNotSpawnAtPosition": [ 1 ]
+								},
+								{
+									"template": "combatBuff_extra",
+									"doNotSpawnAtPosition": [ 1 ]
+								}
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": 998006859 }
+				]
+			},
+			{
+				"elementId": 998006859,
+				"x": 5,
+				"block": {
+					"STUB": "Non-Mission",
+					"pathLength": "1",
+					"numberOfStartNodes": "3",
+					"numberOfEndNodes": "3",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "calamityRemoval" },
+								{ "template": "craft" },
+								{ "template": "heal" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": 1210046986 }
+				]
+			},
+			{
+				"elementId": 1210046986,
+				"x": 6,
+				"block": {
+					"STUB": "bleh",
+					"pathLength": "3",
+					"numberOfStartNodes": "3",
+					"numberOfEndNodes": "2",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "resources" },
+								{ "template": "gear" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2-1",
+							"nodes": [
+								{
+									"template": "calamityRemoval",
+									"doNotSpawnAtPosition": [ 6 ]
+								},
+								{
+									"template": "craft",
+									"doNotSpawnAtPosition": [ 6 ]
+								},
+								{
+									"template": "heal",
+									"doNotSpawnAtPosition": [ 6 ]
+								}
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{ "template": "ability" },
+								{ "template": "upgradeGear" },
+								{ "template": "combatBuff" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{ "template": "gearBetter" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{ "template": "resources_extra" },
+								{ "template": "gear_extra" },
+								{ "template": "ability_extra" },
+								{ "template": "upgradeGear_extra" },
+								{ "template": "combatBuff_extra" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": 302877034 }
+				]
+			},
+			{
+				"elementId": 302877034,
+				"x": 10,
+				"node": { "template": "boss" },
+				"nextElements": [
+					{ "targetElementId": -1211026178 }
+				]
+			},
+			{
+				"elementId": -1211026178,
+				"x": 11,
+				"node": {
+					"STUB": "bleh",
+					"icon": "dungeonButtonNext",
+					"includeDefaultFinalOutcomes": false,
+					"pageTransition": { "targetPageIndex": 1 }
+				}
+			}
+		],
+		"defaultFinalOutcomes": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AccumulateHealing",
+					"value": "(RECOVERY_RATE/40)+company.dungeon_progression_all_healingBetweenFights"
+				},
+				{ "class": "AddResources", "amount": "1" },
+				{
+					"class": "Aspects",
+					"target": "company",
+					"addAspects": [
+						{ "id": "bonusXPMaxEnemies", "value": "1.3" },
+						{ "id": "dungeonStats_missionsCompleted", "value": "1" }
+					]
+				},
+				{
+					"class": "AddCalamities",
+					"skipProposePopup": true,
+					"calamitiesToAdd": [
+						{ "quantity": "2", "flavorByRole": "foes" },
+						{ "quantity": "2", "equalCardsPerFlavor": true, "forbidFlavorByRole": "foes" }
+					]
+				}
+			]
+		},
+		"newMainThreat": "random",
+		"minChoicesPerPath": "4"
+	},
+	{
+		"elements": [
+			{
+				"elementId": 1677931609,
+				"node": {
+					"STUB": "bleh",
+					"icon": "dungeonButtonNext",
+					"specifyNodeVisuals": { "noTooltip": true },
+					"arriveOutcomes": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "AccumulateHealing",
+								"value": "(RECOVERY_RATE/20)+company.dungeon_progression_all_healingBetweenFights"
+							},
+							{
+								"class": "RecruitHero",
+								"startWithClass": true,
+								"allowLegacyHeroes": false,
+								"free": true,
+								"allowCancel": false,
+								"setEquipment": "tierOneWeaponTierZeroArmor"
+							},
+							{
+								"class": "Aspects",
+								"target": "company",
+								"addAspects": [
+									{
+										"id": "increaseMissionPlanMonsterCardLimits",
+										"value": "1",
+										"merge": "replace"
+									}
+								]
+							}
+						]
+					},
+					"includeDefaultFinalOutcomes": false
+				},
+				"nextElements": [
+					{ "targetElementId": -196864200 }
+				]
+			},
+			{
+				"elementId": -196864200,
+				"x": 1,
+				"block": {
+					"STUB": "Non-Mission",
+					"pathLength": "1",
+					"numberOfStartNodes": "2",
+					"numberOfEndNodes": "2",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "calamityRemoval" },
+								{ "template": "craft" },
+								{ "template": "heal" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "lessThan(COUNT.party,4)",
+							"nodes": [
+								{ "template": "recruit" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": -2068329833 }
+				]
+			},
+			{
+				"elementId": -2068329833,
+				"x": 2,
+				"block": {
+					"STUB": "bleh",
+					"pathLength": "4",
+					"numberOfStartNodes": "2",
+					"numberOfEndNodes": "4",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "resources" },
+								{ "template": "gear" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{
+									"template": "calamityRemoval",
+									"doNotSpawnAtPosition": [ 2, 5 ]
+								},
+								{
+									"template": "craft",
+									"doNotSpawnAtPosition": [ 2, 5 ]
+								},
+								{
+									"template": "heal",
+									"doNotSpawnAtPosition": [ 2, 5 ]
+								}
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2+1",
+							"nodes": [
+								{ "template": "ability" },
+								{ "template": "upgradeGear" },
+								{ "template": "combatBuff" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d3-1",
+							"nodes": [
+								{ "template": "gearBetter" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2+1",
+							"nodes": [
+								{ "template": "resources_extra" },
+								{ "template": "gear_extra" },
+								{ "template": "ability_extra" },
+								{ "template": "upgradeGear_extra" },
+								{ "template": "combatBuff_extra" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": 998006859 }
+				]
+			},
+			{
+				"elementId": 998006859,
+				"x": 6,
+				"block": {
+					"STUB": "Non-Mission",
+					"pathLength": "1",
+					"numberOfStartNodes": "3",
+					"numberOfEndNodes": "3",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "calamityRemoval" },
+								{ "template": "craft" },
+								{ "template": "heal" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": 1210046986 }
+				]
+			},
+			{
+				"elementId": 1210046986,
+				"x": 7,
+				"block": {
+					"STUB": "bleh",
+					"pathLength": "3",
+					"numberOfStartNodes": "3",
+					"numberOfEndNodes": "2",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "resources" },
+								{ "template": "gear" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2-1",
+							"nodes": [
+								{
+									"template": "calamityRemoval",
+									"doNotSpawnAtPosition": [ 7 ]
+								},
+								{
+									"template": "craft",
+									"doNotSpawnAtPosition": [ 7 ]
+								},
+								{
+									"template": "heal",
+									"doNotSpawnAtPosition": [ 7 ]
+								}
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{ "template": "ability" },
+								{ "template": "upgradeGear" },
+								{ "template": "combatBuff" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{ "template": "gearBetter" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{ "template": "resources_extra" },
+								{ "template": "gear_extra" },
+								{ "template": "ability_extra" },
+								{ "template": "upgradeGear_extra" },
+								{ "template": "combatBuff_extra" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": 302877034 }
+				]
+			},
+			{
+				"elementId": 302877034,
+				"x": 11,
+				"node": { "template": "boss" },
+				"nextElements": [
+					{ "targetElementId": -1211026178 }
+				]
+			},
+			{
+				"elementId": -1211026178,
+				"x": 12,
+				"node": {
+					"STUB": "bleh",
+					"icon": "dungeonButtonNext",
+					"includeDefaultFinalOutcomes": false,
+					"pageTransition": { "targetPageIndex": 2 }
+				}
+			}
+		],
+		"defaultFinalOutcomes": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AccumulateHealing",
+					"value": "(RECOVERY_RATE/40)+company.dungeon_progression_all_healingBetweenFights"
+				},
+				{ "class": "AddResources", "amount": "1" },
+				{
+					"class": "Aspects",
+					"target": "company",
+					"addAspects": [
+						{ "id": "bonusXPMaxEnemies", "value": "1.3" },
+						{ "id": "dungeonStats_missionsCompleted", "value": "1" }
+					]
+				},
+				{
+					"class": "AddCalamities",
+					"skipProposePopup": true,
+					"calamitiesToAdd": [
+						{ "quantity": "2", "flavorByRole": "foes" },
+						{ "quantity": "2", "equalCardsPerFlavor": true, "forbidFlavorByRole": "foes" }
+					]
+				}
+			]
+		},
+		"newMainThreat": "random",
+		"minChoicesPerPath": "4"
+	},
+	{
+		"elements": [
+			{
+				"elementId": 1677931609,
+				"node": {
+					"STUB": "bleh",
+					"icon": "dungeonButtonNext",
+					"specifyNodeVisuals": { "noTooltip": true },
+					"arriveOutcomes": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "AccumulateHealing",
+								"value": "(RECOVERY_RATE/20)+company.dungeon_progression_all_healingBetweenFights"
+							},
+							{
+								"class": "Aspects",
+								"target": "company",
+								"addAspects": [
+									{
+										"id": "increaseMissionPlanMonsterCardLimits",
+										"value": "2",
+										"merge": "replace"
+									}
+								]
+							}
+						]
+					},
+					"includeDefaultFinalOutcomes": false
+				},
+				"nextElements": [
+					{ "targetElementId": 350848018 }
+				]
+			},
+			{
+				"elementId": 350848018,
+				"x": 1,
+				"block": {
+					"STUB": "Non-Mission",
+					"pathLength": "1",
+					"numberOfStartNodes": "2",
+					"numberOfEndNodes": "2",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "calamityRemoval" },
+								{ "template": "craft" },
+								{ "template": "heal" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "lessThan(COUNT.party,5)",
+							"nodes": [
+								{ "template": "recruit" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": -2068329833 }
+				]
+			},
+			{
+				"elementId": -2068329833,
+				"x": 2,
+				"block": {
+					"STUB": "bleh",
+					"pathLength": "4",
+					"numberOfStartNodes": "2",
+					"numberOfEndNodes": "4",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "resources" },
+								{ "template": "gear" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{
+									"template": "calamityRemoval",
+									"doNotSpawnAtPosition": [ 2, 5 ]
+								},
+								{
+									"template": "craft",
+									"doNotSpawnAtPosition": [ 2, 5 ]
+								},
+								{
+									"template": "heal",
+									"doNotSpawnAtPosition": [ 2, 5 ]
+								}
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2+1",
+							"nodes": [
+								{ "template": "ability" },
+								{ "template": "upgradeGear" },
+								{ "template": "combatBuff" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d3-1",
+							"nodes": [
+								{ "template": "gearBetter" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2+1",
+							"nodes": [
+								{ "template": "resources_extra" },
+								{ "template": "gear_extra" },
+								{ "template": "ability_extra" },
+								{ "template": "upgradeGear_extra" },
+								{ "template": "combatBuff_extra" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": 998006859 }
+				]
+			},
+			{
+				"elementId": 998006859,
+				"x": 6,
+				"block": {
+					"STUB": "Non-Mission",
+					"pathLength": "1",
+					"numberOfStartNodes": "3",
+					"numberOfEndNodes": "3",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "calamityRemoval" },
+								{ "template": "craft" },
+								{ "template": "heal" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": 1210046986 }
+				]
+			},
+			{
+				"elementId": 1210046986,
+				"x": 7,
+				"block": {
+					"STUB": "bleh",
+					"pathLength": "3",
+					"numberOfStartNodes": "3",
+					"numberOfEndNodes": "1",
+					"connectivity": "0.8",
+					"groups": [
+						{
+							"numberToPick": "1",
+							"nodes": [
+								{ "template": "resources" },
+								{ "template": "gear" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2-1",
+							"nodes": [
+								{
+									"template": "calamityRemoval",
+									"doNotSpawnAtPosition": [ 7, 9 ]
+								},
+								{
+									"template": "craft",
+									"doNotSpawnAtPosition": [ 7, 9 ]
+								},
+								{
+									"template": "heal",
+									"doNotSpawnAtPosition": [ 7, 9 ]
+								}
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{ "template": "ability" },
+								{ "template": "upgradeGear" },
+								{ "template": "combatBuff" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{ "template": "gearBetter" }
+							]
+						},
+						{
+							"pickExactNumber": true,
+							"numberToPick": "1d2",
+							"nodes": [
+								{ "template": "resources_extra" },
+								{ "template": "gear_extra" },
+								{ "template": "ability_extra" },
+								{ "template": "upgradeGear_extra" },
+								{ "template": "combatBuff_extra" }
+							]
+						}
+					]
+				},
+				"nextElements": [
+					{ "targetElementId": 564147299 },
+					{ "targetElementId": -910119777 }
+				]
+			},
+			{
+				"elementId": 564147299,
+				"x": 11,
+				"node": { "template": "heal" },
+				"nextElements": [
+					{ "targetElementId": 302877034 }
+				]
+			},
+			{
+				"elementId": -910119777,
+				"x": 11,
+				"node": { "template": "craft" },
+				"nextElements": [
+					{ "targetElementId": 302877034 }
+				]
+			},
+			{
+				"elementId": 302877034,
+				"x": 12,
+				"node": {
+					"template": "boss",
+					"otherOutcomes": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "Aspects",
+								"target": "company",
+								"addAspects": [
+									{ "id": "dungeonStats_bossMissionsCompleted", "value": "1" }
+								]
+							},
+							{ "class": "Special", "specialAction": "GAME_OVER_WIN" }
+						]
+					}
+				}
+			}
+		],
+		"defaultFinalOutcomes": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AccumulateHealing",
+					"value": "(RECOVERY_RATE/40)+company.dungeon_progression_all_healingBetweenFights"
+				},
+				{ "class": "AddResources", "amount": "1" },
+				{
+					"class": "Aspects",
+					"target": "company",
+					"addAspects": [
+						{ "id": "bonusXPMaxEnemies", "value": "1.3" },
+						{ "id": "dungeonStats_missionsCompleted", "value": "1" }
+					]
+				},
+				{
+					"class": "AddCalamities",
+					"skipProposePopup": true,
+					"calamitiesToAdd": [
+						{ "quantity": "2", "flavorByRole": "foes" },
+						{ "quantity": "2", "equalCardsPerFlavor": true, "forbidFlavorByRole": "foes" }
+					]
+				}
+			]
+		},
+		"newMainThreat": "random",
+		"minChoicesPerPath": "4"
+	}
+]
+}

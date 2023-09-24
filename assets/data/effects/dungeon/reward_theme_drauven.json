@@ -1,0 +1,246 @@
+{
+  "id": "reward_theme_drauven",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "dungeon/reward_theme_drauven",
+    "author": "Katie Austin"
+  },
+  "type": "BRANCH",
+  "verb": "MANEUVER",
+  "ability": { "icon": "rewardTransform", "category": "research", "priority": "1" },
+  "targets": [
+    { "template": "EVENT" },
+    { "role": "scenery", "template": "ANY", "injectedRole": "scenery" },
+    { "role": "hero", "template": "ANY", "injectedRole": "hero" },
+    {
+      "template": "CHOICE",
+      "promptScript": [
+        {
+          "class": "comicNode_Panel",
+          "panel": {
+            "size": "full",
+            "showNameTags": false,
+            "bgAuto": "atSite",
+            "actorSlots": [
+              {
+                "role": "hero",
+                "form": "frame-interested",
+                "anchor": { "x": 0.42, "y": 0.684 },
+                "size": 0.7,
+                "drawDepth": 1.625,
+                "head": { "rotate": 10.9, "scaleY": 1 },
+                "foot": { "rotate": -3.073 },
+                "color": { "r": "0.85877192", "g": "0.81629717", "b": "0.53596389", "a": "1" },
+                "colorFilter": {}
+              },
+              {
+                "assetSpec": "asset:sites/scenery/shrineTransform_drauvenOn.png",
+                "role": null,
+                "focus": "foot",
+                "anchor": { "x": 0.693, "y": 0.587 },
+                "size": 0.4375,
+                "nameTag": "none"
+              },
+              {
+                "assetSpec": "comicBg:comicBG_campfire.jpg",
+                "role": null,
+                "focus": "foot",
+                "anchor": { "x": 0.468, "y": 0.48 },
+                "size": 0.3053,
+                "nameTag": "none",
+                "color": { "r": "0.68421096", "g": "0.68421096", "b": "0.68421096", "a": "1" }
+              },
+              {
+                "assetSpec": "comic:smokeCloud.png",
+                "role": null,
+                "focus": "foot",
+                "anchor": { "x": 0.297, "y": -0.274 },
+                "size": 0.8379,
+                "drawDepth": 1,
+                "nameTag": "none",
+                "foot": { "rotate": 0 },
+                "color": { "r": "1", "g": "0.85941744", "b": "0.63157678", "a": "0.66885912" }
+              }
+            ],
+            "textSlots": [
+              {
+                "textSourceFile": "dungeon/reward_theme_drauven",
+                "textKey": "~01~prompt~panel_001~1_narration",
+                "style": "narration",
+                "backgroundColor": { "r": "0.70906389", "g": "0.50130606", "b": "0.12426943", "a": "0.62499946" },
+                "padXFraction": 0.027,
+                "padYFraction": 0.785,
+                "shrinkToFitText": true
+              }
+            ]
+          }
+        }
+      ],
+      "options": [
+        {
+          "id": "one",
+          "script": [
+            {
+              "class": "comicNode_Panel",
+              "panel": {
+                "size": "fourth",
+                "actorSlots": [
+                  {
+                    "role": "npc",
+                    "form": "frame-happy",
+                    "focus": "middle",
+                    "anchor": { "x": 0.708, "y": 0.499 },
+                    "size": 0.5256,
+                    "nameTag": "none",
+                    "head": { "rotate": -12.853, "scaleY": 1 },
+                    "foot": { "rotate": 10.105 },
+                    "color": { "r": "0.85877192", "g": "0.81629717", "b": "0.53596389", "a": "1" }
+                  },
+                  {
+                    "assetSpec": "comicBg:comicBG_campfire.jpg",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.588, "y": 0.286 },
+                    "size": 0.462,
+                    "nameTag": "none",
+                    "color": { "r": "0.68421096", "g": "0.68421096", "b": "0.68421096", "a": "1" }
+                  },
+                  {
+                    "assetSpec": "comic:smokeCloud.png",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.495, "y": -0.108 },
+                    "size": 0.703,
+                    "drawDepth": 1,
+                    "nameTag": "none",
+                    "color": { "r": "1", "g": "0.85941744", "b": "0.63157678", "a": "0.66885912" }
+                  }
+                ],
+                "textSlots": [
+                  {
+                    "textSourceFile": "dungeon/reward_theme_drauven",
+                    "textKey": "~02~choice_one~panel_001~1_self",
+                    "style": "darken",
+                    "pointerOwner": "self",
+                    "location": "bottomRight",
+                    "padXFraction": 0.03,
+                    "shrinkToFitText": true
+                  }
+                ]
+              }
+            }
+          ],
+          "ifPassesTest": "1-hero.themeSlotFilled_torso",
+          "aspectEffectsTooltip": [ "themePiece_drauven_torso" ],
+          "tooltipRole": "npc"
+        },
+        {
+          "id": "cancel",
+          "script": [
+            {
+              "class": "comicNode_Panel",
+              "panel": {
+                "size": "fourth",
+                "actorSlots": [
+                  {
+                    "assetSpec": "comicBg:comicBG_campfire.jpg",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.588, "y": 0.502 },
+                    "size": 0.462,
+                    "nameTag": "none",
+                    "foot": { "rotate": 0 },
+                    "color": { "r": "0.68421096", "g": "0.68421096", "b": "0.68421096", "a": "1" }
+                  },
+                  {
+                    "assetSpec": "comic:smokeCloud.png",
+                    "role": null,
+                    "focus": "foot",
+                    "anchor": { "x": 0.568, "y": -0.146 },
+                    "size": 0.703,
+                    "drawDepth": 1,
+                    "nameTag": "none",
+                    "color": { "r": "1", "g": "0.85941744", "b": "0.63157678", "a": "0.66885912" }
+                  }
+                ],
+                "textSlots": [
+                  {
+                    "textSourceFile": "dungeon/reward_theme_drauven",
+                    "textKey": "~06~choice_cancel~panel_001~1_self",
+                    "style": "darken",
+                    "pointerOwner": "self",
+                    "location": "bottomLeft",
+                    "padXFraction": 0.331,
+                    "padYFraction": 0.434,
+                    "widthFraction": 0.978,
+                    "shrinkToFitText": true
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "Test",
+      "STUB": "If the hero has any of these theme pieces already, it costs 1LP to get another",
+      "value": "hero.theme_drauven",
+      "threshold": "1",
+      "onPass": { "class": "AddResources", "amount": "-1" }
+    },
+    {
+      "class": "IfPlayerChose",
+      "ifPlayerChose": "one",
+      "then": {
+        "class": "DoAll",
+        "outcomes": [
+          {
+            "class": "AddHistory",
+            "target": "hero",
+            "addHistory": [
+              [ "drauvenBase" ]
+            ]
+          },
+          { "class": "ApplyTheme", "target": "hero", "theme": "drauven", "piece": "torso" }
+        ]
+      }
+    },
+    {
+      "class": "IfPlayerChose",
+      "ifPlayerChose": "cancel",
+      "otherwise": {
+        "class": "Test",
+        "value": "((hero.themeSlotFilled_leftArm+hero.themeSlotFilled_rightArm)+hero.themeSlotFilled_leftLeg)+hero.themeSlotFilled_rightLeg",
+        "threshold": "4*min(1,RESOURCE.legacyPoints)",
+        "onFail": { "class": "Branch", "branchEvent": "reward_theme_drauven" }
+      }
+    }
+  ],
+  "expressions": {
+    "showOption4": "greaterThan(((hero.themeSlotFilled_leftArm+hero.themeSlotFilled_rightArm)+hero.themeSlotFilled_leftLeg),0)"
+  },
+  "implications": {
+    "generatedTargets": [
+      {
+        "createEntity": {
+          "query": { "baseTag": "human", "inRelationTo": "hero", "cloneRelatedEntity": true },
+          "control": "none",
+          "additionalOutcome": {
+            "class": "DoAll",
+            "outcomes": [
+              {
+                "class": "ApplyTheme",
+                "theme": "drauven",
+                "piece": "torso",
+                "replaceInjuredLimbs": false
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+  }
