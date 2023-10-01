@@ -48,7 +48,7 @@
 			"feedbackSource": "source"
 		},
 		"aspects": [ "alive", "ALLY" ],
-		"range": "self.PERCEPTION"
+		"range": "self.PERCEPTION+self.totalValue.interfusionReach"
 	}
 ],
 "outcomes": [

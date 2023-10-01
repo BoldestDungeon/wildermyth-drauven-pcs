@@ -14,7 +14,9 @@
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "mysticRecipeShackle", "drauven_pc_lightningRod" ],
 	"priority": "1",
-	"extraUI": { "overrideRangeShown": "4.6+self.BONUS_RANGE" },
+	"extraUI": {
+		"overrideRangeShown": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"
+	},
 	"usesElementFromEquippedWeapon": true
 },
 "targets": [
@@ -23,13 +25,7 @@
 		"cost": { "class": "ActionPoints", "actionPoints": "attack" },
 		"missionFeedback": { "orientTo": "source" }
 	},
-	{
-		"role": "hook",
-		"template": "ANY",
-		"choose": "ANY",
-		"aspects": null,
-		"range": "100"
-	},
+	{ "role": "hook", "template": "ANY", "choose": "ANY", "range": "100" },
 	{
 		"role": "source",
 		"template": "ANY",
@@ -53,7 +49,7 @@
 		"missionFeedback": { "rangeFeedback": "ATTACK_RANGE" },
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
-		"range": "4.6+self.BONUS_RANGE",
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "LIVE_ENEMIES"
 	},
 	{
@@ -64,7 +60,7 @@
 		"showAnyway": true,
 		"aspects": [ "metal", "scenery" ],
 		"relativeTo": "source",
-		"range": "4.6+self.BONUS_RANGE",
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "LIVE_ENEMIES"
 	},
 	{

@@ -18,7 +18,7 @@
 		"drauven_pc_freezingRain_upgrade"
 	],
 	"priority": "1",
-	"extraUI": { "overrideRangeShown": "5+self.BONUS_RANGE" },
+	"extraUI": { "overrideRangeShown": "(5+self.BONUS_RANGE)+self.totalValue.interfusionReach" },
 	"usesElementFromEquippedWeapon": true
 },
 "targets": [
@@ -53,7 +53,7 @@
 			"feedbackSource": "source"
 		},
 		"relativeTo": "source",
-		"range": "4.6+self.BONUS_RANGE"
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"
 	},
 	{
 		"template": "ADJACENT_UNIT",

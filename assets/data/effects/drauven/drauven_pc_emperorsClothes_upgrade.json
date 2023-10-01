@@ -14,7 +14,9 @@
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "drauven_pc_emperorsClothes" ],
 	"priority": "1",
-	"extraUI": { "overrideRangeShown": "6.6+self.BONUS_RANGE" }
+	"extraUI": {
+		"overrideRangeShown": "(6.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"
+	}
 },
 "targets": [
 	{

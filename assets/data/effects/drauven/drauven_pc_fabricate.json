@@ -13,7 +13,9 @@
 	"icon": "forge",
 	"category": "neutralAbility",
 	"priority": "3",
-	"extraUI": { "overrideRangeShown": "(4.6+self.BONUS_RANGE)+(self.POTENCY/2)" },
+	"extraUI": {
+		"overrideRangeShown": "((4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach)+(self.POTENCY/2)"
+	},
 	"overrideOverlayType": "interfuse"
 },
 "targets": [
@@ -28,7 +30,7 @@
 		"choose": "ANY",
 		"showAnyway": true,
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE" },
-		"range": "(4.6+self.BONUS_RANGE)+(self.POTENCY/2)",
+		"range": "((4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach)+(self.POTENCY/2)",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "flammableDebris"
 	},

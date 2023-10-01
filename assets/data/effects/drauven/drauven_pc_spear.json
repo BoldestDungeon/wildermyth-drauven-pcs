@@ -14,7 +14,9 @@
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "mysticRecipeBarrage" ],
 	"priority": "1",
-	"extraUI": { "overrideRangeShown": "5.6+self.BONUS_RANGE" },
+	"extraUI": {
+		"overrideRangeShown": "(5.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"
+	},
 	"usesElementFromEquippedWeapon": true
 },
 "targets": [
@@ -53,7 +55,7 @@
 		},
 		"relativeTo": "source",
 		"minRange": "0.9",
-		"range": "5.6+self.BONUS_RANGE",
+		"range": "(5.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floorForbidAlly"
 	},

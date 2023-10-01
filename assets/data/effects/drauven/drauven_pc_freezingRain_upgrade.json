@@ -43,7 +43,7 @@
 		"alwaysSelect": true,
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
-		"range": "4.6+self.BONUS_RANGE",
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],

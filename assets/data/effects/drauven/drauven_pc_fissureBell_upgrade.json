@@ -49,7 +49,7 @@
 		},
 		"relativeTo": "source",
 		"minRange": "0.9",
-		"range": "4.6+self.BONUS_RANGE",
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	},

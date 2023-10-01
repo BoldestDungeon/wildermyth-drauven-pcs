@@ -44,7 +44,7 @@
 		"alwaysSelect": true,
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
-		"range": "(4.6+self.BONUS_RANGE)+self.mysticDeck_naturalist",
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "LIVE_FIGURES"
 	},
 	{
@@ -60,7 +60,7 @@
 			"showMovementFeedback": true
 		},
 		"relativeTo": "target",
-		"range": "(3.1+self.BONUS_RANGE)+self.mysticDeck_naturalist",
+		"range": "(3.1+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "validMoveEnd",
 		"roleMustFit": "target",
