@@ -91,6 +91,22 @@
 	},
 	{
 		"class": "Test",
+		"value": "target.dungeonProgression_mystic_sceneryProtector",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "tempHP|20|SceneryProtector", "value": "4*target.dungeonProgression_mystic_sceneryProtector" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
 		"value": "(target.drauvenDeck_mystic_loremaster+max((self.book+self.ruins)))-self.drauven_pc_songInspirationUsed",
 		"threshold": "2",
 		"onPass": {
