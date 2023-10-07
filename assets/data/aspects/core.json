@@ -1,9 +1,2 @@
 [
-  {
-    "modId": "wildermyth-drauven-pcs",
-    "id": "rigOverridePriority|PRIORITY|RIG",
-    "STUB": "Override the rig used for this individual based on priority (see assets\\data\\generation\\rigs.json) Will search for class and body-type specific versions first, appending Warrior/Hunter/Mystic/Farmer and M/F to the id.\n\nFor example, if RIG is \"myRig\" and the hero is a male warrior, in order it'll search for myRigWarriorM > myRigWarrior > myRigM > myRig",
-    "importance": -1,
-    "invalidatesSkin": true
-  }
 ]

@@ -12,8 +12,7 @@
 	"icon": "melee",
 	"priority": "1",
 	"cooldown": "oncePerGame",
-	"encounterWeight": "1+(max(0,(1-company.DrauvenAllies_FirstStepsComplete))*1000)",
-	"encounterEnabled": true
+	"encounterWeight": "1+(max(0,(1-company.DrauvenAllies_FirstStepsComplete))*1000)"
 },
 "targets": [
 	{ "template": "EVENT" },

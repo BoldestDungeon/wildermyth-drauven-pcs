@@ -69,9 +69,7 @@
 		"alsoAddParameter2|rigOverridePriority|10|TurtleWithdrawn",
 		"alsoRemoveParameter2|rigOverridePriority|10|TurtleWithdrawn",
 		"alsoAdd|immuneToKnockback",
-		"alsoRemove|immuneToKnockback",
-		"turtleRigChange_Start_TEMP",
-		"turtleRigChange_End_TEMP"
+		"alsoRemove|immuneToKnockback"
 	],
 	"stats": { "BLOCK": -200, "DODGE": -200 },
 	"boostType": "THEME",
