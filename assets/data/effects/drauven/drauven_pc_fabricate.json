@@ -98,120 +98,390 @@
 			"class": "DoAll",
 			"outcomes": [
 				{
-					"class": "DoOneRandom",
-					"weightedOutcomes": [
-						{
-							"outcome": {
-								"class": "Spawn",
-								"target": "focus",
-								"addRole": "scenery",
-								"modifyTerrain": "setToBlocked",
-								"createEntity": {
-									"query": {
-										"type": "SCENERY",
-										"tags": [ "fabricateMT" ],
-										"coordinates": "focus"
-									},
-									"setLocation": true
-								}
-							}
-						},
-						{
-							"outcome": {
-								"class": "Spawn",
-								"target": "focus",
-								"addRole": "scenery",
-								"modifyTerrain": "setToBlocked",
-								"createEntity": {
-									"query": {
-										"type": "SCENERY",
-										"tags": [ "fabricateMTS" ],
-										"coordinates": "focus"
-									},
-									"setLocation": true
-								}
-							}
-						},
-						{
-							"outcome": {
-								"class": "Spawn",
-								"target": "focus",
-								"addRole": "scenery",
-								"modifyTerrain": "setToBlocked",
-								"createEntity": {
-									"query": {
-										"type": "SCENERY",
-										"tags": [ "fabricateMTB" ],
-										"coordinates": "focus"
-									},
-									"setLocation": true
-								}
-							}
-						},
-						{
-							"outcome": {
-								"class": "Spawn",
-								"target": "focus",
-								"addRole": "scenery",
-								"modifyTerrain": "setToBlocked",
-								"createEntity": {
-									"query": {
-										"type": "SCENERY",
-										"tags": [ "fabricateMTB_ST" ],
-										"coordinates": "focus"
-									},
-									"setLocation": true
-								}
-							}
-						},
-						{
-							"outcome": {
-								"class": "Spawn",
-								"target": "focus",
-								"addRole": "scenery",
-								"modifyTerrain": "setToBlocked",
-								"createEntity": {
-									"query": {
-										"type": "SCENERY",
-										"tags": [ "fabricateMTT" ],
-										"coordinates": "focus"
-									},
-									"setLocation": true
-								}
-							}
-						},
-						{
-							"outcome": {
-								"class": "Spawn",
-								"target": "focus",
-								"addRole": "scenery",
-								"modifyTerrain": "setToBlocked",
-								"createEntity": {
-									"query": {
-										"type": "SCENERY",
-										"tags": [ "fabricateWMT" ],
-										"coordinates": "focus"
-									},
-									"setLocation": true
-								}
-							}
-						}
-					]
-				},
-				{
 					"class": "Test",
-					"value": "drauvenDeck_mystic_battlecrafting_upgrade",
-					"threshold": "1",
+					"value": "floor((COUNT.source/(3-self.drauvenDeck_mystic_battlecrafting_upgrade)))",
+					"threshold": "2",
 					"onPass": {
-						"class": "ModifyStats",
-						"target": "scenery",
-						"value": "(2+floor((COUNT.source/2)))-HEALTH"
+						"class": "DoOneRandom",
+						"weightedOutcomes": [
+							{
+								"outcome": {
+									"class": "Spawn",
+									"target": "focus",
+									"addRole": "scenery",
+									"modifyTerrain": "setToBlocked",
+									"createEntity": {
+										"query": {
+											"type": "SCENERY",
+											"tags": [ "fabricateBirdcage3" ],
+											"coordinates": "focus"
+										},
+										"setLocation": true
+									}
+								}
+							},
+							{
+								"outcome": {
+									"class": "Spawn",
+									"target": "focus",
+									"addRole": "scenery",
+									"modifyTerrain": "setToBlocked",
+									"createEntity": {
+										"query": {
+											"type": "SCENERY",
+											"tags": [ "fabricateSpearSkull3" ],
+											"coordinates": "focus"
+										},
+										"setLocation": true
+									}
+								}
+							},
+							{
+								"outcome": {
+									"class": "Spawn",
+									"target": "focus",
+									"addRole": "scenery",
+									"modifyTerrain": "setToBlocked",
+									"createEntity": {
+										"query": {
+											"type": "SCENERY",
+											"tags": [ "fabricateBasketSpears3" ],
+											"coordinates": "focus"
+										},
+										"setLocation": true
+									}
+								}
+							},
+							{
+								"outcome": {
+									"class": "Spawn",
+									"target": "focus",
+									"addRole": "scenery",
+									"modifyTerrain": "setToBlocked",
+									"createEntity": {
+										"query": {
+											"type": "SCENERY",
+											"tags": [ "fabricatePotLifted3" ],
+											"coordinates": "focus"
+										},
+										"setLocation": true
+									}
+								}
+							},
+							{
+								"outcome": {
+									"class": "Spawn",
+									"target": "focus",
+									"addRole": "scenery",
+									"modifyTerrain": "setToBlocked",
+									"createEntity": {
+										"query": {
+											"type": "SCENERY",
+											"tags": [ "fabricateShrineSmall1_3" ],
+											"coordinates": "focus"
+										},
+										"setLocation": true
+									}
+								}
+							},
+							{
+								"outcome": {
+									"class": "Spawn",
+									"target": "focus",
+									"addRole": "scenery",
+									"modifyTerrain": "setToBlocked",
+									"createEntity": {
+										"query": {
+											"type": "SCENERY",
+											"tags": [ "fabricateBirdStatue3" ],
+											"coordinates": "focus"
+										},
+										"setLocation": true
+									}
+								}
+							},
+							{
+								"weight": 2,
+								"outcome": {
+									"class": "Spawn",
+									"target": "focus",
+									"addRole": "scenery",
+									"modifyTerrain": "setToBlocked",
+									"createEntity": {
+										"query": {
+											"type": "SCENERY",
+											"tags": [ "fabricateTapestry3" ],
+											"coordinates": "focus"
+										},
+										"setLocation": true
+									}
+								}
+							},
+							{
+								"weight": 2,
+								"outcome": {
+									"class": "Spawn",
+									"target": "focus",
+									"addRole": "scenery",
+									"modifyTerrain": "setToBlocked",
+									"createEntity": {
+										"query": {
+											"type": "SCENERY",
+											"tags": [ "fabricateBaskets1_3" ],
+											"coordinates": "focus"
+										},
+										"setLocation": true
+									}
+								}
+							},
+							{
+								"outcome": {
+									"class": "Spawn",
+									"target": "focus",
+									"addRole": "scenery",
+									"modifyTerrain": "setToBlocked",
+									"createEntity": {
+										"query": {
+											"type": "SCENERY",
+											"tags": [ "fabricateShieldDebris3" ],
+											"coordinates": "focus"
+										},
+										"setLocation": true
+									}
+								}
+							}
+						]
 					},
 					"onFail": {
-						"class": "ModifyStats",
-						"target": "scenery",
-						"value": "(2+floor((COUNT.source/3)))-HEALTH"
+						"class": "Test",
+						"value": "floor((COUNT.source/(3-self.drauvenDeck_mystic_battlecrafting_upgrade)))",
+						"threshold": "1",
+						"onPass": {
+							"class": "DoOneRandom",
+							"weightedOutcomes": [
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateBirdcage2" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateSpearSkull2" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateBasketSpears2" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricatePotLifted2" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateShrineSmall1_2" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateBirdStatue2" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"weight": 3,
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateTapestry2" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateBaskets1_2" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateShieldDebris2" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								}
+							]
+						},
+						"onFail": {
+							"class": "DoOneRandom",
+							"weightedOutcomes": [
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateBirdcage1" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateBirdhouses1" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"weight": 0,
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateSpearSkull1" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								},
+								{
+									"outcome": {
+										"class": "Spawn",
+										"target": "focus",
+										"addRole": "scenery",
+										"modifyTerrain": "setToBlocked",
+										"createEntity": {
+											"query": {
+												"type": "SCENERY",
+												"tags": [ "fabricateTapestry1" ],
+												"coordinates": "focus"
+											},
+											"setLocation": true
+										}
+									}
+								}
+							]
+						}
 					}
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"value": "(2+floor((COUNT.source/(3-self.drauvenDeck_mystic_battlecrafting_upgrade))))-HEALTH"
 				},
 				{
 					"class": "Animate",
