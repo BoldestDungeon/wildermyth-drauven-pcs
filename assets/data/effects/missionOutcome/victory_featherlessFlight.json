@@ -12,8 +12,7 @@
 "ability": {
 	"icon": "utility",
 	"category": "attack",
-	"priority": "1",
-	"encounterEnabled": true
+	"priority": "1"
 },
 "targets": [
 	{ "template": "EVENT" },
