@@ -12,7 +12,7 @@
 	"icon": "melee",
 	"priority": "1",
 	"cooldown": "oncePerGame",
-	"encounterWeight": "1+(max(0,(1-company.DrauvenAllies_FirstStepsComplete))*1000)",
+	"encounterWeight": "1+(max(0,(1-company.DrauvenAllies_FirstStepsComplete))*15)",
 	"encounterEnabled": true,
 	"musicOverride": "Music/Comics - Tragic-Sympathetic NPC"
 },
@@ -101,6 +101,15 @@
 		"scoreFunction": "LOVER_WITH.hero",
 		"scoreThreshold": "1",
 		"fromRoles": [ "hook" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"STUB": "This role prevents the event from occurring if anyone in the company speaks Druvwail. We will eventually want to remove it once we can account for that possibility in the comic.",
+		"type": "HERO",
+		"choose": "FORBID",
+		"scoreFunction": null,
+		"fromRoles": [ "company" ],
+		"aspects": [ "fluentInDruvwail" ]
 	},
 	{
 		"template": "CHOICE",
@@ -28387,12 +28396,13 @@
 											"nameTag": "none"
 										},
 										{
-											"assetSpec": "comic:drauvenBaked_skysinger2.png",
-											"role": null,
-											"focus": "foot",
-											"anchor": { "x": 0.856, "y": 0.346 },
+											"role": "npc2",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.885, "y": 0.432 },
 											"size": 0.1901,
 											"nameTag": "none",
+											"head": { "rotate": 0 },
+											"foot": { "rotate": 1.243 },
 											"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
 										}
 									],
@@ -29366,10 +29376,9 @@
 											"color": { "r": "0.66611892", "g": "0.78125054", "b": "0.697932", "a": "0.51096547" }
 										},
 										{
-											"assetSpec": "comic:drauvenBaked_skysinger2.png",
-											"role": null,
-											"focus": "foot",
-											"anchor": { "x": 0.3, "y": 0.177 },
+											"role": "npc2",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.321, "y": 0.247 },
 											"size": 0.1212,
 											"drawDepth": 2.765625,
 											"nameTag": "none",
@@ -30701,14 +30710,12 @@
 											"nameTag": "none"
 										},
 										{
-											"assetSpec": "comic:drauvenBaked_skysinger2.png",
-											"role": null,
+											"role": "npc2",
 											"facing": "left",
-											"focus": "foot",
-											"anchor": { "x": 0.34490216, "y": 0.301 },
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.299, "y": 0.439 },
 											"size": 0.2885,
 											"drawDepth": 1.8671875,
-											"nameTag": "none",
 											"foot": { "rotate": 14.388 },
 											"color": { "r": "0.50953275", "g": "0.32544157", "b": "0.20538062", "a": "1" }
 										},
@@ -31244,10 +31251,9 @@
 											"color": { "r": "0.66611892", "g": "0.78125054", "b": "0.697932", "a": "0.51096547" }
 										},
 										{
-											"assetSpec": "comic:drauvenBaked_skysinger2.png",
-											"role": null,
-											"focus": "foot",
-											"anchor": { "x": 0.357, "y": 0.313 },
+											"role": "npc2",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.375, "y": 0.441 },
 											"size": 0.2716,
 											"drawDepth": 1.8671875,
 											"nameTag": "none",
@@ -31738,11 +31744,10 @@
 											"color": { "r": "0.66611892", "g": "0.78125054", "b": "0.697932", "a": "0.51096547" }
 										},
 										{
-											"assetSpec": "comic:drauvenBaked_skysinger2.png",
-											"role": null,
+											"role": "npc2",
 											"facing": "left",
-											"focus": "foot",
-											"anchor": { "x": 0.155, "y": 0.207 },
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.132, "y": 0.296 },
 											"size": 0.1878,
 											"drawDepth": 1.96875,
 											"nameTag": "none",
@@ -54509,12 +54514,13 @@
 											"nameTag": "none"
 										},
 										{
-											"assetSpec": "comic:drauvenBaked_skysinger2.png",
-											"role": null,
-											"focus": "foot",
-											"anchor": { "x": 0.856, "y": 0.346 },
+											"role": "npc2",
+											"equipment": { "mode": "leaveEquipment" },
+											"anchor": { "x": 0.885, "y": 0.432 },
 											"size": 0.1901,
 											"nameTag": "none",
+											"head": { "rotate": 0 },
+											"foot": { "rotate": 1.243 },
 											"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
 										}
 									],
@@ -55492,10 +55498,9 @@
 														"color": { "r": "0.66611892", "g": "0.78125054", "b": "0.697932", "a": "0.51096547" }
 													},
 													{
-														"assetSpec": "comic:drauvenBaked_skysinger2.png",
-														"role": null,
-														"focus": "foot",
-														"anchor": { "x": 0.3, "y": 0.177 },
+														"role": "npc2",
+														"equipment": { "mode": "leaveEquipment" },
+														"anchor": { "x": 0.321, "y": 0.247 },
 														"size": 0.1212,
 														"drawDepth": 2.765625,
 														"nameTag": "none",
@@ -57988,11 +57993,10 @@
 														"nameTag": "none"
 													},
 													{
-														"assetSpec": "comic:drauvenBaked_skysinger2.png",
-														"role": null,
+														"role": "npc2",
 														"facing": "left",
-														"focus": "foot",
-														"anchor": { "x": 0.23, "y": 0.303 },
+														"equipment": { "mode": "leaveEquipment" },
+														"anchor": { "x": 0.184, "y": 0.442 },
 														"size": 0.2885,
 														"drawDepth": 1.8671875,
 														"nameTag": "none",
@@ -58536,10 +58540,9 @@
 														"nameTag": "none"
 													},
 													{
-														"assetSpec": "comic:drauvenBaked_skysinger2.png",
-														"role": null,
-														"focus": "foot",
-														"anchor": { "x": 0.325, "y": 0.352 },
+														"role": "npc2",
+														"equipment": { "mode": "leaveEquipment" },
+														"anchor": { "x": 0.429, "y": 0.531 },
 														"size": 0.3853,
 														"drawDepth": 1.8671875,
 														"nameTag": "none",
@@ -59640,10 +59643,9 @@
 														"nameTag": "none"
 													},
 													{
-														"assetSpec": "comic:drauvenBaked_skysinger2.png",
-														"role": null,
-														"focus": "foot",
-														"anchor": { "x": 0.206, "y": 0.3 },
+														"role": "npc2",
+														"equipment": { "mode": "leaveEquipment" },
+														"anchor": { "x": 0.23, "y": 0.441 },
 														"size": 0.3153,
 														"drawDepth": 1.8671875,
 														"nameTag": "none",
@@ -60123,11 +60125,10 @@
 														"color": { "r": "0.66611892", "g": "0.78125054", "b": "0.697932", "a": "0.51096547" }
 													},
 													{
-														"assetSpec": "comic:drauvenBaked_skysinger2.png",
-														"role": null,
+														"role": "npc2",
 														"facing": "left",
-														"focus": "foot",
-														"anchor": { "x": 0.155, "y": 0.207 },
+														"equipment": { "mode": "leaveEquipment" },
+														"anchor": { "x": 0.132, "y": 0.296 },
 														"size": 0.1878,
 														"drawDepth": 1.96875,
 														"nameTag": "none",
@@ -79347,7 +79348,7 @@
 			"role": "subject",
 			"npcId": "wounded_drauven",
 			"createEntity": {
-				"query": { "baseTag": "human", "setClass": "nonFarmer", "exactAge": 8 },
+				"query": { "baseTag": "human", "setClass": "nonFarmer", "exactAge": 7 },
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" },
 					{ "id": "nameFormulaOverride|drauvenName", "value": "1" }
@@ -79362,6 +79363,34 @@
 								[ "abandonedDrauven" ]
 							]
 						}
+					]
+				},
+				"placeOnMap": false
+			}
+		},
+		{
+			"role": "npc2",
+			"npcId": "deeven_searcher",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "mystic", "setAge": "lateMiddleAge" },
+				"addAspects": [
+					{ "id": "drauven_pc_init", "value": "1" },
+					{ "id": "nameFormulaOverride|drauvenName", "value": "1" }
+				],
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "CustomizeHero",
+							"extras": [
+								{
+									"slot": "zzz_drauven01_Head",
+									"part": [ "drauvenHead_deeven" ]
+								}
+							]
+						},
+						{ "class": "AddGear", "itemById": "staff_t1_deeven" }
 					]
 				},
 				"placeOnMap": false
