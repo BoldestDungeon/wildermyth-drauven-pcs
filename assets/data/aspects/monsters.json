@@ -118,6 +118,20 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_specterstepActive",
+	"effects": [
+		"drauven_specterstepActive",
+		"drauven_specterstepActivePoison",
+		"drauven_specterstepActiveAttack",
+		"onRemoveAddAnotherParameter|cooldown|drauven_specterstep:2",
+		"alsoAddParameter|immuneToFlanking|specterstep",
+		"alsoRemoveParameter|immuneToFlanking|specterstep"
+	],
+	"boostType": "ADVANTAGE",
+	"script": "figures.specterstep"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_tailwind_speedBuff|ENTITY",
 	"parameters": [
 		{ "replace": "ENTITY", "isEntity": true }

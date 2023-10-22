@@ -32,7 +32,7 @@
 	{
 		"class": "Aspects",
 		"addAspects": [
-			{ "id": "drauven_specterstepActive", "value": "1" },
+			{ "id": "drauven_pc_specterstepActive", "value": "1" },
 			{ "id": "drauven_pc_specterstepOnCooldown", "value": "1" },
 			{
 				"id": "decayAtStartOfTurn|drauven_pc_specterstepOnCooldown",
