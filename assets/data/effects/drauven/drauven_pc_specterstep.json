@@ -1,37 +1,41 @@
 {
-    "id": "drauven_pc_specterstep",
-    "info": {
-        "dataVersion": 1,
-        "sourceFile": "drauven/drauven_pc_specterstep",
-        "author": "Bipen",
-        "tags": [ "sneaky" ]
-    },
-    "type": "TURN_END",
-    "verb": "MANEUVER",
-    "ability": {
-        "icon": "silkstepCloak",
-        "priority": "1",
-    },
-    "targets": [
-		{
-            "template": "SELF",
-            "aspectValues": [
-                { "id": "drauven_specterstepActive", "forbidden": true },
-                { "id": "wasRevealedThisTurn", "forbidden": true }
-            ],
-        }
-    ],
-    "outcomes": [
-        {
-            "class": "Aspects",
-            "addAspects": [
-                { "id": "drauven_specterstepActive", "value": "1" },
-				{
-                "id": "cooldown|drauven_pc_specterstep",
-                "value": "2-self.drauvenDeck_hunter_specterstep_upgrade"
-            }
-            ]
-        },
-        { "class": "Animate", "target": "self", "script": "figures.enterGrayplane" },
-    ]
+"id": "drauven_pc_specterstep",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_specterstep",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Bipen",
+	"tags": [ "sneaky" ]
+},
+"type": "TURN_END",
+"verb": "MANEUVER",
+"ability": { "icon": "silkstepCloak", "priority": "1" },
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "drauven_specterstepActive", "forbidden": true },
+			{ "id": "wasRevealedThisTurn", "forbidden": true }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauven_specterstepActive", "value": "1" },
+			{ "id": "drauven_pc_specterstepOnCooldown", "value": "1" },
+			{
+				"id": "decayAtStartOfTurn|drauven_pc_specterstepOnCooldown",
+				"value": "2-self.drauvenDeck_hunter_specterstep_upgrade",
+				"merge": "max"
+			},
+			{
+				"id": "cooldown|drauven_pc_specterstep",
+				"value": "2-self.drauvenDeck_hunter_specterstep_upgrade"
+			}
+		]
+	},
+	{ "class": "Animate", "target": "self", "script": "figures.enterGrayplane" }
+]
 }
