@@ -870,12 +870,12 @@
 							"nameTag": "none"
 						},
 						{
-							"assetSpec": "figure:drauven/drauven_haunt.png",
+							"assetSpec": "figure:thrixl/thrixl_mantis.png",
 							"role": null,
 							"facing": "left",
-							"focus": "middle",
-							"anchor": { "x": 0.795, "y": 1.01 },
-							"size": 0.514,
+							"focus": "foot",
+							"anchor": { "x": 0.783, "y": 0.409 },
+							"size": 0.4347,
 							"nameTag": "none"
 						}
 					],
@@ -1488,6 +1488,22 @@
 					"setAge": "young",
 					"setEquipment": "chapterMinusOne",
 					"primaryStoryStat": "GOOFBALL"
+				},
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{
+							"class": "Test",
+							"value": "1d10",
+							"threshold": "(((11-company.DrauvenAllies_FirstStepsComplete)-(5*company.DrauvenAllies_Built5Stations))-leader.drauven)-loner.drauven",
+							"onPass": {
+								"class": "BranchAbility",
+								"target": "npc",
+								"targetRole": "npc",
+								"branchAbility": "makeHeroDrauven|1"
+							}
+						}
+					]
 				}
 			}
 		},
