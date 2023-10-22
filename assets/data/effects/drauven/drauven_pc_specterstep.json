@@ -7,8 +7,7 @@
 	"author": "Bipen",
 	"tags": [ "sneaky" ]
 },
-"type": "TURN_END",
-"verb": "MANEUVER",
+"type": "ABILITY_USED",
 "ability": { "icon": "silkstepCloak", "priority": "1" },
 "targets": [
 	{
@@ -17,6 +16,16 @@
 			{ "id": "drauven_specterstepActive", "forbidden": true },
 			{ "id": "wasRevealedThisTurn", "forbidden": true }
 		]
+	},
+	{
+		"role": "target",
+		"template": "SELF",
+		"STUB": "If the hero has no actions left",
+		"showAnyway": true,
+		"fromRoles": [ "self" ],
+		"test": "LESS_THAN_OR_EQUAL_TO",
+		"a": "ACTIONS",
+		"b": "0"
 	}
 ],
 "outcomes": [
