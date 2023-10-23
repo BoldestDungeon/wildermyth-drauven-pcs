@@ -13,7 +13,8 @@
 	{
 		"template": "SELF",
 		"aspectValues": [
-			{ "id": "drauven_specterstepActive", "forbidden": true },
+			{ "id": "drauven_pc_specterstepActive", "forbidden": true },
+			{ "id": "drauven_pc_specterstepOnCooldown", "forbidden": true },
 			{ "id": "wasRevealedThisTurn", "forbidden": true }
 		]
 	},
@@ -32,17 +33,7 @@
 	{
 		"class": "Aspects",
 		"addAspects": [
-			{ "id": "drauven_pc_specterstepActive", "value": "1" },
-			{ "id": "drauven_pc_specterstepOnCooldown", "value": "1" },
-			{
-				"id": "decayAtStartOfTurn|drauven_pc_specterstepOnCooldown",
-				"value": "2-self.drauvenDeck_hunter_specterstep_upgrade",
-				"merge": "max"
-			},
-			{
-				"id": "cooldown|drauven_pc_specterstep",
-				"value": "2-self.drauvenDeck_hunter_specterstep_upgrade"
-			}
+			{ "id": "drauven_pc_specterstepActive", "value": "1" }
 		]
 	},
 	{ "class": "Animate", "target": "self", "script": "figures.enterGrayplane" }
