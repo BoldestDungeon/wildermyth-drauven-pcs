@@ -123,8 +123,7 @@
 		"drauven_specterstepActive",
 		"drauven_specterstepActivePoison",
 		"drauven_specterstepActiveAttack",
-		"onRemoveAddAnotherParameter|cooldown|drauven_pc_specterstep:2-self.drauvenDeck_hunter_specterstep_upgrade",
-		"onRemoveAddAnother|drauven_pc_specterstepOnCooldown:2-self.drauvenDeck_hunter_specterstep_upgrade",
+		"onRemoveAddAnotherValue|drauven_pc_specterstepOnCooldown|2-2*self.drauvenDeck_hunter_specterstep_upgrade",
 		"alsoAddParameter|immuneToFlanking|specterstep",
 		"alsoRemoveParameter|immuneToFlanking|specterstep"
 	],

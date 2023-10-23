@@ -14,9 +14,11 @@
 		"template": "SELF",
 		"aspectValues": [
 			{ "id": "drauven_pc_specterstepActive", "forbidden": true },
-			{ "id": "drauven_pc_specterstepOnCooldown", "forbidden": true },
-			{ "id": "wasRevealedThisTurn", "forbidden": true }
-		]
+			{ "id": "drauven_pc_specterstepOnCooldown", "forbidden": true }
+		],
+		"test": "LESS_THAN_OR_EQUAL_TO",
+		"a": "wasRevealedThisTurn",
+		"b": "drauvenDeck_hunter_specterstep_upgrade"
 	},
 	{
 		"role": "target",
