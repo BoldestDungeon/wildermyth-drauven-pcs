@@ -1,0 +1,55 @@
+{
+"id": "makeHeroDrauven|KNOWS_YANDRIC",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "initialization/makeHeroDrauven",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "justEthaniguess & Ironskink",
+	"STUB": "Initialize our Drauven characters"
+},
+"type": "BRANCH",
+"targets": [
+	{
+		"template": "ANY_SELF",
+		"type": "UNIT",
+		"aspects": [ "alive", "SELF" ]
+	},
+	{ "template": "INJECTED_HERO", "type": "UNIT", "injectedRole": "target" }
+],
+"outcomes": [
+	{
+		"class": "AddHistory",
+		"target": "hero",
+		"addHistory": [
+			[ "drauvenBase" ],
+			[ "drauvenNPCName" ]
+		]
+	},
+	{ "class": "ApplyTheme", "target": "hero", "theme": "drauven", "piece": "torso" },
+	{
+		"class": "CustomizeHero",
+		"target": "hero",
+		"randomizeSlots": [
+			"zzz_drauven01_Head",
+			"zzz_drauven02_Feathers",
+			"zzz_drauven03_Horns",
+			"zzz_drauven04_Whiskers",
+			"zzz_drauven05_Helmet",
+			"zzz_drauven06_Armour"
+		],
+		"randomizeColors": [ "skin" ]
+	},
+	{
+		"class": "Test",
+		"value": "KNOWS_YANDRIC",
+		"threshold": "1",
+		"onPass": {
+			"class": "AddHistory",
+			"target": "hero",
+			"addHistory": [
+				[ "fluentInYandric" ]
+			]
+		}
+	}
+]
+}
