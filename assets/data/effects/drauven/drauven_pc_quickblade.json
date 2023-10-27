@@ -3,19 +3,18 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_quickblade",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Bipen",
-	"tags": ["sneaky" ]
+	"tags": [ "sneaky" ]
 },
 "type": "ATTACK_ROLL",
 "verb": "MANEUVER",
 "ability": { "icon": "zealousLeap", "priority": "1", "showInCharacterSheet": false },
 "targets": [
-	{
-		"template": "SELF",
-	},
+	{ "template": "SELF" },
 	{
 		"template": "ABILITY",
-		"abilityHasAnyTags": [ "melee", "themeUsageOverride" ]
+		"abilityHasAnyTags": [ "melee", "themeUsageOverride" ],
 		"abilityDoesNotHaveTag": "okToMarkDone"
 	}
 ],
@@ -23,7 +22,7 @@
 	{
 		"class": "Aspects",
 		"addAspects": [
-			{ "id": "drauvenDeck_hunter_quickblade_move", "value": "1", "merge": "max" }
+			{ "id": "drauven_pc_quickblade_move", "value": "1", "merge": "max" }
 		]
 	}
 ]

@@ -3,8 +3,9 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_quickblade_move",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Bipen",
-	"tags": ["sneaky" ]
+	"tags": [ "sneaky" ]
 },
 "type": "ABILITY",
 "verb": "MANEUVER",
@@ -44,7 +45,7 @@
 	{ "class": "MoveEntity", "alongPath": "pathMotion" },
 	{
 		"class": "Aspects",
-		"removeAspects": [ "drauvenDeck_hunter_quickblade_move" ]
+		"removeAspects": [ "drauven_pc_quickblade_move" ]
 	}
 ]
 }
