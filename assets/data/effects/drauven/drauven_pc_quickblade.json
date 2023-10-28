@@ -11,7 +11,12 @@
 "verb": "MANEUVER",
 "ability": { "icon": "zealousLeap", "priority": "1", "showInCharacterSheet": false },
 "targets": [
-	{ "template": "SELF" },
+	{
+		"template": "SELF",
+		"choose": "BY_SCORE",
+		"scoreFunction": "0",
+		"scoreThreshold": "drauven_pc_quickbladeDashUses"
+	},
 	{
 		"template": "ABILITY",
 		"abilityHasAnyTags": [ "melee", "themeUsageOverride" ]
@@ -21,7 +26,8 @@
 	{
 		"class": "Aspects",
 		"addAspects": [
-			{ "id": "drauven_pc_quickblade_move", "value": "1", "merge": "max" }
+			{ "id": "drauven_pc_quickblade_move", "value": "1", "merge": "max" },
+			{ "id": "drauven_pc_quickbladeDashUses", "value": "1" }
 		]
 	}
 ]

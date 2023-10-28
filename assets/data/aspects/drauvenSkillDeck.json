@@ -112,7 +112,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_hunter_quickblade_upgrade",
-	"effects": [ "drauven_pc_quickblade_upgrade" ],
+	"effects": [ "drauven_pc_quickbladeHitRefundsAnAction" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {

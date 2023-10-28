@@ -25,12 +25,5 @@
 	"legacyAbilityChoice": true,
 	"lifespan": "all",
 	"info": { "abilityDeckIcon": "fly" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_quickblade_move",
-	"effects": [ "drauven_pc_quickblade_move", "removeAtEndOfTurn" ],
-	"boostType": "ADVANTAGE",
-	"removedImportance": 0.5
 }
 ]
