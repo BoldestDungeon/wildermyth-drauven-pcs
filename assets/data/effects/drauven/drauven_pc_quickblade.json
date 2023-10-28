@@ -14,8 +14,7 @@
 	{ "template": "SELF" },
 	{
 		"template": "ABILITY",
-		"abilityHasAnyTags": [ "melee", "themeUsageOverride" ],
-		"abilityDoesNotHaveTag": "okToMarkDone"
+		"abilityHasAnyTags": [ "melee", "themeUsageOverride" ]
 	}
 ],
 "outcomes": [

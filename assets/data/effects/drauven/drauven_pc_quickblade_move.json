@@ -33,10 +33,10 @@
 		"showAnyway": true,
 		"alwaysSelect": true,
 		"missionFeedback": {
-			"rangeFeedback": "WALKABLE",
-			"rangeFeedback2": "WALKABLE_NO_ATTACK",
+			"rangeFeedback": "FRIENDLY_EFFECT_SUGGESTION_SHINE",
 			"suggestionFeedback": "PATH_SEGMENT",
-			"hoverFeedback": "PATH_TARGET"
+			"hoverFeedback": "PATH_TARGET",
+			"showMovementFeedback": true
 		},
 		"range": "SPEED"
 	}
