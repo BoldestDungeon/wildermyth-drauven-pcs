@@ -39,6 +39,11 @@
 			"showMovementFeedback": true
 		},
 		"range": "SPEED"
+	},
+	{
+		"template": "SELF",
+		"missionFeedback": { "hoverFeedback": "WALLING" },
+		"relativeToLocation": "pathMotion"
 	}
 ],
 "outcomes": [
