@@ -97,8 +97,8 @@
 		"role": "target",
 		"template": "TILE",
 		"showAnyway": true,
-		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER" },
 		"fromRoles": [ "volunteer", "volunteer2" ],
+		"notAlreadyMatchedAs": [ "focus" ],
 		"range": null
 	},
 	{
@@ -139,14 +139,6 @@
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE", "hoverFeedback": "AMBUSH_HOVER" },
 		"fromRoles": [ "site2", "site3" ],
 		"range": null
-	},
-	{
-		"role": "source",
-		"template": "TILE",
-		"choose": "ALL",
-		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE", "hoverFeedback": "AMBUSH_HOVER" },
-		"fromRoles": [ "targetTile", "otherSite" ],
-		"range": null
 	}
 ],
 "outcomes": [
@@ -178,11 +170,6 @@
 				}
 			]
 		}
-	},
-	{
-		"class": "Test",
-		"value": "self.drauvenDeck_hunter_preparedShot_upgrade",
-		"threshold": "1"
 	},
 	{ "class": "Animate", "script": "figures.endTurn" },
 	{ "class": "ActionPoints", "actionPoints": "all" },
