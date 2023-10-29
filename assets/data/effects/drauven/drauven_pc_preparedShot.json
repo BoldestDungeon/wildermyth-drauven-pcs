@@ -8,11 +8,13 @@
 	"tags": [ "sneaky" ]
 },
 "type": "ABILITY",
-"verb": "END_TURN",
+"verb": "MANEUVER",
 "ability": {
 	"icon": "ambush",
+	"category": "crafting",
 	"strictlyBetterThan": [ "waitEndTurn", "preparedShot" ],
-	"priority": "1"
+	"priority": "1",
+	"overrideOverlayType": "endTurn"
 },
 "targets": [
 	{
@@ -24,39 +26,72 @@
 		"aspects": [ "weapon", "ranged", "MAIN_HAND" ]
 	},
 	{
+		"role": "volunteer",
 		"template": "TILE",
-		"alwaysSelect": true,
-		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_RANGE" },
-		"aiHints": {
-			"scoreNearbyFoe": "100",
-			"foeRange": "2",
-			"foeMaxRange": "10",
-			"scoreNearbyFriend": "10",
-			"friendRange": "2"
-		},
-		"minRange": "0.9",
-		"range": "(5.6-1)+self.BONUS_RANGE",
+		"STUB": "The weird minRange here is specifically to allow melee theme attacks, which will often need a minRange of 0",
+		"choose": "ANY",
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "(self.MAX_RANGED_ATTACK_RANGE-1)+self.BONUS_RANGE",
 		"lineOfSight": "LIVE_ENEMIES",
 		"tileFilter": "floor"
+	},
+	{
+		"role": "volunteer2",
+		"template": "TILE",
+		"STUB": "Special case for throughshot, to allow putting the aim behind enemies. Kinda ugly, and doesn't work with theme AOE attacks.",
+		"choose": "ANY",
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "(self.MAX_RANGED_ATTACK_RANGE-1)+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "self.hunterDeck_throughShot",
+		"b": "1"
+	},
+	{
+		"template": "TILE",
+		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER" },
+		"fromRoles": [ "volunteer", "volunteer2" ],
+		"range": null
 	},
 	{
 		"role": "sourceTile",
 		"template": "TILE",
 		"choose": "ALL",
 		"relativeTo": "focus",
-		"range": "(1.3+(self.drauvenDeck_hunter_preparedShot_upgrade*0.4))+(self.hunterGreenhorn_ambush*0.4)",
+		"range": "1.3+(0.3*self.hunterGreenhorn_ambush)",
+		"lineOfSight": null,
+		"tileFilter": "floorForbidAlly"
+	},
+	{
+		"role": "hook",
+		"template": "TILE",
+		"choose": "ANY",
+		"fromRoles": [ "sourceTile" ],
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "self.MAX_RANGED_ATTACK_RANGE+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	},
+	{
+		"role": "hook2",
+		"template": "TILE",
+		"STUB": "Special case for throughshot, to allow putting the aim behind enemies. Kinda ugly, and doesn't work with theme AOE attacks.",
+		"choose": "ANY",
+		"fromRoles": [ "sourceTile" ],
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "self.MAX_RANGED_ATTACK_RANGE+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY",
-		"tileFilter": "floor"
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "self.hunterDeck_throughShot",
+		"b": "1"
 	},
 	{
 		"role": "targetTile",
 		"template": "TILE",
 		"choose": "ALL",
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE", "hoverFeedback": "AMBUSH_HOVER" },
-		"fromRoles": [ "sourceTile" ],
-		"minRange": "0.9",
-		"range": "5.6+self.BONUS_RANGE",
-		"lineOfSight": "LIVE_ENEMIES"
+		"fromRoles": [ "hook", "hook2" ],
+		"range": null
 	}
 ],
 "outcomes": [
