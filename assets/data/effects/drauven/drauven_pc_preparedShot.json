@@ -162,22 +162,27 @@
 			]
 		},
 		"onFail": {
-			"class": "Aspects",
-			"addAspects": [
-				{ "id": "drauven_pc_hasPreparedShot", "value": "1", "atTiles": "targetTile" }
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "drauven_pc_hasPreparedShot|1", "value": "1", "atTiles": "targetTile" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "drauven_pc_hasPreparedShot|2", "value": "1", "atTiles": "otherSite" }
+					]
+				}
 			]
 		}
 	},
 	{
 		"class": "Test",
 		"value": "self.drauvenDeck_hunter_preparedShot_upgrade",
-		"threshold": "1",
-		"onPass": {
-			"class": "Aspects",
-			"addAspects": [
-				{ "id": "drauven_pc_hasPreparedShot", "value": "1", "atTiles": "otherSite" }
-			]
-		}
+		"threshold": "1"
 	},
 	{ "class": "Animate", "script": "figures.endTurn" },
 	{ "class": "ActionPoints", "actionPoints": "all" },

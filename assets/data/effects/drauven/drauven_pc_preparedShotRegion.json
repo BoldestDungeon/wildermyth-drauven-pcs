@@ -1,5 +1,5 @@
 {
-"id": "drauven_pc_preparedShotRegion|COORDS",
+"id": "drauven_pc_preparedShotRegion|INDEX|COORDS",
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_preparedShotRegion",
@@ -13,7 +13,7 @@
 		"class": "MapRegion",
 		"target": "self",
 		"region": {
-			"id": "drauven_pc_preparedShotRegion",
+			"id": "drauven_pc_preparedShotRegion|INDEX",
 			"entryCostDangerousPath": 2,
 			"feedbackType": "AMBUSH_TILE",
 			"floorsOnly": true,
