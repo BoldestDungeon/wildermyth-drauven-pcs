@@ -13,7 +13,7 @@
 	"icon": "ambush",
 	"category": "crafting",
 	"strictlyBetterThan": [ "waitEndTurn", "preparedShot" ],
-	"priority": "1",
+	"priority": "-100",
 	"overrideOverlayType": "endTurn"
 },
 "targets": [
@@ -92,17 +92,64 @@
 		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE", "hoverFeedback": "AMBUSH_HOVER" },
 		"fromRoles": [ "hook", "hook2" ],
 		"range": null
+	},
+	{
+		"role": "target",
+		"template": "TILE",
+		"showAnyway": true,
+		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER" },
+		"fromRoles": [ "volunteer", "volunteer2" ],
+		"range": null
+	},
+	{
+		"role": "site",
+		"template": "TILE",
+		"choose": "ALL",
+		"relativeTo": "target",
+		"range": "1.3+(0.3*self.hunterGreenhorn_ambush)",
+		"lineOfSight": null,
+		"tileFilter": "floorForbidAlly"
+	},
+	{
+		"role": "site2",
+		"template": "TILE",
+		"choose": "ANY",
+		"fromRoles": [ "site" ],
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "self.MAX_RANGED_ATTACK_RANGE+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	},
+	{
+		"role": "site3",
+		"template": "TILE",
+		"STUB": "Special case for throughshot, to allow putting the aim behind enemies. Kinda ugly, and doesn't work with theme AOE attacks.",
+		"choose": "ANY",
+		"fromRoles": [ "site" ],
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "self.MAX_RANGED_ATTACK_RANGE+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "self.hunterDeck_throughShot",
+		"b": "1"
+	},
+	{
+		"role": "otherSite",
+		"template": "TILE",
+		"choose": "ALL",
+		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE", "hoverFeedback": "AMBUSH_HOVER" },
+		"fromRoles": [ "site2", "site3" ],
+		"range": null
+	},
+	{
+		"role": "source",
+		"template": "TILE",
+		"choose": "ALL",
+		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE", "hoverFeedback": "AMBUSH_HOVER" },
+		"fromRoles": [ "targetTile", "otherSite" ],
+		"range": null
 	}
 ],
 "outcomes": [
-	{ "class": "Animate", "script": "figures.endTurn" },
-	{ "class": "ActionPoints", "actionPoints": "all" },
-	{
-		"class": "Aspects",
-		"addAspects": [
-			{ "id": "doneWithTurn", "value": "1" }
-		]
-	},
 	{
 		"class": "Test",
 		"value": "self.hunterGreenhorn_ambush",
@@ -128,9 +175,17 @@
 		"onPass": {
 			"class": "Aspects",
 			"addAspects": [
-				{ "id": "drauven_pc_preparedShotAlsoPoisons", "value": "1" }
+				{ "id": "drauven_pc_hasPreparedShot", "value": "1", "atTiles": "otherSite" }
 			]
 		}
+	},
+	{ "class": "Animate", "script": "figures.endTurn" },
+	{ "class": "ActionPoints", "actionPoints": "all" },
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "doneWithTurn", "value": "1" }
+		]
 	}
 ]
 }
