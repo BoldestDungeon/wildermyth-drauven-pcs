@@ -1,0 +1,14 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_hasPreparedShot|COORDS",
+	"parameters": [
+		{ "replace": "COORDS" }
+	],
+	"effects": [
+		"drauven_pc_preparedShotRegion|COORDS",
+		"removeAtStartOfTurn",
+		"removeOnDeath"
+	]
+}
+]

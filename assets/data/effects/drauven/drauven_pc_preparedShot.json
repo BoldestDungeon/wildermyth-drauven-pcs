@@ -2,17 +2,17 @@
 "id": "drauven_pc_preparedShot",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "druaven/drauven_pc_preparedShot",
+	"sourceFile": "drauven/drauven_pc_preparedShot",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Bipen",
 	"tags": [ "sneaky" ]
 },
 "type": "ABILITY",
-"verb": "ATTACK",
+"verb": "END_TURN",
 "ability": {
 	"icon": "ambush",
-	"priority": "1",
 	"strictlyBetterThan": [ "waitEndTurn", "preparedShot" ],
-	"showDescriptionInTooltip": true
+	"priority": "1"
 },
 "targets": [
 	{
@@ -44,7 +44,7 @@
 		"template": "TILE",
 		"choose": "ALL",
 		"relativeTo": "focus",
-		"range": "1.3+(self.drauvenDeck_hunter_preparedShot_upgrade)*0.4+(self.hunterGreenhorn_ambush)*0.4",
+		"range": "(1.3+(self.drauvenDeck_hunter_preparedShot_upgrade*0.4))+(self.hunterGreenhorn_ambush*0.4)",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	},
@@ -78,18 +78,18 @@
 				{ "id": "hasPreparedShot", "value": "1", "atTiles": "targetTile" },
 				{ "id": "preparedShotDummy", "value": "1" }
 			]
-
 		},
 		"onFail": {
 			"class": "Aspects",
 			"addAspects": [
-				{ "id": "drauven_hasPreparedShot", "value": "1", "atTiles": "targetTile" }
+				{ "id": "drauven_pc_hasPreparedShot", "value": "1", "atTiles": "targetTile" }
 			]
 		}
 	},
 	{
 		"class": "Test",
 		"value": "self.drauvenDeck_hunter_preparedShot_upgrade",
+		"threshold": "1",
 		"onPass": {
 			"class": "Aspects",
 			"addAspects": [
