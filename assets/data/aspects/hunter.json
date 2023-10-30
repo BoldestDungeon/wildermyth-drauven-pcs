@@ -9,7 +9,15 @@
 	"effects": [
 		"drauven_pc_preparedShotRegion|INDEX|COORDS",
 		"removeAtStartOfTurn",
-		"removeOnDeath"
+		"removeOnDeath",
+		"alsoAddIfOther|hunterGreenhorn_ambush|preparedShotConvertToFreeAttackAtStartOfTurn",
+		"alsoAddIfOther|hunterGreenhorn_ambush|removePreparedShotDummyWhenRemoved"
 	]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_preparedShotBonusDamage",
+	"effects": [ "drauven_pc_preparedShotBonusDamage" ],
+	"importance": -1
 }
 ]

@@ -143,31 +143,24 @@
 ],
 "outcomes": [
 	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauven_pc_hasPreparedShot|1", "value": "1", "atTiles": "targetTile" },
+			{ "id": "drauven_pc_hasPreparedShot|2", "value": "1", "atTiles": "otherSite" }
+		]
+	},
+	{
 		"class": "Test",
 		"value": "self.hunterGreenhorn_ambush",
 		"threshold": "1",
 		"onPass": {
 			"class": "Aspects",
 			"addAspects": [
-				{ "id": "hasPreparedShot", "value": "1", "atTiles": "targetTile" },
-				{ "id": "preparedShotDummy", "value": "1" }
-			]
-		},
-		"onFail": {
-			"class": "DoAll",
-			"outcomes": [
 				{
-					"class": "Aspects",
-					"addAspects": [
-						{ "id": "drauven_pc_hasPreparedShot|1", "value": "1", "atTiles": "targetTile" }
-					]
+					"id": "drauven_pc_preparedShotBonusDamage",
+					"value": "1+self.drauvenDeck_hunter_preparedShot_upgrade"
 				},
-				{
-					"class": "Aspects",
-					"addAspects": [
-						{ "id": "drauven_pc_hasPreparedShot|2", "value": "1", "atTiles": "otherSite" }
-					]
-				}
+				{ "id": "preparedShotDummy", "value": "1" }
 			]
 		}
 	},

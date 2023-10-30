@@ -1,0 +1,30 @@
+{
+"id": "drauven_pc_preparedShotBonusDamage",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_preparedShotBonusDamage",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "DAMAGE_ROLL",
+"verb": "ATTACK",
+"ability": {
+	"icon": "ranged",
+	"priority": "1",
+	"customSpecialAnimationEffect": { "role": "defender" }
+},
+"targets": [
+	{ "template": "SELF" },
+	{ "template": "DEFENDER" },
+	{ "template": "ABILITY", "abilityHasTag": "preparedShotAttack" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"consumeAspects": [
+			{ "id": "_THIS_", "value": "1" }
+		]
+	},
+	{ "class": "Impact", "impact": "2" }
+]
+}
