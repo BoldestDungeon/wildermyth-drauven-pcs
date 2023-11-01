@@ -8,10 +8,9 @@
 	],
 	"effects": [
 		"drauven_pc_preparedShotRegion|INDEX|COORDS",
-		"removeAtStartOfTurn",
 		"removeOnDeath",
-		"alsoAddIfOther|hunterGreenhorn_ambush|preparedShotConvertToFreeAttackAtStartOfTurn",
-		"alsoAddIfOther|hunterGreenhorn_ambush|removePreparedShotDummyWhenRemoved"
+		"drauven_pc_preparedShotConvertToFreeAttackAtStartOfTurn",
+		"removePreparedShotDummyWhenRemoved"
 	]
 },
 {
@@ -19,5 +18,20 @@
 	"id": "drauven_pc_preparedShotBonusDamage",
 	"effects": [ "drauven_pc_preparedShotBonusDamage" ],
 	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_preparedShotDummy",
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_preparedShotFreeAttack",
+	"effects": [
+		"preparedShotFreeAttack",
+		"anyAbilityCancelsPreparedShot",
+		"alsoRemove|drauven_pc_preparedShotBonusDamage"
+	]
 }
 ]

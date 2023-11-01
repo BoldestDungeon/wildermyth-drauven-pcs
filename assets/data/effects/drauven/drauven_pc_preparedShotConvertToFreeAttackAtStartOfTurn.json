@@ -1,0 +1,30 @@
+{
+"id": "drauven_pc_preparedShotConvertToFreeAttackAtStartOfTurn",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_preparedShotConvertToFreeAttackAtStartOfTurn",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "TURN_START",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"removeAspects": [ "_THIS_" ]
+	},
+	{
+		"class": "Test",
+		"value": "self.hunterGreenhorn_ambush",
+		"threshold": "1",
+		"onPass": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "preparedShotFreeAttack", "value": "1" }
+			]
+		}
+	}
+]
+}
