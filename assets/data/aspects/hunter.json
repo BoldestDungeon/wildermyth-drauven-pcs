@@ -15,23 +15,8 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_preparedShotBonusDamage",
-	"effects": [ "drauven_pc_preparedShotBonusDamage" ],
-	"importance": -1
-},
-{
-	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_preparedShotDummy",
 	"boostType": "ADVANTAGE",
 	"removedImportance": 0
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_preparedShotFreeAttack",
-	"effects": [
-		"preparedShotFreeAttack",
-		"anyAbilityCancelsPreparedShot",
-		"alsoRemove|drauven_pc_preparedShotBonusDamage"
-	]
 }
 ]

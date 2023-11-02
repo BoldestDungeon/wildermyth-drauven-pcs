@@ -83,7 +83,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_hunter_preparedShot",
-	"effects": [ "drauven_pc_preparedShot" ],
+	"effects": [ "drauven_pc_preparedShot", "drauven_pc_preparedShotBonusDamage" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],

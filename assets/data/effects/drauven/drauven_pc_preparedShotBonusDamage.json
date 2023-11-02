@@ -14,17 +14,16 @@
 	"customSpecialAnimationEffect": { "role": "defender" }
 },
 "targets": [
-	{ "template": "SELF" },
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "hunterGreenhorn_ambush" }
+		]
+	},
 	{ "template": "DEFENDER" },
 	{ "template": "ABILITY", "abilityHasTag": "preparedShotAttack" }
 ],
 "outcomes": [
-	{
-		"class": "Aspects",
-		"consumeAspects": [
-			{ "id": "_THIS_", "value": "1" }
-		]
-	},
 	{ "class": "Impact", "impact": "2" }
 ]
 }
