@@ -4,7 +4,8 @@
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_preparedShotConvertToFreeAttackAtStartOfTurn",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "psionusoid"
+	"author": "psionusoid",
+	"STUB": "Removes drauven_pc_hasPreparedShot if unused and adds preparedShotFreeAttack if the hero also has Ambush"
 },
 "type": "TURN_START",
 "targets": [

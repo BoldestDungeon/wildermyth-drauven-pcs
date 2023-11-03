@@ -4,7 +4,8 @@
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_preparedShotBonusDamage",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "psionusoid"
+	"author": "psionusoid",
+	"STUB": "Only applies if the hero also has Ambush (not normally obtainable, but a hero may have already had it)"
 },
 "type": "DAMAGE_ROLL",
 "verb": "ATTACK",
