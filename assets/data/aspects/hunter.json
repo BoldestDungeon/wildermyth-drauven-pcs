@@ -10,7 +10,8 @@
 		"drauven_pc_preparedShotRegion|INDEX|COORDS",
 		"removeOnDeath",
 		"drauven_pc_preparedShotConvertToFreeAttackAtStartOfTurn",
-		"removePreparedShotDummyWhenRemoved"
+		"drauven_pc_consumePreparedShotDummyWhenRemoved",
+		"alsoAdd|drauven_pc_preparedShotDummy"
 	]
 },
 {
