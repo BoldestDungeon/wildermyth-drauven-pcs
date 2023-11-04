@@ -63,7 +63,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_hunter_drauven_teamwork",
-	"effects": [ "drauven_pc_drauven_teamwork" ],
+	"effects": [ "drauven_pc_teamwork_shred", "drauven_pc_teamwork_damage" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
@@ -72,7 +72,6 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_hunter_drauven_teamwork_upgrade",
-	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",

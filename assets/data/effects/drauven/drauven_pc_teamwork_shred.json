@@ -1,13 +1,14 @@
 {
 "id": "drauven_pc_teamwork_shred",
-"info": { "dataVersion": 1, "sourceFile": "drauven/drauven_pc_teamwork_shred", "sort": 4 },
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_teamwork_shred",
+	"modId": "wildermyth-drauven-pcs",
+	"sort": 4
+},
 "type": "SHRED_ROLL",
 "targets": [
-	{ "template": "SELF" },
-	{
-		"template": "ABILITY",
-		"abilityHasAnyTags": [ "melee" ]
-	}
+	{ "template": "SELF" }
 ],
 "outcomes": [
 	{ "class": "Impact", "impact": "self.POTENCY*0.5" }

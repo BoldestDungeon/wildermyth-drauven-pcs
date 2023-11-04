@@ -1,0 +1,30 @@
+{
+"id": "drauven_pc_teamwork_damage",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_teamwork_damage",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "melee" ]
+},
+"type": "DAMAGE_ROLL",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"value": "IS_FLANKING",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Impact",
+					"impact": "2+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)"
+				}
+			]
+		}
+	}
+]
+}
