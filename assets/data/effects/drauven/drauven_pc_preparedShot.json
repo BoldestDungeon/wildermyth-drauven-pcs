@@ -49,9 +49,22 @@
 		"b": "1"
 	},
 	{
+		"role": "subPlot",
+		"template": "TILE",
+		"STUB": "Special case for theme AOE attacks.",
+		"choose": "ANY",
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "(self.ASPECT_PARAM1.attackRange-1)+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "self.hasRangedNoLOS",
+		"b": "1"
+	},
+	{
 		"template": "TILE",
 		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER" },
-		"fromRoles": [ "volunteer", "volunteer2" ],
+		"fromRoles": [ "volunteer", "volunteer2", "subPlot" ],
 		"range": null
 	},
 	{
@@ -96,6 +109,7 @@
 	{
 		"role": "target",
 		"template": "TILE",
+		"STUB": "Focus tile for second region for Prepared Shot+",
 		"showAnyway": true,
 		"fromRoles": [ "volunteer", "volunteer2" ],
 		"range": null
@@ -147,6 +161,7 @@
 		"class": "Aspects",
 		"addAspects": [
 			{ "id": "doneWithTurn", "value": "1" },
+			{ "id": "drauven_pc_preparedShotBonusDamage", "value": "1", "merge": "replace" },
 			{ "id": "drauven_pc_hasPreparedShot|1", "value": "1", "atTiles": "targetTile" },
 			{ "id": "drauven_pc_hasPreparedShot|2", "value": "1", "atTiles": "otherSite" }
 		]
