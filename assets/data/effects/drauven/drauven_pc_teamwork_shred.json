@@ -11,6 +11,19 @@
 	{ "template": "SELF" }
 ],
 "outcomes": [
-	{ "class": "Impact", "impact": "self.POTENCY*0.5" }
+	{
+		"class": "Test",
+		"value": "IS_FLANKING",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Impact",
+					"impact": "(1+floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_hunter_drauven_teamwork_upgrade))))+self.drauvenDeck_hunter_drauven_teamwork_upgrade"
+				}
+			]
+		}
+	}
 ]
 }

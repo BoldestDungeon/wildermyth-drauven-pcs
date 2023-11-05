@@ -21,7 +21,7 @@
 			"outcomes": [
 				{
 					"class": "Impact",
-					"impact": "2+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5)"
+					"impact": "(1+floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_hunter_drauven_teamwork_upgrade))))+self.drauvenDeck_hunter_drauven_teamwork_upgrade"
 				}
 			]
 		}
