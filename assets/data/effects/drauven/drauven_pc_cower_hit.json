@@ -1,0 +1,64 @@
+{
+"id": "drauven_pc_cower_hit",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_cower_hit",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid (based on Patrick Belanger)",
+	"aiPriority": "2000"
+},
+"type": "WAS_ATTACKED",
+"verb": "MANEUVER",
+"ability": { "icon": "ignite", "priority": "1", "showDescriptionInTooltip": true },
+"targets": [
+	{
+		"template": "SELF",
+		"showAnyway": true,
+		"aspectValues": [
+			{ "id": "drauven_pc_cower_defenseSuccess", "forbidden": true },
+			{ "id": "drauven_pc_cowering", "forbidden": true },
+			{ "id": "drauven_pc_cowerOnCooldown", "forbidden": true }
+		]
+	},
+	{
+		"role": "hook",
+		"template": "SELF",
+		"STUB": "Don't cower if no health remaining (dead)",
+		"showAnyway": true,
+		"test": "LESS_THAN",
+		"a": "INJURY",
+		"b": "HEALTH"
+	},
+	{
+		"template": "ADJACENT_ENEMY",
+		"choose": "ALL",
+		"missionFeedback": null,
+		"aspects": [ "HOSTILE_TARGET", "alive" ],
+		"range": "10",
+		"lineOfSight": "TERRAIN_ONLY"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"attackAnimationType": "none",
+		"minimumBlockTime": "1000",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "drauven_pc_cowering", "value": "1" },
+						{
+							"id": "drauven_pc_cowerOnCooldown",
+							"value": "2-self.drauvenDeck_hunter_cower_upgrade"
+						}
+					]
+				}
+			]
+		}
+	}
+]
+}

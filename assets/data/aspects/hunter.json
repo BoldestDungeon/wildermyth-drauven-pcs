@@ -1,0 +1,29 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_cowerOnCooldown",
+	"effects": [ "decayAtStartOfTurn" ]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_cower_defenseSuccess",
+	"effects": [ "removeEveryAction", "removeAtStartOfTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_cowering",
+	"effects": [
+		"removeAtStartOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"otherAspectPreventsThisAspect|senseless",
+		"alsoAddIfOtherParameter|immuneToFlanking|drauvenDeck_hunter_cower_upgrade|cowering",
+		"alsoRemoveParameter|immuneToFlanking|cowering"
+	],
+	"stats": { "BLOCK": 30, "DODGE": 30 },
+	"boostType": "ADVANTAGE",
+	"script": "figures.cower",
+	"importance": 1
+}
+]
