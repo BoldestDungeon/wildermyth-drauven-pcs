@@ -10,12 +10,6 @@
 },
 "type": "DEFENSE_SUCCESS",
 "verb": "MANEUVER",
-"ability": {
-	"icon": "ignite",
-	"priority": "1",
-	"showDescriptionInTooltip": true,
-	"cooldown": "oncePerTurn"
-},
 "targets": [
 	{ "template": "SELF" }
 ],

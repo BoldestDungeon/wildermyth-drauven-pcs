@@ -1,20 +1,20 @@
 {
-"id": "drauven_pc_cower_hit",
+"id": "drauven_pc_cower_damaged",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_cower_hit",
+	"sourceFile": "drauven/drauven_pc_cower_damaged",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "psionusoid (based on Patrick Belanger)",
+	"author": "psionusoid",
+	"STUB": "This handles the case where the first attack of a Thrusk's double bite misses but the second hits",
 	"aiPriority": "2000"
 },
-"type": "WAS_ATTACKED",
+"type": "DAMAGED",
 "verb": "MANEUVER",
 "targets": [
 	{
 		"template": "SELF",
 		"showAnyway": true,
 		"aspectValues": [
-			{ "id": "drauven_pc_cower_defenseSuccess", "forbidden": true },
 			{ "id": "drauven_pc_cowering", "forbidden": true },
 			{ "id": "drauven_pc_cowerOnCooldown", "forbidden": true }
 		]
