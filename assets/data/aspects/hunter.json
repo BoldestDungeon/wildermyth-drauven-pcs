@@ -1,0 +1,49 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "hunterDeck_cripplingStrikes",
+	"effects": [ "hunterCripplingStrikes" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "cripplingStrikes" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "hunterDeck_foxflight",
+	"effects": [ "hunterFoxflight" ],
+	"stats": { "SPEED": 1 },
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "foxflight" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "hunterDeck_thornfang",
+	"effects": [ "thornfangMeleeKillsRefundAnAction" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "hunterGreenhorn_ambush",
+	"effects": [ "preparedShot" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"importance": 5,
+	"abilityRequiresOneAspectOf": [
+		"ATTACHMENTS_workingRightArm",
+		"ATTACHMENTS_workingLeftArm",
+		"themeAbility_ranged",
+		"themeAbility_melee"
+	],
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ambush" }
+}
+]
