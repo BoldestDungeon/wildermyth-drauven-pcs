@@ -92,6 +92,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_hunter_preparedShot_upgrade",
+	"effects": [ "drauven_pc_preparedShot_upgrade" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
