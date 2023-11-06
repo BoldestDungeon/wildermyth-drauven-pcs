@@ -4,8 +4,8 @@
 	"dataVersion": 1,
 	"sourceFile": "onRemoveAddAnotherValue",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "psionusoid",
-	"STUB": "Remove another aspect when this aspect is added"
+	"author": "psionusoid (based on Patrick Belanger)",
+	"STUB": "Add a value of another aspect when the parent aspect is removed"
 },
 "type": "ASPECT_REMOVED",
 "targets": [

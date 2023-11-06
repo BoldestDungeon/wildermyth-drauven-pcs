@@ -21,11 +21,6 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_specterstepOnCooldown",
-	"effects": [ "decayAtStartOfTurn" ]
-},
-{
-	"modId": "wildermyth-drauven-pcs",
 	"id": "turtleGuarding",
 	"effects": [
 		"removeAtStartOfTurn",

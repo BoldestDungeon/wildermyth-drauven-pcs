@@ -1,0 +1,21 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_specterstepActive",
+	"effects": [
+		"drauven_specterstepActive",
+		"drauven_specterstepActivePoison",
+		"drauven_specterstepActiveAttack",
+		"onRemoveAddAnotherValue|drauven_pc_specterstepOnCooldown|2-2*self.drauvenDeck_hunter_specterstep_upgrade",
+		"alsoAddParameter|immuneToFlanking|specterstep",
+		"alsoRemoveParameter|immuneToFlanking|specterstep"
+	],
+	"boostType": "ADVANTAGE",
+	"script": "figures.specterstep"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_specterstepOnCooldown",
+	"effects": [ "decayAtStartOfTurn" ]
+}
+]
