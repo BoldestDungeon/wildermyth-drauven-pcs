@@ -8,6 +8,15 @@
 	"sort": 4
 },
 "type": "SHRED_ROLL",
+"ability": {
+	"priority": "1",
+	"showInCharacterSheet": false,
+	"customSpecialAnimationEffect": {
+		"parameters": [
+			"(1+floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade))))+self.drauvenDeck_common_guerilla_upgrade"
+		]
+	}
+},
 "targets": [
 	{ "template": "SELF" }
 ],
