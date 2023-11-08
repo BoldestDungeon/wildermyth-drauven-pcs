@@ -21,7 +21,7 @@
 			"outcomes": [
 				{
 					"class": "Impact",
-					"impact": "(1+floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_hunter_drauven_teamwork_upgrade))))+self.drauvenDeck_hunter_drauven_teamwork_upgrade"
+					"impact": "(1+floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade))))+self.drauvenDeck_common_guerilla_upgrade"
 				}
 			]
 		}

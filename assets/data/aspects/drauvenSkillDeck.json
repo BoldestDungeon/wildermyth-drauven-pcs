@@ -27,7 +27,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "viciousness" }
+	"info": { "abilityDeckUsage": "common", "abilityDeckIcon": "viciousness" }
 },
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -35,7 +35,7 @@
 	"legacyAbilityChoice": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",
-		"upgradeForAbility": "drauvenDeck_hunter_drauven_teamwork",
+		"upgradeForAbility": "drauvenDeck_common_guerilla",
 		"abilityDeckIcon": "viciousness"
 	}
 },

@@ -9,13 +9,7 @@
 },
 "type": "ABILITIES_CHANGED",
 "targets": [
-	{
-		"template": "SELF",
-		"aspectValues": [
-			{ "id": "drauven_pc" },
-			{ "id": "warrior" }
-		]
-	}
+	{ "template": "SELF" }
 ],
 "outcomes": [
 	{
@@ -40,7 +34,7 @@
 					"target": "self",
 					"inlineHistory": {
 						"id": "Guerilla_migration_remove",
-						"removeAspects": [ "self.drauvenDeck_hunter_drauven_teamwork" ]
+						"removeAspects": [ "drauvenDeck_hunter_drauven_teamwork" ]
 					}
 				}
 			]
@@ -49,7 +43,7 @@
 	{
 		"class": "Test",
 		"target": "self",
-		"value": "self.drauvenDeck_hunter_drauven_teamwork",
+		"value": "self.drauvenDeck_hunter_drauven_teamwork_upgrade",
 		"threshold": "1",
 		"onPass": {
 			"class": "DoAll",
