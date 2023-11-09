@@ -133,6 +133,7 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_hunter_specterstep_upgrade",
+	"effects": [ "drauven_pc_specterstepTurnEndStartsCooldown" ],
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"info": {
