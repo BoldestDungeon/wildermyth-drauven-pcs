@@ -22,6 +22,29 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_hunter_drauven_teamwork",
+	"effects": [
+		"drauven_pc_teamwork_shred",
+		"drauven_pc_teamwork_damage",
+		"Guerilla_migration"
+	],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "none", "abilityDeckIcon": "thornfang" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_hunter_drauven_teamwork_upgrade",
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_hunter_drauven_teamwork",
+		"abilityDeckIcon": "thornfang"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_dragonBlood",
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,

@@ -1,13 +1,12 @@
 {
-"id": "drauven_pc_teamwork_shred",
+"id": "drauven_pc_teamwork_damage",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "drauven/drauven_pc_teamwork_shred",
+	"sourceFile": "drauven/drauven_pc_teamwork_damage",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "psionusoid and Bipen (based on timcrosby)",
-	"sort": 4
+	"author": "psionusoid and Bipen (based on timcrosby)"
 },
-"type": "SHRED_ROLL",
+"type": "DAMAGE_ROLL_AFTER_ARMOR",
 "ability": {
 	"priority": "1",
 	"showInCharacterSheet": false,
