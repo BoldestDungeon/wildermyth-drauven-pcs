@@ -27,6 +27,7 @@
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"abilityForbidAspects": [ "alive" ],
+	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
 },
 {
@@ -60,7 +61,6 @@
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"abilityForbidAspects": [ "alive" ],
-	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "soulHarvest" }
 },
 {
@@ -68,7 +68,6 @@
 	"id": "drauvenDeck_warrior_outrage_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"showInTooltip": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_warrior_outrage",
