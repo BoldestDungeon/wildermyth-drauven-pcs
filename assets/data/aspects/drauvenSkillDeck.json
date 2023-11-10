@@ -148,6 +148,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "humanist" }
 },
 {
@@ -172,6 +173,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "shardnado" }
 },
 {
@@ -219,6 +221,7 @@
 		{ "otherAspect": "tree", "replaceBlurb": true }
 	],
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "rockShield" }
 },
 {
@@ -277,6 +280,7 @@
 		{ "otherAspect": "plant", "replaceBlurb": true }
 	],
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "wisdom" }
 },
 {
@@ -308,6 +312,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "lightning" }
 },
 {
@@ -328,6 +333,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "zealousLeap" }
 },
 {
@@ -369,6 +375,7 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "ignite" }
 },
 {
@@ -390,7 +397,6 @@
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "soulHarvest" }
 },
 {
@@ -398,7 +404,6 @@
 	"id": "drauvenDeck_warrior_ravage_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"showInTooltip": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_warrior_ravage",
