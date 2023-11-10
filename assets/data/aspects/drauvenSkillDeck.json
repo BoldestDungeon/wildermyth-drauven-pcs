@@ -43,7 +43,11 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_hunter_cower",
-	"effects": [ "drauven_pc_cower" ],
+	"effects": [
+		"drauven_pc_cower_hit",
+		"drauven_pc_cower_damaged",
+		"drauven_pc_cower_defenseSuccess"
+	],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
