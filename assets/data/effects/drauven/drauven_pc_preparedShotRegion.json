@@ -1,0 +1,25 @@
+{
+"id": "drauven_pc_preparedShotRegion|INDEX|COORDS",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_preparedShotRegion",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "REGION",
+"targets": [],
+"outcomes": [
+	{
+		"class": "MapRegion",
+		"target": "self",
+		"region": {
+			"id": "drauven_pc_preparedShotRegion|INDEX",
+			"entryCostDangerousPath": 2,
+			"feedbackType": "AMBUSH_TILE",
+			"floorsOnly": true,
+			"entryTriggerEffects": [ "drauven_pc_preparedShotAttack" ]
+		},
+		"elementsString": "COORDS"
+	}
+]
+}

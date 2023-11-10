@@ -1,6 +1,26 @@
 [
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_hasPreparedShot|INDEX|COORDS",
+	"parameters": [
+		{ "replace": "INDEX" },
+		{ "replace": "COORDS" }
+	],
+	"effects": [
+		"drauven_pc_preparedShotRegion|INDEX|COORDS",
+		"removeOnDeath",
+		"drauven_pc_preparedShotConvertToFreeAttackAtStartOfTurn",
+		"drauven_pc_consumePreparedShotDummyWhenRemoved",
+		"alsoAdd|drauven_pc_preparedShotDummy"
+	]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_preparedShotBonusDamage",
+	"effects": [ "drauven_pc_preparedShotBonusDamage" ],
+	"importance": -1
+},
+{
 	"id": "drauven_pc_quickbladeDashUses",
 	"STUB": "How many times has Haunt Dash been granted?",
 	"effects": [ "removeAtStartOfTurn" ],
@@ -15,6 +35,12 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_preparedShotDummy",
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0,
+	"showValue": true
+},
+{
 	"id": "drauven_pc_quickblade_move",
 	"effects": [ "drauven_pc_quickblade_move", "removeAtEndOfTurn" ],
 	"boostType": "ADVANTAGE",
