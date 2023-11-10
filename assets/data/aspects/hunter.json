@@ -1,6 +1,100 @@
 [
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_cowerOnCooldown",
+	"effects": [ "decayAtStartOfTurn" ]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_cower_defenseSuccess",
+	"effects": [ "removeEveryAction", "removeAtStartOfTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_cowering",
+	"effects": [
+		"removeAtStartOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"otherAspectPreventsThisAspect|senseless",
+		"alsoAddIfOtherParameter|immuneToFlanking|drauvenDeck_hunter_cower_upgrade|cowering",
+		"alsoRemoveParameter|immuneToFlanking|cowering"
+	],
+	"stats": { "BLOCK": 30, "DODGE": 30 },
+	"boostType": "ADVANTAGE",
+	"script": "figures.cower"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_hasPreparedShot|INDEX|COORDS",
+	"parameters": [
+		{ "replace": "INDEX" },
+		{ "replace": "COORDS" }
+	],
+	"effects": [
+		"drauven_pc_preparedShotRegion|INDEX|COORDS",
+		"removeOnDeath",
+		"drauven_pc_preparedShotConvertToFreeAttackAtStartOfTurn",
+		"drauven_pc_consumePreparedShotDummyWhenRemoved",
+		"alsoAdd|drauven_pc_preparedShotDummy"
+	]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_preparedShotBonusDamage",
+	"effects": [ "drauven_pc_preparedShotBonusDamage" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_preparedShotDummy",
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0,
+	"showValue": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_quickbladeDashUses",
+	"STUB": "How many times has Haunt Dash been granted?",
+	"effects": [ "removeAtStartOfTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_quickbladeUses",
+	"STUB": "How many times has an AP been granted?",
+	"effects": [ "removeAtStartOfTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_quickblade_move",
+	"effects": [ "drauven_pc_quickblade_move", "removeAtEndOfTurn" ],
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0.5
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_specterstepActive",
+	"effects": [
+		"drauven_specterstepActive",
+		"drauven_specterstepActivePoison",
+		"drauven_specterstepActiveAttack",
+		"onRemoveAddAnotherValue|drauven_pc_specterstepOnCooldown|2-2*self.drauvenDeck_hunter_specterstep_upgrade",
+		"alsoAddParameter|immuneToFlanking|specterstep",
+		"alsoRemoveParameter|immuneToFlanking|specterstep"
+	],
+	"boostType": "ADVANTAGE",
+	"script": "figures.specterstep"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_specterstepOnCooldown",
+	"effects": [ "decayAtStartOfTurn" ]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "hunterDeck_cripplingStrikes",
 	"effects": [ "hunterCripplingStrikes" ],
 	"boostType": "ABILITY_CLASS",
@@ -45,99 +139,5 @@
 	],
 	"abilityForbidAspects": [ "drauven_pc" ],
 	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ambush" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_cowerOnCooldown",
-	"effects": [ "decayAtStartOfTurn" ]
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_cower_defenseSuccess",
-	"effects": [ "removeEveryAction", "removeAtStartOfTurn" ],
-	"importance": -1
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_hasPreparedShot|INDEX|COORDS",
-	"parameters": [
-		{ "replace": "INDEX" },
-		{ "replace": "COORDS" }
-	],
-	"effects": [
-		"drauven_pc_preparedShotRegion|INDEX|COORDS",
-		"removeOnDeath",
-		"drauven_pc_preparedShotConvertToFreeAttackAtStartOfTurn",
-		"drauven_pc_consumePreparedShotDummyWhenRemoved",
-		"alsoAdd|drauven_pc_preparedShotDummy"
-	]
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_preparedShotBonusDamage",
-	"effects": [ "drauven_pc_preparedShotBonusDamage" ],
-	"importance": -1
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_quickbladeDashUses",
-	"STUB": "How many times has Haunt Dash been granted?",
-	"effects": [ "removeAtStartOfTurn" ],
-	"importance": -1
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_quickbladeUses",
-	"STUB": "How many times has thornfang been used?",
-	"effects": [ "removeAtStartOfTurn" ],
-	"importance": -1
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_cowering",
-	"effects": [
-		"removeAtStartOfTurn",
-		"removeOnDeath",
-		"otherAspectPreventsThisAspect|dead",
-		"otherAspectPreventsThisAspect|senseless",
-		"alsoAddIfOtherParameter|immuneToFlanking|drauvenDeck_hunter_cower_upgrade|cowering",
-		"alsoRemoveParameter|immuneToFlanking|cowering"
-	],
-	"stats": { "BLOCK": 30, "DODGE": 30 },
-	"boostType": "ADVANTAGE",
-	"script": "figures.cower"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_preparedShotDummy",
-	"boostType": "ADVANTAGE",
-	"removedImportance": 0,
-	"showValue": true
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_quickblade_move",
-	"effects": [ "drauven_pc_quickblade_move", "removeAtEndOfTurn" ],
-	"boostType": "ADVANTAGE",
-	"removedImportance": 0.5
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_specterstepActive",
-	"effects": [
-		"drauven_specterstepActive",
-		"drauven_specterstepActivePoison",
-		"drauven_specterstepActiveAttack",
-		"onRemoveAddAnotherValue|drauven_pc_specterstepOnCooldown|2-2*self.drauvenDeck_hunter_specterstep_upgrade",
-		"alsoAddParameter|immuneToFlanking|specterstep",
-		"alsoRemoveParameter|immuneToFlanking|specterstep"
-	],
-	"boostType": "ADVANTAGE",
-	"script": "figures.specterstep"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_specterstepOnCooldown",
-	"effects": [ "decayAtStartOfTurn" ]
 }
 ]
