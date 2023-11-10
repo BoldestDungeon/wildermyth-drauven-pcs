@@ -1,6 +1,27 @@
 [
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_quickbladeDashUses",
+	"STUB": "How many times has Haunt Dash been granted?",
+	"effects": [ "removeAtStartOfTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_quickbladeUses",
+	"STUB": "How many times has thornfang been used?",
+	"effects": [ "removeAtStartOfTurn" ],
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_quickblade_move",
+	"effects": [ "drauven_pc_quickblade_move", "removeAtEndOfTurn" ],
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0.5
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_specterstepActive",
 	"effects": [
 		"drauven_specterstepActive",
