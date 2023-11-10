@@ -1,0 +1,45 @@
+[
+	{
+		"id": "PATH_SEGMENT_FREE",
+		"renderPriority": 400,
+		"baseColor": {
+			"hex": "444488ff"
+		},
+		"sprite": "squareNoBorder",
+		"scale": 1.080,
+		"textureAlpha": 1.0,
+		"outlineAlpha": 0,
+		"fillAlpha": 0.0,
+		"fillAlphaAmplitude": 0
+
+	},
+	{
+		"id": "PATH_TARGET_FREE",
+		"renderPriority": 420,
+		"baseColor": {
+			"hex": "444488ff"
+		},
+		"sprite": "squareBorder",
+		"scale": 1.080,
+		"uvScale": 1,
+		"textureAlpha": 1.0,
+		"outlineAlpha": 0,
+		"fillAlpha": 0.0,
+		"fillAlphaAmplitude": 0
+
+	},
+	{
+		"id": "PATH_DOT_FREE",
+		"renderPriority": 490,
+		"position": "point",
+		"baseColor": {
+			"hex": "444488ff"
+		},
+		"sprite": "pathDot1",
+		"scale": 0.08,
+		"textureAlpha": 1,
+		"outlineAlpha": 0,
+		"fillAlpha": 0.0,
+		"fillAlphaAmplitude": 0
+	}
+]
