@@ -11,6 +11,22 @@
 	"importance": -1
 },
 {
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_cowering",
+	"effects": [
+		"removeAtStartOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"otherAspectPreventsThisAspect|senseless",
+		"alsoAddIfOtherParameter|immuneToFlanking|drauvenDeck_hunter_cower_upgrade|cowering",
+		"alsoRemoveParameter|immuneToFlanking|cowering"
+	],
+	"stats": { "BLOCK": 30, "DODGE": 30 },
+	"boostType": "ADVANTAGE",
+	"script": "figures.cower"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_hasPreparedShot|INDEX|COORDS",
 	"parameters": [
 		{ "replace": "INDEX" },
@@ -31,6 +47,14 @@
 	"importance": -1
 },
 {
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_preparedShotDummy",
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0,
+	"showValue": true
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_quickbladeDashUses",
 	"STUB": "How many times has Haunt Dash been granted?",
 	"effects": [ "removeAtStartOfTurn" ],
@@ -39,32 +63,12 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_quickbladeUses",
-	"STUB": "How many times has thornfang been used?",
+	"STUB": "How many times has an AP been granted?",
 	"effects": [ "removeAtStartOfTurn" ],
 	"importance": -1
 },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_pc_cowering",
-	"effects": [
-		"removeAtStartOfTurn",
-		"removeOnDeath",
-		"otherAspectPreventsThisAspect|dead",
-		"otherAspectPreventsThisAspect|senseless",
-		"alsoAddIfOtherParameter|immuneToFlanking|drauvenDeck_hunter_cower_upgrade|cowering",
-		"alsoRemoveParameter|immuneToFlanking|cowering"
-	],
-	"stats": { "BLOCK": 30, "DODGE": 30 },
-	"boostType": "ADVANTAGE",
-	"script": "figures.cower"
-},
-{
-	"id": "drauven_pc_preparedShotDummy",
-	"boostType": "ADVANTAGE",
-	"removedImportance": 0,
-	"showValue": true
-},
-{
 	"id": "drauven_pc_quickblade_move",
 	"effects": [ "drauven_pc_quickblade_move", "removeAtEndOfTurn" ],
 	"boostType": "ADVANTAGE",
@@ -88,5 +92,52 @@
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_specterstepOnCooldown",
 	"effects": [ "decayAtStartOfTurn" ]
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "hunterDeck_cripplingStrikes",
+	"effects": [ "hunterCripplingStrikes" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "cripplingStrikes" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "hunterDeck_foxflight",
+	"effects": [ "hunterFoxflight" ],
+	"stats": { "SPEED": 1 },
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "foxflight" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "hunterDeck_thornfang",
+	"effects": [ "thornfangMeleeKillsRefundAnAction" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "thornfang" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "hunterGreenhorn_ambush",
+	"effects": [ "preparedShot" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"importance": 5,
+	"abilityRequiresOneAspectOf": [
+		"ATTACHMENTS_workingRightArm",
+		"ATTACHMENTS_workingLeftArm",
+		"themeAbility_ranged",
+		"themeAbility_melee"
+	],
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"info": { "abilityDeckUsage": "hunter", "abilityDeckIcon": "ambush" }
 }
 ]
