@@ -1,0 +1,4209 @@
+{
+"id": "abandonedNoLonger_revision",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/abandonedNoLonger_revision",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"translationStatus": "doNotTranslate"
+},
+"type": "OTHER",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"musicOverride": "Music/Comics - Travelling"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{
+		"role": "npc",
+		"template": "ANY",
+		"type": "NPC",
+		"choose": "BY_SCORE",
+		"scoreFunction": "AGE_IN_YEARS",
+		"scoreThreshold": "18",
+		"aspects": [ "npcId|wounded_drauven" ]
+	},
+	{
+		"role": "leader",
+		"template": "ANY",
+		"type": "NPC",
+		"aspects": [ "npcId|deeven_searcher" ]
+	},
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "((drauvenHealer+abandoned_hero)*100)+drauvenCloak",
+		"scoreThreshold": "1"
+	},
+	{
+		"role": "friend",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "((((FRIEND_WITH.healer*10)+(RIVAL_WITH.healer*50))+(LOVER_WITH.healer*100))+CHARISMA)+HEALER",
+		"notAlreadyMatchedAs": [ "healer" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-angry",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.158, "y": 0.502 },
+							"size": 0.4361,
+							"nameTag": "none",
+							"head": { "rotate": -21.456, "scaleY": -1 }
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.275, "y": 0.597 },
+							"size": 0.4361,
+							"nameTag": "none"
+						},
+						{
+							"role": "healer",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.823, "y": 0.56 },
+							"size": 0.4361,
+							"nameTag": "none",
+							"head": { "rotate": 12.332 }
+						},
+						{
+							"role": "friend",
+							"form": "frame-rage",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.498, "y": 0.5 },
+							"size": 0.4361,
+							"nameTag": "none",
+							"head": { "rotate": -16.252, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.487 },
+							"size": 0.2939,
+							"drawDepth": 100,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+							"colorFilter": { "filterName": "overlandFog" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.6, "y": 0.5 },
+							"size": 0.4005,
+							"drawDepth": 200,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdStatue.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.934, "y": 0.267 },
+							"size": 0.1629,
+							"drawDepth": 8.5,
+							"nameTag": "none",
+							"foot": { "rotate": 64.891 },
+							"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:birdDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.587, "y": 0.513 },
+							"size": 0.026,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.703, "y": 0.223 },
+							"size": 0.112,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_haunt2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.627, "y": 0.419 },
+							"size": 0.1909,
+							"nameTag": "none",
+							"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+						},
+						{
+							"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.033, "y": 0.39 },
+							"size": 0.1615,
+							"nameTag": "none",
+							"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.091, "y": 0.466 },
+							"size": 0.1323,
+							"nameTag": "none",
+							"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.647, "y": 0.11 },
+							"size": 0.3018,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.087, "y": 0.063 },
+							"size": 0.1515,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.372, "y": 0.255 },
+							"size": 0.0731,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treesplit.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.423, "y": 0.418 },
+							"size": 0.117,
+							"nameTag": "none",
+							"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.197, "y": 0.629 },
+							"size": 0.1421,
+							"nameTag": "none",
+							"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.545, "y": 0.704 },
+							"size": 0.1421,
+							"nameTag": "none",
+							"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.542, "y": 0.547 },
+							"size": 0.0536,
+							"drawDepth": 59,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.018, "y": 0.92 },
+							"size": 0.1088,
+							"drawDepth": 59,
+							"nameTag": "none",
+							"foot": { "rotate": 0 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_campfire.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.576, "y": 0.349 },
+							"size": 0.0371,
+							"drawDepth": 80,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_lanternPoleOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.335, "y": 0.321 },
+							"size": 0.0515,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_001~2_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.233,
+							"padYFraction": 0.146,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_001~3_healer",
+							"pointerOwner": "healer",
+							"location": "bottomRight",
+							"padXFraction": 0.224,
+							"padYFraction": 0.124,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_001~4_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.374,
+							"padYFraction": 0.769,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 18.850576, "dY": 98.96552, "pointerOrientV": "down" }
+						},
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_001~5_npc",
+							"pointerOwner": "npc",
+							"location": "bottomLeft",
+							"padXFraction": 0.031,
+							"padYFraction": 0.128,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -17.908018,
+								"dY": 5.655168,
+								"pointerOrientH": "onLeft",
+								"pointerOrientV": "down"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "deadHero.exists",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-sad",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.406, "y": 0.527 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -21.456, "scaleY": 1 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-sad",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.747, "y": 0.616 },
+										"size": 0.4361,
+										"nameTag": "none"
+									},
+									{
+										"role": "healer",
+										"form": "frame-skeptical",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 1.763, "y": 0.585 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": 12.332 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-rage",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 1.334, "y": 0.55 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -16.252, "scaleY": -1 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.106, "y": 0.512 },
+										"size": 0.2939,
+										"drawDepth": 100,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+										"colorFilter": { "filterName": "overlandFog" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.308, "y": 0.525 },
+										"size": 0.4005,
+										"drawDepth": 200,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.99, "y": 0.292 },
+										"size": 0.1629,
+										"drawDepth": 8.5,
+										"nameTag": "none",
+										"foot": { "rotate": 64.891 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:birdDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.282, "y": 0.538 },
+										"size": 0.026,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_stoneWallDark.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.518, "y": 0.248 },
+										"size": 0.112,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_haunt2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.363, "y": 0.444 },
+										"size": 0.1909,
+										"nameTag": "none",
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.151, "y": 0.415 },
+										"size": 0.1615,
+										"nameTag": "none",
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stump2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.117, "y": 0.431 },
+										"size": 0.1323,
+										"nameTag": "none",
+										"foot": { "rotate": -16.748 },
+										"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRockSlope.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.404, "y": 0.135 },
+										"size": 0.3018,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.261, "y": 0.088 },
+										"size": 0.1515,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.843, "y": 0.28 },
+										"size": 0.0731,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:treesplit.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.947, "y": 0.443 },
+										"size": 0.117,
+										"nameTag": "none",
+										"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.486, "y": 0.654 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.196, "y": 0.729 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.19, "y": 0.572 },
+										"size": 0.0536,
+										"drawDepth": 59,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.047, "y": 0.945 },
+										"size": 0.1088,
+										"drawDepth": 59,
+										"nameTag": "none",
+										"foot": { "rotate": 0 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.259, "y": 0.374 },
+										"size": 0.0371,
+										"drawDepth": 80,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.768, "y": 0.346 },
+										"size": 0.0515,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~01~prompt~panel_002.(deadHero_exists)~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~01~prompt~panel_002.(deadHero_exists)~2_friend",
+										"pointerOwner": "friend",
+										"padXFraction": 0.233,
+										"padYFraction": 0.146,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~01~prompt~panel_002.(deadHero_exists)~3_healer",
+										"pointerOwner": "healer",
+										"location": "bottomRight",
+										"padXFraction": 0.224,
+										"padYFraction": 0.124,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~01~prompt~panel_002.(deadHero_exists)~4_leader",
+										"pointerOwner": "leader",
+										"backgroundColor": { "r": "0.30433434", "g": "0.39303517", "b": "0.3288441", "a": "1" },
+										"padXFraction": 0.024,
+										"padYFraction": 0.061,
+										"widthFraction": 1.1459656,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -18.85057,
+											"dY": -0.9425316,
+											"scaleX": 0.5033038,
+											"scaleY": 0.5033038,
+											"pointerOrientH": "onLeft"
+										},
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~01~prompt~panel_002.(deadHero_exists)~5_npc",
+										"pointerOwner": "npc",
+										"location": "bottomRight",
+										"padXFraction": 0.029,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -17.908018, "dY": 5.655168, "pointerOrientV": "down" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Split",
+							"splitSpec": "healer.exists",
+							"splitBranches": [
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-angry",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": -0.633, "y": 0.524 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -21.456, "scaleY": -1 }
+												},
+												{
+													"role": "leader",
+													"form": "frame-grim",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": -0.395, "y": 0.619 },
+													"size": 0.4361,
+													"nameTag": "none"
+												},
+												{
+													"role": "healer",
+													"form": "frame-grim",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.723, "y": 0.582 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -20.714 }
+												},
+												{
+													"role": "friend",
+													"form": "frame-grim",
+													"facing": "left",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.162, "y": 0.525 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -27.595, "scaleY": 1 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.066, "y": 0.509 },
+													"size": 0.2939,
+													"drawDepth": 100,
+													"nameTag": "none",
+													"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+													"colorFilter": { "filterName": "overlandFog" }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.268, "y": 0.522 },
+													"size": 0.4005,
+													"drawDepth": 200,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.95, "y": 0.289 },
+													"size": 0.1629,
+													"drawDepth": 8.5,
+													"nameTag": "none",
+													"foot": { "rotate": 64.891 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:birdDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.242, "y": 0.535 },
+													"size": 0.026,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_stoneWallDark.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.479, "y": 0.245 },
+													"size": 0.112,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_haunt2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.493, "y": 0.337 },
+													"size": 0.1909,
+													"nameTag": "none",
+													"foot": { "rotate": -5.816 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.888, "y": 0.412 },
+													"size": 0.1615,
+													"nameTag": "none",
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_stump2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.77, "y": 0.488 },
+													"size": 0.1323,
+													"nameTag": "none",
+													"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRockSlope.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.364, "y": 0.132 },
+													"size": 0.3018,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRock1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.778, "y": 0.085 },
+													"size": 0.1515,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.197, "y": 0.277 },
+													"size": 0.0731,
+													"nameTag": "none",
+													"foot": { "rotate": 0 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treesplit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.093, "y": 0.44 },
+													"size": 0.117,
+													"nameTag": "none",
+													"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.554, "y": 0.651 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.156, "y": 0.726 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.15, "y": 0.569 },
+													"size": 0.0536,
+													"drawDepth": 59,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.993, "y": 0.942 },
+													"size": 0.1088,
+													"drawDepth": 59,
+													"nameTag": "none",
+													"foot": { "rotate": 0 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.219, "y": 0.371 },
+													"size": 0.0371,
+													"drawDepth": 80,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.272, "y": 0.343 },
+													"size": 0.0515,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_003.(deadHero_exists).(healer_exists)~1_narration",
+													"style": "narration"
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_003.(deadHero_exists).(healer_exists)~2_friend",
+													"pointerOwner": "friend",
+													"padXFraction": 0.233,
+													"padYFraction": 0.146,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_003.(deadHero_exists).(healer_exists)~3_healer",
+													"pointerOwner": "healer",
+													"location": "topRight",
+													"padXFraction": 0.162,
+													"padYFraction": 0.073,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_003.(deadHero_exists).(healer_exists)~4_leader",
+													"pointerOwner": "leader",
+													"padXFraction": 0.374,
+													"padYFraction": 0.769,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 18.850576, "dY": 98.96552, "pointerOrientV": "down" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_003.(deadHero_exists).(healer_exists)~5_npc",
+													"pointerOwner": "npc",
+													"location": "bottomLeft",
+													"padXFraction": 0.031,
+													"padYFraction": 0.128,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"dX": -17.908018,
+														"dY": 5.655168,
+														"pointerOrientH": "onLeft",
+														"pointerOrientV": "down"
+													}
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-angry",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": -0.698, "y": 0.511 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -21.456, "scaleY": -1 }
+												},
+												{
+													"role": "leader",
+													"form": "frame-grim",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": -0.46, "y": 0.606 },
+													"size": 0.4361,
+													"nameTag": "none"
+												},
+												{
+													"role": "friend",
+													"form": "frame-grim",
+													"facing": "left",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.382, "y": 0.531 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -27.595, "scaleY": 1 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.001, "y": 0.496 },
+													"size": 0.2939,
+													"drawDepth": 100,
+													"nameTag": "none",
+													"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+													"colorFilter": { "filterName": "overlandFog" }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.203, "y": 0.509 },
+													"size": 0.4005,
+													"drawDepth": 200,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.885, "y": 0.276 },
+													"size": 0.1629,
+													"drawDepth": 5,
+													"nameTag": "none",
+													"foot": { "rotate": 64.891 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:comicForeground_stoneWallDark.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.414, "y": 0.232 },
+													"size": 0.112,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_haunt2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.185, "y": 0.324 },
+													"size": 0.1909,
+													"nameTag": "none",
+													"foot": { "rotate": -5.816 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:birdDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.177, "y": 0.522 },
+													"size": 0.026,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.953, "y": 0.399 },
+													"size": 0.1615,
+													"nameTag": "none",
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_stump2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.835, "y": 0.475 },
+													"size": 0.1323,
+													"nameTag": "none",
+													"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRockSlope.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.299, "y": 0.119 },
+													"size": 0.3018,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRock1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.843, "y": 0.072 },
+													"size": 0.1515,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.262, "y": 0.264 },
+													"size": 0.0731,
+													"nameTag": "none",
+													"foot": { "rotate": 0 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treesplit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.158, "y": 0.427 },
+													"size": 0.117,
+													"nameTag": "none",
+													"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.619, "y": 0.638 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.091, "y": 0.713 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.085, "y": 0.556 },
+													"size": 0.0536,
+													"drawDepth": 59,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -1.058, "y": 0.929 },
+													"size": 0.1088,
+													"drawDepth": 59,
+													"nameTag": "none",
+													"foot": { "rotate": 0 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.154, "y": 0.358 },
+													"size": 0.0371,
+													"drawDepth": 80,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.337, "y": 0.33 },
+													"size": 0.0515,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_004.(deadHero_exists).(healer_is_missing)~1_narration",
+													"style": "narration"
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_004.(deadHero_exists).(healer_is_missing)~2_friend",
+													"pointerOwner": "friend",
+													"padXFraction": 0.091,
+													"padYFraction": 0.086,
+													"widthFraction": 0.8381743,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_004.(deadHero_exists).(healer_is_missing)~3_healer",
+													"pointerOwner": "healer",
+													"location": "topRight",
+													"padXFraction": 0.162,
+													"padYFraction": 0.073,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_004.(deadHero_exists).(healer_is_missing)~4_leader",
+													"pointerOwner": "leader",
+													"padXFraction": 0.374,
+													"padYFraction": 0.769,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 18.850576, "dY": 98.96552, "pointerOrientV": "down" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_004.(deadHero_exists).(healer_is_missing)~5_npc",
+													"pointerOwner": "npc",
+													"location": "bottomLeft",
+													"padXFraction": 0.031,
+													"padYFraction": 0.128,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"dX": -17.908018,
+														"dY": 5.655168,
+														"pointerOrientH": "onLeft",
+														"pointerOrientV": "down"
+													}
+												}
+											]
+										}
+									}
+								]
+							]
+						}
+					],
+					[
+						{
+							"class": "comicNode_Split",
+							"splitSpec": "maimedHero.exists",
+							"splitBranches": [
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-talk",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.406, "y": 0.527 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -21.456, "scaleY": 1 }
+												},
+												{
+													"role": "leader",
+													"form": "frame-grim",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.747, "y": 0.616 },
+													"size": 0.4361,
+													"nameTag": "none"
+												},
+												{
+													"role": "healer",
+													"form": "frame-skeptical",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 1.763, "y": 0.585 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": 12.332 }
+												},
+												{
+													"role": "friend",
+													"form": "frame-rage",
+													"facing": "left",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 1.334, "y": 0.55 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -16.252, "scaleY": -1 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.106, "y": 0.512 },
+													"size": 0.2939,
+													"drawDepth": 100,
+													"nameTag": "none",
+													"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+													"colorFilter": { "filterName": "overlandFog" }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.308, "y": 0.525 },
+													"size": 0.4005,
+													"drawDepth": 200,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.99, "y": 0.292 },
+													"size": 0.1629,
+													"drawDepth": 8.5,
+													"nameTag": "none",
+													"foot": { "rotate": 64.891 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:birdDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.282, "y": 0.538 },
+													"size": 0.026,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_stoneWallDark.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.518, "y": 0.248 },
+													"size": 0.112,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_haunt2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.363, "y": 0.444 },
+													"size": 0.1909,
+													"nameTag": "none",
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.151, "y": 0.415 },
+													"size": 0.1615,
+													"nameTag": "none",
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_stump2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.117, "y": 0.431 },
+													"size": 0.1323,
+													"nameTag": "none",
+													"foot": { "rotate": -16.748 },
+													"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRockSlope.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.404, "y": 0.135 },
+													"size": 0.3018,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRock1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.261, "y": 0.088 },
+													"size": 0.1515,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.843, "y": 0.28 },
+													"size": 0.0731,
+													"nameTag": "none",
+													"foot": { "rotate": 0 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treesplit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.947, "y": 0.443 },
+													"size": 0.117,
+													"nameTag": "none",
+													"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.486, "y": 0.654 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.196, "y": 0.729 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.19, "y": 0.572 },
+													"size": 0.0536,
+													"drawDepth": 59,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.047, "y": 0.945 },
+													"size": 0.1088,
+													"drawDepth": 59,
+													"nameTag": "none",
+													"foot": { "rotate": 0 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.259, "y": 0.374 },
+													"size": 0.0371,
+													"drawDepth": 80,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.768, "y": 0.346 },
+													"size": 0.0515,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_005.(deadHero_is_missing).(maimedHero_exists)~1_narration",
+													"style": "narration"
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_005.(deadHero_is_missing).(maimedHero_exists)~2_friend",
+													"pointerOwner": "friend",
+													"padXFraction": 0.233,
+													"padYFraction": 0.146,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_005.(deadHero_is_missing).(maimedHero_exists)~3_healer",
+													"pointerOwner": "healer",
+													"location": "bottomRight",
+													"padXFraction": 0.224,
+													"padYFraction": 0.124,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_005.(deadHero_is_missing).(maimedHero_exists)~4_leader",
+													"pointerOwner": "leader",
+													"backgroundColor": { "r": "0.30433434", "g": "0.39303517", "b": "0.3288441", "a": "1" },
+													"padXFraction": 0.024,
+													"padYFraction": 0.061,
+													"widthFraction": 1.1459656,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"dX": -18.85057,
+														"dY": -0.9425316,
+														"scaleX": 0.5033038,
+														"scaleY": 0.5033038,
+														"pointerOrientH": "onLeft"
+													},
+													"allowDrawOverEdges": true
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_005.(deadHero_is_missing).(maimedHero_exists)~5_npc",
+													"pointerOwner": "npc",
+													"location": "bottomRight",
+													"padXFraction": 0.029,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": -17.908018, "dY": 5.655168, "pointerOrientV": "down" }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-angry",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": -0.633, "y": 0.524 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -21.456, "scaleY": -1 }
+												},
+												{
+													"role": "leader",
+													"form": "frame-grim",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": -0.395, "y": 0.619 },
+													"size": 0.4361,
+													"nameTag": "none"
+												},
+												{
+													"role": "healer",
+													"form": "frame-grim",
+													"facing": "left",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.723, "y": 0.582 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -7.122 }
+												},
+												{
+													"role": "friend",
+													"form": "frame-grim",
+													"facing": "left",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.162, "y": 0.525 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -27.595, "scaleY": 1 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.066, "y": 0.509 },
+													"size": 0.2939,
+													"drawDepth": 100,
+													"nameTag": "none",
+													"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+													"colorFilter": { "filterName": "overlandFog" }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.268, "y": 0.522 },
+													"size": 0.4005,
+													"drawDepth": 200,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.95, "y": 0.289 },
+													"size": 0.1629,
+													"drawDepth": 8.5,
+													"nameTag": "none",
+													"foot": { "rotate": 64.891 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:birdDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.242, "y": 0.535 },
+													"size": 0.026,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_stoneWallDark.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.479, "y": 0.245 },
+													"size": 0.112,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_haunt2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.493, "y": 0.337 },
+													"size": 0.1909,
+													"nameTag": "none",
+													"foot": { "rotate": -5.816 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.888, "y": 0.412 },
+													"size": 0.1615,
+													"nameTag": "none",
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_stump2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.77, "y": 0.488 },
+													"size": 0.1323,
+													"nameTag": "none",
+													"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRockSlope.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.364, "y": 0.132 },
+													"size": 0.3018,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRock1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.778, "y": 0.085 },
+													"size": 0.1515,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.197, "y": 0.277 },
+													"size": 0.0731,
+													"nameTag": "none",
+													"foot": { "rotate": 0 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treesplit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.093, "y": 0.44 },
+													"size": 0.117,
+													"nameTag": "none",
+													"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.554, "y": 0.651 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.156, "y": 0.726 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.15, "y": 0.569 },
+													"size": 0.0536,
+													"drawDepth": 59,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.993, "y": 0.942 },
+													"size": 0.1088,
+													"drawDepth": 59,
+													"nameTag": "none",
+													"foot": { "rotate": 0 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.219, "y": 0.371 },
+													"size": 0.0371,
+													"drawDepth": 80,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.272, "y": 0.343 },
+													"size": 0.0515,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_006.(deadHero_is_missing).(maimedHero_exists)~1_narration",
+													"style": "narration"
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_006.(deadHero_is_missing).(maimedHero_exists)~2_friend",
+													"pointerOwner": "friend",
+													"padXFraction": 0.233,
+													"padYFraction": 0.146,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_006.(deadHero_is_missing).(maimedHero_exists)~3_healer",
+													"pointerOwner": "healer",
+													"padXFraction": 0.039,
+													"padYFraction": 0.054,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_006.(deadHero_is_missing).(maimedHero_exists)~4_leader",
+													"pointerOwner": "leader",
+													"padXFraction": 0.374,
+													"padYFraction": 0.769,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 18.850576, "dY": 98.96552, "pointerOrientV": "down" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_006.(deadHero_is_missing).(maimedHero_exists)~5_npc",
+													"pointerOwner": "npc",
+													"location": "bottomLeft",
+													"padXFraction": 0.031,
+													"padYFraction": 0.128,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"dX": -17.908018,
+														"dY": 5.655168,
+														"pointerOrientH": "onLeft",
+														"pointerOrientV": "down"
+													}
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-talk",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.406, "y": 0.527 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -0.075, "scaleY": 1 }
+												},
+												{
+													"role": "leader",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.747, "y": 0.616 },
+													"size": 0.4361,
+													"nameTag": "none"
+												},
+												{
+													"role": "healer",
+													"form": "frame-skeptical",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 1.763, "y": 0.585 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": 12.332 }
+												},
+												{
+													"role": "friend",
+													"form": "frame-rage",
+													"facing": "left",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 1.334, "y": 0.55 },
+													"size": 0.4361,
+													"drawDepth": 2.5,
+													"nameTag": "none",
+													"head": { "rotate": -16.252, "scaleY": -1 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.106, "y": 0.512 },
+													"size": 0.2939,
+													"drawDepth": 100,
+													"nameTag": "none",
+													"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+													"colorFilter": { "filterName": "overlandFog" }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.308, "y": 0.525 },
+													"size": 0.4005,
+													"drawDepth": 200,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.99, "y": 0.292 },
+													"size": 0.1629,
+													"drawDepth": 8.5,
+													"nameTag": "none",
+													"foot": { "rotate": 64.891 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:birdDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.282, "y": 0.538 },
+													"size": 0.026,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_stoneWallDark.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.518, "y": 0.248 },
+													"size": 0.112,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_haunt2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.363, "y": 0.444 },
+													"size": 0.1909,
+													"nameTag": "none",
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.151, "y": 0.415 },
+													"size": 0.1615,
+													"nameTag": "none",
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_stump2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.117, "y": 0.431 },
+													"size": 0.1323,
+													"nameTag": "none",
+													"foot": { "rotate": -16.748 },
+													"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRockSlope.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.404, "y": 0.135 },
+													"size": 0.3018,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRock1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.261, "y": 0.088 },
+													"size": 0.1515,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.843, "y": 0.28 },
+													"size": 0.0731,
+													"nameTag": "none",
+													"foot": { "rotate": 0 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treesplit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.947, "y": 0.443 },
+													"size": 0.117,
+													"nameTag": "none",
+													"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.486, "y": 0.654 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.196, "y": 0.729 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.19, "y": 0.572 },
+													"size": 0.0536,
+													"drawDepth": 59,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.047, "y": 0.945 },
+													"size": 0.1088,
+													"drawDepth": 59,
+													"nameTag": "none",
+													"foot": { "rotate": 0 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.259, "y": 0.374 },
+													"size": 0.0371,
+													"drawDepth": 80,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.768, "y": 0.346 },
+													"size": 0.0515,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_007.(deadHero_is_missing).(maimedHero_is_missing)~1_narration",
+													"style": "narration"
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_007.(deadHero_is_missing).(maimedHero_is_missing)~2_friend",
+													"pointerOwner": "friend",
+													"padXFraction": 0.233,
+													"padYFraction": 0.146,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_007.(deadHero_is_missing).(maimedHero_is_missing)~3_healer",
+													"pointerOwner": "healer",
+													"location": "bottomRight",
+													"padXFraction": 0.224,
+													"padYFraction": 0.124,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_007.(deadHero_is_missing).(maimedHero_is_missing)~4_leader",
+													"pointerOwner": "leader",
+													"backgroundColor": { "r": "0.30433434", "g": "0.39303517", "b": "0.3288441", "a": "1" },
+													"padXFraction": 0.024,
+													"padYFraction": 0.061,
+													"widthFraction": 1.1459656,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"dX": -18.85057,
+														"dY": -0.9425316,
+														"scaleX": 0.5033038,
+														"scaleY": 0.5033038,
+														"pointerOrientH": "onLeft"
+													},
+													"allowDrawOverEdges": true
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_007.(deadHero_is_missing).(maimedHero_is_missing)~5_npc",
+													"pointerOwner": "npc",
+													"location": "bottomRight",
+													"padXFraction": 0.029,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": -17.908018, "dY": 5.655168, "pointerOrientV": "down" }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "half",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"role": "npc",
+													"form": "frame-angry",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": -0.633, "y": 0.524 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -21.456, "scaleY": -1 }
+												},
+												{
+													"role": "leader",
+													"form": "frame-grim",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": -0.395, "y": 0.619 },
+													"size": 0.4361,
+													"nameTag": "none"
+												},
+												{
+													"role": "healer",
+													"form": "frame-talk",
+													"facing": "left",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.723, "y": 0.582 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -7.122 }
+												},
+												{
+													"role": "friend",
+													"form": "frame-grim",
+													"facing": "left",
+													"equipment": { "mode": "leaveEquipment" },
+													"anchor": { "x": 0.162, "y": 0.525 },
+													"size": 0.4361,
+													"nameTag": "none",
+													"head": { "rotate": -27.595, "scaleY": 1 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.066, "y": 0.509 },
+													"size": 0.2939,
+													"drawDepth": 100,
+													"nameTag": "none",
+													"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+													"colorFilter": { "filterName": "overlandFog" }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.268, "y": 0.522 },
+													"size": 0.4005,
+													"drawDepth": 200,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_birdStatue.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.95, "y": 0.289 },
+													"size": 0.1629,
+													"drawDepth": 8.5,
+													"nameTag": "none",
+													"foot": { "rotate": 64.891 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:birdDrauven.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.242, "y": 0.535 },
+													"size": 0.026,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_stoneWallDark.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.479, "y": 0.245 },
+													"size": 0.112,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_haunt2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.493, "y": 0.337 },
+													"size": 0.1909,
+													"nameTag": "none",
+													"foot": { "rotate": -5.816 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.888, "y": 0.412 },
+													"size": 0.1615,
+													"nameTag": "none",
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_stump2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.77, "y": 0.488 },
+													"size": 0.1323,
+													"nameTag": "none",
+													"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRockSlope.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.364, "y": 0.132 },
+													"size": 0.3018,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:comicForeground_landRock1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.778, "y": 0.085 },
+													"size": 0.1515,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.197, "y": 0.277 },
+													"size": 0.0731,
+													"nameTag": "none",
+													"foot": { "rotate": 0 },
+													"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treesplit.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.093, "y": 0.44 },
+													"size": 0.117,
+													"nameTag": "none",
+													"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.554, "y": 0.651 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:treeBroadleaf2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.156, "y": 0.726 },
+													"size": 0.1421,
+													"nameTag": "none",
+													"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.15, "y": 0.569 },
+													"size": 0.0536,
+													"drawDepth": 59,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.993, "y": 0.942 },
+													"size": 0.1088,
+													"drawDepth": 59,
+													"nameTag": "none",
+													"foot": { "rotate": 0 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.219, "y": 0.371 },
+													"size": 0.0371,
+													"drawDepth": 80,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.272, "y": 0.343 },
+													"size": 0.0515,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_008.(deadHero_is_missing).(maimedHero_is_missing)~1_narration",
+													"style": "narration"
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_008.(deadHero_is_missing).(maimedHero_is_missing)~2_friend",
+													"pointerOwner": "friend",
+													"padXFraction": 0.233,
+													"padYFraction": 0.146,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_008.(deadHero_is_missing).(maimedHero_is_missing)~3_healer",
+													"pointerOwner": "healer",
+													"padXFraction": 0.039,
+													"padYFraction": 0.054,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_008.(deadHero_is_missing).(maimedHero_is_missing)~4_leader",
+													"pointerOwner": "leader",
+													"padXFraction": 0.374,
+													"padYFraction": 0.769,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "dX": 18.850576, "dY": 98.96552, "pointerOrientV": "down" }
+												},
+												{
+													"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+													"textKey": "~01~prompt~panel_008.(deadHero_is_missing).(maimedHero_is_missing)~5_npc",
+													"pointerOwner": "npc",
+													"location": "bottomLeft",
+													"padXFraction": 0.031,
+													"padYFraction": 0.128,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"dX": -17.908018,
+														"dY": 5.655168,
+														"pointerOrientH": "onLeft",
+														"pointerOrientV": "down"
+													}
+												}
+											]
+										}
+									}
+								]
+							]
+						}
+					]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.158, "y": 0.502 },
+							"size": 0.4361,
+							"nameTag": "none",
+							"head": { "rotate": 7.637, "scaleY": 1 }
+						},
+						{
+							"role": "leader",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.321, "y": 0.613 },
+							"size": 0.4361,
+							"nameTag": "none",
+							"head": { "scaleY": -1 }
+						},
+						{
+							"role": "healer",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.823, "y": 0.56 },
+							"size": 0.4361,
+							"nameTag": "none",
+							"head": { "rotate": -0.348 }
+						},
+						{
+							"role": "friend",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.594, "y": 0.531 },
+							"size": 0.4361,
+							"nameTag": "none",
+							"head": { "rotate": 4.678, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.487 },
+							"size": 0.2939,
+							"drawDepth": 100,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+							"colorFilter": { "filterName": "overlandFog" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.6, "y": 0.5 },
+							"size": 0.4005,
+							"drawDepth": 200,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdStatue.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.934, "y": 0.267 },
+							"size": 0.1629,
+							"drawDepth": 8.5,
+							"nameTag": "none",
+							"foot": { "rotate": 64.891 },
+							"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:birdDrauven.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.587, "y": 0.513 },
+							"size": 0.026,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.703, "y": 0.223 },
+							"size": 0.112,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_haunt2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.757, "y": 0.311 },
+							"size": 0.1909,
+							"nameTag": "none",
+							"foot": { "rotate": 12.779 },
+							"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+						},
+						{
+							"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.033, "y": 0.39 },
+							"size": 0.1615,
+							"nameTag": "none",
+							"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.1, "y": 0.447 },
+							"size": 0.1323,
+							"nameTag": "none",
+							"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.647, "y": 0.11 },
+							"size": 0.3018,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.087, "y": 0.063 },
+							"size": 0.1515,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.372, "y": 0.255 },
+							"size": 0.0731,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treesplit.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.423, "y": 0.418 },
+							"size": 0.117,
+							"nameTag": "none",
+							"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.197, "y": 0.629 },
+							"size": 0.1421,
+							"nameTag": "none",
+							"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treeBroadleaf2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.545, "y": 0.704 },
+							"size": 0.1421,
+							"nameTag": "none",
+							"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+						},
+						{
+							"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.542, "y": 0.547 },
+							"size": 0.0536,
+							"drawDepth": 59,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.018, "y": 0.92 },
+							"size": 0.1088,
+							"drawDepth": 59,
+							"nameTag": "none",
+							"foot": { "rotate": 0 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_campfire.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.576, "y": 0.349 },
+							"size": 0.0371,
+							"drawDepth": 80,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_lanternPoleOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.335, "y": 0.321 },
+							"size": 0.0515,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_009~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_009~2_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.353,
+							"padYFraction": 0.149,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_009~3_healer",
+							"pointerOwner": "healer",
+							"location": "bottomRight",
+							"padXFraction": 0.224,
+							"padYFraction": 0.124,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_009~4_leader",
+							"pointerOwner": "leader",
+							"backgroundColor": { "r": "0.30433434", "g": "0.39303517", "b": "0.3288441", "a": "1" },
+							"location": "bottomRight",
+							"padXFraction": 0.526,
+							"padYFraction": 0.134,
+							"widthFraction": 1.1459656,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -28.275864, "dY": -12.252877, "scaleX": 0.5033038, "scaleY": 0.5033038 },
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+							"textKey": "~01~prompt~panel_009~5_npc",
+							"pointerOwner": "npc",
+							"location": "bottomLeft",
+							"padXFraction": 0.031,
+							"padYFraction": 0.128,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -17.908018,
+								"dY": 5.655168,
+								"pointerOrientH": "onLeft",
+								"pointerOrientV": "down"
+							}
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "yes",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "twoFifths",
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "npc",
+									"form": "frame-surprised",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.402, "y": 0.477 },
+									"size": 1.138,
+									"nameTag": "none",
+									"head": { "rotate": 10.504, "scaleY": 1 }
+								},
+								{
+									"role": "leader",
+									"form": "frame-happy",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.898, "y": 0.656 },
+									"size": 0.9423,
+									"nameTag": "none",
+									"head": { "scaleY": -1 }
+								},
+								{
+									"role": "healer",
+									"form": "frame-skeptical",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 3.957282, "y": 0.505 },
+									"size": 0.9423,
+									"nameTag": "none",
+									"head": { "rotate": 12.332 }
+								},
+								{
+									"role": "friend",
+									"form": "frame-rage",
+									"facing": "left",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 2.7907805, "y": 0.43 },
+									"size": 0.9423,
+									"nameTag": "none",
+									"head": { "rotate": -16.252, "scaleY": -1 }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.1706884, "y": 0.348 },
+									"size": 0.6351,
+									"drawDepth": 100,
+									"nameTag": "none",
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+									"colorFilter": { "filterName": "overlandFog" }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.7195816, "y": 0.375 },
+									"size": 0.8655,
+									"drawDepth": 200,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "scenery:drauven_birdStatue.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 4.575718, "y": -0.128 },
+									"size": 0.3519,
+									"drawDepth": 8.5,
+									"nameTag": "none",
+									"foot": { "rotate": 64.891 },
+									"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:birdDrauven.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.6492107, "y": 0.404 },
+									"size": 0.0562,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:comicForeground_stoneWallDark.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 3.290828, "y": -0.224 },
+									"size": 0.242,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:drauvenBaked_haunt2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.870258, "y": 0.2 },
+									"size": 0.4125,
+									"nameTag": "none",
+									"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+								},
+								{
+									"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.4297241, "y": 0.137 },
+									"size": 0.3489,
+									"nameTag": "none",
+									"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:drauvenBaked_stump2.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": -0.52244806, "y": 0.173 },
+									"size": 0.2859,
+									"nameTag": "none",
+									"foot": { "rotate": -16.748 },
+									"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:comicForeground_landRockSlope.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.981196, "y": -0.467 },
+									"size": 0.6522,
+									"drawDepth": -1,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:comicForeground_landRock1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.13002676, "y": -0.57 },
+									"size": 0.3273,
+									"drawDepth": -1,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.453733, "y": -0.154 },
+									"size": 0.1579,
+									"nameTag": "none",
+									"foot": { "rotate": 0 },
+									"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:treesplit.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.7368724, "y": 0.199 },
+									"size": 0.2528,
+									"nameTag": "none",
+									"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+								},
+								{
+									"assetSpec": "comic:treeBroadleaf2.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.48261425, "y": 0.654 },
+									"size": 0.9214,
+									"nameTag": "none",
+									"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:treeBroadleaf2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.414917, "y": 0.817 },
+									"size": 0.3071,
+									"nameTag": "none",
+									"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+								},
+								{
+									"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.399187, "y": 0.476 },
+									"size": 0.1158,
+									"drawDepth": 59,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.71286345, "y": 1.283 },
+									"size": 0.235,
+									"drawDepth": 59,
+									"nameTag": "none",
+									"foot": { "rotate": 0 }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_campfire.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.585463, "y": 0.048 },
+									"size": 0.0801,
+									"drawDepth": 80,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "scenery:drauven_lanternPoleOff.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.2500713, "y": -0.012 },
+									"size": 0.1113,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~02~choice_yes~panel_001~1_narration",
+									"style": "narration"
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~02~choice_yes~panel_001~2_friend",
+									"pointerOwner": "friend",
+									"padXFraction": 0.233,
+									"padYFraction": 0.146,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~02~choice_yes~panel_001~3_healer",
+									"pointerOwner": "healer",
+									"location": "bottomRight",
+									"padXFraction": 0.224,
+									"padYFraction": 0.124,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~02~choice_yes~panel_001~4_leader",
+									"pointerOwner": "leader",
+									"backgroundColor": { "r": "0.30433434", "g": "0.39303517", "b": "0.3288441", "a": "1" },
+									"padXFraction": 0.024,
+									"padYFraction": 0.061,
+									"widthFraction": 1.1459656,
+									"shrinkToFitText": true,
+									"pointerAdjust": {
+										"dX": -18.85057,
+										"dY": -0.9425316,
+										"scaleX": 0.5033038,
+										"scaleY": 0.5033038,
+										"pointerOrientH": "onLeft"
+									},
+									"allowDrawOverEdges": true
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~02~choice_yes~panel_001~5_npc",
+									"pointerOwner": "npc",
+									"location": "bottomRight",
+									"padXFraction": 0.029,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": -17.908018, "dY": 5.655168 }
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~02~choice_yes~panel_001~6_narration",
+									"style": "narration",
+									"padXFraction": 0.046,
+									"padYFraction": 0.821,
+									"widthFraction": 0.3176681,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "no",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "twoFifths",
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "npc",
+									"form": "frame-grim",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.512, "y": 0.481 },
+									"size": 1.138,
+									"nameTag": "none",
+									"head": { "rotate": 0.685, "scaleY": -1 }
+								},
+								{
+									"role": "leader",
+									"form": "frame-sad",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.898, "y": 0.656 },
+									"size": 0.9423,
+									"nameTag": "none",
+									"head": { "scaleY": -1 }
+								},
+								{
+									"role": "healer",
+									"form": "frame-skeptical",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 3.957282, "y": 0.505 },
+									"size": 0.9423,
+									"nameTag": "none",
+									"head": { "rotate": 12.332 }
+								},
+								{
+									"role": "friend",
+									"form": "frame-rage",
+									"facing": "left",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 2.7907805, "y": 0.43 },
+									"size": 0.9423,
+									"nameTag": "none",
+									"head": { "rotate": -16.252, "scaleY": -1 }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.1706884, "y": 0.348 },
+									"size": 0.6351,
+									"drawDepth": 100,
+									"nameTag": "none",
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+									"colorFilter": { "filterName": "overlandFog" }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.7195816, "y": 0.375 },
+									"size": 0.8655,
+									"drawDepth": 200,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "scenery:drauven_birdStatue.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 4.575718, "y": -0.128 },
+									"size": 0.3519,
+									"drawDepth": 8.5,
+									"nameTag": "none",
+									"foot": { "rotate": 64.891 },
+									"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:birdDrauven.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.6492107, "y": 0.404 },
+									"size": 0.0562,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:comicForeground_stoneWallDark.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 3.290828, "y": -0.224 },
+									"size": 0.242,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:drauvenBaked_haunt2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.870258, "y": 0.2 },
+									"size": 0.4125,
+									"nameTag": "none",
+									"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+								},
+								{
+									"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.4297241, "y": 0.137 },
+									"size": 0.3489,
+									"nameTag": "none",
+									"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:drauvenBaked_stump2.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": -0.52244806, "y": 0.173 },
+									"size": 0.2859,
+									"nameTag": "none",
+									"foot": { "rotate": -16.748 },
+									"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:comicForeground_landRockSlope.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.981196, "y": -0.467 },
+									"size": 0.6522,
+									"drawDepth": -1,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:comicForeground_landRock1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.13002676, "y": -0.57 },
+									"size": 0.3273,
+									"drawDepth": -1,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.453733, "y": -0.154 },
+									"size": 0.1579,
+									"nameTag": "none",
+									"foot": { "rotate": 0 },
+									"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:treesplit.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.7368724, "y": 0.199 },
+									"size": 0.2528,
+									"nameTag": "none",
+									"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+								},
+								{
+									"assetSpec": "comic:treeBroadleaf2.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.48261425, "y": 0.654 },
+									"size": 0.9214,
+									"nameTag": "none",
+									"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:treeBroadleaf2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.414917, "y": 0.817 },
+									"size": 0.3071,
+									"nameTag": "none",
+									"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+								},
+								{
+									"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.399187, "y": 0.476 },
+									"size": 0.1158,
+									"drawDepth": 59,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.71286345, "y": 1.283 },
+									"size": 0.235,
+									"drawDepth": 59,
+									"nameTag": "none",
+									"foot": { "rotate": 0 }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_campfire.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.585463, "y": 0.048 },
+									"size": 0.0801,
+									"drawDepth": 80,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "scenery:drauven_lanternPoleOff.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.2500713, "y": -0.012 },
+									"size": 0.1113,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~03~choice_no~panel_001~1_narration",
+									"style": "narration"
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~03~choice_no~panel_001~2_friend",
+									"pointerOwner": "friend",
+									"padXFraction": 0.233,
+									"padYFraction": 0.146,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~03~choice_no~panel_001~3_healer",
+									"pointerOwner": "healer",
+									"location": "bottomRight",
+									"padXFraction": 0.224,
+									"padYFraction": 0.124,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~03~choice_no~panel_001~4_leader",
+									"pointerOwner": "leader",
+									"backgroundColor": { "r": "0.30433434", "g": "0.39303517", "b": "0.3288441", "a": "1" },
+									"padXFraction": 0.024,
+									"padYFraction": 0.061,
+									"widthFraction": 1.1459656,
+									"shrinkToFitText": true,
+									"pointerAdjust": {
+										"dX": -18.85057,
+										"dY": -0.9425316,
+										"scaleX": 0.5033038,
+										"scaleY": 0.5033038,
+										"pointerOrientH": "onLeft"
+									},
+									"allowDrawOverEdges": true
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~03~choice_no~panel_001~5_npc",
+									"pointerOwner": "npc",
+									"location": "bottomRight",
+									"padXFraction": 0.029,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": -17.908018, "dY": 5.655168 }
+								},
+								{
+									"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+									"textKey": "~03~choice_no~panel_001~6_narration",
+									"style": "narration",
+									"padXFraction": 0.046,
+									"padYFraction": 0.803,
+									"widthFraction": 0.3176681,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-joy",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.455, "y": 0.499 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -3.283, "scaleY": 1 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-happy",
+										"equipment": {},
+										"anchor": { "x": 0.21, "y": 0.609 },
+										"size": 0.4361,
+										"nameTag": "none"
+									},
+									{
+										"role": "healer",
+										"form": "frame-joy",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.823, "y": 0.56 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -5.867 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-happy",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.634, "y": 0.528 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -16.252, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.501, "y": 0.487 },
+										"size": 0.2939,
+										"drawDepth": 100,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+										"colorFilter": { "filterName": "overlandFog" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.6, "y": 0.5 },
+										"size": 0.4005,
+										"drawDepth": 200,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.934, "y": 0.267 },
+										"size": 0.1629,
+										"drawDepth": 8.5,
+										"nameTag": "none",
+										"foot": { "rotate": 64.891 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:birdDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.587, "y": 0.513 },
+										"size": 0.026,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_stoneWallDark.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.703, "y": 0.223 },
+										"size": 0.112,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_haunt2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.58, "y": 0.325 },
+										"size": 0.1909,
+										"nameTag": "none",
+										"foot": { "rotate": 12.779 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.033, "y": 0.39 },
+										"size": 0.1615,
+										"nameTag": "none",
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stump2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.123, "y": 0.409 },
+										"size": 0.1591,
+										"nameTag": "none",
+										"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRockSlope.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.647, "y": 0.11 },
+										"size": 0.3018,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.087, "y": 0.063 },
+										"size": 0.1515,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.372, "y": 0.255 },
+										"size": 0.0731,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:treesplit.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.423, "y": 0.418 },
+										"size": 0.117,
+										"nameTag": "none",
+										"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.197, "y": 0.629 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.545, "y": 0.704 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.542, "y": 0.547 },
+										"size": 0.0536,
+										"drawDepth": 59,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.018, "y": 0.92 },
+										"size": 0.1088,
+										"drawDepth": 59,
+										"nameTag": "none",
+										"foot": { "rotate": 0 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.576, "y": 0.349 },
+										"size": 0.0371,
+										"drawDepth": 80,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.335, "y": 0.321 },
+										"size": 0.0515,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~04~player_chose_yes~panel_001~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~04~player_chose_yes~panel_001~2_friend",
+										"pointerOwner": "friend",
+										"padXFraction": 0.406,
+										"padYFraction": 0.114,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~04~player_chose_yes~panel_001~3_healer",
+										"pointerOwner": "healer",
+										"location": "bottomRight",
+										"padXFraction": 0.174,
+										"padYFraction": 0.035,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~04~player_chose_yes~panel_001~4_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.374,
+										"padYFraction": 0.769,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 18.850576, "dY": 98.96552, "pointerOrientV": "down" }
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~04~player_chose_yes~panel_001~5_npc",
+										"pointerOwner": "npc",
+										"location": "bottomLeft",
+										"padXFraction": 0.031,
+										"padYFraction": 0.128,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -17.908018,
+											"dY": 5.655168,
+											"pointerOrientH": "onLeft",
+											"pointerOrientV": "down"
+										}
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc",
+					"becomeAllyOf": "party",
+					"makeHero": true,
+					"checkPromotionsNow": true
+				},
+				{
+					"class": "UnlockLegacyAspect",
+					"legacyAspect": "DrauvenAllies_FirstStepsComplete",
+					"value": "1"
+				},
+				{ "class": "AddResources", "amount": "-2" },
+				{
+					"class": "SnapshotFollowup",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-joy",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.455, "y": 0.499 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -3.283, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-happy",
+										"equipment": {},
+										"anchor": { "x": 0.21, "y": 0.609 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "healer",
+										"form": "frame-joy",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.823, "y": 0.56 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -5.867 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "friend",
+										"form": "frame-happy",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.634, "y": 0.528 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -16.252, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.501, "y": 0.487 },
+										"size": 0.2939,
+										"drawDepth": 100,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.6, "y": 0.5 },
+										"size": 0.4005,
+										"drawDepth": 200,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.934, "y": 0.267 },
+										"size": 0.1629,
+										"drawDepth": 8.5,
+										"nameTag": "none",
+										"foot": { "rotate": 64.891 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:birdDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.587, "y": 0.513 },
+										"size": 0.026,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_stoneWallDark.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.703, "y": 0.223 },
+										"size": 0.112,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_haunt2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.58, "y": 0.325 },
+										"size": 0.1909,
+										"nameTag": "none",
+										"foot": { "rotate": 12.779 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.033, "y": 0.39 },
+										"size": 0.1615,
+										"nameTag": "none",
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stump2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.123, "y": 0.409 },
+										"size": 0.1591,
+										"nameTag": "none",
+										"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRockSlope.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.647, "y": 0.11 },
+										"size": 0.3018,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.087, "y": 0.063 },
+										"size": 0.1515,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.372, "y": 0.255 },
+										"size": 0.0731,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:treesplit.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.423, "y": 0.418 },
+										"size": 0.117,
+										"nameTag": "none",
+										"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.197, "y": 0.629 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.545, "y": 0.704 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.542, "y": 0.547 },
+										"size": 0.0536,
+										"drawDepth": 59,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.018, "y": 0.92 },
+										"size": 0.1088,
+										"drawDepth": 59,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.576, "y": 0.349 },
+										"size": 0.0371,
+										"drawDepth": 80,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.335, "y": 0.321 },
+										"size": 0.0515,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~05~player_chose_yes~panel_001~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~05~player_chose_yes~panel_001~2_friend",
+										"pointerOwner": "friend",
+										"padXFraction": 0.406,
+										"padYFraction": 0.114,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~05~player_chose_yes~panel_001~3_healer",
+										"pointerOwner": "healer",
+										"location": "bottomRight",
+										"padXFraction": 0.174,
+										"padYFraction": 0.035,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~05~player_chose_yes~panel_001~4_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.374,
+										"padYFraction": 0.769,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 18.850576, "dY": 98.96552, "pointerOrientV": "down" }
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~05~player_chose_yes~panel_001~5_npc",
+										"pointerOwner": "npc",
+										"location": "bottomLeft",
+										"padXFraction": 0.031,
+										"padYFraction": 0.128,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -17.908018,
+											"dY": 5.655168,
+											"pointerOrientH": "onLeft",
+											"pointerOrientV": "down"
+										}
+									}
+								]
+							}
+						}
+					],
+					"score": "10"
+				},
+				{
+					"class": "Spawn",
+					"addRole": "site2",
+					"createEntity": {
+						"stationQuery": "drauvenOutpostL1",
+						"controlRelativeTo": "participant",
+						"additionalOutcome": {
+							"class": "DoAll",
+							"outcomes": [
+								{ "class": "NewJob", "effectId": "job_drauvenRecruit", "post": "self" }
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "no",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-grim",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.332, "y": 0.464 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -3.283, "scaleY": -1 }
+									},
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.21, "y": 0.609 },
+										"size": 0.4361,
+										"nameTag": "none"
+									},
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.823, "y": 0.56 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -5.867 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.634, "y": 0.528 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -7.952, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.501, "y": 0.487 },
+										"size": 0.2939,
+										"drawDepth": 100,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+										"colorFilter": { "filterName": "overlandFog" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.6, "y": 0.5 },
+										"size": 0.4005,
+										"drawDepth": 200,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.934, "y": 0.267 },
+										"size": 0.1629,
+										"drawDepth": 8.5,
+										"nameTag": "none",
+										"foot": { "rotate": 64.891 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:birdDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.587, "y": 0.513 },
+										"size": 0.026,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_stoneWallDark.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.703, "y": 0.223 },
+										"size": 0.112,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_haunt2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.006, "y": 0.303 },
+										"size": 0.1909,
+										"nameTag": "none",
+										"foot": { "rotate": 12.779 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.033, "y": 0.39 },
+										"size": 0.1615,
+										"nameTag": "none",
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stump2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.123, "y": 0.409 },
+										"size": 0.1591,
+										"nameTag": "none",
+										"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRockSlope.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.647, "y": 0.11 },
+										"size": 0.3018,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.087, "y": 0.063 },
+										"size": 0.1515,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.372, "y": 0.255 },
+										"size": 0.0731,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:treesplit.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.423, "y": 0.418 },
+										"size": 0.117,
+										"nameTag": "none",
+										"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.197, "y": 0.629 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.545, "y": 0.704 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.542, "y": 0.547 },
+										"size": 0.0536,
+										"drawDepth": 59,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.018, "y": 0.92 },
+										"size": 0.1088,
+										"drawDepth": 59,
+										"nameTag": "none",
+										"foot": { "rotate": 0 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.576, "y": 0.349 },
+										"size": 0.0371,
+										"drawDepth": 80,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.335, "y": 0.321 },
+										"size": 0.0515,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~06~player_chose_no~panel_001~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~06~player_chose_no~panel_001~2_friend",
+										"pointerOwner": "friend",
+										"padXFraction": 0.3,
+										"padYFraction": 0.089,
+										"widthFraction": 0.5722594,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~06~player_chose_no~panel_001~3_healer",
+										"pointerOwner": "healer",
+										"location": "bottomRight",
+										"padXFraction": 0.01,
+										"padYFraction": 0.022,
+										"widthFraction": 0.45303866,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~06~player_chose_no~panel_001~4_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.374,
+										"padYFraction": 0.769,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 18.850576, "dY": 98.96552, "pointerOrientV": "down" }
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~06~player_chose_no~panel_001~5_npc",
+										"pointerOwner": "npc",
+										"location": "bottomLeft",
+										"padXFraction": 0.031,
+										"padYFraction": 0.128,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -17.908018,
+											"dY": 5.655168,
+											"pointerOrientH": "onLeft",
+											"pointerOrientV": "down"
+										}
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "SnapshotFollowup",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "npc",
+										"form": "frame-grim",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.332, "y": 0.464 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -3.283, "scaleY": -1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "leader",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.21, "y": 0.609 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "healer",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.823, "y": 0.56 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -5.867 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"role": "friend",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": { "mode": "leaveEquipment" },
+										"anchor": { "x": 0.634, "y": 0.528 },
+										"size": 0.4361,
+										"nameTag": "none",
+										"head": { "rotate": -7.952, "scaleY": 1 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_fairgroundWrecked.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.501, "y": 0.487 },
+										"size": 0.2939,
+										"drawDepth": 100,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.80823863" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_forestTrunksNight.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.6, "y": 0.5 },
+										"size": 0.4005,
+										"drawDepth": 200,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:drauven_birdStatue.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.934, "y": 0.267 },
+										"size": 0.1629,
+										"drawDepth": 8.5,
+										"nameTag": "none",
+										"foot": { "rotate": 64.891 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:birdDrauven.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.587, "y": 0.513 },
+										"size": 0.026,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_stoneWallDark.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.703, "y": 0.223 },
+										"size": 0.112,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_haunt2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.006, "y": 0.303 },
+										"size": 0.1909,
+										"nameTag": "none",
+										"foot": { "rotate": 12.779 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:ui/comics/dragonWooden_broken.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.033, "y": 0.39 },
+										"size": 0.1615,
+										"nameTag": "none",
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:drauvenBaked_stump2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.123, "y": 0.409 },
+										"size": 0.1591,
+										"nameTag": "none",
+										"color": { "r": "0.68363512", "g": "0.65270513", "b": "0.96377212", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRockSlope.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.647, "y": 0.11 },
+										"size": 0.3018,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_landRock1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.087, "y": 0.063 },
+										"size": 0.1515,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/campfireEmbers.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.372, "y": 0.255 },
+										"size": 0.0731,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.81955481", "g": "0.80191326", "b": "0.97933674", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:treesplit.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.423, "y": 0.418 },
+										"size": 0.117,
+										"nameTag": "none",
+										"color": { "r": "0.60395801", "g": "0.56523824", "b": "0.95464814", "a": "0.55539775" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.197, "y": 0.629 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comic:treeBroadleaf2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.545, "y": 0.704 },
+										"size": 0.1421,
+										"nameTag": "none",
+										"color": { "r": "0.58738995", "g": "0.55936652", "b": "0.8412016", "a": "1" },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood_door.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.542, "y": 0.547 },
+										"size": 0.0536,
+										"drawDepth": 59,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "asset:sites/scenery/cottageWood2_noDoor.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.018, "y": 0.92 },
+										"size": 0.1088,
+										"drawDepth": 59,
+										"nameTag": "none",
+										"foot": { "rotate": 0 },
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_campfire.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.576, "y": 0.349 },
+										"size": 0.0371,
+										"drawDepth": 80,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									},
+									{
+										"assetSpec": "scenery:drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.335, "y": 0.321 },
+										"size": 0.0515,
+										"nameTag": "none",
+										"colorFilter": { "filterName": "sepia" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~07~player_chose_no~panel_001~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~07~player_chose_no~panel_001~2_friend",
+										"pointerOwner": "friend",
+										"padXFraction": 0.3,
+										"padYFraction": 0.089,
+										"widthFraction": 0.5722594,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~07~player_chose_no~panel_001~3_healer",
+										"pointerOwner": "healer",
+										"location": "bottomRight",
+										"padXFraction": 0.01,
+										"padYFraction": 0.022,
+										"widthFraction": 0.45303866,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 0.9425316, "dY": -5.655175, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~07~player_chose_no~panel_001~4_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.374,
+										"padYFraction": 0.769,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 18.850576, "dY": 98.96552, "pointerOrientV": "down" }
+									},
+									{
+										"textSourceFile": "missionOutcome/abandonedNoLonger_revision",
+										"textKey": "~07~player_chose_no~panel_001~5_npc",
+										"pointerOwner": "npc",
+										"location": "bottomLeft",
+										"padXFraction": 0.031,
+										"padYFraction": 0.128,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -17.908018,
+											"dY": 5.655168,
+											"pointerOrientH": "onLeft",
+											"pointerOrientV": "down"
+										}
+									}
+								]
+							}
+						}
+					],
+					"score": "10"
+				}
+			]
+		}
+	},
+	{
+		"class": "AddRememberedPlace",
+		"target": "site",
+		"icon": "lairDrauven",
+		"grantResources": [ "loreDrauven" ]
+	}
+]
+}

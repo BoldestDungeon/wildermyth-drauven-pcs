@@ -1,0 +1,167 @@
+{
+  "id": "abandonedReturnsDeevenSeekerMortalChoice",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "missionDialogue/abandonedReturnsDeevenSeekerMortalChoice",
+    "author": "Anne Austin",
+    "STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+  },
+  "type": "ENCOUNTER_DEATH_CHOICE",
+  "verb": "MANEUVER",
+  "ability": {
+    "icon": "utility",
+    "category": "attack",
+    "priority": "1",
+    "specialTreatment": "mortalChoice",
+    "encounterScore": 1000
+  },
+  "targets": [
+    { "template": "EVENT" },
+    { "template": "COMPANY", "choose": "ANY" },
+    { "template": "INJECTED_SITE" },
+    { "template": "INJECTED_PARTY", "choose": "ANY" },
+    {
+      "role": "hero",
+      "template": "INJECTED_ENTITY",
+      "type": "UNIT",
+      "injectedRole": "hero",
+      "aspects": [ "alive", "human" ]
+    },
+    { "template": "ATTACKER" }
+  ],
+  "outcomes": [
+    {
+      "class": "Description",
+      "lightweight": true,
+      "blockOtherChanges": true,
+      "script": [
+        {
+          "class": "comicNode_Panel",
+          "panel": {
+            "showNameTags": false,
+            "actorSlots": [
+              {
+                "assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+                "role": null,
+                "focus": "foot",
+                "anchor": { "x": 0.458, "y": 0.5 },
+                "size": 0.35509998,
+                "drawDepth": 20,
+                "nameTag": "none",
+                "color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+              },
+              {
+                "role": "npc",
+                "form": "frame-hit",
+                "equipment": { "mode": "leaveEquipment" },
+                "anchor": { "x": 0.611, "y": 0.567 },
+                "size": 0.841,
+                "head": { "rotate": -13.551 },
+                "foot": { "rotate": 12.294 }
+              },
+              {
+                "assetSpec": "comic:comicEmotion_injury.png",
+                "role": null,
+                "focus": "foot",
+                "anchor": { "x": 0.663, "y": 0.755 },
+                "size": 0.144,
+                "nameTag": "none",
+                "foot": { "rotate": -92.291 }
+              }
+            ]
+          }
+        },
+        {
+          "class": "comicNode_Panel",
+          "panel": {
+            "size": "twoThirds",
+            "showNameTags": false,
+            "actorSlots": [
+              {
+                "assetSpec": "comicBg:comicBG_fieldBeigeTrees.jpg",
+                "role": null,
+                "focus": "foot",
+                "anchor": { "x": 0.458, "y": 0.5 },
+                "size": 0.318,
+                "drawDepth": 20,
+                "nameTag": "none",
+                "color": { "r": "0.78181332", "g": "0.90678424", "b": "0.86896455", "a": "1" }
+              },
+              {
+                "role": "npc",
+                "form": "frame-hit",
+                "facing": "left",
+                "equipment": { "mode": "leaveEquipment" },
+                "anchor": { "x": 0.373, "y": 0.428 },
+                "size": 0.405,
+                "drawDepth": 11.5,
+                "head": { "rotate": -13.551 },
+                "foot": { "rotate": -12.228 }
+              },
+              {
+                "assetSpec": "comic:stormwellOff.png",
+                "role": null,
+                "focus": "foot",
+                "anchor": { "x": -0.242, "y": 1.101 },
+                "size": 0.59,
+                "nameTag": "none"
+              },
+              {
+                "assetSpec": "scenery:ruinsField_arch2.png",
+                "role": null,
+                "facing": "left",
+                "focus": "foot",
+                "anchor": { "x": 1.09, "y": 0.361 },
+                "size": 0.405,
+                "nameTag": "none",
+                "color": { "r": "0.80400217", "g": "0.85756433", "b": "0.95476973", "a": "1" }
+              },
+              {
+                "assetSpec": "comic:actionLines_shake1.png",
+                "role": null,
+                "focus": "foot",
+                "anchor": { "x": 0.492, "y": 0.423 },
+                "size": 0.227,
+                "nameTag": "none",
+                "foot": { "rotate": -142.874 },
+                "color": { "r": "1", "g": "1", "b": "1", "a": "0.5899123" }
+              }
+            ],
+            "textSlots": [
+              {
+                "textSourceFile": "missionDialogue/distantThunderMortalChoice",
+                "textKey": "~01~~panel_002~1_narration",
+                "style": "narration",
+                "padXFraction": 0.03,
+                "padYFraction": 0.083,
+                "widthFraction": 0.8015199
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "class": "DoAll",
+      "target": "hero",
+      "outcomes": [
+        { "class": "Animate", "script": "ui.mortalChoiceMaimed" },
+        { "class": "Animate", "script": "figures.maimedRetreat" },
+        { "class": "Special", "specialAction": "WITHDRAW_UNIT" },
+        { "class": "ModifyStats", "stat": "INJURY", "value": "-4" },
+        { "class": "Trigger", "entityTrigger": "ENTITY_REMOVED" }
+      ]
+    }
+  ],
+  "implications": {
+    "generatedTargets": [
+      {
+        "npcId": "stormwell",
+        "createEntity": {
+          "query": { "baseTag": "human" },
+          "control": "none"
+        }
+      }
+    ]
+  }
+  }
