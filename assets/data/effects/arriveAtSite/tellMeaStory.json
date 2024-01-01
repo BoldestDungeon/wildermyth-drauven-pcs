@@ -1,0 +1,1698 @@
+{
+"id": "encounter_heroesArriveAtSite_tellMeaStory",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/tellMeaStory",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Anne Austin"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Everyday Moments"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "poet",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "POET",
+		"scoreThreshold": "60"
+	},
+	{
+		"role": "friend",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "2-RIVAL_WITH.poet",
+		"scoreThreshold": "2",
+		"aspectValues": [
+			{ "id": "familyWith", "forbidden": true, "relativeTo": "poet" }
+		],
+		"notAlreadyMatchedAs": [ "poet" ]
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEADER",
+		"notAlreadyMatchedAs": [ "poet", "friend" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_fieldTreeNight.jpg",
+					"actorSlots": [
+						{
+							"role": "friend",
+							"form": "frame-talk",
+							"anchor": { "x": 0.453, "y": 0.544 },
+							"size": 0.589
+						},
+						{
+							"role": "poet",
+							"facing": "left",
+							"anchor": { "x": 0.842, "y": 0.556 },
+							"size": 0.578,
+							"nameTag": "bottomRight"
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.651, "y": 0.034 },
+							"size": 0.341,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.654, "y": 0.102 },
+							"size": 0.518,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_001~1_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.066,
+							"padYFraction": 0.078,
+							"widthFraction": 0.39236164,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_001~2_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.639,
+							"padYFraction": 0.144,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{ "role": "friend", "form": "frame-happy" }
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_002~1_friend",
+							"pointerOwner": "friend"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{ "role": "poet", "form": "frame-joke", "facing": "left" }
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_003~1_poet",
+							"pointerOwner": "poet"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_fieldTreeNight.jpg",
+					"actorSlots": [
+						{
+							"role": "friend",
+							"form": "frame-joy",
+							"anchor": { "x": 0.453, "y": 0.544 },
+							"size": 0.589,
+							"head": { "rotate": 5.264 },
+							"foot": {}
+						},
+						{
+							"role": "poet",
+							"form": "frame-joy",
+							"facing": "left",
+							"anchor": { "x": 0.842, "y": 0.556 },
+							"size": 0.578,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 5.176 }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.651, "y": 0.034 },
+							"size": 0.341,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.654, "y": 0.102 },
+							"size": 0.518,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_004~1_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.066,
+							"padYFraction": 0.078,
+							"widthFraction": 0.49231687,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_004~2_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.639,
+							"padYFraction": 0.144,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_fieldTreeNight.jpg",
+					"actorSlots": [
+						{
+							"role": "friend",
+							"form": "frame-happy",
+							"anchor": { "x": 0.453, "y": 0.544 },
+							"size": 0.589
+						},
+						{
+							"role": "poet",
+							"form": "frame-joy",
+							"facing": "left",
+							"anchor": { "x": 0.842, "y": 0.556 },
+							"size": 0.578,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -6.886 }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.651, "y": 0.034 },
+							"size": 0.341,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.654, "y": 0.102 },
+							"size": 0.518,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_005~1_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.066,
+							"padYFraction": 0.078,
+							"widthFraction": 0.49231687,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_005~2_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.639,
+							"padYFraction": 0.144,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "friend",
+							"form": "frame-talk",
+							"anchor": { "x": 0.518, "y": 0.46 },
+							"size": 0.704
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_006~1_friend",
+							"pointerOwner": "friend"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{ "role": "poet", "form": "frame-interested", "facing": "left", "size": 0.745 }
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_007~1_poet",
+							"pointerOwner": "poet"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "friend",
+							"size": 0.691,
+							"head": { "rotate": -7.771 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_008~1_friend",
+							"pointerOwner": "friend"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "poet",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"size": 0.753,
+							"head": { "rotate": -30.244, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_009~1_poet",
+							"pointerOwner": "poet"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_fieldTreeNight.jpg",
+					"actorSlots": [
+						{
+							"role": "friend",
+							"form": "frame-interested",
+							"anchor": { "x": 0.453, "y": 0.544 },
+							"size": 0.589
+						},
+						{
+							"role": "poet",
+							"form": "frame-talk",
+							"facing": "left",
+							"anchor": { "x": 0.842, "y": 0.556 },
+							"size": 0.578,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -6.886 }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.651, "y": 0.034 },
+							"size": 0.341,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.654, "y": 0.102 },
+							"size": 0.518,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/tellMeaStory",
+							"textKey": "~01~prompt~panel_010~1_poet",
+							"pointerOwner": "poet",
+							"padXFraction": 0.549,
+							"padYFraction": 0.078,
+							"widthFraction": 0.29389822,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{ "role": "friend" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/tellMeaStory",
+									"textKey": "~02~choice_one~panel_001~1_friend",
+									"pointerOwner": "friend"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "fourth",
+							"actorSlots": [
+								{ "role": "friend" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/tellMeaStory",
+									"textKey": "~03~choice_two~panel_001~1_friend",
+									"pointerOwner": "friend"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"actorSlots": [
+								{ "role": "friend" }
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/tellMeaStory",
+									"textKey": "~04~choice_three~panel_001~1_friend",
+									"pointerOwner": "friend"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "friend",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-happy",
+										"facing": "left",
+										"head": { "rotate": -25.709 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~05~player_chose_one~panel_001~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-happy",
+										"anchor": { "x": 0.453, "y": 0.391 },
+										"size": 0.274,
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"form": "frame-joy",
+										"facing": "left",
+										"anchor": { "x": 0.871, "y": 0.395 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									},
+									{
+										"assetSpec": "comic:moonFull.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.778, "y": 0.725 },
+										"size": 0.15
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~05~player_chose_one~panel_002~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-talk",
+										"facing": "left",
+										"size": 0.77,
+										"head": { "rotate": -9.09 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~05~player_chose_one~panel_003~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-joke",
+										"facing": "left",
+										"size": 0.83,
+										"head": { "rotate": -5.29, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~05~player_chose_one~panel_004~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-happy",
+										"anchor": { "x": 0.52, "y": 0.339 },
+										"size": 0.274,
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "form:frame-joy",
+										"role": null,
+										"facing": "left",
+										"anchor": { "x": 0.799, "y": 0.371 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									},
+									{
+										"role": "poet",
+										"facing": "left",
+										"anchor": { "x": 0.779, "y": 0.327 },
+										"size": 0.287,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:moonFull.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.697, "y": 0.733 },
+										"size": 0.163
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~05~player_chose_one~panel_005~1_poet",
+										"pointerOwner": "poet",
+										"padXFraction": 0.231,
+										"padYFraction": 0.049,
+										"widthFraction": 0.67626435,
+										"pointerStyle": "none"
+									},
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~05~player_chose_one~panel_005~2_poet",
+										"pointerOwner": "poet",
+										"padXFraction": 0.298,
+										"padYFraction": 0.242,
+										"widthFraction": 0.6404595,
+										"pointerAdjust": { "dX": -17, "dY": -5 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-happy",
+										"anchor": { "x": 0.52, "y": 0.339 },
+										"size": 0.274,
+										"head": { "rotate": 26.607 },
+										"color": { "r": "0.5", "g": "0.6", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "form:frame-joy",
+										"role": null,
+										"facing": "left",
+										"anchor": { "x": 0.799, "y": 0.371 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									},
+									{
+										"role": "poet",
+										"facing": "left",
+										"anchor": { "x": 0.779, "y": 0.327 },
+										"size": 0.287,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"head": { "rotate": 17.813, "scaleY": 1 },
+										"color": { "r": "0.5", "g": "0.6", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:moonFull.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.697, "y": 0.733 },
+										"size": 0.163
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~05~player_chose_one~panel_006~1_poet",
+										"pointerOwner": "poet",
+										"padXFraction": 0.212,
+										"padYFraction": 0.082,
+										"widthFraction": 0.7419066
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "tempBonus_speed|Story|1", "value": "1" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "poet",
+					"addAspects": [
+						{ "id": "tempBonus_speed|Story|1", "value": "1" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "friend",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-happy",
+										"facing": "left",
+										"head": { "rotate": -25.709 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_001~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-happy",
+										"anchor": { "x": 0.457, "y": 0.367 },
+										"size": 0.274,
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"form": "frame-joy",
+										"facing": "left",
+										"anchor": { "x": 0.871, "y": 0.395 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_002~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-joy",
+										"facing": "left",
+										"head": { "rotate": 16.39 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_003~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-angry",
+										"facing": "left",
+										"anchor": { "x": 0.715, "y": 0.491 },
+										"head": { "rotate": 4.605 },
+										"foot": { "rotate": -6.981 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_004~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-scheming",
+										"facing": "left",
+										"anchor": { "x": 0.715, "y": 0.491 },
+										"head": { "rotate": 4.605 },
+										"foot": { "rotate": -6.981 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_005~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-happy",
+										"anchor": { "x": 0.489, "y": 0.339 },
+										"size": 0.274,
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"form": "frame-surprised",
+										"facing": "left",
+										"anchor": { "x": 0.823, "y": 0.347 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_006~1_poet",
+										"pointerOwner": "poet",
+										"padXFraction": 0.147,
+										"padYFraction": 0.217,
+										"widthFraction": 0.80058914
+									},
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_006~2_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "friend", "form": "frame-happy" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_007~1_friend",
+										"pointerOwner": "friend"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-joke",
+										"anchor": { "x": 0.315, "y": 0.512 },
+										"size": 0.391,
+										"color": { "r": "0.8", "g": "0.7", "b": "0.8", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"anchor": { "x": 0.806, "y": 0.512 },
+										"size": 0.445,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.8", "g": "0.7", "b": "0.8", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.558, "y": -0.01 },
+										"size": 0.327,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_008~1_friend",
+										"pointerOwner": "friend",
+										"padXFraction": 0.327,
+										"padYFraction": 0.119,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{ "role": "poet", "form": "frame-dubious", "facing": "left" }
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_009~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-joy",
+										"anchor": { "x": 0.549, "y": 0.335 },
+										"size": 0.274,
+										"color": { "r": "0.6", "g": "0.6", "b": "1", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"form": "frame-happy",
+										"facing": "left",
+										"anchor": { "x": 0.77, "y": 0.335 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.6", "g": "0.6", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~06~player_chose_two~panel_010~1_poet",
+										"pointerOwner": "poet",
+										"padXFraction": 0.358,
+										"padYFraction": 0.18,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "Aspects",
+					"addAspects": [
+						{ "id": "tempBonus_warding|Story|1", "value": "1" }
+					]
+				},
+				{
+					"class": "Aspects",
+					"target": "poet",
+					"addAspects": [
+						{ "id": "tempBonus_potency|Story|1", "value": "1" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "friend",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"size": 0.753,
+										"head": { "rotate": 26.382, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_001~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-grim",
+										"facing": "left",
+										"size": 0.753,
+										"head": { "rotate": -30.365, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_002~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-talk",
+										"facing": "left",
+										"size": 0.753,
+										"head": { "rotate": -5.044, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_003~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-happy",
+										"anchor": { "x": 0.52, "y": 0.367 },
+										"size": 0.274,
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"form": "frame-joy",
+										"facing": "left",
+										"anchor": { "x": 0.799, "y": 0.371 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.666, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_004~1_narration",
+										"style": "narration"
+									},
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_004~2_poet",
+										"pointerOwner": "poet",
+										"padXFraction": 0.578,
+										"padYFraction": 0.267,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-talk",
+										"facing": "left",
+										"size": 0.753,
+										"head": { "rotate": -5.044, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_005~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-grim",
+										"facing": "left",
+										"size": 0.753,
+										"head": { "rotate": 4.484, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_006~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-grim",
+										"facing": "left",
+										"size": 0.753,
+										"head": { "rotate": -13.029, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_007~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"anchor": { "x": 0.513, "y": 0.355 },
+										"size": 0.274,
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"facing": "left",
+										"anchor": { "x": 0.788, "y": 0.367 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_008~1_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Split",
+							"splitSpec": "friend.coward/romantic/snark",
+							"splitBranches": [
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "friend",
+													"form": "frame-scared",
+													"anchor": { "x": 0.473, "y": 0.552 },
+													"size": 0.753
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/tellMeaStory",
+													"textKey": "~07~player_chose_three~panel_009.(friend_is_coward)~1_friend",
+													"pointerOwner": "friend"
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "friend",
+													"form": "frame-interested",
+													"anchor": { "x": 0.473, "y": 0.552 },
+													"size": 0.753
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/tellMeaStory",
+													"textKey": "~07~player_chose_three~panel_010.(friend_is_romantic)~1_friend",
+													"pointerOwner": "friend"
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"actorSlots": [
+												{
+													"role": "friend",
+													"form": "frame-skeptical",
+													"anchor": { "x": 0.473, "y": 0.552 },
+													"size": 0.753
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/tellMeaStory",
+													"textKey": "~07~player_chose_three~panel_011.(friend_is_snark)~1_friend",
+													"pointerOwner": "friend"
+												}
+											]
+										}
+									}
+								],
+								[]
+							]
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"facing": "left",
+										"anchor": { "x": 0.514, "y": 0.56 },
+										"size": 0.798,
+										"head": { "rotate": -24.985 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_012~1_poet",
+										"pointerOwner": "poet"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"actorSlots": [
+									{
+										"role": "poet",
+										"form": "frame-talk",
+										"facing": "left",
+										"anchor": { "x": 0.558, "y": 0.576 },
+										"size": 0.744,
+										"head": { "rotate": 2.666, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_013~1_poet",
+										"pointerOwner": "poet",
+										"pointerAdjust": { "dX": -33, "dY": -3 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"anchor": { "x": 0.413, "y": 0.552 },
+										"size": 0.451,
+										"color": { "r": "0.8", "g": "0.7", "b": "0.8", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"form": "frame-talk",
+										"facing": "left",
+										"anchor": { "x": 0.841, "y": 0.54 },
+										"size": 0.492,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.8", "g": "0.7", "b": "0.8", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.635, "y": 0.054 },
+										"size": 0.409,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.692,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_014~1_poet",
+										"pointerOwner": "poet",
+										"padXFraction": 0.215,
+										"padYFraction": 0.053,
+										"widthFraction": 0.76279277,
+										"pointerAdjust": { "dX": -21, "dY": -1.9999695 }
+									},
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_014~2_narration",
+										"style": "narration"
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"anchor": { "x": 0.536, "y": 0.347 },
+										"size": 0.274,
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"anchor": { "x": 0.797, "y": 0.355 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_015~1_friend",
+										"pointerOwner": "friend",
+										"padXFraction": 0.181,
+										"padYFraction": 0.065,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -42, "dY": -11.999985, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_015~2_poet",
+										"pointerOwner": "poet",
+										"location": "topRight",
+										"padXFraction": 0.093,
+										"padYFraction": 0.222,
+										"widthFraction": 0.39236164,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onRight" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"bg": "comicBG_fieldTreeNight.jpg",
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"anchor": { "x": 0.536, "y": 0.347 },
+										"size": 0.274,
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"role": "poet",
+										"facing": "left",
+										"anchor": { "x": 0.797, "y": 0.355 },
+										"size": 0.291,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -6.886 },
+										"color": { "r": "0.4", "g": "0.3", "b": "0.6", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.651, "y": 0.034 },
+										"size": 0.193,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.102 },
+										"size": 0.488,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "0.5", "b": "0", "a": "0.4" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/tellMeaStory",
+										"textKey": "~07~player_chose_three~panel_016~1_poet",
+										"pointerOwner": "poet",
+										"location": "topRight",
+										"padXFraction": 0.093,
+										"padYFraction": 0.222,
+										"widthFraction": 0.39236164,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onRight" }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "RelationshipPoints",
+					"amount": "4+1d4",
+					"who": [ "poet", "friend" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "Mission",
+		"goal": "liberate",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{ "role": "foes", "side": "enemy" }
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human" }
+			}
+		}
+	]
+}
+}
