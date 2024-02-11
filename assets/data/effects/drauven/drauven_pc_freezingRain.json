@@ -12,7 +12,6 @@
 "ability": {
 	"icon": "scaldingRain",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeScaldingRain" ],
 	"priority": "1",
 	"usesElementFromEquippedWeapon": true
 },
