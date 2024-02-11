@@ -1,0 +1,21 @@
+{
+"id": "drauven_pc_consumePreparedShotDummyWhenRemoved",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_consumePreparedShotDummyWhenRemoved",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "ASPECT_REMOVED",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"consumeAspects": [
+			{ "id": "drauven_pc_preparedShotDummy", "value": "1" }
+		]
+	}
+]
+}

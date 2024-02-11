@@ -1,0 +1,72 @@
+{
+"id": "Guerilla_migration",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "migrations/Issue-565_Guerilla_migration",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Updates character to use migrated abilities"
+},
+"type": "ABILITIES_CHANGED",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "self.drauvenDeck_hunter_drauven_teamwork",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Guerilla_migration_add",
+						"associatedAspects": [ "drauvenDeck_common_guerilla" ],
+						"persistOverLegacy": "ability"
+					}
+				},
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Guerilla_migration_remove",
+						"removeAspects": [ "drauvenDeck_hunter_drauven_teamwork" ]
+					}
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"target": "self",
+		"value": "self.drauvenDeck_hunter_drauven_teamwork_upgrade",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Guerilla_upgrade_migration_add",
+						"associatedAspects": [ "drauvenDeck_common_guerilla_upgrade" ],
+						"persistOverLegacy": "ability"
+					}
+				},
+				{
+					"class": "AddHistory",
+					"target": "self",
+					"inlineHistory": {
+						"id": "Guerilla_upgrade_migration_remove",
+						"removeAspects": [ "drauvenDeck_hunter_drauven_teamwork_upgrade" ]
+					}
+				}
+			]
+		}
+	}
+]
+}

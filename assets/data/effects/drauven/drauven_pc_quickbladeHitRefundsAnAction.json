@@ -1,0 +1,42 @@
+{
+"id": "drauven_pc_quickbladeHitRefundsAnAction",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_quickbladeHitRefundsAnAction",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid"
+},
+"type": "DAMAGE_ROLL",
+"targets": [
+	{
+		"template": "SELF",
+		"choose": "BY_SCORE",
+		"scoreFunction": "0",
+		"scoreThreshold": "drauven_pc_quickbladeUses"
+	},
+	{
+		"template": "ABILITY",
+		"abilityHasAnyTags": [ "melee", "themeUsageOverride" ]
+	}
+],
+"outcomes": [
+	{ "class": "GrantActionPoints", "actionPoints": "1" },
+	{
+		"class": "AttackRoll",
+		"STUB": "Show quickblade text",
+		"defender": null,
+		"attackAnimationType": "none",
+		"showAbilityName": "always",
+		"stopBlockingTime": "noBlocking",
+		"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "attackTime": "0" },
+		"audioOverride": { "attackStartCue": "UI/statusEffectPositive" },
+		"cameraSnapToStartPositionOnEnd": false
+	},
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauven_pc_quickbladeUses", "value": "1" }
+		]
+	}
+]
+}

@@ -1,0 +1,98 @@
+{
+"id": "drauven_pc_preparedShotAttack",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_preparedShotAttack",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "preparedShotAttack" ]
+},
+"type": "REGION_TRIGGER",
+"verb": "ATTACK",
+"ability": {
+	"category": "attackAbility",
+	"priority": "1",
+	"customSpecialAnimationEffect": { "role": "target" }
+},
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "stasis", "forbidden": true },
+			{ "id": "waitForAttackRoll", "forbidden": true }
+		]
+	},
+	{
+		"template": "RANGED_WEAPON",
+		"choose": "ANY",
+		"aspects": [ "weapon", "ranged", "MAIN_HAND" ]
+	},
+	{
+		"template": "INTERLOPER",
+		"aspects": [ "alive", "ENEMY" ]
+	},
+	{
+		"template": "TILE",
+		"matchSpecial": "footprintOrigin",
+		"relativeTo": "target",
+		"range": null
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "waitForSuccessfulAttack", "value": "1", "merge": "replace" },
+			{ "id": "waitForAttackRoll", "value": "1", "merge": "replace" }
+		]
+	},
+	{
+		"class": "BranchAbility",
+		"branchType": "standardRanged",
+		"targetRole": "target",
+		"tileRole": "focus",
+		"triggerAbilityUsedEffects": true
+	},
+	{
+		"class": "Test",
+		"value": "self.hunterGreenhorn_ambush_upgrade*self.successfulAttack",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{ "class": "Interrupt", "target": "target" },
+				{
+					"class": "Aspects",
+					"target": "target",
+					"addAspects": [
+						{ "id": "pinned", "value": "1" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "Test",
+		"value": "self.attackRollMade",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Aspects",
+					"removeAspects": [ "_THIS_" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "Aspects",
+		"removeAspects": [
+			"waitForSuccessfulAttack",
+			"waitForAttackRoll",
+			"successfulAttack",
+			"attackRollMade"
+		]
+	}
+]
+}

@@ -1,0 +1,12 @@
+[
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "commonDeck_viciousness",
+	"effects": [ "viciousnessDamageBoost" ],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityForbidAspects": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "common", "abilityDeckIcon": "viciousness" }
+}
+]

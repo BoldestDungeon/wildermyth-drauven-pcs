@@ -1,0 +1,22 @@
+{
+"id": "drauven_pc_specterstepTurnEndStartsCooldown",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_specterstepTurnEndStartsCooldown",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"tags": [ "sneaky" ]
+},
+"type": "TURN_END",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauven_pc_specterstepOnCooldown", "value": "1", "merge": "max" }
+		]
+	}
+]
+}
