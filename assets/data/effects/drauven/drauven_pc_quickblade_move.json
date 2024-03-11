@@ -52,5 +52,6 @@
 		"class": "Aspects",
 		"removeAspects": [ "drauven_pc_quickblade_move" ]
 	}
-]
+],
+"expressions": { "ignoreScenery": "(traverse*100)+(maxValue.traverseParam|*100)" }
 }
