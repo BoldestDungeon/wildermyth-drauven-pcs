@@ -1,0 +1,4085 @@
+{
+"id": "missionVictory_birdsOfaFeather2_Revision",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+	"author": "Shae Rossi & Katie Austin"
+},
+"type": "ENCOUNTER_MISSION_VICTORY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "utility",
+	"category": "attack",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterWeight": "1+RECRUIT_ENCOUNTER_SCORE_OFFSET",
+	"encounterEnabled": true,
+	"onlyShowForNewSites": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{
+		"template": "COMPANY",
+		"aspectValues": [
+			{ "id": "forbidNonLegacyRecruitmentEvents", "forbidden": true }
+		],
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "RESOURCE.legacyPoints",
+		"b": "2+RECRUIT_COST_ADJUSTMENT"
+	},
+	{ "template": "INJECTED_SITE" },
+	{
+		"template": "INJECTED_THREAT",
+		"aspects": [ "drauven" ]
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{ "role": "leader", "template": "PICK_BY_SCORE", "scoreFunction": "LEADER" },
+	{
+		"role": "healer",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "((100*LOVER_WITH.leader)+((10*FRIEND_WITH.leader)+HEALER))-(1000*RIVAL_WITH.leader)",
+		"notAlreadyMatchedAs": [ "leader" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "(10*FAMILY_WITH.healer)+SHIP_WITH.healer",
+		"notAlreadyMatchedAs": [ "leader", "healer" ]
+	},
+	{
+		"role": "volunteer2",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LOVER_WITH.volunteer",
+		"notAlreadyMatchedAs": [ "leader", "healer", "volunteer" ]
+	},
+	{
+		"role": "volunteer3",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "leader", "healer", "volunteer", "volunteer2" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.542, "y": 0.536 },
+							"size": 0.314,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.253, "y": 0.238 },
+							"size": 0.4136,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:foliageEdges_broadleaf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.09, "y": 0.896 },
+							"size": 0.3775,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"foot": { "rotate": 43.419 },
+							"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:fern3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.223, "y": 0.072 },
+							"size": 0.4347,
+							"drawDepth": -5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_skullString.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.918, "y": 0.178 },
+							"size": 0.3868,
+							"drawDepth": -6.5,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.007, "y": 0.154 },
+							"size": 0.3072,
+							"drawDepth": -6,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.468, "y": 0.343 },
+							"size": 0.2701,
+							"drawDepth": 0.9375,
+							"head": { "rotate": -29.705 },
+							"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.752, "y": 0.401 },
+							"size": 0.3481,
+							"drawDepth": -0.5,
+							"head": { "rotate": -5.549, "scaleY": 1 },
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_lanternPoleOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.654, "y": 0.218 },
+							"size": 0.3539,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_basketSpears.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.374, "y": 0.148 },
+							"size": 0.14,
+							"drawDepth": 0.96875,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+							"padXFraction": 0.101,
+							"padYFraction": 0.182,
+							"widthFraction": 0.7998818,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_001~2_healer",
+							"pointerOwner": "healer",
+							"location": "bottomLeft",
+							"padXFraction": 0.098,
+							"padYFraction": 0.031,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.497, "y": 0.562 },
+							"size": 0.314,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.772, "y": 0.229 },
+							"size": 0.4136,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:foliageEdges_broadleaf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.011, "y": 0.709 },
+							"size": 0.3775,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"foot": { "rotate": 43.419 },
+							"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:fern3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.753, "y": 0.11 },
+							"size": 0.4347,
+							"drawDepth": -5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_skullString.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.163, "y": 0.09 },
+							"size": 0.3224,
+							"drawDepth": -9,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_birdhouses.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.101, "y": 0.274 },
+							"size": 0.4682,
+							"drawDepth": -6.75,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.48, "y": 0.168 },
+							"size": 0.3072,
+							"drawDepth": -6,
+							"nameTag": "none"
+						},
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.663, "y": 0.48 },
+							"size": 0.441,
+							"drawDepth": -8,
+							"head": { "rotate": -24.792, "scaleY": -1 },
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.291, "y": 0.529 },
+							"size": 0.4629,
+							"drawDepth": -6.5,
+							"head": { "rotate": -18.816, "scaleY": -1 },
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_002~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+							"padXFraction": 0.111,
+							"padYFraction": 0.097,
+							"widthFraction": 0.70985913,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_002~2_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.039,
+							"padYFraction": 0.081,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_002~3_leader",
+							"pointerOwner": "leader",
+							"location": "bottomRight",
+							"padXFraction": 0.159,
+							"padYFraction": 0.105,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_002~4_action",
+							"style": "action",
+							"padXFraction": 0.763,
+							"padYFraction": 0.324,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.04, "y": -0.123 },
+							"size": 0.676,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.478, "y": 0.959 },
+							"size": 0.7236,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-hit",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 1.057, "y": 0.253 },
+							"size": 0.4395,
+							"drawDepth": 0,
+							"head": { "rotate": 4.386, "scaleY": 1 },
+							"foot": { "rotate": 16.562 },
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.264, "y": 0.01 },
+							"size": 0.5122,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.506, "y": 0.049 },
+							"size": 0.328,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.501, "y": 0.141 },
+							"size": 0.4136,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodClosed.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.438, "y": 0.293 },
+							"size": 0.2053,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.182, "y": 0.573 },
+							"size": 0.5738,
+							"drawDepth": -3.75,
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.427, "y": 0.503 },
+							"size": 0.455,
+							"drawDepth": -3.625,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_003~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+							"padXFraction": 0.051,
+							"padYFraction": 0.081,
+							"widthFraction": 0.6098081,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_003~2_healer",
+							"pointerOwner": "healer",
+							"padXFraction": 0.327,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_003~3_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.081999995,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.086, "y": -0.123 },
+							"size": 0.75308776,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.986, "y": 0.959 },
+							"size": 0.8061158,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.154, "y": 0.253 },
+							"size": 0.48961845,
+							"drawDepth": 0,
+							"head": { "rotate": 4.386, "scaleY": 1 },
+							"foot": { "rotate": 16.562 },
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.547, "y": 0.01 },
+							"size": 0.5706088,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.045, "y": 0.049 },
+							"size": 0.36540353,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.023, "y": 0.141 },
+							"size": 0.4607649,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodClosed.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.905, "y": 0.293 },
+							"size": 0.22871141,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": -1.537, "y": 0.615 },
+							"size": 0.6392334,
+							"drawDepth": -3.75
+						},
+						{
+							"role": "healer",
+							"form": "frame-surprised",
+							"equipment": {},
+							"anchor": { "x": -1.041, "y": 0.507 },
+							"size": 0.506886,
+							"drawDepth": -3.625,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_004~1_healer",
+							"pointerOwner": "healer",
+							"location": "bottomRight",
+							"padXFraction": 0.848,
+							"padYFraction": 0.058,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 90.22291, "dY": -1.1420956 },
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_004~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+							"padXFraction": -0.413,
+							"padYFraction": 0.393,
+							"widthFraction": 0.7280702,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_004~3_npc",
+							"pointerOwner": "npc",
+							"padYFraction": 0.56,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_004~4_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.719,
+							"padYFraction": 0.481,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -19.39215,
+								"dX": -3.1552238,
+								"dY": -8.510145,
+								"scaleX": 0.69021535,
+								"scaleY": 0.69021535,
+								"pointerOrientH": "onLeft"
+							},
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.597, "y": -0.115 },
+							"size": 0.676,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.886, "y": 0.967 },
+							"size": 0.72360003,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.618, "y": 0.261 },
+							"size": 0.43950003,
+							"drawDepth": 0,
+							"head": { "rotate": 4.386, "scaleY": 1 },
+							"foot": { "rotate": 16.562 },
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.745, "y": 0.018 },
+							"size": 0.5122,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.905, "y": 0.057 },
+							"size": 0.328,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.241, "y": 0.149 },
+							"size": 0.4136,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodClosed.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.86, "y": 0.301 },
+							"size": 0.2053,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.134, "y": 0.559 },
+							"size": 0.5738001,
+							"drawDepth": -3.75,
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"equipment": {},
+							"anchor": { "x": 0.334, "y": 0.488 },
+							"size": 0.45500004,
+							"drawDepth": -3.625,
+							"nameTag": "none",
+							"head": { "rotate": -10.657 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_005~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.478,
+							"padYFraction": 0.254,
+							"widthFraction": 0.33427763,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_005~2_healer",
+							"pointerOwner": "healer",
+							"location": "bottomRight",
+							"padXFraction": 0.47,
+							"padYFraction": 0.054,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFourths",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.485, "y": -0.096 },
+							"size": 0.676,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.872, "y": 0.986 },
+							"size": 0.72360003,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-angry",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.682, "y": 0.31 },
+							"size": 0.4317,
+							"drawDepth": -3.3125,
+							"head": { "rotate": 12.727, "scaleY": 1 },
+							"foot": { "rotate": -15.679 },
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.683, "y": 0.037 },
+							"size": 0.5122,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.898, "y": 0.076 },
+							"size": 0.328,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.007, "y": 0.168 },
+							"size": 0.4136,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.838, "y": 0.32 },
+							"size": 0.2053,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"equipment": {},
+							"anchor": { "x": 0.21, "y": 0.574 },
+							"size": 0.4934,
+							"drawDepth": -5.5,
+							"head": { "rotate": 2.683 },
+							"foot": { "rotate": -8.805 },
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.81, "y": 0.519 },
+							"size": 0.4636,
+							"drawDepth": -5.25,
+							"nameTag": "none",
+							"head": { "rotate": -19.211 },
+							"foot": { "rotate": -4.327 },
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.261, "y": 0.335 },
+							"size": 0.4303,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_006~1_npc",
+							"pointerOwner": "npc",
+							"location": "bottomLeft",
+							"padXFraction": 0.294,
+							"padYFraction": 0.068,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_006~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+							"padXFraction": 0.044,
+							"padYFraction": 0.089,
+							"widthFraction": 0.89413965,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_006~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+							"location": "bottomRight",
+							"padXFraction": 0.081,
+							"padYFraction": 0.043,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.458, "y": -0.115 },
+							"size": 0.676,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.747, "y": 0.967 },
+							"size": 0.72360003,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.62, "y": 0.425 },
+							"size": 0.4844,
+							"drawDepth": -5,
+							"head": { "rotate": 3.172, "scaleY": 1 },
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.605, "y": -0.07 },
+							"size": 0.5122,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.766, "y": 0.057 },
+							"size": 0.328,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.102, "y": 0.149 },
+							"size": 0.4136,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.721, "y": 0.301 },
+							"size": 0.2053,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.161, "y": 0.552 },
+							"size": 0.5738001,
+							"drawDepth": -5.5,
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.843, "y": 0.515 },
+							"size": 0.5607,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"head": { "rotate": 6.392 },
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.037, "y": 0.316 },
+							"size": 0.4303,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_007~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.226,
+							"padYFraction": 0.107,
+							"widthFraction": 0.71388113,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_007~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+							"padXFraction": 0.028,
+							"padYFraction": 0.082,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_007~3_leader",
+							"pointerOwner": "leader",
+							"location": "bottomLeft",
+							"padXFraction": 0.165,
+							"padYFraction": 0.043,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -22.841227, "dY": -6.852368 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.282, "y": -0.293 },
+							"size": 0.98972195,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.145, "y": 1.291 },
+							"size": 1.0594125,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.614, "y": 0.466 },
+							"size": 0.7092031,
+							"drawDepth": -5,
+							"head": { "rotate": -25.485, "scaleY": 1 },
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.91052628", "g": "0.94035089", "b": "0.9701755", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.721, "y": -0.227 },
+							"size": 0.7499047,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.202, "y": -0.042 },
+							"size": 0.4802201,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.781, "y": 0.093 },
+							"size": 0.6055458,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.068, "y": 0.316 },
+							"size": 0.3005768,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": -0.605, "y": 0.683 },
+							"size": 0.8400925,
+							"drawDepth": -5.5
+						},
+						{
+							"role": "healer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 1.432, "y": 0.629 },
+							"size": 0.82091284,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"head": { "rotate": 6.392 }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 2.011, "y": 0.338 },
+							"size": 0.62999606,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_008~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.046,
+							"padYFraction": 0.058,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestField2_yellow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.512, "y": 0.48 },
+							"size": 0.2853,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:cottageStone2_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.216, "y": 0.599 },
+							"size": 0.2836,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:fenceBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.738, "y": 0.038 },
+							"size": 0.1954,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowShaggyBrown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.72, "y": 0.385 },
+							"size": 0.0836,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"foot": { "rotate": 2.63 },
+							"color": { "r": "0.84912241", "g": "0.84912241", "b": "0.84912241", "a": "0.70175493" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:bush4b.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.016, "y": 0.092 },
+							"size": 0.2178,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_sheepEwe.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.427 },
+							"size": 0.0958,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:edgeHider_grassShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.514, "y": 0.313 },
+							"size": 0.1517,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:edgeHider_grassShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.729, "y": 0.29 },
+							"size": 0.1517,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_interiorDay.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.153, "y": 0.197 },
+							"size": 0.1466,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"role": "folk1",
+							"form": "frame-scared",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "farmerGarbRough" ]
+							},
+							"anchor": { "x": 0.213, "y": 0.251 },
+							"size": 0.2739,
+							"drawDepth": -2,
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"role": "folk2",
+							"form": "frame-surprised",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "fryingPan" ]
+							},
+							"anchor": { "x": 0.287, "y": 0.191 },
+							"size": 0.26,
+							"drawDepth": 0.90625,
+							"head": { "rotate": 15.662 },
+							"foot": { "rotate": -7.64 },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_haunt.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.534, "y": 0.149 },
+							"size": 0.1678,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.635, "y": 0.222 },
+							"size": 0.1092,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stormthroat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.26 },
+							"size": 0.2257,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:gradientOutside.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.495, "y": 0.543 },
+							"size": 0.7324,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "scaleX": 2.25 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:cartPlants.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.9, "y": 0.145 },
+							"size": 0.2271,
+							"drawDepth": 0.25,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_009~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.34770086", "g": "0.17781484", "b": "0.03124651", "a": "0.82105309" },
+							"padXFraction": 0.022,
+							"padYFraction": 0.065,
+							"widthFraction": 0.943662,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"animation": { "overridePanelOrder": 2, "overridePanelDrawDepth": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestField2_yellow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.46091664, "y": 0.648 },
+							"size": 0.3865,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:cottageStone2_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.5067328, "y": 0.798 },
+							"size": 0.3842,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:fenceBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.9353075, "y": 0.038 },
+							"size": 0.2647,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowShaggyBrown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.0741208, "y": 0.446 },
+							"size": 0.1132,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"foot": { "rotate": 2.63 },
+							"color": { "r": "0.84912241", "g": "0.84912241", "b": "0.84912241", "a": "0.70175493" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:bush4b.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.7034972, "y": 0.112 },
+							"size": 0.295,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_sheepEwe.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.124, "y": 0.466 },
+							"size": 0.1298,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:edgeHider_grassShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.112, "y": 0.335 },
+							"size": 0.2055,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:edgeHider_grassShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.0902932, "y": 0.312 },
+							"size": 0.2055,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_interiorDay.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.6819339, "y": 0.254 },
+							"size": 0.1986,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"role": "folk1",
+							"form": "frame-scared",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "farmerGarbRough" ]
+							},
+							"anchor": { "x": -0.5161667, "y": 0.327 },
+							"size": 0.371,
+							"drawDepth": -2,
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"role": "folk2",
+							"form": "frame-surprised",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "fryingPan" ]
+							},
+							"anchor": { "x": -0.31131613, "y": 0.246 },
+							"size": 0.3522,
+							"drawDepth": 0.90625,
+							"head": { "rotate": 15.662 },
+							"foot": { "rotate": -7.64 },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_haunt.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.17385629, "y": 0.189 },
+							"size": 0.2273,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.4986523, "y": 0.286 },
+							"size": 0.1479,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:gradientOutside.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.758, "y": 0.537 },
+							"size": 0.7736,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "scaleX": 2.25 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_010~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.34770086", "g": "0.17781484", "b": "0.03124651", "a": "0.82105309" },
+							"location": "bottomLeft",
+							"padXFraction": 0.044,
+							"padYFraction": 0.045,
+							"widthFraction": 2.2471263,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"animation": { "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestField2_yellow.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.414, "y": 0.648 },
+							"size": 0.3865,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:cottageStone2_open.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.382, "y": 0.798 },
+							"size": 0.38420004,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:fenceBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.06, "y": 0.038 },
+							"size": 0.2647,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowShaggyBrown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.761, "y": 0.255 },
+							"size": 0.1321,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"foot": { "rotate": 2.63 },
+							"color": { "r": "0.84912241", "g": "0.84912241", "b": "0.84912241", "a": "0.70175493" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:bush4b.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.829, "y": 0.112 },
+							"size": 0.295,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_sheepEwe.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.557, "y": 0.565 },
+							"size": 0.1298,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:edgeHider_grassShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.558, "y": 0.411 },
+							"size": 0.2055,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:edgeHider_grassShort.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.215, "y": 0.312 },
+							"size": 0.2055,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_interiorDay.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.557, "y": 0.254 },
+							"size": 0.19860001,
+							"drawDepth": 0.9375,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"role": "folk1",
+							"form": "frame-scared",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "farmerGarbRough" ]
+							},
+							"anchor": { "x": -1.391, "y": 0.327 },
+							"size": 0.371,
+							"drawDepth": -2,
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"role": "folk2",
+							"form": "frame-surprised",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "fryingPan" ]
+							},
+							"anchor": { "x": -1.187, "y": 0.246 },
+							"size": 0.3522,
+							"drawDepth": 0.90625,
+							"head": { "rotate": 15.662 },
+							"foot": { "rotate": -7.64 },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_haunt.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.58, "y": 0.181 },
+							"size": 0.22730002,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.181, "y": 0.297 },
+							"size": 0.1479,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:gradientOutside.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.174, "y": 0.487 },
+							"size": 0.80993855,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "scaleX": 2.25 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.503, "y": 0.485 },
+							"size": 0.522874,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"foot": { "rotate": -4.098 },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "scenery:cartPlants.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.388, "y": 0.114 },
+							"size": 0.3254,
+							"drawDepth": 0.25,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_011~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.34770086", "g": "0.17781484", "b": "0.03124651", "a": "0.82105309" },
+							"location": "topRight",
+							"padXFraction": 0.037,
+							"padYFraction": 0.073,
+							"widthFraction": 0.943662,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFourths",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.37157887, "y": -0.0915826 },
+							"size": 0.7346328,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.7929759, "y": 1.08416 },
+							"size": 0.7863614,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.668, "y": 0.51 },
+							"size": 0.52641433,
+							"drawDepth": -5,
+							"head": { "rotate": 9.141, "scaleY": 1 },
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.5859396, "y": -0.04259336 },
+							"size": 0.5566256,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.82080865, "y": 0.09472507 },
+							"size": 0.35644904,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.14747679, "y": 0.1949304 },
+							"size": 0.4494735,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75537735, "y": 0.3604548 },
+							"size": 0.22310667,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.099, "y": 0.534 },
+							"size": 0.6166,
+							"drawDepth": -5.5,
+							"head": { "rotate": 8.656 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.916, "y": 0.555 },
+							"size": 0.6093322,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"head": { "rotate": -4.849 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.2158378, "y": 0.37678453 },
+							"size": 0.46762198,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_012~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.046,
+							"padYFraction": 0.058,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_012~2_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.032,
+							"padYFraction": 0.008,
+							"widthFraction": 0.93333334,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_012~3_healer",
+							"pointerOwner": "healer",
+							"location": "bottomRight",
+							"padXFraction": 0.134,
+							"padYFraction": 0.019,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 14.846727, "dY": 0 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.417, "y": -0.094 },
+							"size": 0.7145442,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.722, "y": 1.05 },
+							"size": 0.76485837,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.471, "y": 0.468 },
+							"size": 0.5120195,
+							"drawDepth": -5,
+							"head": { "rotate": -3.813, "scaleY": 1 },
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.566, "y": -0.182 },
+							"size": 0.54140466,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.742, "y": 0.088 },
+							"size": 0.34670192,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.04, "y": 0.185 },
+							"size": 0.4371826,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.694, "y": 0.346 },
+							"size": 0.2170058,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.213, "y": 0.511 },
+							"size": 0.6292,
+							"drawDepth": -5.5,
+							"head": { "rotate": 8.656 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.859, "y": 0.5 },
+							"size": 0.59267,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"head": { "rotate": -21.924 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.028, "y": 0.362 },
+							"size": 0.45483485,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_013~1_npc",
+							"pointerOwner": "npc",
+							"location": "bottomRight",
+							"padXFraction": 0.098,
+							"padYFraction": 0.048,
+							"widthFraction": 0.59631735,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_013~2_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"padXFraction": 0.129,
+							"padYFraction": 0.101,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -33.11971, "dY": -18.27298 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.417, "y": -0.094 },
+							"size": 0.7145442,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.722, "y": 1.05 },
+							"size": 0.76485837,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.471, "y": 0.468 },
+							"size": 0.5120195,
+							"drawDepth": -5,
+							"head": { "rotate": -20.06, "scaleY": 1 },
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.566, "y": -0.182 },
+							"size": 0.54140466,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.742, "y": 0.088 },
+							"size": 0.34670192,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.04, "y": 0.185 },
+							"size": 0.4371826,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.694, "y": 0.346 },
+							"size": 0.2170058,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.213, "y": 0.511 },
+							"size": 0.6292,
+							"drawDepth": -5.5,
+							"head": { "rotate": -11.534 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.859, "y": 0.5 },
+							"size": 0.59267,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"head": { "rotate": -21.158, "scaleY": -1 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.028, "y": 0.362 },
+							"size": 0.45483485,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_014~1_npc",
+							"pointerOwner": "npc",
+							"location": "bottomLeft",
+							"padXFraction": 0.542,
+							"padYFraction": 0.092,
+							"widthFraction": 0.59631735,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -6.0090055,
+								"dX": -10.808436,
+								"dY": -5.043915,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_014~2_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"padXFraction": 0.129,
+							"padYFraction": 0.101,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -33.11971, "dY": -18.27298 }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_014~3_healer",
+							"pointerOwner": "healer",
+							"location": "topRight",
+							"padXFraction": 0.047,
+							"padYFraction": 0.124,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 13.570434,
+								"dX": -10.808436,
+								"dY": -15.852417,
+								"pointerOrientH": "onRight"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFourths",
+					"showNameTags": false,
+					"bg": "comicBG_swampTrees.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:holeCave1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.437, "y": 0.067 },
+							"size": 0.51946384,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.734, "y": 0.898 },
+							"size": 0.55604154,
+							"nameTag": "none",
+							"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.576, "y": 0.456 },
+							"size": 0.37223116,
+							"drawDepth": -5,
+							"head": { "rotate": 4.57, "scaleY": 1 },
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:barricade_drauven2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.582, "y": 0.003 },
+							"size": 0.39359376,
+							"drawDepth": -3.375,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.754, "y": 0.199 },
+							"size": 0.25204754,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"foot": { "rotate": 66.801 },
+							"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothillBig2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.069, "y": 0.27 },
+							"size": 0.31782576,
+							"drawDepth": -3.5,
+							"nameTag": "none",
+							"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.708, "y": 0.387 },
+							"size": 0.15776025,
+							"drawDepth": -3.25,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.246, "y": 0.488 },
+							"size": 0.3905,
+							"drawDepth": -5.5,
+							"head": { "rotate": -22.277, "scaleY": -1 },
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"role": "healer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.811, "y": 0.454 },
+							"size": 0.4221,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"head": { "rotate": 13.176 },
+							"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:shrubs1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.033, "y": 0.398 },
+							"size": 0.3306587,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.1, "y": 1.081 },
+							"drawDepth": -8,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.38596407" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_015~1_npc",
+							"pointerOwner": "npc",
+							"location": "topRight",
+							"padXFraction": 0.209,
+							"padYFraction": 0.02,
+							"widthFraction": 0.93333334,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_015~2_leader",
+							"pointerOwner": "leader",
+							"padXFraction": 0.036,
+							"padYFraction": 0.078,
+							"widthFraction": 0.8078996,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -6.170175, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_015~3_npc",
+							"pointerOwner": "npc",
+							"location": "bottomLeft",
+							"padXFraction": 0.422,
+							"padYFraction": 0.09,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"actorSlots": [
+								{
+									"assetSpec": "comic:holeCave1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.221, "y": -0.411 },
+									"size": 1.1447997,
+									"nameTag": "none",
+									"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.876, "y": 1.42 },
+									"size": 1.22541,
+									"nameTag": "none",
+									"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+								},
+								{
+									"role": "npc",
+									"form": "frame-grim",
+									"facing": "left",
+									"equipment": { "mode": "removeWeapons" },
+									"anchor": { "x": 0.541, "y": 0.478 },
+									"size": 0.8203268,
+									"drawDepth": -5,
+									"head": { "rotate": -23.784, "scaleY": 1 },
+									"foot": { "rotate": 0 },
+									"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:barricade_drauven2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.541, "y": -0.552 },
+									"size": 0.86740595,
+									"drawDepth": -3.375,
+									"nameTag": "none",
+									"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:rockBridgeL.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.92, "y": -0.12 },
+									"size": 0.5554649,
+									"drawDepth": -4,
+									"nameTag": "none",
+									"foot": { "rotate": 66.801 },
+									"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:rockFoothillBig2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.59, "y": 0.036 },
+									"size": 0.70042765,
+									"drawDepth": -3.5,
+									"nameTag": "none",
+									"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.818, "y": 0.294 },
+									"size": 0.34767365,
+									"drawDepth": -3.25,
+									"nameTag": "none",
+									"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:shrubs1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.535, "y": 0.318 },
+									"size": 0.72870904,
+									"drawDepth": -6,
+									"nameTag": "none",
+									"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+									"textKey": "~02~choice_two~panel_001~1_npc",
+									"pointerOwner": "npc",
+									"padXFraction": 0.024,
+									"padYFraction": 0.061,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": -10.292887, "dY": 0 }
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"assetSpec": "comic:holeCave1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.221, "y": -0.411 },
+									"size": 1.1447997,
+									"nameTag": "none",
+									"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.876, "y": 1.42 },
+									"size": 1.22541,
+									"nameTag": "none",
+									"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+								},
+								{
+									"role": "npc",
+									"facing": "left",
+									"equipment": { "mode": "removeWeapons" },
+									"anchor": { "x": 0.527, "y": 0.446 },
+									"size": 0.8203268,
+									"drawDepth": -5,
+									"head": { "rotate": 2.531, "scaleY": 1 },
+									"foot": { "rotate": 0 },
+									"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:barricade_drauven2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.541, "y": -0.552 },
+									"size": 0.86740595,
+									"drawDepth": -3.375,
+									"nameTag": "none",
+									"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:rockBridgeL.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.92, "y": -0.12 },
+									"size": 0.5554649,
+									"drawDepth": -4,
+									"nameTag": "none",
+									"foot": { "rotate": 66.801 },
+									"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:rockFoothillBig2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": -0.59, "y": 0.036 },
+									"size": 0.70042765,
+									"drawDepth": -3.5,
+									"nameTag": "none",
+									"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.818, "y": 0.294 },
+									"size": 0.34767365,
+									"drawDepth": -3.25,
+									"nameTag": "none",
+									"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:shrubs1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.535, "y": 0.318 },
+									"size": 0.72870904,
+									"drawDepth": -6,
+									"nameTag": "none",
+									"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+									"textKey": "~03~choice_one~panel_001~1_narration",
+									"style": "narration",
+									"location": "bottomRight",
+									"padXFraction": 0.045,
+									"padYFraction": 0.086,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+									"textKey": "~03~choice_one~panel_001~2_npc",
+									"pointerOwner": "npc",
+									"padXFraction": 0.038,
+									"padYFraction": 0.071,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": -10.079017, "dY": -6.4793677 }
+								},
+								{
+									"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+									"textKey": "~03~choice_one~panel_001~3_darken",
+									"style": "darken",
+									"location": "bottomRight",
+									"padXFraction": 0.043,
+									"padYFraction": 0.058,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "leader",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_swampTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:holeCave1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.43632177, "y": -0.087409675 },
+										"size": 0.7047069,
+										"nameTag": "none",
+										"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.7365192, "y": 1.0399286 },
+										"size": 0.75432837,
+										"nameTag": "none",
+										"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.57681817, "y": 0.4403094 },
+										"size": 0.5049704,
+										"drawDepth": -5,
+										"head": { "rotate": 4.57, "scaleY": 1 },
+										"foot": { "rotate": 0 },
+										"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:barricade_drauven2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.5828828, "y": -0.17423236 },
+										"size": 0.533951,
+										"drawDepth": -3.375,
+										"nameTag": "none",
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rockBridgeL.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.7567345, "y": 0.09166211 },
+										"size": 0.34192878,
+										"drawDepth": -4,
+										"nameTag": "none",
+										"foot": { "rotate": 66.801 },
+										"color": { "r": "0.50925791", "g": "0.48476452", "b": "0.5678671", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothillBig2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.06435996, "y": 0.18798101 },
+										"size": 0.43116382,
+										"drawDepth": -3.5,
+										"nameTag": "none",
+										"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_cageWoodOpen.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.7102393, "y": 0.3467037 },
+										"size": 0.21401824,
+										"drawDepth": -3.25,
+										"nameTag": "none",
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"role": "leader",
+										"equipment": {},
+										"anchor": { "x": 0.218, "y": 0.484 },
+										"size": 0.529754,
+										"drawDepth": -5.5,
+										"head": { "rotate": 11.535, "scaleY": 1 },
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"role": "healer",
+										"form": "frame-happy",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.802, "y": 0.48 },
+										"size": 0.5726227,
+										"drawDepth": -7,
+										"nameTag": "none",
+										"head": { "rotate": -10.81 },
+										"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:shrubs1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.0387381, "y": 0.36162636 },
+										"size": 0.44857302,
+										"drawDepth": -6,
+										"nameTag": "none",
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.064, "y": 1.054 },
+										"drawDepth": -8,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.38596407" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+										"textKey": "~04~player_chose_two~panel_001~1_npc",
+										"pointerOwner": "npc",
+										"padXFraction": 0.055,
+										"padYFraction": 0.089,
+										"widthFraction": 0.85269105,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+										"textKey": "~04~player_chose_two~panel_001~2_leader",
+										"pointerOwner": "leader",
+										"location": "bottomLeft",
+										"padXFraction": 0.251,
+										"padYFraction": 0.031,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+										"textKey": "~04~player_chose_two~panel_001~3_healer",
+										"pointerOwner": "healer",
+										"location": "bottomRight",
+										"padXFraction": 0.34220564,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_swampTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.542, "y": 0.536 },
+										"size": 0.314,
+										"nameTag": "none",
+										"color": { "r": "0.54736799", "g": "0.54736799", "b": "0.54736799", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothillBig2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.253, "y": 0.238 },
+										"size": 0.4136,
+										"drawDepth": -3.5,
+										"nameTag": "none",
+										"color": { "r": "0.5381332", "g": "0.48456717", "b": "0.66630912", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:foliageEdges_broadleaf.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.09, "y": 0.896 },
+										"size": 0.3775,
+										"drawDepth": -7,
+										"nameTag": "none",
+										"foot": { "rotate": 43.419 },
+										"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:fern3.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.223, "y": 0.072 },
+										"size": 0.4347,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_skullString.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.918, "y": 0.178 },
+										"size": 0.3868,
+										"drawDepth": -6.5,
+										"nameTag": "none",
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_gearPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.007, "y": 0.154 },
+										"size": 0.3072,
+										"drawDepth": -6,
+										"nameTag": "none",
+										"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+									},
+									{
+										"role": "npc",
+										"form": "frame-happy",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.382, "y": 0.377 },
+										"size": 0.3144,
+										"drawDepth": 0.9375,
+										"head": { "rotate": -21.142, "scaleY": -1 },
+										"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+									},
+									{
+										"role": "healer",
+										"form": "frame-happy",
+										"equipment": {},
+										"anchor": { "x": 0.871, "y": 0.443 },
+										"size": 0.3481,
+										"drawDepth": -8,
+										"head": { "rotate": -18.514, "scaleY": -1 },
+										"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.654, "y": 0.218 },
+										"size": 0.3539,
+										"drawDepth": 0.875,
+										"nameTag": "none",
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_basketSpears.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.374, "y": 0.148 },
+										"size": 0.14,
+										"drawDepth": 0.96875,
+										"nameTag": "none",
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"role": "leader",
+										"equipment": {},
+										"anchor": { "x": 0.752, "y": 0.527 },
+										"size": 0.505,
+										"drawDepth": -9,
+										"nameTag": "none",
+										"head": { "rotate": -14.837, "scaleY": -1 },
+										"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 1.167, "y": 0.148 },
+										"size": 1.4025,
+										"drawDepth": -10,
+										"nameTag": "none",
+										"foot": { "rotate": -10.206 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.38596407" }
+									},
+									{
+										"assetSpec": "comic:stars1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.929, "y": 0.831 },
+										"size": 0.2391,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:starsLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.399, "y": 0.993 },
+										"size": 0.2526,
+										"drawDepth": 0.90625,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+										"textKey": "~04~player_chose_two~panel_002~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+										"padXFraction": 0.076,
+										"padYFraction": 0.17,
+										"widthFraction": 0.6915494,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+										"textKey": "~04~player_chose_two~panel_002~2_healer",
+										"pointerOwner": "healer",
+										"location": "bottomLeft",
+										"padXFraction": 0.098,
+										"padYFraction": 0.031,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "threeFourths",
+								"showNameTags": false,
+								"bg": "comicBG_swampTrees.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.239, "y": 0.582 },
+										"size": 0.314,
+										"nameTag": "none",
+										"color": { "r": "0.54736799", "g": "0.54736799", "b": "0.54736799", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothillBig2.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.32008505, "y": 0.299 },
+										"size": 0.4136,
+										"drawDepth": -3.5,
+										"nameTag": "none",
+										"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:foliageEdges_broadleaf.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.7802193, "y": 0.957 },
+										"size": 0.3775,
+										"drawDepth": -7,
+										"nameTag": "none",
+										"foot": { "rotate": 43.419 },
+										"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:fern3.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.35998112, "y": 0.133 },
+										"size": 0.4347,
+										"drawDepth": -5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:drauven_skullString.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.887, "y": 0.201 },
+										"size": 0.3868,
+										"drawDepth": -6.5,
+										"nameTag": "none",
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_gearPile.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.669397, "y": 0.215 },
+										"size": 0.3072,
+										"drawDepth": -6,
+										"nameTag": "none"
+									},
+									{
+										"role": "healer",
+										"equipment": {},
+										"anchor": { "x": 0.781, "y": 0.534 },
+										"size": 0.4462,
+										"drawDepth": -8,
+										"head": { "rotate": -23.702, "scaleY": -1 },
+										"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_lanternPoleOff.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.07532892, "y": 0.29 },
+										"size": 0.3539,
+										"drawDepth": 0.875,
+										"nameTag": "none",
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_basketSpears.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.1578412, "y": 0.209 },
+										"size": 0.14,
+										"drawDepth": 0.96875,
+										"nameTag": "none",
+										"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+									},
+									{
+										"role": "leader",
+										"equipment": {},
+										"anchor": { "x": 0.2863346, "y": 0.599 },
+										"size": 0.505,
+										"drawDepth": -9,
+										"nameTag": "none",
+										"head": { "rotate": -14.837, "scaleY": 1 },
+										"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:lightBeam1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.938, "y": 1.005 },
+										"size": 1.1343,
+										"drawDepth": -10,
+										"nameTag": "none",
+										"foot": { "rotate": -10.204 },
+										"color": { "r": "1", "g": "1", "b": "1", "a": "0.38596407" }
+									},
+									{
+										"assetSpec": "comic:stars1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.895, "y": 0.766 },
+										"size": 0.2391,
+										"drawDepth": -1,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:starsLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.399, "y": 0.993 },
+										"size": 0.2526,
+										"drawDepth": 0.90625,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+										"textKey": "~04~player_chose_two~panel_003~1_healer",
+										"pointerOwner": "healer",
+										"location": "bottomRight",
+										"padXFraction": 0.068,
+										"padYFraction": 0.034,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": 15.988857,
+											"dY": -7.9943585,
+											"scaleX": 0.8057461,
+											"scaleY": 0.8057461,
+											"pointerOrientH": "onLeft"
+										}
+									},
+									{
+										"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+										"textKey": "~04~player_chose_two~panel_003~2_leader",
+										"pointerOwner": "leader",
+										"padXFraction": 0.156,
+										"padYFraction": 0.062,
+										"widthFraction": 0.8451613,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 11.420613, "dY": 0 }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "AddCalamities",
+					"calamitiesToAdd": [
+						{ "quantity": "-2", "flavor": "drauven" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "leader",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Split",
+							"splitSpec": "volunteer.exists",
+							"splitBranches": [
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "fourFifth",
+											"showNameTags": false,
+											"bg": "comicBG_swampTrees.jpg",
+											"actorSlots": [
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.317, "y": 0.402 },
+													"size": 0.4575,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rockFoothillBig2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.315, "y": 0.169 },
+													"size": 0.4136,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "npc",
+													"form": "frame-happy",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 1.232, "y": 0.469 },
+													"size": 0.3144,
+													"drawDepth": 0.9375,
+													"head": { "rotate": -9.999, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "healer",
+													"form": "frame-happy",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": 0.71, "y": 0.42 },
+													"size": 0.3924,
+													"drawDepth": -8,
+													"head": { "rotate": 2.706, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "leader",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": 0.876, "y": 0.55 },
+													"size": 0.505,
+													"drawDepth": -9,
+													"nameTag": "none",
+													"head": { "rotate": 4.889, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "vfx:fire",
+													"role": null,
+													"form": "active",
+													"focus": "middle",
+													"anchor": { "x": 0.209, "y": 0.014 },
+													"size": 0.1319,
+													"drawDepth": -8.25,
+													"nameTag": "none",
+													"color": { "r": "0.99532163", "g": "0.73801172", "b": "0.73801184", "a": "0.82806975" },
+													"animationSpeed": 0.3
+												},
+												{
+													"assetSpec": "vfx:fire",
+													"role": null,
+													"form": "active",
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.228, "y": 0.007 },
+													"size": 0.1319,
+													"drawDepth": -11,
+													"nameTag": "none",
+													"color": { "r": "0.99999994", "g": "1", "b": "1", "a": "0.75438595" },
+													"animationSpeed": 0.3
+												},
+												{
+													"role": "volunteer2",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.093, "y": 0.431 },
+													"size": 0.3804,
+													"drawDepth": 0.984375,
+													"nameTag": "none",
+													"head": { "rotate": -19.238 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "volunteer",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.286, "y": 0.488 },
+													"size": 0.448,
+													"drawDepth": -11.5,
+													"nameTag": "none",
+													"head": { "rotate": -27.062, "scaleY": -1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:cookingPot.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.216, "y": 0.16 },
+													"size": 0.1902,
+													"drawDepth": -8.5,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:tent.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.855, "y": 0.263 },
+													"size": 0.4705,
+													"drawDepth": 0.9921875,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rocksMoss3.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.198, "y": 0.176 },
+													"size": 0.3601,
+													"drawDepth": 0.99609375,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:gradientRoundWhite.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.316, "y": -0.318 },
+													"size": 4.17,
+													"drawDepth": -12,
+													"nameTag": "none",
+													"color": { "r": "0.99798089", "g": "0.87167132", "b": "0.42658049", "a": "0.71228069" }
+												},
+												{
+													"role": "volunteer3",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.187, "y": 0.424 },
+													"size": 0.3076,
+													"drawDepth": 0.9941406,
+													"nameTag": "none",
+													"head": { "rotate": -27.291, "scaleY": -1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_001.(volunteer_exists)~1_narration",
+													"style": "narration",
+													"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+													"padXFraction": 0.076,
+													"padYFraction": 0.17,
+													"widthFraction": 0.6915494,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_001.(volunteer_exists)~2_healer",
+													"pointerOwner": "healer",
+													"location": "bottomLeft",
+													"padXFraction": 0.098,
+													"padYFraction": 0.031,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_001.(volunteer_exists)~3_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": 0.069,
+													"padYFraction": 0.058,
+													"widthFraction": 0.92869866,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": 30.627705,
+														"dX": -31.977783,
+														"dY": -2.2840886,
+														"scaleX": 0.7653078,
+														"scaleY": 0.7653078,
+														"pointerOrientH": "onRight",
+														"forcePointerImage": "speechMedium"
+													}
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_001.(volunteer_exists)~4_leader",
+													"pointerOwner": "leader",
+													"location": "topRight",
+													"padXFraction": 0.183,
+													"padYFraction": 0.203,
+													"widthFraction": 0.47593582,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "rotate": 9.9262295, "dX": -11.420683, "dY": -1.1419916 }
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "fifth",
+											"showNameTags": false,
+											"bg": "comicBG_swampTrees.jpg",
+											"actorSlots": [
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -3.039, "y": 0.414 },
+													"size": 0.8870611,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rockFoothillBig2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.264, "y": 0.181 },
+													"size": 0.801942,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "npc",
+													"form": "frame-happy",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.705, "y": 0.477 },
+													"size": 0.7528,
+													"drawDepth": 0.9375,
+													"head": { "rotate": 5.92, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "healer",
+													"form": "frame-happy",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": -1.012, "y": 0.398 },
+													"size": 0.76083666,
+													"drawDepth": -8,
+													"head": { "rotate": 2.706, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "leader",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": -0.558, "y": 0.551 },
+													"size": 0.9791603,
+													"drawDepth": -9,
+													"nameTag": "none",
+													"head": { "rotate": 4.889, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "vfx:fire",
+													"role": null,
+													"form": "active",
+													"focus": "middle",
+													"anchor": { "x": -3.137, "y": 0.018 },
+													"size": 0.25574505,
+													"drawDepth": -8.25,
+													"nameTag": "none",
+													"color": { "r": "0.99532163", "g": "0.73801172", "b": "0.73801184", "a": "0.82806975" },
+													"animationSpeed": 0.3
+												},
+												{
+													"assetSpec": "vfx:fire",
+													"role": null,
+													"form": "active",
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": -2.936, "y": 0.011 },
+													"size": 0.25574505,
+													"drawDepth": -11,
+													"nameTag": "none",
+													"color": { "r": "0.99999994", "g": "1", "b": "1", "a": "0.75438595" },
+													"animationSpeed": 0.3
+												},
+												{
+													"role": "volunteer2",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": -3.977, "y": 0.504 },
+													"size": 0.83723056,
+													"drawDepth": 0.984375,
+													"nameTag": "none",
+													"head": { "rotate": -19.238 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "volunteer",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": -2.307, "y": 0.481 },
+													"size": 0.86864126,
+													"drawDepth": -8.75,
+													"nameTag": "none",
+													"head": { "rotate": -27.062, "scaleY": -1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:cookingPot.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -3.12, "y": 0.164 },
+													"size": 0.36878476,
+													"drawDepth": -8.5,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:tent.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.719, "y": 0.275 },
+													"size": 0.9122672,
+													"drawDepth": 0.9921875,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rocksMoss3.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -3.554, "y": 0.188 },
+													"size": 0.69820917,
+													"drawDepth": 0.99609375,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:gradientRoundWhite.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -3.044, "y": -0.306 },
+													"size": 8.085344,
+													"drawDepth": -12,
+													"nameTag": "none",
+													"color": { "r": "0.99798089", "g": "0.87167132", "b": "0.42658049", "a": "0.71228069" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_002.(volunteer_exists)~1_narration",
+													"style": "narration",
+													"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+													"padXFraction": 0.076,
+													"padYFraction": 0.17,
+													"widthFraction": 0.6915494,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_002.(volunteer_exists)~2_healer",
+													"pointerOwner": "healer",
+													"location": "bottomLeft",
+													"padXFraction": 0.098,
+													"padYFraction": 0.031,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_002.(volunteer_exists)~3_npc",
+													"pointerOwner": "npc",
+													"location": "bottomRight",
+													"padXFraction": 0.503,
+													"padYFraction": 0.047,
+													"widthFraction": 3.2204723,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"dX": 11.420612,
+														"dY": -1.1419921,
+														"scaleX": 0.7653518,
+														"scaleY": 0.7653518,
+														"forcePointerImage": "speechMedium"
+													},
+													"allowDrawOverEdges": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"bg": "comicBG_swampTrees.jpg",
+											"actorSlots": [
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.467, "y": 0.425 },
+													"size": 0.4575,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rockFoothillBig2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.261, "y": 0.192 },
+													"size": 0.4136,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "npc",
+													"form": "frame-happy",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.606, "y": 0.501 },
+													"size": 0.4854,
+													"drawDepth": -8.8125,
+													"head": { "rotate": 19.669, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "healer",
+													"form": "frame-happy",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.846, "y": 0.431 },
+													"size": 0.3673,
+													"drawDepth": -8,
+													"head": { "rotate": -6.987, "scaleY": 1 },
+													"foot": { "rotate": -8.174 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "volunteer",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.234, "y": 0.516 },
+													"size": 0.4881,
+													"drawDepth": -9,
+													"nameTag": "none",
+													"head": { "rotate": 4.889, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "vfx:fire",
+													"role": null,
+													"form": "active",
+													"focus": "middle",
+													"anchor": { "x": 0.45, "y": 0.029 },
+													"size": 0.1319,
+													"drawDepth": -8.25,
+													"nameTag": "none",
+													"color": { "r": "0.99532163", "g": "0.73801172", "b": "0.73801184", "a": "0.82806975" },
+													"animationSpeed": 0.3
+												},
+												{
+													"assetSpec": "vfx:fire",
+													"role": null,
+													"form": "active",
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.486, "y": 0.022 },
+													"size": 0.1319,
+													"drawDepth": -11,
+													"nameTag": "none",
+													"color": { "r": "0.99999994", "g": "1", "b": "1", "a": "0.75438595" },
+													"animationSpeed": 0.3
+												},
+												{
+													"role": "volunteer2",
+													"form": "frame-interested",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.056, "y": 0.427 },
+													"size": 0.3161,
+													"drawDepth": 0.984375,
+													"nameTag": "none",
+													"head": { "rotate": -32.998, "scaleY": -1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "leader",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.36, "y": 0.438 },
+													"size": 0.3272,
+													"drawDepth": 0.9863281,
+													"nameTag": "none",
+													"head": { "rotate": 1.349, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:cookingPot.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.452, "y": 0.175 },
+													"size": 0.1902,
+													"drawDepth": -8.5,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:tent.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.986, "y": 0.255 },
+													"size": 0.4705,
+													"drawDepth": 0.9921875,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rocksMoss3.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.231, "y": 0.184 },
+													"size": 0.3601,
+													"drawDepth": 0.99609375,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:gradientRoundWhite.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.466, "y": -0.295 },
+													"size": 4.17,
+													"drawDepth": -12,
+													"nameTag": "none",
+													"color": { "r": "0.99798089", "g": "0.87167132", "b": "0.42658049", "a": "0.71228069" }
+												},
+												{
+													"assetSpec": "scenery:woodpile1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.961, "y": 0.073 },
+													"size": 0.1947,
+													"drawDepth": -8.625,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "volunteer3",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.469, "y": 0.398 },
+													"size": 0.2712,
+													"drawDepth": 0.9902344,
+													"nameTag": "none",
+													"head": { "rotate": -26.236, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_003.(volunteer_exists)~1_narration",
+													"style": "narration",
+													"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+													"padXFraction": 0.052,
+													"padYFraction": 0.104,
+													"widthFraction": 0.9178243,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_003.(volunteer_exists)~2_healer",
+													"pointerOwner": "healer",
+													"location": "bottomLeft",
+													"padXFraction": 0.098,
+													"padYFraction": 0.031,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_003.(volunteer_exists)~3_volunteer",
+													"pointerOwner": "volunteer",
+													"padXFraction": 0.387,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "pointerOrientH": "onRight" }
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_003.(volunteer_exists)~4_npc",
+													"pointerOwner": "npc",
+													"location": "bottomLeft",
+													"padXFraction": 0.167,
+													"padYFraction": 0.054,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									}
+								],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"bg": "comicBG_swampTrees.jpg",
+											"actorSlots": [
+												{
+													"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.542, "y": 0.536 },
+													"size": 0.314,
+													"nameTag": "none",
+													"color": { "r": "0.64210528", "g": "0.64210528", "b": "0.64210528", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rockFoothillBig2.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.253, "y": 0.238 },
+													"size": 0.4136,
+													"drawDepth": -3.5,
+													"nameTag": "none",
+													"color": { "r": "0.5381332", "g": "0.48456717", "b": "0.66630912", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:foliageEdges_broadleaf.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.09, "y": 0.896 },
+													"size": 0.3775,
+													"drawDepth": -7,
+													"nameTag": "none",
+													"foot": { "rotate": 43.419 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:fern3.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.223, "y": 0.072 },
+													"size": 0.4347,
+													"drawDepth": -5,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_skullString.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.918, "y": 0.178 },
+													"size": 0.3868,
+													"drawDepth": -6.5,
+													"nameTag": "none",
+													"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_gearPile.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.007, "y": 0.154 },
+													"size": 0.3072,
+													"drawDepth": -6,
+													"nameTag": "none",
+													"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+												},
+												{
+													"role": "npc",
+													"form": "frame-happy",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.403, "y": 0.496 },
+													"size": 0.4032,
+													"drawDepth": -8.5,
+													"head": { "rotate": 7.864, "scaleY": 1 },
+													"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+												},
+												{
+													"role": "healer",
+													"equipment": {},
+													"anchor": { "x": 0.581, "y": 0.378 },
+													"size": 0.3481,
+													"drawDepth": 0.921875,
+													"head": { "rotate": -28.005, "scaleY": -1 },
+													"color": { "r": "0.78624368", "g": "0.76145279", "b": "0.84556472", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_lanternPoleOff.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.654, "y": 0.218 },
+													"size": 0.3539,
+													"drawDepth": 0.9453125,
+													"nameTag": "none",
+													"color": { "r": "0.82105261", "g": "0.88070178", "b": "0.94035095", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:drauven_basketSpears.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.374, "y": 0.148 },
+													"size": 0.14,
+													"drawDepth": 0.96875,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "leader",
+													"equipment": {},
+													"anchor": { "x": 0.827, "y": 0.501 },
+													"size": 0.505,
+													"drawDepth": -9,
+													"nameTag": "none",
+													"head": { "rotate": -20.187, "scaleY": -1 },
+													"color": { "r": "0.69999999", "g": "0.80000001", "b": "0.89999998", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:lightBeam1.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 1.167, "y": 0.148 },
+													"size": 1.4025,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"foot": { "rotate": -10.206 },
+													"color": { "r": "1", "g": "1", "b": "1", "a": "0.38596407" }
+												},
+												{
+													"assetSpec": "comic:stars1.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.929, "y": 0.831 },
+													"size": 0.2391,
+													"drawDepth": -1,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:starsLong.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.399, "y": 0.993 },
+													"size": 0.2526,
+													"drawDepth": 0.90625,
+													"nameTag": "none"
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_004.(volunteer_is_missing)~1_narration",
+													"style": "narration",
+													"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+													"padXFraction": 0.076,
+													"padYFraction": 0.17,
+													"widthFraction": 0.6915494,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_004.(volunteer_is_missing)~2_healer",
+													"pointerOwner": "healer",
+													"location": "bottomLeft",
+													"padXFraction": 0.098,
+													"padYFraction": 0.031,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_004.(volunteer_is_missing)~3_leader",
+													"pointerOwner": "leader",
+													"location": "topRight",
+													"padXFraction": 0.157,
+													"padYFraction": 0.103,
+													"widthFraction": 0.7606232,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_004.(volunteer_is_missing)~4_npc",
+													"pointerOwner": "npc",
+													"padXFraction": 0.303,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									},
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "full",
+											"showNameTags": false,
+											"bg": "comicBG_swampTrees.jpg",
+											"actorSlots": [
+												{
+													"assetSpec": "comicBg:comicBG_campfire.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.373, "y": 0.402 },
+													"size": 0.4575,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rockFoothillBig2.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 1.167, "y": 0.169 },
+													"size": 0.4136,
+													"drawDepth": -10,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "npc",
+													"form": "frame-interested",
+													"facing": "left",
+													"equipment": { "mode": "removeWeapons" },
+													"anchor": { "x": 0.459, "y": 0.438 },
+													"size": 0.4062,
+													"drawDepth": 0.9375,
+													"head": { "rotate": -9.999, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "healer",
+													"form": "frame-grim",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": 0.678, "y": 0.478 },
+													"size": 0.515,
+													"drawDepth": -8,
+													"head": { "rotate": -19.166, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"role": "leader",
+													"form": "frame-grim",
+													"equipment": {},
+													"anchor": { "x": 0.185, "y": 0.504 },
+													"size": 0.482,
+													"drawDepth": -9,
+													"nameTag": "none",
+													"head": { "rotate": -5.122, "scaleY": 1 },
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "vfx:fire",
+													"role": null,
+													"form": "active",
+													"focus": "middle",
+													"anchor": { "x": 0.355, "y": 0.006 },
+													"size": 0.1319,
+													"drawDepth": -8.25,
+													"nameTag": "none",
+													"color": { "r": "0.99532163", "g": "0.73801172", "b": "0.73801184", "a": "0.82806975" },
+													"animationSpeed": 0.3
+												},
+												{
+													"assetSpec": "vfx:fire",
+													"role": null,
+													"form": "active",
+													"facing": "left",
+													"focus": "middle",
+													"anchor": { "x": 0.392, "y": -0.001 },
+													"size": 0.1319,
+													"drawDepth": -11,
+													"nameTag": "none",
+													"color": { "r": "0.99999994", "g": "1", "b": "1", "a": "0.75438595" },
+													"animationSpeed": 0.3
+												},
+												{
+													"assetSpec": "scenery:cookingPot.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.333, "y": 0.118 },
+													"size": 0.1902,
+													"drawDepth": -8.5,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:tent.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.801, "y": 0.263 },
+													"size": 0.4705,
+													"drawDepth": 0.9921875,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rocksMoss3.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.115, "y": 0.165 },
+													"size": 0.3601,
+													"drawDepth": 0.99609375,
+													"nameTag": "none",
+													"color": { "r": "0.62770092", "g": "0.69698304", "b": "0.9933517", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:gradientRoundWhite.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.372, "y": -0.318 },
+													"size": 4.17,
+													"drawDepth": -12,
+													"nameTag": "none",
+													"color": { "r": "0.99798089", "g": "0.87167132", "b": "0.42658049", "a": "0.71228069" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_005.(volunteer_is_missing)~1_narration",
+													"style": "narration",
+													"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+													"padXFraction": 0.039,
+													"padYFraction": 0.088,
+													"widthFraction": 0.8805796,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_005.(volunteer_is_missing)~2_healer",
+													"pointerOwner": "healer",
+													"location": "bottomLeft",
+													"padXFraction": 0.098,
+													"padYFraction": 0.031,
+													"shrinkToFitText": true,
+													"pointerAdjust": { "pointerOrientH": "onLeft" }
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_005.(volunteer_is_missing)~3_npc",
+													"pointerOwner": "npc",
+													"location": "bottomLeft",
+													"padXFraction": 0.126,
+													"padYFraction": 0.061,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_005.(volunteer_is_missing)~4_leader",
+													"pointerOwner": "leader",
+													"padXFraction": 0.085,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+													"textKey": "~05~player_chose_one~panel_005.(volunteer_is_missing)~5_narration",
+													"style": "narration",
+													"backgroundColor": { "r": "0.80145174", "g": "0.04767019", "b": "0.04767045", "a": "0.84912282" },
+													"location": "bottomRight",
+													"padXFraction": 0.067,
+													"padYFraction": 0.062,
+													"shrinkToFitText": true
+												}
+											]
+										}
+									}
+								]
+							]
+						}
+					]
+				},
+				{
+					"class": "AddResources",
+					"target": "company",
+					"amount": "0-(2+RECRUIT_COST_ADJUSTMENT)"
+				},
+				{
+					"class": "ChangeControl",
+					"target": "npc",
+					"becomeAllyOf": "party",
+					"makeHero": true
+				},
+				{
+					"class": "AddHistory",
+					"target": "npc",
+					"inlineHistory": { "id": "missionVictory_birdsOfaFeather2_Revision.outcome" }
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "nonFarmer", "setAge": "young" }
+			}
+		},
+		{
+			"role": "folk1",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "healer",
+					"setGender": "sameAsRelative",
+					"setAge": "oldAge",
+					"nameConstraints": "requireLastName"
+				},
+				"control": "none"
+			}
+		},
+		{
+			"role": "folk2",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "healer",
+					"setGender": "relativeIsAttracted",
+					"setAge": "lateMiddleAge"
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}
