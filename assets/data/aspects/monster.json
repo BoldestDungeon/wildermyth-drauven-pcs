@@ -30,7 +30,21 @@
 		"alsoAdd|hidden",
 		"alsoRemove|hidden"
 	],
-	"boostType": "THEME"
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0.5
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "turtleGuarding_stayHidden",
+	"effects": [
+		"removeAtStartOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"onAddedRemoveAllActionPoints",
+		"alsoAdd|hidden"
+	],
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0.5
 },
 {
 	"modId": "wildermyth-drauven-pcs",

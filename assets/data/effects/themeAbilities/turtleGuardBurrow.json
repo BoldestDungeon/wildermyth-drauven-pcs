@@ -4,7 +4,7 @@
 	"dataVersion": 1,
 	"sourceFile": "themeAbilities/turtleGuardBurrow",
 	"modId": "wildermyth-drauven-pcs",
-  "author": "David Bilsky",
+	"author": "David Bilsky",
 	"aiPriority": "-1",
 	"tags": [ "sneaky" ]
 },
@@ -21,16 +21,10 @@
 		"cost": { "class": "ActionPoints", "actionPoints": "all" },
 		"aspects": [ "alive", "themePiece_turtle_rightArm", "SELF", "themePiece_turtle_leftArm" ]
 	},
-  {
-    "template": "TILE",
-    "role": "focus",
-    "relativeTo": "self",
-    "range": 0,
-    "choose": "ONE_CLOSEST"
-  },
+	{ "template": "TILE", "choose": "ONE_CLOSEST", "range": "0" },
 	{
+		"role": "volunteer",
 		"template": "TILE",
-    "role": "volunteer",
 		"choose": "ANY",
 		"showAnyway": true,
 		"missionFeedback": { "rangeFeedback": "ATTACK_RANGE", "suggestionFeedback": "ATTACK_RANGE" },
@@ -39,18 +33,29 @@
 	}
 ],
 "outcomes": [
-  {
-    "class": "MoveEntity",
-    "target": "self",
-    "directlyToTile": "focus",
-    "ignoreEntitiesOnTile": true,
-    "animationType": "burrow"
-  },
 	{
-		"class": "Aspects",
-		"addAspects": [
-			{ "id": "turtleGuarding", "value": "1" }
-		]
+		"class": "MoveEntity",
+		"target": "self",
+		"directlyToTile": "focus",
+		"ignoreEntitiesOnTile": true,
+		"animationType": "burrow"
+	},
+	{
+		"class": "Test",
+		"value": "self.hidden+self.hunter",
+		"threshold": "1",
+		"onPass": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "turtleGuarding_stayHidden", "value": "1" }
+			]
+		},
+		"onFail": {
+			"class": "Aspects",
+			"addAspects": [
+				{ "id": "turtleGuarding", "value": "1" }
+			]
+		}
 	},
 	{ "class": "Animate", "target": "self", "script": "figures.enterGrayplane" },
 	{ "class": "BranchAbility", "target": "self", "branchAbility": "guard" }
