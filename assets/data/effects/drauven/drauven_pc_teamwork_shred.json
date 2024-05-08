@@ -13,7 +13,7 @@
 	"showInCharacterSheet": false,
 	"customSpecialAnimationEffect": {
 		"parameters": [
-			"max(1,(floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade)))+self.drauvenDeck_common_guerilla_upgrade))"
+			"max((1+self.drauvenDeck_common_guerilla_upgrade),(floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade)))+self.drauvenDeck_common_guerilla_upgrade))"
 		]
 	}
 },
@@ -30,7 +30,7 @@
 			"outcomes": [
 				{
 					"class": "Impact",
-					"impact": "max(1,(floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade)))+self.drauvenDeck_common_guerilla_upgrade))"
+					"impact": "max((1+self.drauvenDeck_common_guerilla_upgrade),(floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade)))+self.drauvenDeck_common_guerilla_upgrade))"
 				}
 			]
 		}
