@@ -107,9 +107,9 @@
 		"STUB": "This role prevents the event from occurring if anyone in the company speaks Druvwail. We will eventually want to remove it once we can account for that possibility in the comic.",
 		"type": "HERO",
 		"choose": "FORBID",
-		"scoreFunction": null,
-		"fromRoles": [ "company" ],
-		"aspects": [ "fluentInDruvwail" ]
+		"scoreFunction": "fluentInDruvwail",
+		"scoreThreshold": "1",
+		"fromRoles": null
 	},
 	{
 		"template": "CHOICE",
