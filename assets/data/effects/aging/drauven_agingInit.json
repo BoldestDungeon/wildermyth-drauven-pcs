@@ -1,12 +1,12 @@
 {
   "modId": "wildermyth-drauven-pcs",
-  "id": "drauven_aging",
-  "info": {
+  "id": "drauven_agingInit",
+  "info": { 
     "dataVersion": 1, 
-    "sourceFile": "aging/drauven_aging",
-    "author": "Ironskink"
+    "sourceFile": "aging/drauven_agingInit",
+    "author": "Ironskink" 
   },
-  "type": "MONTHLY",
+  "type": "ABILITIES_CHANGED",
   "targets": [
     {
       "template": "SELF",
@@ -18,6 +18,12 @@
     }
   ],
   "outcomes": [
+    {
+      "class": "Test",
+      "value": "IS_DUNGEONMODE",
+      "threshold": 1,
+      "onPass": { "class": "ModifyStats", "stat": "AGE", "value": "max(0, 50-self.AGE)" }
+    },
     {
       "class": "BranchAbility",
       "branchAbility": "drauven_setAgingStats",
