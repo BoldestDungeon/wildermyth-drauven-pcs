@@ -46,7 +46,7 @@
 		"scoreFunction": "(LOVER_WITH.hero*16)+SHIP_WITH.hero",
 		"notAlreadyMatchedAs": [ "hero" ],
 		"test": "GREATER_THAN_OR_EQUAL_TO",
-		"a": "max(COWARD,GOOFBALL,GREEDY,HOTHEAD,LONER, 80*(1-company.DrauvenAllies_FirstStepsComplete))",
+		"a": "max(COWARD,GOOFBALL,GREEDY,HOTHEAD,LONER,(80*(1-company.DrauvenAllies_FirstStepsComplete)))",
 		"b": "80"
 	},
 	{
@@ -33766,6 +33766,13 @@
 						"target": "hero",
 						"addAspects": [
 							{ "id": "abandonedDrauvenMaturationYear", "value": "hero.AGE_IN_YEARS+8" }
+						]
+					},
+					{
+						"class": "Aspects",
+						"target": "hero",
+						"addAspects": [
+							{ "id": "abandoned_hero_helped", "value": "1" }
 						]
 					},
 					{
