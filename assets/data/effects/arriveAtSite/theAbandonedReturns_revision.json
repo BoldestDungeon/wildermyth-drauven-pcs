@@ -32,7 +32,7 @@
 		"role": "healer",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
-		"scoreFunction": "((drauvenHealer+abandoned_hero)*100)+drauvenCloak",
+		"scoreFunction": "(abandoned_hero_helped*100)+drauvenCloak",
 		"scoreThreshold": "1"
 	},
 	{
