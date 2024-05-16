@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Shae Rossi & Katie Austin"
 },
 "type": "ENCOUNTER_MISSION_VICTORY",
@@ -35,7 +36,11 @@
 	{ "template": "INJECTED_PARTY", "choose": "ANY" },
 	{ "template": "DEAD_HEROES" },
 	{ "template": "MAIMED_HEROES" },
-	{ "role": "leader", "template": "PICK_BY_SCORE", "scoreFunction": "LEADER" },
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEADER+(1000*drauven)"
+	},
 	{
 		"role": "healer",
 		"template": "PICK_BY_SCORE",
@@ -988,8 +993,8 @@
 							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
 							"textKey": "~01~prompt~panel_007~1_npc",
 							"pointerOwner": "npc",
-							"padXFraction": 0.226,
-							"padYFraction": 0.107,
+							"padXFraction": 0.206,
+							"padYFraction": 0.075,
 							"widthFraction": 0.71388113,
 							"shrinkToFitText": true
 						},
@@ -1970,6 +1975,22 @@
 							"padYFraction": 0.101,
 							"shrinkToFitText": true,
 							"pointerAdjust": { "dX": -33.11971, "dY": -18.27298 }
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_013~3_leader",
+							"pointerOwner": "leader",
+							"fallbackSlotOwner": 0,
+							"padXFraction": 0.267,
+							"padYFraction": 0.766,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": 7.205624,
+								"dY": 81.423546,
+								"scaleX": 1,
+								"scaleY": 1,
+								"pointerOrientV": "down"
+							}
 						}
 					]
 				}
@@ -2125,6 +2146,13 @@
 								"dY": -15.852417,
 								"pointerOrientH": "onRight"
 							}
+						},
+						{
+							"textSourceFile": "missionOutcome/victory_birdsOfaFeather2_Revision",
+							"textKey": "~01~prompt~panel_014~4_leader",
+							"pointerOwner": "leader",
+							"fallbackSlotOwner": 0,
+							"shrinkToFitText": true
 						}
 					]
 				}
