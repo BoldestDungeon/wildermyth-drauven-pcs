@@ -4,7 +4,9 @@
 	"category": "abandonedDrauven",
 	"relationships": [
 		{ "role": "hothead", "fromRole": "hothead" },
-		{ "role": "healer", "fromRole": "healer" }
+		{ "role": "healer", "fromRole": "healer" },
+		{ "role": "hero", "fromRole": "hero" },
+		{ "role": "leader", "fromRole": "npc2" }
 	],
 	"impliedAspects": [ "abandonedDrauven" ]
 },
