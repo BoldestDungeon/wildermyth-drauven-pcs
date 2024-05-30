@@ -42,6 +42,27 @@
 		"test": "GREATER_THAN_OR_EQUAL_TO",
 		"a": "RESOURCE.legacyPoints",
 		"b": "3"
+	},
+	{
+		"role": "hero2",
+		"template": "HERO_BY_SCORE",
+		"choose": "ANY",
+		"scoreFunction": null,
+		"fromRoles": [ "participant" ],
+		"aspects": [ "drauven" ],
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hero3",
+		"template": "HERO_BY_SCORE",
+		"choose": "ANY",
+		"scoreFunction": null,
+		"fromRoles": [ "participant" ],
+		"aspects": null,
+		"aspectValues": [
+			{ "id": "nonhuman", "forbidden": true }
+		],
+		"notAlreadyMatchedAs": []
 	}
 ],
 "outcomes": [
@@ -57,9 +78,11 @@
 				"outcome": { "class": "Branch", "branchEvent": "job_drauvenRecruit_branch" }
 			},
 			{
+				"weightExp": "greaterThan(COUNT.participant,1)",
 				"outcome": { "class": "Branch", "branchEvent": "job_inspiredDrauvenHero_branch" }
 			},
 			{
+				"weightExp": "greaterThan(COUNT.participant,2)",
 				"outcome": { "class": "Branch", "branchEvent": "job_drauvenRecruit_trainingBranch" }
 			}
 		]
