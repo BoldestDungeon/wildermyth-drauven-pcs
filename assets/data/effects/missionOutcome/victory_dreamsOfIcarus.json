@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "missionOutcome/victory_dreamsOfIcarus",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Shae Rossi",
 	"STUB": "Victory after Drauven win in a swamp. \n\nIntention is to give the character wings via an amulet or a special feather or something. This amulet will be a Legacy item that can be passed down to the next generation."
 },
@@ -12,6 +13,7 @@
 	"icon": "utility",
 	"category": "attack",
 	"priority": "1",
+	"cooldown": "oncePerGame",
 	"encounterEnabled": true,
 	"onlyShowForNewSites": true
 },
@@ -1423,29 +1425,28 @@
 							{
 								"class": "Test",
 								"value": "leader.drauven",
-								"threshold": 1,
+								"threshold": "1",
 								"onPass": {
-                  "class": "DoAll",
-                  "target": "leader",
-                  "outcomes": [
-                    {
-                      "class": "AddHistory",
-                      "inlineHistory": {
-                        "id": "drauvenSpecial_addWingbeat",
-                        "associatedAspects": [ "drauvenSpecial_wingbeat" ],
-                        "persistOverLegacy": "ability"
-                      }
-                    },
-                    {
-                      "class": "AddHistory",
-                      "inlineHistory": {
-                        "id": "drauvenSpecial_addFlight",
-                        "associatedAspects": [ "drauvenSpecial_flight" ],
-                        "persistOverLegacy": "ability"
-                      }
-                    }
-
-                  ]
+									"class": "DoAll",
+									"target": "leader",
+									"outcomes": [
+										{
+											"class": "AddHistory",
+											"inlineHistory": {
+												"id": "drauvenSpecial_addWingbeat",
+												"associatedAspects": [ "drauvenSpecial_wingbeat" ],
+												"persistOverLegacy": "ability"
+											}
+										},
+										{
+											"class": "AddHistory",
+											"inlineHistory": {
+												"id": "drauvenSpecial_addFlight",
+												"associatedAspects": [ "drauvenSpecial_flight" ],
+												"persistOverLegacy": "ability"
+											}
+										}
+									]
 								}
 							}
 						]
