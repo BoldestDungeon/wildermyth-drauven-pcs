@@ -1,0 +1,38 @@
+{
+"id": "drauven_pc_teamwork_damage",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_teamwork_damage",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid and Bipen (based on timcrosby)"
+},
+"type": "DAMAGE_ROLL_AFTER_ARMOR",
+"ability": {
+	"priority": "1",
+	"showInCharacterSheet": false,
+	"customSpecialAnimationEffect": {
+		"parameters": [
+			"(1+floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade))))+self.drauvenDeck_common_guerilla_upgrade"
+		]
+	}
+},
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Test",
+		"value": "IS_FLANKING",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Impact",
+					"impact": "(1+floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade))))+self.drauvenDeck_common_guerilla_upgrade"
+				}
+			]
+		}
+	}
+]
+}

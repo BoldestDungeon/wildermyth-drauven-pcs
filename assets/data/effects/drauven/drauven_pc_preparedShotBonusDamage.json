@@ -1,0 +1,30 @@
+{
+"id": "drauven_pc_preparedShotBonusDamage",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_preparedShotBonusDamage",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Only applies if the hero also has Ambush (not normally obtainable, but a hero may have already had it)"
+},
+"type": "DAMAGE_ROLL",
+"verb": "ATTACK",
+"ability": {
+	"icon": "ranged",
+	"priority": "1",
+	"customSpecialAnimationEffect": { "role": "defender" }
+},
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "hunterGreenhorn_ambush" }
+		]
+	},
+	{ "template": "DEFENDER" },
+	{ "template": "ABILITY", "abilityHasTag": "preparedShotAttack" }
+],
+"outcomes": [
+	{ "class": "Impact", "impact": "2" }
+]
+}

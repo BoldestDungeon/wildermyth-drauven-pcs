@@ -3,8 +3,9 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "drauven/drauven_pc_quickblade_move",
-	"author": "Bipen",
-	"tags": ["sneaky" ]
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid & Bipen",
+	"tags": [ "sneaky" ]
 },
 "type": "ABILITY",
 "verb": "MANEUVER",
@@ -32,19 +33,25 @@
 		"showAnyway": true,
 		"alwaysSelect": true,
 		"missionFeedback": {
-			"rangeFeedback": "WALKABLE",
-			"rangeFeedback2": "WALKABLE_NO_ATTACK",
+			"rangeFeedback": "FRIENDLY_EFFECT_SUGGESTION_SHINE",
 			"suggestionFeedback": "PATH_SEGMENT",
-			"hoverFeedback": "PATH_TARGET"
+			"hoverFeedback": "PATH_TARGET",
+			"showMovementFeedback": true
 		},
 		"range": "SPEED"
+	},
+	{
+		"template": "SELF",
+		"missionFeedback": { "hoverFeedback": "WALLING" },
+		"relativeToLocation": "pathMotion"
 	}
 ],
 "outcomes": [
 	{ "class": "MoveEntity", "alongPath": "pathMotion" },
 	{
 		"class": "Aspects",
-		"removeAspects": [ "drauvenDeck_hunter_quickblade_move" ]
+		"removeAspects": [ "drauven_pc_quickblade_move" ]
 	}
-]
+],
+"expressions": { "ignoreScenery": "(traverse*100)+(maxValue.traverseParam|*100)" }
 }
