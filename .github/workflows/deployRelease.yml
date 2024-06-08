@@ -22,10 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: deploy
     steps:
-      - uses: game-ci/steam-deploy@v3
+      - uses: m00nl1ght-dev/steam-workshop-deploy@v1
         with:
           username: ${{ secrets.STEAM_USERNAME }}          
           configVdf: ${{ secrets.STEAM_CONFIG_VDF}}
           appId: 763890
           publishedFileId: 2810606541
-          buildDescription: ${{ github.event.release.title }}\n\n${{ github.event.release.body }}
+          changeNote: ${{ github.event.release.title }}\n\n${{ github.event.release.body }}
