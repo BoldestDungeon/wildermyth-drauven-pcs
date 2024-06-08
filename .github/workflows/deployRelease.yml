@@ -20,6 +20,7 @@ jobs:
           username: Trava
   workshopUpload:
     runs-on: ubuntu-latest
+    environment: deploy
     steps:
       - uses: game-ci/steam-deploy@v3
         with:
