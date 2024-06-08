@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: deploy
     steps:
-      - uses: BoldestDungeon/steam-workshop-deploy@v1
+      - uses: BoldestDungeon/steam-workshop-deploy@v1.0.1
         with:
           username: ${{ secrets.STEAM_USERNAME }}          
           configVdf: ${{ secrets.STEAM_CONFIG_VDF}}
