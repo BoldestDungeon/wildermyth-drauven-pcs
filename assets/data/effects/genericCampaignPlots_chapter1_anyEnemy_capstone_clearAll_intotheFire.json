@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstone_clearAll_intotheFire",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Douglas Austin",
 	"declaredEncounterResults": []
 },
@@ -16,17 +17,21 @@
 	{ "template": "INJECTED_SITE" },
 	{ "template": "INJECTED_PARTY" },
 	{ "template": "INJECTED_THREAT" },
-	{ "role": "hero", "template": "PICK_BY_SCORE", "scoreFunction": "0" },
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "(100*drauven)*foes.drauven"
+	},
 	{
 		"role": "hero2",
 		"template": "PICK_BY_SCORE",
-		"scoreFunction": "0",
+		"scoreFunction": null,
 		"notAlreadyMatchedAs": [ "hero" ]
 	},
 	{
 		"role": "hero3",
 		"template": "PICK_BY_SCORE",
-		"scoreFunction": "0",
+		"scoreFunction": null,
 		"notAlreadyMatchedAs": [ "hero", "hero2" ]
 	},
 	{
