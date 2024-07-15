@@ -1,0 +1,1697 @@
+{
+"id": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+	"author": "Douglas Austin",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "PLOT_MISSION_EVENT",
+"verb": "MANEUVER",
+"ability": { "icon": "utility", "category": "attack", "priority": "1" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{ "role": "hero", "template": "PICK_BY_SCORE", "scoreFunction": "0" },
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "volunteer2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "volunteer" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldGolden.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.652, "y": 0.355 },
+							"size": 0.364,
+							"nameTag": "none",
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.797, "y": 0.261 },
+							"size": 0.738,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.58862644", "g": "0.47495741", "b": "0.47495744", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.374, "y": 0.255 },
+							"size": 0.218,
+							"drawDepth": -0.625,
+							"nameTag": "none",
+							"color": { "r": "0.58862644", "g": "0.47495741", "b": "0.47495744", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "frame-active",
+							"focus": "middle",
+							"anchor": { "x": 0.874, "y": 0.478 },
+							"size": 0.466,
+							"drawDepth": -0.75,
+							"nameTag": "none",
+							"color": { "r": "0.72020406", "g": "0.36650044", "b": "0.36650056", "a": "0.68208092" },
+							"animationSpeed": 0.4
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "frame-active",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.062, "y": 0.157 },
+							"size": 0.291,
+							"drawDepth": -0.5625,
+							"nameTag": "none",
+							"color": { "r": "0.72020406", "g": "0.50143862", "b": "0.36650044", "a": "0.68208092" },
+							"animationSpeed": 0.5
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.714, "y": -0.548 },
+							"size": 4.794,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.70436293", "b": "0.08670449", "a": "0.68208092" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.107, "y": -0.862 },
+							"size": 7.518,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.70436293", "b": "0.08670449", "a": "0.68208092" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.205, "y": 1.214 },
+							"size": 0.717,
+							"drawDepth": -0.53125,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.821, "y": 0.664 },
+							"size": 0.717,
+							"drawDepth": -0.6875,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.082, "y": 0.39 },
+							"size": 0.478,
+							"drawDepth": -0.5,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.144, "y": 0.304 },
+							"size": 0.435,
+							"drawDepth": -0.71875,
+							"head": { "rotate": -25.952, "scaleY": -1 },
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.381, "y": 0.264 },
+							"size": 0.304,
+							"drawDepth": -0.65625,
+							"head": { "rotate": -25.952, "scaleY": -1 },
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-interested",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.512, "y": 0.283 },
+							"size": 0.207,
+							"drawDepth": -0.640625,
+							"head": { "rotate": 6.477, "scaleY": 1 },
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": { "mode": "leaveEquipment" },
+							"focus": "foot",
+							"anchor": { "x": 0.427, "y": 0.45 },
+							"size": 0.129,
+							"drawDepth": -0.5,
+							"head": { "rotate": -12.092, "scaleY": 1 },
+							"color": { "r": "0.53152418", "g": "0.41645199", "b": "0.41645202", "a": "1" }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"focus": "foot",
+							"anchor": { "x": 0.305, "y": 0.391 },
+							"size": 0.129,
+							"drawDepth": -0.5,
+							"head": { "rotate": -24.393, "scaleY": -1 },
+							"color": { "r": "0.53152418", "g": "0.41645199", "b": "0.41645202", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treesplit.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.692, "y": 0.324 },
+							"size": 0.128,
+							"drawDepth": -0.6328125,
+							"nameTag": "none",
+							"foot": { "rotate": -15.426 },
+							"color": { "r": "0.2722435", "g": "0.21330422", "b": "0.21330424", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:trunkSwamp1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.119, "y": -1.079 },
+							"size": 0.208,
+							"drawDepth": -0.875,
+							"nameTag": "none",
+							"foot": { "rotate": -15.426 },
+							"color": { "r": "0.2722435", "g": "0.21330422", "b": "0.21330424", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:trunkConifer1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.574, "y": -0.724 },
+							"size": 0.208,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"foot": { "rotate": 4.116 },
+							"color": { "r": "0.2722435", "g": "0.21330422", "b": "0.21330424", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_001~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.042,
+							"widthFraction": 0.87890285,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 3.3349597,
+								"dX": -12.252819,
+								"dY": 16.96552,
+								"scaleX": 0.57312757,
+								"scaleY": 0.57312757,
+								"pointerOrientH": "onRight",
+								"forcePointerImage": "speechLong"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFifths",
+					"showNameTags": false,
+					"bg": "comicBG_hillsRockyNight.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRockyNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.345, "y": 0.453 },
+							"size": 0.445,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"focus": "foot",
+							"size": 0.274,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.111, "y": 1.371 },
+							"size": 0.426,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.15188447", "g": "0.17835769", "b": "0.3510057", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.049, "y": 1.013 },
+							"size": 0.426,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.15188447", "g": "0.17835769", "b": "0.3510057", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.324, "y": 0.221 },
+							"size": 0.26,
+							"drawDepth": 0.75,
+							"head": { "rotate": -14.82, "scaleY": -1 },
+							"foot": { "rotate": -10.957 },
+							"color": { "r": "0.39481682", "g": "0.44046038", "b": "0.73812979", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.033, "y": 0.252 },
+							"size": 0.391,
+							"drawDepth": 0.75,
+							"head": { "rotate": -6.707 },
+							"foot": { "rotate": -15.497 },
+							"color": { "r": "0.39481682", "g": "0.44046038", "b": "0.73812979", "a": "1" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoFifths",
+					"showNameTags": false,
+					"bg": "comicBG_hillsRockyNight.jpg",
+					"animation": { "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRockyNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.534, "y": 0.456 },
+							"size": 0.445,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.311, "y": 0.503 },
+							"size": 0.274,
+							"drawDepth": -2,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.7, "y": 1.374 },
+							"size": 0.426,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.15188447", "g": "0.17835769", "b": "0.3510057", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.238, "y": 1.016 },
+							"size": 0.426,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.15188447", "g": "0.17835769", "b": "0.3510057", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": -0.487, "y": 0.224 },
+							"size": 0.26,
+							"drawDepth": 0.75,
+							"head": { "rotate": -14.82, "scaleY": -1 },
+							"foot": { "rotate": -10.957 },
+							"color": { "r": "0.39481682", "g": "0.44046038", "b": "0.73812979", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": -0.778, "y": 0.255 },
+							"size": 0.391,
+							"drawDepth": 0.75,
+							"head": { "rotate": -6.707 },
+							"foot": { "rotate": -15.497 },
+							"color": { "r": "0.39481682", "g": "0.44046038", "b": "0.73812979", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:cottageStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.536, "y": 0.141 },
+							"size": 0.035,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.27197653", "g": "0.23993145", "b": "0.19045052", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:lanternsHangingOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.677, "y": 0.122 },
+							"size": 0.138,
+							"drawDepth": 0.9375,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:lanternsHangingOn.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.5, "y": 0.098 },
+							"size": 0.032,
+							"drawDepth": 0.8125,
+							"nameTag": "none",
+							"foot": { "rotate": 4.656 },
+							"color": { "r": "0.58444142", "g": "0.61578333", "b": "0.8201828", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.704, "y": 0.195 },
+							"size": 0.378,
+							"drawDepth": 0.859375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.67268986", "b": "0.08670449", "a": "0.37283167" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.649, "y": 0.12 },
+							"size": 0.378,
+							"drawDepth": 0.84375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.67268986", "b": "0.08670449", "a": "0.37283167" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.51, "y": 0.111 },
+							"size": 0.26,
+							"drawDepth": 0.84375,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.67268986", "b": "0.08670449", "a": "0.37283167" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.498, "y": 0.117 },
+							"size": 0.085,
+							"drawDepth": 0.78125,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.86274165", "b": "0.08670449", "a": "0.37283167" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.786, "y": 0.231 },
+							"size": 0.249,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.5629316", "g": "0.58154881", "b": "0.70296293", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_003~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.39481682", "g": "0.44046038", "b": "0.73812979", "a": "1" },
+							"padXFraction": 0.057,
+							"padYFraction": 0.077,
+							"widthFraction": 0.9671805,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRockyNight.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.011, "y": 0.412 },
+							"size": 0.571,
+							"drawDepth": 65,
+							"nameTag": "none",
+							"color": { "r": "0.5629316", "g": "0.58154881", "b": "0.70296293", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.034, "y": 0.525 },
+							"size": 0.274,
+							"drawDepth": 60,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:entranceDoorwayInterior.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.155, "y": 0.531 },
+							"size": 0.611,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.839, "y": -0.051 },
+							"size": 0.406,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.814, "y": 0.65 },
+							"drawDepth": 1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.70436305", "b": "0.08670449", "a": "0.8005777" }
+						},
+						{
+							"assetSpec": "comic:wallCandle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.767, "y": 0.582 },
+							"size": 0.21,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.767, "y": 0.71 },
+							"size": 2.833,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "1", "g": "0.86274183", "b": "0.08670449", "a": "0.14450832" }
+						},
+						{
+							"role": "hero",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.582, "y": 0.593 },
+							"size": 0.598,
+							"drawDepth": 1.125,
+							"head": { "rotate": -12.466, "scaleY": -1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.916, "y": 0.563 },
+							"size": 0.475,
+							"drawDepth": 2.375,
+							"head": { "rotate": -19.194, "scaleY": -1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:cheese3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.755, "y": 0.147 },
+							"size": 0.211,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_bottleGreen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.808, "y": 0.263 },
+							"size": 0.29,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"equipment": {},
+							"anchor": { "x": 0.048, "y": 0.299 },
+							"size": 0.26,
+							"drawDepth": 0.75,
+							"head": { "rotate": -14.82, "scaleY": 1 },
+							"foot": { "rotate": 7.681 },
+							"color": { "r": "0.39481682", "g": "0.44046038", "b": "0.73812979", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.185, "y": 0.428 },
+							"size": 0.502,
+							"drawDepth": 0.75,
+							"head": { "rotate": -6.707 },
+							"foot": { "rotate": 9.169 },
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_sweat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.218, "y": 0.048 },
+							"size": 0.44,
+							"drawDepth": 2.75,
+							"nameTag": "none",
+							"foot": { "rotate": 151.287 },
+							"colorFilter": { "filterName": "turnedToStone", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_sweat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.176, "y": 0.356 },
+							"size": 0.334,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 151.287 },
+							"colorFilter": { "filterName": "turnedToStone", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_sweat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.102, "y": 0.24 },
+							"size": 0.334,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 151.287 },
+							"colorFilter": { "filterName": "turnedToStone", "strength": 0.8 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_004~1_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.472,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_004~2_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.003,
+							"widthFraction": 0.7995331,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 23.717306,
+								"dX": -10.367817,
+								"dY": -5.6551733,
+								"scaleX": 0.6571036,
+								"scaleY": 0.6571036,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_004~3_speech",
+							"fallbackSlotOwner": 0,
+							"location": "bottomRight",
+							"padXFraction": 0.046,
+							"widthFraction": 0.9057485,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 130.29901,
+								"dX": 705.01166,
+								"dY": -0.9425049,
+								"scaleX": 0.8766896,
+								"scaleY": 0.8766896,
+								"pointerOrientV": "up",
+								"forcePointerImage": "speechLong"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRockyNight.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.011, "y": 0.412 },
+							"size": 0.571,
+							"drawDepth": 65,
+							"nameTag": "none",
+							"color": { "r": "0.5629316", "g": "0.58154881", "b": "0.70296293", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.034, "y": 0.525 },
+							"size": 0.274,
+							"drawDepth": 60,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:entranceDoorwayInterior.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.155, "y": 0.531 },
+							"size": 0.611,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.839, "y": -0.051 },
+							"size": 0.406,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.814, "y": 0.65 },
+							"drawDepth": 1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.70436305", "b": "0.08670449", "a": "0.8005777" }
+						},
+						{
+							"assetSpec": "comic:wallCandle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.767, "y": 0.582 },
+							"size": 0.21,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.767, "y": 0.71 },
+							"size": 2.833,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "1", "g": "0.86274183", "b": "0.08670449", "a": "0.14450832" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.616, "y": 0.54 },
+							"size": 0.598,
+							"drawDepth": 1.125,
+							"head": { "rotate": 6.192, "scaleY": 1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.918, "y": 0.547 },
+							"size": 0.475,
+							"drawDepth": 2.375,
+							"head": { "rotate": 0.733, "scaleY": 1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:cheese3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.755, "y": 0.147 },
+							"size": 0.211,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_bottleGreen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.811, "y": 0.269 },
+							"size": 0.284,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.362, "y": 0.589 },
+							"size": 0.774,
+							"drawDepth": 0.75,
+							"head": { "rotate": -3.219, "scaleY": 1 },
+							"foot": { "rotate": 7.681 },
+							"color": { "r": "0.58862644", "g": "0.47495741", "b": "0.47495744", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 1.021, "y": 0.494 },
+							"size": 1.175,
+							"drawDepth": 0.75,
+							"head": { "rotate": -19.738 },
+							"foot": { "rotate": -0.386 },
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_sweat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.347, "y": 0.073 },
+							"size": 0.44,
+							"drawDepth": 2.75,
+							"nameTag": "none",
+							"foot": { "rotate": 151.287 },
+							"colorFilter": { "filterName": "turnedToStone", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_sweat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.364, "y": 0.388 },
+							"size": 0.414,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 123.301 },
+							"colorFilter": { "filterName": "turnedToStone", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "comic:comicEmotion_sweat.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.246, "y": 0.092 },
+							"size": 0.564,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 151.287 },
+							"colorFilter": { "filterName": "turnedToStone", "strength": 0.8 }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.075, "y": 0.39 },
+							"size": 0.323,
+							"drawDepth": 62.5,
+							"nameTag": "none",
+							"color": { "r": "0.39481682", "g": "0.44046038", "b": "0.73812979", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_005~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.108,
+							"widthFraction": 0.8660635,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 16.02299, "dY": -17.908047 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRockyNight.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.011, "y": 0.412 },
+							"size": 0.571,
+							"drawDepth": 65,
+							"nameTag": "none",
+							"color": { "r": "0.5629316", "g": "0.58154881", "b": "0.70296293", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.034, "y": 0.525 },
+							"size": 0.274,
+							"drawDepth": 60,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:entranceDoorwayInterior.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.155, "y": 0.531 },
+							"size": 0.611,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.839, "y": -0.051 },
+							"size": 0.406,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstQuarter.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.814, "y": 0.65 },
+							"drawDepth": 1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.70436305", "b": "0.08670449", "a": "0.8005777" }
+						},
+						{
+							"assetSpec": "comic:wallCandle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.767, "y": 0.582 },
+							"size": 0.21,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.767, "y": 0.71 },
+							"size": 2.833,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "1", "g": "0.86274183", "b": "0.08670449", "a": "0.14450832" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.616, "y": 0.54 },
+							"size": 0.598,
+							"drawDepth": 1.125,
+							"head": { "rotate": -19.753, "scaleY": 1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.891, "y": 0.531 },
+							"size": 0.475,
+							"drawDepth": 2.375,
+							"head": { "rotate": -20.58, "scaleY": -1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:cheese3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.755, "y": 0.147 },
+							"size": 0.211,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_bottleGreen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.811, "y": 0.26 },
+							"size": 0.284,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 1.092, "y": 0.504 },
+							"size": 0.848,
+							"drawDepth": 0.75,
+							"head": { "rotate": -5.595, "scaleY": 1 },
+							"foot": { "rotate": -1.959 },
+							"color": { "r": "0.58862644", "g": "0.47495741", "b": "0.47495744", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.09, "y": 0.507 },
+							"size": 0.474,
+							"drawDepth": 2.75,
+							"nameTag": "none",
+							"color": { "r": "0.46670374", "g": "0.36566481", "b": "0.36566484", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_006~1_hero3",
+							"pointerOwner": "hero3",
+							"padXFraction": 0.052,
+							"widthFraction": 0.9209221,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 16.023046, "dY": -2.8275864, "scaleX": 0.9222708, "scaleY": 0.9222708 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_006~2_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.006,
+							"widthFraction": 0.7796906,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 23.19859,
+								"dX": 1.1539459E-4,
+								"dY": -6.597702,
+								"scaleX": 0.7841837,
+								"scaleY": 0.7841837,
+								"pointerOrientH": "onRight"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_006~3_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.123,
+							"widthFraction": 0.72016346,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -10.367876, "dY": 11.310346, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRockyNight.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.076, "y": 0.434 },
+							"size": 0.40656632,
+							"drawDepth": 65,
+							"nameTag": "none",
+							"color": { "r": "0.5629316", "g": "0.58154881", "b": "0.70296293", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.099, "y": 0.547 },
+							"size": 0.19509487,
+							"drawDepth": 60,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:entranceDoorwayInterior.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.073, "y": 0.434 },
+							"size": 0.43504733,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.107, "y": -0.023 },
+							"size": 0.28908217,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.652, "y": 0.524 },
+							"size": 0.7120251,
+							"drawDepth": 1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.70436305", "b": "0.08670449", "a": "0.8005777" }
+						},
+						{
+							"assetSpec": "comic:wallCandle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.918, "y": 0.453 },
+							"size": 0.14952527,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.908, "y": 0.493 },
+							"size": 2.017167,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "1", "g": "0.86274183", "b": "0.08670449", "a": "0.14450832" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.59, "y": 0.404 },
+							"size": 0.42579103,
+							"drawDepth": 1.125,
+							"head": { "rotate": 1.365, "scaleY": 1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 1.127, "y": 0.404 },
+							"size": 0.33821192,
+							"drawDepth": 2.375,
+							"head": { "rotate": -16.562, "scaleY": -1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:cheese3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.929, "y": 0.115 },
+							"size": 0.15023729,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_bottleGreen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.988, "y": 0.159 },
+							"size": 0.184,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 1.813, "y": 0.516 },
+							"size": 0.5511074,
+							"drawDepth": 0.75,
+							"head": { "rotate": -3.219, "scaleY": 1 },
+							"foot": { "rotate": 7.681 },
+							"color": { "r": "0.58862644", "g": "0.47495741", "b": "0.47495744", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 1.877, "y": 0.482 },
+							"size": 0.83662945,
+							"drawDepth": 0.75,
+							"head": { "rotate": -19.738 },
+							"foot": { "rotate": -0.386 },
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.172, "y": 0.412 },
+							"size": 0.364,
+							"drawDepth": 2.90625,
+							"nameTag": "none",
+							"head": { "rotate": -10.968 },
+							"foot": { "rotate": 7.575 },
+							"color": { "r": "0.46670374", "g": "0.36566481", "b": "0.36566484", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:banisterWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.187, "y": 0.871 },
+							"size": 1.383,
+							"drawDepth": 2.875,
+							"nameTag": "none",
+							"foot": { "rotate": -2.478 },
+							"color": { "r": "0.2722435", "g": "0.21330422", "b": "0.21330424", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:door_Village_closed.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.048, "y": 0.458 },
+							"size": 0.41,
+							"drawDepth": 2.9375,
+							"nameTag": "none",
+							"color": { "r": "0.46670374", "g": "0.36566481", "b": "0.36566484", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:action_popL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.195, "y": 0.607 },
+							"size": 0.228,
+							"drawDepth": 2.921875,
+							"nameTag": "none",
+							"foot": { "rotate": -176.686 }
+						},
+						{
+							"assetSpec": "comic:action_popL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.014, "y": 0.663 },
+							"size": 0.228,
+							"drawDepth": 2.921875,
+							"nameTag": "none",
+							"foot": { "rotate": -22.484 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_007~1_action",
+							"style": "action",
+							"padXFraction": 0.052,
+							"padYFraction": 0.297,
+							"shrinkToFitText": true,
+							"allowOverlap": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_007~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5629316", "g": "0.58154881", "b": "0.70296293", "a": "0.58670485" },
+							"padXFraction": 0.017,
+							"padYFraction": 0.038,
+							"widthFraction": 0.93343836,
+							"shrinkToFitText": true,
+							"allowOverlap": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_007~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5629316", "g": "0.58154881", "b": "0.70296293", "a": "0.58670485" },
+							"padXFraction": 0.319,
+							"padYFraction": 0.338,
+							"widthFraction": 0.6664041,
+							"shrinkToFitText": true,
+							"allowOverlap": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRockyNight.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.319, "y": 0.286 },
+							"size": 0.40656632,
+							"drawDepth": 65,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.5629316", "g": "0.58154881", "b": "0.70296293", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rain.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.764, "y": 0.55 },
+							"size": 0.19509487,
+							"drawDepth": 60,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:entranceDoorwayInterior.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.946, "y": 0.434 },
+							"size": 0.43504733,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:entranceDoorwayInterior.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.534, "y": 0.437 },
+							"size": 0.449,
+							"drawDepth": 2.96875,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.095, "y": -0.023 },
+							"size": 0.28908217,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.673, "y": 0.505 },
+							"size": 0.7120251,
+							"drawDepth": 1,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.70436305", "b": "0.08670449", "a": "0.4508667" }
+						},
+						{
+							"assetSpec": "comic:wallCandle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.094, "y": 0.453 },
+							"size": 0.14952527,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.116, "y": 0.506 },
+							"size": 2.017167,
+							"drawDepth": 2.25,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "1", "g": "0.86274183", "b": "0.08670449", "a": "0.14450832" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": -0.422, "y": 0.404 },
+							"size": 0.42579103,
+							"drawDepth": 1.125,
+							"head": { "rotate": -19.582, "scaleY": 1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.106, "y": 0.408 },
+							"size": 0.33821192,
+							"drawDepth": 2.375,
+							"head": { "rotate": -13.617, "scaleY": -1 },
+							"color": { "r": "0.69755036", "g": "0.58568591", "b": "0.58568597", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:cheese3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.083, "y": 0.115 },
+							"size": 0.15023729,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_bottleGreen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.017, "y": 0.197 },
+							"size": 0.186,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallShelf_books.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.407, "y": 0.622 },
+							"size": 0.193,
+							"drawDepth": 2.953125,
+							"nameTag": "none",
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bowlStuff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.631, "y": 0.424 },
+							"size": 0.117,
+							"drawDepth": 2.953125,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.5509702", "g": "0.43168807", "b": "0.4316881", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:statuesMossyBirds.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.763, "y": 0.537 },
+							"size": 0.117,
+							"drawDepth": 2.953125,
+							"nameTag": "none",
+							"foot": { "rotate": 0 },
+							"color": { "r": "0.58862644", "g": "0.47495741", "b": "0.47495744", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"equipment": {},
+							"anchor": { "x": 1.246, "y": 0.381 },
+							"size": 0.507,
+							"drawDepth": 0.2,
+							"head": { "rotate": -15.23, "scaleY": 1 },
+							"foot": { "rotate": 3.869 },
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 1.036, "y": 0.399 },
+							"size": 0.381,
+							"drawDepth": 2.9296875,
+							"head": { "rotate": -10.441 },
+							"foot": { "rotate": -0.386 },
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "bottleClay" ]
+							},
+							"anchor": { "x": 0.884, "y": 0.365 },
+							"size": 0.3,
+							"drawDepth": 2.9335938,
+							"head": { "rotate": -11.113 },
+							"foot": { "rotate": -0.386 },
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "volunteer2",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.513, "y": 0.389 },
+							"size": 0.3,
+							"drawDepth": 2.921875,
+							"head": { "rotate": -16.478 },
+							"foot": { "rotate": -0.386 },
+							"color": { "r": "0.76340592", "g": "0.67589903", "b": "0.67589909", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": -0.835, "y": 0.494 },
+							"size": 0.327,
+							"drawDepth": 2.90625,
+							"nameTag": "none",
+							"head": { "rotate": -10.968 },
+							"foot": { "rotate": 7.575 },
+							"color": { "r": "0.46670374", "g": "0.36566481", "b": "0.36566484", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:banisterWood.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.182, "y": 0.903 },
+							"size": 1.383,
+							"drawDepth": 2.875,
+							"nameTag": "none",
+							"color": { "r": "0.2722435", "g": "0.21330422", "b": "0.21330424", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:fireplaceOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.698, "y": 0.317 },
+							"size": 0.25,
+							"drawDepth": 2.9375,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_008~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5629316", "g": "0.58154881", "b": "0.70296293", "a": "0.58670485" },
+							"padXFraction": -0.364,
+							"padYFraction": 0.854,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_anyEnemy_capstoneVictory_clearAll_intotheFire",
+							"textKey": "~01~~panel_008~2_volunteer2",
+							"pointerOwner": "volunteer2",
+							"padXFraction": 0.41300002,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "farmer",
+					"setAge": "young",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		},
+		{
+			"role": "npc2",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "farmer",
+					"setAge": "young",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		},
+		{
+			"role": "npc3",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "farmer",
+					"setAge": "middleAge",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		},
+		{
+			"role": "legend",
+			"npcId": "humanistEconomist_generic",
+			"createEntity": {
+				"query": { "baseTag": "human", "nameConstraints": "requireLastName" },
+				"control": "none"
+			}
+		}
+	]
+}
+}
