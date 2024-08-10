@@ -1,0 +1,745 @@
+{
+"id": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+	"author": "Douglas Austin",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "PLOT_MISSION_EVENT",
+"verb": "MANEUVER",
+"ability": { "icon": "utility", "category": "attack", "priority": "1" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{
+		"role": "warrior",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "warrior+LEVEL"
+	},
+	{
+		"role": "hunter",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "((hunter*10)+mystic)+LEVEL",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "warrior" ]
+	},
+	{
+		"role": "mystic",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "mystic",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "warrior", "hunter" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.359, "y": 0.472 },
+							"size": 0.356,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.733, "y": 0.462 },
+							"size": 0.356,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "scenery:drauven_basketSpears.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.318, "y": 0.475 },
+							"size": 0.526,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_gorelord.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.442, "y": -0.6 },
+							"size": 0.438,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 24.508 },
+							"color": { "r": "0.75827754", "g": "0.62900496", "b": "0.62900501", "a": "1" }
+						},
+						{
+							"role": "warrior",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.141, "y": 0.755 },
+							"drawDepth": -2,
+							"color": { "r": "0.69364125", "g": "0.69364125", "b": "0.69364125", "a": "1" }
+						},
+						{
+							"role": "hunter",
+							"form": "frame-angry",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.728, "y": 0.16 },
+							"size": 0.198,
+							"drawDepth": 1.5,
+							"color": { "r": "0.69364125", "g": "0.69364125", "b": "0.69364125", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:distantFigure_military.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.966, "y": 0.019 },
+							"size": 0.315,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.13703795", "g": "0.25109372", "b": "0.0957264", "a": "0.42196533" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.274, "y": 0.167 },
+							"size": 0.248,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"color": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "0.66473955" },
+							"location": "topRight",
+							"padXFraction": 0.029,
+							"padYFraction": 0.054,
+							"widthFraction": 0.37507263,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 2, "overridePanelDrawDepth": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -1.512, "y": 0.522 },
+							"size": 0.356,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.888, "y": 0.471 },
+							"size": 0.356,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "scenery:drauven_basketSpears.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.144, "y": 0.478 },
+							"size": 0.438,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_gorelord.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.136, "y": -0.515 },
+							"size": 0.438,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 24.508 },
+							"color": { "r": "0.75827754", "g": "0.62900496", "b": "0.62900501", "a": "1" }
+						},
+						{
+							"role": "warrior",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.282, "y": 0.715 },
+							"size": 0.686,
+							"drawDepth": -2,
+							"color": { "r": "0.69364125", "g": "0.69364125", "b": "0.69364125", "a": "1" }
+						},
+						{
+							"role": "hunter",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 1.192, "y": 0.264 },
+							"size": 0.322,
+							"drawDepth": 1.125,
+							"head": { "rotate": 3.36 },
+							"color": { "r": "0.69364125", "g": "0.69364125", "b": "0.69364125", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 2.008, "y": 0.184 },
+							"size": 0.248,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"color": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "0.66473955" },
+							"location": "topRight",
+							"padXFraction": 0.029,
+							"padYFraction": 0.054,
+							"widthFraction": 0.4273272,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+							"textKey": "~01~~panel_002~2_hunter",
+							"pointerOwner": "hunter",
+							"padXFraction": 0.049000002,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+							"textKey": "~01~~panel_002~3_warrior",
+							"pointerOwner": "warrior",
+							"location": "bottomLeft",
+							"padXFraction": 0.268,
+							"padYFraction": 0.003,
+							"widthFraction": 0.93611914,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -18.344707,
+								"dX": -56.55161,
+								"dY": 1.8850578,
+								"scaleX": 0.7677916,
+								"scaleY": 0.7677916
+							},
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 1, "overridePanelDrawDepth": -1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -2.54, "y": 0.513 },
+							"size": 0.356,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.14, "y": 0.462 },
+							"size": 0.356,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "scenery:drauven_basketSpears.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.953, "y": 0.478 },
+							"size": 0.526,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_gorelord.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -1.026, "y": -0.562 },
+							"size": 0.438,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 24.508 },
+							"color": { "r": "0.75827754", "g": "0.62900496", "b": "0.62900501", "a": "1" }
+						},
+						{
+							"role": "warrior",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": -0.727, "y": 0.714 },
+							"size": 0.682,
+							"drawDepth": -2,
+							"color": { "r": "0.69364125", "g": "0.69364125", "b": "0.69364125", "a": "1" }
+						},
+						{
+							"role": "hunter",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.18, "y": 0.265 },
+							"size": 0.322,
+							"drawDepth": 1.125,
+							"head": { "rotate": -25.958, "scaleY": -1 },
+							"color": { "r": "0.69364125", "g": "0.69364125", "b": "0.69364125", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.98, "y": 0.175 },
+							"size": 0.248,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"color": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+							"textKey": "~01~~panel_003~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "0.66473955" },
+							"location": "topRight",
+							"padXFraction": 0.029,
+							"padYFraction": 0.054,
+							"widthFraction": 0.4273272,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+							"textKey": "~01~~panel_003~2_hunter",
+							"pointerOwner": "hunter",
+							"padXFraction": 0.049000002,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "hunter.exists",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Split",
+							"splitSpec": "hunter.rfln.warrior",
+							"splitBranches": [
+								[],
+								[],
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "twoThirds",
+											"showNameTags": false,
+											"animation": { "overridePanelOrder": 1, "overridePanelDrawDepth": -1 },
+											"actorSlots": [
+												{
+													"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -2.387, "y": 0.591 },
+													"size": 0.4059,
+													"nameTag": "none",
+													"colorFilter": { "filterName": "hover", "strength": 0.5 }
+												},
+												{
+													"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": 0.349, "y": 0.533 },
+													"size": 0.4059,
+													"nameTag": "none",
+													"colorFilter": { "filterName": "hover", "strength": 0.5 }
+												},
+												{
+													"assetSpec": "scenery:drauven_basketSpears.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.578, "y": 0.551 },
+													"size": 0.5998,
+													"drawDepth": 0,
+													"nameTag": "none",
+													"colorFilter": { "filterName": "hover", "strength": 0.5 }
+												},
+												{
+													"assetSpec": "comic:drauvenBaked_gorelord.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -0.328, "y": -0.567 },
+													"size": 0.4994,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"foot": { "rotate": 24.508 },
+													"color": { "r": "0.75827754", "g": "0.62900496", "b": "0.62900501", "a": "1" }
+												},
+												{
+													"role": "warrior",
+													"form": "frame-interested",
+													"equipment": {},
+													"anchor": { "x": 0.056, "y": 0.666 },
+													"size": 0.7776,
+													"drawDepth": -2,
+													"head": { "rotate": -3.455 },
+													"color": { "r": "0.69364125", "g": "0.69364125", "b": "0.69364125", "a": "1" }
+												},
+												{
+													"role": "hunter",
+													"form": "frame-interested",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": 0.733, "y": 0.34 },
+													"size": 0.3672,
+													"drawDepth": 1.125,
+													"head": { "rotate": 6.179, "scaleY": 1 },
+													"color": { "r": "0.69364125", "g": "0.69364125", "b": "0.69364125", "a": "1" },
+													"colorFilter": { "filterName": "hover", "strength": 0.7 }
+												},
+												{
+													"assetSpec": "comic:comicForeground_landHillGrass.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 1.359, "y": 0.22 },
+													"size": 0.2828,
+													"drawDepth": 1.25,
+													"nameTag": "none",
+													"color": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "1" },
+													"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+													"textKey": "~01~~panel_004.(hunter_exists).(hunter_and_warrior_are_lovers)~1_narration",
+													"style": "narration",
+													"backgroundColor": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "0.66473955" },
+													"location": "topRight",
+													"padXFraction": 0.029,
+													"padYFraction": 0.054,
+													"widthFraction": 0.4273272,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+													"textKey": "~01~~panel_004.(hunter_exists).(hunter_and_warrior_are_lovers)~2_hunter",
+													"pointerOwner": "hunter",
+													"padXFraction": 0.049000002,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+													"textKey": "~01~~panel_004.(hunter_exists).(hunter_and_warrior_are_lovers)~3_hunter",
+													"pointerOwner": "hunter",
+													"padXFraction": 0.327,
+													"padYFraction": 0.348,
+													"widthFraction": 0.649845,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": 9.7229185,
+														"dX": -22.62069,
+														"dY": 2.827588,
+														"scaleX": 0.61496055,
+														"scaleY": 0.61496055,
+														"forcePointerImage": "speechMedium"
+													}
+												},
+												{
+													"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+													"textKey": "~01~~panel_004.(hunter_exists).(hunter_and_warrior_are_lovers)~4_warrior",
+													"pointerOwner": "warrior",
+													"location": "bottomLeft",
+													"padXFraction": 0.167,
+													"padYFraction": 0.049,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -9.926288,
+														"dX": -42.413795,
+														"dY": 2.8275867,
+														"scaleX": 0.710846,
+														"scaleY": 0.710846,
+														"forcePointerImage": "speechMedium"
+													}
+												}
+											]
+										}
+									}
+								],
+								[]
+							]
+						}
+					],
+					[]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_campfire.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.347,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wall1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.076, "y": 0.085 },
+							"size": 0.605,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.55197239", "g": "0.59946835", "b": "0.8353101", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_gearPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.119, "y": 0.333 },
+							"size": 0.543,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.55197239", "g": "0.59946835", "b": "0.8353101", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:well.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.306, "y": 0.271 },
+							"size": 0.28,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.73445487", "g": "0.66058642", "b": "0.62970698", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.484, "y": -0.28 },
+							"size": 3.35,
+							"drawDepth": 0.25,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.76778352", "b": "0.19653106", "a": "0.48843929" }
+						},
+						{
+							"role": "warrior",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.68, "y": 0.362 },
+							"size": 0.36,
+							"drawDepth": 0.75,
+							"head": { "rotate": 22.034, "scaleY": 1 },
+							"color": { "r": "0.73445487", "g": "0.66058642", "b": "0.62970698", "a": "1" }
+						},
+						{
+							"role": "hunter",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.446, "y": 0.252 },
+							"size": 0.259,
+							"drawDepth": 0.75,
+							"head": { "rotate": -20.425, "scaleY": 1 },
+							"color": { "r": "0.73445487", "g": "0.66058642", "b": "0.62970698", "a": "1" }
+						},
+						{
+							"role": "hunter",
+							"equipment": {},
+							"anchor": { "x": 0.446, "y": 0.252 },
+							"size": 0.259,
+							"drawDepth": 0.75,
+							"head": { "rotate": -2.868, "scaleY": 1 },
+							"color": { "r": "0.73445487", "g": "0.66058642", "b": "0.62970698", "a": "1" }
+						},
+						{
+							"role": "mystic",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.066, "y": 0.421 },
+							"size": 0.346,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"head": { "rotate": -6.536 },
+							"color": { "r": "0.55197239", "g": "0.59946835", "b": "0.8353101", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.513, "y": 0.043 },
+							"size": 0.152,
+							"drawDepth": 0.625,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+							"textKey": "~01~~panel_005~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "0.66473955" },
+							"padXFraction": 0.242,
+							"padYFraction": 0.144,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRockyNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 1.073,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.332, "y": 0.318 },
+							"size": 0.01,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.76778352", "b": "0.19653106", "a": "0.48843929" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+							"textKey": "~01~~panel_006~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "0.26300544" },
+							"padXFraction": 0.205,
+							"padYFraction": 0.205,
+							"widthFraction": 0.63953125,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRockyNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.934, "y": 0.509 },
+							"size": 1.1974057,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_skysinger.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.797, "y": 0.264 },
+							"size": 0.623,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.05780312", "g": "0.05780312", "b": "0.05780312", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord",
+							"textKey": "~01~~panel_007~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.74347603", "g": "0.29698575", "b": "0.29698589", "a": "0.26300544" },
+							"padXFraction": 0.205,
+							"padYFraction": 0.205,
+							"widthFraction": 0.63953125,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}

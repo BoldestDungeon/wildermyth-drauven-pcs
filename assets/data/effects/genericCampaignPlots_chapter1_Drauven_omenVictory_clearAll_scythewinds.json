@@ -1,0 +1,1856 @@
+{
+"id": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+	"author": "Douglas Austin",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "PLOT_MISSION_EVENT",
+"verb": "MANEUVER",
+"ability": { "icon": "utility", "category": "attack", "priority": "1" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{
+		"role": "loner",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LONER",
+		"fromRoles": [ "party", "maimedHero" ]
+	},
+	{
+		"role": "romantic",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "SHIP_WITH.loner",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "loner" ]
+	},
+	{
+		"role": "coward",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "COWARD",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "loner", "romantic" ]
+	},
+	{
+		"role": "target",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "100-LONER",
+		"fromRoles": [ "loner", "romantic" ]
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "loner", "romantic", "coward", "target" ]
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "loner", "romantic", "coward", "target", "hero" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_forestPurpleZoomedOut.jpg",
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.583, "y": 0.251 },
+							"size": 0.217,
+							"drawDepth": -4,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 12.934, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.733, "y": 0.138 },
+							"size": 0.037,
+							"nameTag": "none",
+							"foot": { "rotate": -3.203 },
+							"color": { "r": "1", "g": "0.72728777", "b": "0.10982585", "a": "0.45664704" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.704, "y": 0.096 },
+							"size": 0.093,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.57803434", "g": "0.57803434", "b": "0.57803434", "a": "0.71098232" }
+						},
+						{
+							"assetSpec": "comic:rockForStanding.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.135, "y": 0.361 },
+							"size": 0.303,
+							"drawDepth": -7,
+							"nameTag": "none",
+							"foot": { "scaleX": 0.6 }
+						},
+						{
+							"assetSpec": "comic:trunkForegroundThick.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.882, "y": 0.506 },
+							"size": 0.193,
+							"drawDepth": -6,
+							"nameTag": "none",
+							"foot": { "rotate": -2.414 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleZoomedOut.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.494, "y": 0.556 },
+							"size": 0.296,
+							"nameTag": "none"
+						},
+						{
+							"role": "romantic",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.119, "y": 0.492 },
+							"size": 0.564,
+							"drawDepth": -4.75,
+							"nameTag": "none",
+							"head": { "rotate": -20.373, "scaleY": 1 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.368, "y": 0.356 },
+							"size": 0.3448,
+							"drawDepth": -4.5,
+							"nameTag": "none",
+							"head": { "rotate": -8.194, "scaleY": -1 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.678, "y": 0.171 },
+							"size": 0.1511,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"head": { "rotate": -8.194, "scaleY": -1 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rocksMoss8.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.324, "y": 0.204 },
+							"size": 0.411,
+							"drawDepth": 4.5,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+						},
+						{
+							"role": "coward",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.809, "y": 0.277 },
+							"size": 0.269,
+							"drawDepth": -5,
+							"nameTag": "none",
+							"head": { "rotate": -2.073, "scaleY": 1 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"padXFraction": 0.036,
+							"padYFraction": 0.064,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_001~2_loner",
+							"pointerOwner": "loner",
+							"location": "topRight",
+							"padXFraction": 0.103000045,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_001~3_coward",
+							"pointerOwner": "coward",
+							"padXFraction": 0.039,
+							"padYFraction": 0.058,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -12.804266,
+								"dX": 165.88507,
+								"dY": -5.6551733,
+								"scaleX": 0.7841855,
+								"scaleY": 0.7841855,
+								"pointerOrientH": "onRight",
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_001~4_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.039,
+							"padYFraction": 0.012,
+							"widthFraction": 0.39451414,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -33.821598,
+								"dX": 110.27591,
+								"dY": 37.701153,
+								"scaleX": 0.6570584,
+								"scaleY": 0.6570584,
+								"pointerOrientH": "onRight",
+								"forcePointerImage": "speechLong"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_001~5_loner",
+							"pointerOwner": "loner",
+							"location": "bottomRight",
+							"padXFraction": 0.159,
+							"padYFraction": 0.099,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 9.462321,
+								"dX": 13.195403,
+								"dY": 0,
+								"scaleX": 0.75110203,
+								"scaleY": 0.75110203
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_001~6_loner",
+							"pointerOwner": "loner",
+							"location": "topRight",
+							"padXFraction": 0.182,
+							"padYFraction": 0.227,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -8.482759, "dY": -14.137932, "scaleX": 0.8253326, "scaleY": 0.8253326 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_001~7_loner",
+							"pointerOwner": "loner",
+							"location": "topRight",
+							"padXFraction": 0.343,
+							"padYFraction": 0.439,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 12.060525,
+								"dX": -9.425173,
+								"dY": 4.712642,
+								"scaleX": 0.5029954,
+								"scaleY": 0.5029954,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_001~8_coward",
+							"pointerOwner": "coward",
+							"location": "topRight",
+							"padXFraction": 0.126,
+							"padYFraction": 0.101,
+							"widthFraction": 0.5357455,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -5.601251,
+								"dX": 4.712414,
+								"dY": 17.908047,
+								"scaleX": 0.59567267,
+								"scaleY": 0.59567267,
+								"pointerOrientH": "onLeft",
+								"forcePointerImage": "speechLong"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_001~9_romantic",
+							"pointerOwner": "romantic",
+							"location": "topRight",
+							"padXFraction": 0.693,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 14.743584, "dX": -17.90799, "dY": -10.367817 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_forestPurpleZoomedOut.jpg",
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.099, "y": 0.579 },
+							"size": 0.605,
+							"drawDepth": -3,
+							"head": { "rotate": -20.286 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.699, "y": 0.48 },
+							"size": 0.793,
+							"drawDepth": -3,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -49.342, "scaleY": -1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.53, "y": 0.069 },
+							"size": 0.137,
+							"nameTag": "none",
+							"foot": { "rotate": -3.203 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.303, "y": 0.027 },
+							"size": 0.525,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.493, "y": 0.585 },
+							"size": 0.385,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration",
+							"padXFraction": 0.036,
+							"padYFraction": 0.064,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_002~2_loner",
+							"pointerOwner": "loner",
+							"location": "topRight",
+							"padXFraction": 0.103000045,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_002~3_coward",
+							"pointerOwner": "coward",
+							"padXFraction": 0.039,
+							"padYFraction": 0.058,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -12.804266,
+								"dX": 165.88507,
+								"dY": -5.6551733,
+								"scaleX": 0.7841855,
+								"scaleY": 0.7841855,
+								"pointerOrientH": "onRight",
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_002~4_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.039,
+							"padYFraction": 0.012,
+							"widthFraction": 0.39451414,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -33.821598,
+								"dX": 110.27591,
+								"dY": 37.701153,
+								"scaleX": 0.6570584,
+								"scaleY": 0.6570584,
+								"pointerOrientH": "onRight",
+								"forcePointerImage": "speechLong"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_002~5_loner",
+							"pointerOwner": "loner",
+							"location": "bottomRight",
+							"padXFraction": 0.159,
+							"padYFraction": 0.099,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 9.462321,
+								"dX": 13.195403,
+								"dY": 0,
+								"scaleX": 0.75110203,
+								"scaleY": 0.75110203
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_002~6_loner",
+							"pointerOwner": "loner",
+							"location": "topRight",
+							"padXFraction": 0.182,
+							"padYFraction": 0.227,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -8.482759, "dY": -14.137932, "scaleX": 0.8253326, "scaleY": 0.8253326 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_002~7_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.19,
+							"padYFraction": 0.061,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_002~8_coward",
+							"pointerOwner": "coward",
+							"location": "topRight",
+							"padXFraction": 0.043,
+							"widthFraction": 0.61628246,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_002~9_loner",
+							"pointerOwner": "loner",
+							"location": "bottomLeft",
+							"padXFraction": 0.189,
+							"padYFraction": 0.131,
+							"widthFraction": 0.46688083,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "scaleX": 0.8437812, "scaleY": 0.8437812 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_forestPurpleZoomedOut.jpg",
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.805, "y": 0.317 },
+							"size": 0.3,
+							"drawDepth": 5.25,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -22.001, "scaleY": 1 },
+							"foot": { "rotate": -23.25 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.166, "y": 0.513 },
+							"size": 0.6046054,
+							"drawDepth": -3,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -12.98, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.978, "y": 0.405 },
+							"size": 0.38254353,
+							"drawDepth": -6,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -22.673, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.29, "y": 0.059 },
+							"size": 0.106365755,
+							"drawDepth": -5,
+							"nameTag": "none",
+							"foot": { "rotate": -3.203 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.955, "y": 0.033 },
+							"size": 0.37507927,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.204, "y": 0.506 },
+							"size": 0.26311532,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.27, "y": 0.497 },
+							"size": 0.291,
+							"drawDepth": 5.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:log4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.22, "y": 0.205 },
+							"size": 0.481445,
+							"drawDepth": 3,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:trunk5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.445, "y": 1.541 },
+							"size": 0.23978949,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.141, "y": 0.532 },
+							"size": 0.43665943,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"foot": { "rotate": 2.28 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_003~1_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.146,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_003~2_loner",
+							"style": "thought",
+							"pointerOwner": "loner",
+							"padXFraction": 0.432,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_003~3_coward",
+							"pointerOwner": "coward",
+							"location": "topRight",
+							"padXFraction": 0.042,
+							"padYFraction": 0.217,
+							"widthFraction": 0.40385178,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -15.080461,
+								"dY": -14.137932,
+								"scaleX": 0.90371203,
+								"scaleY": 0.90371203
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_003~4_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.442,
+							"padYFraction": 0.345,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -19.855213, "scaleX": 0.7469836, "scaleY": 0.7469836 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_003~5_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.57803434", "g": "0.57803434", "b": "0.57803434", "a": "0.71098232" },
+							"padXFraction": 0.041,
+							"padYFraction": 0.745,
+							"widthFraction": 0.6026356,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_forestPurpleZoomedOut.jpg",
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.532, "y": 0.393 },
+							"size": 0.462,
+							"drawDepth": -3,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -29.484, "scaleY": -1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.073, "y": 0.497 },
+							"size": 0.648,
+							"drawDepth": -3,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -2.537, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.926, "y": 0.443 },
+							"size": 0.41,
+							"drawDepth": -6,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 13.645, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.747, "y": 0.333 },
+							"size": 0.2692,
+							"drawDepth": -3.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -12.925, "scaleY": -1 },
+							"color": { "r": "0.60709214", "g": "0.5695312", "b": "0.7021451", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"equipment": {},
+							"anchor": { "x": 0.353, "y": 0.33 },
+							"size": 0.2692,
+							"drawDepth": 4,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -19.594, "scaleY": -1 },
+							"color": { "r": "0.60709214", "g": "0.5695312", "b": "0.7021451", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.837, "y": 0.05 },
+							"size": 0.114,
+							"drawDepth": -5,
+							"nameTag": "none",
+							"foot": { "rotate": -3.203 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.684, "y": 0.03 },
+							"size": 0.402,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.204, "y": 0.506 },
+							"size": 0.282,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.803, "y": 0.484 },
+							"size": 0.282,
+							"drawDepth": 5.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:log4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.114, "y": 0.271 },
+							"size": 0.516,
+							"drawDepth": 3,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:trunk5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.26, "y": 1.708 },
+							"size": 0.257,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.035, "y": 0.576 },
+							"size": 0.468,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"foot": { "rotate": 2.28 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_004~1_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.064,
+							"widthFraction": 0.9115845,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_004~2_loner",
+							"style": "thought",
+							"pointerOwner": "loner",
+							"padXFraction": 0.432,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_004~3_coward",
+							"pointerOwner": "coward",
+							"location": "topRight",
+							"padXFraction": 0.054,
+							"padYFraction": 0.261,
+							"widthFraction": 0.47971988,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -15.080461,
+								"dY": -14.137932,
+								"scaleX": 0.90371203,
+								"scaleY": 0.90371203
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "coward.exists",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "comicBG_forestPurpleZoomedOut.jpg",
+								"actorSlots": [
+									{
+										"role": "loner",
+										"equipment": {},
+										"anchor": { "x": 0.532, "y": 0.393 },
+										"size": 0.462,
+										"drawDepth": -4.5,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 4.665, "scaleY": 1 },
+										"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+									},
+									{
+										"role": "romantic",
+										"equipment": {},
+										"anchor": { "x": 0.073, "y": 0.497 },
+										"size": 0.648,
+										"drawDepth": -3,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -17.676, "scaleY": 1 },
+										"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+									},
+									{
+										"role": "coward",
+										"form": "frame-talk",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.926, "y": 0.443 },
+										"size": 0.41,
+										"drawDepth": -6,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 7.524, "scaleY": 1 },
+										"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:campfireOn.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.837, "y": 0.05 },
+										"size": 0.114,
+										"drawDepth": -5,
+										"nameTag": "none",
+										"foot": { "rotate": -3.203 },
+										"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:drauven_BoxGearSmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.684, "y": 0.03 },
+										"size": 0.402,
+										"drawDepth": -4,
+										"nameTag": "none",
+										"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.204, "y": 0.506 },
+										"size": 0.282,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.803, "y": 0.484 },
+										"size": 0.282,
+										"drawDepth": 5.5,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:log4.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.114, "y": 0.271 },
+										"size": 0.516,
+										"drawDepth": 3,
+										"nameTag": "none",
+										"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:trunk5.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.26, "y": 1.708 },
+										"size": 0.257,
+										"drawDepth": 5,
+										"nameTag": "none",
+										"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:standingStone2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.035, "y": 0.576 },
+										"size": 0.468,
+										"drawDepth": 5,
+										"nameTag": "none",
+										"foot": { "rotate": 2.28 },
+										"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+									},
+									{
+										"role": "hero2",
+										"form": "frame-grim",
+										"equipment": {},
+										"anchor": { "x": 0.353, "y": 0.33 },
+										"size": 0.2692,
+										"drawDepth": 4,
+										"nameTag": "bottomRight",
+										"head": { "rotate": 7.885, "scaleY": 1 },
+										"color": { "r": "0.60709214", "g": "0.5695312", "b": "0.7021451", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.747, "y": 0.333 },
+										"size": 0.2692,
+										"drawDepth": -3.5,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -22.868, "scaleY": 1 },
+										"color": { "r": "0.60709214", "g": "0.5695312", "b": "0.7021451", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+										"textKey": "~01~~panel_005.(coward_exists)~1_coward",
+										"pointerOwner": "coward",
+										"location": "topRight",
+										"padXFraction": 0.043,
+										"padYFraction": 0.06,
+										"widthFraction": 0.66763943,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -15.080461,
+											"dY": -14.137932,
+											"scaleX": 0.90371203,
+											"scaleY": 0.90371203
+										}
+									}
+								]
+							}
+						}
+					],
+					[]
+				]
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoFifths",
+					"showNameTags": false,
+					"bg": "comicBG_forestPurpleZoomedOut.jpg",
+					"animation": { "overridePanelOrder": 2, "overridePanelDrawDepth": 1 },
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 1.179, "y": 0.421 },
+							"size": 0.462,
+							"drawDepth": -3,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -11.622, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.584, "y": 0.506 },
+							"size": 0.648,
+							"drawDepth": -3,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 2.415, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 1.779, "y": 0.405 },
+							"size": 0.41,
+							"drawDepth": -3.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.787, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.618, "y": 0.006 },
+							"size": 0.114,
+							"drawDepth": -5,
+							"nameTag": "none",
+							"foot": { "rotate": -3.203 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.344, "y": 0.002 },
+							"size": 0.402,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.746, "y": 0.483 },
+							"size": 0.282,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.845, "y": 0.487 },
+							"size": 0.282,
+							"drawDepth": 5.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:log4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.103, "y": 0.286 },
+							"size": 0.516,
+							"drawDepth": 3,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:trunk5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.442, "y": 1.723 },
+							"size": 0.257,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.085, "y": 0.485 },
+							"size": 0.468,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"foot": { "rotate": 2.28 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_006~1_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.146,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_006~2_romantic",
+							"pointerOwner": "romantic",
+							"location": "bottomLeft",
+							"padXFraction": 0.622,
+							"padYFraction": 0.026,
+							"widthFraction": 1.3182162,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_006~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.57803434", "g": "0.57803434", "b": "0.57803434", "a": "0.71098232" },
+							"padXFraction": 0.045,
+							"padYFraction": 0.042,
+							"widthFraction": 0.94878155,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFifths",
+					"showNameTags": false,
+					"bg": "comicBG_forestPurpleZoomedOut.jpg",
+					"animation": { "overridePanelOrder": 1, "overridePanelDrawDepth": -1 },
+					"actorSlots": [
+						{
+							"role": "loner",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.112, "y": 0.43 },
+							"size": 0.462,
+							"drawDepth": -4.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -11.622, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "romantic",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": -0.407, "y": 0.534 },
+							"size": 0.648,
+							"drawDepth": -3,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -2.537, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.838, "y": 0.442 },
+							"size": 0.41,
+							"drawDepth": -6,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.787, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.627, "y": 0.034 },
+							"size": 0.114,
+							"drawDepth": -5,
+							"nameTag": "none",
+							"foot": { "rotate": -3.203 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.353, "y": 0.03 },
+							"size": 0.402,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.464, "y": 0.537 },
+							"size": 0.282,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.543, "y": 0.515 },
+							"size": 0.282,
+							"drawDepth": 5.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:log4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.487, "y": 0.305 },
+							"size": 0.516,
+							"drawDepth": 3,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:trunk5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.168, "y": 1.77 },
+							"size": 0.257,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:standingStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.379, "y": 0.626 },
+							"size": 0.468,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"foot": { "rotate": 2.28 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"equipment": {},
+							"anchor": { "x": 0.353, "y": 0.305 },
+							"size": 0.2692,
+							"drawDepth": 4,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -19.594, "scaleY": -1 },
+							"color": { "r": "0.60709214", "g": "0.5695312", "b": "0.7021451", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.666, "y": 0.289 },
+							"size": 0.2692,
+							"drawDepth": -3.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 3.335, "scaleY": 1 },
+							"color": { "r": "0.60709214", "g": "0.5695312", "b": "0.7021451", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_007~1_romantic",
+							"pointerOwner": "romantic",
+							"padXFraction": 0.146,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_007~2_loner",
+							"pointerOwner": "loner",
+							"padXFraction": 0.113,
+							"widthFraction": 0.85813123,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -23.266497,
+								"dX": 34.87345,
+								"dY": 24.505749,
+								"scaleX": 0.71630055,
+								"scaleY": 0.71630055,
+								"forcePointerImage": "speechLong"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_007~3_coward",
+							"pointerOwner": "coward",
+							"location": "topRight",
+							"padXFraction": 0.042,
+							"padYFraction": 0.217,
+							"widthFraction": 0.66763943,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": -15.080461,
+								"dY": -14.137932,
+								"scaleX": 0.90371203,
+								"scaleY": 0.90371203
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_007~4_coward",
+							"pointerOwner": "coward",
+							"location": "topRight",
+							"padXFraction": 0.261,
+							"padYFraction": 0.277,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -3.7702303, "dY": -10.367817, "scaleX": 0.8272383, "scaleY": 0.8272383 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.172, "y": 0.485 },
+							"size": 0.285,
+							"drawDepth": 1.875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.844, "y": 0.488 },
+							"size": 0.285,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "scenery:boulderField1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.48, "y": 0.415 },
+							"size": 0.462,
+							"drawDepth": 1.8125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.205, "y": 0.236 },
+							"size": 0.274,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"color": { "r": "0.78526676", "g": "0.62579519", "b": "0.50375056", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.179, "y": 0.154 },
+							"size": 0.258,
+							"drawDepth": 1.84375,
+							"nameTag": "none",
+							"color": { "r": "0.87111652", "g": "0.82017446", "b": "0.91392958", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallDiag.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.048, "y": 0.217 },
+							"size": 0.316,
+							"drawDepth": 1,
+							"nameTag": "none",
+							"color": { "r": "0.87111652", "g": "0.82017446", "b": "0.91392958", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.853, "y": 0.638 },
+							"size": 0.013,
+							"drawDepth": 1.9375,
+							"nameTag": "none",
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.3410401" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.885, "y": 0.632 },
+							"size": 0.013,
+							"drawDepth": 1.9375,
+							"nameTag": "none",
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.3410401" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.279, "y": 0.377 },
+							"size": 0.436,
+							"drawDepth": 1.71875,
+							"head": { "rotate": -8.377 },
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"role": "npc2",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.04, "y": 0.46 },
+							"size": 0.569,
+							"drawDepth": 1.71875,
+							"head": { "rotate": -20.616 },
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.847, "y": 0.463 },
+							"size": 0.568,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"foot": { "shearX": -2 },
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.84, "y": 0.463 },
+							"size": 0.568,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"foot": { "shearX": -5 },
+							"color": { "r": "0.83147609", "g": "0.81028432", "b": "0.73499787", "a": "0.20231214" }
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.692, "y": 0.032 },
+							"size": 0.355,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.019, "y": 0.985 },
+							"drawDepth": 1.828125,
+							"nameTag": "none",
+							"color": { "r": "0.28612646", "g": "0.28612646", "b": "0.28612646", "a": "0.6011557" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.344, "y": 0.393 },
+							"size": 0.373,
+							"drawDepth": 1.8359375,
+							"nameTag": "none",
+							"foot": { "rotate": -151.248 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.3410401" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.637, "y": 0.082 },
+							"size": 0.112,
+							"drawDepth": 1.734375,
+							"nameTag": "none",
+							"foot": { "rotate": -149.036 },
+							"color": { "r": "0.86557329", "g": "0.76574135", "b": "0.68933928", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_dash.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.752, "y": 0.928 },
+							"size": 0.208,
+							"drawDepth": 1.734375,
+							"nameTag": "none",
+							"foot": { "rotate": -154.324 },
+							"color": { "r": "0.86557329", "g": "0.76574135", "b": "0.68933928", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_008~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0", "g": "0", "b": "0", "a": "0.3410401" },
+							"padXFraction": 0.026,
+							"padYFraction": 0.074,
+							"widthFraction": 0.6607317,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.527, "y": 0.163 },
+							"size": 0.285,
+							"drawDepth": 1.875,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.238, "y": 0.515 },
+							"size": 0.285,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.374, "y": -0.377 },
+							"size": 0.568,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"foot": { "rotate": 6.053 },
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.065, "y": -0.314 },
+							"size": 0.395,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.521, "y": 0.05 },
+							"size": 0.462,
+							"drawDepth": 1.8125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.944, "y": -0.15 },
+							"size": 0.147,
+							"drawDepth": 1.796875,
+							"nameTag": "none",
+							"foot": { "rotate": -2.69 },
+							"color": { "r": "0.87111652", "g": "0.82017446", "b": "0.91392958", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_gorelord.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.537, "y": 0.307 },
+							"size": 0.318,
+							"drawDepth": 1.4375,
+							"nameTag": "none",
+							"foot": { "rotate": -3.603 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.533, "y": -0.218 },
+							"size": 0.274,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"foot": { "rotate": -9.478 },
+							"color": { "r": "0.78526676", "g": "0.62579519", "b": "0.50375056", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.073, "y": 0.066 },
+							"size": 0.112,
+							"drawDepth": 1.734375,
+							"nameTag": "none",
+							"foot": { "rotate": -149.036 },
+							"color": { "r": "0.86557329", "g": "0.76574135", "b": "0.68933928", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.877, "y": 1.035 },
+							"size": 0.373,
+							"drawDepth": 1.8359375,
+							"nameTag": "none",
+							"foot": { "rotate": -151.248 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.3410401" }
+						},
+						{
+							"assetSpec": "comic:actionLines_dash.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.66, "y": 0.104 },
+							"size": 0.326,
+							"drawDepth": 1,
+							"nameTag": "none",
+							"foot": { "rotate": -159.455 },
+							"color": { "r": "0.86557329", "g": "0.76574135", "b": "0.68933928", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_009~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0", "g": "0", "b": "0", "a": "0.3410401" },
+							"padXFraction": 0.057,
+							"padYFraction": 0.065,
+							"widthFraction": 0.57803804,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_009~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.021,
+							"padYFraction": 0.087,
+							"widthFraction": 0.9638088,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_009~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.206,
+							"padYFraction": 0.303,
+							"widthFraction": 0.42616606,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_omenVictory_clearAll_scythewinds",
+							"textKey": "~01~~panel_009~4_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.45,
+							"padYFraction": 0.571,
+							"widthFraction": 0.3599768,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "SnapshotFollowup",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_forestPurpleZoomedOut.jpg",
+					"actorSlots": [
+						{
+							"role": "loner",
+							"equipment": {},
+							"anchor": { "x": 0.532, "y": 0.393 },
+							"size": 0.462,
+							"drawDepth": -4.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 4.665, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"role": "romantic",
+							"equipment": {},
+							"anchor": { "x": 0.073, "y": 0.497 },
+							"size": 0.648,
+							"drawDepth": -3,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 9.362, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"role": "coward",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.916, "y": 0.443 },
+							"size": 0.41,
+							"drawDepth": -6,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 7.524, "scaleY": 1 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "scenery:campfireOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.837, "y": 0.05 },
+							"size": 0.114,
+							"drawDepth": -5,
+							"nameTag": "none",
+							"foot": { "rotate": -3.203 },
+							"color": { "r": "0.80354571", "g": "0.78476518", "b": "0.85107225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_BoxGearSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.684, "y": 0.03 },
+							"size": 0.402,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.204, "y": 0.506 },
+							"size": 0.282,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestPurpleTrunk.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.803, "y": 0.484 },
+							"size": 0.282,
+							"drawDepth": 5.5,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.6 }
+						},
+						{
+							"assetSpec": "scenery:log4.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.114, "y": 0.271 },
+							"size": 0.516,
+							"drawDepth": 3,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "scenery:trunk5.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.26, "y": 1.708 },
+							"size": 0.257,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "scenery:standingStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.035, "y": 0.576 },
+							"size": 0.468,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"foot": { "rotate": 2.28 },
+							"color": { "r": "0.65074778", "g": "0.61736023", "b": "0.73523951", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.387, "y": 0.335 },
+							"size": 0.2692,
+							"drawDepth": 4,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -19.754, "scaleY": -1 },
+							"color": { "r": "0.60709214", "g": "0.5695312", "b": "0.7021451", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.747, "y": 0.333 },
+							"size": 0.2692,
+							"drawDepth": -3.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -22.868, "scaleY": -1 },
+							"color": { "r": "0.60709214", "g": "0.5695312", "b": "0.7021451", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						}
+					]
+				}
+			}
+		],
+		"score": "11"
+	}
+]
+}
