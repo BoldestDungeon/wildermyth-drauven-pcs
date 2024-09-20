@@ -1,0 +1,378 @@
+{
+"id": "hook_Distant_longingtoBelong_resolve",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+	"author": "Douglas Austin"
+},
+"type": "OTHER",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "encounterScore": 100000 },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{ "role": "hook", "template": "INJECTED_HERO", "injectedRole": "hook" },
+	{ "role": "hook2", "template": "INJECTED_HERO", "injectedRole": "hook2" }
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_hillsPineSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.684, "y": 0.453 },
+							"size": 0.438,
+							"nameTag": "none",
+							"head": { "rotate": 15 }
+						},
+						{
+							"role": "hook2",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.154, "y": 0.402 },
+							"size": 0.265,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_001~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_mountainsSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.64, "y": -0.1 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": -29.39, "scaleY": -1 }
+						},
+						{
+							"role": "hook2",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.112, "y": -0.066 },
+							"size": 0.1429,
+							"nameTag": "none",
+							"head": { "rotate": -22.722, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_002~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_hillsPineSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.865, "y": -0.125 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": -29.39, "scaleY": -1 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.149, "y": -0.063 },
+							"size": 0.1429,
+							"nameTag": "none",
+							"head": { "rotate": -22.722, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_003~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_forestTrunksSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.433, "y": 0.525 },
+							"size": 0.814,
+							"drawDepth": 0,
+							"head": { "rotate": -2.865 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_004~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.64, "y": -0.1 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": 330, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_005~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-sad",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.64, "y": -0.1 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": 330, "scaleY": 1 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.2, "y": -0.07 },
+							"size": 0.2105,
+							"nameTag": "none",
+							"head": { "rotate": 22 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_006~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_006~2_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.246,
+							"padYFraction": 0.323,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-talk",
+							"equipment": {},
+							"anchor": { "x": 0.7, "y": 0.5 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": 21.991 }
+						},
+						{
+							"role": "hook2",
+							"equipment": {},
+							"anchor": { "x": 0.1, "y": 0.5 },
+							"size": 0.75,
+							"head": { "rotate": 25 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_007~1_hook",
+							"pointerOwner": "hook",
+							"location": "topRight",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.45 }
+						},
+						{
+							"role": "hook",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.45 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_008~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.222,
+							"widthFraction": 0.76218265,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-happy",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"head": { "rotate": -4.99 }
+						},
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight",
+							"head": { "rotate": 5 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_009~1_hook2",
+							"pointerOwner": "hook2"
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_009~2_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.080000006,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_009~3_hook",
+							"pointerOwner": "hook",
+							"location": "topRight",
+							"padXFraction": 0.28000003,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.34, "y": -0.1 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": 10 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-happy",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.45, "y": -0.07 },
+							"size": 0.2105,
+							"nameTag": "none",
+							"head": { "rotate": 348, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve",
+							"textKey": "~01~~panel_010~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "AddHistory",
+		"target": "hook",
+		"inlineHistory": { "id": "hook_Distant_longingtoBelong_resolve.outcome" }
+	}
+]
+}
