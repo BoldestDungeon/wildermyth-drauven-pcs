@@ -1,0 +1,333 @@
+{
+"id": "hook_Distant_longingtoBelong_resolve_noHook",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+	"author": "Douglas Austin"
+},
+"type": "OTHER",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "encounterScore": 100000 },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "hook",
+		"template": "INJECTED_HERO",
+		"type": "ANY_STATUS",
+		"injectedRole": "hook"
+	},
+	{ "role": "hook2", "template": "INJECTED_HERO", "injectedRole": "hook2" },
+	{
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "hook", "hook2" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_hillsPineSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.64, "y": 0.5 },
+							"size": 0.5882,
+							"nameTag": "none",
+							"head": { "rotate": 15 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.165, "y": 0.462 },
+							"size": 0.397,
+							"nameTag": "none",
+							"head": { "rotate": -24.962 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+							"textKey": "~01~~panel_001~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_mountainsSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.64, "y": -0.1 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": 15 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.2, "y": -0.05 },
+							"size": 0.1429,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+							"textKey": "~01~~panel_002~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_forestTrunksSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 1.078, "y": 0.419 },
+							"size": 0.45,
+							"nameTag": "none",
+							"head": { "rotate": 330 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.806, "y": 0.359 },
+							"size": 0.57,
+							"drawDepth": 0,
+							"head": { "rotate": 22.942 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+							"textKey": "~01~~panel_003~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_forestTrunksSunset.jpg",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.058, "y": 0.419 },
+							"size": 0.45,
+							"nameTag": "none",
+							"head": { "rotate": 330 }
+						},
+						{
+							"role": "volunteer",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": -0.208, "y": 0.343 },
+							"size": 0.57,
+							"drawDepth": 0,
+							"head": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+							"textKey": "~01~~panel_004~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "volunteer",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.184, "y": -0.097 },
+							"size": 0.25,
+							"nameTag": "none",
+							"head": { "rotate": -21.489, "scaleY": -1 }
+						},
+						{
+							"role": "hook2",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.591, "y": -0.055 },
+							"size": 0.2105,
+							"nameTag": "none",
+							"head": { "rotate": -52.123, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+							"textKey": "~01~~panel_005~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+							"textKey": "~01~~panel_005~2_volunteer",
+							"pointerOwner": "volunteer",
+							"padXFraction": 0.16,
+							"padYFraction": 0.214,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "scaleX": 0.8253294, "scaleY": 0.8253294, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"equipment": {},
+							"anchor": { "x": 0.67, "y": 0.419 },
+							"size": 0.9524,
+							"head": { "rotate": 25 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+							"textKey": "~01~~panel_006~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.27,
+							"padYFraction": 0.023,
+							"widthFraction": 0.69432837,
+							"pointerAdjust": { "dX": 5.655173, "dY": -10.367817 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.535, "y": 0.441 },
+							"head": { "rotate": -19.093, "scaleY": -1 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.068, "y": 0.418 },
+							"size": 0.373,
+							"head": { "rotate": 11.345 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+							"textKey": "~01~~panel_007~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.122, "y": 0.412 },
+							"head": { "rotate": 335 }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-sad",
+							"equipment": {},
+							"anchor": { "x": 0.657, "y": 0.409 },
+							"size": 0.464,
+							"head": { "rotate": -4.151, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Distant_longingtoBelong_resolve_noHook",
+							"textKey": "~01~~panel_008~1_hook2",
+							"pointerOwner": "hook2"
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "AddHistory",
+		"target": "hook2",
+		"inlineHistory": { "id": "hook_Distant_longingtoBelong_resolve_noHook.outcome" }
+	},
+	{
+		"class": "UnlockLegacyAspect",
+		"legacyAspect": "legacy_Distant_joinedWithThrixl",
+		"value": "1"
+	},
+	{
+		"class": "AddCalamities",
+		"calamitiesToAdd": [
+			{ "quantity": "-4", "flavor": "thrixl" }
+		]
+	}
+]
+}
