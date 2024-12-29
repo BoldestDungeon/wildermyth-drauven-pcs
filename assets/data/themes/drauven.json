@@ -1,268 +1,316 @@
 {
-	"id": "drauven",
-	"name": "Drauven",
-	"blurb": "<self> is a member of the Drauven",
-
-	"forbidCombineWith": ["bear", "skeleton", "wolf", "gem" ],
-
-	"pieces": [
-		{
-			"id": "torso",
-			"name": "Drauven Body",
-			"blurb": "Smooth scales that are cool to the touch.",
-			"canBeAwardedRandomly": false,
-			"slots": ["torso"],
-			"replaces": ["torso"],
-			"extraAspects": ["ATTACHMENTS_suppressArmor", "rigOverride|Drauven"],
-			"effects": ["migration_drauven_updateRig"],
-
-			"layers": [
-				{
-					"name": "Torso_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
-					"depth": 1100
-				},
-				{
-					"name": "armor_base",
-					"tint": "primary", "tintAmount": 0.6,
-					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenGear_clothes" ],
-					"depth": 1350
-				},
-				{
-					"name": "armor_base_Primary",
-					"tint": "primary", "tintAmount": 0.6,
-					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenGear_clothes" ],
-					"depth": 1350
-				},
-				{
-					"name": "armor_base_over",
-					"tint": "primary", "tintAmount": 0.6,
-					"ifNoOwnerAspects": ["themeSkin_drauven_alternate", "drauvenGear_clothes" ],
-					"depth": 1399
-				}
-
-			]
-		},
-		{
-			"id": "tail",
-			"name": "Drauven Tail",
-			"blurb": "<self> has a thick, scaly tail.",
-			"canBeAwardedRandomly": false,
-			"slots": ["tail"],
-			"applyAutomaticallyIfHave": [["torso"]],
-			"layers": [
-				{
-					"name": "Tail_Skin",
-					"tint": "skin", "tintAmount": 0.5,
-					"ifNoOwnerAspect": "themeSkin_drauven_alternate",
-					"depth": 101
-				},
-
-				{
-					"name": "skinBlueTattoo_tail",
-					"ifNoOwnerAspects": ["themeSkin_drauven_alternate"],
-					"ifOwnerAspect": "themeSkin_spellTouchedTattoo",
-					"depth": 102
-				}
-			]
-		},
-
-
-
-
-
-		{ 
-			"id": "head", 
-			"name": "Legacy-style Drauven head",
-			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
-			"effects": ["migration_drauven_updateThemeLimbs"], 
-			"canBeAwardedRandomly": false 
-		},
-		{ 
-			"id": "rightArm", 
-			"name": "Legacy-style Drauven Right Arm",
-			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
-			"canBeAwardedRandomly": false,
-			"layers": [
-				{
-					"name": "ArmR_1hand_Upper_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 1350,
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "ArmR_1hand_Lower_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 3000,
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "ArmR_2hand_Upper_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 1350,
-					"rigMode": "twoHanded"
-				},
-				{
-					"name": "ArmR_2hand_Lower_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 8000,
-					"rigMode": "twoHanded"
-				},
-				{
-					"name": "HandR_Open",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 6000,
-					"ifRightHandGrasp": "open",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "HandR_Closed_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 8001,
-					"ifRightHandGrasp": "weapon",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "ThumbR_Closed_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 6000,
-					"ifRightHandGrasp": "weapon",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "HandR_Book_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 6000,
-					"ifRightHandGrasp": "book",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "ThumbR_Book_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 8001,
-					"ifRightHandGrasp": "book",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "HandR_2hand_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 8002,
-					"rigMode": "twoHanded"
-				},
-				{
-					"name": "ThumbR_2hand_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 6000,
-					"rigMode": "twoHanded"
-				}
-			]
-		},
-		{ 
-			"id": "leftArm", 
-			"name": "Legacy-style Drauven Left Arm",
-			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
-			"canBeAwardedRandomly": false,
-			"layers": [
-				{
-					"name": "ArmL_1hand_Upper_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 1199,
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "ArmL_1hand_Lower_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 1500,
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "ArmL_2hand_Upper_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 1199,
-					"rigMode": "twoHanded"
-				},
-				{
-					"name": "ArmL_2hand_Lower_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 1500,
-					"rigMode": "twoHanded"
-				},
-				{
-					"name": "HandL_Open_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 6000,
-					"ifLeftHandGrasp": "open",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "HandL_Closed_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 6000,
-					"ifLeftHandGrasp": "weapon",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "ThumbL_Closed_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 8000,
-					"ifLeftHandGrasp": "weapon",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "HandL_Book_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 6000,
-					"ifLeftHandGrasp": "book",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "ThumbL_Book_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 8000,
-					"ifLeftHandGrasp": "book",
-					"rigMode": "oneHanded"
-				},
-				{
-					"name": "HandL_2hand_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 8002,
-					"rigMode": "twoHanded"
-				},
-				{
-					"name": "ThumbL_2hand_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 4000,
-					"rigMode": "twoHanded"
-				}
-
-			]
-		},
-		{ 
-			"id": "rightLeg", 
-			"name": "Legacy-style Drauven Right Leg",
-			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
-			"canBeAwardedRandomly": false,
-			"layers": [
-				{
-					"name": "legR_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 1101
-				}
-			]
-		},
-		{ 
-			"id": "leftLeg", 
-			"name": "Legacy-style Drauven Left Leg",
-			"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
-			"canBeAwardedRandomly": false,
-			"layers": [
-				{
-					"name": "LegL_Skin",
-					"tint": "skin", "tintAmount": 0.5, 
-					"depth": 1101
-				}
-			]
-		}
-	]
+"id": "drauven",
+"name": "Drauven",
+"blurb": "<self> is a member of the Drauven",
+"modId": "wildermyth-drauven-pcs",
+"forbidCombineWith": [ "bear", "skeleton", "wolf", "gem" ],
+"pieces": [
+	{
+		"id": "species",
+		"name": "Drauven Body",
+		"blurb": "Smooth scales that are cool to the touch.",
+		"layers": [
+			{
+				"name": "Torso_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 1100,
+				"ifNoOwnerAspect": "themeSkin_drauven_alternate",
+				"ifNoOwnerAspects": [ "themeSlotFilled_torso" ]
+			},
+			{
+				"name": "armor_base",
+				"tint": "primary",
+				"tintAmount": 0.6,
+				"depth": 1350,
+				"ifNoOwnerAspects": [ "themeSkin_drauven_alternate", "drauvenGear_clothes" ]
+			},
+			{
+				"name": "armor_base_Primary",
+				"tint": "primary",
+				"tintAmount": 0.6,
+				"depth": 1350,
+				"ifNoOwnerAspects": [ "themeSkin_drauven_alternate", "drauvenGear_clothes" ]
+			},
+			{
+				"name": "armor_base_over",
+				"tint": "primary",
+				"tintAmount": 0.6,
+				"depth": 1399,
+				"ifNoOwnerAspects": [ "themeSkin_drauven_alternate", "drauvenGear_clothes" ]
+			}
+		],
+		"extraAspects": [ "ATTACHMENTS_suppressArmor", "rigOverride|Drauven" ],
+		"canBeAwardedRandomly": false
+	},
+	{
+		"id": "tail",
+		"name": "Drauven Tail",
+		"blurb": "<self> has a thick, scaly tail.",
+		"slots": [ "tail" ],
+		"layers": [
+			{
+				"name": "Tail_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 101,
+				"ifNoOwnerAspect": "themeSkin_drauven_alternate"
+			},
+			{
+				"name": "skinBlueTattoo_tail",
+				"depth": 102,
+				"ifOwnerAspect": "themeSkin_spellTouchedTattoo",
+				"ifNoOwnerAspects": [ "themeSkin_drauven_alternate" ]
+			}
+		],
+		"canBeAwardedRandomly": false,
+		"applyAutomaticallyIfHave": [
+			[ "torso" ]
+		]
+	},
+	{
+		"id": "head",
+		"name": "Legacy-style Drauven head",
+		"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+		"effects": [ "migration_drauven_updateThemeLimbs" ],
+		"canBeAwardedRandomly": false
+	},
+	{
+		"id": "rightArm",
+		"name": "Legacy-style Drauven Right Arm",
+		"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+		"layers": [
+			{
+				"name": "ArmR_1hand_Upper_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 1350,
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "ArmR_1hand_Lower_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 3000,
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "ArmR_2hand_Upper_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 1350,
+				"rigMode": "twoHanded"
+			},
+			{
+				"name": "ArmR_2hand_Lower_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 8000,
+				"rigMode": "twoHanded"
+			},
+			{
+				"name": "HandR_Open",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 6000,
+				"ifRightHandGrasp": "open",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "HandR_Closed_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 8001,
+				"ifRightHandGrasp": "weapon",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "ThumbR_Closed_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 6000,
+				"ifRightHandGrasp": "weapon",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "HandR_Book_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 6000,
+				"ifRightHandGrasp": "book",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "ThumbR_Book_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 8001,
+				"ifRightHandGrasp": "book",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "HandR_2hand_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 8002,
+				"rigMode": "twoHanded"
+			},
+			{
+				"name": "ThumbR_2hand_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 6000,
+				"rigMode": "twoHanded"
+			}
+		],
+		"canBeAwardedRandomly": false
+	},
+	{
+		"id": "leftArm",
+		"name": "Legacy-style Drauven Left Arm",
+		"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+		"layers": [
+			{
+				"name": "ArmL_1hand_Upper_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 1199,
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "ArmL_1hand_Lower_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 1500,
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "ArmL_2hand_Upper_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 1199,
+				"rigMode": "twoHanded"
+			},
+			{
+				"name": "ArmL_2hand_Lower_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 1500,
+				"rigMode": "twoHanded"
+			},
+			{
+				"name": "HandL_Open_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 6000,
+				"ifLeftHandGrasp": "open",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "HandL_Closed_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 6000,
+				"ifLeftHandGrasp": "weapon",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "ThumbL_Closed_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 8000,
+				"ifLeftHandGrasp": "weapon",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "HandL_Book_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 6000,
+				"ifLeftHandGrasp": "book",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "ThumbL_Book_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 8000,
+				"ifLeftHandGrasp": "book",
+				"rigMode": "oneHanded"
+			},
+			{
+				"name": "HandL_2hand_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 8002,
+				"rigMode": "twoHanded"
+			},
+			{
+				"name": "ThumbL_2hand_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 4000,
+				"rigMode": "twoHanded"
+			}
+		],
+		"canBeAwardedRandomly": false
+	},
+	{
+		"id": "rightLeg",
+		"name": "Legacy-style Drauven Right Leg",
+		"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+		"layers": [
+			{ "name": "legR_Skin", "tint": "skin", "tintAmount": 0.5, "depth": 1101 }
+		],
+		"canBeAwardedRandomly": false
+	},
+	{
+		"id": "leftLeg",
+		"name": "Legacy-style Drauven Left Leg",
+		"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+		"layers": [
+			{ "name": "LegL_Skin", "tint": "skin", "tintAmount": 0.5, "depth": 1101 }
+		],
+		"canBeAwardedRandomly": false
+	},
+	{
+		"id": "torso",
+		"name": "Legacy-style Drauven Body",
+		"blurb": "DEPRECATED: Please load this character into a new campaign to update their aspects!",
+		"slots": [ "torso" ],
+		"layers": [
+			{
+				"name": "Torso_Skin",
+				"tint": "skin",
+				"tintAmount": 0.5,
+				"depth": 1100,
+				"ifNoOwnerAspect": "themeSkin_drauven_alternate"
+			},
+			{
+				"name": "armor_base",
+				"tint": "primary",
+				"tintAmount": 0.6,
+				"depth": 1350,
+				"ifNoOwnerAspects": [ "themeSkin_drauven_alternate", "drauvenGear_clothes" ]
+			},
+			{
+				"name": "armor_base_Primary",
+				"tint": "primary",
+				"tintAmount": 0.6,
+				"depth": 1350,
+				"ifNoOwnerAspects": [ "themeSkin_drauven_alternate", "drauvenGear_clothes" ]
+			},
+			{
+				"name": "armor_base_over",
+				"tint": "primary",
+				"tintAmount": 0.6,
+				"depth": 1399,
+				"ifNoOwnerAspects": [ "themeSkin_drauven_alternate", "drauvenGear_clothes" ]
+			}
+		],
+		"effects": [ "migration_drauven_updateRig", "migration_drauven_updateTorso" ],
+		"extraAspects": [ "ATTACHMENTS_suppressArmor" ],
+		"canBeAwardedRandomly": false
+	}
+]
 }

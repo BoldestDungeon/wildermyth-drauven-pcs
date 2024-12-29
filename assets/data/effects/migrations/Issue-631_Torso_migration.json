@@ -1,0 +1,25 @@
+{
+  "id": "migration_drauven_updateTorso",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "migrations/Issue-631_Torso_migration",
+    "modId": "wildermyth-drauven-pcs",
+    "author": "Ironskink",
+    "STUB": "Updates characters to use the updated 'species' piece instead of the 'torso' slot, allowing characters to get torso transformations"
+  },
+  "type": "ABILITIES_CHANGED",
+  "targets": [
+    {
+      "template": "SELF",
+      "aspectValues": [
+        { "id": "themePiece_drauven_torso" }
+      ]
+    }
+  ],
+  "outcomes": [
+    { "class": "RemoveTheme", "specificTheme": "drauven", "specificPiece": "torso" },
+    { "class": "ApplyTheme", "theme": "drauven", "piece": "species" }
+  ]
+
+  
+}
