@@ -65,7 +65,8 @@
 		],
 		"canBeAwardedRandomly": false,
 		"applyAutomaticallyIfHave": [
-			[ "torso" ]
+			[ "torso" ],
+			[ "species" ]
 		]
 	},
 	{

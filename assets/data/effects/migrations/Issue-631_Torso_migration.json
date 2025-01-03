@@ -7,7 +7,7 @@
     "author": "Ironskink",
     "STUB": "Updates characters to use the updated 'species' piece instead of the 'torso' slot, allowing characters to get torso transformations"
   },
-  "type": "ABILITIES_CHANGED",
+  "type": "DAILY",
   "targets": [
     {
       "template": "SELF",
@@ -17,8 +17,8 @@
     }
   ],
   "outcomes": [
-    { "class": "RemoveTheme", "specificTheme": "drauven", "specificPiece": "torso" },
-    { "class": "ApplyTheme", "theme": "drauven", "piece": "species" }
+    { "class": "ApplyTheme", "theme": "drauven", "piece": "species" },
+    { "class": "RemoveTheme", "specificTheme": "drauven", "specificPiece": "torso" }
   ]
 
   
