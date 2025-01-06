@@ -51,7 +51,243 @@
 		"TENACITY": 20,
 		"WARDING": 0
 	},
-	"voice": "defaultDrauven"
+	"voice": "defaultDrauven",
+	"skinLayers": [
+		{
+			"name": "torso_untinted",
+			"depth": 1000,
+			"ifNoOwnerAspect": "themeSlotFilled_torso"
+		},
+		{
+			"name": "torso_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 1000,
+			"ifNoOwnerAspect": "themeSlotFilled_torso"
+		},
+		{
+			"name": "legL_untinted",
+			"depth": 1100,
+			"ifOwnerAspect": "humanSkin_naturalLeftLeg"
+		},
+		{
+			"name": "legL_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 1100,
+			"ifOwnerAspect": "humanSkin_naturalLeftLeg"
+		},
+		{
+			"name": "legR_untinted",
+			"depth": 1100,
+			"ifOwnerAspect": "humanSkin_naturalRightLeg"
+		},
+		{
+			"name": "legR_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 1100,
+			"ifOwnerAspect": "humanSkin_naturalRightLeg"
+		},
+		{
+			"name": "armL_untinted",
+			"depth": 1200,
+			"ifOwnerAspect": "humanSkin_naturalLeftArm",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "armL_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 1200,
+			"ifOwnerAspect": "humanSkin_naturalLeftArm",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "armL2_upper_untinted",
+			"depth": 1200,
+			"ifOwnerAspect": "humanSkin_naturalLeftArm",
+			"rigMode": "twoHanded"
+		},
+		{
+			"name": "armL2_upper_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 1200,
+			"ifOwnerAspect": "humanSkin_naturalLeftArm",
+			"rigMode": "twoHanded"
+		},
+		{
+			"name": "armR_untinted",
+			"depth": 1200,
+			"ifOwnerAspect": "humanSkin_naturalRightArm",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "armR_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 1200,
+			"ifOwnerAspect": "humanSkin_naturalRightArm",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "armR2_untinted",
+			"depth": 1200,
+			"ifOwnerAspect": "humanSkin_naturalRightArm",
+			"rigMode": "twoHanded"
+		},
+		{
+			"name": "armR2_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 1200,
+			"ifOwnerAspect": "humanSkin_naturalRightArm",
+			"rigMode": "twoHanded"
+		},
+		{
+			"name": "armL2_lower_untinted",
+			"depth": 3000,
+			"ifOwnerAspect": "humanSkin_naturalRightArm",
+			"rigMode": "twoHanded"
+		},
+		{
+			"name": "armL2_lower_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 3000,
+			"ifOwnerAspect": "humanSkin_naturalleftArm",
+			"rigMode": "twoHanded"
+		},
+		{
+			"name": "handL_bookBehind_untinted",
+			"depth": 4900,
+			"ifOwnerAspect": "humanSkin_naturalLeftHand",
+			"ifLeftHandGrasp": "book",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handL_bookBehind_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 4900,
+			"ifOwnerAspect": "humanSkin_naturalLeftHand",
+			"ifLeftHandGrasp": "book",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handL_bookFront_untinted",
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalLeftHand",
+			"ifLeftHandGrasp": "book",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handL_bookFront_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalLeftHand",
+			"ifLeftHandGrasp": "book",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handL_closed_untinted",
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalLeftHand",
+			"ifLeftHandGrasp": "weapon",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handL_closed_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalLeftHand",
+			"ifLeftHandGrasp": "weapon",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handL_open_untinted",
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalLeftHand",
+			"ifLeftHandGrasp": "open",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handL_open_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalLeftHand",
+			"ifLeftHandGrasp": "open",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_bookBehind_untinted",
+			"depth": 4900,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "book",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_bookBehind_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 4900,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "book",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_bookFront_untinted",
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "book",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_bookFront_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "book",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_closed_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "weapon",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_closed_untinted",
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "weapon",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_closed",
+			"tint": "skin",
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "weapon",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_open",
+			"tint": "skin",
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "open",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_open_untinted",
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "open",
+			"rigMode": "oneHanded"
+		},
+		{
+			"name": "handR_open_texture",
+			"tint": "skin", "tintAmount": 0.5,
+			"depth": 6000,
+			"ifOwnerAspect": "humanSkin_naturalRightHand",
+			"ifRightHandGrasp": "open",
+			"rigMode": "oneHanded"
+		}
+	]
 },
 { "modId": "wildermyth-drauven-pcs", "id": "fluentInDruvwail" },
 { "modId": "wildermyth-drauven-pcs", "id": "fluentInYandric" },

@@ -7,7 +7,8 @@
     "skinLayers":[
       {
         "name": "replaceHead_Stump_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "warrior",
@@ -16,7 +17,8 @@
       },
       {
         "name": "replaceHead_Deeven_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "mystic",
@@ -25,7 +27,8 @@
       },
       {
         "name": "replaceHead_Deeven_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "farmer",
@@ -34,7 +37,8 @@
       },
       {
         "name": "replaceHead_Deeven_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "drauvenHeadStyle_mystic",
@@ -43,7 +47,8 @@
       },
       {
         "name": "replaceHead_Haunt_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "depth": 4000,
         "headOffset": true,
         "ifOwnerAspect": "hunter",
@@ -289,28 +294,32 @@
     "skinLayers": [
       {
         "name": "ArmL_1hand_Upper_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
         "depth": 1199,
         "rigMode": "oneHanded"
       },
       {
         "name": "ArmL_1hand_Lower_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
         "depth": 1200,
         "rigMode": "oneHanded"
       },
       {
         "name": "ArmL_2hand_Upper_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
         "depth": 1199,
         "rigMode": "twoHanded"
       },
       {
         "name": "ArmL_2hand_Lower_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter",
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
         "depth": 3500,
         "rigMode": "twoHanded"
@@ -347,7 +356,8 @@
     "skinLayers": [
       {
         "name": "HandL_Open_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
         "depth": 2000,
         "ifLeftHandGrasp": "open",
@@ -355,7 +365,8 @@
       },
       {
         "name": "HandL_Closed_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
         "depth": 6000,
         "ifLeftHandGrasp": "weapon",
@@ -363,7 +374,8 @@
       },
       {
         "name": "ThumbL_Closed_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
         "depth": 6001,
         "ifLeftHandGrasp": "weapon",
@@ -371,7 +383,8 @@
       },
       {
         "name": "HandL_Book_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
         "depth": 2000,
         "ifLeftHandGrasp": "book",
@@ -379,7 +392,8 @@
       },
       {
         "name": "ThumbL_Book_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
         "depth": 6001,
         "ifLeftHandGrasp": "book",
@@ -387,14 +401,16 @@
       },
       {
         "name": "HandL_2hand_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
         "depth": 8000,
         "rigMode": "twoHanded"
       },
       {
         "name": "ThumbL_2hand_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
         "depth": 4000,
         "rigMode": "twoHanded"
@@ -410,7 +426,8 @@
     "skinLayers": [
       {
         "name": "LegL_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftLeg", "drauvenSkin_bandagedLeftLeg", "drauvenSkin_prostheticLeftLeg"],
         "depth": 1101
       },
@@ -430,28 +447,32 @@
     "skinLayers": [
       {
         "name": "ArmR_1hand_Upper_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
         "depth": 1300,
         "rigMode": "oneHanded"
       },
       {
         "name": "ArmR_1hand_Lower_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
         "depth": 2500,
         "rigMode": "oneHanded"
       },
       {
         "name": "ArmR_2hand_Upper_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
         "depth": 1300,
         "rigMode": "twoHanded"
       },
       {
         "name": "ArmR_2hand_Lower_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
         "depth": 3900,
         "rigMode": "twoHanded"
@@ -481,7 +502,8 @@
     "skinLayers": [
       {
         "name": "HandR_Open_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
         "depth": 6000,
         "ifRightHandGrasp": "open",
@@ -489,7 +511,8 @@
       },
       {
         "name": "HandR_Closed_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
         "depth": 8001,
         "ifRightHandGrasp": "weapon",
@@ -497,7 +520,8 @@
       },
       {
         "name": "ThumbR_Closed_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
         "depth": 6000,
         "ifRightHandGrasp": "weapon",
@@ -505,7 +529,8 @@
       },
       {
         "name": "HandR_Book_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
         "depth": 6000,
         "ifRightHandGrasp": "book",
@@ -513,7 +538,8 @@
       },
       {
         "name": "ThumbR_Book_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
         "depth": 8001,
         "ifRightHandGrasp": "book",
@@ -521,14 +547,16 @@
       },
       {
         "name": "HandR_2hand_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
         "depth": 8002,
         "rigMode": "twoHanded"
       },
       {
         "name": "ThumbR_2hand_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
         "depth": 6000,
         "rigMode": "twoHanded"
@@ -544,7 +572,8 @@
     "skinLayers": [
       {
         "name": "LegR_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightLeg", "drauvenSkin_bandagedRightLeg", "drauvenSkin_prostheticRightLeg"],
         "depth": 1101
       },
@@ -564,7 +593,8 @@
     "skinLayers": [
       {
         "name": "Torso_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_torso"],
         "depth": 1100
       },
@@ -583,7 +613,8 @@
     "skinLayers": [
       {
         "name": "Tail_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
+        "tint": "skin", "tintAmount": 0.5,
+        "ifNoOwnerAspect": "hunter", 
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_tail"],
         "depth": 101
       },
