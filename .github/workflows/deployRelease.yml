@@ -12,7 +12,7 @@ jobs:
       - name: Send Discord notification
         uses: stegzilla/discord-notify@v2
         with:
-          webhook_url: https://discord.com/api/webhooks/1248824682401107988/23AjTwsfgt720Bb_-P7OSXLeXWgJmVwK8G_mWuj7MsNjQUUNwUd-sbGMl8epGjEo2cax
+          webhook_url: https://discord.com/api/webhooks/1248824682401107988/{{DISCORD_WEBHOOK}}
           title: New Release!
           message: "**${{ github.event.release.title }}**\n\n**Details:** \n${{ github.event.release.body }}\n\n$[Full Details]({{ github.event.release.html_url }})"
           include_image: true
@@ -22,10 +22,12 @@ jobs:
     runs-on: ubuntu-latest
     environment: deploy
     steps:
+      - uses: actions/checkout@v4
       - uses: BoldestDungeon/steam-workshop-deploy@v1.0.1
         with:
           username: ${{ secrets.STEAM_USERNAME }}          
           configVdf: ${{ secrets.STEAM_CONFIG_VDF}}
           appId: 763890
           publishedFileId: 2810606541
+          path: .
           changeNote: ${{ github.event.release.title }}\n\n${{ github.event.release.body }}
