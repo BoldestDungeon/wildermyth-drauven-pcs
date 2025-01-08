@@ -12,7 +12,7 @@ jobs:
       - name: Send Discord notification
         uses: stegzilla/discord-notify@v2
         with:
-          webhook_url: https://discord.com/api/webhooks/1248824682401107988/{{DISCORD_WEBHOOK}}
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           title: New Release!
           message: "**${{ github.event.release.title }}**\n\n**Details:** \n${{ github.event.release.body }}\n\n$[Full Details]({{ github.event.release.html_url }})"
           include_image: true
