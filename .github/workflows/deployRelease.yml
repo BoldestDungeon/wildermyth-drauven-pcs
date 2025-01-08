@@ -12,8 +12,8 @@ jobs:
       - name: Send Discord notification
         uses: stegzilla/discord-notify@v2
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           title: New Release!
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           message: "##${{ github.event.release.title }}\n\n**Details:** \n${{ github.event.release.body }}\n\n$[Full Details]({{ github.event.release.html_url }})"
           include_image: true
           avatar_url: https://github.com/BoldestDungeon/wildermyth-drauven-pcs/blob/main/GitHubBotAvatar.png
