@@ -17,8 +17,8 @@
     }
   ],
   "outcomes": [
-    { "class": "ApplyTheme", "theme": "drauven", "piece": "species" },
-    { "class": "RemoveTheme", "specificTheme": "drauven", "specificPiece": "torso" }
+    { "class": "RemoveTheme", "specificTheme": "drauven", "specificPiece": "torso" },
+    { "class": "ApplyTheme", "theme": "drauven", "piece": "species" }
   ]
 
   
