@@ -21,8 +21,7 @@
 		"class": "AddHistory",
 		"target": "hero",
 		"addHistory": [
-			[ "drauvenBase" ],
-			[ "drauvenNPCName" ]
+			[ "drauvenBase" ]
 		]
 	},
 	{ "class": "ApplyTheme", "target": "hero", "theme": "drauven", "piece": "species" },
