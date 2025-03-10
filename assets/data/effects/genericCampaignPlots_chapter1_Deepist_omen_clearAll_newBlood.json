@@ -3,6 +3,7 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "genericCampaignPlots_chapter1_Deepist_omen_clearAll_newBlood",
+	"modId": "wildermyth-drauven-pcs",
 	"author": "Douglas Austin",
 	"declaredEncounterResults": [ "victory", "defeat" ],
 	"genericCampaignInfo": {
@@ -7400,6 +7401,14 @@
 "implications": {
 	"generatedTargets": [
 		{
+			"role": "legend",
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"legacyHero": { "reset": false },
+				"control": "none"
+			}
+		},
+		{
 			"npcId": "deepistStart_hillWitch",
 			"createEntity": {
 				"query": {
@@ -7414,7 +7423,18 @@
 					"class": "DoAll",
 					"outcomes": [
 						{ "class": "AddGear", "target": "npc", "itemById": "walkingStaff" },
-						{ "class": "AddGear", "target": "npc", "itemById": "mysticDrab1" }
+						{ "class": "AddGear", "target": "npc", "itemById": "mysticDrab1" },
+						{
+							"class": "Test",
+							"value": "hero.drauven",
+							"threshold": "1",
+							"onPass": {
+								"class": "BranchAbility",
+								"target": "npc",
+								"targetRole": "npc",
+								"branchAbility": "makeHeroDrauven|1"
+							}
+						}
 					]
 				}
 			}
@@ -7436,7 +7456,18 @@
 					"class": "DoAll",
 					"outcomes": [
 						{ "class": "AddGear", "itemById": "shieldGold" },
-						{ "class": "AddGear", "itemById": "sword1hand_t1_fire" }
+						{ "class": "AddGear", "itemById": "sword1hand_t1_fire" },
+						{
+							"class": "Test",
+							"value": "hero.drauven",
+							"threshold": "1",
+							"onPass": {
+								"class": "BranchAbility",
+								"target": "npc2",
+								"targetRole": "npc2",
+								"branchAbility": "makeHeroDrauven|1"
+							}
+						}
 					]
 				}
 			}
