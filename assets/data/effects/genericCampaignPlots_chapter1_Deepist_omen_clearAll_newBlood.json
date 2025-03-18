@@ -7401,14 +7401,6 @@
 "implications": {
 	"generatedTargets": [
 		{
-			"role": "legend",
-			"createEntity": {
-				"query": { "baseTag": "human" },
-				"legacyHero": { "reset": false },
-				"control": "none"
-			}
-		},
-		{
 			"npcId": "deepistStart_hillWitch",
 			"createEntity": {
 				"query": {
