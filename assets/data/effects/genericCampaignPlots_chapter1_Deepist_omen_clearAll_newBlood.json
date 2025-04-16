@@ -7418,13 +7418,24 @@
 						{ "class": "AddGear", "target": "npc", "itemById": "mysticDrab1" },
 						{
 							"class": "Test",
-							"value": "hero.drauven",
-							"threshold": "1",
+							"value": "1d10",
+							"threshold": "(((11-(5*hero.drauven))-(2*hero2.drauven))-hero3.drauven)-company.DrauvenAllies_FirstStepsComplete",
 							"onPass": {
-								"class": "BranchAbility",
-								"target": "npc",
-								"targetRole": "npc",
-								"branchAbility": "makeHeroDrauven|1"
+								"class": "DoAll",
+								"outcomes": [
+									{
+										"class": "BranchAbility",
+										"target": "npc",
+										"targetRole": "npc",
+										"branchAbility": "makeHeroDrauven|1"
+									},
+									{
+										"class": "BranchAbility",
+										"target": "npc2",
+										"targetRole": "npc2",
+										"branchAbility": "makeHeroDrauven|1"
+									}
+								]
 							}
 						}
 					]
