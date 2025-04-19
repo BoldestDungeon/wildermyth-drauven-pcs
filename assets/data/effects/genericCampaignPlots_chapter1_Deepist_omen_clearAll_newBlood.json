@@ -6780,6 +6780,28 @@
 ],
 "outcomes": [
 	{
+		"class": "Test",
+		"value": "100+1d10",
+		"threshold": "(((11-(5*hero.drauven))-(2*hero2.drauven))-hero3.drauven)-company.DrauvenAllies_Built5Stations",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "BranchAbility",
+					"target": "npc",
+					"targetRole": "npc",
+					"branchAbility": "makeHeroDrauven|1"
+				},
+				{
+					"class": "BranchAbility",
+					"target": "npc2",
+					"targetRole": "npc2",
+					"branchAbility": "makeHeroDrauven|1"
+				}
+			]
+		}
+	},
+	{
 		"class": "IfPlayerChose",
 		"target": "hero",
 		"ifPlayerChose": "one",
@@ -7415,29 +7437,7 @@
 					"class": "DoAll",
 					"outcomes": [
 						{ "class": "AddGear", "target": "npc", "itemById": "walkingStaff" },
-						{ "class": "AddGear", "target": "npc", "itemById": "mysticDrab1" },
-						{
-							"class": "Test",
-							"value": "1d10",
-							"threshold": "(((11-(5*hero.drauven))-(2*hero2.drauven))-hero3.drauven)-company.DrauvenAllies_Built5Stations",
-							"onPass": {
-								"class": "DoAll",
-								"outcomes": [
-									{
-										"class": "BranchAbility",
-										"target": "npc",
-										"targetRole": "npc",
-										"branchAbility": "makeHeroDrauven|1"
-									},
-									{
-										"class": "BranchAbility",
-										"target": "npc2",
-										"targetRole": "npc2",
-										"branchAbility": "makeHeroDrauven|1"
-									}
-								]
-							}
-						}
+						{ "class": "AddGear", "target": "npc", "itemById": "mysticDrab1" }
 					]
 				}
 			}
@@ -7459,18 +7459,7 @@
 					"class": "DoAll",
 					"outcomes": [
 						{ "class": "AddGear", "itemById": "shieldGold" },
-						{ "class": "AddGear", "itemById": "sword1hand_t1_fire" },
-						{
-							"class": "Test",
-							"value": "hero.drauven",
-							"threshold": "1",
-							"onPass": {
-								"class": "BranchAbility",
-								"target": "npc2",
-								"targetRole": "npc2",
-								"branchAbility": "makeHeroDrauven|1"
-							}
-						}
+						{ "class": "AddGear", "itemById": "sword1hand_t1_fire" }
 					]
 				}
 			}
