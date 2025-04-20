@@ -6780,28 +6780,6 @@
 ],
 "outcomes": [
 	{
-		"class": "Test",
-		"value": "100+1d10",
-		"threshold": "(((11-(5*hero.drauven))-(2*hero2.drauven))-hero3.drauven)-company.DrauvenAllies_Built5Stations",
-		"onPass": {
-			"class": "DoAll",
-			"outcomes": [
-				{
-					"class": "BranchAbility",
-					"target": "npc",
-					"targetRole": "npc",
-					"branchAbility": "makeHeroDrauven|1"
-				},
-				{
-					"class": "BranchAbility",
-					"target": "npc2",
-					"targetRole": "npc2",
-					"branchAbility": "makeHeroDrauven|1"
-				}
-			]
-		}
-	},
-	{
 		"class": "IfPlayerChose",
 		"target": "hero",
 		"ifPlayerChose": "one",
@@ -7458,6 +7436,28 @@
 				"additionalOutcome": {
 					"class": "DoAll",
 					"outcomes": [
+						{
+							"class": "Test",
+							"value": "100+1d10",
+							"threshold": "(((11-(5*hero.drauven))-(2*hero2.drauven))-hero3.drauven)-company.DrauvenAllies_Built5Stations",
+							"onPass": {
+								"class": "DoAll",
+								"outcomes": [
+									{
+										"class": "BranchAbility",
+										"target": "npc",
+										"targetRole": "npc",
+										"branchAbility": "makeHeroDrauven|1"
+									},
+									{
+										"class": "BranchAbility",
+										"target": "npc2",
+										"targetRole": "npc2",
+										"branchAbility": "makeHeroDrauven|1"
+									}
+								]
+							}
+						},
 						{ "class": "AddGear", "itemById": "shieldGold" },
 						{ "class": "AddGear", "itemById": "sword1hand_t1_fire" }
 					]
