@@ -7438,7 +7438,7 @@
 					"outcomes": [
 						{
 							"class": "Test",
-							"value": "100+1d10",
+							"value": "1d10",
 							"threshold": "(((11-(5*hero.drauven))-(2*hero2.drauven))-hero3.drauven)-company.DrauvenAllies_Built5Stations",
 							"onPass": {
 								"class": "DoAll",
