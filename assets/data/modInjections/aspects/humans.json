@@ -31,75 +31,26 @@
 	{ "jsonPath": "human/voice", "type": "string" },
 	{
 		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "HEALTH",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "SPEED",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "MELEE_ACCURACY",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "RANGE_ACCURACY",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "STUNT_CHANCE",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "DODGE",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "BLOCK",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "PERCEPTION",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "RECOVERY_RATE",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "RETIREMENT_AGE",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "CHARISMA",
-		"expression": "0"
-	},
-	{
-		"jsonPath": "human/stats",
-		"type": "expressionMap",
-		"mapKey": "TENACITY",
-		"expression": "0"
+		"type": "object",
+		"addJson": {
+			"class": "com.worldwalkergames.legacy.game.model.status.StatsMap",
+			"ARMOR": 0,
+			"BLOCK": 0,
+			"CHARISMA": 0,
+			"DODGE": 0,
+			"HEALTH": 0,
+			"MELEE_ACCURACY": 0,
+			"PERCEPTION": 0,
+			"PHYSICAL_DAMAGE_BONUS": 0,
+			"POTENCY": 0,
+			"RANGE_ACCURACY": 0,
+			"RECOVERY_RATE": 0,
+			"RETIREMENT_AGE": 0,
+			"SPEED": 0,
+			"STUNT_CHANCE": 0,
+			"TENACITY": 0,
+			"WARDING": 0
+		}
 	}
 ]
 }

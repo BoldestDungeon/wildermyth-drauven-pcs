@@ -4,7 +4,8 @@
 	{
 		"jsonPath": "humanBase.001/impliedAspects",
 		"type": "stringList",
-		"addStrings": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes" ]
+		"addStrings": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes" ],
+		"remove": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes" ]
 	}
 ]
 }
