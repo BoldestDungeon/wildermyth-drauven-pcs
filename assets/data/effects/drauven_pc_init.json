@@ -20,11 +20,10 @@
 		"class": "AddHistory",
 		"target": "self",
 		"addHistory": [
-			[ "drauvenBase" ],
-			[ "drauvenNPCName" ]
+			[ "drauvenBase" ]
 		]
 	},
-	{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
+	{ "class": "ApplyTheme", "theme": "drauven", "piece": "species" },
 	{
 		"class": "CustomizeHero",
 		"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers", "zzz_drauven05_Helmet", "zzz_drauven06_Armour" ],

@@ -1,7 +1,7 @@
 {
 	"type": "extra",
 	"extraSlot": "zzz_drauven06_Armour",
-	"requireAspects": ["themePiece_drauven_torso", "mystic", "rigOverride|Drauven"],
+	"requireAspects": ["theme_drauven", "mystic", "rigOverride|Drauven"],
 
 	"groups": [
 		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
@@ -13,13 +13,13 @@
 		{
 			"name": "OutfitVariation_CapeFixedColour_Behind",
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 5
 		},
 		{
 			"name": "OutfitVariation_CapeFixedColour_Front",
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 3565
 		},
 		{
@@ -35,14 +35,14 @@
 		{
 			"name": "deeven_talisman",
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_BELT", "slotFilled_AUGMENT_SASH", "slotFilled_AUGMENT_TALISMAN"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes", "slotFilled_AUGMENT_BELT", "slotFilled_AUGMENT_SASH", "slotFilled_AUGMENT_TALISMAN"],
 			"depth": 2950
 		},
 		{
 			"name": "armor_base_Detail_Primary",
 			"tint": "primary", "tintAmount": 0.80,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 1355
 		}
 	]

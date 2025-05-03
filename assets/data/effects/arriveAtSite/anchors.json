@@ -1,0 +1,2223 @@
+{
+"id": "encounter_heroesArriveAtSite_anchors",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/anchors",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Anne Austin"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Everyday Moments"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{ "role": "hero", "template": "PICK_BY_SCORE", "scoreFunction": "0" },
+	{
+		"role": "friend",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "(2*LOVER_WITH.hero)+FRIEND_WITH.hero",
+		"scoreThreshold": "2",
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "leader",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEADER",
+		"notAlreadyMatchedAs": [ "hero", "friend" ]
+	},
+	{
+		"role": "hero4",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "hero", "friend", "leader" ]
+	},
+	{
+		"role": "hero5",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"notAlreadyMatchedAs": [ "hero", "friend", "leader" ]
+	},
+	{
+		"role": "lover",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LOVER_WITH.hero",
+		"scoreThreshold": "1",
+		"fromRoles": [ "friend" ]
+	},
+	{
+		"role": "volunteer3",
+		"template": "HERO_BY_SCORE",
+		"choose": "ALL",
+		"scoreFunction": "1",
+		"fromRoles": [ "hero", "lover" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:rocksMoss8.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.798, "y": 0.005 },
+							"size": 0.49,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:deadTreeRock.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.444, "y": 0.668 },
+							"size": 0.542,
+							"drawDepth": 15,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsForest_wallPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.172, "y": 0.111 },
+							"size": 0.559,
+							"drawDepth": 16,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.435,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.175, "y": 0.28026 },
+							"size": 0.381
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.317, "y": 0.28390002 },
+							"size": 0.365
+						},
+						{
+							"role": "leader",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.865, "y": 0.2769 },
+							"size": 0.315,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.61, "y": 0.26700002 },
+							"size": 0.35,
+							"drawDepth": 6.5,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero5",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.702, "y": 0.271 },
+							"size": 0.334,
+							"nameTag": "none"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:deadTreeRock.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.162, "y": 0.735 },
+							"size": 0.972,
+							"drawDepth": 15,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsForest_wallPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.533, "y": 0.116 },
+							"size": 0.772,
+							"drawDepth": 16,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.435,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.239, "y": 0.194 },
+							"size": 0.648,
+							"head": { "rotate": 6.354 }
+						},
+						{
+							"role": "friend",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.713, "y": 0.202 },
+							"size": 0.546,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -6.741, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_002~1_friend",
+							"pointerOwner": "friend",
+							"location": "topRight",
+							"padXFraction": 0.058,
+							"padYFraction": 0.068,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 15.852373, "dY": 1.4411248, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:deadTreeRock.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.957, "y": 0.74 },
+							"size": 0.972,
+							"drawDepth": 15,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:ruinsForest_wallPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.767, "y": 0.121 },
+							"size": 0.772,
+							"drawDepth": 16,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.435,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.193, "y": 0.136 },
+							"size": 0.648,
+							"head": { "rotate": 6.354 }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.664, "y": 0.221 },
+							"size": 0.546,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -9.092, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_003~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.065,
+							"padYFraction": 0.053,
+							"widthFraction": 0.8789807,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -19.828312,
+								"dX": 58.423447,
+								"dY": 1.994384,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:rocksMoss8.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.168, "y": -0.067 },
+							"size": 0.6929647,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:deadTreeRock.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.574, "y": 0.759 },
+							"size": 0.805,
+							"drawDepth": 15,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.6151829,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.301, "y": 0.314 },
+							"size": 0.5388154,
+							"head": { "rotate": 0.1879196, "scaleY": 1 }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.66, "y": 0.323 },
+							"size": 0.51618797,
+							"head": { "rotate": -8.934, "scaleY": 1 }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 1.063, "y": 0.309 },
+							"size": 0.49497473,
+							"drawDepth": 6.5,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_004~1_friend",
+							"pointerOwner": "friend",
+							"location": "topRight",
+							"padXFraction": 0.104,
+							"padYFraction": 0.08,
+							"widthFraction": 0.59554356,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 33.145958, "dY": -5.764499 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-talk",
+							"equipment": {},
+							"head": { "rotate": -2.49, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.6869542,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_005~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.082,
+							"padYFraction": 0.049,
+							"widthFraction": 0.7977685,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 0, "dY": 0, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:rocksMoss8.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.168, "y": -0.067 },
+							"size": 0.6929647,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:deadTreeRock.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.574, "y": 0.759 },
+							"size": 0.805,
+							"drawDepth": 15,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.6151829,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.47, "y": 0.386 },
+							"size": 0.5388154,
+							"head": { "rotate": 0.1879196, "scaleY": 1 }
+						},
+						{
+							"role": "friend",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.759, "y": 0.318 },
+							"size": 0.51618797,
+							"head": { "rotate": -8.934, "scaleY": -1 }
+						},
+						{
+							"assetSpec": "scenery:ruinsForest_wallPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.172, "y": 0.111 },
+							"size": 0.559,
+							"drawDepth": 16,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_006~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.175,
+							"padYFraction": 0.053,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -31.704746, "dY": -5.764499, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_006~2_friend",
+							"pointerOwner": "friend",
+							"location": "bottomRight",
+							"padXFraction": 0.068,
+							"padYFraction": 0.213,
+							"shrinkToFitText": true,
+							"pointerAdjust": {}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"head": { "rotate": 25.408, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.6869542,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_007~1_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.082,
+							"padYFraction": 0.049,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -24.49912, "dY": 1.4411248 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:rocksMoss8.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.737, "y": -0.173 },
+							"size": 0.6929647,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:deadTreeRock.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.182, "y": 0.648 },
+							"size": 0.805,
+							"drawDepth": 15,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.6151829,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-dubious",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.266, "y": 0.319 },
+							"size": 0.5388154,
+							"head": { "rotate": -10.192, "scaleY": 1 }
+						},
+						{
+							"role": "friend",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.606, "y": 0.318 },
+							"size": 0.51618797,
+							"head": { "rotate": -8.934, "scaleY": 1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_008~1_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.028,
+							"padYFraction": 0.087,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_008~2_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.338,
+							"padYFraction": 0.16,
+							"widthFraction": 0.43484133,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:rocksMoss8.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.192, "y": -0.375 },
+							"size": 0.85907364,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.762647,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.372, "y": 0.174 },
+							"size": 0.6679736,
+							"head": { "rotate": 0.472, "scaleY": 1 }
+						},
+						{
+							"role": "friend",
+							"form": "frame-grim",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.826, "y": 0.174 },
+							"size": 0.6399222,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -8.934, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_009~1_friend",
+							"pointerOwner": "friend",
+							"location": "topRight",
+							"padXFraction": 0.055,
+							"padYFraction": 0.053,
+							"widthFraction": 0.88993925,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -21.616873, "dY": -4.3233743, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_riverbank.jpg",
+					"actorSlots": [
+						{
+							"role": "friend",
+							"form": "frame-dubious",
+							"equipment": {},
+							"anchor": { "x": 0.43, "y": 0.5 },
+							"head": { "rotate": -20.236, "scaleY": 1 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.75, "y": 0.297 },
+							"size": 0.6869542,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_010~1_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.082,
+							"padYFraction": 0.049,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 12.970137, "dY": -1.4411248 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:rocksMoss8.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.278, "y": -0.058 },
+							"size": 0.42362326,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deadTreeRock.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.035, "y": 0.423 },
+							"size": 0.46857917,
+							"drawDepth": 15,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsForest_tall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.933, "y": 0.332 },
+							"size": 0.48327634,
+							"drawDepth": 16,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.33, "y": 0.345 },
+							"size": 0.3760737,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.27, "y": 0.227 },
+							"size": 0.3293887,
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.417, "y": 0.198 },
+							"size": 0.3155561,
+							"head": { "rotate": -5.052 },
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.939, "y": 0.229 },
+							"size": 0.27232924,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.631, "y": 0.19 },
+							"size": 0.30258802,
+							"drawDepth": 6.5,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.744, "y": 0.209 },
+							"size": 0.28875542,
+							"nameTag": "none",
+							"head": { "scaleY": -1 },
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "scenery:rocksMoss8.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.278, "y": -0.058 },
+							"size": 0.42362326,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deadTreeRock.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.035, "y": 0.423 },
+							"size": 0.46857917,
+							"drawDepth": 15,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsForest_tall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.933, "y": 0.332 },
+							"size": 0.48327634,
+							"drawDepth": 16,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.33, "y": 0.345 },
+							"size": 0.3760737,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.33, "y": 0.227 },
+							"size": 0.3293887,
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"role": "friend",
+							"form": "frame-talk",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.503, "y": 0.188 },
+							"size": 0.3155561,
+							"head": { "rotate": -2.606, "scaleY": -1 },
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"role": "leader",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.997, "y": 0.2 },
+							"size": 0.27232924,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.74, "y": 0.2 },
+							"size": 0.30258802,
+							"drawDepth": 6.5,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.888, "y": 0.199 },
+							"size": 0.28875542,
+							"nameTag": "none",
+							"color": { "r": "0.68859649", "g": "0.68859649", "b": "0.68859649", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_012~1_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.396,
+							"padYFraction": 0.069,
+							"widthFraction": 0.54788417,
+							"shrinkToFitText": true,
+							"pointerStyle": "none",
+							"pointerAdjust": { "pointerOrientH": "onLeft", "forcePointerImage": "speechMedium" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_012~2_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.569,
+							"padYFraction": 0.255,
+							"widthFraction": 0.54788417,
+							"shrinkToFitText": true,
+							"pointerStyle": "none",
+							"pointerAdjust": { "pointerOrientH": "onLeft", "forcePointerImage": "speechMedium" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_012~3_friend",
+							"pointerOwner": "friend",
+							"padXFraction": 0.523,
+							"padYFraction": 0.371,
+							"widthFraction": 0.54788417,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 23.058084, "dY": -10.087873, "forcePointerImage": "speechShort" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.068, "y": 0.249 },
+							"size": 0.435,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.239, "y": 0.194 },
+							"size": 0.648,
+							"head": { "rotate": -12.017 }
+						},
+						{
+							"role": "friend",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.713, "y": 0.202 },
+							"size": 0.546,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -6.741, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_013~1_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.058,
+							"padYFraction": 0.068,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "null",
+					"bgAuto": "approachingSite",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_riverbank.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.068, "y": 0.249 },
+							"size": 0.435,
+							"drawDepth": 20,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.239, "y": 0.194 },
+							"size": 0.648,
+							"head": { "rotate": 6.354 }
+						},
+						{
+							"role": "friend",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"focus": "middle",
+							"anchor": { "x": 0.713, "y": 0.202 },
+							"size": 0.546,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -6.741, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/anchors",
+							"textKey": "~01~prompt~panel_014~1_friend",
+							"pointerOwner": "friend",
+							"location": "topRight",
+							"padXFraction": 0.167,
+							"padYFraction": 0.088,
+							"widthFraction": 0.59690607,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "hero",
+									"form": "frame-grim",
+									"equipment": {},
+									"anchor": { "x": 0.553, "y": 0.52 },
+									"size": 0.878,
+									"head": { "rotate": 15.552 }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_riverbank.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.18, "y": 0.176 },
+									"size": 0.535,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/anchors",
+									"textKey": "~02~choice_one~panel_001~1_hero",
+									"pointerOwner": "hero",
+									"location": "topRight",
+									"padXFraction": 0.05,
+									"padYFraction": 0.034,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": 8.639157, "dY": -5.7595263 }
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "hero",
+									"form": "frame-interested",
+									"equipment": {},
+									"anchor": { "x": 0.553, "y": 0.52 },
+									"size": 0.878,
+									"head": { "rotate": -19.278 }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_riverbank.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.18, "y": 0.176 },
+									"size": 0.535,
+									"nameTag": "none"
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/anchors",
+									"textKey": "~03~choice_two~panel_001~1_hero",
+									"pointerOwner": "hero",
+									"padXFraction": 0.044,
+									"padYFraction": 0.034,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": -15.838455, "dY": -2.879719, "pointerOrientH": "onLeft" }
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"role": "hero",
+									"form": "frame-joke",
+									"equipment": {},
+									"anchor": { "x": 0.25, "y": 0.48 },
+									"size": 0.878,
+									"head": { "rotate": 15.552 },
+									"foot": { "rotate": -5.044 }
+								},
+								{
+									"assetSpec": "comicBg:comicBG_riverbank.jpg",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.18, "y": 0.176 },
+									"size": 0.535,
+									"nameTag": "none"
+								},
+								{
+									"role": "friend",
+									"form": "frame-skeptical",
+									"equipment": {},
+									"anchor": { "x": 0.846, "y": 0.473 },
+									"size": 0.87,
+									"drawDepth": 1.5,
+									"head": { "scaleY": -1 },
+									"foot": { "rotate": 2.556 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/anchors",
+									"textKey": "~04~choice_three~panel_001~1_hero",
+									"pointerOwner": "hero",
+									"padXFraction": 0.05,
+									"padYFraction": 0.048,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				],
+				"ifTargetIsPresent": "lover"
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "hero",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.108, "y": -0.206 },
+										"size": 0.6929647,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.11, "y": 0.654 },
+										"size": 0.805,
+										"drawDepth": 15,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.75, "y": 0.297 },
+										"size": 0.6151829,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-grim",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.366, "y": 0.131 },
+										"size": 0.735,
+										"head": { "rotate": 0.1879196, "scaleY": 1 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.653, "y": 0.13 },
+										"size": 0.73,
+										"head": { "rotate": -8.934, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~05~player_chose_one~panel_001~1_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.101,
+										"padYFraction": 0.043,
+										"widthFraction": 0.8187082,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 2.8822496, "dY": -2.8822496 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.108, "y": -0.206 },
+										"size": 0.5215414,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.11, "y": 0.654 },
+										"size": 0.60586184,
+										"drawDepth": 15,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.75, "y": 0.297 },
+										"size": 0.463001,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.295, "y": 0.16 },
+										"size": 0.5531782,
+										"head": { "rotate": 0.1879196, "scaleY": 1 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.653, "y": 0.13 },
+										"size": 0.54941505,
+										"head": { "rotate": -8.934, "scaleY": 1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~05~player_chose_one~panel_002~1_friend",
+										"pointerOwner": "friend",
+										"location": "topRight",
+										"padXFraction": 0.044,
+										"padYFraction": 0.092,
+										"widthFraction": 0.79675895,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 2.8822496, "dY": -2.8822496 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"bg": "comicBG_riverbank.jpg",
+								"actorSlots": [
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.612, "y": 0.485 },
+										"size": 0.791,
+										"head": { "rotate": -20.236, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.75, "y": 0.297 },
+										"size": 0.6869542,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~05~player_chose_one~panel_003~1_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.055,
+										"padYFraction": 0.073,
+										"shrinkToFitText": true,
+										"pointerStyle": "none",
+										"pointerAdjust": { "dX": 12.970137, "dY": -1.4411248, "pointerOrientH": "onLeft" }
+									},
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~05~player_chose_one~panel_003~2_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.161,
+										"padYFraction": 0.194,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -21.616858, "dY": -5.764499, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.278, "y": -0.058 },
+										"size": 0.42362326,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:deadTreeRock.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.035, "y": 0.423 },
+										"size": 0.46857917,
+										"drawDepth": 15,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.933, "y": 0.332 },
+										"size": 0.48327634,
+										"drawDepth": 16,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.33, "y": 0.345 },
+										"size": 0.3760737,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.562, "y": 0.213 },
+										"size": 0.3293887,
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "friend",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.709, "y": 0.198 },
+										"size": 0.3155561,
+										"head": { "rotate": -5.052 },
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.93, "y": 0.18 },
+										"size": 0.30258802,
+										"drawDepth": 6.5,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "hero5",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 1.015, "y": 0.204 },
+										"size": 0.28875542,
+										"nameTag": "none",
+										"head": { "scaleY": -1 },
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~05~player_chose_one~panel_004~1_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.05,
+										"padYFraction": 0.112,
+										"shrinkToFitText": true,
+										"pointerStyle": "none"
+									},
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~05~player_chose_one~panel_004~2_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.354,
+										"padYFraction": 0.256,
+										"widthFraction": 0.42939866,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "RelationshipPoints",
+					"amount": "4",
+					"who": [ "hero", "friend" ]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "ENDURANCE" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "hero",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.108, "y": -0.206 },
+										"size": 0.6929647,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.11, "y": 0.654 },
+										"size": 0.805,
+										"drawDepth": 15,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.75, "y": 0.297 },
+										"size": 0.6151829,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.366, "y": 0.131 },
+										"size": 0.735,
+										"head": { "rotate": -12.266, "scaleY": 1 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.653, "y": 0.13 },
+										"size": 0.73,
+										"head": { "rotate": 2.689, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~06~player_chose_two~panel_001~1_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.101,
+										"padYFraction": 0.043,
+										"widthFraction": 0.8187082,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 2.8822496, "dY": -2.8822496 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.108, "y": -0.206 },
+										"size": 0.5215414,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.266, "y": 0.659 },
+										"size": 0.60586184,
+										"drawDepth": 15,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.746, "y": 0.316 },
+										"size": 0.463001,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.352, "y": 0.218 },
+										"size": 0.5531782,
+										"head": { "rotate": 0.1879196, "scaleY": 1 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.781, "y": 0.255 },
+										"size": 0.54941505,
+										"head": { "rotate": -8.934, "scaleY": 1 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.108, "y": -0.206 },
+										"size": 0.5215414,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.266, "y": 0.659 },
+										"size": 0.60586184,
+										"drawDepth": 15,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.746, "y": 0.316 },
+										"size": 0.463001,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.352, "y": 0.218 },
+										"size": 0.5531782,
+										"head": { "rotate": 0.1879196, "scaleY": 1 }
+									},
+									{
+										"role": "friend",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.781, "y": 0.255 },
+										"size": 0.54941505,
+										"head": { "rotate": -8.934, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~06~player_chose_two~panel_003~1_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.044,
+										"padYFraction": 0.107,
+										"widthFraction": 0.88626015,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoFifths",
+								"bg": "comicBG_riverbank.jpg",
+								"animation": { "overridePanelOrder": 2 },
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"equipment": {},
+										"anchor": { "x": 1.483, "y": 0.5 },
+										"size": 0.9,
+										"nameTag": "none",
+										"head": { "rotate": -20.236, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.852, "y": 0.268 },
+										"size": 0.6869542,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"size": 0.9,
+										"drawDepth": 0
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~06~player_chose_two~panel_004~1_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.062,
+										"padYFraction": 0.117,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 12.970137, "dY": -1.4411248, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoFifths",
+								"bg": "comicBG_riverbank.jpg",
+								"animation": { "overridePanelOrder": 1 },
+								"actorSlots": [
+									{
+										"role": "friend",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.44, "y": 0.495 },
+										"size": 0.9,
+										"head": { "rotate": -20.236, "scaleY": 1 }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.75, "y": 0.297 },
+										"size": 0.6869542,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~06~player_chose_two~panel_005~1_friend",
+										"pointerOwner": "friend",
+										"padXFraction": 0.099,
+										"padYFraction": 0.078,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 28.82251, "dY": -1.4411248, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.131, "y": -0.22 },
+										"size": 0.6929647,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.829, "y": 0.621 },
+										"size": 0.805,
+										"drawDepth": 15,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.476, "y": 0.307 },
+										"size": 0.6151829,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.231, "y": 0.174 },
+										"size": 0.735,
+										"head": { "rotate": -0.21408208, "scaleY": 1 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-talk",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.481, "y": 0.125 },
+										"size": 0.73,
+										"head": { "rotate": 2.689, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~06~player_chose_two~panel_006~1_friend",
+										"pointerOwner": "friend",
+										"location": "topRight",
+										"padXFraction": 0.048,
+										"padYFraction": 0.079,
+										"widthFraction": 0.41870824,
+										"shrinkToFitText": true,
+										"pointerStyle": "none"
+									},
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~06~player_chose_two~panel_006~2_friend",
+										"pointerOwner": "friend",
+										"location": "topRight",
+										"padXFraction": 0.022,
+										"padYFraction": 0.267,
+										"widthFraction": 0.38485524,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 31.704834, "dY": -11.52902 }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.137, "y": -0.015 },
+										"size": 0.42362326,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:deadTreeRock.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.035, "y": 0.423 },
+										"size": 0.46857917,
+										"drawDepth": 15,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.824, "y": 0.375 },
+										"size": 0.48327634,
+										"drawDepth": 16,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.323, "y": 0.331 },
+										"size": 0.3760737,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-grim",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.562, "y": 0.213 },
+										"size": 0.3293887,
+										"head": { "rotate": 9.793 },
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "friend",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.709, "y": 0.198 },
+										"size": 0.3155561,
+										"head": { "rotate": 10.085 },
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.93, "y": 0.18 },
+										"size": 0.30258802,
+										"drawDepth": 6.5,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~06~player_chose_two~panel_007~1_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.268,
+										"padYFraction": 0.219,
+										"widthFraction": 0.65924275,
+										"shrinkToFitText": true,
+										"pointerStyle": "none"
+									},
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~06~player_chose_two~panel_007~2_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.575,
+										"padYFraction": 0.353,
+										"widthFraction": 0.42939866,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "RelationshipPoints",
+					"amount": "4",
+					"who": [ "hero", "friend" ]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "INSIGHT" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "hero",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.108, "y": -0.206 },
+										"size": 0.6929647,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.11, "y": 0.654 },
+										"size": 0.805,
+										"drawDepth": 15,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.75, "y": 0.297 },
+										"size": 0.6151829,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-joy",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.366, "y": 0.131 },
+										"size": 0.735,
+										"head": { "rotate": 4.881, "scaleY": 1 },
+										"foot": { "rotate": -3.234 }
+									},
+									{
+										"role": "friend",
+										"form": "frame-joke",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.653, "y": 0.13 },
+										"size": 0.73,
+										"head": { "rotate": 2.689, "scaleY": -1 }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~07~player_chose_three~panel_001~1_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.422,
+										"padYFraction": 0.048,
+										"widthFraction": 0.47572395,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": 2.8822496, "dY": -2.8822496 }
+									},
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~07~player_chose_three~panel_001~2_friend",
+										"pointerOwner": "friend",
+										"location": "bottomRight",
+										"padXFraction": 0.016,
+										"padYFraction": 0.154,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"bg": "null",
+								"bgAuto": "approachingSite",
+								"actorSlots": [
+									{
+										"assetSpec": "scenery:rocksMoss8.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.278, "y": -0.058 },
+										"size": 0.42362326,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:deadTreeRock.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.035, "y": 0.423 },
+										"size": 0.46857917,
+										"drawDepth": 15,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:ruinsForest_tall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.933, "y": 0.332 },
+										"size": 0.48327634,
+										"drawDepth": 16,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_riverbank.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.33, "y": 0.345 },
+										"size": 0.3760737,
+										"drawDepth": 20,
+										"nameTag": "none",
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"form": "frame-talk",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.518, "y": 0.203 },
+										"size": 0.3293887,
+										"head": { "rotate": 23.34 },
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "friend",
+										"form": "frame-joke",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.647, "y": 0.212 },
+										"size": 0.3155561,
+										"head": { "rotate": -8.895, "scaleY": -1 },
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "hero4",
+										"form": "frame-dubious",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 0.93, "y": 0.18 },
+										"size": 0.30258802,
+										"drawDepth": 6.5,
+										"nameTag": "none",
+										"head": { "scaleY": -1 },
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									},
+									{
+										"role": "hero5",
+										"equipment": {},
+										"focus": "middle",
+										"anchor": { "x": 1.015, "y": 0.204 },
+										"size": 0.28875542,
+										"nameTag": "none",
+										"head": { "scaleY": -1 },
+										"color": { "r": "0.99780703", "g": "0.99780703", "b": "0.99780703", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~07~player_chose_three~panel_002~1_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.04,
+										"padYFraction": 0.109,
+										"widthFraction": 0.6396438,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"dX": -24.49912,
+											"dY": -4.3233304,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "arriveAtSite/anchors",
+										"textKey": "~07~player_chose_three~panel_002~2_friend",
+										"pointerOwner": "friend",
+										"padXFraction": 0.485,
+										"padYFraction": 0.326,
+										"widthFraction": 0.4356348,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "RelationshipPoints",
+					"amount": "4",
+					"who": [ "hero", "friend" ]
+				},
+				{
+					"class": "Aspects",
+					"target": "volunteer3",
+					"addAspects": [
+						{ "id": "tempBonus_damagePotency|whenWeFight|1", "value": "1" }
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	}
+]
+}
