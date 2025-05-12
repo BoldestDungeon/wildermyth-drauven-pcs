@@ -1,93 +1,114 @@
 [
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "mysticDeck_elementalist",
-	"effects": [ "elementalistRecipe_scaldingRain", "advancedRecipe_splintersalvo" ],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"interactionFeedback": [
-		{ "otherAspect": "wood", "replaceBlurb": true },
-		{ "otherAspect": "uncontainedFire" },
-		{ "otherAspect": "liquid", "replaceBlurb": true }
-	],
-	"abilityForbidAspects": [ "drauven_pc" ],
-	"showInTooltip": true,
-	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "mysticDeck_humanist",
-	"effects": [
-		"humanistRecipe_stunningBarrage",
-		"humanistRecipe_shardnado",
-		"elementalist_ferromancerShackle"
-	],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"interactionFeedback": [
-		{ "otherAspect": "mechanism", "replaceBlurb": true },
-		{ "otherAspect": "tools", "replaceBlurb": true },
-		{ "otherAspect": "shards", "replaceBlurb": true },
-		{ "otherAspect": "metal", "replaceBlurb": true }
-	],
-	"abilityForbidAspects": [ "drauven_pc" ],
-	"showInTooltip": true,
-	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "humanist" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "mysticDeck_mythweaver",
-	"effects": [ "mysticRecipeLoreDump", "humanistRecipe_sturdyEngulf" ],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"interactionFeedback": [
-		{ "otherAspect": "protective", "replaceBlurb": true },
-		{ "otherAspect": "book", "replaceBlurb": true },
-		{ "otherAspect": "statue", "replaceBlurb": true },
-		{ "otherAspect": "ruins", "replaceBlurb": true },
-		{ "otherAspect": "textile", "replaceBlurb": true }
-	],
-	"abilityForbidAspects": [ "drauven_pc" ],
-	"showInTooltip": true,
-	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "wisdom" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "mysticDeck_naturalist",
-	"effects": [ "advancedRecipe_vinewrench", "advancedRecipe_treecall" ],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"interactionFeedback": [
-		{ "otherAspect": "tree", "replaceBlurb": true },
-		{ "otherAspect": "plant", "replaceBlurb": true }
-	],
-	"abilityForbidAspects": [ "drauven_pc" ],
-	"showInTooltip": true,
-	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "thornlash" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "mysticDeck_soulDefense",
-	"effects": [ "advancedRecipe_boneWall", "advancedRecipe_rockShield" ],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"listImportance": 0.95,
-	"interactionFeedback": [
-		{ "otherAspect": "rock" },
-		{ "otherAspect": "bone", "replaceBlurb": true }
-	],
-	"abilityForbidAspects": [ "drauven_pc" ],
-	"showInTooltip": true,
-	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "rockShield" }
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "mysticGreenhorn_ignite",
-	"effects": [ "mysticIgnite" ],
-	"boostType": "ABILITY_CLASS",
-	"legacyAbilityChoice": true,
-	"importance": 5,
-	"abilityForbidAspects": [ "drauven_pc" ],
-	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "ignite" }
-}
+	{
+		"modId": "wildermyth-drauven-pcs",
+		"id": "interfused",
+		"importance": -1
+	},
+	{
+		"modId": "wildermyth-drauven-pcs",
+		"id": "drauvenInterfusionRecipes",
+		"effects": [
+			"drauven_pc_cordAndVines",
+			"drauven_pc_flamewings",
+			"drauven_pc_fissureBell",
+			"drauven_pc_lightningRod",
+			"drauven_pc_freezingRain",
+			"drauven_pc_spear",
+			"mysticRecipeCaltrops",
+			"mysticRecipeSplinterblast",
+			"mysticRecipeLightLamp"
+		],
+		"importance": -1
+	},
+	{
+		"modId": "wildermyth-drauven-pcs",
+		"id": "mysticDeck_elementalist",
+		"effects": [ "elementalistRecipe_scaldingRain", "advancedRecipe_splintersalvo" ],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"interactionFeedback": [
+			{ "otherAspect": "wood", "replaceBlurb": true },
+			{ "otherAspect": "uncontainedFire" },
+			{ "otherAspect": "liquid", "replaceBlurb": true }
+		],
+		"abilityForbidAspects": [ "drauven_pc" ],
+		"showInTooltip": true,
+		"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
+	},
+	{
+		"modId": "wildermyth-drauven-pcs",
+		"id": "mysticDeck_humanist",
+		"effects": [
+			"humanistRecipe_stunningBarrage",
+			"humanistRecipe_shardnado",
+			"elementalist_ferromancerShackle"
+		],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"interactionFeedback": [
+			{ "otherAspect": "mechanism", "replaceBlurb": true },
+			{ "otherAspect": "tools", "replaceBlurb": true },
+			{ "otherAspect": "shards", "replaceBlurb": true },
+			{ "otherAspect": "metal", "replaceBlurb": true }
+		],
+		"abilityForbidAspects": [ "drauven_pc" ],
+		"showInTooltip": true,
+		"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "humanist" }
+	},
+	{
+		"modId": "wildermyth-drauven-pcs",
+		"id": "mysticDeck_mythweaver",
+		"effects": [ "mysticRecipeLoreDump", "humanistRecipe_sturdyEngulf" ],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"interactionFeedback": [
+			{ "otherAspect": "protective", "replaceBlurb": true },
+			{ "otherAspect": "book", "replaceBlurb": true },
+			{ "otherAspect": "statue", "replaceBlurb": true },
+			{ "otherAspect": "ruins", "replaceBlurb": true },
+			{ "otherAspect": "textile", "replaceBlurb": true }
+		],
+		"abilityForbidAspects": [ "drauven_pc" ],
+		"showInTooltip": true,
+		"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "wisdom" }
+	},
+	{
+		"modId": "wildermyth-drauven-pcs",
+		"id": "mysticDeck_naturalist",
+		"effects": [ "advancedRecipe_vinewrench", "advancedRecipe_treecall" ],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"interactionFeedback": [
+			{ "otherAspect": "tree", "replaceBlurb": true },
+			{ "otherAspect": "plant", "replaceBlurb": true }
+		],
+		"abilityForbidAspects": [ "drauven_pc" ],
+		"showInTooltip": true,
+		"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "thornlash" }
+	},
+	{
+		"modId": "wildermyth-drauven-pcs",
+		"id": "mysticDeck_soulDefense",
+		"effects": [ "advancedRecipe_boneWall", "advancedRecipe_rockShield" ],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"listImportance": 0.95,
+		"interactionFeedback": [
+			{ "otherAspect": "rock" },
+			{ "otherAspect": "bone", "replaceBlurb": true }
+		],
+		"abilityForbidAspects": [ "drauven_pc" ],
+		"showInTooltip": true,
+		"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "rockShield" }
+	},
+	{
+		"modId": "wildermyth-drauven-pcs",
+		"id": "mysticGreenhorn_ignite",
+		"effects": [ "mysticIgnite" ],
+		"boostType": "ABILITY_CLASS",
+		"legacyAbilityChoice": true,
+		"importance": 5,
+		"abilityForbidAspects": [ "drauven_pc" ],
+		"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "ignite" }
+	}
 ]

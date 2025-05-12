@@ -16,14 +16,26 @@
 					{
 						"id": "fiveChapterDrauvCampaign.0.rosterCustomHistory.",
 						"impliedAspects": [
+							"human",
+							"humanRig",
+							"heroicActions",
+							"activeDefender",
+							"alive",
+							"eligibleForDeathChoice",
+							"canWallWithAllies",
+							"simplePresence",
+							
+							"nonhuman",
 							"drauven",
 							"drauven_pc",
+							"drauvenInterfusionRecipes",
 							"drauvenBlood",
 							"fluentInDruvwail",
 							"cannotAge",
-							"simplePresence",
+					
 							"ATTACHMENTS_workingRightArm",
 							"ATTACHMENTS_workingLeftArm",
+					
 							"drauvenSkin_naturalLeftArm",
 							"drauvenSkin_naturalLeftHand",
 							"drauvenSkin_naturalRightArm",
@@ -34,15 +46,15 @@
 							"drauvenSkin_naturalTorso",
 							"drauvenSkin_naturalTail",
 							"drauvenGear_clothes",
-							"humanSkin_suppressTorso",
-							"nonhuman",
-							"fluentInYandric",
 							
 							"nameFormulaOverride|drauvenName",
 							"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C",
 							"rigOverride|Drauven"
 						],
 						"removeAspects": [
+							"humanBaseStats",
+							"humanVoice",
+							"basicInterfusionRecipes",
 							"young",
 							"earlyMiddleAge",
 							"middleAge",

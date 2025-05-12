@@ -1,0 +1,40 @@
+{
+  "id": "migrateDrauvenAspects",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "migrations/Issue-498_DrauvenAspectsMigration",
+    "modId": "wildermyth-drauven-pcs",
+    "author": "Ironskink",
+    "STUB": "Breaks the 'human' aspect into multiple aspects for each separate area of concern."
+  },
+  "type": "ABILITIES_CHANGED",
+  "targets": [
+    {
+      "template": "SELF",
+      "aspectValues": [
+        { "id": "drauvenInterfusionRecipes", "forbidden": true },
+        { "id": "issue498DrauvenMigrationRan", "forbidden": true }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "AddHistory",
+      "target": "self",
+      "inlineHistory": {
+        "id": "humanAspectsMigration",
+        "associatedAspects": [
+          "drauvenInterfusionRecipes",
+          "issue498DrauvenMigrationRan"
+        ],
+        "removeAspects": [
+          "humanBaseStats",
+          "humanVoice",
+          "basicInterfusionRecipes"
+        ],
+        "persistOverLegacy": "never",
+        "showInSummary": false
+      }
+    }
+  ]
+}
