@@ -1,0 +1,65 @@
+{
+  "id": "applyDifficultyModifiers",
+  "info": { 
+    "dataVersion": 1, 
+    "sourceFile": "human/applyDifficultyModifiers",
+    "author": "Ironskink",
+    "STUB": "Checks current combat difficulty level and applies the appropriate stat modifiers" 
+  },
+  "type": "ABILITIES_CHANGED",
+  "targets": [
+    {
+      "template": "SELF"
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "Test",
+      "value": "MOD_ACTIVE.combatDifficulty_1 - statModifier_combatDifficulty_1",
+      "target": "self",
+      "threshold": "1",
+      "onPass": {
+        "class": "Aspects",
+        "target": "self",
+        "removeAspects": ["statModifier_combatDifficulty_10", "statModifier_combatDifficulty_default", "statModifier_combatDifficulty_30"],
+        "addAspects": [ {"id": "statModifier_combatDifficulty_1"}]
+      },
+      "onFail": {
+        "class": "Test",
+        "value": "MOD_ACTIVE.combatDifficulty_10 - statModifier_combatDifficulty_10",
+        "target": "self",
+        "threshold": "1",
+        "onPass": {
+          "class": "Aspects",
+          "target": "self",
+          "removeAspects": ["statModifier_combatDifficulty_1", "statModifier_combatDifficulty_default", "statModifier_combatDifficulty_30"],
+          "addAspects": [ {"id": "statModifier_combatDifficulty_10"}]
+        },
+        "onFail": {
+          "class": "Test",
+          "value": "MOD_ACTIVE.combatDifficulty_30 - statModifier_combatDifficulty_30",
+          "target": "self",
+          "threshold": "1",
+          "onPass": {
+            "class": "Aspects",
+            "target": "self",
+            "removeAspects": ["statModifier_combatDifficulty_1", "statModifier_combatDifficulty_10", "statModifier_combatDifficulty_default"],
+            "addAspects": [ {"id": "statModifier_combatDifficulty_30"}]
+          },
+          "onFail": {
+            "class": "Test",
+            "value": "1 - (MOD_ACTIVE.combatDifficulty_1 + MOD_ACTIVE.combatDifficulty_10 + MOD_ACTIVE.combatDifficulty_30) - statModifier_combatDifficulty_default",
+            "target": "self",
+            "threshold": "1",
+            "onPass": {
+              "class": "Aspects",
+              "target": "self",
+              "removeAspects": ["statModifier_combatDifficulty_1", "statModifier_combatDifficulty_10", "statModifier_combatDifficulty_30"],
+              "addAspects": [ {"id": "statModifier_combatDifficulty_default"}]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -4,7 +4,8 @@
 	"id": "drauven_pc",
 	"effects": [
 		"drauven_aging",
-		"migrateDrauvenAspects"
+		"migrateDrauvenAspects",
+		"applyDifficultyModifiers"
 	],
 	"stats": {
 		"ARMOR": 0,

@@ -69,7 +69,56 @@
 		"TENACITY": 15,
 		"WARDING": 0
 	},
-	"maxValue": "1"
+	"effects": [
+		"applyDifficultyModifiers"
+	],
+	"maxValue": "1",
+	"importance": 10
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "statModifier_combatDifficulty_1",
+	"stats": {
+		"ARMOR": 1,
+		"DODGE": 5,
+		"HEALTH": 2,
+		"MELEE_ACCURACY": 5,
+		"PHYSICAL_DAMAGE_BONUS": 1,
+		"POTENCY": 1,
+		"RECOVERY_RATE": 15
+	},
+	"lifespan": "all",
+	"importance": 9
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "statModifier_combatDifficulty_10",
+	"stats": {
+		"ARMOR": 0.4,
+		"HEALTH": 1,
+		"PHYSICAL_DAMAGE_BONUS": 0.4,
+		"POTENCY": 0.4,
+		"RECOVERY_RATE": 5
+	},
+	"lifespan": "all",
+	"importance": 9
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "statModifier_combatDifficulty_default",
+	"lifespan": "all",
+	"importance": 9
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "statModifier_combatDifficulty_30",
+	"stats": {
+		"MELEE_ACCURACY": -3,
+		"RANGE_ACCURACY": -3,
+		"STUNT_CHANCE": -1
+	},
+	"lifespan": "all",
+	"importance": 9
 },
 {
 	"modId": "wildermyth-drauven-pcs",
