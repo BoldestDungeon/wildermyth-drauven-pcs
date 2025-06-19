@@ -4,7 +4,7 @@
 	{
 		"jsonPath": "outcomes",
 		"type": "objectList",
-		"addJson": 	{
+		"addJson": {
 			"class": "Test",
 			"value": "sponsor.drauven",
 			"threshold": "1",
@@ -17,6 +17,11 @@
 				]
 			}
 		}
+	},
+	{
+		"jsonPath": "outcomes/[1]/then/outcomes/[2]/becomeAllyOf",
+		"type": "enumeration",
+		"enumeration": { "class": "abilityTargetRole", "value": "company" }
 	}
 ]
 }
