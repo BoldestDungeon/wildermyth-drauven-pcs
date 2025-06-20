@@ -59,6 +59,8 @@ jobs:
   
             **Details:**  
             ${{ needs.workshopUpload.outputs.body }}
+  
+            [Full Details](${{ github.event.release.html_url || 'https://github.com/BoldestDungeon/wildermyth-drauven-pcs/releases' }})
           include_image: true
           avatar_url: https://raw.githubusercontent.com/BoldestDungeon/wildermyth-drauven-pcs/refs/heads/main/GitHubBotAvatar.png
           username: Trava
