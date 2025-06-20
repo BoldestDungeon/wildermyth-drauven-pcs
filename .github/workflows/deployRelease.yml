@@ -1,34 +1,87 @@
 name: 'New Release Notification'
+
 env: 
   SERVER: deploy
+
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      release_title:
+        description: 'Release Title'
+        required: true
+      release_body:
+        description: 'Release Body'
+        required: true
 
 jobs:
+  workshopUpload:
+    runs-on: ubuntu-latest
+    environment: deploy
+    outputs:
+      title: ${{ steps.set-vars.outputs.title }}
+      body: ${{ steps.set-vars.outputs.body }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determine release info
+        id: set-vars
+        run: |
+          echo "title=${{ github.event.release.title || github.event.inputs.release_title }}" >> $GITHUB_OUTPUT
+          echo "body=${{ github.event.release.body || github.event.inputs.release_body }}" >> $GITHUB_OUTPUT
+
+      - name: Deploy to Steam
+        uses: BoldestDungeon/steam-workshop-deploy@v1.0.1
+        with:
+          username: ${{ secrets.STEAM_USERNAME }}          
+          configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
+          appId: 763890
+          publishedFileId: 2810606541
+          path: .
+          changeNote: |
+            ${{ steps.set-vars.outputs.title }}
+
+            ${{ steps.set-vars.outputs.body }}
+
   notify:
+    needs: workshopUpload
     runs-on: ubuntu-latest
     environment: deploy
     steps:
-      - name: Send Discord notification
+      - name: Check Deployment Status
         uses: stegzilla/discord-notify@v2
         with:
           title: New Release!
           webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          message: "##${{ github.event.release.title }}\n\n**Details:** \n${{ github.event.release.body }}\n\n[Full Details](${{ github.event.release.html_url }})"
+          message: |
+            ##${{ needs.workshopUpload.outputs.title }}
+  
+            **Details:**  
+            ${{ needs.workshopUpload.outputs.body }}
+  
+            [Full Details](${{ github.event.release.html_url || 'https://github.com/BoldestDungeon/wildermyth-drauven-pcs/releases' }})
           include_image: true
           avatar_url: https://raw.githubusercontent.com/BoldestDungeon/wildermyth-drauven-pcs/refs/heads/main/GitHubBotAvatar.png
           username: Trava
-  workshopUpload:
+
+  notify-failure:
+    needs: workshopUpload
     runs-on: ubuntu-latest
     environment: deploy
+    if: always()  # We need the steps to always be checked. By default jobs don't run if a previous one has failed. Without this line present, notify-failure would never be able to run.
     steps:
-      - uses: actions/checkout@v4
-      - uses: BoldestDungeon/steam-workshop-deploy@v1.0.1
+      - name: Check if previous job failed
+        if: ${{ needs.workshopUpload.conclusion != 'success' }} # This line actually checks if the build failed. If it failed, then this step will run.
+        uses: stegzilla/discord-notify@v2
         with:
-          username: ${{ secrets.STEAM_USERNAME }}          
-          configVdf: ${{ secrets.STEAM_CONFIG_VDF}}
-          appId: 763890
-          publishedFileId: 2810606541
-          path: .
-          changeNote: ${{ github.event.release.title }}\n\n${{ github.event.release.body }}
+          title: "Failed to Deploy `${{ needs.workshopUpload.outputs.title }}`"
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          message: |
+            **Deployment of release** `${{ needs.workshopUpload.outputs.title }}` **failed!**  
+            
+            Please check the GitHub Actions logs for more details.
+          include_image: true
+          avatar_url: https://raw.githubusercontent.com/BoldestDungeon/wildermyth-drauven-pcs/refs/heads/main/GitHubBotAvatar.png
+          colour: "#F44336"
+          username: Trava
