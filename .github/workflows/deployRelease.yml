@@ -49,7 +49,7 @@ jobs:
           username: ${{ secrets.STEAM_USERNAME }}          
           configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
           appId: 763890
-          publishedFileId: 3504519465
+          publishedFileId: 2810606541
           path: .
           changeNote: |
             ${{ steps.set-vars.outputs.title }}
