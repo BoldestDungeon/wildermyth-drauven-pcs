@@ -40,9 +40,6 @@ jobs:
             echo "EOF" >> $GITHUB_OUTPUT
           fi
 
-      - name: Dump event JSON
-        run: cat $GITHUB_EVENT_PATH
-
       - name: Deploy to Steam
         uses: BoldestDungeon/steam-workshop-deploy@v1.0.1
         with:
@@ -91,8 +88,6 @@ jobs:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           message: |
             **Deployment of release** `${{ needs.workshopUpload.outputs.title }}` **failed!**  
-            
-            Result: ${{ needs.workshopUpload.result }}
 
             Please check the GitHub Actions logs for more details.
           include_image: true
