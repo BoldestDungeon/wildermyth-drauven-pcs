@@ -28,8 +28,17 @@ jobs:
       - name: Determine release info
         id: set-vars
         run: |
-          echo "title=${{ github.event.release.title || github.event.inputs.release_title }}" >> $GITHUB_OUTPUT
-          echo "body=${{ github.event.release.body || github.event.inputs.release_body }}" >> $GITHUB_OUTPUT
+          if [ "${{ github.event_name }}" = "release" ]; then
+            echo "title=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+            echo "body<<EOF" >> $GITHUB_OUTPUT
+            echo "${{ github.event.release.body }}" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "title=${{ github.event.inputs.release_title }}" >> $GITHUB_OUTPUT
+            echo "body<<EOF" >> $GITHUB_OUTPUT
+            echo "${{ github.event.inputs.release_body }}" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
 
       - name: Deploy to Steam
         uses: BoldestDungeon/steam-workshop-deploy@v1.0.1
@@ -55,7 +64,7 @@ jobs:
           title: New Release!
           webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           message: |
-            ##${{ needs.workshopUpload.outputs.title }}
+            ## ${{ needs.workshopUpload.outputs.title }}
   
             **Details:**  
             ${{ needs.workshopUpload.outputs.body }}
@@ -72,14 +81,14 @@ jobs:
     if: always()  # We need the steps to always be checked. By default jobs don't run if a previous one has failed. Without this line present, notify-failure would never be able to run.
     steps:
       - name: Check if previous job failed
-        if: ${{ needs.workshopUpload.conclusion != 'success' }} # This line actually checks if the build failed. If it failed, then this step will run.
+        if: ${{ needs.workshopUpload.result != 'success' }} # This line actually checks if the build failed. If it failed, then this step will run.
         uses: stegzilla/discord-notify@v2
         with:
           title: "Failed to Deploy `${{ needs.workshopUpload.outputs.title }}`"
           webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           message: |
             **Deployment of release** `${{ needs.workshopUpload.outputs.title }}` **failed!**  
-            
+
             Please check the GitHub Actions logs for more details.
           include_image: true
           avatar_url: https://raw.githubusercontent.com/BoldestDungeon/wildermyth-drauven-pcs/refs/heads/main/GitHubBotAvatar.png
