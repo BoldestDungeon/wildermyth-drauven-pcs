@@ -1,0 +1,17 @@
+{
+"modId": "project_nonhuman",
+"modInjections": [
+	{
+		"jsonPath": "pieces/[0]/layers/[0]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	},
+	{
+		"jsonPath": "pieces/[0]/layers/[1]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	}
+]
+}

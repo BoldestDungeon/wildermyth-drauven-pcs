@@ -1,0 +1,59 @@
+{
+"modId": "project_nonhuman",
+"modInjections": [
+	{
+		"jsonPath": "themeSkin_gemKnight/skinLayers/[0]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	},
+	{
+		"jsonPath": "themeSkin_gemKnight/skinLayers/[1]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	},
+	{
+		"jsonPath": "themeSkin_skeletonMonster/skinLayers/[0]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	},
+	{
+		"jsonPath": "themeSkin_skeletonMonster/skinLayers/[1]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	},
+	{
+		"jsonPath": "themeSkin_skeletonMonster/skinLayers/[2]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	},
+	{
+		"jsonPath": "themeSkin_skeletonMonster/skinLayers/[3]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	},
+	{
+		"jsonPath": "themeSkin_starGold/skinLayers/[0]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	},
+	{
+		"jsonPath": "themeSkin_vinesMythical/skinLayers/[0]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	},
+	{
+		"jsonPath": "themeSkin_vinesMythical/skinLayers/[1]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauvenSkin_naturalHead" ]
+	}
+]
+}
