@@ -9,19 +9,12 @@
 			"value": "sponsor.drauven",
 			"threshold": "1",
 			"onPass": {
-				"class": "Aspects",
+				"class": "BranchAbility",
 				"target": "hero",
-				"addAspects": [
-					{ "id": "drauven_pc_init", "value": "1" },
-					{ "id": "nameFormulaOverride|drauvenName", "value": "1" }
-				]
+				"targetRole": "hero",
+				"branchAbility": "makeHeroDrauven|1"
 			}
 		}
-	},
-	{
-		"jsonPath": "outcomes/[1]/then/outcomes/[2]/becomeAllyOf",
-		"type": "enumeration",
-		"enumeration": { "class": "abilityTargetRole", "value": "company" }
 	}
 ]
 }
