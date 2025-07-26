@@ -39,10 +39,23 @@
 	},
 	{
 		"template": "TILE",
-		"choose": "ONE_RANDOM_TRUE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "[0,1]",
 		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_HOVER" },
 		"relativeTo": "targetTile",
+		"minRange": "0.9",
 		"range": "1.6",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "validScenerySpawnLocation"
+	},
+	{
+		"role": "otherSite",
+		"template": "TILE",
+		"STUB": "Dummy role to make the targeting feedback look better (so focus tile isn't excluded)",
+		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_HOVER" },
+		"relativeTo": "targetTile",
+		"alreadyMatchedAs": [ "targetTile" ],
+		"range": null,
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "validScenerySpawnLocation"
 	},
