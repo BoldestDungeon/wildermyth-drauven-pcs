@@ -156,6 +156,9 @@
 	"effects": [ "drauven_pc_fabricate", "drauven_pc_spear_upgrade" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
+	"interactionFeedback": [
+		{ "otherAspect": "mechanism", "replaceBlurb": true }
+	],
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "humanist" }
