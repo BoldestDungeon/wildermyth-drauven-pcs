@@ -4,14 +4,14 @@
 	"dataVersion": 1,
 	"sourceFile": "drauven_pc_flight",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "psionusoid (based on Patrick Belanger)",
+	"author": "psionusoid and Bipen (based on Patrick Belanger)",
 	"aiPriority": "(-1+(((COUNT.target2*(30-self.distanceTo.target2))*COUNT.volunteer)*10))+(COUNT.target*3000)",
 	"tags": [ "okToMarkDone", "aiMainAttack", "sneaky" ]
 },
 "type": "ABILITY",
 "verb": "ATTACK",
 "ability": {
-	"icon": "windwalk",
+	"icon": "flyFriend",
 	"priority": "1",
 	"extraUI": { "overrideRangeShown": "5" },
 	"showDescriptionInTooltip": true,

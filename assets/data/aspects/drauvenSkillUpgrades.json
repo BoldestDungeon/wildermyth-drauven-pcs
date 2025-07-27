@@ -5,8 +5,8 @@
 	"effects": [ "drauven_pc_flight" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
-	"lifespan": "all",
-	"info": { "abilityDeckIcon": "flyFriend" }
+	"abilityRequiresOneAspectOf": [ "themePiece_drauvenWings_wings" ],
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "flyFriend" }
 },
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -14,8 +14,8 @@
 	"effects": [ "drauven_pc_harass" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
-	"lifespan": "all",
-	"info": { "abilityDeckIcon": "peck" }
+	"abilityRequiresOneAspectOf": [ "themePiece_petBirdDrauven_birdDrauven" ],
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "peck" }
 },
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -23,7 +23,7 @@
 	"effects": [ "drauven_pc_wingbeat" ],
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
-	"lifespan": "all",
-	"info": { "abilityDeckIcon": "fly" }
+	"abilityRequiresOneAspectOf": [ "themePiece_drauvenWings_wings" ],
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "fly" }
 }
 ]
