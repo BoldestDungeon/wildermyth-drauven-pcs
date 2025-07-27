@@ -1,0 +1,13 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "drauvenBlood/info",
+		"type": "object",
+		"addJson": {
+			"class": "com.worldwalkergames.legacy.game.model.status.Aspect$Info",
+			"abilityDeckIcon": "elementalist"
+		}
+	}
+]
+}
