@@ -13,8 +13,8 @@
 "ability": {
 	"icon": "flyFriend",
 	"priority": "1",
+	"showInCharacterSheet": false,
 	"extraUI": { "overrideRangeShown": "5" },
-	"showDescriptionInTooltip": true,
 	"cooldown": "oncePerTurn"
 },
 "targets": [
