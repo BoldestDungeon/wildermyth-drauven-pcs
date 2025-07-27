@@ -9,13 +9,13 @@
 	"tags": [ "okToMarkDone", "aiMainAttack", "sneaky" ]
 },
 "type": "ABILITY",
-"verb": "ATTACK",
+"verb": "MANEUVER",
 "ability": {
 	"icon": "flyFriend",
 	"priority": "1",
 	"showInCharacterSheet": false,
-	"extraUI": { "overrideRangeShown": "5" },
-	"cooldown": "oncePerTurn"
+	"extraUI": { "overrideRangeShown": "5", "overrideCooldownShown": "2" },
+	"cooldown": "everyOtherTurn"
 },
 "targets": [
 	{
