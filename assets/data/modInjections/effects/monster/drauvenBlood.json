@@ -1,0 +1,20 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "outcomes/[0]/always/outcomes/[0]",
+		"type": "object",
+		"addJson": {
+			"class": "ModifyStats",
+			"stat": "INJURY",
+			"value": "0-min(self.INJURY,self.dragonBloodUpgradeTarget)"
+		},
+		"listBehavior": "insert"
+	},
+	{
+		"jsonPath": "ability/numUses",
+		"type": "expression",
+		"expression": "3+(max(1,(self.POTENCY/3))*self.drauvenDeck_mystic_dragonBlood)"
+	}
+]
+}
