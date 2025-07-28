@@ -1,11 +1,12 @@
 {
 "id": "petBirdDrauven",
-"name": "Pet <self.drauven:Razorbeak/Drauven-Bird>",
+"name": "Pet <test:EXISTS.self:<self.drauven:Razorbeak/Drauven Bird>/Drauven Bird>",
 "blurb": "<self> healed the bird's injury and apparently earned some loyalty.",
+"modId": "wildermyth-drauven-pcs",
 "pieces": [
 	{
 		"id": "birdDrauven",
-		"name": "<self.drauven:Razorbeak/Drauven Bird>",
+		"name": "<test:EXISTS.self:<self.drauven:Razorbeak/Drauven Bird>/Drauven Bird>",
 		"blurb": "It's a little mean-looking, but it seems to like you.",
 		"slots": [ "shoulderPet" ],
 		"layers": [
