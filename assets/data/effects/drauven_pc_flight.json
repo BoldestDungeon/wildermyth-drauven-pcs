@@ -49,8 +49,7 @@
 		"template": "ADJACENT_ALLY",
 		"STUB": "If there's an ally with a move left, bring it closer too",
 		"choose": "BY_SCORE_OPTIONAL",
-		"scoreFunction": "ACTIONS",
-		"scoreThreshold": "2",
+		"scoreFunction": "0",
 		"range": "1.6"
 	},
 	{
