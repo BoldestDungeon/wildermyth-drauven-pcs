@@ -6,7 +6,7 @@
 	"boostType": "ABILITY_MISC",
 	"legacyAbilityChoice": true,
 	"importance": 5,
-	"abilityRequiresOneAspectOf": [ "themePiece_drauvenWings_wings" ],
+	"abilityRequiresOneAspectOf": [ "drauven_pc_hasDrauvenWings" ],
 	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "flyFriend" }
 },
 {
@@ -16,7 +16,7 @@
 	"boostType": "ABILITY_MISC",
 	"legacyAbilityChoice": true,
 	"importance": 5,
-	"abilityRequiresOneAspectOf": [ "themePiece_petBirdDrauven_birdDrauven" ],
+	"abilityRequiresOneAspectOf": [ "drauven_pc_hasDrauvenBird" ],
 	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "peck" }
 },
 {
@@ -26,7 +26,7 @@
 	"boostType": "ABILITY_MISC",
 	"legacyAbilityChoice": true,
 	"importance": 5,
-	"abilityRequiresOneAspectOf": [ "themePiece_drauvenWings_wings" ],
+	"abilityRequiresOneAspectOf": [ "drauven_pc_hasDrauvenWings" ],
 	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "fly" }
 }
 ]

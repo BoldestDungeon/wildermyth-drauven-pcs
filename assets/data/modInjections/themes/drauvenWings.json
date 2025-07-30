@@ -1,0 +1,11 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "pieces/[0]/effects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "alsoAddIfOther|drauven_pc_hasDrauvenWings|drauven_pc" ]
+	}
+]
+}

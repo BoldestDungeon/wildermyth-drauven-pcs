@@ -6,6 +6,12 @@
 		"type": "stringList",
 		"addJson": { "class": "java.lang.String", "value": "" },
 		"addStrings": [ "drauven_pc_BirdHarassing|*" ]
+	},
+	{
+		"jsonPath": "pieces/[0]/effects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "alsoAddIfOther|drauven_pc_hasDrauvenBird|drauven_pc" ]
 	}
 ]
 }
