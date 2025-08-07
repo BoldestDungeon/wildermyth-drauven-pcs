@@ -1,0 +1,2 @@
+# Don't allow the deployment directory to be tracked if it somehow happens to be in the development environment
+/deploy
