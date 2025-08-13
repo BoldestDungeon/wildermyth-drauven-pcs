@@ -41,7 +41,7 @@ jobs:
           fi
 
       - name: Deploy to Steam
-        uses: BoldestDungeon/steam-workshop-deploy@v1.0.1
+        uses: BoldestDungeon/steam-workshop-deploy@v2
         with:
           username: ${{ secrets.STEAM_USERNAME }}          
           configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
