@@ -1,0 +1,23 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "warriorDeck_bloodrage/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "warriorDeck_broadswipes/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "warriorDeck_wolfcall/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	}
+]
+}
