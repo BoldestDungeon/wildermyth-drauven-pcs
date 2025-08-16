@@ -75,7 +75,11 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_warrior_concussed_upgrade",
-	"legacyAbilityChoice": true
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_warrior_concussed"
+	}
 },
 {
 	"modId": "wildermyth-drauven-pcs",
