@@ -25,6 +25,8 @@
         "id": "humanAspectsMigration",
         "associatedAspects": [
           "drauvenInterfusionRecipes",
+          "heroicActions",
+          "applyDifficultyModifiers",
           "issue498DrauvenMigrationRan"
         ],
         "removeAspects": [
