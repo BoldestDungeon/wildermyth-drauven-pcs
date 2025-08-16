@@ -38,6 +38,11 @@
         "persistOverLegacy": "never",
         "showInSummary": false
       }
+    },
+    {
+      "class": "BranchAbility",
+      "target": "self",
+      "branchAbility": "applyDifficultyModifiers"
     }
   ]
 }
