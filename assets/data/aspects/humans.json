@@ -72,11 +72,18 @@
 		"TENACITY": 15,
 		"WARDING": 0
 	},
-	"effects": [
-		"applyDifficultyModifiers"
-	],
 	"maxValue": "1",
 	"importance": 10
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "usesDifficultyModifiers",
+	"effects": [
+		"monitorDifficultyChanges",
+		"watchDifficultyChanges"
+	],
+	"lifespan": "all",
+	"importance": -1
 },
 {
 	"modId": "wildermyth-drauven-pcs",

@@ -6,7 +6,7 @@
     "author": "Ironskink",
     "STUB": "Checks current combat difficulty level and applies the appropriate stat modifiers" 
   },
-  "type": "ABILITIES_CHANGED",
+  "type": "BRANCH",
   "targets": [
     {
       "template": "SELF"

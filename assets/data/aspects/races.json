@@ -4,8 +4,7 @@
 	"id": "drauven_pc",
 	"effects": [
 		"drauven_aging",
-		"migrateDrauvenAspects",
-		"applyDifficultyModifiers"
+		"migrateDrauvenAspects"
 	],
 	"stats": {
 		"ARMOR": 0,
@@ -32,6 +31,17 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "nonhuman",
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDifficultyModifiers",
+	"STUB": "For now, use the same difficulty modifiers that humans use",
+	"effects": [
+		"monitorDifficultyChanges",
+		"watchDifficultyChanges"
+	],
+	"lifespan": "all",
 	"importance": -1
 }
 ]
