@@ -1,0 +1,6 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{ "jsonPath": "cannotAge/importance", "type": "expression", "expression": "-1" }
+]
+}

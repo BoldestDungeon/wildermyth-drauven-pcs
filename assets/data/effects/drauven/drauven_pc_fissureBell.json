@@ -12,7 +12,6 @@
 "ability": {
 	"icon": "lightning",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeDiscus", "mysticRecipeBoneSpear" ],
 	"priority": "1",
 	"extraUI": {
 		"overrideRangeShown": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"

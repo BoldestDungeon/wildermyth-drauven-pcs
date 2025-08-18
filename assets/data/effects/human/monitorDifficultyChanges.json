@@ -1,0 +1,23 @@
+{
+  "id": "monitorDifficultyChanges",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "human/monitorDifficultyChanges",
+    "modId": "wildermyth-drauven-pcs",
+    "author": "Ironskink",
+    "STUB": "Checks for changes to difficulty settings mid-combat."
+  },
+  "type": "TURN_END",
+  "targets": [
+    {
+      "template": "SELF"
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "BranchAbility",
+      "target": "self",
+      "branchAbility": "applyDifficultyModifiers"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "scenery/boostType",
+		"type": "enumeration",
+		"enumeration": {
+			"class": "com.worldwalkergames.legacy.game.model.status.Aspect$BoostType",
+			"value": "INTERFUSION_ASPECT"
+		}
+	}
+]
+}

@@ -28,21 +28,23 @@
 	"id": "drauvenBase.001",
 	"category": "drauvenBase",
 	"impliedAspects": [
-		"alive",
 		"human",
-		"nonhuman",
 		"humanRig",
+		"heroicActions",
 		"activeDefender",
+		"alive",
 		"eligibleForDeathChoice",
 		"canWallWithAllies",
-
+		"simplePresence",
+		
+		"nonhuman",
 		"drauven",
 		"drauven_pc",
+		"drauvenDifficultyModifiers",
+		"drauvenInterfusionRecipes",
 		"drauvenBlood",
 		"fluentInDruvwail",
 		"cannotAge",
-		
-		"simplePresence",
 
 		"ATTACHMENTS_workingRightArm",
 		"ATTACHMENTS_workingLeftArm",
@@ -62,6 +64,9 @@
 		"rigOverride|Drauven"
 	],
 	"removeAspects": [
+		"humanBaseStats",
+		"humanVoice",
+		"basicInterfusionRecipes",
 		"young",
 		"earlyMiddleAge",
 		"middleAge",
@@ -71,9 +76,75 @@
 		"extremeOldAge",
 		"humanSkin_naturalLeftHand",
 		"humanSkin_naturalRightHand",
-		"humanSkin_naturalHead"
+		"humanSkin_naturalHead",
+		"trueHuman"
 	],
+	"forbiddenAspects": ["trueHuman", "humanMale", "humanFemale"],
 	"humanName": "drauvenName",
+	"showInSummary": false
+},
+{
+	"id": "drauven_500",
+	"weight": 1,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "female", "attractedToMen", "nonbinary", "trueHuman" ],
+	"impliedAspects": [ "male", "drauvenMale", "maleBody", "heterosexual", "attractedToWomen", "nonhuman" ],
+	"showInSummary": false
+},
+{
+	"id": "drauven_501",
+	"weight": 0.3,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "female", "attractedToWomen", "nonbinary", "trueHuman" ],
+	"impliedAspects": [ "male", "drauvenMale", "maleBody", "gay", "attractedToMen", "nonhuman" ],
+	"showInSummary": false
+},
+{
+	"id": "drauven_502",
+	"weight": 1,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "male", "attractedToWomen", "nonbinary", "trueHuman" ],
+	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "heterosexual", "attractedToMen", "nonhuman" ],
+	"showInSummary": false
+},
+{
+	"id": "drauven_503",
+	"weight": 0.3,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "male", "attractedToMen", "nonbinary", "trueHuman" ],
+	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "gay", "attractedToWomen", "nonhuman" ],
+	"showInSummary": false
+},
+{
+	"id": "drauven_504",
+	"weight": 0.4,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "female", "nonbinary", "trueHuman" ],
+	"impliedAspects": [ "male", "drauvenMale", "maleBody", "attractedToMen", "attractedToWomen", "nonhuman" ],
+	"showInSummary": false
+},
+{
+	"id": "drauven_505",
+	"weight": 0.4,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "male", "nonbinary", "trueHuman" ],
+	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "attractedToMen", "attractedToWomen", "nonhuman" ],
+	"showInSummary": false
+},
+{
+	"id": "drauven_506",
+	"weight": 0.05,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "male", "female", "trueHuman" ],
+	"impliedAspects": [ "nonbinary", "drauvenFemale", "attractedToMen", "attractedToWomen", "nonhuman" ],
+	"showInSummary": false
+},
+{
+	"id": "drauven_507",
+	"weight": 0.05,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "male", "female", "trueHuman" ],
+	"impliedAspects": [ "nonbinary", "drauvenMale", "attractedToMen", "attractedToWomen", "nonhuman" ],
 	"showInSummary": false
 }
 ]

@@ -1,18 +1,18 @@
 {
-"id": "alsoAddIfOther|_ANOTHER_|_REQUIRED_",
+"id": "alsoAddUnlessOther|_ANOTHER_|_FORBIDDEN_",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "alsoAddIfOther",
+	"sourceFile": "misc/alsoAddUnlessOther",
 	"modId": "wildermyth-drauven-pcs",
 	"author": "Ironskink",
-	"STUB": "When this aspect is added, add ANOTHER aspect only if the REQUIRED aspect is on this entity"
+	"STUB": "When this aspect is added, add ANOTHER aspect unless the FORBIDDEN aspect is on this entity"
 },
-"type": "ABILITIES_CHANGED",
+"type": "ASPECT_ADDED",
 "targets": [
 	{
 		"template": "SELF",
 		"aspectValues": [
-			{ "id": "_REQUIRED_" }
+			{ "id": "_FORBIDDEN_", "forbidden": true }
 		]
 	}
 ],

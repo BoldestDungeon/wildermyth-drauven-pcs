@@ -12,7 +12,6 @@
 "ability": {
 	"icon": "fireleash",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeFireleash", "mysticRecipeFlareLamp", "mysticRecipeStealFire" ],
 	"priority": "3",
 	"usesElementFromEquippedWeapon": true
 },
