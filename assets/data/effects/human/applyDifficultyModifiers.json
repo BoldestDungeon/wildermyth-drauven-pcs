@@ -22,8 +22,7 @@
         "class": "Aspects",
         "target": "self",
         "removeAspects": ["statModifier_combatDifficulty_10", "statModifier_combatDifficulty_default", "statModifier_combatDifficulty_30"],
-        "addAspects": [ {"id": "statModifier_combatDifficulty_1", "value": 1}],
-        "merge": "replace"
+        "addAspects": [ {"id": "statModifier_combatDifficulty_1"}]
       },
       "onFail": {
         "class": "Test",
@@ -34,8 +33,7 @@
           "class": "Aspects",
           "target": "self",
           "removeAspects": ["statModifier_combatDifficulty_1", "statModifier_combatDifficulty_default", "statModifier_combatDifficulty_30"],
-          "addAspects": [ {"id": "statModifier_combatDifficulty_10", "value": 1}],
-          "merge": "replace"
+          "addAspects": [ {"id": "statModifier_combatDifficulty_10"}]
         },
         "onFail": {
           "class": "Test",
@@ -46,8 +44,7 @@
             "class": "Aspects",
             "target": "self",
             "removeAspects": ["statModifier_combatDifficulty_1", "statModifier_combatDifficulty_10", "statModifier_combatDifficulty_default"],
-            "addAspects": [ {"id": "statModifier_combatDifficulty_30", "value": 1}],
-            "merge": "replace"
+            "addAspects": [ {"id": "statModifier_combatDifficulty_30"}]
           },
           "onFail": {
             "class": "Test",
@@ -58,8 +55,7 @@
               "class": "Aspects",
               "target": "self",
               "removeAspects": ["statModifier_combatDifficulty_1", "statModifier_combatDifficulty_10", "statModifier_combatDifficulty_30"],
-              "addAspects": [ {"id": "statModifier_combatDifficulty_default", "value": 1}],
-              "merge": "replace"
+              "addAspects": [ {"id": "statModifier_combatDifficulty_default"}]
             }
           }
         }
