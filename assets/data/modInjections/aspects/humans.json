@@ -5,7 +5,7 @@
 		"jsonPath": "human/effects",
 		"type": "stringList",
 		"addJson": { "class": "java.lang.String", "value": "" },
-		"addStrings": [ "migrateHumanAspects" ],
+		"addStrings": [ "migrateHumanAspects", "manualHumanAspectMigrate" ],
 		"remove": [
 			"run",
 			"openDoor",
