@@ -28,7 +28,8 @@
 		{ "replace": "_ENTITY_", "isEntity": true }
 	],
 	"effects": [ "removeOnDeath", "drauven_pc_birdRecall|_ENTITY_" ],
-	"boostType": "ADVANTAGE"
+	"boostType": "ADVANTAGE",
+	"invalidatesSkin": true
 },
 {
 	"modId": "wildermyth-drauven-pcs",

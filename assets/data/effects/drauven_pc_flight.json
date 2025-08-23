@@ -1,20 +1,21 @@
 {
-"id": "flight",
+"id": "drauven_pc_flight",
 "info": {
 	"dataVersion": 1,
-	"sourceFile": "monster/flight",
-	"author": "Patrick Belanger",
+	"sourceFile": "drauven_pc_flight",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid and Bipen (based on Patrick Belanger)",
 	"aiPriority": "(-1+(((COUNT.target2*(30-self.distanceTo.target2))*COUNT.volunteer)*10))+(COUNT.target*3000)",
 	"tags": [ "okToMarkDone", "aiMainAttack", "sneaky" ]
 },
 "type": "ABILITY",
-"verb": "ATTACK",
+"verb": "MANEUVER",
 "ability": {
-	"icon": "windwalk",
+	"icon": "flyFriend",
 	"priority": "1",
-	"extraUI": { "overrideRangeShown": "5" },
-	"showDescriptionInTooltip": true,
-	"cooldown": "oncePerTurn"
+	"showInCharacterSheet": false,
+	"extraUI": { "overrideRangeShown": "5", "overrideCooldownShown": "2" },
+	"cooldown": "everyOtherTurn"
 },
 "targets": [
 	{
@@ -48,8 +49,7 @@
 		"template": "ADJACENT_ALLY",
 		"STUB": "If there's an ally with a move left, bring it closer too",
 		"choose": "BY_SCORE_OPTIONAL",
-		"scoreFunction": "ACTIONS",
-		"scoreThreshold": "2",
+		"scoreFunction": "0",
 		"range": "1.6"
 	},
 	{
@@ -58,28 +58,19 @@
 		"STUB": "The tile to drop volunteer at",
 		"choose": "ANY",
 		"chooseAnyMaximum": 1,
-		"missionFeedback": { "suggestionFeedback": "WALKABLE" },
+		"missionFeedback": {
+			"hoverScript": "figures.directionalTileHoverHelpful",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+			"applyRoleFootprint": "volunteer",
+			"feedbackSource": "volunteer"
+		},
+		"pathFrom": "self",
+		"pathTo": "volunteer",
+		"matchSpecial": "sameRelativePosition",
+		"relativeTo": "focus",
 		"range": "1.6",
 		"tileFilter": "validMoveEnd",
 		"roleMustFit": "volunteer",
-		"relativeToLocation": "focus"
-	},
-	{
-		"template": "ADJACENT_ENEMY",
-		"STUB": "Match any enemies within attack range, for AI priority",
-		"choose": "ANY",
-		"aspects": [ "HOSTILE_TARGET", "alive" ],
-		"range": "2.1",
-		"relativeToLocation": "focus"
-	},
-	{
-		"role": "target2",
-		"template": "ADJACENT_ENEMY",
-		"STUB": "Match closest enemy, for AI priority",
-		"choose": "ONE_CLOSEST_OPTIONAL",
-		"missionFeedback": null,
-		"aspects": [ "HOSTILE_TARGET", "alive" ],
-		"range": "20",
 		"relativeToLocation": "focus"
 	}
 ],

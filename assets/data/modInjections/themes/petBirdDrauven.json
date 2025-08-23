@@ -1,0 +1,17 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "pieces/[0]/layers/[0]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc_BirdHarassing|*" ]
+	},
+	{
+		"jsonPath": "pieces/[0]/effects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc_checkDrauvenBird" ]
+	}
+]
+}
