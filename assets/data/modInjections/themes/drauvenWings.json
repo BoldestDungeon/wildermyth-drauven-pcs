@@ -5,7 +5,7 @@
 		"jsonPath": "pieces/[0]/effects",
 		"type": "stringList",
 		"addJson": { "class": "java.lang.String", "value": "" },
-		"addStrings": [ "alsoAddIfOther|drauven_pc_hasDrauvenWings|drauven_pc" ]
+		"addStrings": [ "drauven_pc_checkDrauvenWings" ]
 	}
 ]
 }
