@@ -1,0 +1,10 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "ability/encounterScore",
+		"type": "expression",
+		"expression": "10"
+	}
+]
+}
