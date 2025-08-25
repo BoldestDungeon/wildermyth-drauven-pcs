@@ -89,7 +89,8 @@
 	"category": "bornHuman",
 	"forbiddenAspects": [ "female", "attractedToMen", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "male", "drauvenMale", "maleBody", "heterosexual", "attractedToWomen", "nonhuman" ],
-	"showInSummary": false
+	"showInSummary": false,
+	"humanName": "drauvenName"
 },
 {
 	"id": "drauven_501",
@@ -97,7 +98,8 @@
 	"category": "bornHuman",
 	"forbiddenAspects": [ "female", "attractedToWomen", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "male", "drauvenMale", "maleBody", "gay", "attractedToMen", "nonhuman" ],
-	"showInSummary": false
+	"showInSummary": false,
+	"humanName": "drauvenName"
 },
 {
 	"id": "drauven_502",
@@ -105,7 +107,8 @@
 	"category": "bornHuman",
 	"forbiddenAspects": [ "male", "attractedToWomen", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "heterosexual", "attractedToMen", "nonhuman" ],
-	"showInSummary": false
+	"showInSummary": false,
+	"humanName": "drauvenName"
 },
 {
 	"id": "drauven_503",
@@ -113,7 +116,8 @@
 	"category": "bornHuman",
 	"forbiddenAspects": [ "male", "attractedToMen", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "gay", "attractedToWomen", "nonhuman" ],
-	"showInSummary": false
+	"showInSummary": false,
+	"humanName": "drauvenName"
 },
 {
 	"id": "drauven_504",
@@ -121,7 +125,8 @@
 	"category": "bornHuman",
 	"forbiddenAspects": [ "female", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "male", "drauvenMale", "maleBody", "attractedToMen", "attractedToWomen", "nonhuman" ],
-	"showInSummary": false
+	"showInSummary": false,
+	"humanName": "drauvenName"
 },
 {
 	"id": "drauven_505",
@@ -129,7 +134,8 @@
 	"category": "bornHuman",
 	"forbiddenAspects": [ "male", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "attractedToMen", "attractedToWomen", "nonhuman" ],
-	"showInSummary": false
+	"showInSummary": false,
+	"humanName": "drauvenName"
 },
 {
 	"id": "drauven_506",
@@ -137,7 +143,8 @@
 	"category": "bornHuman",
 	"forbiddenAspects": [ "male", "female", "trueHuman" ],
 	"impliedAspects": [ "nonbinary", "drauvenFemale", "attractedToMen", "attractedToWomen", "nonhuman" ],
-	"showInSummary": false
+	"showInSummary": false,
+	"humanName": "drauvenName"
 },
 {
 	"id": "drauven_507",
@@ -145,6 +152,7 @@
 	"category": "bornHuman",
 	"forbiddenAspects": [ "male", "female", "trueHuman" ],
 	"impliedAspects": [ "nonbinary", "drauvenMale", "attractedToMen", "attractedToWomen", "nonhuman" ],
-	"showInSummary": false
+	"showInSummary": false,
+	"humanName": "drauvenName"
 }
 ]
