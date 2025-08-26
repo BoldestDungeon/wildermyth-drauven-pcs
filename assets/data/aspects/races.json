@@ -32,7 +32,8 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "nonhuman",
-	"importance": -1
+	"importance": -1,
+	"effects": []
 },
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -43,6 +44,24 @@
 		"watchDifficultyChanges"
 	],
 	"lifespan": "all",
+	"importance": -1
+},
+{
+	"modId":"wildermyth-drauven-pcs",
+	"id": "drauvenMale",
+	"effects": [
+		"migrateDrauvenAspects",
+		"manualMigrateDrauvenAspects"
+	],
+	"importance": -1
+},
+{
+	"modId":"wildermyth-drauven-pcs",
+	"id": "drauvenFemale",
+	"effects": [
+		"migrateDrauvenAspects",
+		"manualMigrateDrauvenAspects"
+	],
 	"importance": -1
 }
 ]
