@@ -1,0 +1,25 @@
+{
+"id": "drauven_spellbook",
+"canBeCrafted": false,
+"onlySpawnById": true,
+"generateName": false,
+"tier": 1,
+"category": "offHand",
+"uniqueCategory": "drauven_spellbook",
+"slots": [ "OFF_HAND" ],
+"aspects": [ "druvaalSkysongs" ],
+"ownerAspects": [ "numExtraInterfusions", "drauvenInterfusionRecipes" ],
+"layers": [
+	{
+		"name": "item_bookArcane_closed",
+		"scaleX": 0.5,
+		"scaleY": 0.5,
+		"rigUsage": "rigGeneral",
+		"grip": "offHand",
+		"grasp": "book",
+		"inactiveGrip": "hide",
+		"gripOffset": { "x": 24, "y": 108 },
+		"rotation": -10
+	}
+]
+}
