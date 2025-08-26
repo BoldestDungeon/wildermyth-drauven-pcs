@@ -40,9 +40,59 @@
       }
     },
     {
+      "class": "Test",
+      "threshold": "1",
+      "value": "drauvenMale + drauvenFemale - (100 * drauven_pc)",
+      "onPass": {
+        "class": "DoAll",
+        "outcomes": [
+          { "class": "ApplyTheme", "target": "hero", "theme": "drauven", "piece": "species" },
+          {
+            "class": "AddHistory",
+            "target": "self",
+            "addHistory": [ ["drauvenBaseFIX"] ]
+          },
+          {
+            "class": "CustomizeHero",
+            "target": "hero",
+            "randomizeSlots": [
+              "zzz_drauven01_Head",
+              "zzz_drauven02_Feathers",
+              "zzz_drauven03_Horns",
+              "zzz_drauven04_Whiskers",
+              "zzz_drauven05_Helmet",
+              "zzz_drauven06_Armour"
+            ],
+            "randomizeColors": [ "skin" ]
+          },
+          {
+            "class": "Test",
+            "threshold": "1",
+            "value": "drauvenBaseStats",
+            "onFail": {
+              "class": "AddHistory",
+              "target": "self",
+              "inlineHistory": {
+                "id": "humanAspectsMigration.2",
+                "associatedAspects": [
+                  "drauvenBaseStats"
+                ],
+                "showInSummary": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
       "class": "BranchAbility",
       "target": "self",
       "branchAbility": "applyDifficultyModifiers"
+    },
+    {
+      "class": "BranchAbility",
+      "branchAbility": "drauven_setAgingStats",
+      "target": "self"
     }
   ]
 }

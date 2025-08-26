@@ -74,13 +74,66 @@
 		"oldAge",
 		"veryOldAge",
 		"extremeOldAge",
-		"humanSkin_naturalLeftHand",
-		"humanSkin_naturalRightHand",
 		"humanSkin_naturalHead",
 		"trueHuman"
 	],
 	"forbiddenAspects": ["trueHuman", "humanMale", "humanFemale"],
 	"humanName": "drauvenName",
+	"showInSummary": false
+},
+{
+	"id": "drauvenBase.FIX",
+	"category": "drauvenBaseFIX",
+	"impliedAspects": [
+		"human",
+		"humanRig",
+		"heroicActions",
+		"activeDefender",
+		"alive",
+		"eligibleForDeathChoice",
+		"canWallWithAllies",
+		"simplePresence",
+		
+		"nonhuman",
+		"drauven",
+		"drauven_pc",
+		"drauvenDifficultyModifiers",
+		"drauvenInterfusionRecipes",
+		"drauvenBlood",
+		"fluentInDruvwail",
+		"cannotAge",
+
+		"ATTACHMENTS_workingRightArm",
+		"ATTACHMENTS_workingLeftArm",
+
+		"drauvenSkin_naturalLeftArm",
+		"drauvenSkin_naturalLeftHand",
+		"drauvenSkin_naturalRightArm",
+		"drauvenSkin_naturalRightHand",
+		"drauvenSkin_naturalLeftLeg",
+		"drauvenSkin_naturalRightLeg",
+		"drauvenSkin_naturalHead",
+		"drauvenSkin_naturalTorso",
+		"drauvenSkin_naturalTail",
+		"drauvenGear_clothes",
+
+		"skinColorPaletteOverride|84771B|A19015|606B5C|88927E|544813|7E7426|757546|757546|8B7553|C5BF8C",
+		"rigOverride|Drauven"
+	],
+	"removeAspects": [
+		"humanBaseStats",
+		"humanVoice",
+		"basicInterfusionRecipes",
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge",
+		"humanSkin_naturalHead",
+		"trueHuman"
+	],
 	"showInSummary": false
 },
 {
@@ -90,7 +143,8 @@
 	"forbiddenAspects": [ "female", "attractedToMen", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "male", "drauvenMale", "maleBody", "heterosexual", "attractedToWomen", "nonhuman" ],
 	"showInSummary": false,
-	"humanName": "drauvenName"
+	"humanName": "drauvenName",
+	"requireLegacyUnlock": "DrauvenAllies_FirstStepsComplete"
 },
 {
 	"id": "drauven_501",
@@ -99,7 +153,8 @@
 	"forbiddenAspects": [ "female", "attractedToWomen", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "male", "drauvenMale", "maleBody", "gay", "attractedToMen", "nonhuman" ],
 	"showInSummary": false,
-	"humanName": "drauvenName"
+	"humanName": "drauvenName",
+	"requireLegacyUnlock": "DrauvenAllies_FirstStepsComplete"
 },
 {
 	"id": "drauven_502",
@@ -108,7 +163,8 @@
 	"forbiddenAspects": [ "male", "attractedToWomen", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "heterosexual", "attractedToMen", "nonhuman" ],
 	"showInSummary": false,
-	"humanName": "drauvenName"
+	"humanName": "drauvenName",
+	"requireLegacyUnlock": "DrauvenAllies_FirstStepsComplete"
 },
 {
 	"id": "drauven_503",
@@ -117,7 +173,8 @@
 	"forbiddenAspects": [ "male", "attractedToMen", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "gay", "attractedToWomen", "nonhuman" ],
 	"showInSummary": false,
-	"humanName": "drauvenName"
+	"humanName": "drauvenName",
+	"requireLegacyUnlock": "DrauvenAllies_FirstStepsComplete"
 },
 {
 	"id": "drauven_504",
@@ -126,7 +183,8 @@
 	"forbiddenAspects": [ "female", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "male", "drauvenMale", "maleBody", "attractedToMen", "attractedToWomen", "nonhuman" ],
 	"showInSummary": false,
-	"humanName": "drauvenName"
+	"humanName": "drauvenName",
+	"requireLegacyUnlock": "DrauvenAllies_FirstStepsComplete"
 },
 {
 	"id": "drauven_505",
@@ -135,7 +193,8 @@
 	"forbiddenAspects": [ "male", "nonbinary", "trueHuman" ],
 	"impliedAspects": [ "female", "drauvenFemale", "femaleBody", "attractedToMen", "attractedToWomen", "nonhuman" ],
 	"showInSummary": false,
-	"humanName": "drauvenName"
+	"humanName": "drauvenName",
+	"requireLegacyUnlock": "DrauvenAllies_FirstStepsComplete"
 },
 {
 	"id": "drauven_506",
@@ -144,7 +203,8 @@
 	"forbiddenAspects": [ "male", "female", "trueHuman" ],
 	"impliedAspects": [ "nonbinary", "drauvenFemale", "attractedToMen", "attractedToWomen", "nonhuman" ],
 	"showInSummary": false,
-	"humanName": "drauvenName"
+	"humanName": "drauvenName",
+	"requireLegacyUnlock": "DrauvenAllies_FirstStepsComplete"
 },
 {
 	"id": "drauven_507",
@@ -153,6 +213,7 @@
 	"forbiddenAspects": [ "male", "female", "trueHuman" ],
 	"impliedAspects": [ "nonbinary", "drauvenMale", "attractedToMen", "attractedToWomen", "nonhuman" ],
 	"showInSummary": false,
-	"humanName": "drauvenName"
+	"humanName": "drauvenName",
+	"requireLegacyUnlock": "DrauvenAllies_FirstStepsComplete"
 }
 ]

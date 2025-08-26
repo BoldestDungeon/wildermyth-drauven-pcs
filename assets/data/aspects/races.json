@@ -32,7 +32,11 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "nonhuman",
-	"importance": -1
+	"importance": -1,
+	"effects": [
+		"migrateDrauvenAspects",
+		"manualMigrateDrauvenAspects"
+	]
 },
 {
 	"modId": "wildermyth-drauven-pcs",
