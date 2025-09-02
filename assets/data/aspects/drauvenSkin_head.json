@@ -25,7 +25,6 @@
       {
         "name": "head_scar1_drauven_stump",
         "depth": 4050,
-        "rigUsage": "rigGeneral",
         "headOffset": true, 
         "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
         "ifOwnerAspects": ["human_scar", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"]
@@ -253,7 +252,6 @@
       },
       {
         "name": "head_tattooSpelltouched_drauven_stump",
-        "bodyPart": "head",
         "depth": 4005,
         "headOffset": true, 
         "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
@@ -380,36 +378,28 @@
       },
       {
         "name": "head_scarFire_drauven_stump",
-        "bodyPart": "head",
         "depth": 4050,
-        "rigUsage": "rigGeneral",
         "headOffset": true, 
         "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
         "ifOwnerAspects": ["human_fireBurn", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"]
       },
       {
         "name": "head_scarFire_drauven_stump",
-        "bodyPart": "head",
         "depth": 4050,
-        "rigUsage": "rigGeneral",
         "headOffset": true, 
         "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
         "ifOwnerAspects": ["human_scarFire", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"]
       },
       {
         "name": "head_scarAcid_drauven_stump",
-        "bodyPart": "head",
         "depth": 4050,
-        "rigUsage": "rigGeneral",
         "headOffset": true, 
         "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
         "ifOwnerAspects": ["human_acidBurn", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"]
       },
       {
         "name": "head_scarAcid_drauven_stump",
-        "bodyPart": "head",
         "depth": 4050,
-        "rigUsage": "rigGeneral",
         "headOffset": true, 
         "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
         "ifOwnerAspects": ["human_scarAcid", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"]
@@ -491,7 +481,6 @@
       {
         "name": "face_eyepatch_drauven_stump",
         "depth": 4150,
-        "rigUsage": "rigGeneral",
         "headOffset": true, 
         "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
         "ifOwnerAspects": ["human_eyepatch", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"]
