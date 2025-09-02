@@ -331,7 +331,6 @@
 				"depth": 4052,
 				"headOffset": true, 
         "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
-				"rigMode": "maleHead",
 				"ifNoOwnerAspect": "themeSkin_fire*",
         "ifOwnerAspects": ["themePiece_fire_tattoo", "humanSkin_extra|zzz_drauven01_Head|drauvenHead_stump"]
       },
