@@ -1,0 +1,28 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "outcomes/[0]/addAspects",
+		"type": "objectList",
+		"addJson": {
+			"class": "com.worldwalkergames.legacy.game.model.effect.Outcome$AddAspect",
+			"id": "drauven_pc_interfusedWithRock",
+			"value": "0",
+			"merge": "replace",
+			"inRelationTo": "target"
+		}
+	},
+	{
+		"jsonPath": "outcomes/[1]/removeAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc_songInspirationSource" ]
+	},
+	{
+		"jsonPath": "outcomes/[1]/removeAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc_loremasterSlowScenery" ]
+	}
+]
+}
