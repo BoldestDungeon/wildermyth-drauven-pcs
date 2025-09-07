@@ -1,0 +1,57 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "outcomes",
+		"type": "objectList",
+		"addJson": {
+			"class": "Test",
+			"value": "target.drauvenDeck_mystic_battlecrafting+self.mechanism",
+			"threshold": "2",
+			"onPass": {
+				"class": "Aspects",
+				"target": "self",
+				"addAspects": [
+					{ "id": "insidiousFilamentScenery", "value": "1", "merge": "max" }
+				]
+			}
+		}
+	},
+	{
+		"jsonPath": "outcomes",
+		"type": "objectList",
+		"addJson": {
+			"class": "Test",
+			"value": "(target.drauvenDeck_mystic_loremaster+max((self.book+self.ruins)))-self.drauven_pc_songInspirationUsed",
+			"threshold": "2",
+			"onPass": {
+				"class": "Aspects",
+				"target": "self",
+				"addAspects": [
+					{
+						"id": "drauven_pc_songInspirationSource",
+						"value": "1+target.drauvenDeck_mystic_loremaster_upgrade",
+						"merge": "max"
+					}
+				]
+			}
+		}
+	},
+	{
+		"jsonPath": "outcomes",
+		"type": "objectList",
+		"addJson": {
+			"class": "Test",
+			"value": "target.drauvenDeck_mystic_loremaster+max(self.plant,self.textile)",
+			"threshold": "2",
+			"onPass": {
+				"class": "Aspects",
+				"target": "self",
+				"addAspects": [
+					{ "id": "drauven_pc_loremasterSlowScenery", "value": "1", "merge": "max" }
+				]
+			}
+		}
+	}
+]
+}
