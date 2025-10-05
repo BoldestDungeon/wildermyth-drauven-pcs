@@ -31,7 +31,11 @@
 		"scoreThreshold": "1",
 		"missionFeedback": { "orientTo": "focus" },
 		"aspectValues": [
-			{ "id": "drauven_pc_fireballPrepared|*", "forbidden": true }
+			{ "id": "drauven_pc_fireballPrepared|*", "forbidden": true },
+			{ "id": "senseless", "forbidden": true },
+			{ "id": "senselessPermanent", "forbidden": true },
+			{ "id": "stasis", "forbidden": true },
+			{ "id": "crystalChrysalis", "forbidden": true }
 		]
 	},
 	{
