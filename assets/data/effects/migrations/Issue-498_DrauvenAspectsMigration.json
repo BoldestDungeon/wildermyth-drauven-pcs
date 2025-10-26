@@ -11,10 +11,10 @@
   "targets": [
     {
       "template": "SELF",
-      "aspectValues": [
-        { "id": "drauvenInterfusionRecipes", "forbidden": true },
-        { "id": "issue498DrauvenMigrationRan", "forbidden": true }
-      ]
+      "aspectValues": [],
+      "test": "GREATER_THAN_OR_EQUAL_TO",
+      "a": "1-(((heroicActions*drauvenInterfusionRecipes)*drauvenDifficultyModifiers)*drauvenBaseStats)",
+      "b": "1"
     }
   ],
   "outcomes": [
@@ -22,7 +22,7 @@
       "class": "AddHistory",
       "target": "self",
       "inlineHistory": {
-        "id": "humanAspectsMigration",
+        "id": "drauvenAspectsMigration",
         "associatedAspects": [
           "drauvenInterfusionRecipes",
           "heroicActions",
@@ -73,7 +73,7 @@
               "class": "AddHistory",
               "target": "self",
               "inlineHistory": {
-                "id": "humanAspectsMigration.2",
+                "id": "drauvenAspectsMigration.2",
                 "associatedAspects": [
                   "drauvenBaseStats"
                 ],
