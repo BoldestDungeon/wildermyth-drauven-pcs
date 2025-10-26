@@ -310,13 +310,18 @@
       {
         "name": "Tail_Skin",
         "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_tail"],
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_tail", "theme_skeleton"],
         "depth": 101
       },
+			{
+				"name": "replaceTail_skeleton",
+				"depth": 101,
+				"ifOwnerAspect": "theme_skeleton"
+			},
 
       {
         "name": "skinBlueTattoo_tail",
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_tail"],
+        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_tail", "theme_skeleton"],
         "ifOwnerAspect": "themeSkin_spellTouchedTattoo",
         "depth": 102
       }
