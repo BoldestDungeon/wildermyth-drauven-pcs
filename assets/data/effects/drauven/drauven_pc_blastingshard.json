@@ -15,7 +15,9 @@
 	"category": "attackAbility",
 	"strictlyBetterThan": [ "mysticRecipeSplinterblast" ],
 	"priority": "1",
-	"extraUI": { "overrideRangeShown": "4.6+self.BONUS_RANGE" },
+	"extraUI": {
+		"overrideRangeShown": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"
+	},
 	"usesElementFromEquippedWeapon": true
 },
 "targets": [
@@ -50,7 +52,7 @@
 			"feedbackSource": "source"
 		},
 		"relativeTo": "source",
-		"range": "4.6+self.BONUS_RANGE",
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	},

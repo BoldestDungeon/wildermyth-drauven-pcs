@@ -1,15 +1,39 @@
 {
 "id": "drauven_pc_teamwork_shred",
-"info": { "dataVersion": 1, "sourceFile": "drauven/drauven_pc_teamwork_shred", "sort": 4 },
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_teamwork_shred",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid and Bipen (based on timcrosby)",
+	"sort": 4
+},
 "type": "SHRED_ROLL",
-"targets": [
-	{ "template": "SELF" },
-	{
-		"template": "ABILITY",
-		"abilityHasAnyTags": [ "melee" ]
+"ability": {
+	"priority": "1",
+	"showInCharacterSheet": false,
+	"customSpecialAnimationEffect": {
+		"parameters": [
+			"max((1+self.drauvenDeck_common_guerilla_upgrade),(floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade)))+self.drauvenDeck_common_guerilla_upgrade))"
+		]
 	}
+},
+"targets": [
+	{ "template": "SELF" }
 ],
 "outcomes": [
-	{ "class": "Impact", "impact": "self.POTENCY*0.5" }
+	{
+		"class": "Test",
+		"value": "IS_FLANKING",
+		"threshold": "1",
+		"onPass": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Impact",
+					"impact": "max((1+self.drauvenDeck_common_guerilla_upgrade),(floor(((self.POTENCY/3)+((self.POTENCY/6)*self.drauvenDeck_common_guerilla_upgrade)))+self.drauvenDeck_common_guerilla_upgrade))"
+				}
+			]
+		}
+	}
 ]
 }

@@ -1,0 +1,923 @@
+{
+"id": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+	"author": "Douglas Austin"
+},
+"type": "PLOT_ARRIVE",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerGame" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" }
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.401, "y": 0.509 },
+							"size": 0.285,
+							"drawDepth": 1.875,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.617, "y": 0.5 },
+							"size": 0.285,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.767, "y": 0.532 },
+							"size": 0.568,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.613, "y": 0.038 },
+							"size": 0.568,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.706, "y": 0.459 },
+							"size": 1.475,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"foot": { "rotate": -6.911 },
+							"color": { "r": "0.62631559", "g": "0.39662984", "b": "0.31588095", "a": "0.1300578" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.415, "y": 0.308 },
+							"size": 1.178,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"foot": { "rotate": 1.399 },
+							"color": { "r": "0.82156986", "g": "0.70090038", "b": "0.94649845", "a": "0.1300578" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.614, "y": 0.352 },
+							"size": 0.234,
+							"drawDepth": 1.375,
+							"nameTag": "none",
+							"foot": { "rotate": 1.455 },
+							"color": { "r": "0.99999994", "g": "0.9123258", "b": "0.52601165", "a": "0.32080925" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.633, "y": 0.255 },
+							"size": 2.958,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.52601159", "b": "0.52601177", "a": "0.32080925" }
+						},
+						{
+							"assetSpec": "scenery:drauven_baskets1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.367, "y": 0.047 },
+							"size": 0.163,
+							"drawDepth": 1.78125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.178, "y": 0.396 },
+							"size": 0.462,
+							"drawDepth": 1.8125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.093, "y": 0.201 },
+							"size": 0.274,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"color": { "r": "0.78526676", "g": "0.62579519", "b": "0.50375056", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_001~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.021,
+							"padYFraction": 0.087,
+							"widthFraction": 0.9638088,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_001~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.284,
+							"padYFraction": 0.405,
+							"widthFraction": 0.42616606,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_001~4_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.455,
+							"padYFraction": 0.667,
+							"widthFraction": 0.42616606,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.401, "y": 0.509 },
+							"size": 0.285,
+							"drawDepth": 1.875,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.617, "y": 0.5 },
+							"size": 0.285,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.747, "y": 0.519 },
+							"size": 0.568,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.613, "y": 0.038 },
+							"size": 0.568,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.706, "y": 0.459 },
+							"size": 1.475,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"foot": { "rotate": -6.911 },
+							"color": { "r": "0.62631559", "g": "0.39662984", "b": "0.31588095", "a": "0.1300578" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.415, "y": 0.308 },
+							"size": 1.178,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"foot": { "rotate": 1.399 },
+							"color": { "r": "0.82156986", "g": "0.70090038", "b": "0.94649845", "a": "0.1300578" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.614, "y": 0.352 },
+							"size": 0.234,
+							"drawDepth": 1.375,
+							"nameTag": "none",
+							"foot": { "rotate": 1.455 },
+							"color": { "r": "0.99999994", "g": "0.9123258", "b": "0.52601165", "a": "0.32080925" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.633, "y": 0.255 },
+							"size": 2.958,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.52601159", "b": "0.52601177", "a": "0.32080925" }
+						},
+						{
+							"assetSpec": "scenery:drauven_baskets1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.365, "y": 0.038 },
+							"size": 0.195,
+							"drawDepth": 1.78125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.178, "y": 0.396 },
+							"size": 0.462,
+							"drawDepth": 1.8125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": 0.168 },
+							"size": 0.147,
+							"drawDepth": 1.796875,
+							"nameTag": "none",
+							"foot": { "rotate": -2.69 },
+							"color": { "r": "0.87111652", "g": "0.82017446", "b": "0.91392958", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:action_popL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.201, "y": 0.271 },
+							"size": 0.258,
+							"drawDepth": 1.7890625,
+							"nameTag": "none",
+							"foot": { "rotate": -159.837 },
+							"color": { "r": "0.97357076", "g": "0.63350475", "b": "0.37325007", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.093, "y": 0.201 },
+							"size": 0.274,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"color": { "r": "0.78526676", "g": "0.62579519", "b": "0.50375056", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_002~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.186,
+							"padYFraction": 0.058,
+							"widthFraction": 0.9638088,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_002~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.29,
+							"padYFraction": 0.284,
+							"widthFraction": 0.5376427,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_002~4_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.39,
+							"padYFraction": 0.517,
+							"widthFraction": 0.35765436,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_002~5_action",
+							"style": "action",
+							"padXFraction": 0.235,
+							"padYFraction": 0.535,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.401, "y": 0.509 },
+							"size": 0.285,
+							"drawDepth": 1.875,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.617, "y": 0.5 },
+							"size": 0.285,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.815, "y": 0.513 },
+							"size": 0.568,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.613, "y": 0.038 },
+							"size": 0.568,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.706, "y": 0.459 },
+							"size": 1.475,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"foot": { "rotate": -6.911 },
+							"color": { "r": "0.62631559", "g": "0.39662984", "b": "0.31588095", "a": "0.1300578" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.415, "y": 0.308 },
+							"size": 1.178,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"foot": { "rotate": 1.399 },
+							"color": { "r": "0.82156986", "g": "0.70090038", "b": "0.94649845", "a": "0.1300578" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.614, "y": 0.352 },
+							"size": 0.234,
+							"drawDepth": 1.375,
+							"nameTag": "none",
+							"foot": { "rotate": 1.455 },
+							"color": { "r": "0.99999994", "g": "0.9123258", "b": "0.52601165", "a": "0.32080925" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.633, "y": 0.255 },
+							"size": 2.958,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.52601159", "b": "0.52601177", "a": "0.32080925" }
+						},
+						{
+							"assetSpec": "scenery:drauven_baskets1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.365, "y": 0.038 },
+							"size": 0.195,
+							"drawDepth": 1.78125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.178, "y": 0.396 },
+							"size": 0.462,
+							"drawDepth": 1.8125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.099, "y": 0.168 },
+							"size": 0.147,
+							"drawDepth": 1.796875,
+							"nameTag": "none",
+							"foot": { "rotate": -2.69 },
+							"color": { "r": "0.87111652", "g": "0.82017446", "b": "0.91392958", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_gorelord.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.988, "y": 0.144 },
+							"size": 0.293,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"foot": { "rotate": 10.435 },
+							"color": { "r": "0.78526676", "g": "0.62579519", "b": "0.50375056", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.093, "y": 0.201 },
+							"size": 0.274,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"color": { "r": "0.78526676", "g": "0.62579519", "b": "0.50375056", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.743, "y": 0.484 },
+							"size": 0.43,
+							"drawDepth": 1.6875,
+							"nameTag": "none",
+							"color": { "r": "0.10982659", "g": "0.10982659", "b": "0.10982659", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_003~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_003~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.021,
+							"padYFraction": 0.087,
+							"widthFraction": 0.9638088,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_003~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.206,
+							"padYFraction": 0.303,
+							"widthFraction": 0.42616606,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_003~4_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.45,
+							"padYFraction": 0.571,
+							"widthFraction": 0.3599768,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_003~5_action",
+							"style": "action",
+							"padXFraction": 0.571,
+							"padYFraction": 0.268,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoFifths",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.316, "y": 0.491 },
+							"size": 0.285,
+							"drawDepth": 1.875,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:boulderField1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.216, "y": 0.396 },
+							"size": 0.462,
+							"drawDepth": 1.8125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.01, "y": 0.209 },
+							"size": 0.147,
+							"drawDepth": 1.796875,
+							"nameTag": "none",
+							"foot": { "rotate": -2.69 },
+							"color": { "r": "0.87111652", "g": "0.82017446", "b": "0.91392958", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.744, "y": 0.441 },
+							"size": 0.247,
+							"drawDepth": 1.6875,
+							"nameTag": "none",
+							"foot": { "rotate": -25.656 },
+							"color": { "r": "0.97357076", "g": "0.63350475", "b": "0.37325007", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_arch1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.376, "y": 0.176 },
+							"size": 0.16,
+							"drawDepth": 1.84375,
+							"nameTag": "none",
+							"color": { "r": "0.87111652", "g": "0.82017446", "b": "0.91392958", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:ruinsField_wallDiag.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.048, "y": 0.217 },
+							"size": 0.237,
+							"drawDepth": 1,
+							"nameTag": "none",
+							"color": { "r": "0.87111652", "g": "0.82017446", "b": "0.91392958", "a": "1" }
+						},
+						{
+							"role": "party",
+							"form": "frame-talk",
+							"equipment": { "mode": "leaveEquipment" },
+							"focus": "foot",
+							"anchor": { "x": 0.186, "y": -0.047 },
+							"size": 0.115,
+							"drawDepth": 1.828125,
+							"head": { "rotate": -29.102, "scaleY": -1 },
+							"foot": { "rotate": -15.859 },
+							"color": { "r": "0.77305305", "g": "0.68335068", "b": "0.84844124", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.45, "y": 0.376 },
+							"size": 0.745,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"foot": { "rotate": 18.729 },
+							"color": { "r": "0.60917509", "g": "0.51719087", "b": "0.38504457", "a": "0.24277456" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_004~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_004~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.021,
+							"padYFraction": 0.087,
+							"widthFraction": 0.9638088,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_004~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.206,
+							"padYFraction": 0.303,
+							"widthFraction": 0.42616606,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_004~4_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.39,
+							"padYFraction": 0.517,
+							"widthFraction": 0.3599768,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_004~5_action",
+							"style": "action",
+							"padXFraction": 0.598,
+							"padYFraction": 0.34,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFifths",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.871, "y": 0.535 },
+							"size": 0.285,
+							"drawDepth": 1.875,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.844, "y": 0.488 },
+							"size": 0.285,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:drauven_tapestry.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.06, "y": 0.538 },
+							"size": 0.568,
+							"drawDepth": 1.4375,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:drauven_brazierOn.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.746, "y": 0.007 },
+							"size": 0.568,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.943, "y": 0.616 },
+							"size": 1.475,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"foot": { "rotate": -6.911 },
+							"color": { "r": "0.84042227", "g": "0.66598874", "b": "0.60466444", "a": "0.22543353" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.505, "y": 0.389 },
+							"size": 1.178,
+							"drawDepth": 1.25,
+							"nameTag": "none",
+							"foot": { "rotate": 1.399 },
+							"color": { "r": "0.82156986", "g": "0.70090038", "b": "0.94649845", "a": "0.1300578" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.757, "y": 0.311 },
+							"size": 0.234,
+							"drawDepth": 1.375,
+							"nameTag": "none",
+							"foot": { "rotate": 1.455 },
+							"color": { "r": "0.99999994", "g": "0.9123258", "b": "0.52601165", "a": "0.32080925" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.751, "y": 0.176 },
+							"size": 2.958,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.52601159", "b": "0.52601177", "a": "0.32080925" }
+						},
+						{
+							"assetSpec": "scenery:drauven_baskets1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.413, "y": 0.038 },
+							"size": 0.195,
+							"drawDepth": 1.78125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:boulderField1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.126, "y": 0.396 },
+							"size": 0.462,
+							"drawDepth": 1.8125,
+							"nameTag": "none",
+							"color": { "r": "0.83147615", "g": "0.81028438", "b": "0.73499781", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_stump.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.005, "y": 0.181 },
+							"size": 0.147,
+							"drawDepth": 1.796875,
+							"nameTag": "none",
+							"foot": { "rotate": -2.69 },
+							"color": { "r": "0.87111652", "g": "0.82017446", "b": "0.91392958", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenBaked_gorelord.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.025, "y": 0.283 },
+							"size": 0.293,
+							"drawDepth": 1.3125,
+							"nameTag": "none",
+							"foot": { "rotate": 10.435 },
+							"color": { "r": "0.78526676", "g": "0.62579519", "b": "0.50375056", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:rockBridgeL.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.522, "y": 0.248 },
+							"size": 0.274,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"color": { "r": "0.78526676", "g": "0.62579519", "b": "0.50375056", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:action_popL.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.666, "y": 0.497 },
+							"size": 0.668,
+							"drawDepth": 1.6875,
+							"nameTag": "none",
+							"foot": { "rotate": -26.402 },
+							"color": { "r": "0.10982659", "g": "0.10982659", "b": "0.10982659", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_005~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_005~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.021,
+							"padYFraction": 0.087,
+							"widthFraction": 0.9638088,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_005~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.206,
+							"padYFraction": 0.303,
+							"widthFraction": 0.42616606,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_005~4_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.5995748", "g": "0.44518685", "b": "0.84383047", "a": "0.70520234" },
+							"padXFraction": 0.39,
+							"padYFraction": 0.517,
+							"widthFraction": 0.3599768,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Drauven_capstone_clearAll_theGorelord",
+							"textKey": "~01~~panel_005~5_action",
+							"style": "action",
+							"padXFraction": 0.35,
+							"padYFraction": 0.208,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "Mission",
+		"combatants": [
+			{ "role": "party", "side": "player" },
+			{ "role": "foes", "side": "enemy" }
+		],
+		"missionPlanOverride": "genericCampaignPlots_drauven_capstone1_gorelord",
+		"victoryEventIds": [ "genericCampaignPlots_chapter1_Drauven_capstoneVictory_clearAll_theGorelord" ]
+	}
+]
+}

@@ -1,0 +1,1477 @@
+{
+"id": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Douglas Austin",
+	"STUB": "Victories occur at the end of missions. No choice is needed in most cases, we can just tell a brief story."
+},
+"type": "PLOT_MISSION_EVENT",
+"verb": "MANEUVER",
+"ability": { "icon": "utility", "category": "attack", "priority": "1" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{ "template": "LIVING_FOES" },
+	{ "template": "DEAD_FOES" },
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEVEL+(deepistStart_apprentice*50)",
+		"fromRoles": [ "party", "maimedHero" ]
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "volunteer2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "volunteer" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoFifths",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 2, "overridePanelDrawDepth": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_caveBlue.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.281, "y": 0.513 },
+							"size": 0.321,
+							"nameTag": "none",
+							"color": { "r": "0.4717164", "g": "0.51072192", "b": "0.58608711", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deepist_shrineFungus.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.148, "y": 0.613 },
+							"size": 0.66,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.53931773", "g": "0.59529626", "b": "0.70345616", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "active",
+							"focus": "middle",
+							"anchor": { "x": 1.886, "y": 0.286 },
+							"size": 0.398,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"animationSpeed": 0.6
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.869, "y": 0.688 },
+							"size": 0.561,
+							"drawDepth": -0.75,
+							"nameTag": "none",
+							"color": { "r": "0.38439271", "g": "0.38439271", "b": "0.38439271", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.819, "y": 0.022 },
+							"size": 4.576,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.97109824", "g": "0.26943561", "b": "0", "a": "0.26011527" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.835, "y": -0.296 },
+							"size": 7.372,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.9125244", "b": "0.10982585", "a": "0.21676265" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 1.146, "y": 0.773 },
+							"size": 0.855,
+							"drawDepth": -0.875,
+							"head": { "rotate": -12.873 },
+							"color": { "r": "0.53931773", "g": "0.59529626", "b": "0.70345616", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.131, "y": 0.49 },
+							"size": 0.431,
+							"drawDepth": 0.5,
+							"head": { "rotate": 1.59 },
+							"color": { "r": "0.53931773", "g": "0.59529626", "b": "0.70345616", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deepist_skull1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 2.025, "y": -0.098 },
+							"size": 0.656,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "rotate": 36.103 },
+							"color": { "r": "0.3493095", "g": "0.2460655", "b": "0.24606553", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.26203716", "g": "0.44406265", "b": "0.79576635", "a": "1" },
+							"location": "bottomLeft",
+							"padXFraction": 0.116,
+							"padYFraction": 0.073,
+							"widthFraction": 1.8050718,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_001~2_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomLeft",
+							"padXFraction": 0.113,
+							"padYFraction": -0.022,
+							"widthFraction": 1.6900979,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -12.602663, "dX": -16.965576, "dY": -2.8275864 },
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFifths",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 1, "overridePanelDrawDepth": -1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_caveBlue.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.234, "y": 0.513 },
+							"size": 0.321,
+							"nameTag": "none",
+							"color": { "r": "0.4717164", "g": "0.51072192", "b": "0.58608711", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deepist_shrineFungus.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.101, "y": 0.613 },
+							"size": 0.66,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.53931773", "g": "0.59529626", "b": "0.70345616", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "active",
+							"focus": "middle",
+							"anchor": { "x": 0.839, "y": 0.286 },
+							"size": 0.398,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"animationSpeed": 0.6
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.822, "y": 0.688 },
+							"size": 0.561,
+							"drawDepth": -0.75,
+							"nameTag": "none",
+							"color": { "r": "0.38439271", "g": "0.38439271", "b": "0.38439271", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.772, "y": 0.022 },
+							"size": 4.576,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.97109824", "g": "0.26943561", "b": "0", "a": "0.26011527" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.788, "y": -0.296 },
+							"size": 7.372,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.9125244", "b": "0.10982585", "a": "0.21676265" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.099, "y": 0.773 },
+							"size": 0.855,
+							"drawDepth": -0.875,
+							"head": { "rotate": -12.873 },
+							"color": { "r": "0.53931773", "g": "0.59529626", "b": "0.70345616", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deepist_skull1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.978, "y": -0.098 },
+							"size": 0.656,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "rotate": 36.103 },
+							"color": { "r": "0.3493095", "g": "0.2460655", "b": "0.24606553", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.56, "y": 0.45 },
+							"size": 0.352,
+							"drawDepth": 0.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -37.025, "scaleY": -1 },
+							"foot": { "rotate": 10.785 },
+							"color": { "r": "0.38439271", "g": "0.38439271", "b": "0.38439271", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration"
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_002~2_action",
+							"style": "action",
+							"padXFraction": 0.807,
+							"padYFraction": 0.186,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_002~3_action",
+							"style": "action",
+							"padXFraction": 0.788,
+							"padYFraction": 0.462,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourFifth",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_undergroundEarthen.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.373, "y": 0.519 },
+							"size": 0.32808694,
+							"nameTag": "none",
+							"color": { "r": "0.6272341", "g": "0.6725297", "b": "0.76004839", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:standingStoneSingle.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.111, "y": 0.528 },
+							"size": 0.432,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.53931773", "g": "0.59529626", "b": "0.70345616", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_caveBlue.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.6, "y": 0.5 },
+							"size": 0.321,
+							"nameTag": "none",
+							"color": { "r": "0.4717164", "g": "0.51072192", "b": "0.58608711", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deepist_rockStack.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.089, "y": 0.509 },
+							"size": 0.48320287,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.4717164", "g": "0.51072192", "b": "0.58608711", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.348, "y": 0.302 },
+							"size": 0.554,
+							"drawDepth": -2,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -37.025, "scaleY": -1 },
+							"foot": { "rotate": 10.785 },
+							"color": { "r": "0.53931773", "g": "0.59529626", "b": "0.70345616", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.139, "y": 0.503 },
+							"size": 0.554,
+							"drawDepth": -2,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -4.884, "scaleY": 1 },
+							"foot": { "rotate": -12.379 },
+							"color": { "r": "0.53931773", "g": "0.59529626", "b": "0.70345616", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.065, "y": 2.298 },
+							"size": 2.589,
+							"drawDepth": 2.75,
+							"nameTag": "none",
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "active",
+							"focus": "middle",
+							"anchor": { "x": 0.963, "y": 0.088 },
+							"size": 0.147,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"animationSpeed": 0.6
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "active",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.875, "y": 0.003 },
+							"size": 0.103,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.98270887", "g": "0.75717407", "b": "0.75717413", "a": "1" },
+							"animationSpeed": 0.3
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "active",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.719, "y": 0.016 },
+							"size": 0.013,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.98270887", "g": "0.75717407", "b": "0.75717413", "a": "0.62427711" },
+							"animationSpeed": 0.9
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "active",
+							"focus": "middle",
+							"anchor": { "x": 0.624, "y": 0.047 },
+							"size": 0.013,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.98270887", "g": "0.75717407", "b": "0.75717413", "a": "0.62427711" },
+							"animationSpeed": 0.9
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "active",
+							"focus": "middle",
+							"anchor": { "x": 1.066, "y": 0.362 },
+							"size": 0.28,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.84451938", "g": "0.75717407", "b": "0.98270887", "a": "1" },
+							"animationSpeed": 1.1
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.822, "y": 0.688 },
+							"size": 0.561,
+							"drawDepth": -0.75,
+							"nameTag": "none",
+							"color": { "r": "0.38439271", "g": "0.38439271", "b": "0.38439271", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.915, "y": -0.132 },
+							"size": 4.576,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.97109824", "g": "0.26943561", "b": "0", "a": "0.26011527" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.09, "y": -0.264 },
+							"size": 7.372,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.9125244", "b": "0.10982585", "a": "0.21676265" }
+						},
+						{
+							"assetSpec": "scenery:deepist_skull1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.009, "y": -0.104 },
+							"size": 0.347,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "rotate": 36.103 },
+							"color": { "r": "0.3493095", "g": "0.2460655", "b": "0.24606553", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deepist_shrineFungus.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.672, "y": 0.23 },
+							"size": 0.256,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.38439271", "g": "0.38439271", "b": "0.38439271", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deepist_hideTanning.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.178, "y": 0.224 },
+							"size": 0.454,
+							"drawDepth": 0.25,
+							"nameTag": "none",
+							"color": { "r": "0.38439271", "g": "0.38439271", "b": "0.38439271", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deepist_hornPile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.145, "y": 0.133 },
+							"size": 0.401,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": 19.066 },
+							"color": { "r": "0.38439271", "g": "0.38439271", "b": "0.38439271", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_003~1_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.059999995,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_003~2_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.407,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_003~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.26203716", "g": "0.44406265", "b": "0.79576635", "a": "1" },
+							"location": "topRight",
+							"padXFraction": 0.237,
+							"padYFraction": 0.093,
+							"widthFraction": 0.61736804,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_003~4_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"widthFraction": 0.6830701,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 11.309932,
+								"dX": -80.11495,
+								"dY": 16.02299,
+								"scaleX": 0.5904685,
+								"scaleY": 0.5904685,
+								"forcePointerImage": "thoughtMedium"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsRocky.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.317,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeDirectional.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.212, "y": 0.734 },
+							"size": 0.353,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:trunkForegroundThick.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.94, "y": -0.363 },
+							"size": 0.57,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 2.785 },
+							"color": { "r": "0.57689863", "g": "0.69477767", "b": "0.64571792", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRock1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.126, "y": 0.156 },
+							"size": 0.315,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 2.785 },
+							"color": { "r": "0.57689863", "g": "0.69477767", "b": "0.64571792", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.6 }
+						},
+						{
+							"assetSpec": "comic:rockBridgeR.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.537, "y": 0.173 },
+							"size": 0.158,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:item_entranceCave.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.329, "y": 0.154 },
+							"size": 0.233,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.51104248", "g": "0.63164842", "b": "0.86467934", "a": "1" },
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comic:statueMinotaur.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.372, "y": 0.343 },
+							"size": 0.202,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.6272341", "g": "0.6725297", "b": "0.76004839", "a": "1" },
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.349, "y": 0.107 },
+							"size": 0.207,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.349, "y": 0.107 },
+							"size": 0.207,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.349, "y": 0.107 },
+							"size": 0.207,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.97109824", "g": "0.26943561", "b": "0", "a": "0.26011527" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.516, "y": 0.249 },
+							"size": 0.235,
+							"drawDepth": -1,
+							"head": { "rotate": -26.889, "scaleY": -1 },
+							"foot": { "rotate": -5.96 },
+							"color": { "r": "0.65077347", "g": "0.74807042", "b": "0.70757663", "a": "1" }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.021, "y": 0.403 },
+							"size": 0.447,
+							"drawDepth": -1,
+							"head": { "rotate": 12.484, "scaleY": 1 },
+							"foot": { "rotate": -5.065 },
+							"color": { "r": "0.65077347", "g": "0.74807042", "b": "0.70757663", "a": "1" }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.974, "y": 0.541 },
+							"size": 0.652,
+							"drawDepth": -1,
+							"head": { "rotate": 12.484, "scaleY": 1 },
+							"foot": { "rotate": -5.065 },
+							"color": { "r": "0.65077347", "g": "0.74807042", "b": "0.70757663", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.735, "y": 0.462 },
+							"size": 0.553,
+							"drawDepth": 0.5,
+							"head": { "rotate": -0.023 },
+							"color": { "r": "0.57689863", "g": "0.69477767", "b": "0.64571792", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.164, "y": 0.374 },
+							"size": 0.373,
+							"drawDepth": -0.5,
+							"head": { "rotate": 9.097 },
+							"color": { "r": "0.57689863", "g": "0.69477767", "b": "0.64571792", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.32, "y": 0.572 },
+							"size": 0.42,
+							"drawDepth": 0.6875,
+							"nameTag": "none",
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.64161813" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_004~1_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.204,
+							"padYFraction": 0.003,
+							"widthFraction": 0.86372924,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 15.708608 }
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_004~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.139,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_004~3_hero3",
+							"pointerOwner": "hero3",
+							"location": "topRight",
+							"padXFraction": 0.17,
+							"padYFraction": 0.077,
+							"widthFraction": 0.59177125,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 13.663548,
+								"dX": -30.161037,
+								"dY": -6.597702,
+								"scaleX": 0.84377813,
+								"scaleY": 0.84377813,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_004~4_hero3",
+							"pointerOwner": "hero3",
+							"padXFraction": 0.401,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -9.852197,
+								"dX": 13.195402,
+								"dY": 2.8275867,
+								"scaleX": 0.5684646,
+								"scaleY": 0.5684646,
+								"pointerOrientH": "onLeft",
+								"forcePointerImage": "speechLong"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceWindowBig.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.781, "y": 0.5 },
+							"size": 0.26887107,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:entranceWindowBig.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 2.117, "y": 0.409 },
+							"size": 0.26887107,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:entranceWindowBig.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.179, "y": 0.498 },
+							"size": 0.26887107,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.556, "y": 0.451 },
+							"size": 0.426,
+							"drawDepth": -1.75,
+							"head": { "rotate": -16.961, "scaleY": 1 },
+							"foot": { "rotate": -0.032 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.692, "y": 0.4 },
+							"size": 0.446,
+							"drawDepth": -2,
+							"head": { "rotate": -4.549, "scaleY": 1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-skeptical",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.949, "y": 0.465 },
+							"size": 0.341,
+							"drawDepth": -1.84375,
+							"head": { "rotate": -8.667, "scaleY": -1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.027, "y": 0.481 },
+							"size": 0.81,
+							"drawDepth": -1.84375,
+							"head": { "rotate": 10.071, "scaleY": 1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.123, "y": 0.44 },
+							"size": 0.522,
+							"drawDepth": -1.6875,
+							"head": { "rotate": 7.278, "scaleY": 1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_hillsPineDay.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.582 },
+							"size": 0.16901703,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bookshelfLow_glass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.419, "y": 0.3 },
+							"size": 0.39855167,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.544, "y": -0.05 },
+							"size": 0.34927306,
+							"drawDepth": -1.875,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:forgeFireSmallOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.121, "y": 0.379 },
+							"size": 0.48846355,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.273, "y": 0.44 },
+							"size": 0.456,
+							"drawDepth": -1.625,
+							"nameTag": "none",
+							"head": { "rotate": -7.041, "scaleY": 1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:breadPear.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.519, "y": 0.123 },
+							"size": 0.12,
+							"drawDepth": -1.9375,
+							"nameTag": "none",
+							"foot": { "rotate": -0.05314528 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:cheese1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.591, "y": 0.114 },
+							"size": 0.139,
+							"drawDepth": -1.9375,
+							"nameTag": "none",
+							"foot": { "rotate": -0.05314528 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_jugClay.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.406, "y": 0.204 },
+							"size": 0.203,
+							"drawDepth": -1.90625,
+							"nameTag": "none",
+							"foot": { "rotate": -0.344 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_bottleClay.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.61, "y": 0.182 },
+							"size": 0.171,
+							"drawDepth": -1.90625,
+							"nameTag": "none",
+							"foot": { "rotate": -0.344 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_bottleGreen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.437, "y": 0.191 },
+							"size": 0.221,
+							"drawDepth": -1.90625,
+							"nameTag": "none",
+							"foot": { "rotate": -0.344 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_005~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.26203716", "g": "0.44406265", "b": "0.79576635", "a": "1" },
+							"padXFraction": 0.019,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_005~2_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.279,
+							"padYFraction": 0.041,
+							"widthFraction": 0.71549445,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_005~3_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.458,
+							"padYFraction": 0.316,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -8.130102,
+								"dX": -7.5402303,
+								"dY": -9.425288,
+								"scaleX": 0.80358374,
+								"scaleY": 0.80358374
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:entranceWindowBig.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.83, "y": 0.462 },
+							"size": 0.35232687,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:entranceWindowBig.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 2.117, "y": 0.409 },
+							"size": 0.35232687,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:entranceWindowBig.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.43, "y": 0.47 },
+							"size": 0.35232687,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.543, "y": 0.476 },
+							"size": 0.55822754,
+							"drawDepth": -1.75,
+							"head": { "rotate": 2.449, "scaleY": 1 },
+							"foot": { "rotate": -0.032 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.718, "y": 0.406 },
+							"size": 0.58443546,
+							"drawDepth": -2,
+							"head": { "rotate": -16.169, "scaleY": 1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "mug" ]
+							},
+							"anchor": { "x": 0.985, "y": 0.478 },
+							"size": 0.4468441,
+							"drawDepth": -1.84375,
+							"head": { "rotate": -1.383, "scaleY": 1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "volunteer",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": -0.335, "y": 0.478 },
+							"size": 1.0614187,
+							"drawDepth": -1.84375,
+							"head": { "rotate": 10.071, "scaleY": 1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "volunteer2",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": -0.208, "y": 0.585 },
+							"size": 0.68402535,
+							"drawDepth": -1.6875,
+							"head": { "rotate": 7.278, "scaleY": 1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_hillsPineDay.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.824, "y": 0.582 },
+							"size": 0.22147879,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bookshelfLow_glass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.373, "y": 0.291 },
+							"size": 0.5222595,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.535, "y": -0.147 },
+							"size": 0.45768508,
+							"drawDepth": -1.875,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:forgeFireSmallOff.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.039, "y": 0.445 },
+							"size": 0.6400794,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"role": "npc",
+							"form": "frame-talk",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.157, "y": 0.462 },
+							"size": 0.59753937,
+							"drawDepth": -1.625,
+							"nameTag": "none",
+							"head": { "rotate": -22.224, "scaleY": 1 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:breadPear.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.504, "y": 0.073 },
+							"size": 0.1572472,
+							"drawDepth": -1.9375,
+							"nameTag": "none",
+							"foot": { "rotate": -0.05314528 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:cheese1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.612, "y": 0.061 },
+							"size": 0.18214467,
+							"drawDepth": -1.9375,
+							"nameTag": "none",
+							"foot": { "rotate": -0.05314528 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_jugClay.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.354, "y": 0.182 },
+							"size": 0.26600984,
+							"drawDepth": -1.90625,
+							"nameTag": "none",
+							"foot": { "rotate": -0.344 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_bottleClay.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.634, "y": 0.119 },
+							"size": 0.22407727,
+							"drawDepth": -1.90625,
+							"nameTag": "none",
+							"foot": { "rotate": -0.344 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						},
+						{
+							"assetSpec": "item:item_bottleGreen.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.397, "y": 0.163 },
+							"size": 0.28959692,
+							"drawDepth": -1.90625,
+							"nameTag": "none",
+							"foot": { "rotate": -0.344 },
+							"color": { "r": "0.74807042", "g": "0.74357092", "b": "0.65077347", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_006~1_npc",
+							"pointerOwner": "npc",
+							"padXFraction": 0.029,
+							"padYFraction": 0.006,
+							"widthFraction": 0.9466005,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsPineEvening.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.558,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.077, "y": 0.255 },
+							"size": 0.421,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.81386161", "g": "0.73502296", "b": "0.97017938", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:pineTreeline.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.008, "y": 0.349 },
+							"size": 0.465,
+							"drawDepth": -0.75,
+							"nameTag": "none",
+							"color": { "r": "0.81386161", "g": "0.73502296", "b": "0.97017938", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:stumpRockHolePine.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.056, "y": 0.49 },
+							"size": 0.456,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "rotate": 7.569 },
+							"color": { "r": "0.81386161", "g": "0.73502296", "b": "0.97017938", "a": "1" },
+							"colorFilter": { "filterName": "sepia" }
+						},
+						{
+							"assetSpec": "comic:treePine3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.866, "y": 0.173 },
+							"size": 0.513,
+							"drawDepth": -4,
+							"nameTag": "none",
+							"color": { "r": "0.65751892", "g": "0.5781256", "b": "0.81493652", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:path.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.191, "y": 0.38 },
+							"size": 0.178,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"foot": { "rotate": 17.077 },
+							"color": { "r": "0.6771695", "g": "0.63776696", "b": "0.75529516", "a": "0.83525974" }
+						},
+						{
+							"assetSpec": "comic:path.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.124, "y": 0.584 },
+							"size": 0.046,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"foot": { "rotate": 17.077 },
+							"color": { "r": "0.6771695", "g": "0.63776696", "b": "0.75529516", "a": "0.83525974" }
+						},
+						{
+							"assetSpec": "comic:cottageStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.093, "y": 0.717 },
+							"size": 0.037,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"foot": { "rotate": -0.31 },
+							"color": { "r": "0.6771695", "g": "0.63776696", "b": "0.75529516", "a": "0.67629987" }
+						},
+						{
+							"assetSpec": "comic:smokeDirectional.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.182, "y": 0.93 },
+							"size": 0.191,
+							"drawDepth": -0.625,
+							"nameTag": "none",
+							"color": { "r": "0.8488673", "g": "0.3531968", "b": "0.20893621", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.65, "y": 0.719 },
+							"size": 0.472,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.9604246", "g": "0.96381396", "b": "0.37722582", "a": "1" }
+						},
+						{
+							"assetSpec": "worldMap:tomb1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.166, "y": 0.717 },
+							"size": 0.059,
+							"drawDepth": -0.125,
+							"nameTag": "none",
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.39884394" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.151, "y": 0.704 },
+							"size": 0.02,
+							"drawDepth": -5,
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.39884394" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_007~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.26203716", "g": "0.44406265", "b": "0.79576635", "a": "1" },
+							"padXFraction": 0.195,
+							"padYFraction": 0.064,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_chapter1_Deepist_capstoneVictory_clearAll_oldBlood",
+							"textKey": "~01~~panel_007~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.26203716", "g": "0.44406265", "b": "0.79576635", "a": "1" },
+							"padXFraction": 0.287,
+							"padYFraction": 0.709,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "deepistStart_hillWitch",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "mystic",
+					"setAge": "extremeOldAge",
+					"setEquipment": "clothes",
+					"nameConstraints": "requireLastName"
+				},
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{ "class": "AddGear", "target": "npc", "itemById": "walkingStaff" },
+						{ "class": "AddGear", "target": "npc", "itemById": "mysticDrab1" }
+					]
+				}
+			}
+		},
+		{
+			"role": "npc2",
+			"npcId": "deepistStart_witchSibling",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "npc",
+					"setClass": "warrior",
+					"setAge": "young",
+					"setEquipment": "clothesAndWeapons",
+					"looksSimilarTo": "npc"
+				},
+				"control": "none",
+				"additionalOutcome": {
+					"class": "DoAll",
+					"outcomes": [
+						{ "class": "AddGear", "itemById": "shieldGold" },
+						{ "class": "AddGear", "itemById": "sword1hand_t1_fire" }
+					]
+				}
+			}
+		}
+	]
+}
+}

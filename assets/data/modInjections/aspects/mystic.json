@@ -1,0 +1,65 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "interfused/effects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"remove": [
+			"mysticRecipeFireleash",
+			"mysticRecipeSplinterblast",
+			"mysticRecipeDiscus",
+			"mysticRecipeWildGrasp",
+			"mysticRecipeLightLamp",
+			"mysticRecipeStealFire",
+			"mysticRecipeFlareLamp",
+			"mysticRecipeBoneSpear",
+			"mysticRecipeCaltrops",
+			"mysticRecipeShackle",
+			"mysticRecipeBarrage",
+			"mysticRecipeScaldingRain",
+			"mysticRecipeEngulf",
+			"mysticRecipeLassoShardnado",
+			"mysticRecipeCrystalStorm",
+			"mysticRecipeExplodeBarrel",
+			"mysticRecipeDelayRift"
+		]
+	},
+	{
+		"jsonPath": "mysticDeck_elementalist/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "mysticDeck_humanist/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "mysticDeck_mythweaver/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "mysticDeck_naturalist/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "mysticDeck_soulDefense/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "mysticGreenhorn_ignite/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	}
+]
+}

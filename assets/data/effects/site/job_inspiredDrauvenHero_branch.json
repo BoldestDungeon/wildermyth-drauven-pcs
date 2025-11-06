@@ -4,7 +4,7 @@
 	"dataVersion": 1,
 	"sourceFile": "site/job_inspiredDrauvenHero_branch",
 	"modId": "wildermyth-drauven-pcs",
-	"author": "Ironskink",
+	"author": "Ironskink & ShayRey",
 	"declaredEncounterResults": []
 },
 "type": "BRANCH",
@@ -116,7 +116,9 @@
 										"textSourceFile": "site/job_inspiredDrauvenHero_branch",
 										"textKey": "~01~prompt~panel_001.(leader_exists)~2_narration",
 										"style": "narration",
-										"padYFraction": 0.901
+										"location": "bottomLeft",
+										"padXFraction": 0.005,
+										"padYFraction": 0.013
 									}
 								]
 							}
@@ -1129,7 +1131,12 @@
 			"role": "volunteer",
 			"npcId": "DrauvenRecruit",
 			"createEntity": {
-				"query": { "baseTag": "human", "localizableName": "", "setClass": "farmer" },
+				"query": {
+					"baseTag": "human",
+					"localizableName": "",
+					"setClass": "farmer",
+					"setAge": "young"
+				},
 				"addAspects": [
 					{ "id": "drauven_pc_init", "value": "1" }
 				],

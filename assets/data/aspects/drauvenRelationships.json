@@ -50,5 +50,19 @@
 	"id": "ohSnap_leader",
 	"importance": -1,
 	"lifespan": "all"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "abandonedReturns_woundedDrauvenMortalChoice",
+	"effects": [ "abandonedReturnsWoundedDrauvenMortalChoice"],
+	"importance": -1,
+	"lifespan": "mission"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "abandonedReturns_deevenSeekerMortalChoice",
+	"effects": [ "abandonedReturnsDeevenSeekerMortalChoice"],
+	"importance": -1,
+	"lifespan": "mission"
 }
 ]

@@ -13,7 +13,9 @@
 	"icon": "engulf",
 	"category": "attackAbility",
 	"priority": "1",
-	"extraUI": { "overrideRangeShown": "6.6+self.BONUS_RANGE" }
+	"extraUI": {
+		"overrideRangeShown": "(6.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"
+	}
 },
 "targets": [
 	{
@@ -45,7 +47,7 @@
 		"alwaysSelect": true,
 		"aspects": [ "HOSTILE_TARGET", "alive" ],
 		"relativeTo": "source",
-		"range": "6.6+self.BONUS_RANGE",
+		"range": "(6.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],

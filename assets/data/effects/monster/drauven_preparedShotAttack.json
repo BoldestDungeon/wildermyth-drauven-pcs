@@ -1,0 +1,38 @@
+{
+  "id": "drauven_preparedShotAttack",
+  "info": {
+    "dataVersion": 1,
+    "sourceFile": "monster/drauven_preparedShotAttack",
+    "author": "Patrick Belanger",
+    "tags": [ "ranged", "weapon", "bowTypeAttack" ]
+  },
+  "type": "REGION_TRIGGER",
+  "verb": "ATTACK",
+  "ability": { "category": "attackAbility", "priority": "1" },
+  "targets": [
+    { "template": "SELF" },
+    {
+      "template": "INTERLOPER",
+      "aspects": [ "alive", "ENEMY" ],
+      "aspectValues": [
+        { "id": "turtleShellKicked_strength", "forbidden": true }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "class": "Aspects",
+      "removeAspects": [ "drauven_cowering" ]
+    },
+    {
+      "class": "BranchAbility",
+      "branchType": "standardRanged",
+      "targetRole": "target",
+      "triggerAbilityUsedEffects": true
+    },
+    {
+      "class": "Aspects",
+      "removeAspects": [ "_THIS_" ]
+    }
+  ]
+  }

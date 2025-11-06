@@ -22,11 +22,36 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_hunter_drauven_teamwork",
+	"effects": [
+		"drauven_pc_teamwork_shred",
+		"drauven_pc_teamwork_damage",
+		"Guerilla_migration"
+	],
+	"boostType": "ABILITY_CLASS",
+	"legacyAbilityChoice": true,
+	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
+	"showInTooltip": true,
+	"info": { "abilityDeckUsage": "none", "abilityDeckIcon": "thornfang" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenDeck_hunter_drauven_teamwork_upgrade",
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_hunter_drauven_teamwork",
+		"abilityDeckIcon": "thornfang"
+	}
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_mystic_dragonBlood",
 	"boostType": "ABILITY_CLASS",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"abilityForbidAspects": [ "alive" ],
+	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "mystic", "abilityDeckIcon": "elementalist" }
 },
 {
@@ -50,7 +75,11 @@
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "drauvenDeck_warrior_concussed_upgrade",
-	"legacyAbilityChoice": true
+	"legacyAbilityChoice": true,
+	"info": {
+		"abilityDeckUsage": "upgrade",
+		"upgradeForAbility": "drauvenDeck_warrior_concussed"
+	}
 },
 {
 	"modId": "wildermyth-drauven-pcs",
@@ -60,7 +89,6 @@
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
 	"abilityForbidAspects": [ "alive" ],
-	"showInTooltip": true,
 	"info": { "abilityDeckUsage": "warrior", "abilityDeckIcon": "soulHarvest" }
 },
 {
@@ -68,7 +96,6 @@
 	"id": "drauvenDeck_warrior_outrage_upgrade",
 	"legacyAbilityChoice": true,
 	"abilityRequiresOneAspectOf": [ "drauven_pc" ],
-	"showInTooltip": true,
 	"info": {
 		"abilityDeckUsage": "upgrade",
 		"upgradeForAbility": "drauvenDeck_warrior_outrage",

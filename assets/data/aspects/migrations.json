@@ -1,20 +1,34 @@
 [
   {
+    "modId": "wildermyth-drauven-pcs",
     "id": "migration_drauven_updateThemeLimbs",
     "effects": [ "migration_drauven_updateThemeLimbs" ],
     "importance": -1
   },
   {
+    "modId": "wildermyth-drauven-pcs",
     "id": "migration_drauven_updateHeadAspects",
     "effects": [ "migration_drauven_updateHeadAspects" ],
     "importance": -1
   },
   {
+    "modId": "wildermyth-drauven-pcs",
     "id": "drauvenPC_leftLegMigrationComplete",
     "importance": -1
   },
   {
+    "modId": "wildermyth-drauven-pcs",
     "id": "drauvenPC_rightLegMigrationComplete",
+    "importance": -1
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "issue498HumanMigrationRan",
+    "importance": -1
+  },
+  {
+    "modId": "wildermyth-drauven-pcs",
+    "id": "issue498DrauvenMigrationRan",
     "importance": -1
   }
 ]

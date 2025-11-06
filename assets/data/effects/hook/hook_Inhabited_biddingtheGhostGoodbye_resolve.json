@@ -1,0 +1,1352 @@
+{
+"id": "hook_Inhabited_biddingtheGhostGoodbye_resolve",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Douglas Austin"
+},
+"type": "OTHER",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "encounterScore": 100000 },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{ "role": "hook", "template": "INJECTED_HERO", "injectedRole": "hook" },
+	{ "role": "hook2", "template": "INJECTED_HERO", "injectedRole": "hook2" }
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"lightweight": false,
+		"blockOtherChanges": true,
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_stoneMagic.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-hit",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.172, "y": 0.45 },
+							"size": 0.4444,
+							"drawDepth": 1,
+							"head": { "rotate": 31.052 },
+							"color": { "r": "0.82481873", "g": "0.7380237", "b": "0.55668414", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-scared",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "lantern", "grimblade" ]
+							},
+							"anchor": { "x": 0.393, "y": 0.481 },
+							"size": 0.449,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.75739247", "g": "0.69401008", "b": "0.62989074", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.337, "y": -0.407 },
+							"size": 4.115,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.86935741", "g": "0.60845327", "b": "0.34451538", "a": "0.56358379" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crypt.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.492, "y": 0.516 },
+							"size": 0.285,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"foot": { "rotate": 0.161 },
+							"color": { "r": "0.62716764", "g": "0.62716764", "b": "0.62716764", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:drauvenSpirit.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.035, "y": 0.301 },
+							"size": 0.283,
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -109.627 },
+							"color": { "r": "0.41232684", "g": "0.0983662", "b": "0.64151818", "a": "1" },
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "asset:figures/images/human/misc/hunterF_replaceArmL_shadowA_tint2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.041, "y": 0.371 },
+							"size": 0.518,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"foot": { "rotate": 24.523 },
+							"color": { "r": "0.41232684", "g": "0.0983662", "b": "0.64151818", "a": "0.43063584" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.472, "y": -0.148 },
+							"size": 0.288,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": -0.456 }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.083, "y": 0.4 },
+							"size": 0.249,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": -175.456 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_001~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"padXFraction": 0.285,
+							"padYFraction": 0.013,
+							"widthFraction": 0.8046851,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_001~2_narration",
+							"style": "narration",
+							"padXFraction": 0.564,
+							"padYFraction": 0.319,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.356, "y": 0.564 },
+							"size": 0.4444,
+							"nameTag": "none",
+							"head": { "rotate": -45.984 },
+							"foot": { "rotate": -15.193 },
+							"color": { "r": "0.75739247", "g": "0.69401008", "b": "0.62989074", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crypt.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.61, "y": 0.57 },
+							"size": 0.285,
+							"nameTag": "none",
+							"foot": { "rotate": 0.161 },
+							"color": { "r": "0.62716764", "g": "0.62716764", "b": "0.62716764", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.888, "y": 0.041 },
+							"size": 0.288,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": -0.456 }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.45, "y": 0.664 },
+							"size": 0.249,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": 164.081 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.733, "y": 1.657 },
+							"size": 1.208,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": 164.081 },
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.81502891" }
+						},
+						{
+							"assetSpec": "comic:lightBeam1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.641, "y": 0.821 },
+							"size": 7.043,
+							"drawDepth": 1.875,
+							"nameTag": "none",
+							"foot": { "rotate": -174.321 },
+							"color": { "r": "0.41232684", "g": "0.0983662", "b": "0.64151818", "a": "0.16763006" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.972, "y": 0.754 },
+							"drawDepth": 1.25,
+							"head": { "rotate": -5.642 },
+							"color": { "r": "0.75739247", "g": "0.69401008", "b": "0.62989074", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.989, "y": -0.064 },
+							"size": 4.115,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.86935741", "g": "0.60845327", "b": "0.34451538", "a": "0.56358379" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_002~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"location": "bottomRight",
+							"padXFraction": 0.003,
+							"widthFraction": 0.7231194,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_002~2_narration",
+							"style": "narration",
+							"widthFraction": 0.560063,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-sad",
+							"equipment": {},
+							"anchor": { "x": 0.203, "y": 0.502 },
+							"size": 0.493,
+							"nameTag": "none",
+							"head": { "rotate": -36.73 },
+							"color": { "r": "0.75739247", "g": "0.69401008", "b": "0.62989074", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {
+								"mode": "leaveEquipment",
+								"equipItemsById": [ "lantern", "grimblade" ]
+							},
+							"anchor": { "x": 0.507, "y": 0.548 },
+							"size": 0.525,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.75739247", "g": "0.69401008", "b": "0.62989074", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:item_tomb.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.968, "y": 0.217 },
+							"size": 0.294,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.4818404", "g": "0.39932367", "b": "0.31584749", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.41, "y": -0.068 },
+							"size": 4.115,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.86935741", "g": "0.60845327", "b": "0.34451538", "a": "0.56358379" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.481, "y": -0.154 },
+							"size": 0.288,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": -0.456 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crypt.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.492, "y": 0.516 },
+							"size": 0.285,
+							"nameTag": "none",
+							"foot": { "rotate": 0.161 },
+							"color": { "r": "0.62716764", "g": "0.62716764", "b": "0.62716764", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_003~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.093,
+							"padYFraction": 0.055,
+							"widthFraction": 0.89174205,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_003~2_action",
+							"style": "action",
+							"padXFraction": 0.614,
+							"padYFraction": 0.242,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_003~3_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.042000003,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_003~4_action",
+							"style": "action",
+							"padXFraction": 0.076,
+							"padYFraction": 0.198,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_003~5_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.371,
+							"padYFraction": 0.205,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -25.448277, "dY": -5.655173 }
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_003~6_narration",
+							"style": "narration",
+							"padXFraction": 0.083,
+							"padYFraction": 0.035,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-grim",
+							"equipment": {},
+							"size": 0.6667,
+							"head": { "rotate": 13.214 },
+							"color": { "r": "0.82481873", "g": "0.7380237", "b": "0.55668414", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crypt.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.196, "y": 0.46 },
+							"size": 0.335,
+							"nameTag": "none",
+							"foot": { "rotate": 0.161 },
+							"color": { "r": "0.62716764", "g": "0.62716764", "b": "0.62716764", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.35, "y": -0.158 },
+							"size": 4.115,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.86935741", "g": "0.60845327", "b": "0.34451538", "a": "0.56358379" }
+						},
+						{}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_004~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_004~2_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.603,
+							"padYFraction": 0.035,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 9.688786, "dX": -20.735634, "dY": 0.9425288 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "lantern", "grimblade" ]
+							},
+							"anchor": { "x": 0.581, "y": 0.578 },
+							"size": 0.579,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.82481873", "g": "0.7380237", "b": "0.55668414", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.408, "y": -0.253 },
+							"size": 4.115,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.86935741", "g": "0.60845327", "b": "0.34451538", "a": "0.56358379" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crypt.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.152, "y": 0.501 },
+							"size": 0.335,
+							"nameTag": "none",
+							"foot": { "rotate": 0.161 },
+							"color": { "r": "0.62716764", "g": "0.62716764", "b": "0.62716764", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_005~1_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.038,
+							"padYFraction": 0.054,
+							"widthFraction": 0.8310448,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_stoneMagic.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-sad",
+							"equipment": {},
+							"anchor": { "x": 0.367, "y": 0.578 },
+							"size": 0.587,
+							"drawDepth": 1,
+							"head": { "rotate": -12.222, "scaleY": 1 },
+							"color": { "r": "0.82481873", "g": "0.7380237", "b": "0.55668414", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.55, "y": -0.398 },
+							"size": 4.115,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.86935741", "g": "0.60845327", "b": "0.34451538", "a": "0.56358379" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crypt.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.011, "y": 0.522 },
+							"size": 0.285,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"foot": { "rotate": 0.161 },
+							"color": { "r": "0.62716764", "g": "0.62716764", "b": "0.62716764", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.68, "y": -0.057 },
+							"size": 0.288,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": -0.456 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_006~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"padXFraction": 0.285,
+							"padYFraction": 0.013,
+							"widthFraction": 0.8046851,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_006~2_narration",
+							"style": "narration",
+							"padXFraction": 0.564,
+							"padYFraction": 0.319,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_006~3_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.131,
+							"padYFraction": 0.006,
+							"widthFraction": 0.7450746,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_stoneMagic.jpg",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-surprised",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "lantern", "grimblade" ]
+							},
+							"anchor": { "x": 0.628, "y": 0.613 },
+							"size": 0.733,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.75739247", "g": "0.69401008", "b": "0.62989074", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.337, "y": -0.407 },
+							"size": 4.115,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.86935741", "g": "0.60845327", "b": "0.34451538", "a": "0.56358379" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crypt.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.01, "y": 0.529 },
+							"size": 0.285,
+							"drawDepth": 2.5,
+							"nameTag": "none",
+							"foot": { "rotate": 0.161 },
+							"color": { "r": "0.62716764", "g": "0.62716764", "b": "0.62716764", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.942, "y": -0.095 },
+							"size": 0.288,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": -0.456 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_007~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"padXFraction": 0.285,
+							"padYFraction": 0.013,
+							"widthFraction": 0.8046851,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_007~2_narration",
+							"style": "narration",
+							"padXFraction": 0.564,
+							"padYFraction": 0.319,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_007~3_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.088,
+							"padYFraction": 0.067,
+							"widthFraction": 0.7879593,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_007~4_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.245,
+							"padYFraction": 0.08,
+							"widthFraction": 0.5492537,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -33.931038, "dY": -5.655173 }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-sad",
+							"equipment": {},
+							"anchor": { "x": 0.267, "y": 0.625 },
+							"size": 0.781,
+							"nameTag": "none",
+							"head": { "rotate": 7.972 },
+							"color": { "r": "0.75739247", "g": "0.69401008", "b": "0.62989074", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "lantern", "grimblade" ]
+							},
+							"anchor": { "x": 0.795, "y": 0.661 },
+							"size": 0.81247157,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.75739247", "g": "0.69401008", "b": "0.62989074", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.558, "y": -0.42 },
+							"size": 4.115,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.86935741", "g": "0.60845327", "b": "0.34451538", "a": "0.56358379" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.478, "y": -0.164 },
+							"size": 0.288,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": -0.456 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crypt.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.492, "y": 0.516 },
+							"size": 0.285,
+							"nameTag": "none",
+							"foot": { "rotate": 0.161 },
+							"color": { "r": "0.62716764", "g": "0.62716764", "b": "0.62716764", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_008~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.274,
+							"padYFraction": 0.003,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_008~2_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.306,
+							"padYFraction": 0.191,
+							"widthFraction": 0.2871316,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 24.943905, "dX": -11.310346, "dY": 2.8275864 }
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_008~3_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.301,
+							"padYFraction": 0.157,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_crypt.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.761, "y": -0.106 },
+							"size": 0.351,
+							"head": { "rotate": -30.637, "scaleY": -1 },
+							"color": { "r": "0.4818404", "g": "0.39932367", "b": "0.31584749", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-happy",
+							"facing": "left",
+							"equipment": {
+								"equipItemsById": [ "lantern" ]
+							},
+							"focus": "foot",
+							"anchor": { "x": 0.451, "y": -0.024 },
+							"size": 0.407,
+							"drawDepth": 0.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -18.309, "scaleY": 1 },
+							"foot": { "rotate": -9.521 },
+							"color": { "r": "0.66584253", "g": "0.57854223", "b": "0.49022686", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_crypt.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.373,
+							"nameTag": "none",
+							"foot": { "rotate": -4.294 },
+							"color": { "r": "0.62716764", "g": "0.62716764", "b": "0.62716764", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.277, "y": 0.063 },
+							"size": 0.308,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": -11.986 }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.303, "y": -0.188 },
+							"size": 5.203,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.86935741", "g": "0.60845327", "b": "0.34451538", "a": "0.56358379" }
+						},
+						{
+							"assetSpec": "comic:light_starburstSixth.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.008, "y": 0.868 },
+							"drawDepth": 2,
+							"nameTag": "none",
+							"foot": { "rotate": -108.289 },
+							"color": { "r": "0.90030605", "g": "0.93865484", "b": "0.27521795", "a": "0.82080925" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_009~1_hook",
+							"style": "narration",
+							"pointerOwner": "hook",
+							"padXFraction": 0.146,
+							"padYFraction": 0.04,
+							"widthFraction": 0.5922198,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_forestLightBlueOrange.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.64, "y": 0.5 },
+							"size": 0.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 340 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.299, "y": 0.538 },
+							"size": 0.4444,
+							"head": { "rotate": -5.713 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "scenery:ruinsFoothill_pillar2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.082, "y": 0.657 },
+							"size": 0.591,
+							"nameTag": "none",
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "scenery:treeSaplingRocks.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.919, "y": 0.198 },
+							"size": 0.457,
+							"nameTag": "none",
+							"color": { "r": "0.94670719", "g": "0.9954893", "b": "0.98702997", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 1.1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_010~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_010~2_narration",
+							"style": "narration",
+							"padXFraction": 0.37,
+							"padYFraction": 0.074,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_forestLightBlueOrange.jpg",
+					"animation": { "overridePanelOrder": 2 },
+					"actorSlots": [
+						{
+							"role": "hook",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 1.527, "y": 0.531 },
+							"size": 0.954,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 340 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.297, "y": 0.535 },
+							"size": 0.781,
+							"head": { "rotate": -23.939, "scaleY": -1 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "scenery:ruinsFoothill_pillar2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.881, "y": 0.682 },
+							"size": 0.591,
+							"nameTag": "none",
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_011~1_hook",
+							"pointerOwner": "hook"
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_011~2_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.485,
+							"padYFraction": 0.217,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 31.10345, "dY": -15.080461, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_forestLightBlueOrange.jpg",
+					"animation": { "overridePanelOrder": 1 },
+					"actorSlots": [
+						{
+							"role": "hook",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.51, "y": 0.528 },
+							"size": 0.954,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 340 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": -0.72, "y": 0.532 },
+							"size": 0.781,
+							"head": { "rotate": -23.939, "scaleY": -1 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "scenery:ruinsFoothill_pillar2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.136, "y": 0.648 },
+							"size": 0.591,
+							"nameTag": "none",
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_012~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.403,
+							"padYFraction": 0.067,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_012~2_hook2",
+							"pointerOwner": "hook2"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_forestLightBlueOrange.jpg",
+					"mustEndRow": true,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.814, "y": 0.59 },
+							"size": 0.669,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 5.627 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.219, "y": 0.497 },
+							"size": 0.781,
+							"head": { "rotate": -23.939, "scaleY": 1 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "scenery:ruinsFoothill_pillar2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.022, "y": 0.572 },
+							"size": 0.496,
+							"nameTag": "none",
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "comic:treeLeverTrunk.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.046, "y": -0.51 },
+							"size": 0.443,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_013~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.229,
+							"padYFraction": 0.042,
+							"widthFraction": 0.5648517,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_013~2_hook2",
+							"pointerOwner": "hook2",
+							"padXFraction": 0.485,
+							"padYFraction": 0.217,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 31.10345, "dY": -15.080461, "pointerOrientH": "onRight" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_forestLightBlueOrange.jpg",
+					"actorSlots": [
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"size": 0.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -18.97 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestLightBlueOrange.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.846, "y": 0.482 },
+							"size": 0.31,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:treeLeverTrunk.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.748, "y": 0.483 },
+							"size": 0.312,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 1.994 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"role": "hook",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 1.126, "y": 0.537 },
+							"size": 0.438,
+							"drawDepth": 0.5,
+							"head": { "rotate": 330 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "scenery:plantSmall3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.094, "y": 0.044 },
+							"size": 0.245,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.94670719", "g": "0.9954893", "b": "0.98702997", "a": "1" },
+							"colorFilter": { "filterName": "hover" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_014~1_hook2",
+							"pointerOwner": "hook2",
+							"widthFraction": 0.8853475,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hook",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.224, "y": 0.531 },
+							"size": 0.5,
+							"head": { "rotate": 330 },
+							"color": { "r": "0.97727567", "g": "0.98601693", "b": "0.83479232", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.8 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_forestLightBlueOrange.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.332, "y": 0.485 },
+							"size": 0.31,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_015~1_hook",
+							"pointerOwner": "hook"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"size": 0.5882,
+							"drawDepth": 4.75,
+							"color": { "r": "0.72718763", "g": "0.60947865", "b": "0.45200312", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"size": 0.5882,
+							"drawDepth": 4.5,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.72718763", "g": "0.60947865", "b": "0.45200312", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "frame-angry",
+							"focus": "middle",
+							"anchor": { "x": 0.5, "y": 0.2 },
+							"size": 0.25,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"animationSpeed": 0.5
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": -0.053 },
+							"size": 5.061,
+							"nameTag": "none",
+							"color": { "r": "0.94136137", "g": "0.70309019", "b": "0.30719358", "a": "0.68786126" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_016~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.266,
+							"padYFraction": 0.134,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_campfire.jpg",
+					"actorSlots": [
+						{
+							"role": "hook",
+							"form": "frame-happy",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"size": 0.5882,
+							"color": { "r": "0.72718763", "g": "0.60947865", "b": "0.45200312", "a": "1" }
+						},
+						{
+							"role": "hook2",
+							"form": "frame-joy",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"size": 0.5882,
+							"drawDepth": 0,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.72718763", "g": "0.60947865", "b": "0.45200312", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "frame-angry",
+							"focus": "middle",
+							"anchor": { "x": 0.5, "y": 0.2 },
+							"size": 0.25,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"animationSpeed": 0.5
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": -0.053 },
+							"size": 5.061,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.94136137", "g": "0.70309019", "b": "0.30719358", "a": "0.68786126" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_017~1_hook",
+							"pointerOwner": "hook",
+							"padXFraction": 0.221,
+							"padYFraction": 0.08,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "hook/hook_Inhabited_biddingtheGhostGoodbye_resolve",
+							"textKey": "~01~~panel_017~2_hook2",
+							"pointerOwner": "hook2",
+							"location": "topRight",
+							"padXFraction": 0.28000003,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"class": "AddHistory",
+		"target": "hook",
+		"inlineHistory": { "id": "hook_Inhabited_biddingtheGhostGoodbye_resolve.outcome" }
+	},
+	{
+		"class": "UpgradeGear",
+		"query": { "forceItemId": "grimblade" }
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "hookInhabited_ghostHunter",
+			"createEntity": {
+				"query": { "baseTag": "human" }
+			}
+		}
+	]
+}
+}

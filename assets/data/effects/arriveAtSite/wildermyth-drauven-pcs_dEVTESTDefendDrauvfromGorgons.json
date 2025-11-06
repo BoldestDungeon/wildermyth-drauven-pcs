@@ -115,7 +115,7 @@
 								[ "drauvenCustomizationBody" ]
 							]
 						},
-						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" },
+						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "species" },
 						{
 							"class": "CustomizeHero",
 							"target": "npc",
@@ -143,7 +143,7 @@
 								[ "drauvenCustomizationBody" ]
 							]
 						},
-						{ "class": "ApplyTheme", "target": "npc2", "theme": "drauven", "piece": "torso" },
+						{ "class": "ApplyTheme", "target": "npc2", "theme": "drauven", "piece": "species" },
 						{
 							"class": "CustomizeHero",
 							"target": "npc",

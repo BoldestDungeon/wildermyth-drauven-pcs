@@ -15,12 +15,6 @@
 { "modId": "wildermyth-drauven-pcs", "id": "animatedStatue_stone" },
 {
 	"modId": "wildermyth-drauven-pcs",
-	"id": "drauven_guerilla",
-	"effects": [ "monsterDrauvenShred", "hunterSilkstep" ],
-	"boostType": "ABILITY_MISC"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_bloodedFerocityActive",
 	"effects": [
 		"drauven_bloodedFerocityActive",
@@ -28,7 +22,6 @@
 	],
 	"boostType": "ADVANTAGE",
 	"script": "figures.bloodedFerocity",
-	"importance": 1,
 	"showInTooltip": true
 },
 {

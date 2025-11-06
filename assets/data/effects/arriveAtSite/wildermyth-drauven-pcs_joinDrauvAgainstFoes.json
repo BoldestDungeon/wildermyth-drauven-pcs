@@ -122,7 +122,7 @@
 								[ "drauvenCustomizationBody" ]
 							]
 						},
-						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
+						{ "class": "ApplyTheme", "theme": "drauven", "piece": "species" },
 						{
 							"class": "CustomizeHero",
 							"randomizeSlots": [ "zzz_drauven01_Head", "zzz_drauven02_Feathers", "zzz_drauven03_Horns", "zzz_drauven04_Whiskers" ],
@@ -147,7 +147,7 @@
 								[ "drauvenCustomizationBody" ]
 							]
 						},
-						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
+						{ "class": "ApplyTheme", "theme": "drauven", "piece": "species" },
 						{
 							"class": "CustomizeHero",
 							"target": "npc",
@@ -173,7 +173,7 @@
 								[ "drauvenCustomizationBody" ]
 							]
 						},
-						{ "class": "ApplyTheme", "theme": "drauven", "piece": "torso" },
+						{ "class": "ApplyTheme", "theme": "drauven", "piece": "species" },
 						{
 							"class": "CustomizeHero",
 							"target": "npc",

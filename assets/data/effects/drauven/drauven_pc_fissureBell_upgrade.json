@@ -12,8 +12,11 @@
 "ability": {
 	"icon": "lightning",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeDiscus", "mysticRecipeBoneSpear", "drauven_pc_fissureBell" ],
+	"strictlyBetterThan": [ "drauven_pc_fissureBell" ],
 	"priority": "1",
+	"extraUI": {
+		"overrideRangeShown": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach"
+	},
 	"usesElementFromEquippedWeapon": true
 },
 "targets": [
@@ -49,7 +52,7 @@
 		},
 		"relativeTo": "source",
 		"minRange": "0.9",
-		"range": "4.6+self.BONUS_RANGE",
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	},
@@ -73,7 +76,7 @@
 			"excludeSource": true
 		},
 		"relativeTo": "source",
-		"range": "4.6+self.BONUS_RANGE",
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY"
 	},
 	{
@@ -92,7 +95,7 @@
 		},
 		"relativeTo": "source",
 		"notAlreadyMatchedAs": [ "source" ],
-		"range": "4.6+self.BONUS_RANGE",
+		"range": "(4.6+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],

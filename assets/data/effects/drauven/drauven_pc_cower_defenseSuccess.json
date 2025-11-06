@@ -1,0 +1,24 @@
+{
+"id": "drauven_pc_cower_defenseSuccess",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_cower_defenseSuccess",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Adds an aspect that prevents cowering if an incoming attack does not hit",
+	"aiPriority": "2000"
+},
+"type": "DEFENSE_SUCCESS",
+"verb": "MANEUVER",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauven_pc_cower_defenseSuccess", "value": "1", "merge": "max" }
+		]
+	}
+]
+}

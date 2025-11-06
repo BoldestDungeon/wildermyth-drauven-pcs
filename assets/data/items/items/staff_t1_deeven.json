@@ -1,0 +1,30 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"id": "staff_t1_deeven",
+"onlySpawnById": true,
+"tier": 1,
+"category": "staff",
+"uniqueCategory": "staffDeeven",
+"slots": [ "MAIN_HAND", "OFF_HAND" ],
+"aspects": [ "weapon", "melee", "weaponDamage:4", "weaponWield:2", "weaponMaxRange:2.1" ],
+"ownerAspects": [
+	"spellDamageBonus|2|itemTypeDescriptiveNameUpper.staff",
+	"staffBlockBonus|15",
+	"attackRange|0|2.1|melee",
+	"weaponAttack_basicMelee",
+	"voiceStaff"
+],
+"cost": [ "2 wood", "2 magic" ],
+"layers": [
+	{
+		"name": "item_staff_deeven",
+		"scaleX": 0.5,
+		"scaleY": 0.5,
+		"depth": 1,
+		"rigUsage": "rigGeneral",
+		"grip": "mainHand",
+		"inactiveGrip": "highBack",
+		"gripOffset": { "x": 100, "y": 350 }
+	}
+]
+}

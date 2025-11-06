@@ -1,0 +1,114 @@
+{
+"id": "drauven_pc_flight",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven_pc_flight",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid and Bipen (based on Patrick Belanger)",
+	"aiPriority": "(-1+(((COUNT.target2*(30-self.distanceTo.target2))*COUNT.volunteer)*10))+(COUNT.target*3000)",
+	"tags": [ "okToMarkDone", "aiMainAttack", "sneaky" ]
+},
+"type": "ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "flyFriend",
+	"priority": "1",
+	"showInCharacterSheet": false,
+	"extraUI": { "overrideRangeShown": "5", "overrideCooldownShown": "2" },
+	"cooldown": "everyOtherTurn"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"cost": { "class": "ActionPoints", "actionPoints": "free" },
+		"showAnyway": true,
+		"missionFeedback": { "orientTo": "focus" },
+		"aspectValues": [
+			{ "id": "immobilized*", "forbidden": true }
+		]
+	},
+	{
+		"template": "TILE",
+		"missionFeedback": {
+			"rangeFeedback": "FRIENDLY_EFFECT_RANGE",
+			"suggestionFeedback": "FRIENDLY_EFFECT_SUGGESTION",
+			"hoverFeedback": "PATH_TARGET",
+			"applyRoleFootprint": "self",
+			"showMovementFeedback": true
+		},
+		"aiHints": { "foeRange": "1", "foeMaxRange": "5", "fullInferLookAhead": true },
+		"minRange": "0.9",
+		"range": "5.6",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "validMoveEnd",
+		"roleMustFit": "self",
+		"footprintWithinRange": "self"
+	},
+	{
+		"role": "volunteer",
+		"template": "ADJACENT_ALLY",
+		"STUB": "If there's an ally with a move left, bring it closer too",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "0",
+		"range": "1.6"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"STUB": "The tile to drop volunteer at",
+		"choose": "ANY",
+		"chooseAnyMaximum": 1,
+		"missionFeedback": {
+			"hoverScript": "figures.directionalTileHoverHelpful",
+			"hoverFeedback": "FRIENDLY_EFFECT_HOVER",
+			"applyRoleFootprint": "volunteer",
+			"feedbackSource": "volunteer"
+		},
+		"pathFrom": "self",
+		"pathTo": "volunteer",
+		"matchSpecial": "sameRelativePosition",
+		"relativeTo": "focus",
+		"range": "1.6",
+		"tileFilter": "validMoveEnd",
+		"roleMustFit": "volunteer",
+		"relativeToLocation": "focus"
+	}
+],
+"outcomes": [
+	{
+		"class": "AttackRoll",
+		"defender": null,
+		"attackAnimationType": "none",
+		"particles": [
+			{ "script": "smokeBlast", "setPosition": "self", "delay": 0.2 }
+		],
+		"markForFlanking": "never",
+		"always": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "MoveEntity",
+					"target": "self",
+					"directlyToTile": "focus",
+					"animationType": "leap"
+				},
+				{
+					"class": "IfRolesArePresent",
+					"rolesArePresent": [ "volunteer" ],
+					"then": {
+						"class": "DoAll",
+						"outcomes": [
+							{
+								"class": "MoveEntity",
+								"target": "volunteer",
+								"directlyToTile": "targetTile",
+								"animationType": "leap"
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+]
+}

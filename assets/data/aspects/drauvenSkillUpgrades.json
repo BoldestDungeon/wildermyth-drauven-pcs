@@ -1,38 +1,32 @@
 [
-  {
-    "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenSpecial_wingbeat",
-    "boostType": "ABILITY_CLASS",
-    "legacyAbilityChoice": true,
-    "effects": ["drauven_wingbeat"],
-    "lifespan": "all",
-    "info": { "abilityDeckIcon": "fly" }
-  },
-  {
-    "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenSpecial_harass",
-    "boostType": "ABILITY_CLASS",
-    "legacyAbilityChoice": true,
-    "effects": ["drauven_pc_harass"],
-    "lifespan": "all",
-    "info": { "abilityDeckIcon": "peck" }
-  },
-  {
-    "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenSpecial_flight",
-    "boostType": "ABILITY_CLASS",
-    "legacyAbilityChoice": true,
-    "effects": ["flight"],
-    "lifespan": "all",
-    "info": { "abilityDeckIcon": "flyFriend" }
-  },
-  {
-    "modId": "wildermyth-drauven-pcs",
-    "id": "drauvenDeck_hunter_quickblade_move",
-    "boostType": "ABILITY_CLASS",
-    "legacyAbilityChoice": true,
-    "effects": ["drauven_pc_quickblade_move"],
-    "lifespan": "all",
-    "info": { "abilityDeckIcon": "zealousLeap" }
-  },
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSpecial_flight",
+	"effects": [ "drauven_pc_flight" ],
+	"boostType": "ABILITY_MISC",
+	"legacyAbilityChoice": true,
+	"importance": 5,
+	"abilityRequiresOneAspectOf": [ "drauven_pc_hasDrauvenWings" ],
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "flyFriend" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSpecial_harass",
+	"effects": [ "drauven_pc_harass" ],
+	"boostType": "ABILITY_MISC",
+	"legacyAbilityChoice": true,
+	"importance": 5,
+	"abilityRequiresOneAspectOf": [ "drauven_pc_hasDrauvenBird" ],
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "peck" }
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauvenSpecial_wingbeat",
+	"effects": [ "drauven_pc_wingbeat" ],
+	"boostType": "ABILITY_MISC",
+	"legacyAbilityChoice": true,
+	"importance": 5,
+	"abilityRequiresOneAspectOf": [ "drauven_pc_hasDrauvenWings" ],
+	"info": { "abilityDeckUsage": "upgrade", "abilityDeckIcon": "fly" }
+}
 ]

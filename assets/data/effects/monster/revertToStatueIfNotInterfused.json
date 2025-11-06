@@ -142,7 +142,7 @@
 					"class": "ModifyStats",
 					"target": "scenery",
 					"stat": "INJURY",
-					"value": "floor((self.INJURY*(scenery.HEALTH/self.HEALTH)))"
+					"value": "min((scenery.HEALTH-1),(2*self.INJURY))"
 				},
 				{ "class": "Delete" }
 			]

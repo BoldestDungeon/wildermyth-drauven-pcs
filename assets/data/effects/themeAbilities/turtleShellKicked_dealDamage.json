@@ -20,7 +20,7 @@
 		"attackAnimationType": "interaction",
 		"showAbilityName": "always",
 		"stopBlockingTime": "noBlocking",
-    "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+		"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 		"attackerAnimationOverride": "",
 		"defenderAnimationOverride": "figures.slashedQuick",
 		"defenseRollTags": [ "melee" ],
@@ -42,10 +42,9 @@
 						"template": "TILE",
 						"choose": "ONE_FURTHEST",
 						"range": "max(1.9,self.turtleShellKicked_strength)",
+						"lineOfSight": "ANY_SCENERY",
 						"tileFilter": "validMoveEnd",
-            "relativeTo": "self",
-						"roleMustFit": "self",
-						"lineOfSight": "ANY_SCENERY"
+						"roleMustFit": "self"
 					}
 				},
 				{
@@ -116,8 +115,8 @@
 							{
 								"class": "AttackRoll",
 								"stopBlockingTime": "afterHitAnimation",
-                "minimumBlockTime": "20",
-                "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+								"minimumBlockTime": "20",
+								"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 								"attackerAnimationOverride": "",
 								"defenderAnimationOverride": "",
 								"always": {
@@ -171,8 +170,8 @@
 								{
 									"class": "AttackRoll",
 									"stopBlockingTime": "afterHitAnimation",
-                  "minimumBlockTime": "20",
-                  "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+									"minimumBlockTime": "20",
+									"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 									"attackerAnimationOverride": "",
 									"defenderAnimationOverride": "",
 									"always": {
@@ -198,8 +197,8 @@
 								{
 									"class": "AttackRoll",
 									"stopBlockingTime": "afterHitAnimation",
-                  "minimumBlockTime": "0",
-                  "timingOverride": { "swingTime": "0", "beforeAnimationTime": "0", "afterAnimationTime": "0" },
+									"minimumBlockTime": "0",
+									"timingOverride": { "beforeAnimationTime": "0", "swingTime": "0", "afterAnimationTime": "0" },
 									"attackerAnimationOverride": "",
 									"defenderAnimationOverride": "",
 									"always": {
@@ -210,40 +209,50 @@
 										"animationType": "leap"
 									}
 								},
-                {
-                  "class": "Aspects",
-                  "removeAspects": ["turtleShellKicked_strength"]
-                },
+								{
+									"class": "Aspects",
+									"removeAspects": [ "turtleShellKicked_strength" ]
+								},
 								{
 									"class": "MatchTarget",
 									"abilityTarget": {
+										"role": "volunteer2",
 										"template": "ANY",
 										"choose": "ANY",
-										"aspects": ["turtleShellKicked_wasHit"],
-										"role": "volunteer2"
+										"aspects": [ "turtleShellKicked_wasHit" ]
+									}
+								},
+								{
+									"class": "Test",
+									"value": "EXISTS.volunteer2",
+									"threshold": "1",
+									"onPass": {
+										"class": "Aspects",
+										"STUB": "Clearing the 'wasHit' aspect from all units to prepare for the next attack.",
+										"target": "volunteer2",
+										"removeAspects": [ "turtleShellKicked_wasHit" ]
 									}
 								},
 								{
 									"class": "MatchTarget",
 									"abilityTarget": {
+										"role": "volunteer3",
 										"template": "ADJACENT_SCENERY",
-										"range": "50",
 										"choose": "ANY",
-										"aspects": ["turtleShellKicked_wasHit"],
-										"role": "volunteer3"
+										"aspects": [ "scenery", "turtleShellKicked_wasHit" ],
+										"range": "50"
 									}
 								},
 								{
-									"class": "Aspects",
-									"target": "volunteer2",
-									"STUB": "Clearing the 'wasHit' aspect from all units to prepare for the next attack.",
-									"removeAspects": ["turtleShellKicked_wasHit"]
-								},
-								{
-									"class": "Aspects",
-									"target": "volunteer3",
-									"STUB": "Clearing the 'wasHit' aspect from all scenery pieces to prepare for the next attack (Apparently scenery doesn't get scooped up with the 'ANY' role).",
-									"removeAspects": ["turtleShellKicked_wasHit"]
+									"class": "Test",
+									"value": "EXISTS.volunteer3",
+									"threshold": "1",
+									"onPass": {
+										"class": "Aspects",
+										"STUB": "Clearing the 'wasHit' aspect from all scenery pieces to prepare for the next attack (Apparently scenery doesn't get scooped up with the 'ANY' role).",
+										"target": "volunteer3",
+										"removeAspects": [ "turtleShellKicked_wasHit" ]
+									}
 								}
 							]
 						}
@@ -256,7 +265,7 @@
 			"outcomes": [
 				{
 					"class": "Damage",
-					"amount": "(1d3+1+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5))+((((((self.themePiece_turtle_head+self.themePiece_turtle_leftArm)+self.themePiece_turtle_rightArm)+self.themePiece_turtle_leftLeg)+self.themePiece_turtle_rightLeg)+self.themePiece_turtle_tail)*0.75)",
+					"amount": "((1d3+1)+((self.PHYSICAL_DAMAGE_BONUS+self.POTENCY)*0.5))+((((((self.themePiece_turtle_head+self.themePiece_turtle_leftArm)+self.themePiece_turtle_rightArm)+self.themePiece_turtle_leftLeg)+self.themePiece_turtle_rightLeg)+self.themePiece_turtle_tail)*0.75)",
 					"overrideStuntDamage": "3"
 				}
 			]

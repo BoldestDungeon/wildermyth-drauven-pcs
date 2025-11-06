@@ -1,0 +1,1195 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "humanBase.001/impliedAspects",
+		"type": "stringList",
+		"addStrings": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+		"remove": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes" ]
+	},
+	{
+		"jsonPath": "humanBase.001/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	{
+		"jsonPath": "500/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "drauven" ]
+	},
+	{
+		"jsonPath": "501/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "drauven" ]
+	},
+	{
+		"jsonPath": "502/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "drauven" ]
+	},
+	{
+		"jsonPath": "503/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "drauven" ]
+	},
+	{
+		"jsonPath": "504/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "drauven" ]
+	},
+	{
+		"jsonPath": "505/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "drauven" ]
+	},
+	{
+		"jsonPath": "506/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "drauven" ]
+	},
+	{
+		"jsonPath": "507/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "drauven" ]
+	},
+	{
+		"jsonPath": "humanBase.001/impliedAspects",
+		"type": "stringList",
+		"addStrings": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+		"remove": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes" ]
+	},
+	{
+		"jsonPath": "humanBaseTown.002/impliedAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+		"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+	},
+
+	{
+		"jsonPath": "humanBaseTown.002/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.003/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.003/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.004/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.004/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.005/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.005/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.006/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.006/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.007/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.007/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.008/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.008/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.009/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.009/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.010/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.010/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.011/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.011/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.012/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.012/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.013/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.013/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.014/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.014/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.015/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.015/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.016/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.016/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.017/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.017/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.018/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.018/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.019/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.019/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.020/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.020/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.021/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.021/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.022/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.022/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.023/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.023/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.024/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.024/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.025/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.025/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.026/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.026/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.027/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.027/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.028/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.028/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.029/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.029/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.030/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.030/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.031/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.031/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.032/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.032/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.033/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.033/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.034/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.034/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.035/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.035/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.036/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.036/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.037/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.037/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.038/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.038/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.039/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.039/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.040/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.040/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.041/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.041/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.042/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.042/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.043/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.043/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.044/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.044/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.045/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.045/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.046/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.046/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.047/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.047/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.048/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.048/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.050/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.050/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.051/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.051/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.052/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.052/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.054/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.054/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.055/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.055/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.056/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.056/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.057/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.057/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.058/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.058/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.059/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.059/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.060/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.060/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.061/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.061/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.049/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.049/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.053/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.053/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.120/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.120/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.121/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.121/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.180/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.180/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.181/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.181/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.182/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.182/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.183/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.183/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.184/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.184/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.185/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.185/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.186/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.186/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.187/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.187/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.188/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.188/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.189/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.189/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.190/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.190/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.191/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.191/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.192/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.192/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.193/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.193/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.194/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.194/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.195/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.195/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.232/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.232/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.233/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.233/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	},
+	
+{
+	"jsonPath": "humanBaseTown.234/impliedAspects",
+	"type": "stringList",
+	"addJson": { "class": "java.lang.String", "value": "" },
+	"addStrings": ["humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "trueHuman", "usesDifficultyModifiers" ],
+	"remove": ["humanBaseStats", "humanVoice", "herociActions", "basicInterfusionRecipes" ]
+},
+
+	{
+		"jsonPath": "humanBaseTown.234/forbiddenAspects",
+		"type": "stringList",
+		"addStrings": [ "nonhuman" ]
+	}
+]
+}

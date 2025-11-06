@@ -1,0 +1,28 @@
+{
+"id": "drauven_pc_checkDrauvenBird",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven_pc_checkDrauvenBird",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Updates character to use the Drauven rig"
+},
+"type": "ABILITIES_CHANGED",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "drauven_pc" },
+			{ "id": "themePiece_petBirdDrauven_birdDrauven" }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauven_pc_hasDrauvenBird", "value": "1", "merge": "replace" }
+		]
+	}
+]
+}

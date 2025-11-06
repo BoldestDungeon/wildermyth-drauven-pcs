@@ -1,0 +1,29 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "hunterDeck_cripplingStrikes/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "hunterDeck_foxflight/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "hunterDeck_thornfang/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	},
+	{
+		"jsonPath": "hunterGreenhorn_ambush/abilityForbidAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven_pc" ]
+	}
+]
+}

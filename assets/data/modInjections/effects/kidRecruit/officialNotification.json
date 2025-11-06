@@ -1,0 +1,20 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "outcomes",
+		"type": "objectList",
+		"addJson": {
+			"class": "Test",
+			"value": "sponsor.drauven",
+			"threshold": "1",
+			"onPass": {
+				"class": "BranchAbility",
+				"target": "hero",
+				"targetRole": "hero",
+				"branchAbility": "makeHeroDrauven|1"
+			}
+		}
+	}
+]
+}

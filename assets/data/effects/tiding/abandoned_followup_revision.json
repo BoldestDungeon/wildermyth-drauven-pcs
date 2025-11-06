@@ -1,0 +1,213 @@
+{
+"id": "tiding_abandoned_followup_revision",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "tiding/abandoned_followup_revision",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"followupIds": [ "encounter_wilderness_abandoned_revision.success" ]
+},
+"type": "FOLLOWUP_EVENT_OUTCOME",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "heroism",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterScore": 11,
+	"encounterEnabled": true
+},
+"targets": [
+	{ "template": "EVENT" },
+	{
+		"role": "company",
+		"template": "INJECTED_ENTITY",
+		"type": "COMPANY",
+		"choose": "ALL",
+		"injectedRole": "company",
+		"aspects": null
+	},
+	{
+		"role": "overlandTile",
+		"template": "INJECTED_ENTITY",
+		"type": "OVERLAND_TILE",
+		"choose": "ALL",
+		"injectedRole": "overlandTile",
+		"aspects": null
+	},
+	{
+		"role": "party",
+		"template": "INJECTED_ENTITY",
+		"type": "UNIT",
+		"choose": "ALL",
+		"injectedRole": "party",
+		"aspects": null
+	},
+	{
+		"role": "foes",
+		"template": "INJECTED_ENTITY",
+		"type": "LEGEND",
+		"choose": "ALL",
+		"injectedRole": "foes",
+		"aspects": null
+	},
+	{
+		"role": "hero",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ALL",
+		"injectedRole": "hero",
+		"aspects": null
+	},
+	{
+		"role": "hero2",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ALL",
+		"injectedRole": "hero2",
+		"aspects": null
+	},
+	{
+		"role": "hero3",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": "hero3",
+		"aspects": null
+	},
+	{
+		"role": "hero4",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": "hero4",
+		"aspects": null
+	},
+	{
+		"role": "hero5",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": "hero5",
+		"aspects": null
+	},
+	{
+		"role": "hook",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": "hook",
+		"aspects": null
+	},
+	{
+		"role": "lover",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": "lover",
+		"aspects": null
+	},
+	{
+		"role": "subPlot",
+		"template": "INJECTED_ENTITY",
+		"type": "HERO",
+		"choose": "ANY",
+		"injectedRole": "subPlot",
+		"aspects": null
+	},
+	{
+		"role": "npc",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ANY",
+		"injectedRole": "npc",
+		"aspects": null
+	},
+	{
+		"role": "subject",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ANY",
+		"injectedRole": "subject",
+		"aspects": null
+	},
+	{
+		"role": "npc2",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"choose": "ANY",
+		"injectedRole": "npc2",
+		"aspects": null
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_interiorNight.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.215, "y": 0.553 },
+							"head": { "rotate": 14.036 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "tiding/abandoned_followup_revision",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"widthFraction": 0.8937847,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "tiding/abandoned_followup_revision",
+							"textKey": "~01~~panel_001~2_narration",
+							"style": "narration",
+							"padXFraction": 0.198,
+							"padYFraction": 0.802,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "tiding/abandoned_followup_revision",
+							"textKey": "~01~~panel_001~3_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bgAuto": "approachingSite",
+					"bgNighttime": true,
+					"actorSlots": [
+						{
+							"role": "subject",
+							"facing": "left",
+							"equipment": {},
+							"nameTag": "bottomRight",
+							"overrideNameTag": "~01~~panel_002~nameTag_0",
+							"head": { "rotate": 20.556 },
+							"color": { "r": "0.02901475", "g": "0.01693448", "b": "0.20181552", "a": "1" },
+							"overrideNameTagTextSource": "tiding/abandoned_followup_revision"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "tiding/abandoned_followup_revision",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			}
+		]
+	}
+]
+}

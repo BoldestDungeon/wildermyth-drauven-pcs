@@ -1,0 +1,28 @@
+{
+"id": "alsoAddUnlessOther|_ANOTHER_|_FORBIDDEN_",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "misc/alsoAddUnlessOther",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "Ironskink",
+	"STUB": "When this aspect is added, add ANOTHER aspect unless the FORBIDDEN aspect is on this entity"
+},
+"type": "ASPECT_ADDED",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "_FORBIDDEN_", "forbidden": true }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"target": "self",
+		"addAspects": [
+			{ "id": "_ANOTHER_", "value": "1" }
+		]
+	}
+]
+}

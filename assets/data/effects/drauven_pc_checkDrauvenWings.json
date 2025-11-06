@@ -1,0 +1,28 @@
+{
+"id": "drauven_pc_checkDrauvenWings",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven_pc_checkDrauvenWings",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid",
+	"STUB": "Updates character to use the Drauven rig"
+},
+"type": "ABILITIES_CHANGED",
+"targets": [
+	{
+		"template": "SELF",
+		"aspectValues": [
+			{ "id": "drauven_pc" },
+			{ "id": "themePiece_drauvenWings_wings" }
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "drauven_pc_hasDrauvenWings", "value": "1", "merge": "replace" }
+		]
+	}
+]
+}

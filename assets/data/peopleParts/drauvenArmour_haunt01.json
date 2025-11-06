@@ -1,7 +1,7 @@
 {
 	"type": "extra",
 	"extraSlot": "zzz_drauven06_Armour",
-	"requireAspects": ["themePiece_drauven_torso", "hunter"],
+	"requireAspects": ["theme_drauven", "hunter"],
 
 	"groups": [
 		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
@@ -23,7 +23,7 @@
 		{
 			"name": "OutfitVariation_Feathersteel_Straps_Untinted",
 			"depth": 1340,
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "slotFilled_AUGMENT_STRAP"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes", "slotFilled_AUGMENT_STRAP"]
 		},
 
 		{

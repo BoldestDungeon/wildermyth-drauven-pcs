@@ -1,0 +1,22 @@
+{
+"id": "onRemoveAddAnotherValue|_ANOTHER_|_VALUE_",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "onRemoveAddAnotherValue",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid (based on Patrick Belanger)",
+	"STUB": "Add a value of another aspect when the parent aspect is removed"
+},
+"type": "ASPECT_REMOVED",
+"targets": [
+	{ "template": "SELF" }
+],
+"outcomes": [
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "_ANOTHER_", "value": "_VALUE_" }
+		]
+	}
+]
+}

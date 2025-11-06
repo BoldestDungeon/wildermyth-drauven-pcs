@@ -5,6 +5,16 @@
 },
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_hasDrauvenBird",
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "drauven_pc_hasDrauvenWings",
+	"importance": -1
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_lightningRod_enemyHits",
 	"importance": -1
 },
@@ -30,7 +40,21 @@
 		"alsoAdd|hidden",
 		"alsoRemove|hidden"
 	],
-	"boostType": "THEME"
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0.5
+},
+{
+	"modId": "wildermyth-drauven-pcs",
+	"id": "turtleGuarding_stayHidden",
+	"effects": [
+		"removeAtStartOfTurn",
+		"removeOnDeath",
+		"otherAspectPreventsThisAspect|dead",
+		"onAddedRemoveAllActionPoints",
+		"alsoAdd|hidden"
+	],
+	"boostType": "ADVANTAGE",
+	"removedImportance": 0.5
 },
 {
 	"modId": "wildermyth-drauven-pcs",

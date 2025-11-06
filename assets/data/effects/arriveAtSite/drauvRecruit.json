@@ -1508,7 +1508,7 @@
 				"additionalOutcome": {
 					"class": "DoAll",
 					"outcomes": [
-						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "torso" },
+						{ "class": "ApplyTheme", "target": "npc", "theme": "drauven", "piece": "species" },
 						{
 							"class": "CustomizeHero",
 							"target": "npc",

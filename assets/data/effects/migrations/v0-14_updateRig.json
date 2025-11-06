@@ -33,7 +33,7 @@
 					"specificTheme": "drauven",
 					"specificPiece": "torso"
 				},
-				{ "class": "ApplyTheme", "target": "self", "theme": "drauven", "piece": "torso" }
+				{ "class": "ApplyTheme", "target": "self", "theme": "drauven", "piece": "species" }
 			]
 		}
 	},
@@ -53,8 +53,6 @@
 						"id": "removeHumanSkinAspects",
 						"showInSummary": false,
 						"removeAspects": [
-							"humanSkin_naturalLeftHand",
-							"humanSkin_naturalRightHand",
 							"humanSkin_naturalHead"
 						]
 					}

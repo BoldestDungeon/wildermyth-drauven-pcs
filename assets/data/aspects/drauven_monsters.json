@@ -1,6 +1,11 @@
 [
 {
 	"modId": "wildermyth-drauven-pcs",
+	"id": "dragonBloodUpgradeTarget",
+	"boostType": "ADVANTAGE"
+},
+{
+	"modId": "wildermyth-drauven-pcs",
 	"id": "drauven_pc_BirdDebuff|_ENTITY_",
 	"parameters": [
 		{ "replace": "_ENTITY_", "isEntity": true }
@@ -23,17 +28,13 @@
 		{ "replace": "_ENTITY_", "isEntity": true }
 	],
 	"effects": [ "removeOnDeath", "drauven_pc_birdRecall|_ENTITY_" ],
-	"boostType": "ADVANTAGE"
-},
-{
-	"modId": "wildermyth-drauven-pcs",
-	"id": "dragonBloodUpgradeTarget",
-	"lifespan": "mission"
+	"boostType": "ADVANTAGE",
+	"invalidatesSkin": true
 },
 {
 	"modId": "wildermyth-drauven-pcs",
 	"id": "terrorbirdMaturityDate",
-	"lifespan": "all",
-	"importance": -1
+	"importance": -1,
+	"lifespan": "all"
 }
 ]

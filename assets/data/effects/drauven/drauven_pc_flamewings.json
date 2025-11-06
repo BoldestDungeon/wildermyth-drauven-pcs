@@ -12,7 +12,6 @@
 "ability": {
 	"icon": "fireleash",
 	"category": "attackAbility",
-	"strictlyBetterThan": [ "mysticRecipeFireleash", "mysticRecipeFlareLamp", "mysticRecipeStealFire" ],
 	"priority": "3",
 	"usesElementFromEquippedWeapon": true
 },
@@ -45,9 +44,9 @@
 		},
 		"relativeTo": "source",
 		"minRange": "0.9",
-		"range": "3.7+self.BONUS_RANGE",
+		"range": "(3.7+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY",
-		"tileFilter": "floorForbidAlly"
+		"tileFilter": "floor"
 	},
 	{
 		"role": "targetTile",
@@ -58,8 +57,8 @@
 		"manifold": {
 			"from": "source",
 			"to": "focus",
-			"thickness": [ "1", "5.1+(self.BONUS_RANGE/2)" ],
-			"distanceInDirection": "3.7+self.BONUS_RANGE"
+			"thickness": [ "1", "5.1+((self.BONUS_RANGE+self.totalValue.interfusionReach)/2)" ],
+			"distanceInDirection": "(3.7+self.BONUS_RANGE)+self.totalValue.interfusionReach"
 		},
 		"relativeTo": "source",
 		"range": null,
@@ -68,7 +67,7 @@
 	},
 	{
 		"template": "UNIT_AT_TILE",
-		"choose": "ALL",
+		"choose": "ANY",
 		"missionFeedback": {
 			"hoverScript": "figures.attackHovered",
 			"rangeFeedback": "ATTACK_SUGGESTION_FILL",
@@ -78,11 +77,11 @@
 		"manifold": {
 			"from": "source",
 			"to": "focus",
-			"thickness": [ "1", "5.1+(self.BONUS_RANGE/2)" ],
-			"distanceInDirection": "3.7+self.BONUS_RANGE"
+			"thickness": [ "1", "5.1+((self.BONUS_RANGE+self.totalValue.interfusionReach)/2)" ],
+			"distanceInDirection": "(3.7+self.BONUS_RANGE)+self.totalValue.interfusionReach"
 		},
 		"relativeTo": "source",
-		"range": "3.7+self.BONUS_RANGE",
+		"range": "(3.7+self.BONUS_RANGE)+self.totalValue.interfusionReach",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	}

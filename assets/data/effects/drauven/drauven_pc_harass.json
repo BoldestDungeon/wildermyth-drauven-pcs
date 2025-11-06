@@ -9,7 +9,12 @@
 },
 "type": "ABILITY",
 "verb": "ATTACK",
-"ability": { "icon": "peck", "priority": "1", "showDescriptionInTooltip": true },
+"ability": {
+	"icon": "peck",
+	"priority": "1",
+	"extraUI": { "overrideRangeShown": "5+self.BONUS_RANGE" },
+	"showDescriptionInTooltip": true
+},
 "targets": [
 	{
 		"template": "SELF",
@@ -35,7 +40,7 @@
 		"aspectValues": [
 			{ "id": "drauvenBirdDebuff*", "forbidden": true }
 		],
-		"range": "5",
+		"range": "5+self.BONUS_RANGE",
 		"lineOfSight": "TERRAIN_ONLY"
 	}
 ],

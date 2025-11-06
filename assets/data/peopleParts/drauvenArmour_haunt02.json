@@ -1,7 +1,7 @@
 {
 	"type": "extra",
 	"extraSlot": "zzz_drauven06_Armour",
-	"requireAspects": ["themePiece_drauven_torso", "hunter"],
+	"requireAspects": ["theme_drauven", "hunter"],
 
 	"groups": [
 		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
@@ -14,13 +14,13 @@
 			"name": "OutfitVariation_Shouldersash_Back_Secondary",
 			"tint": "secondary",
 			"depth": 500,
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Back_Texture_Secondary",
 			"tint": "secondary",
 			"depth": 501,
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Back_Untinted",
@@ -30,24 +30,24 @@
 			"name": "OutfitVariation_Shouldersash_Front_Secondary",
 			"tint": "secondary",
 			"depth": 1340,
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Front_Texture_Secondary",
 			"tint": "secondary",
 			"depth": 1341,
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Front_Highlight_Secondary",
 			"tint": "secondary",
 			"depth": 1342,
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Front_Untinted",
 			"depth": 1343,
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"]
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"]
 		},
 		{
 			"name": "OutfitVariation_Shouldersash_Strap_Untinted",
@@ -72,7 +72,8 @@
 			"name": "outfitVariation2_armR_2hand",
 			"tint": "secondary", "tintAmount": 0.6,
 			"depth": 8001,
-			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm", "slotFilled_AUGMENT_BRACELET"]
+			"ifNoOwnerAspects": ["farmer", "drauvenSkin_suppressClothes", "themeSlotFilled_rightArm", "slotFilled_AUGMENT_BRACELET"],
+			"rigMode": "twoHanded"
 		}
 	]
 }

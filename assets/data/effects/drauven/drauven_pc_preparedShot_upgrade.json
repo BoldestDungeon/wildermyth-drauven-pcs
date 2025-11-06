@@ -1,0 +1,175 @@
+{
+"id": "drauven_pc_preparedShot_upgrade",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "drauven/drauven_pc_preparedShot_upgrade",
+	"modId": "wildermyth-drauven-pcs",
+	"author": "psionusoid & Bipen (based on Patrick Belanger)",
+	"tags": [ "sneaky" ]
+},
+"type": "ABILITY",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "ambush",
+	"category": "crafting",
+	"strictlyBetterThan": [ "waitEndTurn", "preparedShot", "drauven_pc_preparedShot" ],
+	"priority": "-100",
+	"overrideOverlayType": "endTurn"
+},
+"targets": [
+	{
+		"template": "SELF",
+		"missionFeedback": { "orientTo": "focus" }
+	},
+	{
+		"template": "RANGED_WEAPON",
+		"choose": "ANY",
+		"aspects": [ "weapon", "ranged", "MAIN_HAND" ]
+	},
+	{
+		"role": "volunteer",
+		"template": "TILE",
+		"STUB": "The weird minRange here is specifically to allow melee theme attacks, which will often need a minRange of 0",
+		"choose": "ANY",
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "(self.MAX_RANGED_ATTACK_RANGE-1)+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES",
+		"tileFilter": "floor"
+	},
+	{
+		"role": "volunteer2",
+		"template": "TILE",
+		"STUB": "Special case for throughshot, to allow putting the aim behind enemies. Kinda ugly, and doesn't work with theme AOE attacks.",
+		"choose": "ANY",
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "(self.MAX_RANGED_ATTACK_RANGE-1)+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "self.hunterDeck_throughShot",
+		"b": "1"
+	},
+	{
+		"role": "subPlot",
+		"template": "TILE",
+		"STUB": "Special case for no-Line-of-Sight theme attacks (currently non-functional)",
+		"choose": "ANY",
+		"minRange": "min(0.9,(self.MAX_RANGED_NO_LOS_ATTACK_RANGE-1.7))",
+		"range": "(self.MAX_RANGED_NO_LOS_ATTACK_RANGE-1)+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"tileFilter": "floor",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "self.hasRangedNoLOS",
+		"b": "1"
+	},
+	{
+		"template": "TILE",
+		"missionFeedback": { "suggestionFeedback": "FRIENDLY_EFFECT_RANGE_BORDER" },
+		"fromRoles": [ "volunteer", "volunteer2", "subPlot" ],
+		"range": null
+	},
+	{
+		"role": "sourceTile",
+		"template": "TILE",
+		"choose": "ALL",
+		"relativeTo": "focus",
+		"range": "1.3+(0.3*self.hunterGreenhorn_ambush)",
+		"lineOfSight": null,
+		"tileFilter": "floorForbidAlly"
+	},
+	{
+		"role": "hook",
+		"template": "TILE",
+		"choose": "ANY",
+		"fromRoles": [ "sourceTile" ],
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "self.MAX_RANGED_ATTACK_RANGE+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	},
+	{
+		"role": "hook2",
+		"template": "TILE",
+		"STUB": "Special case for throughshot, to allow putting the aim behind enemies. Kinda ugly, and doesn't work with theme AOE attacks.",
+		"choose": "ANY",
+		"fromRoles": [ "sourceTile" ],
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "self.MAX_RANGED_ATTACK_RANGE+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "self.hunterDeck_throughShot",
+		"b": "1"
+	},
+	{
+		"role": "targetTile",
+		"template": "TILE",
+		"choose": "ALL",
+		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE", "hoverFeedback": "AMBUSH_HOVER" },
+		"fromRoles": [ "hook", "hook2" ],
+		"range": null
+	},
+	{
+		"role": "target",
+		"template": "TILE",
+		"STUB": "Focus tile for second region for Prepared Shot+",
+		"showAnyway": true,
+		"fromRoles": [ "volunteer", "volunteer2" ],
+		"range": null
+	},
+	{
+		"role": "site",
+		"template": "TILE",
+		"choose": "ALL",
+		"relativeTo": "target",
+		"range": "1.3+(0.3*self.hunterGreenhorn_ambush)",
+		"lineOfSight": null,
+		"tileFilter": "floorForbidAlly"
+	},
+	{
+		"role": "site2",
+		"template": "TILE",
+		"choose": "ANY",
+		"fromRoles": [ "site" ],
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "self.MAX_RANGED_ATTACK_RANGE+self.BONUS_RANGE",
+		"lineOfSight": "LIVE_ENEMIES"
+	},
+	{
+		"role": "site3",
+		"template": "TILE",
+		"STUB": "Special case for throughshot, to allow putting the aim behind enemies. Kinda ugly, and doesn't work with theme AOE attacks.",
+		"choose": "ANY",
+		"fromRoles": [ "site" ],
+		"minRange": "min(0.9,(self.MAX_RANGED_ATTACK_RANGE-1.7))",
+		"range": "self.MAX_RANGED_ATTACK_RANGE+self.BONUS_RANGE",
+		"lineOfSight": "TERRAIN_ONLY",
+		"test": "GREATER_THAN_OR_EQUAL_TO",
+		"a": "self.hunterDeck_throughShot",
+		"b": "1"
+	},
+	{
+		"role": "otherSite",
+		"template": "TILE",
+		"choose": "ALL",
+		"missionFeedback": { "rangeFeedback": "FRIENDLY_EFFECT_RANGE", "hoverFeedback": "AMBUSH_HOVER" },
+		"fromRoles": [ "site2", "site3" ],
+		"range": null
+	}
+],
+"outcomes": [
+	{ "class": "Animate", "script": "figures.endTurn" },
+	{ "class": "ActionPoints", "actionPoints": "all" },
+	{
+		"class": "Aspects",
+		"addAspects": [
+			{ "id": "doneWithTurn", "value": "1" },
+			{
+				"id": "drauven_pc_preparedShot_upgradeBonusDamage",
+				"value": "1",
+				"merge": "replace"
+			},
+			{ "id": "drauven_pc_hasPreparedShot|1", "value": "1", "atTiles": "targetTile" },
+			{ "id": "drauven_pc_hasPreparedShot|2", "value": "1", "atTiles": "otherSite" }
+		]
+	}
+]
+}

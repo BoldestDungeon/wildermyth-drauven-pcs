@@ -1,7 +1,7 @@
 {
 	"type": "extra",
 	"extraSlot": "zzz_drauven06_Armour",
-	"requireAspects": ["themePiece_drauven_torso", "warrior"],
+	"requireAspects": ["theme_drauven", "warrior"],
 
 	"groups": [
 		{"groupIndex": 0, "male": true, "maleWeight": 1, "female": true, "femaleWeight": 1},
@@ -21,7 +21,7 @@
 			"name": "armor_Upper_Primary",
 			"tint": "primary",
 			"ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 3005
 		},
 		{
@@ -29,7 +29,7 @@
 			"tint": "primary",
 			"tintAmount": 0.5,
 			"ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 3006
 		},
 		{
@@ -37,13 +37,13 @@
 			"tint": "primary",
 			"tintAmount": 0.3,
 			"ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 3007
 		},
 		{
 			"name": "armor_Upper_Untinted",
 			"ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 3008        
 		},
 
@@ -52,7 +52,7 @@
 			"name": "armor_Upper_Tuck_Primary",
 			"tint": "primary",
 			"ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 1455
 		},
 		{
@@ -60,7 +60,7 @@
 			"tint": "primary",
 			"tintAmount": 0.5,
 			"ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 1456
 		},
 		{
@@ -68,13 +68,13 @@
 			"tint": "primary",
 			"tintAmount": 0.3,
 			"ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 1457
 		},
 		{
 			"name": "armor_Upper_Tuck_Untinted",
 			"ifOwnerAspects": ["rigOverride|Drauven", "warrior"],
-			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes"],
+			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 1458        
 		}
 	]

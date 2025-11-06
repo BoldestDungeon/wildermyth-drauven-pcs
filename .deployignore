@@ -1,0 +1,15 @@
+# # # Use rsync EXCLUDE syntax # # #
+
+######################
+# Development Assets #
+######################
+# Photoshop Development Assets
+*.psd
+
+##########
+# GITHUB #
+##########
+# Discord Bot Avatar
+discordBotAvatar.png
+# Github Bot Avatar
+GitHubBotAvatar.png

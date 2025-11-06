@@ -124,7 +124,13 @@
 				{
 					"class": "ModifyStats",
 					"target": "scenery",
-					"value": "((2+floor(((self.POTENCY+self.SPELL_DAMAGE)/2)))+ceil(((source.HEALTH-source.INJURY)/2)))-HEALTH"
+					"value": "((2+floor(((self.POTENCY+self.SPELL_DAMAGE)/2)))+ceil((source.HEALTH/2)))-HEALTH"
+				},
+				{
+					"class": "ModifyStats",
+					"target": "scenery",
+					"stat": "INJURY",
+					"value": "ceil((source.INJURY/2))"
 				},
 				{
 					"class": "ModifyStats",
@@ -151,6 +157,13 @@
 					"value": "ceil(((self.POTENCY+self.SPELL_DAMAGE)/2))"
 				},
 				{ "class": "ModifyStats", "target": "scenery", "stat": "ACTIONS", "value": "2" },
+				{
+					"class": "Aspects",
+					"target": "scenery",
+					"addAspects": [
+						{ "id": "tempHP|20|SceneryProtector", "value": "ceil((source.TEMP_HP/2))" }
+					]
+				},
 				{ "class": "Delete", "target": "source" },
 				{
 					"class": "Animate",

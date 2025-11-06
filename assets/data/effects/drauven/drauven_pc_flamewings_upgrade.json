@@ -50,9 +50,9 @@
 		},
 		"relativeTo": "source",
 		"minRange": "0.9",
-		"range": "(3.7+self.BONUS_RANGE)+self.drauvenDeck_mystic_skysong_upgrade",
+		"range": "((3.7+self.BONUS_RANGE)+self.totalValue.interfusionReach)+self.drauvenDeck_mystic_skysong_upgrade",
 		"lineOfSight": "TERRAIN_ONLY",
-		"tileFilter": "floorForbidAlly"
+		"tileFilter": "floor"
 	},
 	{
 		"role": "targetTile",
@@ -63,8 +63,11 @@
 		"manifold": {
 			"from": "source",
 			"to": "focus",
-			"thickness": [ "1", "5.1+((self.BONUS_RANGE+self.drauvenDeck_mystic_skysong_upgrade)/2)" ],
-			"distanceInDirection": "(3.7+self.BONUS_RANGE)+self.drauvenDeck_mystic_skysong_upgrade"
+			"thickness": [
+				"1",
+				"5.1+(((self.BONUS_RANGE+self.totalValue.interfusionReach)+self.drauvenDeck_mystic_skysong_upgrade)/2)"
+			],
+			"distanceInDirection": "((3.7+self.BONUS_RANGE)+self.totalValue.interfusionReach)+self.drauvenDeck_mystic_skysong_upgrade"
 		},
 		"relativeTo": "source",
 		"range": null,
@@ -73,7 +76,7 @@
 	},
 	{
 		"template": "UNIT_AT_TILE",
-		"choose": "ALL",
+		"choose": "ANY",
 		"missionFeedback": {
 			"hoverScript": "figures.attackHovered",
 			"rangeFeedback": "ATTACK_SUGGESTION_FILL",
@@ -83,11 +86,14 @@
 		"manifold": {
 			"from": "source",
 			"to": "focus",
-			"thickness": [ "1", "5.1+((self.BONUS_RANGE+self.drauvenDeck_mystic_skysong_upgrade)/2)" ],
-			"distanceInDirection": "(3.7+self.BONUS_RANGE)+self.drauvenDeck_mystic_skysong_upgrade"
+			"thickness": [
+				"1",
+				"5.1+(((self.BONUS_RANGE+self.totalValue.interfusionReach)+self.drauvenDeck_mystic_skysong_upgrade)/2)"
+			],
+			"distanceInDirection": "((3.7+self.BONUS_RANGE)+self.totalValue.interfusionReach)+self.drauvenDeck_mystic_skysong_upgrade"
 		},
 		"relativeTo": "source",
-		"range": "(3.7+self.BONUS_RANGE)+self.drauvenDeck_mystic_skysong_upgrade",
+		"range": "((3.7+self.BONUS_RANGE)+self.totalValue.interfusionReach)+self.drauvenDeck_mystic_skysong_upgrade",
 		"lineOfSight": "TERRAIN_ONLY",
 		"tileFilter": "floor"
 	}
