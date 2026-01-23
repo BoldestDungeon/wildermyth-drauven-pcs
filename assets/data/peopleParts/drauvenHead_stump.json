@@ -16,7 +16,7 @@
       "depth": 4000,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_skeleton_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
     },
     {
       "name": "replaceHead_Stump_Texture_Skin",
@@ -24,42 +24,42 @@
       "depth": 4001,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_skeleton_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
     },
     {
       "name": "replaceHead_Stump_Base_Untinted",
-      "depth": 4002,
+      "depth": 4101,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_skeleton_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
     },
     {
       "name": "replaceHead_Stump_Eye_$face_Primary",
 			"tint": "primary",
 			"expandFaceToExpressions": true,
-      "depth": 4003,
+      "depth": 4100,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_skeleton_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
 			"facialExpression": ["neutral", "interested", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming"]
     },
     {
       "name": "replaceHead_Stump_Eyeglow_$face_Primary",
 			"tint": "primary", "tintAmount": 0.5,
 			"expandFaceToExpressions": true,
-      "depth": 4004,
+      "depth": 4101,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_skeleton_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
 			"facialExpression": ["neutral", "interested", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming"]
     },
     {
       "name": "replaceHead_Stump_$face_Untinted",
 			"expandFaceToExpressions": true,
-      "depth": 4005,
+      "depth": 4102,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_skeleton_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
     }
 	]
 }

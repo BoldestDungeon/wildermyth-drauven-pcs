@@ -1,0 +1,22 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "outcomes/[1]/onPass/outcomes/[0]",
+		"type": "object",
+		"addJson": {
+			"class": "Test",
+			"value": "target.drauvenDeck_mystic_skysong",
+			"threshold": "1",
+			"onPass": {
+				"class": "Aspects",
+				"target": "self",
+				"addAspects": [
+					{ "id": "interfusedFire_elementalist", "value": "1" }
+				]
+			}
+		},
+		"listBehavior": "insert"
+	}
+]
+}
