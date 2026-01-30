@@ -71,7 +71,7 @@ jobs:
   
             [Full Details](${{ github.event.release.html_url || 'https://github.com/BoldestDungeon/wildermyth-drauven-pcs/releases' }})
           include_image: true
-          avatar_url: https://raw.githubusercontent.com/BoldestDungeon/wildermyth-drauven-pcs/refs/heads/main/GitHubBotAvatar.png
+          avatar_url: https://raw.githubusercontent.com/BoldestDungeon/wildermyth-drauven-pcs/refs/heads/main/.develop/GitHubBotAvatar.png
           username: Trava
 
   notify-failure:
@@ -91,6 +91,6 @@ jobs:
 
             Please check the GitHub Actions logs for more details.
           include_image: true
-          avatar_url: https://raw.githubusercontent.com/BoldestDungeon/wildermyth-drauven-pcs/refs/heads/main/GitHubBotAvatar.png
+          avatar_url: https://raw.githubusercontent.com/BoldestDungeon/wildermyth-drauven-pcs/refs/heads/main/.develop/GitHubBotAvatar.png
           colour: "#F44336"
           username: Trava
