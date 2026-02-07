@@ -1,0 +1,11 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "forbidOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven" ]
+	}
+]
+}
