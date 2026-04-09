@@ -1,0 +1,3045 @@
+{
+"id": "encounter_heroesArriveAtSite_shyandtheShadow_branch",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+	"author": "Douglas Austin, Franek Szoblik, & Goglina",
+	"declaredEncounterResults": []
+},
+"type": "BRANCH",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"musicOverride": "Music/Comics - Travelling"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "injectedRole": "company" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{ "template": "INJECTED_HERO" },
+	{ "role": "hero2", "template": "INJECTED_HERO", "injectedRole": "hero2" },
+	{
+		"role": "hero3",
+		"template": "INJECTED_HERO",
+		"choose": "ANY",
+		"injectedRole": "hero3"
+	},
+	{
+		"role": "hero4",
+		"template": "INJECTED_HERO",
+		"choose": "ANY",
+		"injectedRole": "hero4"
+	},
+	{
+		"role": "hero5",
+		"template": "INJECTED_HERO",
+		"choose": "ANY",
+		"injectedRole": "hero5"
+	},
+	{
+		"role": "lover",
+		"template": "INJECTED_HERO",
+		"choose": "ANY",
+		"injectedRole": "lover"
+	},
+	{
+		"role": "folk1",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"injectedRole": "folk1"
+	},
+	{
+		"role": "npc",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"injectedRole": "npc"
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"size": 0.3402,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.062, "y": 0.459 },
+							"size": 0.6482,
+							"drawDepth": 0,
+							"head": { "rotate": 11.265, "scaleY": 1 },
+							"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bush2a.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.893, "y": 0.078 },
+							"size": 0.3374,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 92.077 },
+							"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill4.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.267, "y": 0.107 },
+							"size": 0.4551,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": -4.056 },
+							"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.115, "y": 0.208 },
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.863, "y": 0.921 },
+							"size": 0.3325,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.142, "y": 0.11 },
+							"size": 0.3325,
+							"drawDepth": 0.25,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+							"padXFraction": 0.788,
+							"padYFraction": 0.093,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 2, "overridePanelDrawDepth": 1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.172, "y": 0.484 },
+							"size": 0.3402,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 1.587, "y": 0.45 },
+							"size": 0.4254,
+							"drawDepth": 0.75,
+							"head": { "rotate": -22.578, "scaleY": -1 },
+							"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"equipment": {},
+							"anchor": { "x": 0.136, "y": 0.525 },
+							"size": 0.667,
+							"drawDepth": 0,
+							"head": { "rotate": -0.555, "scaleY": 1 },
+							"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bush2a.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.973, "y": 0.062 },
+							"size": 0.3374,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 92.077 },
+							"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill4.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.697, "y": 0.091 },
+							"size": 0.4551,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": -3.788 },
+							"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.387, "y": 0.192 },
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.37, "y": 0.83 },
+							"size": 0.3325,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.923, "y": -0.041 },
+							"size": 0.3325,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_002~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+							"padXFraction": 0.788,
+							"padYFraction": 0.093,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_002~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.116,
+							"padYFraction": 0.058,
+							"widthFraction": 0.85731345,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -5.7106013, "pointerOrientH": "onLeft" }
+						},
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_002~3_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomLeft",
+							"padXFraction": 0.341,
+							"padYFraction": 0.099,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"animation": { "overridePanelOrder": 1, "overridePanelDrawDepth": -1 },
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.153, "y": 0.481 },
+							"size": 0.3402,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.568, "y": 0.447 },
+							"size": 0.4254,
+							"drawDepth": 0.75,
+							"head": { "rotate": -22.578, "scaleY": -1 },
+							"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bush2a.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.954, "y": 0.059 },
+							"size": 0.3374,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 92.077 },
+							"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill4.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.322, "y": 0.088 },
+							"size": 0.4551,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.632, "y": 0.189 },
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.351, "y": 0.827 },
+							"size": 0.3325,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.096, "y": -0.044 },
+							"size": 0.3325,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_003~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+							"padXFraction": 0.788,
+							"padYFraction": 0.093,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_003~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.116,
+							"padYFraction": 0.058,
+							"widthFraction": 0.85731345,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": -5.7106013, "pointerOrientH": "onLeft" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.576, "y": 0.468 },
+							"size": 0.3402,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.779, "y": 0.434 },
+							"size": 0.4254,
+							"drawDepth": 0.75,
+							"head": { "rotate": 23.279, "scaleY": 1 },
+							"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.169, "y": 0.547 },
+							"size": 0.667,
+							"drawDepth": 0,
+							"head": { "rotate": -24.166, "scaleY": -1 },
+							"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bush2a.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.969, "y": 0.046 },
+							"size": 0.3374,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 92.077 },
+							"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill4.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.343, "y": 0.075 },
+							"size": 0.4551,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": -5.865 },
+							"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.191, "y": 0.176 },
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.673, "y": 0.814 },
+							"size": 0.3325,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.454, "y": -0.057 },
+							"size": 0.3325,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_004~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+							"padXFraction": 0.788,
+							"padYFraction": 0.093,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_004~2_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.04,
+							"padYFraction": 0.154,
+							"widthFraction": 0.85731345,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 15.400177, "dX": 3.7701151, "dY": -14.137932 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_004~3_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomLeft",
+							"padXFraction": 0.341,
+							"padYFraction": 0.099,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.576, "y": 0.468 },
+							"size": 0.3402,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"anchor": { "x": 0.779, "y": 0.434 },
+							"size": 0.4254,
+							"drawDepth": 0.75,
+							"head": { "rotate": -25.546, "scaleY": -1 },
+							"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.169, "y": 0.547 },
+							"size": 0.667,
+							"drawDepth": 0,
+							"head": { "rotate": -14.222, "scaleY": 1 },
+							"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bush2a.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.969, "y": 0.046 },
+							"size": 0.3374,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": 92.077 },
+							"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockFoothill4.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.35, "y": 0.04 },
+							"size": 0.4551,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": -6.072 },
+							"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.191, "y": 0.176 },
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.673, "y": 0.814 },
+							"size": 0.3325,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.454, "y": -0.057 },
+							"size": 0.3325,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:actionLines_arcLong.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.261, "y": 0.117 },
+							"size": 0.1236,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"foot": { "rotate": 47.724 },
+							"color": { "r": "0.6069364", "g": "0.6069364", "b": "0.6069364", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:catBlackStand.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.324, "y": 0.305 },
+							"size": 0.1236,
+							"drawDepth": 0.25,
+							"nameTag": "none",
+							"foot": { "rotate": -12.497 },
+							"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_005~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+							"padXFraction": 0.788,
+							"padYFraction": 0.093,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_005~2_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.04,
+							"padYFraction": 0.154,
+							"widthFraction": 0.85731345,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "rotate": 15.400177, "dX": 3.7701151, "dY": -14.137932 }
+						},
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_005~3_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomLeft",
+							"padXFraction": 0.341,
+							"padYFraction": 0.099,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+							"textKey": "~01~prompt~panel_005~4_action",
+							"style": "action",
+							"padXFraction": 0.274,
+							"padYFraction": 0.497,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 1.352, "y": 0.504 },
+									"size": 0.4401,
+									"nameTag": "none"
+								},
+								{
+									"role": "hero",
+									"equipment": {},
+									"anchor": { "x": 2.265, "y": 0.545 },
+									"size": 0.5503,
+									"drawDepth": 0.75,
+									"head": { "rotate": -25.546, "scaleY": -1 },
+									"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+								},
+								{
+									"role": "hero2",
+									"form": "frame-interested",
+									"equipment": {},
+									"anchor": { "x": 0.105, "y": 0.705 },
+									"size": 0.8628,
+									"drawDepth": 0,
+									"head": { "rotate": -14.222, "scaleY": 1 },
+									"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:bush2a.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.539, "y": -0.073 },
+									"size": 0.4364,
+									"drawDepth": -1,
+									"nameTag": "none",
+									"foot": { "rotate": 92.077 },
+									"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:rockFoothill4.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.738, "y": -0.081 },
+									"size": 0.5887,
+									"drawDepth": 0.5,
+									"nameTag": "none",
+									"foot": { "rotate": -6.072 },
+									"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:actionLines_arcLong.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.532, "y": 0.095 },
+									"size": 1.2936,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:smokeBlown.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.156, "y": 0.921 },
+									"size": 0.4301,
+									"drawDepth": 0.75,
+									"nameTag": "none",
+									"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:smokeBlown.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.873, "y": -0.206 },
+									"size": 0.4301,
+									"drawDepth": 0.75,
+									"nameTag": "none",
+									"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:actionLines_arcLong.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.7, "y": -0.292 },
+									"size": 0.1599,
+									"drawDepth": -0.5,
+									"nameTag": "none",
+									"foot": { "rotate": 47.724 },
+									"color": { "r": "0.6069364", "g": "0.6069364", "b": "0.6069364", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:catBlackStand.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.704, "y": 0.262 },
+									"size": 0.1599,
+									"drawDepth": 0.25,
+									"nameTag": "none",
+									"foot": { "rotate": 17.412 },
+									"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:action_pointerSquiggly1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.53, "y": 0.509 },
+									"size": 0.1598,
+									"drawDepth": 0.984375,
+									"nameTag": "none",
+									"foot": { "rotate": -48.924 },
+									"color": { "r": "1", "g": "0.98904073", "b": "0.76300573", "a": "1" },
+									"colorFilter": { "filterName": "hover" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~02~choice_one~panel_001~1_narration",
+									"style": "narration"
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~02~choice_one~panel_001~2_action",
+									"style": "action",
+									"padXFraction": 0.462,
+									"padYFraction": 0.262,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~02~choice_one~panel_001~3_hero2",
+									"pointerOwner": "hero2",
+									"padXFraction": 0.375,
+									"padYFraction": 0.073,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "rotate": -16.699244, "dX": 19.838703, "dY": -4.7235026 }
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~02~choice_one~panel_001~4_darken",
+									"style": "darken",
+									"location": "bottomLeft",
+									"padXFraction": 0.194,
+									"padYFraction": 0.226,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.929, "y": 0.571 },
+									"size": 0.4401,
+									"nameTag": "none"
+								},
+								{
+									"role": "hero",
+									"form": "frame-talk",
+									"facing": "left",
+									"equipment": {},
+									"anchor": { "x": 0.856, "y": 0.595 },
+									"size": 0.5946,
+									"drawDepth": 0.75,
+									"head": { "rotate": -14.128, "scaleY": 1 },
+									"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+								},
+								{
+									"role": "hero2",
+									"equipment": {},
+									"anchor": { "x": -0.318, "y": 0.772 },
+									"size": 0.8628,
+									"drawDepth": 0,
+									"head": { "rotate": -14.222, "scaleY": 1 },
+									"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:bush2a.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.606, "y": 0.03 },
+									"size": 0.4364,
+									"drawDepth": -1,
+									"nameTag": "none",
+									"foot": { "rotate": 92.077 },
+									"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:rockFoothill4.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.315, "y": -0.014 },
+									"size": 0.5887,
+									"drawDepth": 0.5,
+									"nameTag": "none",
+									"foot": { "rotate": -6.072 },
+									"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:actionLines_arcLong.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.109, "y": 0.162 },
+									"size": 1.2936,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:smokeBlown.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.733, "y": 0.988 },
+									"size": 0.4301,
+									"drawDepth": 0.75,
+									"nameTag": "none",
+									"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:smokeBlown.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.45, "y": -0.139 },
+									"size": 0.4301,
+									"drawDepth": 0.75,
+									"nameTag": "none",
+									"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:actionLines_arcLong.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.277, "y": -0.225 },
+									"size": 0.1599,
+									"drawDepth": -0.5,
+									"nameTag": "none",
+									"foot": { "rotate": 47.724 },
+									"color": { "r": "0.6069364", "g": "0.6069364", "b": "0.6069364", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:catBlackStand.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.281, "y": 0.329 },
+									"size": 0.1599,
+									"drawDepth": 0.25,
+									"nameTag": "none",
+									"foot": { "rotate": -21.171 },
+									"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:action_pointerSquiggly1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.544, "y": 0.265 },
+									"size": 0.1598,
+									"drawDepth": 0.984375,
+									"nameTag": "none",
+									"foot": { "rotate": 162.536 },
+									"color": { "r": "1", "g": "0.98904073", "b": "0.76300573", "a": "1" },
+									"colorFilter": { "filterName": "hover" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~03~choice_two~panel_001~1_narration",
+									"style": "narration"
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~03~choice_two~panel_001~2_action",
+									"style": "action",
+									"location": "bottomLeft",
+									"padXFraction": 0.511,
+									"padYFraction": 0.066,
+									"widthFraction": 0.5139863,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~03~choice_two~panel_001~3_hero",
+									"pointerOwner": "hero",
+									"padXFraction": 0.062,
+									"padYFraction": 0.059,
+									"shrinkToFitText": true,
+									"pointerAdjust": {
+										"rotate": 12.1753845,
+										"dX": -19.838718,
+										"dY": -12.281107,
+										"pointerOrientH": "onLeft"
+									}
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~03~choice_two~panel_001~4_darken",
+									"style": "darken",
+									"location": "bottomLeft",
+									"padXFraction": 0.124,
+									"padYFraction": 0.536,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "three",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.678, "y": 0.446 },
+									"size": 0.3052,
+									"nameTag": "none"
+								},
+								{
+									"role": "hero",
+									"form": "frame-interested",
+									"equipment": {},
+									"anchor": { "x": 0.578, "y": 0.458 },
+									"size": 0.4123,
+									"drawDepth": 0.75,
+									"head": { "rotate": -10.974, "scaleY": -1 },
+									"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+								},
+								{
+									"role": "hero2",
+									"facing": "left",
+									"equipment": {},
+									"anchor": { "x": 0.911, "y": 0.525 },
+									"size": 0.5017,
+									"drawDepth": 0,
+									"head": { "rotate": -7.206, "scaleY": 1 },
+									"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:bush2a.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 1.147, "y": 0.07 },
+									"size": 0.3026,
+									"drawDepth": -1,
+									"nameTag": "none",
+									"foot": { "rotate": 92.077 },
+									"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+								},
+								{
+									"assetSpec": "scenery:rockFoothill4.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.252, "y": 0.04 },
+									"size": 0.4082,
+									"drawDepth": 0.5,
+									"nameTag": "none",
+									"foot": { "rotate": -6.072 },
+									"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:actionLines_arcLong.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.109, "y": 0.162 },
+									"size": 0.8969,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:smokeBlown.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.542, "y": 0.735 },
+									"size": 0.2982,
+									"drawDepth": 0.75,
+									"nameTag": "none",
+									"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:smokeBlown.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.345, "y": -0.047 },
+									"size": 0.2982,
+									"drawDepth": 0.75,
+									"nameTag": "none",
+									"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:actionLines_arcLong.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.225, "y": -0.106 },
+									"size": 0.1109,
+									"drawDepth": -0.5,
+									"nameTag": "none",
+									"foot": { "rotate": 47.724 },
+									"color": { "r": "0.6069364", "g": "0.6069364", "b": "0.6069364", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:catBlackStand.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.228, "y": 0.278 },
+									"size": 0.1109,
+									"drawDepth": 0.25,
+									"nameTag": "none",
+									"foot": { "rotate": -21.171 },
+									"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~04~choice_three~panel_001~1_narration",
+									"style": "narration"
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~04~choice_three~panel_001~2_action",
+									"style": "action",
+									"location": "bottomLeft",
+									"padXFraction": 0.511,
+									"padYFraction": 0.066,
+									"widthFraction": 0.5139863,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~04~choice_three~panel_001~3_hero",
+									"pointerOwner": "hero",
+									"padXFraction": 0.062,
+									"padYFraction": 0.059,
+									"shrinkToFitText": true,
+									"pointerAdjust": {
+										"rotate": 4.213497,
+										"dX": -14.170515,
+										"dY": -6.6129327,
+										"scaleX": 0.9412793,
+										"scaleY": 0.9412793,
+										"pointerOrientH": "onLeft"
+									}
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~04~choice_three~panel_001~4_darken",
+									"style": "darken",
+									"location": "bottomLeft",
+									"padXFraction": 0.318,
+									"padYFraction": 0.036,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+									"textKey": "~04~choice_three~panel_001~5_hero2",
+									"pointerOwner": "hero2",
+									"padXFraction": 0.486,
+									"padYFraction": 0.185,
+									"shrinkToFitText": true,
+									"pointerAdjust": { "dX": -13.225807, "dY": -6.6128745 }
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "hero2",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.576, "y": 0.468 },
+										"size": 0.3402,
+										"nameTag": "none"
+									},
+									{
+										"preTransformation": true,
+										"role": "hero",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.928, "y": 0.403 },
+										"size": 0.337,
+										"drawDepth": 0.75,
+										"head": { "rotate": 8.111, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero2",
+										"form": "frame-happy",
+										"equipment": {},
+										"anchor": { "x": 0.739, "y": 0.537 },
+										"size": 0.667,
+										"drawDepth": 0,
+										"head": { "rotate": -24.234, "scaleY": -1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bush2a.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.969, "y": 0.046 },
+										"size": 0.3374,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 92.077 },
+										"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothill4.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.343, "y": 0.075 },
+										"size": 0.4551,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.865 },
+										"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.191, "y": 0.176 },
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.673, "y": 0.814 },
+										"size": 0.3325,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.454, "y": -0.057 },
+										"size": 0.3325,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:catBlackStand.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.349, "y": 0.341 },
+										"size": 0.1599,
+										"drawDepth": 0.25,
+										"nameTag": "none",
+										"foot": { "rotate": -18.146 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:action_pointerSquiggly1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.469, "y": 0.484 },
+										"size": 0.2042,
+										"drawDepth": 0.984375,
+										"nameTag": "none",
+										"foot": { "rotate": -48.924 },
+										"color": { "r": "1", "g": "0.98904073", "b": "0.76300573", "a": "1" },
+										"colorFilter": { "filterName": "hover" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_001~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+										"padXFraction": 0.788,
+										"padYFraction": 0.093,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_001~2_action",
+										"style": "action",
+										"padXFraction": 0.462,
+										"padYFraction": 0.262,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_001~3_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.341,
+										"padYFraction": 0.099,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_001~4_hero2",
+										"pointerOwner": "hero2",
+										"location": "topRight",
+										"padXFraction": 0.339,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -4.08326,
+											"dX": -6.5977015,
+											"dY": 3.770115,
+											"scaleX": 0.6885025,
+											"scaleY": 0.6885025,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.086, "y": 0.442 },
+										"size": 0.3402,
+										"nameTag": "none"
+									},
+									{
+										"preTransformation": true,
+										"role": "hero",
+										"equipment": {},
+										"anchor": { "x": 0.749, "y": 0.43 },
+										"size": 0.337,
+										"drawDepth": 0.75,
+										"head": { "rotate": -10.289, "scaleY": -1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero3",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.972, "y": 0.189 },
+										"size": 0.1338,
+										"drawDepth": 0.875,
+										"head": { "rotate": 13.38, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"role": "hero2",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.256, "y": -0.082 },
+										"size": 0.4254,
+										"drawDepth": -2,
+										"head": { "rotate": -15.741, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bush2a.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.567, "y": 0.099 },
+										"size": 0.3374,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 92.077 },
+										"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothill4.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.267, "y": 0.049 },
+										"size": 0.4551,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.865 },
+										"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.233, "y": 0.788 },
+										"size": 0.3325,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.033 },
+										"size": 0.3325,
+										"drawDepth": -3,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.033, "y": 0.198 },
+										"size": 0.1524,
+										"drawDepth": -0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -2.276 },
+										"color": { "r": "0.6069364", "g": "0.6069364", "b": "0.6069364", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_002~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+										"padXFraction": 0.041,
+										"padYFraction": 0.067,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_002~2_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162701", "g": "0.42194784", "b": "0.86848861", "a": "0.62280756" },
+										"location": "bottomLeft",
+										"padXFraction": 0.455,
+										"padYFraction": 0.066,
+										"widthFraction": 0.53911483,
+										"shrinkToFitText": true,
+										"allowOverlap": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_002~3_action",
+										"style": "action",
+										"padXFraction": 0.462,
+										"padYFraction": 0.262,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_002~4_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.341,
+										"padYFraction": 0.099,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_002~5_hero2",
+										"pointerOwner": "hero2",
+										"location": "topRight",
+										"padXFraction": 0.339,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 6.638455,
+											"dX": -6.5977015,
+											"dY": 3.770115,
+											"scaleX": 0.7841861,
+											"scaleY": 0.7841861,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~05~player_chose_one~panel_002~6_hero3",
+										"pointerOwner": "hero3",
+										"location": "topRight",
+										"padXFraction": 0.041,
+										"padYFraction": 0.294,
+										"widthFraction": 0.49402392,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -10.175518, "scaleX": 0.5878492, "scaleY": 0.5878492 }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ApplyTheme",
+					"target": "hero2",
+					"theme": "petCatBlack",
+					"piece": "catBlack"
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "hero",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.576, "y": 0.468 },
+										"size": 0.3402,
+										"nameTag": "none"
+									},
+									{
+										"preTransformation": true,
+										"role": "hero2",
+										"form": "frame-skeptical",
+										"equipment": {},
+										"anchor": { "x": 0.928, "y": 0.403 },
+										"size": 0.337,
+										"drawDepth": 0.75,
+										"head": { "rotate": 8.111, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero",
+										"equipment": {},
+										"anchor": { "x": 0.739, "y": 0.537 },
+										"size": 0.667,
+										"drawDepth": 0,
+										"head": { "rotate": -24.234, "scaleY": -1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bush2a.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.969, "y": 0.046 },
+										"size": 0.3374,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 92.077 },
+										"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothill4.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.343, "y": 0.075 },
+										"size": 0.4551,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.865 },
+										"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.191, "y": 0.176 },
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.673, "y": 0.814 },
+										"size": 0.3325,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.454, "y": -0.057 },
+										"size": 0.3325,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:catBlackStand.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.349, "y": 0.341 },
+										"size": 0.1599,
+										"drawDepth": 0.25,
+										"nameTag": "none",
+										"foot": { "rotate": -18.146 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:action_pointerSquiggly1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.469, "y": 0.484 },
+										"size": 0.2042,
+										"drawDepth": 0.984375,
+										"nameTag": "none",
+										"foot": { "rotate": -48.924 },
+										"color": { "r": "1", "g": "0.98904073", "b": "0.76300573", "a": "1" },
+										"colorFilter": { "filterName": "hover" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~06~player_chose_two~panel_001~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+										"padXFraction": 0.788,
+										"padYFraction": 0.093,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~06~player_chose_two~panel_001~2_action",
+										"style": "action",
+										"padXFraction": 0.462,
+										"padYFraction": 0.262,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~06~player_chose_two~panel_001~3_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.341,
+										"padYFraction": 0.099,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~06~player_chose_two~panel_001~4_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.339,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -4.08326,
+											"dX": -6.5977015,
+											"dY": 3.770115,
+											"scaleX": 0.6885025,
+											"scaleY": 0.6885025,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.086, "y": 0.442 },
+										"size": 0.3402,
+										"nameTag": "none"
+									},
+									{
+										"preTransformation": true,
+										"role": "hero2",
+										"equipment": {},
+										"anchor": { "x": 0.749, "y": 0.43 },
+										"size": 0.337,
+										"drawDepth": 0.75,
+										"head": { "rotate": -10.289, "scaleY": -1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero3",
+										"form": "frame-grim",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.972, "y": 0.189 },
+										"size": 0.1338,
+										"drawDepth": 0.875,
+										"head": { "rotate": 13.38, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.27, "y": -0.089 },
+										"size": 0.4254,
+										"drawDepth": -2,
+										"head": { "rotate": -15.741, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bush2a.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.567, "y": 0.099 },
+										"size": 0.3374,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 92.077 },
+										"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothill4.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.267, "y": 0.049 },
+										"size": 0.4551,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.865 },
+										"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.233, "y": 0.788 },
+										"size": 0.3325,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.028, "y": -0.033 },
+										"size": 0.3325,
+										"drawDepth": -3,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.033, "y": 0.198 },
+										"size": 0.1524,
+										"drawDepth": -0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -2.276 },
+										"color": { "r": "0.6069364", "g": "0.6069364", "b": "0.6069364", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~06~player_chose_two~panel_002~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+										"padXFraction": 0.041,
+										"padYFraction": 0.067,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~06~player_chose_two~panel_002~2_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162701", "g": "0.42194784", "b": "0.86848861", "a": "0.62280756" },
+										"location": "bottomLeft",
+										"padXFraction": 0.45,
+										"padYFraction": 0.064,
+										"widthFraction": 0.53911483,
+										"shrinkToFitText": true,
+										"allowOverlap": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~06~player_chose_two~panel_002~3_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.341,
+										"padYFraction": 0.099,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~06~player_chose_two~panel_002~4_hero2",
+										"pointerOwner": "hero2",
+										"location": "topRight",
+										"padXFraction": 0.339,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 6.638455,
+											"dX": -6.5977015,
+											"dY": 3.770115,
+											"scaleX": 0.7841861,
+											"scaleY": 0.7841861,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~06~player_chose_two~panel_002~5_hero3",
+										"pointerOwner": "hero3",
+										"location": "topRight",
+										"padXFraction": 0.041,
+										"padYFraction": 0.294,
+										"widthFraction": 0.49402392,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -10.175518, "scaleX": 0.5878492, "scaleY": 0.5878492 }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "ApplyTheme",
+					"target": "hero",
+					"theme": "petCatBlack",
+					"piece": "catBlack"
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "three",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Description",
+					"blockOtherChanges": true,
+					"script": [
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.576, "y": 0.468 },
+										"size": 0.3402,
+										"nameTag": "none"
+									},
+									{
+										"preTransformation": true,
+										"role": "hero2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.781, "y": 0.46 },
+										"size": 0.5722,
+										"drawDepth": -0.5,
+										"head": { "rotate": 2.975, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.665, "y": 0.468 },
+										"size": 0.4323,
+										"drawDepth": 0,
+										"head": { "rotate": -5.735, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bush2a.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.969, "y": 0.046 },
+										"size": 0.3374,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 92.077 },
+										"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothill4.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.343, "y": 0.075 },
+										"size": 0.4551,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.865 },
+										"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.191, "y": 0.176 },
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.673, "y": 0.814 },
+										"size": 0.3325,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.454, "y": -0.057 },
+										"size": 0.3325,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:catBlackStand.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.349, "y": 0.341 },
+										"size": 0.1599,
+										"drawDepth": 0.25,
+										"nameTag": "none",
+										"foot": { "rotate": -18.146 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:action_pointerSquiggly1.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.454, "y": 0.487 },
+										"size": 0.2042,
+										"drawDepth": 0.984375,
+										"nameTag": "none",
+										"foot": { "rotate": -48.924 },
+										"color": { "r": "1", "g": "0.98904073", "b": "0.76300573", "a": "1" },
+										"colorFilter": { "filterName": "hover" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_001~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+										"padXFraction": 0.788,
+										"padYFraction": 0.093,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_001~2_action",
+										"style": "action",
+										"padXFraction": 0.431,
+										"padYFraction": 0.268,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_001~3_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.341,
+										"padYFraction": 0.099,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_001~4_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.339,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -4.08326,
+											"dX": -6.5977015,
+											"dY": 3.770115,
+											"scaleX": 0.6885025,
+											"scaleY": 0.6885025,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.845, "y": 0.604 },
+										"size": 0.46795934,
+										"nameTag": "none"
+									},
+									{
+										"preTransformation": true,
+										"role": "hero2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 1.272, "y": 0.593 },
+										"size": 0.787085,
+										"drawDepth": -0.5,
+										"head": { "rotate": 2.975, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 1.059, "y": 0.594 },
+										"size": 0.59464675,
+										"drawDepth": 0,
+										"head": { "rotate": -18.169, "scaleY": 1 },
+										"foot": { "rotate": -8.794 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bush2a.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.664, "y": 0.023 },
+										"size": 0.46410778,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 92.077 },
+										"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothill4.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.36, "y": 0.063 },
+										"size": 0.62600905,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.865 },
+										"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.043, "y": 0.202 },
+										"size": 1.3755418,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.047, "y": 1.08 },
+										"size": 0.45736766,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.591, "y": -0.118 },
+										"size": 0.45736766,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:catBlackStand.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.372, "y": 0.429 },
+										"size": 0.21994913,
+										"drawDepth": 0.25,
+										"nameTag": "none",
+										"foot": { "rotate": -18.146 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:action_popR.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.574, "y": 0.4 },
+										"size": 0.28088564,
+										"drawDepth": 0.984375,
+										"nameTag": "none",
+										"foot": { "rotate": -153.919 },
+										"color": { "r": "1", "g": "0.98904073", "b": "0.76300573", "a": "1" },
+										"colorFilter": { "filterName": "hover" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.673, "y": 0.07 },
+										"size": 0.2031,
+										"drawDepth": 0.984375,
+										"nameTag": "none",
+										"foot": { "rotate": -68.215 },
+										"color": { "r": "1", "g": "0.98904073", "b": "0.76300573", "a": "1" },
+										"colorFilter": { "filterName": "hover" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_002~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+										"padXFraction": 0.05,
+										"padYFraction": 0.058,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_002~2_action",
+										"style": "action",
+										"padXFraction": 0.431,
+										"padYFraction": 0.268,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_002~3_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.341,
+										"padYFraction": 0.099,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_002~4_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.339,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -4.08326,
+											"dX": -6.5977015,
+											"dY": 3.770115,
+											"scaleX": 0.6885025,
+											"scaleY": 0.6885025,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_002~5_action",
+										"style": "action",
+										"padXFraction": 0.606,
+										"padYFraction": 0.409,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "full",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.72786045, "y": 0.604 },
+										"size": 0.46795934,
+										"nameTag": "none"
+									},
+									{
+										"preTransformation": true,
+										"role": "hero2",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.959, "y": 0.615 },
+										"size": 0.787085,
+										"drawDepth": -0.5,
+										"head": { "rotate": 2.975, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero",
+										"form": "frame-skeptical",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.8692, "y": 0.594 },
+										"size": 0.59464675,
+										"drawDepth": 0,
+										"head": { "rotate": -18.169, "scaleY": 1 },
+										"foot": { "rotate": -18.054 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bush2a.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.2687814, "y": 0.023 },
+										"size": 0.46410778,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 92.077 },
+										"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothill4.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.4075349, "y": 0.063 },
+										"size": 0.62600905,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.865 },
+										"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.19816744, "y": 0.202 },
+										"size": 1.3755418,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.8612745, "y": 1.08 },
+										"size": 0.45736766,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.56010234, "y": -0.118 },
+										"size": 0.45736766,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:catBlackRun.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.105, "y": 0.045 },
+										"size": 0.21994913,
+										"drawDepth": 0.25,
+										"nameTag": "none",
+										"foot": { "rotate": 2.638 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.266, "y": 0.3 },
+										"size": 0.2031,
+										"drawDepth": 0.375,
+										"nameTag": "none",
+										"foot": { "rotate": -16.927 },
+										"color": { "r": "0.6069364", "g": "0.6069364", "b": "0.6069364", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_003~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+										"padXFraction": 0.05,
+										"padYFraction": 0.058,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_003~2_action",
+										"style": "action",
+										"padXFraction": 0.431,
+										"padYFraction": 0.268,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_003~3_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.341,
+										"padYFraction": 0.099,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_003~4_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.339,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -4.08326,
+											"dX": -6.5977015,
+											"dY": 3.770115,
+											"scaleX": 0.6885025,
+											"scaleY": 0.6885025,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_003~5_action",
+										"style": "action",
+										"padXFraction": 0.606,
+										"padYFraction": 0.409,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "threeFourths",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.13641185, "y": 0.566 },
+										"size": 0.46795934,
+										"nameTag": "none"
+									},
+									{
+										"preTransformation": true,
+										"role": "hero2",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.44633386, "y": 0.577 },
+										"size": 0.787085,
+										"drawDepth": -0.5,
+										"head": { "rotate": -23.137, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.325585, "y": 0.556 },
+										"size": 0.59464675,
+										"drawDepth": 0,
+										"head": { "rotate": -6.969, "scaleY": -1 },
+										"foot": { "rotate": -26.453 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bush2a.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.8622465, "y": -0.015 },
+										"size": 0.46410778,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 92.077 },
+										"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothill4.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.29291737, "y": 0.025 },
+										"size": 0.62600905,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.865 },
+										"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:actionLines_arcLong.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.5746646, "y": 0.164 },
+										"size": 1.3755418,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.31485176, "y": 1.042 },
+										"size": 0.45736766,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.08898598, "y": -0.156 },
+										"size": 0.45736766,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero3",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 1.1386272, "y": 0.318 },
+										"size": 0.2575,
+										"drawDepth": 0.875,
+										"head": { "rotate": 13.38, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_004~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+										"padXFraction": 0.05,
+										"padYFraction": 0.058,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_004~2_action",
+										"style": "action",
+										"padXFraction": 0.431,
+										"padYFraction": 0.268,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_004~3_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.341,
+										"padYFraction": 0.099,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_004~4_hero",
+										"pointerOwner": "hero",
+										"location": "topRight",
+										"padXFraction": 0.339,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -4.08326,
+											"dX": -6.5977015,
+											"dY": 3.770115,
+											"scaleX": 0.6885025,
+											"scaleY": 0.6885025,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_004~5_action",
+										"style": "action",
+										"padXFraction": 0.606,
+										"padYFraction": 0.409,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_004~6_hero",
+										"pointerOwner": "hero",
+										"padXFraction": 0.146,
+										"padYFraction": 0.067,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 13.626994,
+											"dX": -28.275864,
+											"dY": -16.02299,
+											"pointerOrientH": "onRight"
+										}
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_004~7_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.296,
+										"padYFraction": 0.063,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 25.149796,
+											"dX": 30.160921,
+											"dY": -5.655173,
+											"pointerOrientH": "onLeft"
+										}
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_004~8_hero3",
+										"pointerOwner": "hero3",
+										"location": "topRight",
+										"padXFraction": 0.075,
+										"padYFraction": 0.279,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": -3.2704878,
+											"dX": -6.5977015,
+											"dY": -2.8276148,
+											"scaleX": 0.6295688,
+											"scaleY": 0.6295688,
+											"forcePointerImage": "speechMedium"
+										}
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Split",
+							"splitSpec": "hero3.exists",
+							"splitBranches": [
+								[
+									{
+										"class": "comicNode_Panel",
+										"panel": {
+											"size": "fourth",
+											"showNameTags": false,
+											"actorSlots": [
+												{
+													"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -2.775, "y": 0.547 },
+													"size": 0.71000725,
+													"nameTag": "none"
+												},
+												{
+													"preTransformation": true,
+													"role": "hero2",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": -1.796, "y": 0.558 },
+													"size": 1.1941979,
+													"drawDepth": -0.5,
+													"head": { "rotate": -23.137, "scaleY": 1 },
+													"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+												},
+												{
+													"preTransformation": true,
+													"role": "hero",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": -2.177, "y": 0.537 },
+													"size": 0.90222263,
+													"drawDepth": 0,
+													"head": { "rotate": -6.969, "scaleY": -1 },
+													"foot": { "rotate": -26.453 },
+													"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:bush2a.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -0.483, "y": -0.034 },
+													"size": 0.7041635,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"foot": { "rotate": 92.077 },
+													"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:trunkForegroundRooty.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": 0.874, "y": 0.014 },
+													"size": 0.9071,
+													"drawDepth": -1,
+													"nameTag": "none",
+													"foot": { "rotate": 2.688 },
+													"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+												},
+												{
+													"assetSpec": "scenery:rockFoothill4.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -4.131, "y": 0.006 },
+													"size": 0.9498068,
+													"drawDepth": 0.5,
+													"nameTag": "none",
+													"foot": { "rotate": -5.865 },
+													"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:actionLines_arcLong.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -5.02, "y": 0.145 },
+													"size": 2.087029,
+													"nameTag": "none"
+												},
+												{
+													"assetSpec": "comic:smokeBlown.png",
+													"role": null,
+													"focus": "foot",
+													"anchor": { "x": -2.211, "y": 1.023 },
+													"size": 0.6939371,
+													"drawDepth": 0.75,
+													"nameTag": "none",
+													"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+												},
+												{
+													"assetSpec": "comic:smokeBlown.png",
+													"role": null,
+													"facing": "left",
+													"focus": "foot",
+													"anchor": { "x": -3.487, "y": -0.175 },
+													"size": 0.6939371,
+													"drawDepth": 0.75,
+													"nameTag": "none",
+													"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+												},
+												{
+													"preTransformation": true,
+													"role": "hero3",
+													"form": "frame-skeptical",
+													"facing": "left",
+													"equipment": {},
+													"anchor": { "x": 0.39, "y": 0.299 },
+													"size": 0.39068964,
+													"drawDepth": 0.875,
+													"head": { "rotate": 13.38, "scaleY": 1 },
+													"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+												}
+											],
+											"textSlots": [
+												{
+													"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+													"textKey": "~07~player_chose_three~panel_005.(hero3_exists)~1_narration",
+													"style": "narration",
+													"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+													"padXFraction": 0.05,
+													"padYFraction": 0.058,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+													"textKey": "~07~player_chose_three~panel_005.(hero3_exists)~2_action",
+													"style": "action",
+													"padXFraction": 0.431,
+													"padYFraction": 0.268,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+													"textKey": "~07~player_chose_three~panel_005.(hero3_exists)~3_hero2",
+													"pointerOwner": "hero2",
+													"location": "bottomLeft",
+													"padXFraction": 0.341,
+													"padYFraction": 0.099,
+													"shrinkToFitText": true,
+													"allowDrawOverEdges": true
+												},
+												{
+													"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+													"textKey": "~07~player_chose_three~panel_005.(hero3_exists)~4_hero",
+													"pointerOwner": "hero",
+													"location": "topRight",
+													"padXFraction": 0.339,
+													"padYFraction": 0.061,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -4.08326,
+														"dX": -6.5977015,
+														"dY": 3.770115,
+														"scaleX": 0.6885025,
+														"scaleY": 0.6885025,
+														"pointerOrientH": "onLeft",
+														"forcePointerImage": "speechMedium"
+													}
+												},
+												{
+													"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+													"textKey": "~07~player_chose_three~panel_005.(hero3_exists)~5_action",
+													"style": "action",
+													"padXFraction": 0.606,
+													"padYFraction": 0.409,
+													"shrinkToFitText": true
+												},
+												{
+													"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+													"textKey": "~07~player_chose_three~panel_005.(hero3_exists)~6_hero3",
+													"pointerOwner": "hero3",
+													"location": "topRight",
+													"padXFraction": 0.676,
+													"padYFraction": 0.33,
+													"shrinkToFitText": true,
+													"pointerAdjust": {
+														"rotate": -3.2704878,
+														"dX": -14.137932,
+														"dY": -6.5977297,
+														"scaleX": 0.6295688,
+														"scaleY": 0.6295688,
+														"forcePointerImage": "speechMedium"
+													},
+													"allowDrawOverEdges": true
+												}
+											]
+										}
+									}
+								],
+								[]
+							]
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"assetSpec": "comicBg:comicBG_forestFoothill_purple.jpg",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.226, "y": 0.425 },
+										"size": 0.4017737,
+										"nameTag": "none"
+									},
+									{
+										"preTransformation": true,
+										"role": "hero2",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.524, "y": 0.567 },
+										"size": 0.566,
+										"drawDepth": -2.5,
+										"head": { "rotate": -10.289, "scaleY": -1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"preTransformation": true,
+										"role": "hero3",
+										"form": "frame-interested",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.968, "y": 0.355 },
+										"size": 0.2925,
+										"drawDepth": 0.875,
+										"head": { "rotate": 13.38, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"role": "hero",
+										"facing": "left",
+										"equipment": {},
+										"anchor": { "x": 0.259, "y": 0.566 },
+										"size": 0.4349,
+										"drawDepth": -2,
+										"head": { "rotate": -15.741, "scaleY": 1 },
+										"color": { "r": "0.77715063", "g": "0.68304986", "b": "0.77937788", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:bush2a.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.794, "y": 0.02 },
+										"size": 0.39846689,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"foot": { "rotate": 92.077 },
+										"color": { "r": "0.54484284", "g": "0.38193721", "b": "0.5486986", "a": "1" }
+									},
+									{
+										"assetSpec": "scenery:rockFoothill4.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": -0.191, "y": -0.039 },
+										"size": 0.53746974,
+										"drawDepth": 0.5,
+										"nameTag": "none",
+										"foot": { "rotate": -5.865 },
+										"color": { "r": "0.72699559", "g": "0.48910493", "b": "0.3423686", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.399, "y": 0.834 },
+										"size": 0.39268005,
+										"drawDepth": 0.75,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeBlown.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.157, "y": -0.136 },
+										"size": 0.39268005,
+										"drawDepth": -3,
+										"nameTag": "none",
+										"color": { "r": "0.64450866", "g": "0.64450866", "b": "0.64450866", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_006~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162695", "g": "0.42194778", "b": "0.86848867", "a": "1" },
+										"padXFraction": 0.041,
+										"padYFraction": 0.067,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_006~2_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.39162701", "g": "0.42194784", "b": "0.86848861", "a": "0.66184974" },
+										"location": "bottomRight",
+										"padXFraction": 0.041,
+										"padYFraction": 0.067,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_006~3_action",
+										"style": "action",
+										"padXFraction": 0.462,
+										"padYFraction": 0.262,
+										"shrinkToFitText": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_006~4_hero2",
+										"pointerOwner": "hero2",
+										"location": "bottomLeft",
+										"padXFraction": 0.341,
+										"padYFraction": 0.099,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_006~5_hero2",
+										"pointerOwner": "hero2",
+										"location": "topRight",
+										"padXFraction": 0.339,
+										"padYFraction": 0.061,
+										"shrinkToFitText": true,
+										"pointerAdjust": {
+											"rotate": 6.638455,
+											"dX": -6.5977015,
+											"dY": 3.770115,
+											"scaleX": 0.7841861,
+											"scaleY": 0.7841861,
+											"pointerOrientH": "onLeft",
+											"forcePointerImage": "speechMedium"
+										}
+									},
+									{
+										"textSourceFile": "arriveAtSite/encounter_heroesArriveAtSite_ShyandtheShadow_branch",
+										"textKey": "~07~player_chose_three~panel_006~6_hero3",
+										"pointerOwner": "hero3",
+										"location": "topRight",
+										"padXFraction": 0.041,
+										"padYFraction": 0.294,
+										"widthFraction": 0.49402392,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "rotate": -10.175518, "scaleX": 0.5878492, "scaleY": 0.5878492 }
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"class": "DoOneRandom",
+					"weightedOutcomes": [
+						{
+							"outcome": {
+								"class": "UpgradeGear",
+								"query": {
+									"allowArmor": false,
+									"allowWeapon": false,
+									"allowOffHand": false,
+									"specificAugment": "AUGMENT_NECKLACE"
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "UpgradeGear",
+								"query": {
+									"allowArmor": false,
+									"allowWeapon": false,
+									"allowOffHand": false,
+									"specificAugment": "AUGMENT_RING"
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "UpgradeGear",
+								"query": {
+									"allowArmor": false,
+									"allowWeapon": false,
+									"allowOffHand": false,
+									"specificAugment": "AUGMENT_TALISMAN"
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "UpgradeGear",
+								"query": {
+									"allowArmor": false,
+									"allowWeapon": false,
+									"allowOffHand": false,
+									"specificAugment": "AUGMENT_BROACH"
+								}
+							}
+						},
+						{
+							"outcome": {
+								"class": "UpgradeGear",
+								"query": {
+									"allowArmor": false,
+									"allowWeapon": false,
+									"allowOffHand": false,
+									"specificAugment": "AUGMENT_BRACELET"
+								}
+							}
+						}
+					]
+				},
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					]
+				}
+			]
+		}
+	}
+]
+}
