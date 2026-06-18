@@ -90,24 +90,56 @@
 
 
     {
-      "name": "replaceHead_drauvDetail_deeven_horns2_front",
-      "tint": "skin", "tintAmount": 0.6,
-      "depth": 4400,
+      "name": "horns2_back_skin_drauven_deeven",
+      "tint": "skin",
+      "depth": 3400,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_deeven"],
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_skeleton_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
-      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
     },
     {
-      "name": "replaceHead_drauvDetail_deeven_horns2_back",
-      "tint": "skin", "tintAmount": 0.6,
-      "depth": 3999,
+      "name": "horns2_back_texture_drauven_deeven",
+      "tint": "skin", "tintAmount": 0.5,
+      "depth": 3401,
       "headOffset": true,
       "ifOwnerAspect": "drauvenSkin_naturalHead",
       "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_deeven"],
-      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_skeleton_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"],
-      "facialExpression": ["neutral", "interested", "grim", "sad", "skeptical", "dubious", "open", "surprised", "scared", "angry", "rage", "scheming", "hit", "dead", "happy", "joke", "joy"]
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
+    },
+    {
+      "name": "horns2_back_untinted_drauven_deeven",
+      "depth": 3402,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_deeven"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
+    },
+    {
+      "name": "horns2_front_skin_drauven_deeven",
+      "tint": "skin",
+      "depth": 4100,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_deeven"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
+    },
+    {
+      "name": "horns2_front_texture_drauven_deeven",
+      "tint": "skin", "tintAmount": 0.5,
+      "depth": 4101,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_deeven"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
+    },
+    {
+      "name": "horns2_front_untinted_drauven_deeven",
+      "depth": 4102,
+      "headOffset": true,
+      "ifOwnerAspect": "drauvenSkin_naturalHead",
+      "ifOwnerAspects": ["humanSkin_extra|zzz_drauven01_Head|drauvenHead_deeven"],
+      "ifNoOwnerAspects": ["themePiece_crow_head", "themePiece_turtle_head", "themePiece_wolf_head", "themePiece_tree_head", "themePiece_frog_head", "themePiece_fishman_head"]
     },
 
 
