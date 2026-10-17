@@ -1,0 +1,38 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "layers/[0]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "humanSkin_swapGrips" ]
+	},
+	{
+		"jsonPath": "layers/[1]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "humanSkin_swapGrips" ]
+	},
+	{
+		"jsonPath": "layers",
+		"type": "objectList",
+		"addJson": {
+			"class": "com.worldwalkergames.legacy.game.model.SkinLayer",
+			"name": "augment_shieldCaveA_swapGrips_tint1",
+			"tint": "primary",
+			"ifOwnerAspect": "humanSkin_swapGrips",
+			"depth": 8600
+		}
+	},
+	{
+		"jsonPath": "layers",
+		"type": "objectList",
+		"addJson": {
+			"class": "com.worldwalkergames.legacy.game.model.SkinLayer",
+			"name": "augment_shieldCaveB_swapGrips_untinted",
+			"ifOwnerAspect": "humanSkin_swapGrips",
+			"depth": 8601
+		}
+	}
+]
+}

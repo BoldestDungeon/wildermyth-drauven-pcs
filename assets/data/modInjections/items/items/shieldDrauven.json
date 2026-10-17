@@ -1,0 +1,21 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "layers/[0]/ifNoOwnerAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "humanSkin_swapGrips" ]
+	},
+	{
+		"jsonPath": "layers",
+		"type": "objectList",
+		"addJson": {
+			"class": "com.worldwalkergames.legacy.game.model.SkinLayer",
+			"name": "augment_shieldDrauven_swapGrips",
+			"ifOwnerAspect": "humanSkin_swapGrips",
+			"depth": 8600
+		}
+	}
+]
+}

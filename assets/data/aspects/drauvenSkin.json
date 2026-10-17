@@ -13,34 +13,6 @@
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
-      {
-        "name": "ArmL_1hand_Upper_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
-        "depth": 1199,
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "ArmL_1hand_Lower_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
-        "depth": 1200,
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "ArmL_2hand_Upper_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
-        "depth": 1199,
-        "rigMode": "twoHanded"
-      },
-      {
-        "name": "ArmL_2hand_Lower_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm"],
-        "depth": 3500,
-        "rigMode": "twoHanded"
-      },
 
       {
         "name": "skinBlueTattoo_armL",
@@ -71,60 +43,6 @@
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
-      {
-        "name": "HandL_Open_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
-        "depth": 2000,
-        "ifLeftHandGrasp": "open",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "HandL_Closed_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
-        "depth": 6000,
-        "ifLeftHandGrasp": "weapon",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "ThumbL_Closed_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
-        "depth": 6001,
-        "ifLeftHandGrasp": "weapon",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "HandL_Book_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
-        "depth": 2000,
-        "ifLeftHandGrasp": "book",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "ThumbL_Book_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
-        "depth": 6001,
-        "ifLeftHandGrasp": "book",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "HandL_2hand_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
-        "depth": 8000,
-        "rigMode": "twoHanded"
-      },
-      {
-        "name": "ThumbL_2hand_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftArm", "drauvenSkin_bandagedLeftArm", "drauvenSkin_prostheticLeftArm"],
-        "depth": 4000,
-        "rigMode": "twoHanded"
-      }
     ]
   },
   {
@@ -134,12 +52,6 @@
     "invalidatesSkin": true,
     "effects": ["Left_Leg_Stats_Migration"],
     "skinLayers": [
-      {
-        "name": "LegL_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftLeg", "drauvenSkin_bandagedLeftLeg", "drauvenSkin_prostheticLeftLeg"],
-        "depth": 1101
-      },
       { 
         "name": "skinBlueTattoo_legL",
         "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_leftLeg", "drauvenSkin_bandagedLeftLeg", "drauvenSkin_prostheticLeftLeg"],
@@ -154,34 +66,6 @@
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
-      {
-        "name": "ArmR_1hand_Upper_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
-        "depth": 1300,
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "ArmR_1hand_Lower_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
-        "depth": 2500,
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "ArmR_2hand_Upper_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
-        "depth": 1300,
-        "rigMode": "twoHanded"
-      },
-      {
-        "name": "ArmR_2hand_Lower_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm"],
-        "depth": 3900,
-        "rigMode": "twoHanded"
-      },
 
       {
         "name": "skinBlueTattoo_armR",
@@ -205,60 +89,6 @@
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
-      {
-        "name": "HandR_Open_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
-        "depth": 6000,
-        "ifRightHandGrasp": "open",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "HandR_Closed_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
-        "depth": 8001,
-        "ifRightHandGrasp": "weapon",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "ThumbR_Closed_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
-        "depth": 6000,
-        "ifRightHandGrasp": "weapon",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "HandR_Book_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
-        "depth": 6000,
-        "ifRightHandGrasp": "book",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "ThumbR_Book_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
-        "depth": 8001,
-        "ifRightHandGrasp": "book",
-        "rigMode": "oneHanded"
-      },
-      {
-        "name": "HandR_2hand_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
-        "depth": 8002,
-        "rigMode": "twoHanded"
-      },
-      {
-        "name": "ThumbR_2hand_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightArm", "drauvenSkin_bandagedRightArm", "drauvenSkin_prostheticRightArm"],
-        "depth": 6000,
-        "rigMode": "twoHanded"
-      }
     ]
   },
   {
@@ -268,12 +98,6 @@
     "invalidatesSkin": true,
     "effects": ["Right_Leg_Stats_Migration"],
     "skinLayers": [
-      {
-        "name": "LegR_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_rightLeg", "drauvenSkin_bandagedRightLeg", "drauvenSkin_prostheticRightLeg"],
-        "depth": 1101
-      },
       { 
         "name": "skinBlueTattoo_legR",
         "depth": 1200,
@@ -288,12 +112,6 @@
     "importance": -1,
     "invalidatesSkin": true,
     "skinLayers": [
-      {
-        "name": "Torso_Skin",
-        "tint": "skin", "tintAmount": 0.5, 
-        "ifNoOwnerAspects": ["themeSkin_drauven_alternate", "themeSlotFilled_torso"],
-        "depth": 1100
-      },
       { 
         "name": "skinBlueTattoo_torso", 
         "depth": 1211,
