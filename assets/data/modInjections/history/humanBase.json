@@ -8,6 +8,12 @@
 		"remove": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes" ]
 	},
 	{
+		"jsonPath": "elfBase.001/impliedAspects",
+		"type": "stringList",
+		"addStrings": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "nonhuman", "usesDifficultyModifiers" ],
+		"remove": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes" ]
+	},
+	{
 		"jsonPath": "humanBase.001/forbiddenAspects",
 		"type": "stringList",
 		"addStrings": [ "nonhuman" ]
