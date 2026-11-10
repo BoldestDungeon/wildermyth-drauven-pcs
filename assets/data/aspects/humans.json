@@ -135,5 +135,14 @@
 	"id": "humanVoice",
 	"voice": "defaultHuman",
 	"importance": -1
+},
+{
+	"id": "trueHuman",
+	"importance": -1
+},
+{ 
+	"id": "cannotAge", 
+	"lifespan": "all", 
+	"importance": -1
 }
 ]
