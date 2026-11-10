@@ -1,0 +1,11 @@
+{
+  "modId": "wildermyth-drauven-pcs",
+  "modInjections": [
+    {
+      "jsonPath": "humanBase.elf/impliedAspects",
+      "type": "stringList",
+      "addStrings": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes", "nonhuman", "usesDifficultyModifiers" ],
+      "remove": [ "humanBaseStats", "humanVoice", "heroicActions", "basicInterfusionRecipes" ]
+    }
+  ]
+}
