@@ -114,7 +114,7 @@
 				{
 					"class": "Damage",
 					"amount": "(1d2+1)+(self.POTENCY+self.SPELL_DAMAGE)",
-					"type": "TRUE",
+					"pierce": "2+self.POTENCY",
 					"useEquippedWeaponForStunt": true,
 					"numDefenders": "COUNT.target"
 				},
