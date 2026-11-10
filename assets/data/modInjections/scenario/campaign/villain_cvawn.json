@@ -1,0 +1,26 @@
+{
+"modId": "wildermyth-drauven-pcs",
+"modInjections": [
+	{
+		"jsonPath": "scenarioInfo/rosterSlots/[0]/specificHumanBaseId",
+		"type": "string",
+		"string": "humanBase.001"
+	},
+	{
+		"jsonPath": "scenarioInfo/rosterSlots/[1]/specificHumanBaseId",
+		"type": "string",
+		"string": "humanBase.001"
+	},
+	{
+		"jsonPath": "scenarioInfo/rosterSlots/[2]/forbidLegacyHeroAspects",
+		"type": "stringList",
+		"addJson": { "class": "java.lang.String", "value": "" },
+		"addStrings": [ "drauven" ]
+	},
+	{
+		"jsonPath": "scenarioInfo/rosterSlots/[3]/specificHumanBaseId",
+		"type": "string",
+		"string": "humanBase.001"
+	}
+]
+}
