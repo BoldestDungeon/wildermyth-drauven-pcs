@@ -42,7 +42,7 @@
 		{
 			"name": "OutfitVariation_Feathercloak_Front_Primary",
 			"tint": "primary",
-			"tintAmount": 0.8,
+			"tintAmount": 0.1,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 3565
@@ -57,7 +57,7 @@
 		{
 			"name": "OutfitVariation_Feathercloak_Front_Texture_Primary",
 			"tint": "primary",
-			"tintAmount": 0.7,
+			"tintAmount": 0.05,
 			"ifOwnerAspects": ["rigOverride|Drauven", "mystic"],
 			"ifNoOwnerAspects": ["drauvenSkin_suppressClothes", "humanSkin_suppressClothes"],
 			"depth": 3567

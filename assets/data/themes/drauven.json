@@ -11,14 +11,6 @@
 		"blurb": "Smooth scales that are cool to the touch.",
 		"layers": [
 			{
-				"name": "Torso_Skin",
-				"tint": "skin",
-				"tintAmount": 0.5,
-				"depth": 1100,
-				"ifNoOwnerAspect": "themeSkin_drauven_alternate",
-				"ifNoOwnerAspects": [ "themeSlotFilled_torso" ]
-			},
-			{
 				"name": "armor_base",
 				"tint": "primary",
 				"tintAmount": 0.6,
